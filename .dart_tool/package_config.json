@@ -212,6 +212,12 @@
       "languageVersion": "2.7"
     },
     {
+      "name": "json_serializable",
+      "rootUri": "file:///home/grey/.pub-cache/hosted/pub.dartlang.org/json_serializable-3.5.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.7"
+    },
+    {
       "name": "lint",
       "rootUri": "file:///home/grey/.pub-cache/hosted/pub.dartlang.org/lint-1.2.0",
       "packageUri": "lib/",
@@ -392,7 +398,7 @@
       "languageVersion": "2.8"
     }
   ],
-  "generated": "2020-09-24T18:04:49.777494Z",
+  "generated": "2020-09-24T18:36:32.384660Z",
   "generator": "pub",
-  "generatorVersion": "2.9.2"
+  "generatorVersion": "2.9.3"
 }
