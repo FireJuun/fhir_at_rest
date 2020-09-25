@@ -1,7 +1,5 @@
 import 'dart:mirrors';
 
-import 'package:http/http.dart';
-
 void main() async {
   var testClass = TestClass(thisOne: 1, thisString: 'hello');
   InstanceMirror tc = reflect(testClass);

@@ -1,16 +1,12 @@
-import 'enums/enums.dart';
-import 'resource_types/resource_types.dart';
+import 'enums.dart';
+import '../resource_types/resource_types.dart';
 
 String enumToString<T>(T enumValue) {
   switch (T) {
-    case Transaction:
-      return TransactionEnumMap[enumValue];
     case Compartment:
       return CompartmentEnumMap[enumValue];
     case Summary:
       return SummaryEnumMap[enumValue];
-    case Interaction:
-      return InteractionEnumMap[enumValue];
     case Dstu2Types:
       return Dstu2TypesEnumMap[enumValue];
     case Stu3Types:
