@@ -1,18 +1,14 @@
-import 'dart:mirrors';
+import 'package:fhir/primitive_types/primitive_types.dart';
 
-import 'package:http/http.dart';
+import 'search_parameters/search_parameter_types/search_number.dart';
 
 void main() async {
-  compareFunc(post);
-  compareFunc(put);
-}
-
-void compareFunc(Function func) {
-  print(func == post);
-}
-
-class TestClass {
-  int thisOne;
-  String thisString;
-  TestClass({this.thisOne, this.thisString});
+  var numb = SearchNumber(39, missing: true, prefix: NumberPrefix.ap);
+  print(numb.toString());
+  numb = SearchNumber(39, prefix: NumberPrefix.ap);
+  print(numb.toString());
+  numb = SearchNumber(39, missing: true, prefix: NumberPrefix.eq);
+  print(numb.toString());
+  print(FhirUri(null).toString());
+  print(Code(null).toString());
 }
