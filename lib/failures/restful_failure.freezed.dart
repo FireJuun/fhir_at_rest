@@ -9,6 +9,7 @@ part of 'restful_failure.dart';
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$RestfulFailureTearOff {
   const _$RestfulFailureTearOff();
 
@@ -58,9 +59,11 @@ class _$RestfulFailureTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $RestfulFailure = _$RestfulFailureTearOff();
 
+/// @nodoc
 mixin _$RestfulFailure<T> {
   @optionalTypeArgs
   Result when<Result extends Object>({
@@ -104,12 +107,14 @@ mixin _$RestfulFailure<T> {
   });
 }
 
+/// @nodoc
 abstract class $RestfulFailureCopyWith<T, $Res> {
   factory $RestfulFailureCopyWith(
           RestfulFailure<T> value, $Res Function(RestfulFailure<T>) then) =
       _$RestfulFailureCopyWithImpl<T, $Res>;
 }
 
+/// @nodoc
 class _$RestfulFailureCopyWithImpl<T, $Res>
     implements $RestfulFailureCopyWith<T, $Res> {
   _$RestfulFailureCopyWithImpl(this._value, this._then);
@@ -119,6 +124,7 @@ class _$RestfulFailureCopyWithImpl<T, $Res>
   final $Res Function(RestfulFailure<T>) _then;
 }
 
+/// @nodoc
 abstract class $HttpFailureCopyWith<T, $Res> {
   factory $HttpFailureCopyWith(
           HttpFailure<T> value, $Res Function(HttpFailure<T>) then) =
@@ -126,6 +132,7 @@ abstract class $HttpFailureCopyWith<T, $Res> {
   $Res call({int statusCode, String errorType, String failedValue});
 }
 
+/// @nodoc
 class _$HttpFailureCopyWithImpl<T, $Res>
     extends _$RestfulFailureCopyWithImpl<T, $Res>
     implements $HttpFailureCopyWith<T, $Res> {
@@ -151,6 +158,7 @@ class _$HttpFailureCopyWithImpl<T, $Res>
   }
 }
 
+/// @nodoc
 class _$HttpFailure<T> implements HttpFailure<T> {
   const _$HttpFailure({this.statusCode, this.errorType, this.failedValue});
 
@@ -281,6 +289,7 @@ abstract class HttpFailure<T> implements RestfulFailure<T> {
   $HttpFailureCopyWith<T, HttpFailure<T>> get copyWith;
 }
 
+/// @nodoc
 abstract class $UnknownFailureCopyWith<T, $Res> {
   factory $UnknownFailureCopyWith(
           UnknownFailure<T> value, $Res Function(UnknownFailure<T>) then) =
@@ -288,6 +297,7 @@ abstract class $UnknownFailureCopyWith<T, $Res> {
   $Res call({T failedValue});
 }
 
+/// @nodoc
 class _$UnknownFailureCopyWithImpl<T, $Res>
     extends _$RestfulFailureCopyWithImpl<T, $Res>
     implements $UnknownFailureCopyWith<T, $Res> {
@@ -309,6 +319,7 @@ class _$UnknownFailureCopyWithImpl<T, $Res>
   }
 }
 
+/// @nodoc
 class _$UnknownFailure<T> implements UnknownFailure<T> {
   const _$UnknownFailure({@required this.failedValue})
       : assert(failedValue != null);
@@ -422,6 +433,7 @@ abstract class UnknownFailure<T> implements RestfulFailure<T> {
   $UnknownFailureCopyWith<T, UnknownFailure<T>> get copyWith;
 }
 
+/// @nodoc
 abstract class $NoInternetCopyWith<T, $Res> {
   factory $NoInternetCopyWith(
           NoInternet<T> value, $Res Function(NoInternet<T>) then) =
@@ -429,6 +441,7 @@ abstract class $NoInternetCopyWith<T, $Res> {
   $Res call({T failedValue});
 }
 
+/// @nodoc
 class _$NoInternetCopyWithImpl<T, $Res>
     extends _$RestfulFailureCopyWithImpl<T, $Res>
     implements $NoInternetCopyWith<T, $Res> {
@@ -450,6 +463,7 @@ class _$NoInternetCopyWithImpl<T, $Res>
   }
 }
 
+/// @nodoc
 class _$NoInternet<T> implements NoInternet<T> {
   const _$NoInternet({@required this.failedValue})
       : assert(failedValue != null);
@@ -563,12 +577,14 @@ abstract class NoInternet<T> implements RestfulFailure<T> {
   $NoInternetCopyWith<T, NoInternet<T>> get copyWith;
 }
 
+/// @nodoc
 abstract class $NoTypeCopyWith<T, $Res> {
   factory $NoTypeCopyWith(NoType<T> value, $Res Function(NoType<T>) then) =
       _$NoTypeCopyWithImpl<T, $Res>;
   $Res call({String errorComment});
 }
 
+/// @nodoc
 class _$NoTypeCopyWithImpl<T, $Res>
     extends _$RestfulFailureCopyWithImpl<T, $Res>
     implements $NoTypeCopyWith<T, $Res> {
@@ -590,6 +606,7 @@ class _$NoTypeCopyWithImpl<T, $Res>
   }
 }
 
+/// @nodoc
 class _$NoType<T> implements NoType<T> {
   const _$NoType({@required this.errorComment}) : assert(errorComment != null);
 
@@ -702,12 +719,14 @@ abstract class NoType<T> implements RestfulFailure<T> {
   $NoTypeCopyWith<T, NoType<T>> get copyWith;
 }
 
+/// @nodoc
 abstract class $NoIdCopyWith<T, $Res> {
   factory $NoIdCopyWith(NoId<T> value, $Res Function(NoId<T>) then) =
       _$NoIdCopyWithImpl<T, $Res>;
   $Res call({String errorComment});
 }
 
+/// @nodoc
 class _$NoIdCopyWithImpl<T, $Res> extends _$RestfulFailureCopyWithImpl<T, $Res>
     implements $NoIdCopyWith<T, $Res> {
   _$NoIdCopyWithImpl(NoId<T> _value, $Res Function(NoId<T>) _then)
@@ -728,6 +747,7 @@ class _$NoIdCopyWithImpl<T, $Res> extends _$RestfulFailureCopyWithImpl<T, $Res>
   }
 }
 
+/// @nodoc
 class _$NoId<T> implements NoId<T> {
   const _$NoId({@required this.errorComment}) : assert(errorComment != null);
 
@@ -840,12 +860,14 @@ abstract class NoId<T> implements RestfulFailure<T> {
   $NoIdCopyWith<T, NoId<T>> get copyWith;
 }
 
+/// @nodoc
 abstract class $NoVidCopyWith<T, $Res> {
   factory $NoVidCopyWith(NoVid<T> value, $Res Function(NoVid<T>) then) =
       _$NoVidCopyWithImpl<T, $Res>;
   $Res call({String errorComment});
 }
 
+/// @nodoc
 class _$NoVidCopyWithImpl<T, $Res> extends _$RestfulFailureCopyWithImpl<T, $Res>
     implements $NoVidCopyWith<T, $Res> {
   _$NoVidCopyWithImpl(NoVid<T> _value, $Res Function(NoVid<T>) _then)
@@ -866,6 +888,7 @@ class _$NoVidCopyWithImpl<T, $Res> extends _$RestfulFailureCopyWithImpl<T, $Res>
   }
 }
 
+/// @nodoc
 class _$NoVid<T> implements NoVid<T> {
   const _$NoVid({@required this.errorComment}) : assert(errorComment != null);
 

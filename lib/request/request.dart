@@ -14,6 +14,7 @@ import '../enums_to_string.dart';
 import '../failures/restful_failure.dart';
 import '../enums/enums.dart';
 import '../resource_types/resource_types.dart';
+import '../search_parameters/parameters.dart';
 
 part 'request.freezed.dart';
 part 'dstu2_request.dart';
@@ -26,13 +27,11 @@ part 'r5_request.dart';
 @freezed
 abstract class Request with _$Request {
   Request._();
-  factory Request({
+  factory Request.dstu2({
     @required Uri base,
     @required Interaction interaction,
-    @Default(Dstu2Types.none) Dstu2Types dstu2Type,
-    @Default(Stu3Types.none) Stu3Types stu3Type,
-    @Default(R4Types.none) R4Types r4Type,
-    @Default(R5Types.none) R5Types r5Types,
+    @Default(Dstu2Types.none) Dstu2Types type,
+    Dstu2Parameters parameters,
     Id id,
     Id versionId,
     Compartment compartment,
@@ -41,13 +40,59 @@ abstract class Request with _$Request {
     @Default(false) bool pretty,
     @Default(Summary.none) Summary summary,
     @required Transaction transaction,
-  }) = _Request;
+  }) = _RequestDstu2;
 
-  Future<Either<RestfulFailure, dstu2.Resource>> dstu2Request() async =>
-      await _$Dstu2Request(this);
+  factory Request.stu3({
+    @required Uri base,
+    @required Interaction interaction,
+    @Default(Stu3Types.none) Stu3Types type,
+    Stu3Parameters parameters,
+    Id id,
+    Id versionId,
+    Compartment compartment,
+    @Default(false) bool ifModifiedSince,
+    @Default(false) bool ifNoneMatch,
+    @Default(false) bool pretty,
+    @Default(Summary.none) Summary summary,
+    @required Transaction transaction,
+  }) = _RequestStu3;
 
-  Future<Either<RestfulFailure, r4.Resource>> r4Request() async =>
-      await _$R4Request(this);
+  factory Request.r4({
+    @required Uri base,
+    @required Interaction interaction,
+    @Default(R4Types.none) R4Types type,
+    R4Parameters parameters,
+    Id id,
+    Id versionId,
+    Compartment compartment,
+    @Default(false) bool ifModifiedSince,
+    @Default(false) bool ifNoneMatch,
+    @Default(false) bool pretty,
+    @Default(Summary.none) Summary summary,
+    @required Transaction transaction,
+  }) = _RequestR4;
+
+  factory Request.r5({
+    @required Uri base,
+    @required Interaction interaction,
+    @Default(R5Types.none) R5Types type,
+    R5Parameters parameters,
+    Id id,
+    Id versionId,
+    Compartment compartment,
+    @Default(false) bool ifModifiedSince,
+    @Default(false) bool ifNoneMatch,
+    @Default(false) bool pretty,
+    @Default(Summary.none) Summary summary,
+    @required Transaction transaction,
+  }) = _RequestR5;
+
+  Future<Either<RestfulFailure, dynamic>> makeRequest() async => await this.map(
+        dstu2: (request) => _$Dstu2Request(request),
+        stu3: (request) => _$Stu3Request(request),
+        r4: (request) => _$R4Request(request),
+        r5: (request) => _$R5Request(request),
+      );
 
   Either<RestfulFailure, dynamic> noType() => left(RestfulFailure.noType(
       errorComment: 'read requests require a resourceType'));

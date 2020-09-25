@@ -1,6 +1,6 @@
 part of 'request.dart';
 
-Future<Either<RestfulFailure, r4.Resource>> _$R4Request(Request request) async {
+Future<Either<RestfulFailure, dynamic>> _$R4Request(_RequestR4 request) async {
   switch (request.interaction) {
     case Interaction.read:
       {
@@ -39,11 +39,11 @@ Future<Either<RestfulFailure, r4.Resource>> _$R4Request(Request request) async {
       }
     case Interaction.create:
       {
-        if (request.r4Type == R4Types.none) {
+        if (request.type == R4Types.none) {
           return request.noType();
         }
         final thisRequest =
-            '${request.base}/${enumToString(request.r4Type)}/$_format';
+            '${request.base}/${enumToString(request.type)}/$_format';
         return _r4MakeRequest(post, thisRequest);
       }
     default:
@@ -70,11 +70,11 @@ Future<Either<RestfulFailure, r4.Resource>> _r4MakeRequest(
   return right(r4.Resource.fromJson(json.decode(result.body)));
 }
 
-String _r4BaseTypeId(Request request) => '${request.base}/'
-    '${enumToString(request.r4Type)}/'
+String _r4BaseTypeId(_RequestR4 request) => '${request.base}/'
+    '${enumToString(request.type)}/'
     '${request.id.toString()}/';
 
-Either<RestfulFailure, Unit> _r4CheckTypeAndId(Request request) =>
-    request.r4Type == R4Types.none
+Either<RestfulFailure, Unit> _r4CheckTypeAndId(_RequestR4 request) =>
+    request.type == R4Types.none
         ? request.noType()
         : request.id == null ? request.noId() : right(unit);

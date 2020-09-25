@@ -1,7 +1,7 @@
 part of 'request.dart';
 
-Future<Either<RestfulFailure, dstu2.Resource>> _$Dstu2Request(
-    Request request) async {
+Future<Either<RestfulFailure, dynamic>> _$Dstu2Request(
+    _RequestDstu2 request) async {
   switch (request.interaction) {
     case Interaction.read:
       {
@@ -40,11 +40,11 @@ Future<Either<RestfulFailure, dstu2.Resource>> _$Dstu2Request(
       }
     case Interaction.create:
       {
-        if (request.dstu2Type == Dstu2Types.none) {
+        if (request.type == Dstu2Types.none) {
           return request.noType();
         }
         final thisRequest =
-            '${request.base}/${enumToString(request.dstu2Type)}/$_format';
+            '${request.base}/${enumToString(request.type)}/$_format';
         return _dstu2MakeRequest(post, thisRequest);
       }
     default:
@@ -71,11 +71,11 @@ Future<Either<RestfulFailure, dstu2.Resource>> _dstu2MakeRequest(
   return right(dstu2.Resource.fromJson(json.decode(result.body)));
 }
 
-String _dstu2BaseTypeId(Request request) => '${request.base}/'
-    '${enumToString(request.dstu2Type)}/'
+String _dstu2BaseTypeId(_RequestDstu2 request) => '${request.base}/'
+    '${enumToString(request.type)}/'
     '${request.id.toString()}/';
 
-Either<RestfulFailure, Unit> _dstu2CheckTypeAndId(Request request) =>
-    request.dstu2Type == Dstu2Types.none
+Either<RestfulFailure, Unit> _dstu2CheckTypeAndId(_RequestDstu2 request) =>
+    request.type == Dstu2Types.none
         ? request.noType()
         : request.id == null ? request.noId() : right(unit);
