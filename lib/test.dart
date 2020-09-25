@@ -1,12 +1,14 @@
 import 'dart:mirrors';
 
+import 'package:http/http.dart';
+
 void main() async {
-  var testClass = TestClass(thisOne: 1, thisString: 'hello');
-  InstanceMirror tc = reflect(testClass);
-  ClassMirror cm = tc.type;
-  for (var v in cm.declarations.values) {
-    print(v.simpleName.toString());
-  }
+  compareFunc(post);
+  compareFunc(put);
+}
+
+void compareFunc(Function func) {
+  print(func == post);
 }
 
 class TestClass {
