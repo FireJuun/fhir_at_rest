@@ -1,7 +1,18 @@
+import 'dart:mirrors';
+
 import 'package:http/http.dart';
 
 void main() async {
-  final result = await get('http://hapi.fhir.org/baseR4/pat');
-  print(result.statusCode);
-  print(result.headers);
+  var testClass = TestClass(thisOne: 1, thisString: 'hello');
+  InstanceMirror tc = reflect(testClass);
+  ClassMirror cm = tc.type;
+  for (var v in cm.declarations.values) {
+    print(v.simpleName.toString());
+  }
+}
+
+class TestClass {
+  int thisOne;
+  String thisString;
+  TestClass({this.thisOne, this.thisString});
 }
