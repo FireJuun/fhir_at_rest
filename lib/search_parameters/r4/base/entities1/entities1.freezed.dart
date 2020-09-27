@@ -331,11 +331,6 @@ class _$_EndpointSearch extends _EndpointSearch {
   final List<SearchToken> status;
 
   @override
-  String toString() {
-    return 'EndpointSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, connection_type: $connection_type, identifier: $identifier, name: $name, organization: $organization, payload_type: $payload_type, status: $status)';
-  }
-
-  @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _EndpointSearch &&
@@ -879,11 +874,6 @@ class _$_HealthcareServiceSearch extends _HealthcareServiceSearch {
   final List<SearchToken> service_type;
   @override
   final List<SearchToken> specialty;
-
-  @override
-  String toString() {
-    return 'HealthcareServiceSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, active: $active, characteristic: $characteristic, coverage_area: $coverage_area, endpoint: $endpoint, identifier: $identifier, location: $location, name: $name, organization: $organization, program: $program, service_category: $service_category, service_type: $service_type, specialty: $specialty)';
-  }
 
   @override
   bool operator ==(dynamic other) {
@@ -1511,11 +1501,6 @@ class _$_LocationSearch extends _LocationSearch {
   final List<SearchToken> type;
 
   @override
-  String toString() {
-    return 'LocationSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, address: $address, address_city: $address_city, address_country: $address_country, address_postalcode: $address_postalcode, address_state: $address_state, address_use: $address_use, endpoint: $endpoint, identifier: $identifier, name: $name, near: $near, operational_status: $operational_status, organization: $organization, partof: $partof, status: $status, type: $type)';
-  }
-
-  @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _LocationSearch &&
@@ -2128,11 +2113,6 @@ class _$_OrganizationSearch extends _OrganizationSearch {
   final List<SearchToken> type;
 
   @override
-  String toString() {
-    return 'OrganizationSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, active: $active, address: $address, address_city: $address_city, address_country: $address_country, address_postalcode: $address_postalcode, address_state: $address_state, address_use: $address_use, endpoint: $endpoint, identifier: $identifier, name: $name, partof: $partof, phonetic: $phonetic, type: $type)';
-  }
-
-  @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _OrganizationSearch &&
@@ -2739,11 +2719,6 @@ class _$_OrganizationAffiliationSearch extends _OrganizationAffiliationSearch {
   final List<SearchToken> specialty;
   @override
   final List<SearchToken> telecom;
-
-  @override
-  String toString() {
-    return 'OrganizationAffiliationSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, active: $active, date: $date, email: $email, endpoint: $endpoint, identifier: $identifier, location: $location, network: $network, participating_organization: $participating_organization, phone: $phone, primary_organization: $primary_organization, role: $role, service: $service, specialty: $specialty, telecom: $telecom)';
-  }
 
   @override
   bool operator ==(dynamic other) {

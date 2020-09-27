@@ -7,7 +7,7 @@ import '../../../search_parameters.dart';
 part 'entities1.freezed.dart';
 
 @freezed
-abstract class EndpointSearch with SearchParameters implements _$EndpointSearch {
+abstract class EndpointSearch with R4SearchParameters implements _$EndpointSearch {
 EndpointSearch._(); 
  factory EndpointSearch ({
 List<Id> searchId,
@@ -30,7 +30,7 @@ List<SearchToken> status,
 }
 
 @freezed
-abstract class HealthcareServiceSearch with SearchParameters implements _$HealthcareServiceSearch {
+abstract class HealthcareServiceSearch with R4SearchParameters implements _$HealthcareServiceSearch {
 HealthcareServiceSearch._(); 
  factory HealthcareServiceSearch ({
 List<Id> searchId,
@@ -59,7 +59,7 @@ List<SearchToken> specialty,
 }
 
 @freezed
-abstract class LocationSearch with SearchParameters implements _$LocationSearch {
+abstract class LocationSearch with R4SearchParameters implements _$LocationSearch {
 LocationSearch._(); 
  factory LocationSearch ({
 List<Id> searchId,
@@ -91,7 +91,7 @@ List<SearchToken> type,
 }
 
 @freezed
-abstract class OrganizationSearch with SearchParameters implements _$OrganizationSearch {
+abstract class OrganizationSearch with R4SearchParameters implements _$OrganizationSearch {
 OrganizationSearch._(); 
  factory OrganizationSearch ({
 List<Id> searchId,
@@ -121,7 +121,7 @@ List<SearchToken> type,
 }
 
 @freezed
-abstract class OrganizationAffiliationSearch with SearchParameters implements _$OrganizationAffiliationSearch {
+abstract class OrganizationAffiliationSearch with R4SearchParameters implements _$OrganizationAffiliationSearch {
 OrganizationAffiliationSearch._(); 
  factory OrganizationAffiliationSearch ({
 List<Id> searchId,

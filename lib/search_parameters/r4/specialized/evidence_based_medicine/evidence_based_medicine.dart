@@ -7,7 +7,7 @@ import '../../../search_parameters.dart';
 part 'evidence_based_medicine.freezed.dart';
 
 @freezed
-abstract class EffectEvidenceSynthesisSearch with SearchParameters implements _$EffectEvidenceSynthesisSearch {
+abstract class EffectEvidenceSynthesisSearch with R4SearchParameters implements _$EffectEvidenceSynthesisSearch {
 EffectEvidenceSynthesisSearch._(); 
  factory EffectEvidenceSynthesisSearch ({
 List<Id> searchId,
@@ -40,7 +40,7 @@ List<String> context_type_value,
 }
 
 @freezed
-abstract class EvidenceSearch with SearchParameters implements _$EvidenceSearch {
+abstract class EvidenceSearch with R4SearchParameters implements _$EvidenceSearch {
 EvidenceSearch._(); 
  factory EvidenceSearch ({
 List<Id> searchId,
@@ -79,7 +79,7 @@ List<String> context_type_value,
 }
 
 @freezed
-abstract class EvidenceVariableSearch with SearchParameters implements _$EvidenceVariableSearch {
+abstract class EvidenceVariableSearch with R4SearchParameters implements _$EvidenceVariableSearch {
 EvidenceVariableSearch._(); 
  factory EvidenceVariableSearch ({
 List<Id> searchId,
@@ -118,7 +118,7 @@ List<String> context_type_value,
 }
 
 @freezed
-abstract class ResearchDefinitionSearch with SearchParameters implements _$ResearchDefinitionSearch {
+abstract class ResearchDefinitionSearch with R4SearchParameters implements _$ResearchDefinitionSearch {
 ResearchDefinitionSearch._(); 
  factory ResearchDefinitionSearch ({
 List<Id> searchId,
@@ -157,7 +157,7 @@ List<String> context_type_value,
 }
 
 @freezed
-abstract class ResearchElementDefinitionSearch with SearchParameters implements _$ResearchElementDefinitionSearch {
+abstract class ResearchElementDefinitionSearch with R4SearchParameters implements _$ResearchElementDefinitionSearch {
 ResearchElementDefinitionSearch._(); 
  factory ResearchElementDefinitionSearch ({
 List<Id> searchId,
@@ -196,7 +196,7 @@ List<String> context_type_value,
 }
 
 @freezed
-abstract class RiskEvidenceSynthesisSearch with SearchParameters implements _$RiskEvidenceSynthesisSearch {
+abstract class RiskEvidenceSynthesisSearch with R4SearchParameters implements _$RiskEvidenceSynthesisSearch {
 RiskEvidenceSynthesisSearch._(); 
  factory RiskEvidenceSynthesisSearch ({
 List<Id> searchId,

@@ -529,11 +529,6 @@ class _$_CodeSystemSearch extends _CodeSystemSearch {
   final List<SearchUri> system;
 
   @override
-  String toString() {
-    return 'CodeSystemSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, context: $context, context_quantity: $context_quantity, context_type: $context_type, date: $date, description: $description, jurisdiction: $jurisdiction, name: $name, publisher: $publisher, status: $status, title: $title, url: $url, version: $version, context_type_quantity: $context_type_quantity, context_type_value: $context_type_value, code: $code, content_mode: $content_mode, identifier: $identifier, language: $language, supplements: $supplements, system: $system)';
-  }
-
-  @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _CodeSystemSearch &&
@@ -1359,11 +1354,6 @@ class _$_ConceptMapSearch extends _ConceptMapSearch {
   final List<String> target_uri;
 
   @override
-  String toString() {
-    return 'ConceptMapSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, context: $context, context_quantity: $context_quantity, context_type: $context_type, date: $date, description: $description, jurisdiction: $jurisdiction, name: $name, publisher: $publisher, status: $status, title: $title, url: $url, version: $version, context_type_quantity: $context_type_quantity, context_type_value: $context_type_value, identifier: $identifier, dependson: $dependson, other: $other, product: $product, source: $source, source_code: $source_code, source_system: $source_system, source_uri: $source_uri, target: $target, target_code: $target_code, target_system: $target_system, target_uri: $target_uri)';
-  }
-
-  @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _ConceptMapSearch &&
@@ -2111,11 +2101,6 @@ class _$_NamingSystemSearch extends _NamingSystemSearch {
   final List<SearchString> value;
 
   @override
-  String toString() {
-    return 'NamingSystemSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, context: $context, context_quantity: $context_quantity, context_type: $context_type, date: $date, description: $description, jurisdiction: $jurisdiction, name: $name, publisher: $publisher, status: $status, context_type_quantity: $context_type_quantity, context_type_value: $context_type_value, contact: $contact, id_type: $id_type, kind: $kind, period: $period, responsible: $responsible, telecom: $telecom, type: $type, value: $value)';
-  }
-
-  @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _NamingSystemSearch &&
@@ -2763,11 +2748,6 @@ class _$_TerminologyCapabilitiesSearch extends _TerminologyCapabilitiesSearch {
   final List<String> context_type_quantity;
   @override
   final List<String> context_type_value;
-
-  @override
-  String toString() {
-    return 'TerminologyCapabilitiesSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, context: $context, context_quantity: $context_quantity, context_type: $context_type, date: $date, description: $description, jurisdiction: $jurisdiction, name: $name, publisher: $publisher, status: $status, title: $title, url: $url, version: $version, context_type_quantity: $context_type_quantity, context_type_value: $context_type_value)';
-  }
 
   @override
   bool operator ==(dynamic other) {
@@ -3450,11 +3430,6 @@ class _$_ValueSetSearch extends _ValueSetSearch {
   final List<SearchUri> expansion;
   @override
   final List<SearchUri> reference;
-
-  @override
-  String toString() {
-    return 'ValueSetSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, context: $context, context_quantity: $context_quantity, context_type: $context_type, date: $date, description: $description, jurisdiction: $jurisdiction, name: $name, publisher: $publisher, status: $status, title: $title, url: $url, version: $version, context_type_quantity: $context_type_quantity, context_type_value: $context_type_value, identifier: $identifier, code: $code, expansion: $expansion, reference: $reference)';
-  }
 
   @override
   bool operator ==(dynamic other) {

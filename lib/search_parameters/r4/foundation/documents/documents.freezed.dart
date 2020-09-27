@@ -485,11 +485,6 @@ class _$_CompositionSearch extends _CompositionSearch {
   final List<SearchString> title;
 
   @override
-  String toString() {
-    return 'CompositionSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, date: $date, identifier: $identifier, patient: $patient, type: $type, attester: $attester, author: $author, category: $category, confidentiality: $confidentiality, context: $context, encounter: $encounter, entry: $entry, period: $period, related_id: $related_id, related_ref: $related_ref, section: $section, status: $status, subject: $subject, title: $title)';
-  }
-
-  @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _CompositionSearch &&
@@ -1103,11 +1098,6 @@ class _$_DocumentManifestSearch extends _DocumentManifestSearch {
   final List<SearchToken> status;
   @override
   final List<String> subject;
-
-  @override
-  String toString() {
-    return 'DocumentManifestSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, identifier: $identifier, patient: $patient, type: $type, author: $author, created: $created, description: $description, item: $item, recipient: $recipient, related_id: $related_id, related_ref: $related_ref, source: $source, status: $status, subject: $subject)';
-  }
 
   @override
   bool operator ==(dynamic other) {
@@ -1863,11 +1853,6 @@ class _$_DocumentReferenceSearch extends _DocumentReferenceSearch {
   final List<String> subject;
   @override
   final List<String> relationship;
-
-  @override
-  String toString() {
-    return 'DocumentReferenceSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, identifier: $identifier, patient: $patient, type: $type, encounter: $encounter, authenticator: $authenticator, author: $author, category: $category, contenttype: $contenttype, custodian: $custodian, date: $date, description: $description, event: $event, facility: $facility, format: $format, language: $language, location: $location, period: $period, related: $related, relatesto: $relatesto, relation: $relation, security_label: $security_label, setting: $setting, status: $status, subject: $subject, relationship: $relationship)';
-  }
 
   @override
   bool operator ==(dynamic other) {

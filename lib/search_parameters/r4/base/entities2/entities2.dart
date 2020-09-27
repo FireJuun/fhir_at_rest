@@ -7,7 +7,7 @@ import '../../../search_parameters.dart';
 part 'entities2.freezed.dart';
 
 @freezed
-abstract class DeviceSearch with SearchParameters implements _$DeviceSearch {
+abstract class DeviceSearch with R4SearchParameters implements _$DeviceSearch {
 DeviceSearch._(); 
  factory DeviceSearch ({
 List<Id> searchId,
@@ -36,7 +36,7 @@ List<SearchUri> url,
 }
 
 @freezed
-abstract class DeviceMetricSearch with SearchParameters implements _$DeviceMetricSearch {
+abstract class DeviceMetricSearch with R4SearchParameters implements _$DeviceMetricSearch {
 DeviceMetricSearch._(); 
  factory DeviceMetricSearch ({
 List<Id> searchId,
@@ -58,7 +58,7 @@ List<SearchToken> type,
 }
 
 @freezed
-abstract class SubstanceSearch with SearchParameters implements _$SubstanceSearch {
+abstract class SubstanceSearch with R4SearchParameters implements _$SubstanceSearch {
 SubstanceSearch._(); 
  factory SubstanceSearch ({
 List<Id> searchId,

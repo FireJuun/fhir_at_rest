@@ -379,11 +379,6 @@ class _$_GroupSearch extends _GroupSearch {
   final List<String> characteristic_value;
 
   @override
-  String toString() {
-    return 'GroupSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, actual: $actual, characteristic: $characteristic, code: $code, exclude: $exclude, identifier: $identifier, managing_entity: $managing_entity, member: $member, type: $type, value: $value, characteristic_value: $characteristic_value)';
-  }
-
-  @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _GroupSearch &&
@@ -1101,11 +1096,6 @@ class _$_PatientSearch extends _PatientSearch {
   final List<SearchString> phonetic;
   @override
   final List<SearchToken> telecom;
-
-  @override
-  String toString() {
-    return 'PatientSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, active: $active, address: $address, address_city: $address_city, address_country: $address_country, address_postalcode: $address_postalcode, address_state: $address_state, address_use: $address_use, birthdate: $birthdate, death_date: $death_date, deceased: $deceased, email: $email, family: $family, gender: $gender, general_practitioner: $general_practitioner, given: $given, identifier: $identifier, language: $language, link: $link, name: $name, organization: $organization, phone: $phone, phonetic: $phonetic, telecom: $telecom)';
-  }
 
   @override
   bool operator ==(dynamic other) {
@@ -1846,11 +1836,6 @@ class _$_PersonSearch extends _PersonSearch {
   final List<String> relatedperson;
 
   @override
-  String toString() {
-    return 'PersonSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, address: $address, address_city: $address_city, address_country: $address_country, address_postalcode: $address_postalcode, address_state: $address_state, address_use: $address_use, birthdate: $birthdate, email: $email, gender: $gender, phone: $phone, phonetic: $phonetic, telecom: $telecom, identifier: $identifier, link: $link, name: $name, organization: $organization, patient: $patient, practitioner: $practitioner, relatedperson: $relatedperson)';
-  }
-
-  @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _PersonSearch &&
@@ -2535,11 +2520,6 @@ class _$_PractitionerSearch extends _PractitionerSearch {
   final List<SearchString> name;
 
   @override
-  String toString() {
-    return 'PractitionerSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, address: $address, address_city: $address_city, address_country: $address_country, address_postalcode: $address_postalcode, address_state: $address_state, address_use: $address_use, email: $email, family: $family, gender: $gender, given: $given, phone: $phone, phonetic: $phonetic, telecom: $telecom, active: $active, communication: $communication, identifier: $identifier, name: $name)';
-  }
-
-  @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _PractitionerSearch &&
@@ -3218,11 +3198,6 @@ class _$_RelatedPersonSearch extends _RelatedPersonSearch {
   final List<SearchToken> relationship;
 
   @override
-  String toString() {
-    return 'RelatedPersonSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, address: $address, address_city: $address_city, address_country: $address_country, address_postalcode: $address_postalcode, address_state: $address_state, address_use: $address_use, birthdate: $birthdate, email: $email, gender: $gender, phone: $phone, phonetic: $phonetic, telecom: $telecom, active: $active, identifier: $identifier, name: $name, patient: $patient, relationship: $relationship)';
-  }
-
-  @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _RelatedPersonSearch &&
@@ -3834,11 +3809,6 @@ class _$_PractitionerRoleSearch extends _PractitionerRoleSearch {
   final List<String> service;
   @override
   final List<SearchToken> specialty;
-
-  @override
-  String toString() {
-    return 'PractitionerRoleSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, email: $email, phone: $phone, telecom: $telecom, active: $active, date: $date, endpoint: $endpoint, identifier: $identifier, location: $location, organization: $organization, practitioner: $practitioner, role: $role, service: $service, specialty: $specialty)';
-  }
 
   @override
   bool operator ==(dynamic other) {

@@ -394,11 +394,6 @@ class _$_ListSearch extends _ListSearch {
   final List<SearchString> title;
 
   @override
-  String toString() {
-    return 'ListSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, code: $code, date: $date, identifier: $identifier, patient: $patient, encounter: $encounter, empty_reason: $empty_reason, item: $item, notes: $notes, source: $source, status: $status, subject: $subject, title: $title)';
-  }
-
-  @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _ListSearch &&
@@ -1128,11 +1123,6 @@ class _$_EncounterSearch extends _EncounterSearch {
   final List<String> subject;
 
   @override
-  String toString() {
-    return 'EncounterSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, date: $date, identifier: $identifier, patient: $patient, type: $type, account: $account, appointment: $appointment, based_on: $based_on, class_: $class_, diagnosis: $diagnosis, episode_of_care: $episode_of_care, length: $length, location: $location, location_period: $location_period, part_of: $part_of, participant: $participant, participant_type: $participant_type, practitioner: $practitioner, reason_code: $reason_code, reason_reference: $reason_reference, service_provider: $service_provider, special_arrangement: $special_arrangement, status: $status, subject: $subject)';
-  }
-
-  @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _EncounterSearch &&
@@ -1723,11 +1713,6 @@ class _$_EpisodeOfCareSearch extends _EpisodeOfCareSearch {
   final List<SearchToken> status;
 
   @override
-  String toString() {
-    return 'EpisodeOfCareSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, date: $date, identifier: $identifier, patient: $patient, type: $type, care_manager: $care_manager, condition: $condition, incoming_referral: $incoming_referral, organization: $organization, status: $status)';
-  }
-
-  @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _EpisodeOfCareSearch &&
@@ -2188,11 +2173,6 @@ class _$_FlagSearch extends _FlagSearch {
   final List<SearchToken> identifier;
   @override
   final List<String> subject;
-
-  @override
-  String toString() {
-    return 'FlagSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, date: $date, patient: $patient, encounter: $encounter, author: $author, identifier: $identifier, subject: $subject)';
-  }
 
   @override
   bool operator ==(dynamic other) {
@@ -2908,11 +2888,6 @@ class _$_LibrarySearch extends _LibrarySearch {
   final List<String> context_type_quantity;
   @override
   final List<String> context_type_value;
-
-  @override
-  String toString() {
-    return 'LibrarySearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, composed_of: $composed_of, content_type: $content_type, context: $context, context_quantity: $context_quantity, context_type: $context_type, date: $date, depends_on: $depends_on, derived_from: $derived_from, description: $description, effective: $effective, identifier: $identifier, jurisdiction: $jurisdiction, name: $name, predecessor: $predecessor, publisher: $publisher, status: $status, successor: $successor, title: $title, topic: $topic, type: $type, url: $url, version: $version, context_type_quantity: $context_type_quantity, context_type_value: $context_type_value)';
-  }
 
   @override
   bool operator ==(dynamic other) {

@@ -7,7 +7,7 @@ import '../../../search_parameters.dart';
 part 'quality_reporting_and_testing.freezed.dart';
 
 @freezed
-abstract class MeasureSearch with SearchParameters implements _$MeasureSearch {
+abstract class MeasureSearch with R4SearchParameters implements _$MeasureSearch {
 MeasureSearch._(); 
  factory MeasureSearch ({
 List<Id> searchId,
@@ -46,7 +46,7 @@ List<String> context_type_value,
 }
 
 @freezed
-abstract class MeasureReportSearch with SearchParameters implements _$MeasureReportSearch {
+abstract class MeasureReportSearch with R4SearchParameters implements _$MeasureReportSearch {
 MeasureReportSearch._(); 
  factory MeasureReportSearch ({
 List<Id> searchId,
@@ -72,7 +72,7 @@ List<String> subject,
 }
 
 @freezed
-abstract class TestReportSearch with SearchParameters implements _$TestReportSearch {
+abstract class TestReportSearch with R4SearchParameters implements _$TestReportSearch {
 TestReportSearch._(); 
  factory TestReportSearch ({
 List<Id> searchId,
@@ -95,7 +95,7 @@ List<String> testscript,
 }
 
 @freezed
-abstract class TestScriptSearch with SearchParameters implements _$TestScriptSearch {
+abstract class TestScriptSearch with R4SearchParameters implements _$TestScriptSearch {
 TestScriptSearch._(); 
  factory TestScriptSearch ({
 List<Id> searchId,

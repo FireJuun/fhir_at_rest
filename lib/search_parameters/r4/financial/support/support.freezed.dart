@@ -403,11 +403,6 @@ class _$_CoverageSearch extends _CoverageSearch {
   final List<SearchToken> type;
 
   @override
-  String toString() {
-    return 'CoverageSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, beneficiary: $beneficiary, class_type: $class_type, class_value: $class_value, dependent: $dependent, identifier: $identifier, patient: $patient, payor: $payor, policy_holder: $policy_holder, status: $status, subscriber: $subscriber, type: $type)';
-  }
-
-  @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _CoverageSearch &&
@@ -907,11 +902,6 @@ class _$_CoverageEligibilityRequestSearch
   final List<String> provider;
   @override
   final List<SearchToken> status;
-
-  @override
-  String toString() {
-    return 'CoverageEligibilityRequestSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, created: $created, enterer: $enterer, facility: $facility, identifier: $identifier, patient: $patient, provider: $provider, status: $status)';
-  }
 
   @override
   bool operator ==(dynamic other) {
@@ -1420,11 +1410,6 @@ class _$_CoverageEligibilityResponseSearch
   final List<SearchToken> status;
 
   @override
-  String toString() {
-    return 'CoverageEligibilityResponseSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, created: $created, disposition: $disposition, identifier: $identifier, insurer: $insurer, outcome: $outcome, patient: $patient, request: $request, requestor: $requestor, status: $status)';
-  }
-
-  @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _CoverageEligibilityResponseSearch &&
@@ -1870,11 +1855,6 @@ class _$_EnrollmentRequestSearch extends _EnrollmentRequestSearch {
   final List<String> subject;
 
   @override
-  String toString() {
-    return 'EnrollmentRequestSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, identifier: $identifier, patient: $patient, status: $status, subject: $subject)';
-  }
-
-  @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _EnrollmentRequestSearch &&
@@ -2267,11 +2247,6 @@ class _$_EnrollmentResponseSearch extends _EnrollmentResponseSearch {
   final List<String> request;
   @override
   final List<SearchToken> status;
-
-  @override
-  String toString() {
-    return 'EnrollmentResponseSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, identifier: $identifier, request: $request, status: $status)';
-  }
 
   @override
   bool operator ==(dynamic other) {

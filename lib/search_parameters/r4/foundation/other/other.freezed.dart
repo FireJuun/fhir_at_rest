@@ -319,11 +319,6 @@ class _$_BasicSearch extends _BasicSearch {
   final List<String> subject;
 
   @override
-  String toString() {
-    return 'BasicSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, author: $author, code: $code, created: $created, identifier: $identifier, patient: $patient, subject: $subject)';
-  }
-
-  @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _BasicSearch &&
@@ -759,11 +754,6 @@ class _$_BundleSearch extends _BundleSearch {
   final List<SearchToken> type;
 
   @override
-  String toString() {
-    return 'BundleSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, composition: $composition, identifier: $identifier, message: $message, timestamp: $timestamp, type: $type)';
-  }
-
-  @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _BundleSearch &&
@@ -1158,11 +1148,6 @@ class _$_LinkageSearch extends _LinkageSearch {
   final List<String> item;
   @override
   final List<String> source;
-
-  @override
-  String toString() {
-    return 'LinkageSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, author: $author, item: $item, source: $source)';
-  }
 
   @override
   bool operator ==(dynamic other) {
@@ -1699,11 +1684,6 @@ class _$_MessageHeaderSearch extends _MessageHeaderSearch {
   final List<String> target;
 
   @override
-  String toString() {
-    return 'MessageHeaderSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, author: $author, code: $code, destination: $destination, destination_uri: $destination_uri, enterer: $enterer, event: $event, focus: $focus, receiver: $receiver, response_id: $response_id, responsible: $responsible, sender: $sender, source: $source, source_uri: $source_uri, target: $target)';
-  }
-
-  @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _MessageHeaderSearch &&
@@ -2200,11 +2180,6 @@ class _$_SubscriptionSearch extends _SubscriptionSearch {
   final List<SearchToken> type;
   @override
   final List<SearchUri> url;
-
-  @override
-  String toString() {
-    return 'SubscriptionSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, contact: $contact, criteria: $criteria, payload: $payload, status: $status, type: $type, url: $url)';
-  }
 
   @override
   bool operator ==(dynamic other) {

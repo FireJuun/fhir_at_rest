@@ -409,11 +409,6 @@ class _$_AdverseEventSearch extends _AdverseEventSearch {
   final List<String> substance;
 
   @override
-  String toString() {
-    return 'AdverseEventSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, actuality: $actuality, category: $category, date: $date, event: $event, location: $location, recorder: $recorder, resultingcondition: $resultingcondition, seriousness: $seriousness, severity: $severity, study: $study, subject: $subject, substance: $substance)';
-  }
-
-  @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _AdverseEventSearch &&
@@ -1044,11 +1039,6 @@ class _$_AllergyIntoleranceSearch extends _AllergyIntoleranceSearch {
   final List<SearchToken> type;
   @override
   final List<SearchToken> verification_status;
-
-  @override
-  String toString() {
-    return 'AllergyIntoleranceSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, asserter: $asserter, category: $category, clinical_status: $clinical_status, code: $code, criticality: $criticality, date: $date, identifier: $identifier, last_date: $last_date, manifestation: $manifestation, onset: $onset, patient: $patient, recorder: $recorder, route: $route, severity: $severity, type: $type, verification_status: $verification_status)';
-  }
 
   @override
   bool operator ==(dynamic other) {
@@ -1789,11 +1779,6 @@ class _$_ConditionSearch extends _ConditionSearch {
   final List<SearchToken> verification_status;
 
   @override
-  String toString() {
-    return 'ConditionSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, code: $code, identifier: $identifier, patient: $patient, abatement_age: $abatement_age, abatement_date: $abatement_date, abatement_string: $abatement_string, asserter: $asserter, body_site: $body_site, category: $category, clinical_status: $clinical_status, encounter: $encounter, evidence: $evidence, evidence_detail: $evidence_detail, onset_age: $onset_age, onset_date: $onset_date, onset_info: $onset_info, recorded_date: $recorded_date, severity: $severity, stage: $stage, subject: $subject, verification_status: $verification_status)';
-  }
-
-  @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _ConditionSearch &&
@@ -2371,11 +2356,6 @@ class _$_FamilyMemberHistorySearch extends _FamilyMemberHistorySearch {
   final List<SearchToken> sex;
   @override
   final List<SearchToken> status;
-
-  @override
-  String toString() {
-    return 'FamilyMemberHistorySearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, code: $code, date: $date, identifier: $identifier, patient: $patient, instantiates_canonical: $instantiates_canonical, instantiates_uri: $instantiates_uri, relationship: $relationship, sex: $sex, status: $status)';
-  }
 
   @override
   bool operator ==(dynamic other) {
@@ -2985,11 +2965,6 @@ class _$_ProcedureSearch extends _ProcedureSearch {
   final List<SearchToken> status;
   @override
   final List<String> subject;
-
-  @override
-  String toString() {
-    return 'ProcedureSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, code: $code, date: $date, identifier: $identifier, patient: $patient, encounter: $encounter, based_on: $based_on, category: $category, instantiates_canonical: $instantiates_canonical, instantiates_uri: $instantiates_uri, location: $location, part_of: $part_of, performer: $performer, reason_code: $reason_code, reason_reference: $reason_reference, status: $status, subject: $subject)';
-  }
 
   @override
   bool operator ==(dynamic other) {
@@ -3604,11 +3579,6 @@ class _$_ClinicalImpressionSearch extends _ClinicalImpressionSearch {
   final List<String> supporting_info;
 
   @override
-  String toString() {
-    return 'ClinicalImpressionSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, date: $date, patient: $patient, assessor: $assessor, encounter: $encounter, finding_code: $finding_code, finding_ref: $finding_ref, identifier: $identifier, investigation: $investigation, previous: $previous, problem: $problem, status: $status, subject: $subject, supporting_info: $supporting_info)';
-  }
-
-  @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _ClinicalImpressionSearch &&
@@ -4106,11 +4076,6 @@ class _$_DetectedIssueSearch extends _DetectedIssueSearch {
   final List<SearchDate> identified;
   @override
   final List<String> implicated;
-
-  @override
-  String toString() {
-    return 'DetectedIssueSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, identifier: $identifier, patient: $patient, author: $author, code: $code, identified: $identified, implicated: $implicated)';
-  }
 
   @override
   bool operator ==(dynamic other) {

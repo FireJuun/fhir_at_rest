@@ -7,7 +7,7 @@ import '../../../search_parameters.dart';
 part 'individuals.freezed.dart';
 
 @freezed
-abstract class GroupSearch with SearchParameters implements _$GroupSearch {
+abstract class GroupSearch with R4SearchParameters implements _$GroupSearch {
 GroupSearch._(); 
  factory GroupSearch ({
 List<Id> searchId,
@@ -34,7 +34,7 @@ List<String> characteristic_value,
 }
 
 @freezed
-abstract class PatientSearch with SearchParameters implements _$PatientSearch {
+abstract class PatientSearch with R4SearchParameters implements _$PatientSearch {
 PatientSearch._(); 
  factory PatientSearch ({
 List<Id> searchId,
@@ -74,7 +74,7 @@ List<SearchToken> telecom,
 }
 
 @freezed
-abstract class PersonSearch with SearchParameters implements _$PersonSearch {
+abstract class PersonSearch with R4SearchParameters implements _$PersonSearch {
 PersonSearch._(); 
  factory PersonSearch ({
 List<Id> searchId,
@@ -110,7 +110,7 @@ List<String> relatedperson,
 }
 
 @freezed
-abstract class PractitionerSearch with SearchParameters implements _$PractitionerSearch {
+abstract class PractitionerSearch with R4SearchParameters implements _$PractitionerSearch {
 PractitionerSearch._(); 
  factory PractitionerSearch ({
 List<Id> searchId,
@@ -144,7 +144,7 @@ List<SearchString> name,
 }
 
 @freezed
-abstract class RelatedPersonSearch with SearchParameters implements _$RelatedPersonSearch {
+abstract class RelatedPersonSearch with R4SearchParameters implements _$RelatedPersonSearch {
 RelatedPersonSearch._(); 
  factory RelatedPersonSearch ({
 List<Id> searchId,
@@ -178,7 +178,7 @@ List<SearchToken> relationship,
 }
 
 @freezed
-abstract class PractitionerRoleSearch with SearchParameters implements _$PractitionerRoleSearch {
+abstract class PractitionerRoleSearch with R4SearchParameters implements _$PractitionerRoleSearch {
 PractitionerRoleSearch._(); 
  factory PractitionerRoleSearch ({
 List<Id> searchId,

@@ -7,7 +7,7 @@ import '../../../search_parameters.dart';
 part 'care_provision.freezed.dart';
 
 @freezed
-abstract class ServiceRequestSearch with SearchParameters implements _$ServiceRequestSearch {
+abstract class ServiceRequestSearch with R4SearchParameters implements _$ServiceRequestSearch {
 ServiceRequestSearch._(); 
  factory ServiceRequestSearch ({
 List<Id> searchId,
@@ -45,7 +45,7 @@ List<String> subject,
 }
 
 @freezed
-abstract class CarePlanSearch with SearchParameters implements _$CarePlanSearch {
+abstract class CarePlanSearch with R4SearchParameters implements _$CarePlanSearch {
 CarePlanSearch._(); 
  factory CarePlanSearch ({
 List<Id> searchId,
@@ -82,7 +82,7 @@ List<String> subject,
 }
 
 @freezed
-abstract class CareTeamSearch with SearchParameters implements _$CareTeamSearch {
+abstract class CareTeamSearch with R4SearchParameters implements _$CareTeamSearch {
 CareTeamSearch._(); 
  factory CareTeamSearch ({
 List<Id> searchId,
@@ -107,7 +107,7 @@ List<String> subject,
 }
 
 @freezed
-abstract class RiskAssessmentSearch with SearchParameters implements _$RiskAssessmentSearch {
+abstract class RiskAssessmentSearch with R4SearchParameters implements _$RiskAssessmentSearch {
 RiskAssessmentSearch._(); 
  factory RiskAssessmentSearch ({
 List<Id> searchId,
@@ -134,7 +134,7 @@ List<String> subject,
 }
 
 @freezed
-abstract class GoalSearch with SearchParameters implements _$GoalSearch {
+abstract class GoalSearch with R4SearchParameters implements _$GoalSearch {
 GoalSearch._(); 
  factory GoalSearch ({
 List<Id> searchId,
@@ -159,7 +159,7 @@ List<SearchDate> target_date,
 }
 
 @freezed
-abstract class NutritionOrderSearch with SearchParameters implements _$NutritionOrderSearch {
+abstract class NutritionOrderSearch with R4SearchParameters implements _$NutritionOrderSearch {
 NutritionOrderSearch._(); 
  factory NutritionOrderSearch ({
 List<Id> searchId,
@@ -188,7 +188,7 @@ List<SearchToken> supplement,
 }
 
 @freezed
-abstract class VisionPrescriptionSearch with SearchParameters implements _$VisionPrescriptionSearch {
+abstract class VisionPrescriptionSearch with R4SearchParameters implements _$VisionPrescriptionSearch {
 VisionPrescriptionSearch._(); 
  factory VisionPrescriptionSearch ({
 List<Id> searchId,
@@ -211,7 +211,7 @@ List<SearchToken> status,
 }
 
 @freezed
-abstract class RequestGroupSearch with SearchParameters implements _$RequestGroupSearch {
+abstract class RequestGroupSearch with R4SearchParameters implements _$RequestGroupSearch {
 RequestGroupSearch._(); 
  factory RequestGroupSearch ({
 List<Id> searchId,

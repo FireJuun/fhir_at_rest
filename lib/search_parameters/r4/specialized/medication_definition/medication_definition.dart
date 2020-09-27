@@ -7,7 +7,7 @@ import '../../../search_parameters.dart';
 part 'medication_definition.freezed.dart';
 
 @freezed
-abstract class MedicinalProductSearch with SearchParameters implements _$MedicinalProductSearch {
+abstract class MedicinalProductSearch with R4SearchParameters implements _$MedicinalProductSearch {
 MedicinalProductSearch._(); 
  factory MedicinalProductSearch ({
 List<Id> searchId,
@@ -27,7 +27,7 @@ List<SearchToken> name_language,
 }
 
 @freezed
-abstract class MedicinalProductAuthorizationSearch with SearchParameters implements _$MedicinalProductAuthorizationSearch {
+abstract class MedicinalProductAuthorizationSearch with R4SearchParameters implements _$MedicinalProductAuthorizationSearch {
 MedicinalProductAuthorizationSearch._(); 
  factory MedicinalProductAuthorizationSearch ({
 List<Id> searchId,
@@ -49,7 +49,7 @@ List<String> subject,
 }
 
 @freezed
-abstract class MedicinalProductContraindicationSearch with SearchParameters implements _$MedicinalProductContraindicationSearch {
+abstract class MedicinalProductContraindicationSearch with R4SearchParameters implements _$MedicinalProductContraindicationSearch {
 MedicinalProductContraindicationSearch._(); 
  factory MedicinalProductContraindicationSearch ({
 List<Id> searchId,
@@ -67,7 +67,7 @@ List<String> subject,
 }
 
 @freezed
-abstract class MedicinalProductIndicationSearch with SearchParameters implements _$MedicinalProductIndicationSearch {
+abstract class MedicinalProductIndicationSearch with R4SearchParameters implements _$MedicinalProductIndicationSearch {
 MedicinalProductIndicationSearch._(); 
  factory MedicinalProductIndicationSearch ({
 List<Id> searchId,
@@ -85,7 +85,7 @@ List<String> subject,
 }
 
 @freezed
-abstract class MedicinalProductInteractionSearch with SearchParameters implements _$MedicinalProductInteractionSearch {
+abstract class MedicinalProductInteractionSearch with R4SearchParameters implements _$MedicinalProductInteractionSearch {
 MedicinalProductInteractionSearch._(); 
  factory MedicinalProductInteractionSearch ({
 List<Id> searchId,
@@ -103,7 +103,7 @@ List<String> subject,
 }
 
 @freezed
-abstract class MedicinalProductPackagedSearch with SearchParameters implements _$MedicinalProductPackagedSearch {
+abstract class MedicinalProductPackagedSearch with R4SearchParameters implements _$MedicinalProductPackagedSearch {
 MedicinalProductPackagedSearch._(); 
  factory MedicinalProductPackagedSearch ({
 List<Id> searchId,
@@ -122,7 +122,7 @@ List<String> subject,
 }
 
 @freezed
-abstract class MedicinalProductPharmaceuticalSearch with SearchParameters implements _$MedicinalProductPharmaceuticalSearch {
+abstract class MedicinalProductPharmaceuticalSearch with R4SearchParameters implements _$MedicinalProductPharmaceuticalSearch {
 MedicinalProductPharmaceuticalSearch._(); 
  factory MedicinalProductPharmaceuticalSearch ({
 List<Id> searchId,
@@ -142,7 +142,7 @@ List<SearchToken> target_species,
 }
 
 @freezed
-abstract class MedicinalProductUndesirableEffectSearch with SearchParameters implements _$MedicinalProductUndesirableEffectSearch {
+abstract class MedicinalProductUndesirableEffectSearch with R4SearchParameters implements _$MedicinalProductUndesirableEffectSearch {
 MedicinalProductUndesirableEffectSearch._(); 
  factory MedicinalProductUndesirableEffectSearch ({
 List<Id> searchId,
@@ -160,7 +160,7 @@ List<String> subject,
 }
 
 @freezed
-abstract class SubstanceSpecificationSearch with SearchParameters implements _$SubstanceSpecificationSearch {
+abstract class SubstanceSpecificationSearch with R4SearchParameters implements _$SubstanceSpecificationSearch {
 SubstanceSpecificationSearch._(); 
  factory SubstanceSpecificationSearch ({
 List<Id> searchId,

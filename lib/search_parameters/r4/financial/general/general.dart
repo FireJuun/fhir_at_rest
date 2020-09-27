@@ -7,7 +7,7 @@ import '../../../search_parameters.dart';
 part 'general.freezed.dart';
 
 @freezed
-abstract class AccountSearch with SearchParameters implements _$AccountSearch {
+abstract class AccountSearch with R4SearchParameters implements _$AccountSearch {
 AccountSearch._(); 
  factory AccountSearch ({
 List<Id> searchId,
@@ -32,7 +32,7 @@ List<SearchToken> type,
 }
 
 @freezed
-abstract class ChargeItemSearch with SearchParameters implements _$ChargeItemSearch {
+abstract class ChargeItemSearch with R4SearchParameters implements _$ChargeItemSearch {
 ChargeItemSearch._(); 
  factory ChargeItemSearch ({
 List<Id> searchId,
@@ -66,7 +66,7 @@ List<String> subject,
 }
 
 @freezed
-abstract class ChargeItemDefinitionSearch with SearchParameters implements _$ChargeItemDefinitionSearch {
+abstract class ChargeItemDefinitionSearch with R4SearchParameters implements _$ChargeItemDefinitionSearch {
 ChargeItemDefinitionSearch._(); 
  factory ChargeItemDefinitionSearch ({
 List<Id> searchId,
@@ -98,7 +98,7 @@ List<String> context_type_value,
 }
 
 @freezed
-abstract class ContractSearch with SearchParameters implements _$ContractSearch {
+abstract class ContractSearch with R4SearchParameters implements _$ContractSearch {
 ContractSearch._(); 
  factory ContractSearch ({
 List<Id> searchId,
@@ -125,7 +125,7 @@ List<SearchUri> url,
 }
 
 @freezed
-abstract class ExplanationOfBenefitSearch with SearchParameters implements _$ExplanationOfBenefitSearch {
+abstract class ExplanationOfBenefitSearch with R4SearchParameters implements _$ExplanationOfBenefitSearch {
 ExplanationOfBenefitSearch._(); 
  factory ExplanationOfBenefitSearch ({
 List<Id> searchId,
@@ -159,7 +159,7 @@ List<String> subdetail_udi,
 }
 
 @freezed
-abstract class InsurancePlanSearch with SearchParameters implements _$InsurancePlanSearch {
+abstract class InsurancePlanSearch with R4SearchParameters implements _$InsurancePlanSearch {
 InsurancePlanSearch._(); 
  factory InsurancePlanSearch ({
 List<Id> searchId,

@@ -491,11 +491,6 @@ class _$_AppointmentSearch extends _AppointmentSearch {
   final List<String> supporting_info;
 
   @override
-  String toString() {
-    return 'AppointmentSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, actor: $actor, appointment_type: $appointment_type, based_on: $based_on, date: $date, identifier: $identifier, location: $location, part_status: $part_status, patient: $patient, practitioner: $practitioner, reason_code: $reason_code, reason_reference: $reason_reference, service_category: $service_category, service_type: $service_type, slot: $slot, specialty: $specialty, status: $status, supporting_info: $supporting_info)';
-  }
-
-  @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _AppointmentSearch &&
@@ -1033,11 +1028,6 @@ class _$_AppointmentResponseSearch extends _AppointmentResponseSearch {
   final List<String> practitioner;
 
   @override
-  String toString() {
-    return 'AppointmentResponseSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, actor: $actor, appointment: $appointment, identifier: $identifier, location: $location, part_status: $part_status, patient: $patient, practitioner: $practitioner)';
-  }
-
-  @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _AppointmentResponseSearch &&
@@ -1512,11 +1502,6 @@ class _$_ScheduleSearch extends _ScheduleSearch {
   final List<SearchToken> service_type;
   @override
   final List<SearchToken> specialty;
-
-  @override
-  String toString() {
-    return 'ScheduleSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, active: $active, actor: $actor, date: $date, identifier: $identifier, service_category: $service_category, service_type: $service_type, specialty: $specialty)';
-  }
 
   @override
   bool operator ==(dynamic other) {
@@ -2004,11 +1989,6 @@ class _$_SlotSearch extends _SlotSearch {
   final List<SearchDate> start;
   @override
   final List<SearchToken> status;
-
-  @override
-  String toString() {
-    return 'SlotSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, appointment_type: $appointment_type, identifier: $identifier, schedule: $schedule, service_category: $service_category, service_type: $service_type, specialty: $specialty, start: $start, status: $status)';
-  }
 
   @override
   bool operator ==(dynamic other) {
@@ -2646,11 +2626,6 @@ class _$_TaskSearch extends _TaskSearch {
   final List<String> subject;
 
   @override
-  String toString() {
-    return 'TaskSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, authored_on: $authored_on, based_on: $based_on, business_status: $business_status, code: $code, encounter: $encounter, focus: $focus, group_identifier: $group_identifier, identifier: $identifier, intent: $intent, modified: $modified, owner: $owner, part_of: $part_of, patient: $patient, performer: $performer, period: $period, priority: $priority, requester: $requester, status: $status, subject: $subject)';
-  }
-
-  @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _TaskSearch &&
@@ -3106,11 +3081,6 @@ class _$_VerificationResultSearch extends _VerificationResultSearch {
   final List<SearchToken> searchType;
   @override
   final List<String> target;
-
-  @override
-  String toString() {
-    return 'VerificationResultSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, target: $target)';
-  }
 
   @override
   bool operator ==(dynamic other) {

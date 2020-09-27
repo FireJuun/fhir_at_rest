@@ -7,7 +7,7 @@ import '../../../search_parameters.dart';
 part 'payment.freezed.dart';
 
 @freezed
-abstract class PaymentNoticeSearch with SearchParameters implements _$PaymentNoticeSearch {
+abstract class PaymentNoticeSearch with R4SearchParameters implements _$PaymentNoticeSearch {
 PaymentNoticeSearch._(); 
  factory PaymentNoticeSearch ({
 List<Id> searchId,
@@ -31,7 +31,7 @@ List<SearchToken> status,
 }
 
 @freezed
-abstract class PaymentReconciliationSearch with SearchParameters implements _$PaymentReconciliationSearch {
+abstract class PaymentReconciliationSearch with R4SearchParameters implements _$PaymentReconciliationSearch {
 PaymentReconciliationSearch._(); 
  factory PaymentReconciliationSearch ({
 List<Id> searchId,

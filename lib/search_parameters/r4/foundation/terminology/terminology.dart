@@ -7,7 +7,7 @@ import '../../../search_parameters.dart';
 part 'terminology.freezed.dart';
 
 @freezed
-abstract class CodeSystemSearch with SearchParameters implements _$CodeSystemSearch {
+abstract class CodeSystemSearch with R4SearchParameters implements _$CodeSystemSearch {
 CodeSystemSearch._(); 
  factory CodeSystemSearch ({
 List<Id> searchId,
@@ -44,7 +44,7 @@ List<SearchUri> system,
 }
 
 @freezed
-abstract class ConceptMapSearch with SearchParameters implements _$ConceptMapSearch {
+abstract class ConceptMapSearch with R4SearchParameters implements _$ConceptMapSearch {
 ConceptMapSearch._(); 
  factory ConceptMapSearch ({
 List<Id> searchId,
@@ -87,7 +87,7 @@ List<String> target_uri,
 }
 
 @freezed
-abstract class NamingSystemSearch with SearchParameters implements _$NamingSystemSearch {
+abstract class NamingSystemSearch with R4SearchParameters implements _$NamingSystemSearch {
 NamingSystemSearch._(); 
  factory NamingSystemSearch ({
 List<Id> searchId,
@@ -123,7 +123,7 @@ List<SearchString> value,
 }
 
 @freezed
-abstract class TerminologyCapabilitiesSearch with SearchParameters implements _$TerminologyCapabilitiesSearch {
+abstract class TerminologyCapabilitiesSearch with R4SearchParameters implements _$TerminologyCapabilitiesSearch {
 TerminologyCapabilitiesSearch._(); 
  factory TerminologyCapabilitiesSearch ({
 List<Id> searchId,
@@ -154,7 +154,7 @@ List<String> context_type_value,
 }
 
 @freezed
-abstract class ValueSetSearch with SearchParameters implements _$ValueSetSearch {
+abstract class ValueSetSearch with R4SearchParameters implements _$ValueSetSearch {
 ValueSetSearch._(); 
  factory ValueSetSearch ({
 List<Id> searchId,

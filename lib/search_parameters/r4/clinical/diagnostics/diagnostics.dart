@@ -7,7 +7,7 @@ import '../../../search_parameters.dart';
 part 'diagnostics.freezed.dart';
 
 @freezed
-abstract class DiagnosticReportSearch with SearchParameters implements _$DiagnosticReportSearch {
+abstract class DiagnosticReportSearch with R4SearchParameters implements _$DiagnosticReportSearch {
 DiagnosticReportSearch._(); 
  factory DiagnosticReportSearch ({
 List<Id> searchId,
@@ -40,7 +40,7 @@ List<String> subject,
 }
 
 @freezed
-abstract class ObservationSearch with SearchParameters implements _$ObservationSearch {
+abstract class ObservationSearch with R4SearchParameters implements _$ObservationSearch {
 ObservationSearch._(); 
  factory ObservationSearch ({
 List<Id> searchId,
@@ -95,7 +95,7 @@ List<String> component_code_value_quantity,
 }
 
 @freezed
-abstract class ImagingStudySearch with SearchParameters implements _$ImagingStudySearch {
+abstract class ImagingStudySearch with R4SearchParameters implements _$ImagingStudySearch {
 ImagingStudySearch._(); 
  factory ImagingStudySearch ({
 List<Id> searchId,
@@ -129,7 +129,7 @@ List<String> subject,
 }
 
 @freezed
-abstract class BodyStructureSearch with SearchParameters implements _$BodyStructureSearch {
+abstract class BodyStructureSearch with R4SearchParameters implements _$BodyStructureSearch {
 BodyStructureSearch._(); 
  factory BodyStructureSearch ({
 List<Id> searchId,
@@ -150,7 +150,7 @@ List<String> patient,
 }
 
 @freezed
-abstract class MediaSearch with SearchParameters implements _$MediaSearch {
+abstract class MediaSearch with R4SearchParameters implements _$MediaSearch {
 MediaSearch._(); 
  factory MediaSearch ({
 List<Id> searchId,
@@ -180,7 +180,7 @@ List<SearchToken> view,
 }
 
 @freezed
-abstract class MolecularSequenceSearch with SearchParameters implements _$MolecularSequenceSearch {
+abstract class MolecularSequenceSearch with R4SearchParameters implements _$MolecularSequenceSearch {
 MolecularSequenceSearch._(); 
  factory MolecularSequenceSearch ({
 List<Id> searchId,
@@ -210,7 +210,7 @@ List<String> referenceseqid_window_coordinate,
 }
 
 @freezed
-abstract class QuestionnaireResponseSearch with SearchParameters implements _$QuestionnaireResponseSearch {
+abstract class QuestionnaireResponseSearch with R4SearchParameters implements _$QuestionnaireResponseSearch {
 QuestionnaireResponseSearch._(); 
  factory QuestionnaireResponseSearch ({
 List<Id> searchId,
@@ -238,7 +238,7 @@ List<String> subject,
 }
 
 @freezed
-abstract class SpecimenSearch with SearchParameters implements _$SpecimenSearch {
+abstract class SpecimenSearch with R4SearchParameters implements _$SpecimenSearch {
 SpecimenSearch._(); 
  factory SpecimenSearch ({
 List<Id> searchId,

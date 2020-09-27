@@ -7,7 +7,7 @@ import '../../../search_parameters.dart';
 part 'billing.freezed.dart';
 
 @freezed
-abstract class ClaimSearch with SearchParameters implements _$ClaimSearch {
+abstract class ClaimSearch with R4SearchParameters implements _$ClaimSearch {
 ClaimSearch._(); 
  factory ClaimSearch ({
 List<Id> searchId,
@@ -41,7 +41,7 @@ List<SearchToken> use,
 }
 
 @freezed
-abstract class ClaimResponseSearch with SearchParameters implements _$ClaimResponseSearch {
+abstract class ClaimResponseSearch with R4SearchParameters implements _$ClaimResponseSearch {
 ClaimResponseSearch._(); 
  factory ClaimResponseSearch ({
 List<Id> searchId,
@@ -69,7 +69,7 @@ List<SearchToken> use,
 }
 
 @freezed
-abstract class InvoiceSearch with SearchParameters implements _$InvoiceSearch {
+abstract class InvoiceSearch with R4SearchParameters implements _$InvoiceSearch {
 InvoiceSearch._(); 
  factory InvoiceSearch ({
 List<Id> searchId,

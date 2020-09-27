@@ -480,11 +480,6 @@ class _$_EffectEvidenceSynthesisSearch extends _EffectEvidenceSynthesisSearch {
   final List<String> context_type_value;
 
   @override
-  String toString() {
-    return 'EffectEvidenceSynthesisSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, context: $context, context_quantity: $context_quantity, context_type: $context_type, date: $date, description: $description, effective: $effective, identifier: $identifier, jurisdiction: $jurisdiction, name: $name, publisher: $publisher, status: $status, title: $title, url: $url, version: $version, context_type_quantity: $context_type_quantity, context_type_value: $context_type_value)';
-  }
-
-  @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _EffectEvidenceSynthesisSearch &&
@@ -1237,11 +1232,6 @@ class _$_EvidenceSearch extends _EvidenceSearch {
   final List<String> context_type_quantity;
   @override
   final List<String> context_type_value;
-
-  @override
-  String toString() {
-    return 'EvidenceSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, composed_of: $composed_of, context: $context, context_quantity: $context_quantity, context_type: $context_type, date: $date, depends_on: $depends_on, derived_from: $derived_from, description: $description, effective: $effective, identifier: $identifier, jurisdiction: $jurisdiction, name: $name, predecessor: $predecessor, publisher: $publisher, status: $status, successor: $successor, title: $title, topic: $topic, url: $url, version: $version, context_type_quantity: $context_type_quantity, context_type_value: $context_type_value)';
-  }
 
   @override
   bool operator ==(dynamic other) {
@@ -2025,11 +2015,6 @@ class _$_EvidenceVariableSearch extends _EvidenceVariableSearch {
   final List<String> context_type_value;
 
   @override
-  String toString() {
-    return 'EvidenceVariableSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, composed_of: $composed_of, context: $context, context_quantity: $context_quantity, context_type: $context_type, date: $date, depends_on: $depends_on, derived_from: $derived_from, description: $description, effective: $effective, identifier: $identifier, jurisdiction: $jurisdiction, name: $name, predecessor: $predecessor, publisher: $publisher, status: $status, successor: $successor, title: $title, topic: $topic, url: $url, version: $version, context_type_quantity: $context_type_quantity, context_type_value: $context_type_value)';
-  }
-
-  @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _EvidenceVariableSearch &&
@@ -2811,11 +2796,6 @@ class _$_ResearchDefinitionSearch extends _ResearchDefinitionSearch {
   final List<String> context_type_quantity;
   @override
   final List<String> context_type_value;
-
-  @override
-  String toString() {
-    return 'ResearchDefinitionSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, composed_of: $composed_of, context: $context, context_quantity: $context_quantity, context_type: $context_type, date: $date, depends_on: $depends_on, derived_from: $derived_from, description: $description, effective: $effective, identifier: $identifier, jurisdiction: $jurisdiction, name: $name, predecessor: $predecessor, publisher: $publisher, status: $status, successor: $successor, title: $title, topic: $topic, url: $url, version: $version, context_type_quantity: $context_type_quantity, context_type_value: $context_type_value)';
-  }
 
   @override
   bool operator ==(dynamic other) {
@@ -3607,11 +3587,6 @@ class _$_ResearchElementDefinitionSearch
   final List<String> context_type_value;
 
   @override
-  String toString() {
-    return 'ResearchElementDefinitionSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, composed_of: $composed_of, context: $context, context_quantity: $context_quantity, context_type: $context_type, date: $date, depends_on: $depends_on, derived_from: $derived_from, description: $description, effective: $effective, identifier: $identifier, jurisdiction: $jurisdiction, name: $name, predecessor: $predecessor, publisher: $publisher, status: $status, successor: $successor, title: $title, topic: $topic, url: $url, version: $version, context_type_quantity: $context_type_quantity, context_type_value: $context_type_value)';
-  }
-
-  @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _ResearchElementDefinitionSearch &&
@@ -4309,11 +4284,6 @@ class _$_RiskEvidenceSynthesisSearch extends _RiskEvidenceSynthesisSearch {
   final List<String> context_type_quantity;
   @override
   final List<String> context_type_value;
-
-  @override
-  String toString() {
-    return 'RiskEvidenceSynthesisSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, context: $context, context_quantity: $context_quantity, context_type: $context_type, date: $date, description: $description, effective: $effective, identifier: $identifier, jurisdiction: $jurisdiction, name: $name, publisher: $publisher, status: $status, title: $title, url: $url, version: $version, context_type_quantity: $context_type_quantity, context_type_value: $context_type_value)';
-  }
 
   @override
   bool operator ==(dynamic other) {

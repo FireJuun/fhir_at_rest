@@ -497,11 +497,6 @@ class _$_DeviceRequestSearch extends _DeviceRequestSearch {
   final List<String> subject;
 
   @override
-  String toString() {
-    return 'DeviceRequestSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, code: $code, identifier: $identifier, patient: $patient, encounter: $encounter, authored_on: $authored_on, based_on: $based_on, device: $device, event_date: $event_date, group_identifier: $group_identifier, instantiates_canonical: $instantiates_canonical, instantiates_uri: $instantiates_uri, insurance: $insurance, intent: $intent, performer: $performer, prior_request: $prior_request, requester: $requester, status: $status, subject: $subject)';
-  }
-
-  @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _DeviceRequestSearch &&
@@ -1036,11 +1031,6 @@ class _$_SupplyRequestSearch extends _SupplyRequestSearch {
   final List<String> supplier;
 
   @override
-  String toString() {
-    return 'SupplyRequestSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, date: $date, identifier: $identifier, category: $category, requester: $requester, status: $status, subject: $subject, supplier: $supplier)';
-  }
-
-  @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _SupplyRequestSearch &&
@@ -1483,11 +1473,6 @@ class _$_SupplyDeliverySearch extends _SupplyDeliverySearch {
   final List<String> supplier;
 
   @override
-  String toString() {
-    return 'SupplyDeliverySearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, identifier: $identifier, patient: $patient, receiver: $receiver, status: $status, supplier: $supplier)';
-  }
-
-  @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _SupplyDeliverySearch &&
@@ -1900,11 +1885,6 @@ class _$_DeviceUseStatementSearch extends _DeviceUseStatementSearch {
   final List<SearchToken> identifier;
   @override
   final List<String> subject;
-
-  @override
-  String toString() {
-    return 'DeviceUseStatementSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, patient: $patient, device: $device, identifier: $identifier, subject: $subject)';
-  }
 
   @override
   bool operator ==(dynamic other) {
@@ -2460,11 +2440,6 @@ class _$_CommunicationSearch extends _CommunicationSearch {
   final List<SearchToken> status;
   @override
   final List<String> subject;
-
-  @override
-  String toString() {
-    return 'CommunicationSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, based_on: $based_on, category: $category, encounter: $encounter, identifier: $identifier, instantiates_canonical: $instantiates_canonical, instantiates_uri: $instantiates_uri, medium: $medium, part_of: $part_of, patient: $patient, received: $received, recipient: $recipient, sender: $sender, sent: $sent, status: $status, subject: $subject)';
-  }
 
   @override
   bool operator ==(dynamic other) {
@@ -3114,11 +3089,6 @@ class _$_CommunicationRequestSearch extends _CommunicationRequestSearch {
   final List<String> subject;
 
   @override
-  String toString() {
-    return 'CommunicationRequestSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, authored: $authored, based_on: $based_on, category: $category, encounter: $encounter, group_identifier: $group_identifier, identifier: $identifier, medium: $medium, occurrence: $occurrence, patient: $patient, priority: $priority, recipient: $recipient, replaces: $replaces, requester: $requester, sender: $sender, status: $status, subject: $subject)';
-  }
-
-  @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _CommunicationRequestSearch &&
@@ -3602,11 +3572,6 @@ class _$_GuidanceResponseSearch extends _GuidanceResponseSearch {
   final List<SearchToken> request;
   @override
   final List<String> subject;
-
-  @override
-  String toString() {
-    return 'GuidanceResponseSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, identifier: $identifier, patient: $patient, request: $request, subject: $subject)';
-  }
 
   @override
   bool operator ==(dynamic other) {

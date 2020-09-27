@@ -7,7 +7,7 @@ import '../../../search_parameters.dart';
 part 'request_and_response.freezed.dart';
 
 @freezed
-abstract class DeviceRequestSearch with SearchParameters implements _$DeviceRequestSearch {
+abstract class DeviceRequestSearch with R4SearchParameters implements _$DeviceRequestSearch {
 DeviceRequestSearch._(); 
  factory DeviceRequestSearch ({
 List<Id> searchId,
@@ -42,7 +42,7 @@ List<String> subject,
 }
 
 @freezed
-abstract class SupplyRequestSearch with SearchParameters implements _$SupplyRequestSearch {
+abstract class SupplyRequestSearch with R4SearchParameters implements _$SupplyRequestSearch {
 SupplyRequestSearch._(); 
  factory SupplyRequestSearch ({
 List<Id> searchId,
@@ -66,7 +66,7 @@ List<String> supplier,
 }
 
 @freezed
-abstract class SupplyDeliverySearch with SearchParameters implements _$SupplyDeliverySearch {
+abstract class SupplyDeliverySearch with R4SearchParameters implements _$SupplyDeliverySearch {
 SupplyDeliverySearch._(); 
  factory SupplyDeliverySearch ({
 List<Id> searchId,
@@ -88,7 +88,7 @@ List<String> supplier,
 }
 
 @freezed
-abstract class DeviceUseStatementSearch with SearchParameters implements _$DeviceUseStatementSearch {
+abstract class DeviceUseStatementSearch with R4SearchParameters implements _$DeviceUseStatementSearch {
 DeviceUseStatementSearch._(); 
  factory DeviceUseStatementSearch ({
 List<Id> searchId,
@@ -109,7 +109,7 @@ List<String> subject,
 }
 
 @freezed
-abstract class CommunicationSearch with SearchParameters implements _$CommunicationSearch {
+abstract class CommunicationSearch with R4SearchParameters implements _$CommunicationSearch {
 CommunicationSearch._(); 
  factory CommunicationSearch ({
 List<Id> searchId,
@@ -141,7 +141,7 @@ List<String> subject,
 }
 
 @freezed
-abstract class CommunicationRequestSearch with SearchParameters implements _$CommunicationRequestSearch {
+abstract class CommunicationRequestSearch with R4SearchParameters implements _$CommunicationRequestSearch {
 CommunicationRequestSearch._(); 
  factory CommunicationRequestSearch ({
 List<Id> searchId,
@@ -174,7 +174,7 @@ List<String> subject,
 }
 
 @freezed
-abstract class GuidanceResponseSearch with SearchParameters implements _$GuidanceResponseSearch {
+abstract class GuidanceResponseSearch with R4SearchParameters implements _$GuidanceResponseSearch {
 GuidanceResponseSearch._(); 
  factory GuidanceResponseSearch ({
 List<Id> searchId,

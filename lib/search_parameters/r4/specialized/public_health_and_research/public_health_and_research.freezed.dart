@@ -415,11 +415,6 @@ class _$_ResearchStudySearch extends _ResearchStudySearch {
   final List<SearchString> title;
 
   @override
-  String toString() {
-    return 'ResearchStudySearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, category: $category, date: $date, focus: $focus, identifier: $identifier, keyword: $keyword, location: $location, partof: $partof, principalinvestigator: $principalinvestigator, protocol: $protocol, site: $site, sponsor: $sponsor, status: $status, title: $title)';
-  }
-
-  @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _ResearchStudySearch &&
@@ -910,11 +905,6 @@ class _$_ResearchSubjectSearch extends _ResearchSubjectSearch {
   final List<SearchToken> status;
   @override
   final List<String> study;
-
-  @override
-  String toString() {
-    return 'ResearchSubjectSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, date: $date, identifier: $identifier, individual: $individual, patient: $patient, status: $status, study: $study)';
-  }
 
   @override
   bool operator ==(dynamic other) {

@@ -7,7 +7,7 @@ import '../../../search_parameters.dart';
 part 'definitional_artifacts.freezed.dart';
 
 @freezed
-abstract class ActivityDefinitionSearch with SearchParameters implements _$ActivityDefinitionSearch {
+abstract class ActivityDefinitionSearch with R4SearchParameters implements _$ActivityDefinitionSearch {
 ActivityDefinitionSearch._(); 
  factory ActivityDefinitionSearch ({
 List<Id> searchId,
@@ -46,7 +46,7 @@ List<String> context_type_value,
 }
 
 @freezed
-abstract class DeviceDefinitionSearch with SearchParameters implements _$DeviceDefinitionSearch {
+abstract class DeviceDefinitionSearch with R4SearchParameters implements _$DeviceDefinitionSearch {
 DeviceDefinitionSearch._(); 
  factory DeviceDefinitionSearch ({
 List<Id> searchId,
@@ -66,7 +66,7 @@ List<SearchToken> type,
 }
 
 @freezed
-abstract class EventDefinitionSearch with SearchParameters implements _$EventDefinitionSearch {
+abstract class EventDefinitionSearch with R4SearchParameters implements _$EventDefinitionSearch {
 EventDefinitionSearch._(); 
  factory EventDefinitionSearch ({
 List<Id> searchId,
@@ -105,7 +105,7 @@ List<String> context_type_value,
 }
 
 @freezed
-abstract class PlanDefinitionSearch with SearchParameters implements _$PlanDefinitionSearch {
+abstract class PlanDefinitionSearch with R4SearchParameters implements _$PlanDefinitionSearch {
 PlanDefinitionSearch._(); 
  factory PlanDefinitionSearch ({
 List<Id> searchId,
@@ -146,7 +146,7 @@ List<String> context_type_value,
 }
 
 @freezed
-abstract class QuestionnaireSearch with SearchParameters implements _$QuestionnaireSearch {
+abstract class QuestionnaireSearch with R4SearchParameters implements _$QuestionnaireSearch {
 QuestionnaireSearch._(); 
  factory QuestionnaireSearch ({
 List<Id> searchId,
@@ -182,7 +182,7 @@ List<String> context_type_value,
 }
 
 @freezed
-abstract class SpecimenDefinitionSearch with SearchParameters implements _$SpecimenDefinitionSearch {
+abstract class SpecimenDefinitionSearch with R4SearchParameters implements _$SpecimenDefinitionSearch {
 SpecimenDefinitionSearch._(); 
  factory SpecimenDefinitionSearch ({
 List<Id> searchId,

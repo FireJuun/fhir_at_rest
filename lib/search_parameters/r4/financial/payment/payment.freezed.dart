@@ -341,11 +341,6 @@ class _$_PaymentNoticeSearch extends _PaymentNoticeSearch {
   final List<SearchToken> status;
 
   @override
-  String toString() {
-    return 'PaymentNoticeSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, created: $created, identifier: $identifier, payment_status: $payment_status, provider: $provider, request: $request, response: $response, status: $status)';
-  }
-
-  @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _PaymentNoticeSearch &&
@@ -838,11 +833,6 @@ class _$_PaymentReconciliationSearch extends _PaymentReconciliationSearch {
   final List<String> requestor;
   @override
   final List<SearchToken> status;
-
-  @override
-  String toString() {
-    return 'PaymentReconciliationSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, created: $created, disposition: $disposition, identifier: $identifier, outcome: $outcome, payment_issuer: $payment_issuer, request: $request, requestor: $requestor, status: $status)';
-  }
 
   @override
   bool operator ==(dynamic other) {

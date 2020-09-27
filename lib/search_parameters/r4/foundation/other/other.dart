@@ -7,7 +7,7 @@ import '../../../search_parameters.dart';
 part 'other.freezed.dart';
 
 @freezed
-abstract class BasicSearch with SearchParameters implements _$BasicSearch {
+abstract class BasicSearch with R4SearchParameters implements _$BasicSearch {
 BasicSearch._(); 
  factory BasicSearch ({
 List<Id> searchId,
@@ -30,7 +30,7 @@ List<String> subject,
 }
 
 @freezed
-abstract class BundleSearch with SearchParameters implements _$BundleSearch {
+abstract class BundleSearch with R4SearchParameters implements _$BundleSearch {
 BundleSearch._(); 
  factory BundleSearch ({
 List<Id> searchId,
@@ -52,7 +52,7 @@ List<SearchToken> type,
 }
 
 @freezed
-abstract class LinkageSearch with SearchParameters implements _$LinkageSearch {
+abstract class LinkageSearch with R4SearchParameters implements _$LinkageSearch {
 LinkageSearch._(); 
  factory LinkageSearch ({
 List<Id> searchId,
@@ -72,7 +72,7 @@ List<String> source,
 }
 
 @freezed
-abstract class MessageHeaderSearch with SearchParameters implements _$MessageHeaderSearch {
+abstract class MessageHeaderSearch with R4SearchParameters implements _$MessageHeaderSearch {
 MessageHeaderSearch._(); 
  factory MessageHeaderSearch ({
 List<Id> searchId,
@@ -103,7 +103,7 @@ List<String> target,
 }
 
 @freezed
-abstract class SubscriptionSearch with SearchParameters implements _$SubscriptionSearch {
+abstract class SubscriptionSearch with R4SearchParameters implements _$SubscriptionSearch {
 SubscriptionSearch._(); 
  factory SubscriptionSearch ({
 List<Id> searchId,

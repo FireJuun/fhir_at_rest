@@ -7,7 +7,7 @@ import '../../../search_parameters.dart';
 part 'management.freezed.dart';
 
 @freezed
-abstract class ListSearch with SearchParameters implements _$ListSearch {
+abstract class ListSearch with R4SearchParameters implements _$ListSearch {
   ListSearch._();
   factory ListSearch({
     List<Id> searchId,
@@ -37,7 +37,7 @@ abstract class ListSearch with SearchParameters implements _$ListSearch {
 
 @freezed
 abstract class EncounterSearch
-    with SearchParameters
+    with R4SearchParameters
     implements _$EncounterSearch {
   EncounterSearch._();
   factory EncounterSearch({
@@ -79,7 +79,7 @@ abstract class EncounterSearch
 
 @freezed
 abstract class EpisodeOfCareSearch
-    with SearchParameters
+    with R4SearchParameters
     implements _$EpisodeOfCareSearch {
   EpisodeOfCareSearch._();
   factory EpisodeOfCareSearch({
@@ -106,7 +106,7 @@ abstract class EpisodeOfCareSearch
 }
 
 @freezed
-abstract class FlagSearch with SearchParameters implements _$FlagSearch {
+abstract class FlagSearch with R4SearchParameters implements _$FlagSearch {
   FlagSearch._();
   factory FlagSearch({
     List<Id> searchId,
@@ -129,7 +129,9 @@ abstract class FlagSearch with SearchParameters implements _$FlagSearch {
 }
 
 @freezed
-abstract class LibrarySearch with SearchParameters implements _$LibrarySearch {
+abstract class LibrarySearch
+    with R4SearchParameters
+    implements _$LibrarySearch {
   LibrarySearch._();
   factory LibrarySearch({
     List<Id> searchId,

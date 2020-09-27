@@ -445,11 +445,6 @@ class _$_ConsentSearch extends _ConsentSearch {
   final List<SearchToken> status;
 
   @override
-  String toString() {
-    return 'ConsentSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, date: $date, identifier: $identifier, patient: $patient, action: $action, actor: $actor, category: $category, consentor: $consentor, data: $data, organization: $organization, period: $period, purpose: $purpose, scope: $scope, security_label: $security_label, source_reference: $source_reference, status: $status)';
-  }
-
-  @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _ConsentSearch &&
@@ -1116,11 +1111,6 @@ class _$_AuditEventSearch extends _AuditEventSearch {
   final List<SearchToken> type;
 
   @override
-  String toString() {
-    return 'AuditEventSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, action: $action, address: $address, agent: $agent, agent_name: $agent_name, agent_role: $agent_role, altid: $altid, date: $date, entity: $entity, entity_name: $entity_name, entity_role: $entity_role, entity_type: $entity_type, outcome: $outcome, patient: $patient, policy: $policy, site: $site, source: $source, subtype: $subtype, type: $type)';
-  }
-
-  @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _AuditEventSearch &&
@@ -1694,11 +1684,6 @@ class _$_ProvenanceSearch extends _ProvenanceSearch {
   final List<String> target;
   @override
   final List<SearchDate> when;
-
-  @override
-  String toString() {
-    return 'ProvenanceSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, agent: $agent, agent_role: $agent_role, agent_type: $agent_type, entity: $entity, location: $location, patient: $patient, recorded: $recorded, signature_type: $signature_type, target: $target, when: $when)';
-  }
 
   @override
   bool operator ==(dynamic other) {

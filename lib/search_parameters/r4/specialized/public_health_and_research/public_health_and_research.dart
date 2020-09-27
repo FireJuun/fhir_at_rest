@@ -7,7 +7,7 @@ import '../../../search_parameters.dart';
 part 'public_health_and_research.freezed.dart';
 
 @freezed
-abstract class ResearchStudySearch with SearchParameters implements _$ResearchStudySearch {
+abstract class ResearchStudySearch with R4SearchParameters implements _$ResearchStudySearch {
 ResearchStudySearch._(); 
  factory ResearchStudySearch ({
 List<Id> searchId,
@@ -37,7 +37,7 @@ List<SearchString> title,
 }
 
 @freezed
-abstract class ResearchSubjectSearch with SearchParameters implements _$ResearchSubjectSearch {
+abstract class ResearchSubjectSearch with R4SearchParameters implements _$ResearchSubjectSearch {
 ResearchSubjectSearch._(); 
  factory ResearchSubjectSearch ({
 List<Id> searchId,

@@ -475,11 +475,6 @@ class _$_ClaimSearch extends _ClaimSearch {
   final List<SearchToken> use;
 
   @override
-  String toString() {
-    return 'ClaimSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, care_team: $care_team, created: $created, detail_udi: $detail_udi, encounter: $encounter, enterer: $enterer, facility: $facility, identifier: $identifier, insurer: $insurer, item_udi: $item_udi, patient: $patient, payee: $payee, priority: $priority, procedure_udi: $procedure_udi, provider: $provider, status: $status, subdetail_udi: $subdetail_udi, use: $use)';
-  }
-
-  @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _ClaimSearch &&
@@ -1064,11 +1059,6 @@ class _$_ClaimResponseSearch extends _ClaimResponseSearch {
   final List<SearchToken> use;
 
   @override
-  String toString() {
-    return 'ClaimResponseSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, created: $created, disposition: $disposition, identifier: $identifier, insurer: $insurer, outcome: $outcome, patient: $patient, payment_date: $payment_date, request: $request, requestor: $requestor, status: $status, use: $use)';
-  }
-
-  @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _ClaimResponseSearch &&
@@ -1645,11 +1635,6 @@ class _$_InvoiceSearch extends _InvoiceSearch {
   final List<String> totalnet;
   @override
   final List<SearchToken> type;
-
-  @override
-  String toString() {
-    return 'InvoiceSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, account: $account, date: $date, identifier: $identifier, issuer: $issuer, participant: $participant, participant_role: $participant_role, patient: $patient, recipient: $recipient, status: $status, subject: $subject, totalgross: $totalgross, totalnet: $totalnet, type: $type)';
-  }
 
   @override
   bool operator ==(dynamic other) {

@@ -565,11 +565,6 @@ class _$_MeasureSearch extends _MeasureSearch {
   final List<String> context_type_value;
 
   @override
-  String toString() {
-    return 'MeasureSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, composed_of: $composed_of, context: $context, context_quantity: $context_quantity, context_type: $context_type, date: $date, depends_on: $depends_on, derived_from: $derived_from, description: $description, effective: $effective, identifier: $identifier, jurisdiction: $jurisdiction, name: $name, predecessor: $predecessor, publisher: $publisher, status: $status, successor: $successor, title: $title, topic: $topic, url: $url, version: $version, context_type_quantity: $context_type_quantity, context_type_value: $context_type_value)';
-  }
-
-  @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _MeasureSearch &&
@@ -1147,11 +1142,6 @@ class _$_MeasureReportSearch extends _MeasureReportSearch {
   final List<String> subject;
 
   @override
-  String toString() {
-    return 'MeasureReportSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, date: $date, evaluated_resource: $evaluated_resource, identifier: $identifier, measure: $measure, patient: $patient, period: $period, reporter: $reporter, status: $status, subject: $subject)';
-  }
-
-  @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _MeasureReportSearch &&
@@ -1620,11 +1610,6 @@ class _$_TestReportSearch extends _TestReportSearch {
   final List<SearchString> tester;
   @override
   final List<String> testscript;
-
-  @override
-  String toString() {
-    return 'TestReportSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, identifier: $identifier, issued: $issued, participant: $participant, result: $result, tester: $tester, testscript: $testscript)';
-  }
 
   @override
   bool operator ==(dynamic other) {
@@ -2222,11 +2207,6 @@ class _$_TestScriptSearch extends _TestScriptSearch {
   final List<String> context_type_quantity;
   @override
   final List<String> context_type_value;
-
-  @override
-  String toString() {
-    return 'TestScriptSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, context: $context, context_quantity: $context_quantity, context_type: $context_type, date: $date, description: $description, identifier: $identifier, jurisdiction: $jurisdiction, name: $name, publisher: $publisher, status: $status, testscript_capability: $testscript_capability, title: $title, url: $url, version: $version, context_type_quantity: $context_type_quantity, context_type_value: $context_type_value)';
-  }
 
   @override
   bool operator ==(dynamic other) {

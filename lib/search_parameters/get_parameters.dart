@@ -151,7 +151,7 @@ void main() async {
       if (file != '') {
         var fileString = await File(file).readAsString();
         fileString += '@freezed\nabstract class '
-            '${j.value1.toString()}Search with SearchParameters implements '
+            '${j.value1.toString()}Search with R4SearchParameters implements '
             '_\$${j.value1.toString()}Search {\n'
             '${j.value1.toString()}Search._(); \n factory ${j.value1.toString()}Search ({\n'
             'List<Id> searchId,\n'

@@ -7,7 +7,7 @@ import '../../../search_parameters.dart';
 part 'support.freezed.dart';
 
 @freezed
-abstract class CoverageSearch with SearchParameters implements _$CoverageSearch {
+abstract class CoverageSearch with R4SearchParameters implements _$CoverageSearch {
 CoverageSearch._(); 
  factory CoverageSearch ({
 List<Id> searchId,
@@ -35,7 +35,7 @@ List<SearchToken> type,
 }
 
 @freezed
-abstract class CoverageEligibilityRequestSearch with SearchParameters implements _$CoverageEligibilityRequestSearch {
+abstract class CoverageEligibilityRequestSearch with R4SearchParameters implements _$CoverageEligibilityRequestSearch {
 CoverageEligibilityRequestSearch._(); 
  factory CoverageEligibilityRequestSearch ({
 List<Id> searchId,
@@ -59,7 +59,7 @@ List<SearchToken> status,
 }
 
 @freezed
-abstract class CoverageEligibilityResponseSearch with SearchParameters implements _$CoverageEligibilityResponseSearch {
+abstract class CoverageEligibilityResponseSearch with R4SearchParameters implements _$CoverageEligibilityResponseSearch {
 CoverageEligibilityResponseSearch._(); 
  factory CoverageEligibilityResponseSearch ({
 List<Id> searchId,
@@ -85,7 +85,7 @@ List<SearchToken> status,
 }
 
 @freezed
-abstract class EnrollmentRequestSearch with SearchParameters implements _$EnrollmentRequestSearch {
+abstract class EnrollmentRequestSearch with R4SearchParameters implements _$EnrollmentRequestSearch {
 EnrollmentRequestSearch._(); 
  factory EnrollmentRequestSearch ({
 List<Id> searchId,
@@ -106,7 +106,7 @@ List<String> subject,
 }
 
 @freezed
-abstract class EnrollmentResponseSearch with SearchParameters implements _$EnrollmentResponseSearch {
+abstract class EnrollmentResponseSearch with R4SearchParameters implements _$EnrollmentResponseSearch {
 EnrollmentResponseSearch._(); 
  factory EnrollmentResponseSearch ({
 List<Id> searchId,

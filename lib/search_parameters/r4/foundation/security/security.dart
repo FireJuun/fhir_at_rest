@@ -7,7 +7,7 @@ import '../../../search_parameters.dart';
 part 'security.freezed.dart';
 
 @freezed
-abstract class ConsentSearch with SearchParameters implements _$ConsentSearch {
+abstract class ConsentSearch with R4SearchParameters implements _$ConsentSearch {
 ConsentSearch._(); 
  factory ConsentSearch ({
 List<Id> searchId,
@@ -39,7 +39,7 @@ List<SearchToken> status,
 }
 
 @freezed
-abstract class AuditEventSearch with SearchParameters implements _$AuditEventSearch {
+abstract class AuditEventSearch with R4SearchParameters implements _$AuditEventSearch {
 AuditEventSearch._(); 
  factory AuditEventSearch ({
 List<Id> searchId,
@@ -74,7 +74,7 @@ List<SearchToken> type,
 }
 
 @freezed
-abstract class ProvenanceSearch with SearchParameters implements _$ProvenanceSearch {
+abstract class ProvenanceSearch with R4SearchParameters implements _$ProvenanceSearch {
 ProvenanceSearch._(); 
  factory ProvenanceSearch ({
 List<Id> searchId,

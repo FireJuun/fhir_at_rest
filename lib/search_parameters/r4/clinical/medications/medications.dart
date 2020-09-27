@@ -7,7 +7,7 @@ import '../../../search_parameters.dart';
 part 'medications.freezed.dart';
 
 @freezed
-abstract class MedicationSearch with SearchParameters implements _$MedicationSearch {
+abstract class MedicationSearch with R4SearchParameters implements _$MedicationSearch {
 MedicationSearch._(); 
  factory MedicationSearch ({
 List<Id> searchId,
@@ -33,7 +33,7 @@ List<SearchToken> status,
 }
 
 @freezed
-abstract class MedicationAdministrationSearch with SearchParameters implements _$MedicationAdministrationSearch {
+abstract class MedicationAdministrationSearch with R4SearchParameters implements _$MedicationAdministrationSearch {
 MedicationAdministrationSearch._(); 
  factory MedicationAdministrationSearch ({
 List<Id> searchId,
@@ -63,7 +63,7 @@ List<String> subject,
 }
 
 @freezed
-abstract class MedicationDispenseSearch with SearchParameters implements _$MedicationDispenseSearch {
+abstract class MedicationDispenseSearch with R4SearchParameters implements _$MedicationDispenseSearch {
 MedicationDispenseSearch._(); 
  factory MedicationDispenseSearch ({
 List<Id> searchId,
@@ -95,7 +95,7 @@ List<SearchDate> whenprepared,
 }
 
 @freezed
-abstract class MedicationRequestSearch with SearchParameters implements _$MedicationRequestSearch {
+abstract class MedicationRequestSearch with R4SearchParameters implements _$MedicationRequestSearch {
 MedicationRequestSearch._(); 
  factory MedicationRequestSearch ({
 List<Id> searchId,
@@ -128,7 +128,7 @@ List<String> subject,
 }
 
 @freezed
-abstract class MedicationStatementSearch with SearchParameters implements _$MedicationStatementSearch {
+abstract class MedicationStatementSearch with R4SearchParameters implements _$MedicationStatementSearch {
 MedicationStatementSearch._(); 
  factory MedicationStatementSearch ({
 List<Id> searchId,
@@ -156,7 +156,7 @@ List<String> subject,
 }
 
 @freezed
-abstract class ImmunizationSearch with SearchParameters implements _$ImmunizationSearch {
+abstract class ImmunizationSearch with R4SearchParameters implements _$ImmunizationSearch {
 ImmunizationSearch._(); 
  factory ImmunizationSearch ({
 List<Id> searchId,
@@ -189,7 +189,7 @@ List<SearchToken> vaccine_code,
 }
 
 @freezed
-abstract class ImmunizationEvaluationSearch with SearchParameters implements _$ImmunizationEvaluationSearch {
+abstract class ImmunizationEvaluationSearch with R4SearchParameters implements _$ImmunizationEvaluationSearch {
 ImmunizationEvaluationSearch._(); 
  factory ImmunizationEvaluationSearch ({
 List<Id> searchId,
@@ -213,7 +213,7 @@ List<SearchToken> target_disease,
 }
 
 @freezed
-abstract class ImmunizationRecommendationSearch with SearchParameters implements _$ImmunizationRecommendationSearch {
+abstract class ImmunizationRecommendationSearch with R4SearchParameters implements _$ImmunizationRecommendationSearch {
 ImmunizationRecommendationSearch._(); 
  factory ImmunizationRecommendationSearch ({
 List<Id> searchId,
@@ -238,7 +238,7 @@ List<SearchToken> vaccine_type,
 }
 
 @freezed
-abstract class MedicationKnowledgeSearch with SearchParameters implements _$MedicationKnowledgeSearch {
+abstract class MedicationKnowledgeSearch with R4SearchParameters implements _$MedicationKnowledgeSearch {
 MedicationKnowledgeSearch._(); 
  factory MedicationKnowledgeSearch ({
 List<Id> searchId,

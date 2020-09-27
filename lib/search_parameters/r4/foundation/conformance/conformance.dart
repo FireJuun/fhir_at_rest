@@ -7,7 +7,7 @@ import '../../../search_parameters.dart';
 part 'conformance.freezed.dart';
 
 @freezed
-abstract class CapabilityStatementSearch with SearchParameters implements _$CapabilityStatementSearch {
+abstract class CapabilityStatementSearch with R4SearchParameters implements _$CapabilityStatementSearch {
 CapabilityStatementSearch._(); 
  factory CapabilityStatementSearch ({
 List<Id> searchId,
@@ -47,7 +47,7 @@ List<String> context_type_value,
 }
 
 @freezed
-abstract class CompartmentDefinitionSearch with SearchParameters implements _$CompartmentDefinitionSearch {
+abstract class CompartmentDefinitionSearch with R4SearchParameters implements _$CompartmentDefinitionSearch {
 CompartmentDefinitionSearch._(); 
  factory CompartmentDefinitionSearch ({
 List<Id> searchId,
@@ -78,7 +78,7 @@ List<SearchToken> resource,
 }
 
 @freezed
-abstract class GraphDefinitionSearch with SearchParameters implements _$GraphDefinitionSearch {
+abstract class GraphDefinitionSearch with R4SearchParameters implements _$GraphDefinitionSearch {
 GraphDefinitionSearch._(); 
  factory GraphDefinitionSearch ({
 List<Id> searchId,
@@ -109,7 +109,7 @@ List<SearchToken> start,
 }
 
 @freezed
-abstract class ImplementationGuideSearch with SearchParameters implements _$ImplementationGuideSearch {
+abstract class ImplementationGuideSearch with R4SearchParameters implements _$ImplementationGuideSearch {
 ImplementationGuideSearch._(); 
  factory ImplementationGuideSearch ({
 List<Id> searchId,
@@ -144,7 +144,7 @@ List<String> resource,
 }
 
 @freezed
-abstract class MessageDefinitionSearch with SearchParameters implements _$MessageDefinitionSearch {
+abstract class MessageDefinitionSearch with R4SearchParameters implements _$MessageDefinitionSearch {
 MessageDefinitionSearch._(); 
  factory MessageDefinitionSearch ({
 List<Id> searchId,
@@ -180,7 +180,7 @@ List<String> parent,
 }
 
 @freezed
-abstract class OperationDefinitionSearch with SearchParameters implements _$OperationDefinitionSearch {
+abstract class OperationDefinitionSearch with R4SearchParameters implements _$OperationDefinitionSearch {
 OperationDefinitionSearch._(); 
  factory OperationDefinitionSearch ({
 List<Id> searchId,
@@ -219,7 +219,7 @@ List<SearchToken> type,
 }
 
 @freezed
-abstract class SearchParameterSearch with SearchParameters implements _$SearchParameterSearch {
+abstract class SearchParameterSearch with R4SearchParameters implements _$SearchParameterSearch {
 SearchParameterSearch._(); 
  factory SearchParameterSearch ({
 List<Id> searchId,
@@ -255,7 +255,7 @@ List<SearchToken> type,
 }
 
 @freezed
-abstract class StructureDefinitionSearch with SearchParameters implements _$StructureDefinitionSearch {
+abstract class StructureDefinitionSearch with R4SearchParameters implements _$StructureDefinitionSearch {
 StructureDefinitionSearch._(); 
  factory StructureDefinitionSearch ({
 List<Id> searchId,
@@ -298,7 +298,7 @@ List<String> valueset,
 }
 
 @freezed
-abstract class StructureMapSearch with SearchParameters implements _$StructureMapSearch {
+abstract class StructureMapSearch with R4SearchParameters implements _$StructureMapSearch {
 StructureMapSearch._(); 
  factory StructureMapSearch ({
 List<Id> searchId,
@@ -330,7 +330,7 @@ List<SearchToken> identifier,
 }
 
 @freezed
-abstract class ExampleScenarioSearch with SearchParameters implements _$ExampleScenarioSearch {
+abstract class ExampleScenarioSearch with R4SearchParameters implements _$ExampleScenarioSearch {
 ExampleScenarioSearch._(); 
  factory ExampleScenarioSearch ({
 List<Id> searchId,

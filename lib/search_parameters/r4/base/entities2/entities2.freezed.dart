@@ -407,11 +407,6 @@ class _$_DeviceSearch extends _DeviceSearch {
   final List<SearchUri> url;
 
   @override
-  String toString() {
-    return 'DeviceSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, device_name: $device_name, identifier: $identifier, location: $location, manufacturer: $manufacturer, model: $model, organization: $organization, patient: $patient, status: $status, type: $type, udi_carrier: $udi_carrier, udi_di: $udi_di, url: $url)';
-  }
-
-  @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _DeviceSearch &&
@@ -883,11 +878,6 @@ class _$_DeviceMetricSearch extends _DeviceMetricSearch {
   final List<SearchToken> type;
 
   @override
-  String toString() {
-    return 'DeviceMetricSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, category: $category, identifier: $identifier, parent: $parent, source: $source, type: $type)';
-  }
-
-  @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _DeviceMetricSearch &&
@@ -1356,11 +1346,6 @@ class _$_SubstanceSearch extends _SubstanceSearch {
   final List<SearchToken> status;
   @override
   final List<String> substance_reference;
-
-  @override
-  String toString() {
-    return 'SubstanceSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, category: $category, code: $code, container_identifier: $container_identifier, expiry: $expiry, identifier: $identifier, quantity: $quantity, status: $status, substance_reference: $substance_reference)';
-  }
 
   @override
   bool operator ==(dynamic other) {

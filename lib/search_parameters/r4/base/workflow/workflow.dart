@@ -7,7 +7,7 @@ import '../../../search_parameters.dart';
 part 'workflow.freezed.dart';
 
 @freezed
-abstract class AppointmentSearch with SearchParameters implements _$AppointmentSearch {
+abstract class AppointmentSearch with R4SearchParameters implements _$AppointmentSearch {
 AppointmentSearch._(); 
  factory AppointmentSearch ({
 List<Id> searchId,
@@ -41,7 +41,7 @@ List<String> supporting_info,
 }
 
 @freezed
-abstract class AppointmentResponseSearch with SearchParameters implements _$AppointmentResponseSearch {
+abstract class AppointmentResponseSearch with R4SearchParameters implements _$AppointmentResponseSearch {
 AppointmentResponseSearch._(); 
  factory AppointmentResponseSearch ({
 List<Id> searchId,
@@ -65,7 +65,7 @@ List<String> practitioner,
 }
 
 @freezed
-abstract class ScheduleSearch with SearchParameters implements _$ScheduleSearch {
+abstract class ScheduleSearch with R4SearchParameters implements _$ScheduleSearch {
 ScheduleSearch._(); 
  factory ScheduleSearch ({
 List<Id> searchId,
@@ -89,7 +89,7 @@ List<SearchToken> specialty,
 }
 
 @freezed
-abstract class SlotSearch with SearchParameters implements _$SlotSearch {
+abstract class SlotSearch with R4SearchParameters implements _$SlotSearch {
 SlotSearch._(); 
  factory SlotSearch ({
 List<Id> searchId,
@@ -114,7 +114,7 @@ List<SearchToken> status,
 }
 
 @freezed
-abstract class TaskSearch with SearchParameters implements _$TaskSearch {
+abstract class TaskSearch with R4SearchParameters implements _$TaskSearch {
 TaskSearch._(); 
  factory TaskSearch ({
 List<Id> searchId,
@@ -150,7 +150,7 @@ List<String> subject,
 }
 
 @freezed
-abstract class VerificationResultSearch with SearchParameters implements _$VerificationResultSearch {
+abstract class VerificationResultSearch with R4SearchParameters implements _$VerificationResultSearch {
 VerificationResultSearch._(); 
  factory VerificationResultSearch ({
 List<Id> searchId,

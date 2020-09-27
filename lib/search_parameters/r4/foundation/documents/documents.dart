@@ -7,7 +7,7 @@ import '../../../search_parameters.dart';
 part 'documents.freezed.dart';
 
 @freezed
-abstract class CompositionSearch with SearchParameters implements _$CompositionSearch {
+abstract class CompositionSearch with R4SearchParameters implements _$CompositionSearch {
 CompositionSearch._(); 
  factory CompositionSearch ({
 List<Id> searchId,
@@ -42,7 +42,7 @@ List<SearchString> title,
 }
 
 @freezed
-abstract class DocumentManifestSearch with SearchParameters implements _$DocumentManifestSearch {
+abstract class DocumentManifestSearch with R4SearchParameters implements _$DocumentManifestSearch {
 DocumentManifestSearch._(); 
  factory DocumentManifestSearch ({
 List<Id> searchId,
@@ -72,7 +72,7 @@ List<String> subject,
 }
 
 @freezed
-abstract class DocumentReferenceSearch with SearchParameters implements _$DocumentReferenceSearch {
+abstract class DocumentReferenceSearch with R4SearchParameters implements _$DocumentReferenceSearch {
 DocumentReferenceSearch._(); 
  factory DocumentReferenceSearch ({
 List<Id> searchId,

@@ -7,7 +7,7 @@ import '../../../search_parameters.dart';
 part 'summary.freezed.dart';
 
 @freezed
-abstract class AdverseEventSearch with SearchParameters implements _$AdverseEventSearch {
+abstract class AdverseEventSearch with R4SearchParameters implements _$AdverseEventSearch {
 AdverseEventSearch._(); 
  factory AdverseEventSearch ({
 List<Id> searchId,
@@ -36,7 +36,7 @@ List<String> substance,
 }
 
 @freezed
-abstract class AllergyIntoleranceSearch with SearchParameters implements _$AllergyIntoleranceSearch {
+abstract class AllergyIntoleranceSearch with R4SearchParameters implements _$AllergyIntoleranceSearch {
 AllergyIntoleranceSearch._(); 
  factory AllergyIntoleranceSearch ({
 List<Id> searchId,
@@ -69,7 +69,7 @@ List<SearchToken> verification_status,
 }
 
 @freezed
-abstract class ConditionSearch with SearchParameters implements _$ConditionSearch {
+abstract class ConditionSearch with R4SearchParameters implements _$ConditionSearch {
 ConditionSearch._(); 
  factory ConditionSearch ({
 List<Id> searchId,
@@ -107,7 +107,7 @@ List<SearchToken> verification_status,
 }
 
 @freezed
-abstract class FamilyMemberHistorySearch with SearchParameters implements _$FamilyMemberHistorySearch {
+abstract class FamilyMemberHistorySearch with R4SearchParameters implements _$FamilyMemberHistorySearch {
 FamilyMemberHistorySearch._(); 
  factory FamilyMemberHistorySearch ({
 List<Id> searchId,
@@ -133,7 +133,7 @@ List<SearchToken> status,
 }
 
 @freezed
-abstract class ProcedureSearch with SearchParameters implements _$ProcedureSearch {
+abstract class ProcedureSearch with R4SearchParameters implements _$ProcedureSearch {
 ProcedureSearch._(); 
  factory ProcedureSearch ({
 List<Id> searchId,
@@ -166,7 +166,7 @@ List<String> subject,
 }
 
 @freezed
-abstract class ClinicalImpressionSearch with SearchParameters implements _$ClinicalImpressionSearch {
+abstract class ClinicalImpressionSearch with R4SearchParameters implements _$ClinicalImpressionSearch {
 ClinicalImpressionSearch._(); 
  factory ClinicalImpressionSearch ({
 List<Id> searchId,
@@ -196,7 +196,7 @@ List<String> supporting_info,
 }
 
 @freezed
-abstract class DetectedIssueSearch with SearchParameters implements _$DetectedIssueSearch {
+abstract class DetectedIssueSearch with R4SearchParameters implements _$DetectedIssueSearch {
 DetectedIssueSearch._(); 
  factory DetectedIssueSearch ({
 List<Id> searchId,
