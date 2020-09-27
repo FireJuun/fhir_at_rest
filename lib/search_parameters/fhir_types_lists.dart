@@ -1,158 +1,48 @@
-var resourceTypes = [
-  'account',
-  'activitydefinition',
-  'adverseevent',
-  'allergyintolerance',
-  'appointment',
-  'appointmentresponse',
-  'auditevent',
-  'basic',
-  'binary',
-  'biologicallyderivedproduct',
-  'bodystructure',
-  'bundle',
-  'capabilitystatement',
-  'careplan',
-  'careteam',
-  'catalogentry',
-  'chargeitem',
-  'chargeitemdefinition',
-  'claim',
-  'claimresponse',
-  'clinicalimpression',
-  'codesystem',
-  'communication',
-  'communicationrequest',
-  'compartmentdefinition',
-  'composition',
-  'conceptmap',
-  'condition',
-  'consent',
-  'contract',
-  'coverage',
-  'coverageeligibilityrequest',
-  'coverageeligibilityresponse',
-  'detectedissue',
-  'device',
-  'devicedefinition',
-  'devicemetric',
-  'devicerequest',
-  'deviceusestatement',
-  'diagnosticreport',
-  'documentmanifest',
-  'documentreference',
-  'effectevidencesynthesis',
-  'encounter',
-  'endpoint',
-  'enrollmentrequest',
-  'enrollmentresponse',
-  'episodeofcare',
-  'eventdefinition',
-  'evidence',
-  'evidencevariable',
-  'examplescenario',
-  'explanationofbenefit',
-  'familymemberhistory',
-  'flag',
-  'goal',
-  'graphdefinition',
-  'group',
-  'guidanceresponse',
-  'healthcareservice',
-  'imagingstudy',
-  'immunization',
-  'immunizationevaluation',
-  'immunizationrecommendation',
-  'implementationguide',
-  'insuranceplan',
-  'invoice',
-  'library',
-  'linkage',
-  'list',
-  'location',
-  'measure',
-  'measurereport',
-  'media',
-  'medication',
-  'medicationadministration',
-  'medicationdispense',
-  'medicationknowledge',
-  'medicationrequest',
-  'medicationstatement',
-  'medicinalproduct',
-  'medicinalproductauthorization',
-  'medicinalproductcontraindication',
-  'medicinalproductindication',
-  'medicinalproductingredient',
-  'medicinalproductinteraction',
-  'medicinalproductmanufactured',
-  'medicinalproductpackaged',
-  'medicinalproductpharmaceutical',
-  'medicinalproductundesirableeffect',
-  'messagedefinition',
-  'messageheader',
-  'molecularsequence',
-  'namingsystem',
-  'nutritionorder',
-  'observation',
-  'observationdefinition',
-  'operationdefinition',
-  'operationoutcome',
-  'organization',
-  'organizationaffiliation',
-  'parameters',
-  'patient',
-  'paymentnotice',
-  'paymentreconciliation',
-  'person',
-  'plandefinition',
-  'practitioner',
-  'practitionerrole',
-  'procedure',
-  'provenance',
-  'questionnaire',
-  'questionnaireresponse',
-  'relatedperson',
-  'requestgroup',
-  'researchdefinition',
-  'researchelementdefinition',
-  'researchstudy',
-  'researchsubject',
-  'riskassessment',
-  'riskevidencesynthesis',
-  'schedule',
-  'searchparameter',
-  'servicerequest',
-  'slot',
-  'specimen',
-  'specimendefinition',
-  'structuredefinition',
-  'structuremap',
-  'subscription',
-  'substance',
-  'substancenucleicacid',
-  'substancepolymer',
-  'substanceprotein',
-  'substancereferenceinformation',
-  'substancesourcematerial',
-  'substancespecification',
-  'supplydelivery',
-  'supplyrequest',
-  'task',
-  'terminologycapabilities',
-  'testreport',
-  'testscript',
-  'valueset',
-  'verificationresult',
-  'visionprescription'
+var resourceGroups = [
+  subgroupsBase,
+  subgroupsClinical,
+  subgroupsFinancial,
+  subgroupsFoundation,
+  subgroupsSpecialized,
 ];
 
-var resourceGroups = [
-  groupBase,
-  groupClinical,
-  groupFinancial,
-  groupFoundation,
-  groupSpecialized,
+var subgroupsBase = [
+  entities1,
+  entities2,
+  individuals,
+  management,
+  workflow,
+];
+
+var subgroupsClinical = [
+  care_provision,
+  diagnostics,
+  medications,
+  request_and_response,
+  summary,
+];
+
+var subgroupsFinancial = [
+  billing,
+  general,
+  payment,
+  support,
+];
+
+var subgroupsFoundation = [
+  conformance,
+  documents,
+  other,
+  security,
+  terminology,
+];
+
+var subgroupsSpecialized = [
+  definitional_artifacts,
+  evidence_based_medicine,
+  medication_definition,
+  public_health_and_research,
+  quality_reporting_and_testing,
 ];
 
 var groupBase = [
@@ -775,14 +665,6 @@ var groupSpecialized = [
   'testscriptaction2',
 ];
 
-var subgroupsBase = [
-  entities1,
-  entities2,
-  individuals,
-  management,
-  workflow,
-];
-
 var entities1 = [
   'organization',
   'organizationaffiliation',
@@ -822,14 +704,6 @@ var workflow = [
   'schedule',
   'slot',
   'verificationresult',
-];
-
-var subgroupsClinical = [
-  care_provision,
-  diagnostics,
-  medications,
-  request_and_response,
-  summary,
 ];
 
 var care_provision = [
@@ -886,13 +760,6 @@ var summary = [
   'detectedissue',
 ];
 
-var subgroupsFinancial = [
-  billing,
-  general,
-  payment,
-  support,
-];
-
 var billing = [
   'claim',
   'claimresponse',
@@ -919,14 +786,6 @@ var support = [
   'coverageeligibilityresponse',
   'enrollmentrequest',
   'enrollmentresponse',
-];
-
-var subgroupsFoundation = [
-  conformance,
-  documents,
-  other,
-  security,
-  terminology,
 ];
 
 var conformance = [
@@ -972,14 +831,6 @@ var terminology = [
   'conceptmap',
   'namingsystem',
   'terminologycapabilities',
-];
-
-var subgroupsSpecialized = [
-  definitional_artifacts,
-  evidence_based_medicine,
-  medication_definition,
-  public_health_and_research,
-  quality_reporting_and_testing,
 ];
 
 var definitional_artifacts = [
