@@ -24,38 +24,49 @@ abstract class UpdateRequest with _$UpdateRequest {
     @required Uri base,
     @required Dstu2Types type,
     @required Id id,
+    @Default(false) bool pretty,
+    @Default(Summary.none) Summary summary,
   }) = _UpdateRequestDstu2;
 
   factory UpdateRequest.stu3({
     @required Uri base,
     @required Stu3Types type,
     @required Id id,
+    @Default(false) bool pretty,
+    @Default(Summary.none) Summary summary,
   }) = _UpdateRequestStu3;
 
   factory UpdateRequest.r4({
     @required Uri base,
     @required R4Types type,
     @required Id id,
+    @Default(false) bool pretty,
+    @Default(Summary.none) Summary summary,
   }) = _UpdateRequestR4;
 
   factory UpdateRequest.r5({
     @required Uri base,
     @required R5Types type,
     @required Id id,
+    @Default(false) bool pretty,
+    @Default(Summary.none) Summary summary,
   }) = _UpdateRequestR5;
 
   Future<Either<RestfulFailure, dynamic>> request(dynamic resource) async {
-    final thisRequest = '${base}/'
-        '${enumToString(this.map(
-      dstu2: (request) => request.type,
-      stu3: (request) => request.type,
-      r4: (request) => request.type,
-      r5: (request) => request.type,
-    ))}/'
-        '${id.toString()}/'
-        '$_format';
+    var thisRequest = this.map(
+      dstu2: (req) => '${base}/${enumToString(req.type)}/${req.id.toString()}',
+      stu3: (req) => '${base}/${enumToString(req.type)}/${req.id.toString()}',
+      r4: (req) => '${base}/${enumToString(req.type)}/${req.id.toString()}',
+      r5: (req) => '${base}/${enumToString(req.type)}/${req.id.toString()}',
+    );
+
+    thisRequest += '?_format=application/fhir+json'
+        '${pretty ? "&_pretty=$pretty" : ""}'
+        '${summary != Summary.none ? "&_summary=${enumToString(summary)}" : ""}';
+
     final result =
         await makeRequest(put, thisRequest, resource: resource.toJson());
+
     return result.fold(
         (ifLeft) => left(ifLeft),
         (ifRight) => right(this.map(
@@ -66,5 +77,3 @@ abstract class UpdateRequest with _$UpdateRequest {
             )));
   }
 }
-
-const _format = '?_format=application/fhir+json';

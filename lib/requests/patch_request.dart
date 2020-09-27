@@ -24,38 +24,49 @@ abstract class PatchRequest with _$PatchRequest {
     @required Uri base,
     @required Dstu2Types type,
     @required Id id,
+    @Default(false) bool pretty,
+    @Default(Summary.none) Summary summary,
   }) = _PatchRequestDstu2;
 
   factory PatchRequest.stu3({
     @required Uri base,
     @required Stu3Types type,
     @required Id id,
+    @Default(false) bool pretty,
+    @Default(Summary.none) Summary summary,
   }) = _PatchRequestStu3;
 
   factory PatchRequest.r4({
     @required Uri base,
     @required R4Types type,
     @required Id id,
+    @Default(false) bool pretty,
+    @Default(Summary.none) Summary summary,
   }) = _PatchRequestR4;
 
   factory PatchRequest.r5({
     @required Uri base,
     @required R5Types type,
     @required Id id,
+    @Default(false) bool pretty,
+    @Default(Summary.none) Summary summary,
   }) = _PatchRequestR5;
 
   Future<Either<RestfulFailure, dynamic>> request(dynamic resource) async {
-    final thisRequest = '${base}/'
-        '${enumToString(this.map(
-      dstu2: (request) => request.type,
-      stu3: (request) => request.type,
-      r4: (request) => request.type,
-      r5: (request) => request.type,
-    ))}/'
-        '${id.toString()}/'
-        '$_format';
+    var thisRequest = this.map(
+      dstu2: (req) => '${base}/${enumToString(req.type)}/${req.id.toString()}',
+      stu3: (req) => '${base}/${enumToString(req.type)}/${req.id.toString()}',
+      r4: (req) => '${base}/${enumToString(req.type)}/${req.id.toString()}',
+      r5: (req) => '${base}/${enumToString(req.type)}/${req.id.toString()}',
+    );
+
+    thisRequest += '?_format=application/fhir+json'
+        '${pretty ? "&_pretty=$pretty" : ""}'
+        '${summary != Summary.none ? "&_summary=${enumToString(summary)}" : ""}';
+
     final result =
-        await makeRequest(patch, thisRequest, resource: resource.toJson());
+        await makeRequest(put, thisRequest, resource: resource.toJson());
+
     return result.fold(
         (ifLeft) => left(ifLeft),
         (ifRight) => right(this.map(
@@ -66,5 +77,3 @@ abstract class PatchRequest with _$PatchRequest {
             )));
   }
 }
-
-const _format = '?_format=application/fhir+json';

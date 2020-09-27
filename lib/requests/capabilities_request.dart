@@ -21,27 +21,40 @@ abstract class CapabilitiesRequest with _$CapabilitiesRequest {
   factory CapabilitiesRequest.dstu2({
     @required Uri base,
     @Default(Mode.full) Mode mode,
+    @Default(false) bool pretty,
+    @Default(Summary.none) Summary summary,
   }) = _CapabilitiesRequestDstu2;
 
   factory CapabilitiesRequest.stu3({
     @required Uri base,
     @Default(Mode.full) Mode mode,
+    @Default(false) bool pretty,
+    @Default(Summary.none) Summary summary,
   }) = _CapabilitiesRequestStu3;
 
   factory CapabilitiesRequest.r4({
     @required Uri base,
     @Default(Mode.full) Mode mode,
+    @Default(false) bool pretty,
+    @Default(Summary.none) Summary summary,
   }) = _CapabilitiesRequestR4;
 
   factory CapabilitiesRequest.r5({
     @required Uri base,
     @Default(Mode.full) Mode mode,
+    @Default(false) bool pretty,
+    @Default(Summary.none) Summary summary,
   }) = _CapabilitiesRequestR5;
 
   Future<Either<RestfulFailure, dynamic>> request(dynamic resource) async {
-    final thisRequest = '${base}/metadata?mode=${enumToString(mode)}$_format';
+    final thisRequest = '${base}/metadata?mode=${enumToString(mode)}'
+        '&_format=application/fhir+json'
+        '${pretty ? "&_pretty=$pretty" : ""}'
+        '${summary != Summary.none ? "&_summary=${enumToString(summary)}" : ""}';
+
     final result =
         await makeRequest(put, thisRequest, resource: resource.toJson());
+
     return result.fold(
         (ifLeft) => left(ifLeft),
         (ifRight) => right(this.map(
@@ -52,5 +65,3 @@ abstract class CapabilitiesRequest with _$CapabilitiesRequest {
             )));
   }
 }
-
-const _format = '&_format=application/fhir+json';

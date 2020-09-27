@@ -45,15 +45,15 @@ abstract class DeleteRequest with _$DeleteRequest {
   }) = _DeleteRequestR5;
 
   Future<Either<RestfulFailure, dynamic>> request() async {
-    final thisRequest = '${base}/'
-        '${enumToString(this.map(
-      dstu2: (request) => request.type,
-      stu3: (request) => request.type,
-      r4: (request) => request.type,
-      r5: (request) => request.type,
-    ))}/'
-        '${id.toString()}';
-    final result = await makeRequest(put, thisRequest);
+    var thisRequest = this.map(
+      dstu2: (req) => '${base}/${enumToString(req.type)}/${req.id.toString()}',
+      stu3: (req) => '${base}/${enumToString(req.type)}/${req.id.toString()}',
+      r4: (req) => '${base}/${enumToString(req.type)}/${req.id.toString()}',
+      r5: (req) => '${base}/${enumToString(req.type)}/${req.id.toString()}',
+    );
+
+    final result = await makeRequest(delete, thisRequest);
+
     return result.fold(
         (ifLeft) => left(ifLeft),
         (ifRight) => right(this.map(

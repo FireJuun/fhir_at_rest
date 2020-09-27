@@ -22,35 +22,46 @@ abstract class CreateRequest with _$CreateRequest {
   factory CreateRequest.dstu2({
     @required Uri base,
     @required Dstu2Types type,
+    @Default(false) bool pretty,
+    @Default(Summary.none) Summary summary,
   }) = _CreateRequestDstu2;
 
   factory CreateRequest.stu3({
     @required Uri base,
     @required Stu3Types type,
+    @Default(false) bool pretty,
+    @Default(Summary.none) Summary summary,
   }) = _CreateRequestStu3;
 
   factory CreateRequest.r4({
     @required Uri base,
     @required R4Types type,
+    @Default(false) bool pretty,
+    @Default(Summary.none) Summary summary,
   }) = _CreateRequestR4;
 
   factory CreateRequest.r5({
     @required Uri base,
     @required R5Types type,
+    @Default(false) bool pretty,
+    @Default(Summary.none) Summary summary,
   }) = _CreateRequestR5;
 
   Future<Either<RestfulFailure, dynamic>> request(dynamic resource) async {
-    final thisRequest = '${base}/'
-        '${enumToString(this.map(
-      dstu2: (request) => request.type,
-      stu3: (request) => request.type,
-      r4: (request) => request.type,
-      r5: (request) => request.type,
-    ))}/'
-        '${id.toString()}/'
-        '$_format';
+    var thisRequest = this.map(
+      dstu2: (req) => '${base}/${enumToString(req.type)}',
+      stu3: (req) => '${base}/${enumToString(req.type)}',
+      r4: (req) => '${base}/${enumToString(req.type)}',
+      r5: (req) => '${base}/${enumToString(req.type)}',
+    );
+
+    thisRequest += '?_format=application/fhir+json'
+        '${pretty ? "&_pretty=$pretty" : ""}'
+        '${summary != Summary.none ? "&_summary=${enumToString(summary)}" : ""}';
+
     final result =
         await makeRequest(put, thisRequest, resource: resource.toJson());
+
     return result.fold(
         (ifLeft) => left(ifLeft),
         (ifRight) => right(this.map(
@@ -61,5 +72,3 @@ abstract class CreateRequest with _$CreateRequest {
             )));
   }
 }
-
-const _format = '?_format=application/fhir+json';

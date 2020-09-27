@@ -14,34 +14,58 @@ class _$CapabilitiesRequestTearOff {
   const _$CapabilitiesRequestTearOff();
 
 // ignore: unused_element
-  _CapabilitiesRequestDstu2 dstu2({@required Uri base, Mode mode = Mode.full}) {
+  _CapabilitiesRequestDstu2 dstu2(
+      {@required Uri base,
+      Mode mode = Mode.full,
+      bool pretty = false,
+      Summary summary = Summary.none}) {
     return _CapabilitiesRequestDstu2(
       base: base,
       mode: mode,
+      pretty: pretty,
+      summary: summary,
     );
   }
 
 // ignore: unused_element
-  _CapabilitiesRequestStu3 stu3({@required Uri base, Mode mode = Mode.full}) {
+  _CapabilitiesRequestStu3 stu3(
+      {@required Uri base,
+      Mode mode = Mode.full,
+      bool pretty = false,
+      Summary summary = Summary.none}) {
     return _CapabilitiesRequestStu3(
       base: base,
       mode: mode,
+      pretty: pretty,
+      summary: summary,
     );
   }
 
 // ignore: unused_element
-  _CapabilitiesRequestR4 r4({@required Uri base, Mode mode = Mode.full}) {
+  _CapabilitiesRequestR4 r4(
+      {@required Uri base,
+      Mode mode = Mode.full,
+      bool pretty = false,
+      Summary summary = Summary.none}) {
     return _CapabilitiesRequestR4(
       base: base,
       mode: mode,
+      pretty: pretty,
+      summary: summary,
     );
   }
 
 // ignore: unused_element
-  _CapabilitiesRequestR5 r5({@required Uri base, Mode mode = Mode.full}) {
+  _CapabilitiesRequestR5 r5(
+      {@required Uri base,
+      Mode mode = Mode.full,
+      bool pretty = false,
+      Summary summary = Summary.none}) {
     return _CapabilitiesRequestR5(
       base: base,
       mode: mode,
+      pretty: pretty,
+      summary: summary,
     );
   }
 }
@@ -54,20 +78,22 @@ const $CapabilitiesRequest = _$CapabilitiesRequestTearOff();
 mixin _$CapabilitiesRequest {
   Uri get base;
   Mode get mode;
+  bool get pretty;
+  Summary get summary;
 
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result dstu2(Uri base, Mode mode),
-    @required Result stu3(Uri base, Mode mode),
-    @required Result r4(Uri base, Mode mode),
-    @required Result r5(Uri base, Mode mode),
+    @required Result dstu2(Uri base, Mode mode, bool pretty, Summary summary),
+    @required Result stu3(Uri base, Mode mode, bool pretty, Summary summary),
+    @required Result r4(Uri base, Mode mode, bool pretty, Summary summary),
+    @required Result r5(Uri base, Mode mode, bool pretty, Summary summary),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result dstu2(Uri base, Mode mode),
-    Result stu3(Uri base, Mode mode),
-    Result r4(Uri base, Mode mode),
-    Result r5(Uri base, Mode mode),
+    Result dstu2(Uri base, Mode mode, bool pretty, Summary summary),
+    Result stu3(Uri base, Mode mode, bool pretty, Summary summary),
+    Result r4(Uri base, Mode mode, bool pretty, Summary summary),
+    Result r5(Uri base, Mode mode, bool pretty, Summary summary),
     @required Result orElse(),
   });
   @optionalTypeArgs
@@ -94,7 +120,7 @@ abstract class $CapabilitiesRequestCopyWith<$Res> {
   factory $CapabilitiesRequestCopyWith(
           CapabilitiesRequest value, $Res Function(CapabilitiesRequest) then) =
       _$CapabilitiesRequestCopyWithImpl<$Res>;
-  $Res call({Uri base, Mode mode});
+  $Res call({Uri base, Mode mode, bool pretty, Summary summary});
 }
 
 /// @nodoc
@@ -110,10 +136,14 @@ class _$CapabilitiesRequestCopyWithImpl<$Res>
   $Res call({
     Object base = freezed,
     Object mode = freezed,
+    Object pretty = freezed,
+    Object summary = freezed,
   }) {
     return _then(_value.copyWith(
       base: base == freezed ? _value.base : base as Uri,
       mode: mode == freezed ? _value.mode : mode as Mode,
+      pretty: pretty == freezed ? _value.pretty : pretty as bool,
+      summary: summary == freezed ? _value.summary : summary as Summary,
     ));
   }
 }
@@ -125,7 +155,7 @@ abstract class _$CapabilitiesRequestDstu2CopyWith<$Res>
           $Res Function(_CapabilitiesRequestDstu2) then) =
       __$CapabilitiesRequestDstu2CopyWithImpl<$Res>;
   @override
-  $Res call({Uri base, Mode mode});
+  $Res call({Uri base, Mode mode, bool pretty, Summary summary});
 }
 
 /// @nodoc
@@ -144,19 +174,29 @@ class __$CapabilitiesRequestDstu2CopyWithImpl<$Res>
   $Res call({
     Object base = freezed,
     Object mode = freezed,
+    Object pretty = freezed,
+    Object summary = freezed,
   }) {
     return _then(_CapabilitiesRequestDstu2(
       base: base == freezed ? _value.base : base as Uri,
       mode: mode == freezed ? _value.mode : mode as Mode,
+      pretty: pretty == freezed ? _value.pretty : pretty as bool,
+      summary: summary == freezed ? _value.summary : summary as Summary,
     ));
   }
 }
 
 /// @nodoc
 class _$_CapabilitiesRequestDstu2 extends _CapabilitiesRequestDstu2 {
-  _$_CapabilitiesRequestDstu2({@required this.base, this.mode = Mode.full})
+  _$_CapabilitiesRequestDstu2(
+      {@required this.base,
+      this.mode = Mode.full,
+      this.pretty = false,
+      this.summary = Summary.none})
       : assert(base != null),
         assert(mode != null),
+        assert(pretty != null),
+        assert(summary != null),
         super._();
 
   @override
@@ -164,10 +204,16 @@ class _$_CapabilitiesRequestDstu2 extends _CapabilitiesRequestDstu2 {
   @JsonKey(defaultValue: Mode.full)
   @override
   final Mode mode;
+  @JsonKey(defaultValue: false)
+  @override
+  final bool pretty;
+  @JsonKey(defaultValue: Summary.none)
+  @override
+  final Summary summary;
 
   @override
   String toString() {
-    return 'CapabilitiesRequest.dstu2(base: $base, mode: $mode)';
+    return 'CapabilitiesRequest.dstu2(base: $base, mode: $mode, pretty: $pretty, summary: $summary)';
   }
 
   @override
@@ -177,14 +223,20 @@ class _$_CapabilitiesRequestDstu2 extends _CapabilitiesRequestDstu2 {
             (identical(other.base, base) ||
                 const DeepCollectionEquality().equals(other.base, base)) &&
             (identical(other.mode, mode) ||
-                const DeepCollectionEquality().equals(other.mode, mode)));
+                const DeepCollectionEquality().equals(other.mode, mode)) &&
+            (identical(other.pretty, pretty) ||
+                const DeepCollectionEquality().equals(other.pretty, pretty)) &&
+            (identical(other.summary, summary) ||
+                const DeepCollectionEquality().equals(other.summary, summary)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(base) ^
-      const DeepCollectionEquality().hash(mode);
+      const DeepCollectionEquality().hash(mode) ^
+      const DeepCollectionEquality().hash(pretty) ^
+      const DeepCollectionEquality().hash(summary);
 
   @override
   _$CapabilitiesRequestDstu2CopyWith<_CapabilitiesRequestDstu2> get copyWith =>
@@ -194,30 +246,30 @@ class _$_CapabilitiesRequestDstu2 extends _CapabilitiesRequestDstu2 {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result dstu2(Uri base, Mode mode),
-    @required Result stu3(Uri base, Mode mode),
-    @required Result r4(Uri base, Mode mode),
-    @required Result r5(Uri base, Mode mode),
+    @required Result dstu2(Uri base, Mode mode, bool pretty, Summary summary),
+    @required Result stu3(Uri base, Mode mode, bool pretty, Summary summary),
+    @required Result r4(Uri base, Mode mode, bool pretty, Summary summary),
+    @required Result r5(Uri base, Mode mode, bool pretty, Summary summary),
   }) {
     assert(dstu2 != null);
     assert(stu3 != null);
     assert(r4 != null);
     assert(r5 != null);
-    return dstu2(base, mode);
+    return dstu2(base, mode, pretty, summary);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result dstu2(Uri base, Mode mode),
-    Result stu3(Uri base, Mode mode),
-    Result r4(Uri base, Mode mode),
-    Result r5(Uri base, Mode mode),
+    Result dstu2(Uri base, Mode mode, bool pretty, Summary summary),
+    Result stu3(Uri base, Mode mode, bool pretty, Summary summary),
+    Result r4(Uri base, Mode mode, bool pretty, Summary summary),
+    Result r5(Uri base, Mode mode, bool pretty, Summary summary),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (dstu2 != null) {
-      return dstu2(base, mode);
+      return dstu2(base, mode, pretty, summary);
     }
     return orElse();
   }
@@ -256,13 +308,20 @@ class _$_CapabilitiesRequestDstu2 extends _CapabilitiesRequestDstu2 {
 
 abstract class _CapabilitiesRequestDstu2 extends CapabilitiesRequest {
   _CapabilitiesRequestDstu2._() : super._();
-  factory _CapabilitiesRequestDstu2({@required Uri base, Mode mode}) =
-      _$_CapabilitiesRequestDstu2;
+  factory _CapabilitiesRequestDstu2(
+      {@required Uri base,
+      Mode mode,
+      bool pretty,
+      Summary summary}) = _$_CapabilitiesRequestDstu2;
 
   @override
   Uri get base;
   @override
   Mode get mode;
+  @override
+  bool get pretty;
+  @override
+  Summary get summary;
   @override
   _$CapabilitiesRequestDstu2CopyWith<_CapabilitiesRequestDstu2> get copyWith;
 }
@@ -274,7 +333,7 @@ abstract class _$CapabilitiesRequestStu3CopyWith<$Res>
           $Res Function(_CapabilitiesRequestStu3) then) =
       __$CapabilitiesRequestStu3CopyWithImpl<$Res>;
   @override
-  $Res call({Uri base, Mode mode});
+  $Res call({Uri base, Mode mode, bool pretty, Summary summary});
 }
 
 /// @nodoc
@@ -293,19 +352,29 @@ class __$CapabilitiesRequestStu3CopyWithImpl<$Res>
   $Res call({
     Object base = freezed,
     Object mode = freezed,
+    Object pretty = freezed,
+    Object summary = freezed,
   }) {
     return _then(_CapabilitiesRequestStu3(
       base: base == freezed ? _value.base : base as Uri,
       mode: mode == freezed ? _value.mode : mode as Mode,
+      pretty: pretty == freezed ? _value.pretty : pretty as bool,
+      summary: summary == freezed ? _value.summary : summary as Summary,
     ));
   }
 }
 
 /// @nodoc
 class _$_CapabilitiesRequestStu3 extends _CapabilitiesRequestStu3 {
-  _$_CapabilitiesRequestStu3({@required this.base, this.mode = Mode.full})
+  _$_CapabilitiesRequestStu3(
+      {@required this.base,
+      this.mode = Mode.full,
+      this.pretty = false,
+      this.summary = Summary.none})
       : assert(base != null),
         assert(mode != null),
+        assert(pretty != null),
+        assert(summary != null),
         super._();
 
   @override
@@ -313,10 +382,16 @@ class _$_CapabilitiesRequestStu3 extends _CapabilitiesRequestStu3 {
   @JsonKey(defaultValue: Mode.full)
   @override
   final Mode mode;
+  @JsonKey(defaultValue: false)
+  @override
+  final bool pretty;
+  @JsonKey(defaultValue: Summary.none)
+  @override
+  final Summary summary;
 
   @override
   String toString() {
-    return 'CapabilitiesRequest.stu3(base: $base, mode: $mode)';
+    return 'CapabilitiesRequest.stu3(base: $base, mode: $mode, pretty: $pretty, summary: $summary)';
   }
 
   @override
@@ -326,14 +401,20 @@ class _$_CapabilitiesRequestStu3 extends _CapabilitiesRequestStu3 {
             (identical(other.base, base) ||
                 const DeepCollectionEquality().equals(other.base, base)) &&
             (identical(other.mode, mode) ||
-                const DeepCollectionEquality().equals(other.mode, mode)));
+                const DeepCollectionEquality().equals(other.mode, mode)) &&
+            (identical(other.pretty, pretty) ||
+                const DeepCollectionEquality().equals(other.pretty, pretty)) &&
+            (identical(other.summary, summary) ||
+                const DeepCollectionEquality().equals(other.summary, summary)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(base) ^
-      const DeepCollectionEquality().hash(mode);
+      const DeepCollectionEquality().hash(mode) ^
+      const DeepCollectionEquality().hash(pretty) ^
+      const DeepCollectionEquality().hash(summary);
 
   @override
   _$CapabilitiesRequestStu3CopyWith<_CapabilitiesRequestStu3> get copyWith =>
@@ -343,30 +424,30 @@ class _$_CapabilitiesRequestStu3 extends _CapabilitiesRequestStu3 {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result dstu2(Uri base, Mode mode),
-    @required Result stu3(Uri base, Mode mode),
-    @required Result r4(Uri base, Mode mode),
-    @required Result r5(Uri base, Mode mode),
+    @required Result dstu2(Uri base, Mode mode, bool pretty, Summary summary),
+    @required Result stu3(Uri base, Mode mode, bool pretty, Summary summary),
+    @required Result r4(Uri base, Mode mode, bool pretty, Summary summary),
+    @required Result r5(Uri base, Mode mode, bool pretty, Summary summary),
   }) {
     assert(dstu2 != null);
     assert(stu3 != null);
     assert(r4 != null);
     assert(r5 != null);
-    return stu3(base, mode);
+    return stu3(base, mode, pretty, summary);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result dstu2(Uri base, Mode mode),
-    Result stu3(Uri base, Mode mode),
-    Result r4(Uri base, Mode mode),
-    Result r5(Uri base, Mode mode),
+    Result dstu2(Uri base, Mode mode, bool pretty, Summary summary),
+    Result stu3(Uri base, Mode mode, bool pretty, Summary summary),
+    Result r4(Uri base, Mode mode, bool pretty, Summary summary),
+    Result r5(Uri base, Mode mode, bool pretty, Summary summary),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (stu3 != null) {
-      return stu3(base, mode);
+      return stu3(base, mode, pretty, summary);
     }
     return orElse();
   }
@@ -405,13 +486,20 @@ class _$_CapabilitiesRequestStu3 extends _CapabilitiesRequestStu3 {
 
 abstract class _CapabilitiesRequestStu3 extends CapabilitiesRequest {
   _CapabilitiesRequestStu3._() : super._();
-  factory _CapabilitiesRequestStu3({@required Uri base, Mode mode}) =
-      _$_CapabilitiesRequestStu3;
+  factory _CapabilitiesRequestStu3(
+      {@required Uri base,
+      Mode mode,
+      bool pretty,
+      Summary summary}) = _$_CapabilitiesRequestStu3;
 
   @override
   Uri get base;
   @override
   Mode get mode;
+  @override
+  bool get pretty;
+  @override
+  Summary get summary;
   @override
   _$CapabilitiesRequestStu3CopyWith<_CapabilitiesRequestStu3> get copyWith;
 }
@@ -423,7 +511,7 @@ abstract class _$CapabilitiesRequestR4CopyWith<$Res>
           $Res Function(_CapabilitiesRequestR4) then) =
       __$CapabilitiesRequestR4CopyWithImpl<$Res>;
   @override
-  $Res call({Uri base, Mode mode});
+  $Res call({Uri base, Mode mode, bool pretty, Summary summary});
 }
 
 /// @nodoc
@@ -441,19 +529,29 @@ class __$CapabilitiesRequestR4CopyWithImpl<$Res>
   $Res call({
     Object base = freezed,
     Object mode = freezed,
+    Object pretty = freezed,
+    Object summary = freezed,
   }) {
     return _then(_CapabilitiesRequestR4(
       base: base == freezed ? _value.base : base as Uri,
       mode: mode == freezed ? _value.mode : mode as Mode,
+      pretty: pretty == freezed ? _value.pretty : pretty as bool,
+      summary: summary == freezed ? _value.summary : summary as Summary,
     ));
   }
 }
 
 /// @nodoc
 class _$_CapabilitiesRequestR4 extends _CapabilitiesRequestR4 {
-  _$_CapabilitiesRequestR4({@required this.base, this.mode = Mode.full})
+  _$_CapabilitiesRequestR4(
+      {@required this.base,
+      this.mode = Mode.full,
+      this.pretty = false,
+      this.summary = Summary.none})
       : assert(base != null),
         assert(mode != null),
+        assert(pretty != null),
+        assert(summary != null),
         super._();
 
   @override
@@ -461,10 +559,16 @@ class _$_CapabilitiesRequestR4 extends _CapabilitiesRequestR4 {
   @JsonKey(defaultValue: Mode.full)
   @override
   final Mode mode;
+  @JsonKey(defaultValue: false)
+  @override
+  final bool pretty;
+  @JsonKey(defaultValue: Summary.none)
+  @override
+  final Summary summary;
 
   @override
   String toString() {
-    return 'CapabilitiesRequest.r4(base: $base, mode: $mode)';
+    return 'CapabilitiesRequest.r4(base: $base, mode: $mode, pretty: $pretty, summary: $summary)';
   }
 
   @override
@@ -474,14 +578,20 @@ class _$_CapabilitiesRequestR4 extends _CapabilitiesRequestR4 {
             (identical(other.base, base) ||
                 const DeepCollectionEquality().equals(other.base, base)) &&
             (identical(other.mode, mode) ||
-                const DeepCollectionEquality().equals(other.mode, mode)));
+                const DeepCollectionEquality().equals(other.mode, mode)) &&
+            (identical(other.pretty, pretty) ||
+                const DeepCollectionEquality().equals(other.pretty, pretty)) &&
+            (identical(other.summary, summary) ||
+                const DeepCollectionEquality().equals(other.summary, summary)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(base) ^
-      const DeepCollectionEquality().hash(mode);
+      const DeepCollectionEquality().hash(mode) ^
+      const DeepCollectionEquality().hash(pretty) ^
+      const DeepCollectionEquality().hash(summary);
 
   @override
   _$CapabilitiesRequestR4CopyWith<_CapabilitiesRequestR4> get copyWith =>
@@ -491,30 +601,30 @@ class _$_CapabilitiesRequestR4 extends _CapabilitiesRequestR4 {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result dstu2(Uri base, Mode mode),
-    @required Result stu3(Uri base, Mode mode),
-    @required Result r4(Uri base, Mode mode),
-    @required Result r5(Uri base, Mode mode),
+    @required Result dstu2(Uri base, Mode mode, bool pretty, Summary summary),
+    @required Result stu3(Uri base, Mode mode, bool pretty, Summary summary),
+    @required Result r4(Uri base, Mode mode, bool pretty, Summary summary),
+    @required Result r5(Uri base, Mode mode, bool pretty, Summary summary),
   }) {
     assert(dstu2 != null);
     assert(stu3 != null);
     assert(r4 != null);
     assert(r5 != null);
-    return r4(base, mode);
+    return r4(base, mode, pretty, summary);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result dstu2(Uri base, Mode mode),
-    Result stu3(Uri base, Mode mode),
-    Result r4(Uri base, Mode mode),
-    Result r5(Uri base, Mode mode),
+    Result dstu2(Uri base, Mode mode, bool pretty, Summary summary),
+    Result stu3(Uri base, Mode mode, bool pretty, Summary summary),
+    Result r4(Uri base, Mode mode, bool pretty, Summary summary),
+    Result r5(Uri base, Mode mode, bool pretty, Summary summary),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (r4 != null) {
-      return r4(base, mode);
+      return r4(base, mode, pretty, summary);
     }
     return orElse();
   }
@@ -553,13 +663,20 @@ class _$_CapabilitiesRequestR4 extends _CapabilitiesRequestR4 {
 
 abstract class _CapabilitiesRequestR4 extends CapabilitiesRequest {
   _CapabilitiesRequestR4._() : super._();
-  factory _CapabilitiesRequestR4({@required Uri base, Mode mode}) =
-      _$_CapabilitiesRequestR4;
+  factory _CapabilitiesRequestR4(
+      {@required Uri base,
+      Mode mode,
+      bool pretty,
+      Summary summary}) = _$_CapabilitiesRequestR4;
 
   @override
   Uri get base;
   @override
   Mode get mode;
+  @override
+  bool get pretty;
+  @override
+  Summary get summary;
   @override
   _$CapabilitiesRequestR4CopyWith<_CapabilitiesRequestR4> get copyWith;
 }
@@ -571,7 +688,7 @@ abstract class _$CapabilitiesRequestR5CopyWith<$Res>
           $Res Function(_CapabilitiesRequestR5) then) =
       __$CapabilitiesRequestR5CopyWithImpl<$Res>;
   @override
-  $Res call({Uri base, Mode mode});
+  $Res call({Uri base, Mode mode, bool pretty, Summary summary});
 }
 
 /// @nodoc
@@ -589,19 +706,29 @@ class __$CapabilitiesRequestR5CopyWithImpl<$Res>
   $Res call({
     Object base = freezed,
     Object mode = freezed,
+    Object pretty = freezed,
+    Object summary = freezed,
   }) {
     return _then(_CapabilitiesRequestR5(
       base: base == freezed ? _value.base : base as Uri,
       mode: mode == freezed ? _value.mode : mode as Mode,
+      pretty: pretty == freezed ? _value.pretty : pretty as bool,
+      summary: summary == freezed ? _value.summary : summary as Summary,
     ));
   }
 }
 
 /// @nodoc
 class _$_CapabilitiesRequestR5 extends _CapabilitiesRequestR5 {
-  _$_CapabilitiesRequestR5({@required this.base, this.mode = Mode.full})
+  _$_CapabilitiesRequestR5(
+      {@required this.base,
+      this.mode = Mode.full,
+      this.pretty = false,
+      this.summary = Summary.none})
       : assert(base != null),
         assert(mode != null),
+        assert(pretty != null),
+        assert(summary != null),
         super._();
 
   @override
@@ -609,10 +736,16 @@ class _$_CapabilitiesRequestR5 extends _CapabilitiesRequestR5 {
   @JsonKey(defaultValue: Mode.full)
   @override
   final Mode mode;
+  @JsonKey(defaultValue: false)
+  @override
+  final bool pretty;
+  @JsonKey(defaultValue: Summary.none)
+  @override
+  final Summary summary;
 
   @override
   String toString() {
-    return 'CapabilitiesRequest.r5(base: $base, mode: $mode)';
+    return 'CapabilitiesRequest.r5(base: $base, mode: $mode, pretty: $pretty, summary: $summary)';
   }
 
   @override
@@ -622,14 +755,20 @@ class _$_CapabilitiesRequestR5 extends _CapabilitiesRequestR5 {
             (identical(other.base, base) ||
                 const DeepCollectionEquality().equals(other.base, base)) &&
             (identical(other.mode, mode) ||
-                const DeepCollectionEquality().equals(other.mode, mode)));
+                const DeepCollectionEquality().equals(other.mode, mode)) &&
+            (identical(other.pretty, pretty) ||
+                const DeepCollectionEquality().equals(other.pretty, pretty)) &&
+            (identical(other.summary, summary) ||
+                const DeepCollectionEquality().equals(other.summary, summary)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(base) ^
-      const DeepCollectionEquality().hash(mode);
+      const DeepCollectionEquality().hash(mode) ^
+      const DeepCollectionEquality().hash(pretty) ^
+      const DeepCollectionEquality().hash(summary);
 
   @override
   _$CapabilitiesRequestR5CopyWith<_CapabilitiesRequestR5> get copyWith =>
@@ -639,30 +778,30 @@ class _$_CapabilitiesRequestR5 extends _CapabilitiesRequestR5 {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result dstu2(Uri base, Mode mode),
-    @required Result stu3(Uri base, Mode mode),
-    @required Result r4(Uri base, Mode mode),
-    @required Result r5(Uri base, Mode mode),
+    @required Result dstu2(Uri base, Mode mode, bool pretty, Summary summary),
+    @required Result stu3(Uri base, Mode mode, bool pretty, Summary summary),
+    @required Result r4(Uri base, Mode mode, bool pretty, Summary summary),
+    @required Result r5(Uri base, Mode mode, bool pretty, Summary summary),
   }) {
     assert(dstu2 != null);
     assert(stu3 != null);
     assert(r4 != null);
     assert(r5 != null);
-    return r5(base, mode);
+    return r5(base, mode, pretty, summary);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result dstu2(Uri base, Mode mode),
-    Result stu3(Uri base, Mode mode),
-    Result r4(Uri base, Mode mode),
-    Result r5(Uri base, Mode mode),
+    Result dstu2(Uri base, Mode mode, bool pretty, Summary summary),
+    Result stu3(Uri base, Mode mode, bool pretty, Summary summary),
+    Result r4(Uri base, Mode mode, bool pretty, Summary summary),
+    Result r5(Uri base, Mode mode, bool pretty, Summary summary),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (r5 != null) {
-      return r5(base, mode);
+      return r5(base, mode, pretty, summary);
     }
     return orElse();
   }
@@ -701,13 +840,20 @@ class _$_CapabilitiesRequestR5 extends _CapabilitiesRequestR5 {
 
 abstract class _CapabilitiesRequestR5 extends CapabilitiesRequest {
   _CapabilitiesRequestR5._() : super._();
-  factory _CapabilitiesRequestR5({@required Uri base, Mode mode}) =
-      _$_CapabilitiesRequestR5;
+  factory _CapabilitiesRequestR5(
+      {@required Uri base,
+      Mode mode,
+      bool pretty,
+      Summary summary}) = _$_CapabilitiesRequestR5;
 
   @override
   Uri get base;
   @override
   Mode get mode;
+  @override
+  bool get pretty;
+  @override
+  Summary get summary;
   @override
   _$CapabilitiesRequestR5CopyWith<_CapabilitiesRequestR5> get copyWith;
 }

@@ -53,27 +53,32 @@ abstract class ReadRequest with _$ReadRequest {
   }) = _ReadRequestR5;
 
   Future<Either<RestfulFailure, dynamic>> request() async {
-    final thisRequest = '${base}/'
-        '${enumToString(this.map(
-      dstu2: (request) => request.type,
-      stu3: (request) => request.type,
-      r4: (request) => request.type,
-      r5: (request) => request.type,
-    ))}/'
-        '${id.toString()}/'
-        '${pretty ? "?_pretty=true" : ""}'
-        '$_format'
-        '${summary == Summary.none ? "" : "?_summary=${enumToString(summary)}"}';
+    var thisRequest = this.map(
+      dstu2: (req) => '${base}/${enumToString(req.type)}/${req.id.toString()}',
+      stu3: (req) => '${base}/${enumToString(req.type)}/${req.id.toString()}',
+      r4: (req) => '${base}/${enumToString(req.type)}/${req.id.toString()}',
+      r5: (req) => '${base}/${enumToString(req.type)}/${req.id.toString()}',
+    );
+
+    thisRequest += '?_format=application/fhir+json'
+        '${pretty ? "&_pretty=$pretty" : ""}'
+        '${summary != Summary.none ? "&_summary=${enumToString(summary)}" : ""}';
+
     final result = await makeRequest(get, thisRequest);
+
+    // for testing purposes
+    // return result;
+
     return result.fold(
-        (ifLeft) => left(ifLeft),
-        (ifRight) => right(this.map(
-              dstu2: (r) => dstu2.Resource.fromJson(json.decode(ifRight.body)),
-              stu3: (r) => stu3.Resource.fromJson(json.decode(ifRight.body)),
-              r4: (r) => r4.Resource.fromJson(json.decode(ifRight.body)),
-              r5: (r) => r5.Resource.fromJson(json.decode(ifRight.body)),
-            )));
+      (l) => left(l),
+      (r) => right(
+        this.map(
+          dstu2: (i) => dstu2.Resource.fromJson(json.decode(r.body)),
+          stu3: (i) => stu3.Resource.fromJson(json.decode(r.body)),
+          r4: (i) => r4.Resource.fromJson(json.decode(r.body)),
+          r5: (i) => r5.Resource.fromJson(json.decode(r.body)),
+        ),
+      ),
+    );
   }
 }
-
-const _format = '?_format=application/fhir+json';

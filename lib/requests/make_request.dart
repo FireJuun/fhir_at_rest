@@ -12,6 +12,10 @@ Future<Either<RestfulFailure, dynamic>> makeRequest(
   Encoding encoding,
 }) async {
   Response result;
+
+  // for testing purposes
+  // return (right(thisRequest));
+
   try {
     if (function == post || function == put || function == patch) {
       result = await function(thisRequest,
@@ -41,7 +45,3 @@ const _errorCodes = {
   412: 'Version Conflict',
   422: 'Unprocessable Entity',
 };
-
-// history,
-// search,
-// batch_transaction,
