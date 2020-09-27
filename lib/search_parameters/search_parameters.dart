@@ -1,14 +1,16 @@
 import 'package:fhir/primitive_types/primitive_types.dart';
 
+import 'search_parameter_types/search_token.dart';
+
 abstract class SearchParameters {
-  List<Id> id;
-  List<String> lastUpdated;
-  List<String> tag;
-  List<String> profile;
-  List<String> security;
-  List<String> text;
-  List<String> content;
-  List<String> list;
-  List<String> has;
-  List<String> type;
+  List<Id> searchId;
+  List<String> searchLastUpdated;
+  List<String> searchTag;
+  List<String> searchProfile;
+  List<String> searchSecurity;
+  List<String> searchText;
+  List<String> searchContent;
+  List<String> searchList;
+  List<String> searchHas;
+  List<SearchToken> searchType;
 }

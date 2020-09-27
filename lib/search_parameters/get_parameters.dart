@@ -4,6 +4,7 @@ import 'dart:io';
 import 'package:dartz/dartz.dart';
 
 import 'fhir_types_lists.dart';
+import 'get_file_name.dart';
 
 void main() async {
   //location of fhir search parameters
@@ -129,5 +130,58 @@ void main() async {
     }
   }
 
-  print(tipos);
+  for (var k in tipos.keys) {
+    for (var j in tipos[k]) {
+      var file = getFileName(k);
+      if (file != '') {
+        await File(file).create();
+        await File(file).writeAsString(
+            "import 'package:freezed_annotation/freezed_annotation.dart';\n"
+            "import 'package:fhir/primitive_types/primitive_types.dart';\n\n"
+            "import '../../../search_parameter_types/search_parameter_types.dart';\n"
+            "import '../../../search_parameters.dart';\n\n"
+            "part '$k.freezed.dart';\n\n");
+      }
+    }
+  }
+
+  for (var k in tipos.keys) {
+    for (var j in tipos[k]) {
+      var file = getFileName(k);
+      if (file != '') {
+        var fileString = await File(file).readAsString();
+        fileString += '@freezed\nabstract class '
+            '${j.value1.toString()}Search with SearchParameters implements '
+            '_\$${j.value1.toString()}Search {\n'
+            '${j.value1.toString()}Search._(); \n factory ${j.value1.toString()}Search ({\n'
+            'List<Id> searchId,\n'
+            'List<String> searchLastUpdated,\n'
+            'List<String> searchTag,\n'
+            'List<String> searchProfile,\n'
+            'List<String> searchSecurity,\n'
+            'List<String> searchText,\n'
+            'List<String> searchContent,\n'
+            'List<String> searchList,\n'
+            'List<String> searchHas,\n'
+            'List<SearchToken> searchType,\n';
+
+        for (var i in j.value2) {
+          fileString += parameterTypeToString(i.value1.toString());
+          fileString += ' ' + i.value2.toString().replaceAll('-', '_') + ',\n';
+        }
+
+        fileString += '}) = _${j.value1.toString()}Search;\n}\n\n';
+        await File(file).writeAsString(fileString);
+      }
+    }
+  }
+}
+
+String parameterTypeToString(String type) {
+  if (type == 'date') return 'List<SearchDate>';
+  if (type == 'number') return 'List<SearchNumber>';
+  if (type == 'string') return 'List<SearchString>';
+  if (type == 'token') return 'List<SearchToken>';
+  if (type == 'uri') return 'List<SearchUri>';
+  return 'List<String>';
 }
