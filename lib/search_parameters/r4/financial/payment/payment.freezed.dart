@@ -15,14 +15,14 @@ class _$PaymentNoticeSearchTearOff {
 
 // ignore: unused_element
   _PaymentNoticeSearch call(
-      {List<Id> searchId,
-      List<String> searchLastUpdated,
-      List<String> searchTag,
-      List<String> searchProfile,
-      List<String> searchSecurity,
-      List<String> searchText,
-      List<String> searchContent,
-      List<String> searchList,
+      {List<SearchToken> searchId,
+      List<Date> searchLastUpdated,
+      List<SearchToken> searchTag,
+      List<SearchUri> searchProfile,
+      List<SearchToken> searchSecurity,
+      List<SearchString> searchText,
+      List<SearchString> searchContent,
+      List<SearchString> searchList,
       List<String> searchHas,
       List<SearchToken> searchType,
       List<SearchDate> created,
@@ -60,14 +60,14 @@ const $PaymentNoticeSearch = _$PaymentNoticeSearchTearOff();
 
 /// @nodoc
 mixin _$PaymentNoticeSearch {
-  List<Id> get searchId;
-  List<String> get searchLastUpdated;
-  List<String> get searchTag;
-  List<String> get searchProfile;
-  List<String> get searchSecurity;
-  List<String> get searchText;
-  List<String> get searchContent;
-  List<String> get searchList;
+  List<SearchToken> get searchId;
+  List<Date> get searchLastUpdated;
+  List<SearchToken> get searchTag;
+  List<SearchUri> get searchProfile;
+  List<SearchToken> get searchSecurity;
+  List<SearchString> get searchText;
+  List<SearchString> get searchContent;
+  List<SearchString> get searchList;
   List<String> get searchHas;
   List<SearchToken> get searchType;
   List<SearchDate> get created;
@@ -87,14 +87,14 @@ abstract class $PaymentNoticeSearchCopyWith<$Res> {
           PaymentNoticeSearch value, $Res Function(PaymentNoticeSearch) then) =
       _$PaymentNoticeSearchCopyWithImpl<$Res>;
   $Res call(
-      {List<Id> searchId,
-      List<String> searchLastUpdated,
-      List<String> searchTag,
-      List<String> searchProfile,
-      List<String> searchSecurity,
-      List<String> searchText,
-      List<String> searchContent,
-      List<String> searchList,
+      {List<SearchToken> searchId,
+      List<Date> searchLastUpdated,
+      List<SearchToken> searchTag,
+      List<SearchUri> searchProfile,
+      List<SearchToken> searchSecurity,
+      List<SearchString> searchText,
+      List<SearchString> searchContent,
+      List<SearchString> searchList,
       List<String> searchHas,
       List<SearchToken> searchType,
       List<SearchDate> created,
@@ -136,27 +136,29 @@ class _$PaymentNoticeSearchCopyWithImpl<$Res>
     Object status = freezed,
   }) {
     return _then(_value.copyWith(
-      searchId: searchId == freezed ? _value.searchId : searchId as List<Id>,
+      searchId:
+          searchId == freezed ? _value.searchId : searchId as List<SearchToken>,
       searchLastUpdated: searchLastUpdated == freezed
           ? _value.searchLastUpdated
-          : searchLastUpdated as List<String>,
-      searchTag:
-          searchTag == freezed ? _value.searchTag : searchTag as List<String>,
+          : searchLastUpdated as List<Date>,
+      searchTag: searchTag == freezed
+          ? _value.searchTag
+          : searchTag as List<SearchToken>,
       searchProfile: searchProfile == freezed
           ? _value.searchProfile
-          : searchProfile as List<String>,
+          : searchProfile as List<SearchUri>,
       searchSecurity: searchSecurity == freezed
           ? _value.searchSecurity
-          : searchSecurity as List<String>,
+          : searchSecurity as List<SearchToken>,
       searchText: searchText == freezed
           ? _value.searchText
-          : searchText as List<String>,
+          : searchText as List<SearchString>,
       searchContent: searchContent == freezed
           ? _value.searchContent
-          : searchContent as List<String>,
+          : searchContent as List<SearchString>,
       searchList: searchList == freezed
           ? _value.searchList
-          : searchList as List<String>,
+          : searchList as List<SearchString>,
       searchHas:
           searchHas == freezed ? _value.searchHas : searchHas as List<String>,
       searchType: searchType == freezed
@@ -188,14 +190,14 @@ abstract class _$PaymentNoticeSearchCopyWith<$Res>
       __$PaymentNoticeSearchCopyWithImpl<$Res>;
   @override
   $Res call(
-      {List<Id> searchId,
-      List<String> searchLastUpdated,
-      List<String> searchTag,
-      List<String> searchProfile,
-      List<String> searchSecurity,
-      List<String> searchText,
-      List<String> searchContent,
-      List<String> searchList,
+      {List<SearchToken> searchId,
+      List<Date> searchLastUpdated,
+      List<SearchToken> searchTag,
+      List<SearchUri> searchProfile,
+      List<SearchToken> searchSecurity,
+      List<SearchString> searchText,
+      List<SearchString> searchContent,
+      List<SearchString> searchList,
       List<String> searchHas,
       List<SearchToken> searchType,
       List<SearchDate> created,
@@ -239,27 +241,29 @@ class __$PaymentNoticeSearchCopyWithImpl<$Res>
     Object status = freezed,
   }) {
     return _then(_PaymentNoticeSearch(
-      searchId: searchId == freezed ? _value.searchId : searchId as List<Id>,
+      searchId:
+          searchId == freezed ? _value.searchId : searchId as List<SearchToken>,
       searchLastUpdated: searchLastUpdated == freezed
           ? _value.searchLastUpdated
-          : searchLastUpdated as List<String>,
-      searchTag:
-          searchTag == freezed ? _value.searchTag : searchTag as List<String>,
+          : searchLastUpdated as List<Date>,
+      searchTag: searchTag == freezed
+          ? _value.searchTag
+          : searchTag as List<SearchToken>,
       searchProfile: searchProfile == freezed
           ? _value.searchProfile
-          : searchProfile as List<String>,
+          : searchProfile as List<SearchUri>,
       searchSecurity: searchSecurity == freezed
           ? _value.searchSecurity
-          : searchSecurity as List<String>,
+          : searchSecurity as List<SearchToken>,
       searchText: searchText == freezed
           ? _value.searchText
-          : searchText as List<String>,
+          : searchText as List<SearchString>,
       searchContent: searchContent == freezed
           ? _value.searchContent
-          : searchContent as List<String>,
+          : searchContent as List<SearchString>,
       searchList: searchList == freezed
           ? _value.searchList
-          : searchList as List<String>,
+          : searchList as List<SearchString>,
       searchHas:
           searchHas == freezed ? _value.searchHas : searchHas as List<String>,
       searchType: searchType == freezed
@@ -306,21 +310,21 @@ class _$_PaymentNoticeSearch extends _PaymentNoticeSearch {
       : super._();
 
   @override
-  final List<Id> searchId;
+  final List<SearchToken> searchId;
   @override
-  final List<String> searchLastUpdated;
+  final List<Date> searchLastUpdated;
   @override
-  final List<String> searchTag;
+  final List<SearchToken> searchTag;
   @override
-  final List<String> searchProfile;
+  final List<SearchUri> searchProfile;
   @override
-  final List<String> searchSecurity;
+  final List<SearchToken> searchSecurity;
   @override
-  final List<String> searchText;
+  final List<SearchString> searchText;
   @override
-  final List<String> searchContent;
+  final List<SearchString> searchContent;
   @override
-  final List<String> searchList;
+  final List<SearchString> searchList;
   @override
   final List<String> searchHas;
   @override
@@ -426,14 +430,14 @@ class _$_PaymentNoticeSearch extends _PaymentNoticeSearch {
 abstract class _PaymentNoticeSearch extends PaymentNoticeSearch {
   _PaymentNoticeSearch._() : super._();
   factory _PaymentNoticeSearch(
-      {List<Id> searchId,
-      List<String> searchLastUpdated,
-      List<String> searchTag,
-      List<String> searchProfile,
-      List<String> searchSecurity,
-      List<String> searchText,
-      List<String> searchContent,
-      List<String> searchList,
+      {List<SearchToken> searchId,
+      List<Date> searchLastUpdated,
+      List<SearchToken> searchTag,
+      List<SearchUri> searchProfile,
+      List<SearchToken> searchSecurity,
+      List<SearchString> searchText,
+      List<SearchString> searchContent,
+      List<SearchString> searchList,
       List<String> searchHas,
       List<SearchToken> searchType,
       List<SearchDate> created,
@@ -445,21 +449,21 @@ abstract class _PaymentNoticeSearch extends PaymentNoticeSearch {
       List<SearchToken> status}) = _$_PaymentNoticeSearch;
 
   @override
-  List<Id> get searchId;
+  List<SearchToken> get searchId;
   @override
-  List<String> get searchLastUpdated;
+  List<Date> get searchLastUpdated;
   @override
-  List<String> get searchTag;
+  List<SearchToken> get searchTag;
   @override
-  List<String> get searchProfile;
+  List<SearchUri> get searchProfile;
   @override
-  List<String> get searchSecurity;
+  List<SearchToken> get searchSecurity;
   @override
-  List<String> get searchText;
+  List<SearchString> get searchText;
   @override
-  List<String> get searchContent;
+  List<SearchString> get searchContent;
   @override
-  List<String> get searchList;
+  List<SearchString> get searchList;
   @override
   List<String> get searchHas;
   @override
@@ -488,14 +492,14 @@ class _$PaymentReconciliationSearchTearOff {
 
 // ignore: unused_element
   _PaymentReconciliationSearch call(
-      {List<Id> searchId,
-      List<String> searchLastUpdated,
-      List<String> searchTag,
-      List<String> searchProfile,
-      List<String> searchSecurity,
-      List<String> searchText,
-      List<String> searchContent,
-      List<String> searchList,
+      {List<SearchToken> searchId,
+      List<Date> searchLastUpdated,
+      List<SearchToken> searchTag,
+      List<SearchUri> searchProfile,
+      List<SearchToken> searchSecurity,
+      List<SearchString> searchText,
+      List<SearchString> searchContent,
+      List<SearchString> searchList,
       List<String> searchHas,
       List<SearchToken> searchType,
       List<SearchDate> created,
@@ -535,14 +539,14 @@ const $PaymentReconciliationSearch = _$PaymentReconciliationSearchTearOff();
 
 /// @nodoc
 mixin _$PaymentReconciliationSearch {
-  List<Id> get searchId;
-  List<String> get searchLastUpdated;
-  List<String> get searchTag;
-  List<String> get searchProfile;
-  List<String> get searchSecurity;
-  List<String> get searchText;
-  List<String> get searchContent;
-  List<String> get searchList;
+  List<SearchToken> get searchId;
+  List<Date> get searchLastUpdated;
+  List<SearchToken> get searchTag;
+  List<SearchUri> get searchProfile;
+  List<SearchToken> get searchSecurity;
+  List<SearchString> get searchText;
+  List<SearchString> get searchContent;
+  List<SearchString> get searchList;
   List<String> get searchHas;
   List<SearchToken> get searchType;
   List<SearchDate> get created;
@@ -565,14 +569,14 @@ abstract class $PaymentReconciliationSearchCopyWith<$Res> {
           $Res Function(PaymentReconciliationSearch) then) =
       _$PaymentReconciliationSearchCopyWithImpl<$Res>;
   $Res call(
-      {List<Id> searchId,
-      List<String> searchLastUpdated,
-      List<String> searchTag,
-      List<String> searchProfile,
-      List<String> searchSecurity,
-      List<String> searchText,
-      List<String> searchContent,
-      List<String> searchList,
+      {List<SearchToken> searchId,
+      List<Date> searchLastUpdated,
+      List<SearchToken> searchTag,
+      List<SearchUri> searchProfile,
+      List<SearchToken> searchSecurity,
+      List<SearchString> searchText,
+      List<SearchString> searchContent,
+      List<SearchString> searchList,
       List<String> searchHas,
       List<SearchToken> searchType,
       List<SearchDate> created,
@@ -616,27 +620,29 @@ class _$PaymentReconciliationSearchCopyWithImpl<$Res>
     Object status = freezed,
   }) {
     return _then(_value.copyWith(
-      searchId: searchId == freezed ? _value.searchId : searchId as List<Id>,
+      searchId:
+          searchId == freezed ? _value.searchId : searchId as List<SearchToken>,
       searchLastUpdated: searchLastUpdated == freezed
           ? _value.searchLastUpdated
-          : searchLastUpdated as List<String>,
-      searchTag:
-          searchTag == freezed ? _value.searchTag : searchTag as List<String>,
+          : searchLastUpdated as List<Date>,
+      searchTag: searchTag == freezed
+          ? _value.searchTag
+          : searchTag as List<SearchToken>,
       searchProfile: searchProfile == freezed
           ? _value.searchProfile
-          : searchProfile as List<String>,
+          : searchProfile as List<SearchUri>,
       searchSecurity: searchSecurity == freezed
           ? _value.searchSecurity
-          : searchSecurity as List<String>,
+          : searchSecurity as List<SearchToken>,
       searchText: searchText == freezed
           ? _value.searchText
-          : searchText as List<String>,
+          : searchText as List<SearchString>,
       searchContent: searchContent == freezed
           ? _value.searchContent
-          : searchContent as List<String>,
+          : searchContent as List<SearchString>,
       searchList: searchList == freezed
           ? _value.searchList
-          : searchList as List<String>,
+          : searchList as List<SearchString>,
       searchHas:
           searchHas == freezed ? _value.searchHas : searchHas as List<String>,
       searchType: searchType == freezed
@@ -672,14 +678,14 @@ abstract class _$PaymentReconciliationSearchCopyWith<$Res>
       __$PaymentReconciliationSearchCopyWithImpl<$Res>;
   @override
   $Res call(
-      {List<Id> searchId,
-      List<String> searchLastUpdated,
-      List<String> searchTag,
-      List<String> searchProfile,
-      List<String> searchSecurity,
-      List<String> searchText,
-      List<String> searchContent,
-      List<String> searchList,
+      {List<SearchToken> searchId,
+      List<Date> searchLastUpdated,
+      List<SearchToken> searchTag,
+      List<SearchUri> searchProfile,
+      List<SearchToken> searchSecurity,
+      List<SearchString> searchText,
+      List<SearchString> searchContent,
+      List<SearchString> searchList,
       List<String> searchHas,
       List<SearchToken> searchType,
       List<SearchDate> created,
@@ -727,27 +733,29 @@ class __$PaymentReconciliationSearchCopyWithImpl<$Res>
     Object status = freezed,
   }) {
     return _then(_PaymentReconciliationSearch(
-      searchId: searchId == freezed ? _value.searchId : searchId as List<Id>,
+      searchId:
+          searchId == freezed ? _value.searchId : searchId as List<SearchToken>,
       searchLastUpdated: searchLastUpdated == freezed
           ? _value.searchLastUpdated
-          : searchLastUpdated as List<String>,
-      searchTag:
-          searchTag == freezed ? _value.searchTag : searchTag as List<String>,
+          : searchLastUpdated as List<Date>,
+      searchTag: searchTag == freezed
+          ? _value.searchTag
+          : searchTag as List<SearchToken>,
       searchProfile: searchProfile == freezed
           ? _value.searchProfile
-          : searchProfile as List<String>,
+          : searchProfile as List<SearchUri>,
       searchSecurity: searchSecurity == freezed
           ? _value.searchSecurity
-          : searchSecurity as List<String>,
+          : searchSecurity as List<SearchToken>,
       searchText: searchText == freezed
           ? _value.searchText
-          : searchText as List<String>,
+          : searchText as List<SearchString>,
       searchContent: searchContent == freezed
           ? _value.searchContent
-          : searchContent as List<String>,
+          : searchContent as List<SearchString>,
       searchList: searchList == freezed
           ? _value.searchList
-          : searchList as List<String>,
+          : searchList as List<SearchString>,
       searchHas:
           searchHas == freezed ? _value.searchHas : searchHas as List<String>,
       searchType: searchType == freezed
@@ -798,21 +806,21 @@ class _$_PaymentReconciliationSearch extends _PaymentReconciliationSearch {
       : super._();
 
   @override
-  final List<Id> searchId;
+  final List<SearchToken> searchId;
   @override
-  final List<String> searchLastUpdated;
+  final List<Date> searchLastUpdated;
   @override
-  final List<String> searchTag;
+  final List<SearchToken> searchTag;
   @override
-  final List<String> searchProfile;
+  final List<SearchUri> searchProfile;
   @override
-  final List<String> searchSecurity;
+  final List<SearchToken> searchSecurity;
   @override
-  final List<String> searchText;
+  final List<SearchString> searchText;
   @override
-  final List<String> searchContent;
+  final List<SearchString> searchContent;
   @override
-  final List<String> searchList;
+  final List<SearchString> searchList;
   @override
   final List<String> searchHas;
   @override
@@ -925,14 +933,14 @@ abstract class _PaymentReconciliationSearch
     extends PaymentReconciliationSearch {
   _PaymentReconciliationSearch._() : super._();
   factory _PaymentReconciliationSearch(
-      {List<Id> searchId,
-      List<String> searchLastUpdated,
-      List<String> searchTag,
-      List<String> searchProfile,
-      List<String> searchSecurity,
-      List<String> searchText,
-      List<String> searchContent,
-      List<String> searchList,
+      {List<SearchToken> searchId,
+      List<Date> searchLastUpdated,
+      List<SearchToken> searchTag,
+      List<SearchUri> searchProfile,
+      List<SearchToken> searchSecurity,
+      List<SearchString> searchText,
+      List<SearchString> searchContent,
+      List<SearchString> searchList,
       List<String> searchHas,
       List<SearchToken> searchType,
       List<SearchDate> created,
@@ -945,21 +953,21 @@ abstract class _PaymentReconciliationSearch
       List<SearchToken> status}) = _$_PaymentReconciliationSearch;
 
   @override
-  List<Id> get searchId;
+  List<SearchToken> get searchId;
   @override
-  List<String> get searchLastUpdated;
+  List<Date> get searchLastUpdated;
   @override
-  List<String> get searchTag;
+  List<SearchToken> get searchTag;
   @override
-  List<String> get searchProfile;
+  List<SearchUri> get searchProfile;
   @override
-  List<String> get searchSecurity;
+  List<SearchToken> get searchSecurity;
   @override
-  List<String> get searchText;
+  List<SearchString> get searchText;
   @override
-  List<String> get searchContent;
+  List<SearchString> get searchContent;
   @override
-  List<String> get searchList;
+  List<SearchString> get searchList;
   @override
   List<String> get searchHas;
   @override

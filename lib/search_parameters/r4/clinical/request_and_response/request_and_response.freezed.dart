@@ -15,14 +15,14 @@ class _$DeviceRequestSearchTearOff {
 
 // ignore: unused_element
   _DeviceRequestSearch call(
-      {List<Id> searchId,
-      List<String> searchLastUpdated,
-      List<String> searchTag,
-      List<String> searchProfile,
-      List<String> searchSecurity,
-      List<String> searchText,
-      List<String> searchContent,
-      List<String> searchList,
+      {List<SearchToken> searchId,
+      List<Date> searchLastUpdated,
+      List<SearchToken> searchTag,
+      List<SearchUri> searchProfile,
+      List<SearchToken> searchSecurity,
+      List<SearchString> searchText,
+      List<SearchString> searchContent,
+      List<SearchString> searchList,
       List<String> searchHas,
       List<SearchToken> searchType,
       List<SearchToken> code,
@@ -82,14 +82,14 @@ const $DeviceRequestSearch = _$DeviceRequestSearchTearOff();
 
 /// @nodoc
 mixin _$DeviceRequestSearch {
-  List<Id> get searchId;
-  List<String> get searchLastUpdated;
-  List<String> get searchTag;
-  List<String> get searchProfile;
-  List<String> get searchSecurity;
-  List<String> get searchText;
-  List<String> get searchContent;
-  List<String> get searchList;
+  List<SearchToken> get searchId;
+  List<Date> get searchLastUpdated;
+  List<SearchToken> get searchTag;
+  List<SearchUri> get searchProfile;
+  List<SearchToken> get searchSecurity;
+  List<SearchString> get searchText;
+  List<SearchString> get searchContent;
+  List<SearchString> get searchList;
   List<String> get searchHas;
   List<SearchToken> get searchType;
   List<SearchToken> get code;
@@ -120,14 +120,14 @@ abstract class $DeviceRequestSearchCopyWith<$Res> {
           DeviceRequestSearch value, $Res Function(DeviceRequestSearch) then) =
       _$DeviceRequestSearchCopyWithImpl<$Res>;
   $Res call(
-      {List<Id> searchId,
-      List<String> searchLastUpdated,
-      List<String> searchTag,
-      List<String> searchProfile,
-      List<String> searchSecurity,
-      List<String> searchText,
-      List<String> searchContent,
-      List<String> searchList,
+      {List<SearchToken> searchId,
+      List<Date> searchLastUpdated,
+      List<SearchToken> searchTag,
+      List<SearchUri> searchProfile,
+      List<SearchToken> searchSecurity,
+      List<SearchString> searchText,
+      List<SearchString> searchContent,
+      List<SearchString> searchList,
       List<String> searchHas,
       List<SearchToken> searchType,
       List<SearchToken> code,
@@ -191,27 +191,29 @@ class _$DeviceRequestSearchCopyWithImpl<$Res>
     Object subject = freezed,
   }) {
     return _then(_value.copyWith(
-      searchId: searchId == freezed ? _value.searchId : searchId as List<Id>,
+      searchId:
+          searchId == freezed ? _value.searchId : searchId as List<SearchToken>,
       searchLastUpdated: searchLastUpdated == freezed
           ? _value.searchLastUpdated
-          : searchLastUpdated as List<String>,
-      searchTag:
-          searchTag == freezed ? _value.searchTag : searchTag as List<String>,
+          : searchLastUpdated as List<Date>,
+      searchTag: searchTag == freezed
+          ? _value.searchTag
+          : searchTag as List<SearchToken>,
       searchProfile: searchProfile == freezed
           ? _value.searchProfile
-          : searchProfile as List<String>,
+          : searchProfile as List<SearchUri>,
       searchSecurity: searchSecurity == freezed
           ? _value.searchSecurity
-          : searchSecurity as List<String>,
+          : searchSecurity as List<SearchToken>,
       searchText: searchText == freezed
           ? _value.searchText
-          : searchText as List<String>,
+          : searchText as List<SearchString>,
       searchContent: searchContent == freezed
           ? _value.searchContent
-          : searchContent as List<String>,
+          : searchContent as List<SearchString>,
       searchList: searchList == freezed
           ? _value.searchList
-          : searchList as List<String>,
+          : searchList as List<SearchString>,
       searchHas:
           searchHas == freezed ? _value.searchHas : searchHas as List<String>,
       searchType: searchType == freezed
@@ -266,14 +268,14 @@ abstract class _$DeviceRequestSearchCopyWith<$Res>
       __$DeviceRequestSearchCopyWithImpl<$Res>;
   @override
   $Res call(
-      {List<Id> searchId,
-      List<String> searchLastUpdated,
-      List<String> searchTag,
-      List<String> searchProfile,
-      List<String> searchSecurity,
-      List<String> searchText,
-      List<String> searchContent,
-      List<String> searchList,
+      {List<SearchToken> searchId,
+      List<Date> searchLastUpdated,
+      List<SearchToken> searchTag,
+      List<SearchUri> searchProfile,
+      List<SearchToken> searchSecurity,
+      List<SearchString> searchText,
+      List<SearchString> searchContent,
+      List<SearchString> searchList,
       List<String> searchHas,
       List<SearchToken> searchType,
       List<SearchToken> code,
@@ -339,27 +341,29 @@ class __$DeviceRequestSearchCopyWithImpl<$Res>
     Object subject = freezed,
   }) {
     return _then(_DeviceRequestSearch(
-      searchId: searchId == freezed ? _value.searchId : searchId as List<Id>,
+      searchId:
+          searchId == freezed ? _value.searchId : searchId as List<SearchToken>,
       searchLastUpdated: searchLastUpdated == freezed
           ? _value.searchLastUpdated
-          : searchLastUpdated as List<String>,
-      searchTag:
-          searchTag == freezed ? _value.searchTag : searchTag as List<String>,
+          : searchLastUpdated as List<Date>,
+      searchTag: searchTag == freezed
+          ? _value.searchTag
+          : searchTag as List<SearchToken>,
       searchProfile: searchProfile == freezed
           ? _value.searchProfile
-          : searchProfile as List<String>,
+          : searchProfile as List<SearchUri>,
       searchSecurity: searchSecurity == freezed
           ? _value.searchSecurity
-          : searchSecurity as List<String>,
+          : searchSecurity as List<SearchToken>,
       searchText: searchText == freezed
           ? _value.searchText
-          : searchText as List<String>,
+          : searchText as List<SearchString>,
       searchContent: searchContent == freezed
           ? _value.searchContent
-          : searchContent as List<String>,
+          : searchContent as List<SearchString>,
       searchList: searchList == freezed
           ? _value.searchList
-          : searchList as List<String>,
+          : searchList as List<SearchString>,
       searchHas:
           searchHas == freezed ? _value.searchHas : searchHas as List<String>,
       searchType: searchType == freezed
@@ -440,21 +444,21 @@ class _$_DeviceRequestSearch extends _DeviceRequestSearch {
       : super._();
 
   @override
-  final List<Id> searchId;
+  final List<SearchToken> searchId;
   @override
-  final List<String> searchLastUpdated;
+  final List<Date> searchLastUpdated;
   @override
-  final List<String> searchTag;
+  final List<SearchToken> searchTag;
   @override
-  final List<String> searchProfile;
+  final List<SearchUri> searchProfile;
   @override
-  final List<String> searchSecurity;
+  final List<SearchToken> searchSecurity;
   @override
-  final List<String> searchText;
+  final List<SearchString> searchText;
   @override
-  final List<String> searchContent;
+  final List<SearchString> searchContent;
   @override
-  final List<String> searchList;
+  final List<SearchString> searchList;
   @override
   final List<String> searchHas;
   @override
@@ -614,14 +618,14 @@ class _$_DeviceRequestSearch extends _DeviceRequestSearch {
 abstract class _DeviceRequestSearch extends DeviceRequestSearch {
   _DeviceRequestSearch._() : super._();
   factory _DeviceRequestSearch(
-      {List<Id> searchId,
-      List<String> searchLastUpdated,
-      List<String> searchTag,
-      List<String> searchProfile,
-      List<String> searchSecurity,
-      List<String> searchText,
-      List<String> searchContent,
-      List<String> searchList,
+      {List<SearchToken> searchId,
+      List<Date> searchLastUpdated,
+      List<SearchToken> searchTag,
+      List<SearchUri> searchProfile,
+      List<SearchToken> searchSecurity,
+      List<SearchString> searchText,
+      List<SearchString> searchContent,
+      List<SearchString> searchList,
       List<String> searchHas,
       List<SearchToken> searchType,
       List<SearchToken> code,
@@ -644,21 +648,21 @@ abstract class _DeviceRequestSearch extends DeviceRequestSearch {
       List<String> subject}) = _$_DeviceRequestSearch;
 
   @override
-  List<Id> get searchId;
+  List<SearchToken> get searchId;
   @override
-  List<String> get searchLastUpdated;
+  List<Date> get searchLastUpdated;
   @override
-  List<String> get searchTag;
+  List<SearchToken> get searchTag;
   @override
-  List<String> get searchProfile;
+  List<SearchUri> get searchProfile;
   @override
-  List<String> get searchSecurity;
+  List<SearchToken> get searchSecurity;
   @override
-  List<String> get searchText;
+  List<SearchString> get searchText;
   @override
-  List<String> get searchContent;
+  List<SearchString> get searchContent;
   @override
-  List<String> get searchList;
+  List<SearchString> get searchList;
   @override
   List<String> get searchHas;
   @override
@@ -709,14 +713,14 @@ class _$SupplyRequestSearchTearOff {
 
 // ignore: unused_element
   _SupplyRequestSearch call(
-      {List<Id> searchId,
-      List<String> searchLastUpdated,
-      List<String> searchTag,
-      List<String> searchProfile,
-      List<String> searchSecurity,
-      List<String> searchText,
-      List<String> searchContent,
-      List<String> searchList,
+      {List<SearchToken> searchId,
+      List<Date> searchLastUpdated,
+      List<SearchToken> searchTag,
+      List<SearchUri> searchProfile,
+      List<SearchToken> searchSecurity,
+      List<SearchString> searchText,
+      List<SearchString> searchContent,
+      List<SearchString> searchList,
       List<String> searchHas,
       List<SearchToken> searchType,
       List<SearchDate> date,
@@ -754,14 +758,14 @@ const $SupplyRequestSearch = _$SupplyRequestSearchTearOff();
 
 /// @nodoc
 mixin _$SupplyRequestSearch {
-  List<Id> get searchId;
-  List<String> get searchLastUpdated;
-  List<String> get searchTag;
-  List<String> get searchProfile;
-  List<String> get searchSecurity;
-  List<String> get searchText;
-  List<String> get searchContent;
-  List<String> get searchList;
+  List<SearchToken> get searchId;
+  List<Date> get searchLastUpdated;
+  List<SearchToken> get searchTag;
+  List<SearchUri> get searchProfile;
+  List<SearchToken> get searchSecurity;
+  List<SearchString> get searchText;
+  List<SearchString> get searchContent;
+  List<SearchString> get searchList;
   List<String> get searchHas;
   List<SearchToken> get searchType;
   List<SearchDate> get date;
@@ -781,14 +785,14 @@ abstract class $SupplyRequestSearchCopyWith<$Res> {
           SupplyRequestSearch value, $Res Function(SupplyRequestSearch) then) =
       _$SupplyRequestSearchCopyWithImpl<$Res>;
   $Res call(
-      {List<Id> searchId,
-      List<String> searchLastUpdated,
-      List<String> searchTag,
-      List<String> searchProfile,
-      List<String> searchSecurity,
-      List<String> searchText,
-      List<String> searchContent,
-      List<String> searchList,
+      {List<SearchToken> searchId,
+      List<Date> searchLastUpdated,
+      List<SearchToken> searchTag,
+      List<SearchUri> searchProfile,
+      List<SearchToken> searchSecurity,
+      List<SearchString> searchText,
+      List<SearchString> searchContent,
+      List<SearchString> searchList,
       List<String> searchHas,
       List<SearchToken> searchType,
       List<SearchDate> date,
@@ -830,27 +834,29 @@ class _$SupplyRequestSearchCopyWithImpl<$Res>
     Object supplier = freezed,
   }) {
     return _then(_value.copyWith(
-      searchId: searchId == freezed ? _value.searchId : searchId as List<Id>,
+      searchId:
+          searchId == freezed ? _value.searchId : searchId as List<SearchToken>,
       searchLastUpdated: searchLastUpdated == freezed
           ? _value.searchLastUpdated
-          : searchLastUpdated as List<String>,
-      searchTag:
-          searchTag == freezed ? _value.searchTag : searchTag as List<String>,
+          : searchLastUpdated as List<Date>,
+      searchTag: searchTag == freezed
+          ? _value.searchTag
+          : searchTag as List<SearchToken>,
       searchProfile: searchProfile == freezed
           ? _value.searchProfile
-          : searchProfile as List<String>,
+          : searchProfile as List<SearchUri>,
       searchSecurity: searchSecurity == freezed
           ? _value.searchSecurity
-          : searchSecurity as List<String>,
+          : searchSecurity as List<SearchToken>,
       searchText: searchText == freezed
           ? _value.searchText
-          : searchText as List<String>,
+          : searchText as List<SearchString>,
       searchContent: searchContent == freezed
           ? _value.searchContent
-          : searchContent as List<String>,
+          : searchContent as List<SearchString>,
       searchList: searchList == freezed
           ? _value.searchList
-          : searchList as List<String>,
+          : searchList as List<SearchString>,
       searchHas:
           searchHas == freezed ? _value.searchHas : searchHas as List<String>,
       searchType: searchType == freezed
@@ -880,14 +886,14 @@ abstract class _$SupplyRequestSearchCopyWith<$Res>
       __$SupplyRequestSearchCopyWithImpl<$Res>;
   @override
   $Res call(
-      {List<Id> searchId,
-      List<String> searchLastUpdated,
-      List<String> searchTag,
-      List<String> searchProfile,
-      List<String> searchSecurity,
-      List<String> searchText,
-      List<String> searchContent,
-      List<String> searchList,
+      {List<SearchToken> searchId,
+      List<Date> searchLastUpdated,
+      List<SearchToken> searchTag,
+      List<SearchUri> searchProfile,
+      List<SearchToken> searchSecurity,
+      List<SearchString> searchText,
+      List<SearchString> searchContent,
+      List<SearchString> searchList,
       List<String> searchHas,
       List<SearchToken> searchType,
       List<SearchDate> date,
@@ -931,27 +937,29 @@ class __$SupplyRequestSearchCopyWithImpl<$Res>
     Object supplier = freezed,
   }) {
     return _then(_SupplyRequestSearch(
-      searchId: searchId == freezed ? _value.searchId : searchId as List<Id>,
+      searchId:
+          searchId == freezed ? _value.searchId : searchId as List<SearchToken>,
       searchLastUpdated: searchLastUpdated == freezed
           ? _value.searchLastUpdated
-          : searchLastUpdated as List<String>,
-      searchTag:
-          searchTag == freezed ? _value.searchTag : searchTag as List<String>,
+          : searchLastUpdated as List<Date>,
+      searchTag: searchTag == freezed
+          ? _value.searchTag
+          : searchTag as List<SearchToken>,
       searchProfile: searchProfile == freezed
           ? _value.searchProfile
-          : searchProfile as List<String>,
+          : searchProfile as List<SearchUri>,
       searchSecurity: searchSecurity == freezed
           ? _value.searchSecurity
-          : searchSecurity as List<String>,
+          : searchSecurity as List<SearchToken>,
       searchText: searchText == freezed
           ? _value.searchText
-          : searchText as List<String>,
+          : searchText as List<SearchString>,
       searchContent: searchContent == freezed
           ? _value.searchContent
-          : searchContent as List<String>,
+          : searchContent as List<SearchString>,
       searchList: searchList == freezed
           ? _value.searchList
-          : searchList as List<String>,
+          : searchList as List<SearchString>,
       searchHas:
           searchHas == freezed ? _value.searchHas : searchHas as List<String>,
       searchType: searchType == freezed
@@ -996,21 +1004,21 @@ class _$_SupplyRequestSearch extends _SupplyRequestSearch {
       : super._();
 
   @override
-  final List<Id> searchId;
+  final List<SearchToken> searchId;
   @override
-  final List<String> searchLastUpdated;
+  final List<Date> searchLastUpdated;
   @override
-  final List<String> searchTag;
+  final List<SearchToken> searchTag;
   @override
-  final List<String> searchProfile;
+  final List<SearchUri> searchProfile;
   @override
-  final List<String> searchSecurity;
+  final List<SearchToken> searchSecurity;
   @override
-  final List<String> searchText;
+  final List<SearchString> searchText;
   @override
-  final List<String> searchContent;
+  final List<SearchString> searchContent;
   @override
-  final List<String> searchList;
+  final List<SearchString> searchList;
   @override
   final List<String> searchHas;
   @override
@@ -1115,14 +1123,14 @@ class _$_SupplyRequestSearch extends _SupplyRequestSearch {
 abstract class _SupplyRequestSearch extends SupplyRequestSearch {
   _SupplyRequestSearch._() : super._();
   factory _SupplyRequestSearch(
-      {List<Id> searchId,
-      List<String> searchLastUpdated,
-      List<String> searchTag,
-      List<String> searchProfile,
-      List<String> searchSecurity,
-      List<String> searchText,
-      List<String> searchContent,
-      List<String> searchList,
+      {List<SearchToken> searchId,
+      List<Date> searchLastUpdated,
+      List<SearchToken> searchTag,
+      List<SearchUri> searchProfile,
+      List<SearchToken> searchSecurity,
+      List<SearchString> searchText,
+      List<SearchString> searchContent,
+      List<SearchString> searchList,
       List<String> searchHas,
       List<SearchToken> searchType,
       List<SearchDate> date,
@@ -1134,21 +1142,21 @@ abstract class _SupplyRequestSearch extends SupplyRequestSearch {
       List<String> supplier}) = _$_SupplyRequestSearch;
 
   @override
-  List<Id> get searchId;
+  List<SearchToken> get searchId;
   @override
-  List<String> get searchLastUpdated;
+  List<Date> get searchLastUpdated;
   @override
-  List<String> get searchTag;
+  List<SearchToken> get searchTag;
   @override
-  List<String> get searchProfile;
+  List<SearchUri> get searchProfile;
   @override
-  List<String> get searchSecurity;
+  List<SearchToken> get searchSecurity;
   @override
-  List<String> get searchText;
+  List<SearchString> get searchText;
   @override
-  List<String> get searchContent;
+  List<SearchString> get searchContent;
   @override
-  List<String> get searchList;
+  List<SearchString> get searchList;
   @override
   List<String> get searchHas;
   @override
@@ -1177,14 +1185,14 @@ class _$SupplyDeliverySearchTearOff {
 
 // ignore: unused_element
   _SupplyDeliverySearch call(
-      {List<Id> searchId,
-      List<String> searchLastUpdated,
-      List<String> searchTag,
-      List<String> searchProfile,
-      List<String> searchSecurity,
-      List<String> searchText,
-      List<String> searchContent,
-      List<String> searchList,
+      {List<SearchToken> searchId,
+      List<Date> searchLastUpdated,
+      List<SearchToken> searchTag,
+      List<SearchUri> searchProfile,
+      List<SearchToken> searchSecurity,
+      List<SearchString> searchText,
+      List<SearchString> searchContent,
+      List<SearchString> searchList,
       List<String> searchHas,
       List<SearchToken> searchType,
       List<SearchToken> identifier,
@@ -1218,14 +1226,14 @@ const $SupplyDeliverySearch = _$SupplyDeliverySearchTearOff();
 
 /// @nodoc
 mixin _$SupplyDeliverySearch {
-  List<Id> get searchId;
-  List<String> get searchLastUpdated;
-  List<String> get searchTag;
-  List<String> get searchProfile;
-  List<String> get searchSecurity;
-  List<String> get searchText;
-  List<String> get searchContent;
-  List<String> get searchList;
+  List<SearchToken> get searchId;
+  List<Date> get searchLastUpdated;
+  List<SearchToken> get searchTag;
+  List<SearchUri> get searchProfile;
+  List<SearchToken> get searchSecurity;
+  List<SearchString> get searchText;
+  List<SearchString> get searchContent;
+  List<SearchString> get searchList;
   List<String> get searchHas;
   List<SearchToken> get searchType;
   List<SearchToken> get identifier;
@@ -1243,14 +1251,14 @@ abstract class $SupplyDeliverySearchCopyWith<$Res> {
           $Res Function(SupplyDeliverySearch) then) =
       _$SupplyDeliverySearchCopyWithImpl<$Res>;
   $Res call(
-      {List<Id> searchId,
-      List<String> searchLastUpdated,
-      List<String> searchTag,
-      List<String> searchProfile,
-      List<String> searchSecurity,
-      List<String> searchText,
-      List<String> searchContent,
-      List<String> searchList,
+      {List<SearchToken> searchId,
+      List<Date> searchLastUpdated,
+      List<SearchToken> searchTag,
+      List<SearchUri> searchProfile,
+      List<SearchToken> searchSecurity,
+      List<SearchString> searchText,
+      List<SearchString> searchContent,
+      List<SearchString> searchList,
       List<String> searchHas,
       List<SearchToken> searchType,
       List<SearchToken> identifier,
@@ -1288,27 +1296,29 @@ class _$SupplyDeliverySearchCopyWithImpl<$Res>
     Object supplier = freezed,
   }) {
     return _then(_value.copyWith(
-      searchId: searchId == freezed ? _value.searchId : searchId as List<Id>,
+      searchId:
+          searchId == freezed ? _value.searchId : searchId as List<SearchToken>,
       searchLastUpdated: searchLastUpdated == freezed
           ? _value.searchLastUpdated
-          : searchLastUpdated as List<String>,
-      searchTag:
-          searchTag == freezed ? _value.searchTag : searchTag as List<String>,
+          : searchLastUpdated as List<Date>,
+      searchTag: searchTag == freezed
+          ? _value.searchTag
+          : searchTag as List<SearchToken>,
       searchProfile: searchProfile == freezed
           ? _value.searchProfile
-          : searchProfile as List<String>,
+          : searchProfile as List<SearchUri>,
       searchSecurity: searchSecurity == freezed
           ? _value.searchSecurity
-          : searchSecurity as List<String>,
+          : searchSecurity as List<SearchToken>,
       searchText: searchText == freezed
           ? _value.searchText
-          : searchText as List<String>,
+          : searchText as List<SearchString>,
       searchContent: searchContent == freezed
           ? _value.searchContent
-          : searchContent as List<String>,
+          : searchContent as List<SearchString>,
       searchList: searchList == freezed
           ? _value.searchList
-          : searchList as List<String>,
+          : searchList as List<SearchString>,
       searchHas:
           searchHas == freezed ? _value.searchHas : searchHas as List<String>,
       searchType: searchType == freezed
@@ -1335,14 +1345,14 @@ abstract class _$SupplyDeliverySearchCopyWith<$Res>
       __$SupplyDeliverySearchCopyWithImpl<$Res>;
   @override
   $Res call(
-      {List<Id> searchId,
-      List<String> searchLastUpdated,
-      List<String> searchTag,
-      List<String> searchProfile,
-      List<String> searchSecurity,
-      List<String> searchText,
-      List<String> searchContent,
-      List<String> searchList,
+      {List<SearchToken> searchId,
+      List<Date> searchLastUpdated,
+      List<SearchToken> searchTag,
+      List<SearchUri> searchProfile,
+      List<SearchToken> searchSecurity,
+      List<SearchString> searchText,
+      List<SearchString> searchContent,
+      List<SearchString> searchList,
       List<String> searchHas,
       List<SearchToken> searchType,
       List<SearchToken> identifier,
@@ -1382,27 +1392,29 @@ class __$SupplyDeliverySearchCopyWithImpl<$Res>
     Object supplier = freezed,
   }) {
     return _then(_SupplyDeliverySearch(
-      searchId: searchId == freezed ? _value.searchId : searchId as List<Id>,
+      searchId:
+          searchId == freezed ? _value.searchId : searchId as List<SearchToken>,
       searchLastUpdated: searchLastUpdated == freezed
           ? _value.searchLastUpdated
-          : searchLastUpdated as List<String>,
-      searchTag:
-          searchTag == freezed ? _value.searchTag : searchTag as List<String>,
+          : searchLastUpdated as List<Date>,
+      searchTag: searchTag == freezed
+          ? _value.searchTag
+          : searchTag as List<SearchToken>,
       searchProfile: searchProfile == freezed
           ? _value.searchProfile
-          : searchProfile as List<String>,
+          : searchProfile as List<SearchUri>,
       searchSecurity: searchSecurity == freezed
           ? _value.searchSecurity
-          : searchSecurity as List<String>,
+          : searchSecurity as List<SearchToken>,
       searchText: searchText == freezed
           ? _value.searchText
-          : searchText as List<String>,
+          : searchText as List<SearchString>,
       searchContent: searchContent == freezed
           ? _value.searchContent
-          : searchContent as List<String>,
+          : searchContent as List<SearchString>,
       searchList: searchList == freezed
           ? _value.searchList
-          : searchList as List<String>,
+          : searchList as List<SearchString>,
       searchHas:
           searchHas == freezed ? _value.searchHas : searchHas as List<String>,
       searchType: searchType == freezed
@@ -1442,21 +1454,21 @@ class _$_SupplyDeliverySearch extends _SupplyDeliverySearch {
       : super._();
 
   @override
-  final List<Id> searchId;
+  final List<SearchToken> searchId;
   @override
-  final List<String> searchLastUpdated;
+  final List<Date> searchLastUpdated;
   @override
-  final List<String> searchTag;
+  final List<SearchToken> searchTag;
   @override
-  final List<String> searchProfile;
+  final List<SearchUri> searchProfile;
   @override
-  final List<String> searchSecurity;
+  final List<SearchToken> searchSecurity;
   @override
-  final List<String> searchText;
+  final List<SearchString> searchText;
   @override
-  final List<String> searchContent;
+  final List<SearchString> searchContent;
   @override
-  final List<String> searchList;
+  final List<SearchString> searchList;
   @override
   final List<String> searchHas;
   @override
@@ -1550,14 +1562,14 @@ class _$_SupplyDeliverySearch extends _SupplyDeliverySearch {
 abstract class _SupplyDeliverySearch extends SupplyDeliverySearch {
   _SupplyDeliverySearch._() : super._();
   factory _SupplyDeliverySearch(
-      {List<Id> searchId,
-      List<String> searchLastUpdated,
-      List<String> searchTag,
-      List<String> searchProfile,
-      List<String> searchSecurity,
-      List<String> searchText,
-      List<String> searchContent,
-      List<String> searchList,
+      {List<SearchToken> searchId,
+      List<Date> searchLastUpdated,
+      List<SearchToken> searchTag,
+      List<SearchUri> searchProfile,
+      List<SearchToken> searchSecurity,
+      List<SearchString> searchText,
+      List<SearchString> searchContent,
+      List<SearchString> searchList,
       List<String> searchHas,
       List<SearchToken> searchType,
       List<SearchToken> identifier,
@@ -1567,21 +1579,21 @@ abstract class _SupplyDeliverySearch extends SupplyDeliverySearch {
       List<String> supplier}) = _$_SupplyDeliverySearch;
 
   @override
-  List<Id> get searchId;
+  List<SearchToken> get searchId;
   @override
-  List<String> get searchLastUpdated;
+  List<Date> get searchLastUpdated;
   @override
-  List<String> get searchTag;
+  List<SearchToken> get searchTag;
   @override
-  List<String> get searchProfile;
+  List<SearchUri> get searchProfile;
   @override
-  List<String> get searchSecurity;
+  List<SearchToken> get searchSecurity;
   @override
-  List<String> get searchText;
+  List<SearchString> get searchText;
   @override
-  List<String> get searchContent;
+  List<SearchString> get searchContent;
   @override
-  List<String> get searchList;
+  List<SearchString> get searchList;
   @override
   List<String> get searchHas;
   @override
@@ -1606,14 +1618,14 @@ class _$DeviceUseStatementSearchTearOff {
 
 // ignore: unused_element
   _DeviceUseStatementSearch call(
-      {List<Id> searchId,
-      List<String> searchLastUpdated,
-      List<String> searchTag,
-      List<String> searchProfile,
-      List<String> searchSecurity,
-      List<String> searchText,
-      List<String> searchContent,
-      List<String> searchList,
+      {List<SearchToken> searchId,
+      List<Date> searchLastUpdated,
+      List<SearchToken> searchTag,
+      List<SearchUri> searchProfile,
+      List<SearchToken> searchSecurity,
+      List<SearchString> searchText,
+      List<SearchString> searchContent,
+      List<SearchString> searchList,
       List<String> searchHas,
       List<SearchToken> searchType,
       List<String> patient,
@@ -1645,14 +1657,14 @@ const $DeviceUseStatementSearch = _$DeviceUseStatementSearchTearOff();
 
 /// @nodoc
 mixin _$DeviceUseStatementSearch {
-  List<Id> get searchId;
-  List<String> get searchLastUpdated;
-  List<String> get searchTag;
-  List<String> get searchProfile;
-  List<String> get searchSecurity;
-  List<String> get searchText;
-  List<String> get searchContent;
-  List<String> get searchList;
+  List<SearchToken> get searchId;
+  List<Date> get searchLastUpdated;
+  List<SearchToken> get searchTag;
+  List<SearchUri> get searchProfile;
+  List<SearchToken> get searchSecurity;
+  List<SearchString> get searchText;
+  List<SearchString> get searchContent;
+  List<SearchString> get searchList;
   List<String> get searchHas;
   List<SearchToken> get searchType;
   List<String> get patient;
@@ -1669,14 +1681,14 @@ abstract class $DeviceUseStatementSearchCopyWith<$Res> {
           $Res Function(DeviceUseStatementSearch) then) =
       _$DeviceUseStatementSearchCopyWithImpl<$Res>;
   $Res call(
-      {List<Id> searchId,
-      List<String> searchLastUpdated,
-      List<String> searchTag,
-      List<String> searchProfile,
-      List<String> searchSecurity,
-      List<String> searchText,
-      List<String> searchContent,
-      List<String> searchList,
+      {List<SearchToken> searchId,
+      List<Date> searchLastUpdated,
+      List<SearchToken> searchTag,
+      List<SearchUri> searchProfile,
+      List<SearchToken> searchSecurity,
+      List<SearchString> searchText,
+      List<SearchString> searchContent,
+      List<SearchString> searchList,
       List<String> searchHas,
       List<SearchToken> searchType,
       List<String> patient,
@@ -1712,27 +1724,29 @@ class _$DeviceUseStatementSearchCopyWithImpl<$Res>
     Object subject = freezed,
   }) {
     return _then(_value.copyWith(
-      searchId: searchId == freezed ? _value.searchId : searchId as List<Id>,
+      searchId:
+          searchId == freezed ? _value.searchId : searchId as List<SearchToken>,
       searchLastUpdated: searchLastUpdated == freezed
           ? _value.searchLastUpdated
-          : searchLastUpdated as List<String>,
-      searchTag:
-          searchTag == freezed ? _value.searchTag : searchTag as List<String>,
+          : searchLastUpdated as List<Date>,
+      searchTag: searchTag == freezed
+          ? _value.searchTag
+          : searchTag as List<SearchToken>,
       searchProfile: searchProfile == freezed
           ? _value.searchProfile
-          : searchProfile as List<String>,
+          : searchProfile as List<SearchUri>,
       searchSecurity: searchSecurity == freezed
           ? _value.searchSecurity
-          : searchSecurity as List<String>,
+          : searchSecurity as List<SearchToken>,
       searchText: searchText == freezed
           ? _value.searchText
-          : searchText as List<String>,
+          : searchText as List<SearchString>,
       searchContent: searchContent == freezed
           ? _value.searchContent
-          : searchContent as List<String>,
+          : searchContent as List<SearchString>,
       searchList: searchList == freezed
           ? _value.searchList
-          : searchList as List<String>,
+          : searchList as List<SearchString>,
       searchHas:
           searchHas == freezed ? _value.searchHas : searchHas as List<String>,
       searchType: searchType == freezed
@@ -1756,14 +1770,14 @@ abstract class _$DeviceUseStatementSearchCopyWith<$Res>
       __$DeviceUseStatementSearchCopyWithImpl<$Res>;
   @override
   $Res call(
-      {List<Id> searchId,
-      List<String> searchLastUpdated,
-      List<String> searchTag,
-      List<String> searchProfile,
-      List<String> searchSecurity,
-      List<String> searchText,
-      List<String> searchContent,
-      List<String> searchList,
+      {List<SearchToken> searchId,
+      List<Date> searchLastUpdated,
+      List<SearchToken> searchTag,
+      List<SearchUri> searchProfile,
+      List<SearchToken> searchSecurity,
+      List<SearchString> searchText,
+      List<SearchString> searchContent,
+      List<SearchString> searchList,
       List<String> searchHas,
       List<SearchToken> searchType,
       List<String> patient,
@@ -1802,27 +1816,29 @@ class __$DeviceUseStatementSearchCopyWithImpl<$Res>
     Object subject = freezed,
   }) {
     return _then(_DeviceUseStatementSearch(
-      searchId: searchId == freezed ? _value.searchId : searchId as List<Id>,
+      searchId:
+          searchId == freezed ? _value.searchId : searchId as List<SearchToken>,
       searchLastUpdated: searchLastUpdated == freezed
           ? _value.searchLastUpdated
-          : searchLastUpdated as List<String>,
-      searchTag:
-          searchTag == freezed ? _value.searchTag : searchTag as List<String>,
+          : searchLastUpdated as List<Date>,
+      searchTag: searchTag == freezed
+          ? _value.searchTag
+          : searchTag as List<SearchToken>,
       searchProfile: searchProfile == freezed
           ? _value.searchProfile
-          : searchProfile as List<String>,
+          : searchProfile as List<SearchUri>,
       searchSecurity: searchSecurity == freezed
           ? _value.searchSecurity
-          : searchSecurity as List<String>,
+          : searchSecurity as List<SearchToken>,
       searchText: searchText == freezed
           ? _value.searchText
-          : searchText as List<String>,
+          : searchText as List<SearchString>,
       searchContent: searchContent == freezed
           ? _value.searchContent
-          : searchContent as List<String>,
+          : searchContent as List<SearchString>,
       searchList: searchList == freezed
           ? _value.searchList
-          : searchList as List<String>,
+          : searchList as List<SearchString>,
       searchHas:
           searchHas == freezed ? _value.searchHas : searchHas as List<String>,
       searchType: searchType == freezed
@@ -1858,21 +1874,21 @@ class _$_DeviceUseStatementSearch extends _DeviceUseStatementSearch {
       : super._();
 
   @override
-  final List<Id> searchId;
+  final List<SearchToken> searchId;
   @override
-  final List<String> searchLastUpdated;
+  final List<Date> searchLastUpdated;
   @override
-  final List<String> searchTag;
+  final List<SearchToken> searchTag;
   @override
-  final List<String> searchProfile;
+  final List<SearchUri> searchProfile;
   @override
-  final List<String> searchSecurity;
+  final List<SearchToken> searchSecurity;
   @override
-  final List<String> searchText;
+  final List<SearchString> searchText;
   @override
-  final List<String> searchContent;
+  final List<SearchString> searchContent;
   @override
-  final List<String> searchList;
+  final List<SearchString> searchList;
   @override
   final List<String> searchHas;
   @override
@@ -1959,14 +1975,14 @@ class _$_DeviceUseStatementSearch extends _DeviceUseStatementSearch {
 abstract class _DeviceUseStatementSearch extends DeviceUseStatementSearch {
   _DeviceUseStatementSearch._() : super._();
   factory _DeviceUseStatementSearch(
-      {List<Id> searchId,
-      List<String> searchLastUpdated,
-      List<String> searchTag,
-      List<String> searchProfile,
-      List<String> searchSecurity,
-      List<String> searchText,
-      List<String> searchContent,
-      List<String> searchList,
+      {List<SearchToken> searchId,
+      List<Date> searchLastUpdated,
+      List<SearchToken> searchTag,
+      List<SearchUri> searchProfile,
+      List<SearchToken> searchSecurity,
+      List<SearchString> searchText,
+      List<SearchString> searchContent,
+      List<SearchString> searchList,
       List<String> searchHas,
       List<SearchToken> searchType,
       List<String> patient,
@@ -1975,21 +1991,21 @@ abstract class _DeviceUseStatementSearch extends DeviceUseStatementSearch {
       List<String> subject}) = _$_DeviceUseStatementSearch;
 
   @override
-  List<Id> get searchId;
+  List<SearchToken> get searchId;
   @override
-  List<String> get searchLastUpdated;
+  List<Date> get searchLastUpdated;
   @override
-  List<String> get searchTag;
+  List<SearchToken> get searchTag;
   @override
-  List<String> get searchProfile;
+  List<SearchUri> get searchProfile;
   @override
-  List<String> get searchSecurity;
+  List<SearchToken> get searchSecurity;
   @override
-  List<String> get searchText;
+  List<SearchString> get searchText;
   @override
-  List<String> get searchContent;
+  List<SearchString> get searchContent;
   @override
-  List<String> get searchList;
+  List<SearchString> get searchList;
   @override
   List<String> get searchHas;
   @override
@@ -2012,14 +2028,14 @@ class _$CommunicationSearchTearOff {
 
 // ignore: unused_element
   _CommunicationSearch call(
-      {List<Id> searchId,
-      List<String> searchLastUpdated,
-      List<String> searchTag,
-      List<String> searchProfile,
-      List<String> searchSecurity,
-      List<String> searchText,
-      List<String> searchContent,
-      List<String> searchList,
+      {List<SearchToken> searchId,
+      List<Date> searchLastUpdated,
+      List<SearchToken> searchTag,
+      List<SearchUri> searchProfile,
+      List<SearchToken> searchSecurity,
+      List<SearchString> searchText,
+      List<SearchString> searchContent,
+      List<SearchString> searchList,
       List<String> searchHas,
       List<SearchToken> searchType,
       List<String> based_on,
@@ -2073,14 +2089,14 @@ const $CommunicationSearch = _$CommunicationSearchTearOff();
 
 /// @nodoc
 mixin _$CommunicationSearch {
-  List<Id> get searchId;
-  List<String> get searchLastUpdated;
-  List<String> get searchTag;
-  List<String> get searchProfile;
-  List<String> get searchSecurity;
-  List<String> get searchText;
-  List<String> get searchContent;
-  List<String> get searchList;
+  List<SearchToken> get searchId;
+  List<Date> get searchLastUpdated;
+  List<SearchToken> get searchTag;
+  List<SearchUri> get searchProfile;
+  List<SearchToken> get searchSecurity;
+  List<SearchString> get searchText;
+  List<SearchString> get searchContent;
+  List<SearchString> get searchList;
   List<String> get searchHas;
   List<SearchToken> get searchType;
   List<String> get based_on;
@@ -2108,14 +2124,14 @@ abstract class $CommunicationSearchCopyWith<$Res> {
           CommunicationSearch value, $Res Function(CommunicationSearch) then) =
       _$CommunicationSearchCopyWithImpl<$Res>;
   $Res call(
-      {List<Id> searchId,
-      List<String> searchLastUpdated,
-      List<String> searchTag,
-      List<String> searchProfile,
-      List<String> searchSecurity,
-      List<String> searchText,
-      List<String> searchContent,
-      List<String> searchList,
+      {List<SearchToken> searchId,
+      List<Date> searchLastUpdated,
+      List<SearchToken> searchTag,
+      List<SearchUri> searchProfile,
+      List<SearchToken> searchSecurity,
+      List<SearchString> searchText,
+      List<SearchString> searchContent,
+      List<SearchString> searchList,
       List<String> searchHas,
       List<SearchToken> searchType,
       List<String> based_on,
@@ -2173,27 +2189,29 @@ class _$CommunicationSearchCopyWithImpl<$Res>
     Object subject = freezed,
   }) {
     return _then(_value.copyWith(
-      searchId: searchId == freezed ? _value.searchId : searchId as List<Id>,
+      searchId:
+          searchId == freezed ? _value.searchId : searchId as List<SearchToken>,
       searchLastUpdated: searchLastUpdated == freezed
           ? _value.searchLastUpdated
-          : searchLastUpdated as List<String>,
-      searchTag:
-          searchTag == freezed ? _value.searchTag : searchTag as List<String>,
+          : searchLastUpdated as List<Date>,
+      searchTag: searchTag == freezed
+          ? _value.searchTag
+          : searchTag as List<SearchToken>,
       searchProfile: searchProfile == freezed
           ? _value.searchProfile
-          : searchProfile as List<String>,
+          : searchProfile as List<SearchUri>,
       searchSecurity: searchSecurity == freezed
           ? _value.searchSecurity
-          : searchSecurity as List<String>,
+          : searchSecurity as List<SearchToken>,
       searchText: searchText == freezed
           ? _value.searchText
-          : searchText as List<String>,
+          : searchText as List<SearchString>,
       searchContent: searchContent == freezed
           ? _value.searchContent
-          : searchContent as List<String>,
+          : searchContent as List<SearchString>,
       searchList: searchList == freezed
           ? _value.searchList
-          : searchList as List<String>,
+          : searchList as List<SearchString>,
       searchHas:
           searchHas == freezed ? _value.searchHas : searchHas as List<String>,
       searchType: searchType == freezed
@@ -2237,14 +2255,14 @@ abstract class _$CommunicationSearchCopyWith<$Res>
       __$CommunicationSearchCopyWithImpl<$Res>;
   @override
   $Res call(
-      {List<Id> searchId,
-      List<String> searchLastUpdated,
-      List<String> searchTag,
-      List<String> searchProfile,
-      List<String> searchSecurity,
-      List<String> searchText,
-      List<String> searchContent,
-      List<String> searchList,
+      {List<SearchToken> searchId,
+      List<Date> searchLastUpdated,
+      List<SearchToken> searchTag,
+      List<SearchUri> searchProfile,
+      List<SearchToken> searchSecurity,
+      List<SearchString> searchText,
+      List<SearchString> searchContent,
+      List<SearchString> searchList,
       List<String> searchHas,
       List<SearchToken> searchType,
       List<String> based_on,
@@ -2304,27 +2322,29 @@ class __$CommunicationSearchCopyWithImpl<$Res>
     Object subject = freezed,
   }) {
     return _then(_CommunicationSearch(
-      searchId: searchId == freezed ? _value.searchId : searchId as List<Id>,
+      searchId:
+          searchId == freezed ? _value.searchId : searchId as List<SearchToken>,
       searchLastUpdated: searchLastUpdated == freezed
           ? _value.searchLastUpdated
-          : searchLastUpdated as List<String>,
-      searchTag:
-          searchTag == freezed ? _value.searchTag : searchTag as List<String>,
+          : searchLastUpdated as List<Date>,
+      searchTag: searchTag == freezed
+          ? _value.searchTag
+          : searchTag as List<SearchToken>,
       searchProfile: searchProfile == freezed
           ? _value.searchProfile
-          : searchProfile as List<String>,
+          : searchProfile as List<SearchUri>,
       searchSecurity: searchSecurity == freezed
           ? _value.searchSecurity
-          : searchSecurity as List<String>,
+          : searchSecurity as List<SearchToken>,
       searchText: searchText == freezed
           ? _value.searchText
-          : searchText as List<String>,
+          : searchText as List<SearchString>,
       searchContent: searchContent == freezed
           ? _value.searchContent
-          : searchContent as List<String>,
+          : searchContent as List<SearchString>,
       searchList: searchList == freezed
           ? _value.searchList
-          : searchList as List<String>,
+          : searchList as List<SearchString>,
       searchHas:
           searchHas == freezed ? _value.searchHas : searchHas as List<String>,
       searchType: searchType == freezed
@@ -2391,21 +2411,21 @@ class _$_CommunicationSearch extends _CommunicationSearch {
       : super._();
 
   @override
-  final List<Id> searchId;
+  final List<SearchToken> searchId;
   @override
-  final List<String> searchLastUpdated;
+  final List<Date> searchLastUpdated;
   @override
-  final List<String> searchTag;
+  final List<SearchToken> searchTag;
   @override
-  final List<String> searchProfile;
+  final List<SearchUri> searchProfile;
   @override
-  final List<String> searchSecurity;
+  final List<SearchToken> searchSecurity;
   @override
-  final List<String> searchText;
+  final List<SearchString> searchText;
   @override
-  final List<String> searchContent;
+  final List<SearchString> searchContent;
   @override
-  final List<String> searchList;
+  final List<SearchString> searchList;
   @override
   final List<String> searchHas;
   @override
@@ -2553,14 +2573,14 @@ class _$_CommunicationSearch extends _CommunicationSearch {
 abstract class _CommunicationSearch extends CommunicationSearch {
   _CommunicationSearch._() : super._();
   factory _CommunicationSearch(
-      {List<Id> searchId,
-      List<String> searchLastUpdated,
-      List<String> searchTag,
-      List<String> searchProfile,
-      List<String> searchSecurity,
-      List<String> searchText,
-      List<String> searchContent,
-      List<String> searchList,
+      {List<SearchToken> searchId,
+      List<Date> searchLastUpdated,
+      List<SearchToken> searchTag,
+      List<SearchUri> searchProfile,
+      List<SearchToken> searchSecurity,
+      List<SearchString> searchText,
+      List<SearchString> searchContent,
+      List<SearchString> searchList,
       List<String> searchHas,
       List<SearchToken> searchType,
       List<String> based_on,
@@ -2580,21 +2600,21 @@ abstract class _CommunicationSearch extends CommunicationSearch {
       List<String> subject}) = _$_CommunicationSearch;
 
   @override
-  List<Id> get searchId;
+  List<SearchToken> get searchId;
   @override
-  List<String> get searchLastUpdated;
+  List<Date> get searchLastUpdated;
   @override
-  List<String> get searchTag;
+  List<SearchToken> get searchTag;
   @override
-  List<String> get searchProfile;
+  List<SearchUri> get searchProfile;
   @override
-  List<String> get searchSecurity;
+  List<SearchToken> get searchSecurity;
   @override
-  List<String> get searchText;
+  List<SearchString> get searchText;
   @override
-  List<String> get searchContent;
+  List<SearchString> get searchContent;
   @override
-  List<String> get searchList;
+  List<SearchString> get searchList;
   @override
   List<String> get searchHas;
   @override
@@ -2639,14 +2659,14 @@ class _$CommunicationRequestSearchTearOff {
 
 // ignore: unused_element
   _CommunicationRequestSearch call(
-      {List<Id> searchId,
-      List<String> searchLastUpdated,
-      List<String> searchTag,
-      List<String> searchProfile,
-      List<String> searchSecurity,
-      List<String> searchText,
-      List<String> searchContent,
-      List<String> searchList,
+      {List<SearchToken> searchId,
+      List<Date> searchLastUpdated,
+      List<SearchToken> searchTag,
+      List<SearchUri> searchProfile,
+      List<SearchToken> searchSecurity,
+      List<SearchString> searchText,
+      List<SearchString> searchContent,
+      List<SearchString> searchList,
       List<String> searchHas,
       List<SearchToken> searchType,
       List<SearchDate> authored,
@@ -2702,14 +2722,14 @@ const $CommunicationRequestSearch = _$CommunicationRequestSearchTearOff();
 
 /// @nodoc
 mixin _$CommunicationRequestSearch {
-  List<Id> get searchId;
-  List<String> get searchLastUpdated;
-  List<String> get searchTag;
-  List<String> get searchProfile;
-  List<String> get searchSecurity;
-  List<String> get searchText;
-  List<String> get searchContent;
-  List<String> get searchList;
+  List<SearchToken> get searchId;
+  List<Date> get searchLastUpdated;
+  List<SearchToken> get searchTag;
+  List<SearchUri> get searchProfile;
+  List<SearchToken> get searchSecurity;
+  List<SearchString> get searchText;
+  List<SearchString> get searchContent;
+  List<SearchString> get searchList;
   List<String> get searchHas;
   List<SearchToken> get searchType;
   List<SearchDate> get authored;
@@ -2738,14 +2758,14 @@ abstract class $CommunicationRequestSearchCopyWith<$Res> {
           $Res Function(CommunicationRequestSearch) then) =
       _$CommunicationRequestSearchCopyWithImpl<$Res>;
   $Res call(
-      {List<Id> searchId,
-      List<String> searchLastUpdated,
-      List<String> searchTag,
-      List<String> searchProfile,
-      List<String> searchSecurity,
-      List<String> searchText,
-      List<String> searchContent,
-      List<String> searchList,
+      {List<SearchToken> searchId,
+      List<Date> searchLastUpdated,
+      List<SearchToken> searchTag,
+      List<SearchUri> searchProfile,
+      List<SearchToken> searchSecurity,
+      List<SearchString> searchText,
+      List<SearchString> searchContent,
+      List<SearchString> searchList,
       List<String> searchHas,
       List<SearchToken> searchType,
       List<SearchDate> authored,
@@ -2805,27 +2825,29 @@ class _$CommunicationRequestSearchCopyWithImpl<$Res>
     Object subject = freezed,
   }) {
     return _then(_value.copyWith(
-      searchId: searchId == freezed ? _value.searchId : searchId as List<Id>,
+      searchId:
+          searchId == freezed ? _value.searchId : searchId as List<SearchToken>,
       searchLastUpdated: searchLastUpdated == freezed
           ? _value.searchLastUpdated
-          : searchLastUpdated as List<String>,
-      searchTag:
-          searchTag == freezed ? _value.searchTag : searchTag as List<String>,
+          : searchLastUpdated as List<Date>,
+      searchTag: searchTag == freezed
+          ? _value.searchTag
+          : searchTag as List<SearchToken>,
       searchProfile: searchProfile == freezed
           ? _value.searchProfile
-          : searchProfile as List<String>,
+          : searchProfile as List<SearchUri>,
       searchSecurity: searchSecurity == freezed
           ? _value.searchSecurity
-          : searchSecurity as List<String>,
+          : searchSecurity as List<SearchToken>,
       searchText: searchText == freezed
           ? _value.searchText
-          : searchText as List<String>,
+          : searchText as List<SearchString>,
       searchContent: searchContent == freezed
           ? _value.searchContent
-          : searchContent as List<String>,
+          : searchContent as List<SearchString>,
       searchList: searchList == freezed
           ? _value.searchList
-          : searchList as List<String>,
+          : searchList as List<SearchString>,
       searchHas:
           searchHas == freezed ? _value.searchHas : searchHas as List<String>,
       searchType: searchType == freezed
@@ -2874,14 +2896,14 @@ abstract class _$CommunicationRequestSearchCopyWith<$Res>
       __$CommunicationRequestSearchCopyWithImpl<$Res>;
   @override
   $Res call(
-      {List<Id> searchId,
-      List<String> searchLastUpdated,
-      List<String> searchTag,
-      List<String> searchProfile,
-      List<String> searchSecurity,
-      List<String> searchText,
-      List<String> searchContent,
-      List<String> searchList,
+      {List<SearchToken> searchId,
+      List<Date> searchLastUpdated,
+      List<SearchToken> searchTag,
+      List<SearchUri> searchProfile,
+      List<SearchToken> searchSecurity,
+      List<SearchString> searchText,
+      List<SearchString> searchContent,
+      List<SearchString> searchList,
       List<String> searchHas,
       List<SearchToken> searchType,
       List<SearchDate> authored,
@@ -2944,27 +2966,29 @@ class __$CommunicationRequestSearchCopyWithImpl<$Res>
     Object subject = freezed,
   }) {
     return _then(_CommunicationRequestSearch(
-      searchId: searchId == freezed ? _value.searchId : searchId as List<Id>,
+      searchId:
+          searchId == freezed ? _value.searchId : searchId as List<SearchToken>,
       searchLastUpdated: searchLastUpdated == freezed
           ? _value.searchLastUpdated
-          : searchLastUpdated as List<String>,
-      searchTag:
-          searchTag == freezed ? _value.searchTag : searchTag as List<String>,
+          : searchLastUpdated as List<Date>,
+      searchTag: searchTag == freezed
+          ? _value.searchTag
+          : searchTag as List<SearchToken>,
       searchProfile: searchProfile == freezed
           ? _value.searchProfile
-          : searchProfile as List<String>,
+          : searchProfile as List<SearchUri>,
       searchSecurity: searchSecurity == freezed
           ? _value.searchSecurity
-          : searchSecurity as List<String>,
+          : searchSecurity as List<SearchToken>,
       searchText: searchText == freezed
           ? _value.searchText
-          : searchText as List<String>,
+          : searchText as List<SearchString>,
       searchContent: searchContent == freezed
           ? _value.searchContent
-          : searchContent as List<String>,
+          : searchContent as List<SearchString>,
       searchList: searchList == freezed
           ? _value.searchList
-          : searchList as List<String>,
+          : searchList as List<SearchString>,
       searchHas:
           searchHas == freezed ? _value.searchHas : searchHas as List<String>,
       searchType: searchType == freezed
@@ -3036,21 +3060,21 @@ class _$_CommunicationRequestSearch extends _CommunicationRequestSearch {
       : super._();
 
   @override
-  final List<Id> searchId;
+  final List<SearchToken> searchId;
   @override
-  final List<String> searchLastUpdated;
+  final List<Date> searchLastUpdated;
   @override
-  final List<String> searchTag;
+  final List<SearchToken> searchTag;
   @override
-  final List<String> searchProfile;
+  final List<SearchUri> searchProfile;
   @override
-  final List<String> searchSecurity;
+  final List<SearchToken> searchSecurity;
   @override
-  final List<String> searchText;
+  final List<SearchString> searchText;
   @override
-  final List<String> searchContent;
+  final List<SearchString> searchContent;
   @override
-  final List<String> searchList;
+  final List<SearchString> searchList;
   @override
   final List<String> searchHas;
   @override
@@ -3202,14 +3226,14 @@ class _$_CommunicationRequestSearch extends _CommunicationRequestSearch {
 abstract class _CommunicationRequestSearch extends CommunicationRequestSearch {
   _CommunicationRequestSearch._() : super._();
   factory _CommunicationRequestSearch(
-      {List<Id> searchId,
-      List<String> searchLastUpdated,
-      List<String> searchTag,
-      List<String> searchProfile,
-      List<String> searchSecurity,
-      List<String> searchText,
-      List<String> searchContent,
-      List<String> searchList,
+      {List<SearchToken> searchId,
+      List<Date> searchLastUpdated,
+      List<SearchToken> searchTag,
+      List<SearchUri> searchProfile,
+      List<SearchToken> searchSecurity,
+      List<SearchString> searchText,
+      List<SearchString> searchContent,
+      List<SearchString> searchList,
       List<String> searchHas,
       List<SearchToken> searchType,
       List<SearchDate> authored,
@@ -3230,21 +3254,21 @@ abstract class _CommunicationRequestSearch extends CommunicationRequestSearch {
       List<String> subject}) = _$_CommunicationRequestSearch;
 
   @override
-  List<Id> get searchId;
+  List<SearchToken> get searchId;
   @override
-  List<String> get searchLastUpdated;
+  List<Date> get searchLastUpdated;
   @override
-  List<String> get searchTag;
+  List<SearchToken> get searchTag;
   @override
-  List<String> get searchProfile;
+  List<SearchUri> get searchProfile;
   @override
-  List<String> get searchSecurity;
+  List<SearchToken> get searchSecurity;
   @override
-  List<String> get searchText;
+  List<SearchString> get searchText;
   @override
-  List<String> get searchContent;
+  List<SearchString> get searchContent;
   @override
-  List<String> get searchList;
+  List<SearchString> get searchList;
   @override
   List<String> get searchHas;
   @override
@@ -3292,14 +3316,14 @@ class _$GuidanceResponseSearchTearOff {
 
 // ignore: unused_element
   _GuidanceResponseSearch call(
-      {List<Id> searchId,
-      List<String> searchLastUpdated,
-      List<String> searchTag,
-      List<String> searchProfile,
-      List<String> searchSecurity,
-      List<String> searchText,
-      List<String> searchContent,
-      List<String> searchList,
+      {List<SearchToken> searchId,
+      List<Date> searchLastUpdated,
+      List<SearchToken> searchTag,
+      List<SearchUri> searchProfile,
+      List<SearchToken> searchSecurity,
+      List<SearchString> searchText,
+      List<SearchString> searchContent,
+      List<SearchString> searchList,
       List<String> searchHas,
       List<SearchToken> searchType,
       List<SearchToken> identifier,
@@ -3331,14 +3355,14 @@ const $GuidanceResponseSearch = _$GuidanceResponseSearchTearOff();
 
 /// @nodoc
 mixin _$GuidanceResponseSearch {
-  List<Id> get searchId;
-  List<String> get searchLastUpdated;
-  List<String> get searchTag;
-  List<String> get searchProfile;
-  List<String> get searchSecurity;
-  List<String> get searchText;
-  List<String> get searchContent;
-  List<String> get searchList;
+  List<SearchToken> get searchId;
+  List<Date> get searchLastUpdated;
+  List<SearchToken> get searchTag;
+  List<SearchUri> get searchProfile;
+  List<SearchToken> get searchSecurity;
+  List<SearchString> get searchText;
+  List<SearchString> get searchContent;
+  List<SearchString> get searchList;
   List<String> get searchHas;
   List<SearchToken> get searchType;
   List<SearchToken> get identifier;
@@ -3355,14 +3379,14 @@ abstract class $GuidanceResponseSearchCopyWith<$Res> {
           $Res Function(GuidanceResponseSearch) then) =
       _$GuidanceResponseSearchCopyWithImpl<$Res>;
   $Res call(
-      {List<Id> searchId,
-      List<String> searchLastUpdated,
-      List<String> searchTag,
-      List<String> searchProfile,
-      List<String> searchSecurity,
-      List<String> searchText,
-      List<String> searchContent,
-      List<String> searchList,
+      {List<SearchToken> searchId,
+      List<Date> searchLastUpdated,
+      List<SearchToken> searchTag,
+      List<SearchUri> searchProfile,
+      List<SearchToken> searchSecurity,
+      List<SearchString> searchText,
+      List<SearchString> searchContent,
+      List<SearchString> searchList,
       List<String> searchHas,
       List<SearchToken> searchType,
       List<SearchToken> identifier,
@@ -3398,27 +3422,29 @@ class _$GuidanceResponseSearchCopyWithImpl<$Res>
     Object subject = freezed,
   }) {
     return _then(_value.copyWith(
-      searchId: searchId == freezed ? _value.searchId : searchId as List<Id>,
+      searchId:
+          searchId == freezed ? _value.searchId : searchId as List<SearchToken>,
       searchLastUpdated: searchLastUpdated == freezed
           ? _value.searchLastUpdated
-          : searchLastUpdated as List<String>,
-      searchTag:
-          searchTag == freezed ? _value.searchTag : searchTag as List<String>,
+          : searchLastUpdated as List<Date>,
+      searchTag: searchTag == freezed
+          ? _value.searchTag
+          : searchTag as List<SearchToken>,
       searchProfile: searchProfile == freezed
           ? _value.searchProfile
-          : searchProfile as List<String>,
+          : searchProfile as List<SearchUri>,
       searchSecurity: searchSecurity == freezed
           ? _value.searchSecurity
-          : searchSecurity as List<String>,
+          : searchSecurity as List<SearchToken>,
       searchText: searchText == freezed
           ? _value.searchText
-          : searchText as List<String>,
+          : searchText as List<SearchString>,
       searchContent: searchContent == freezed
           ? _value.searchContent
-          : searchContent as List<String>,
+          : searchContent as List<SearchString>,
       searchList: searchList == freezed
           ? _value.searchList
-          : searchList as List<String>,
+          : searchList as List<SearchString>,
       searchHas:
           searchHas == freezed ? _value.searchHas : searchHas as List<String>,
       searchType: searchType == freezed
@@ -3443,14 +3469,14 @@ abstract class _$GuidanceResponseSearchCopyWith<$Res>
       __$GuidanceResponseSearchCopyWithImpl<$Res>;
   @override
   $Res call(
-      {List<Id> searchId,
-      List<String> searchLastUpdated,
-      List<String> searchTag,
-      List<String> searchProfile,
-      List<String> searchSecurity,
-      List<String> searchText,
-      List<String> searchContent,
-      List<String> searchList,
+      {List<SearchToken> searchId,
+      List<Date> searchLastUpdated,
+      List<SearchToken> searchTag,
+      List<SearchUri> searchProfile,
+      List<SearchToken> searchSecurity,
+      List<SearchString> searchText,
+      List<SearchString> searchContent,
+      List<SearchString> searchList,
       List<String> searchHas,
       List<SearchToken> searchType,
       List<SearchToken> identifier,
@@ -3488,27 +3514,29 @@ class __$GuidanceResponseSearchCopyWithImpl<$Res>
     Object subject = freezed,
   }) {
     return _then(_GuidanceResponseSearch(
-      searchId: searchId == freezed ? _value.searchId : searchId as List<Id>,
+      searchId:
+          searchId == freezed ? _value.searchId : searchId as List<SearchToken>,
       searchLastUpdated: searchLastUpdated == freezed
           ? _value.searchLastUpdated
-          : searchLastUpdated as List<String>,
-      searchTag:
-          searchTag == freezed ? _value.searchTag : searchTag as List<String>,
+          : searchLastUpdated as List<Date>,
+      searchTag: searchTag == freezed
+          ? _value.searchTag
+          : searchTag as List<SearchToken>,
       searchProfile: searchProfile == freezed
           ? _value.searchProfile
-          : searchProfile as List<String>,
+          : searchProfile as List<SearchUri>,
       searchSecurity: searchSecurity == freezed
           ? _value.searchSecurity
-          : searchSecurity as List<String>,
+          : searchSecurity as List<SearchToken>,
       searchText: searchText == freezed
           ? _value.searchText
-          : searchText as List<String>,
+          : searchText as List<SearchString>,
       searchContent: searchContent == freezed
           ? _value.searchContent
-          : searchContent as List<String>,
+          : searchContent as List<SearchString>,
       searchList: searchList == freezed
           ? _value.searchList
-          : searchList as List<String>,
+          : searchList as List<SearchString>,
       searchHas:
           searchHas == freezed ? _value.searchHas : searchHas as List<String>,
       searchType: searchType == freezed
@@ -3545,21 +3573,21 @@ class _$_GuidanceResponseSearch extends _GuidanceResponseSearch {
       : super._();
 
   @override
-  final List<Id> searchId;
+  final List<SearchToken> searchId;
   @override
-  final List<String> searchLastUpdated;
+  final List<Date> searchLastUpdated;
   @override
-  final List<String> searchTag;
+  final List<SearchToken> searchTag;
   @override
-  final List<String> searchProfile;
+  final List<SearchUri> searchProfile;
   @override
-  final List<String> searchSecurity;
+  final List<SearchToken> searchSecurity;
   @override
-  final List<String> searchText;
+  final List<SearchString> searchText;
   @override
-  final List<String> searchContent;
+  final List<SearchString> searchContent;
   @override
-  final List<String> searchList;
+  final List<SearchString> searchList;
   @override
   final List<String> searchHas;
   @override
@@ -3647,14 +3675,14 @@ class _$_GuidanceResponseSearch extends _GuidanceResponseSearch {
 abstract class _GuidanceResponseSearch extends GuidanceResponseSearch {
   _GuidanceResponseSearch._() : super._();
   factory _GuidanceResponseSearch(
-      {List<Id> searchId,
-      List<String> searchLastUpdated,
-      List<String> searchTag,
-      List<String> searchProfile,
-      List<String> searchSecurity,
-      List<String> searchText,
-      List<String> searchContent,
-      List<String> searchList,
+      {List<SearchToken> searchId,
+      List<Date> searchLastUpdated,
+      List<SearchToken> searchTag,
+      List<SearchUri> searchProfile,
+      List<SearchToken> searchSecurity,
+      List<SearchString> searchText,
+      List<SearchString> searchContent,
+      List<SearchString> searchList,
       List<String> searchHas,
       List<SearchToken> searchType,
       List<SearchToken> identifier,
@@ -3663,21 +3691,21 @@ abstract class _GuidanceResponseSearch extends GuidanceResponseSearch {
       List<String> subject}) = _$_GuidanceResponseSearch;
 
   @override
-  List<Id> get searchId;
+  List<SearchToken> get searchId;
   @override
-  List<String> get searchLastUpdated;
+  List<Date> get searchLastUpdated;
   @override
-  List<String> get searchTag;
+  List<SearchToken> get searchTag;
   @override
-  List<String> get searchProfile;
+  List<SearchUri> get searchProfile;
   @override
-  List<String> get searchSecurity;
+  List<SearchToken> get searchSecurity;
   @override
-  List<String> get searchText;
+  List<SearchString> get searchText;
   @override
-  List<String> get searchContent;
+  List<SearchString> get searchContent;
   @override
-  List<String> get searchList;
+  List<SearchString> get searchList;
   @override
   List<String> get searchHas;
   @override

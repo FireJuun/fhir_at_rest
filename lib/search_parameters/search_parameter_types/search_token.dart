@@ -5,115 +5,92 @@ import 'package:fhir_at_rest/search_parameters/search_parameter_types/search_fai
 import 'search_objects.dart';
 
 class SearchToken extends SearchObject<String> {
-  final Either<SearchFailure<String>, String> system;
-  final Either<SearchFailure<String>, String> code;
-  final Either<SearchFailure<String>, String> value;
+  final FhirUri system;
+  final Code code;
+  final String value;
   final bool missing;
   final TokenModifier modifier;
 
-  factory SearchToken({
-    dynamic system,
-    dynamic code,
-    dynamic value,
-    bool missing,
-    TokenModifier modifier,
-  }) {
+  factory SearchToken(
+      {FhirUri system,
+      Code code,
+      String value,
+      bool missing,
+      TokenModifier modifier}) {
     assert(system != null || code != null);
     return SearchToken._(
-      system: system == null
-          ? null
-          : FhirUri(system).value.fold(
-                (l) =>
-                    left(SearchFailure.invalidSearchToken(failedValue: value)),
-                (r) => right(r.toString()),
-              ),
-      code: code == null
-          ? null
-          : Code(code).value.fold(
-                (l) =>
-                    left(SearchFailure.invalidSearchToken(failedValue: value)),
-                (r) => right(r.toString()),
-              ),
-      value: right(value),
-      missing: missing,
-      modifier: modifier,
-    );
+        system: system,
+        code: code,
+        value: value,
+        missing: missing,
+        modifier: modifier);
   }
 
   const SearchToken._(
       {this.system, this.code, this.value, this.missing, this.modifier});
 
-  @override
-  String toString() {
-    if (system == null && code == null) {
-      return 'Error: must have system or code parameters for token';
-    }
+  Either<SearchFailure<String>, String> searchString() {
     var returnString = '';
-    if (system != null) {
-      if (system.isLeft()) {
-        return 'Error: system is invalid: $system.toString()';
-      } else {
-        returnString += system.fold((l) => '', (r) => r.toString());
-      }
+    if (system == null && code == null) {
+      return left(SearchFailure.invalidSearchToken(
+          failedValue: 'Error: must have system or code parameters for token'));
+    } else if (system != null && code != null) {
+      if (system.value.isLeft() && code.value.isLeft()) {
+        return left(SearchFailure.invalidSearchToken(
+            failedValue:
+                'Invalid system: ${system.value}\nInvalid code: ${code.value}'));
+      } else if (system.value.isLeft()) {
+        returnString = '=${code.toString()}';
+      } else if (code.value.isLeft()) {
+        returnString = '=${system.toString()}';
+      } else
+        returnString = '=${system.toString()}|${code.toString()}';
+    } else if (system != null) {
+      returnString = '=${system.toString()}';
+    } else {
+      returnString = '=${code.toString()}';
     }
 
-    if (system != null && code != null) {
-      returnString += '|';
-    }
-
-    if (code != null) {
-      if (code.isLeft()) {
-        return 'Error: system is invalid: $code.toString()';
-      } else {
-        returnString += system.fold((l) => '', (r) => r.toString());
-      }
-    }
-
-    returnString += code == null
-        ? ''
-        : code.fold(
-            (l) => '${l.failedValue.toString()}',
-            (r) => r,
-          );
-
-    returnString += value == null || modifier == TokenModifier.of_type
-        ? ''
-        : '|${value.fold(
-            (l) => "",
-            (r) => "${r.toString()}",
-          )}';
+    final missingString = missing == null ? '' : ':missing=$missing';
 
     switch (modifier) {
       case TokenModifier.text:
         {
-          return ':text=$returnString';
+          return right(':text=$returnString$missingString');
         }
       case TokenModifier.not:
         {
-          return ':not=$returnString';
+          return right(':not=$returnString$missingString');
         }
       case TokenModifier.above:
         {
-          return ':above=$returnString';
+          return right(':above=$returnString$missingString');
         }
       case TokenModifier.below:
         {
-          return ':below=$returnString';
+          return right(':below=$returnString$missingString');
         }
       case TokenModifier.in_:
         {
-          return ':in=$returnString';
+          return right(':in=$returnString$missingString');
         }
       case TokenModifier.not_in_:
         {
-          return ':not-in=$returnString';
+          return right(':not-in=$returnString$missingString');
         }
       case TokenModifier.of_type:
         {
-          return ':of-type=$returnString';
+          return value == null
+              ? left(SearchFailure.invalidSearchToken(
+                  failedValue:
+                      'A value must be provided with "of_type" search'))
+              : right(':of-type=$returnString|$value$missingString');
+        }
+      default:
+        {
+          return right('=$returnString$missingString');
         }
     }
-    return '';
   }
 }
 
@@ -126,13 +103,3 @@ enum TokenModifier {
   not_in_,
   of_type,
 }
-
-const mapTokenModifier = {
-  TokenModifier.text: 'text',
-  TokenModifier.not: 'not',
-  TokenModifier.above: 'above',
-  TokenModifier.below: 'below',
-  TokenModifier.in_: 'in',
-  TokenModifier.not_in_: 'not-in',
-  TokenModifier.of_type: 'of-type',
-};

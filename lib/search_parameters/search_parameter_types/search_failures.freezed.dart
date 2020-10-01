@@ -77,6 +77,20 @@ class _$SearchFailureTearOff {
       failedValue: failedValue,
     );
   }
+
+// ignore: unused_element
+  InvalidType<T> invalidType<T>({@required T failedValue}) {
+    return InvalidType<T>(
+      failedValue: failedValue,
+    );
+  }
+
+// ignore: unused_element
+  InvalidReference<T> invalidReference<T>({@required T failedValue}) {
+    return InvalidReference<T>(
+      failedValue: failedValue,
+    );
+  }
 }
 
 /// @nodoc
@@ -98,6 +112,8 @@ mixin _$SearchFailure<T> {
     @required Result invalidSearchQuantity(T failedValue),
     @required Result invalidSearchUri(T failedValue),
     @required Result invalidSearchSpecial(T failedValue),
+    @required Result invalidType(T failedValue),
+    @required Result invalidReference(T failedValue),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
@@ -110,6 +126,8 @@ mixin _$SearchFailure<T> {
     Result invalidSearchQuantity(T failedValue),
     Result invalidSearchUri(T failedValue),
     Result invalidSearchSpecial(T failedValue),
+    Result invalidType(T failedValue),
+    Result invalidReference(T failedValue),
     @required Result orElse(),
   });
   @optionalTypeArgs
@@ -123,6 +141,8 @@ mixin _$SearchFailure<T> {
     @required Result invalidSearchQuantity(InvalidSearchQuantity<T> value),
     @required Result invalidSearchUri(InvalidSearchUri<T> value),
     @required Result invalidSearchSpecial(InvalidSearchSpecial<T> value),
+    @required Result invalidType(InvalidType<T> value),
+    @required Result invalidReference(InvalidReference<T> value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
@@ -135,6 +155,8 @@ mixin _$SearchFailure<T> {
     Result invalidSearchQuantity(InvalidSearchQuantity<T> value),
     Result invalidSearchUri(InvalidSearchUri<T> value),
     Result invalidSearchSpecial(InvalidSearchSpecial<T> value),
+    Result invalidType(InvalidType<T> value),
+    Result invalidReference(InvalidReference<T> value),
     @required Result orElse(),
   });
 
@@ -244,6 +266,8 @@ class _$InvalidSearchNumber<T> implements InvalidSearchNumber<T> {
     @required Result invalidSearchQuantity(T failedValue),
     @required Result invalidSearchUri(T failedValue),
     @required Result invalidSearchSpecial(T failedValue),
+    @required Result invalidType(T failedValue),
+    @required Result invalidReference(T failedValue),
   }) {
     assert(invalidSearchNumber != null);
     assert(invalidSearchDate != null);
@@ -254,6 +278,8 @@ class _$InvalidSearchNumber<T> implements InvalidSearchNumber<T> {
     assert(invalidSearchQuantity != null);
     assert(invalidSearchUri != null);
     assert(invalidSearchSpecial != null);
+    assert(invalidType != null);
+    assert(invalidReference != null);
     return invalidSearchNumber(failedValue);
   }
 
@@ -269,6 +295,8 @@ class _$InvalidSearchNumber<T> implements InvalidSearchNumber<T> {
     Result invalidSearchQuantity(T failedValue),
     Result invalidSearchUri(T failedValue),
     Result invalidSearchSpecial(T failedValue),
+    Result invalidType(T failedValue),
+    Result invalidReference(T failedValue),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -290,6 +318,8 @@ class _$InvalidSearchNumber<T> implements InvalidSearchNumber<T> {
     @required Result invalidSearchQuantity(InvalidSearchQuantity<T> value),
     @required Result invalidSearchUri(InvalidSearchUri<T> value),
     @required Result invalidSearchSpecial(InvalidSearchSpecial<T> value),
+    @required Result invalidType(InvalidType<T> value),
+    @required Result invalidReference(InvalidReference<T> value),
   }) {
     assert(invalidSearchNumber != null);
     assert(invalidSearchDate != null);
@@ -300,6 +330,8 @@ class _$InvalidSearchNumber<T> implements InvalidSearchNumber<T> {
     assert(invalidSearchQuantity != null);
     assert(invalidSearchUri != null);
     assert(invalidSearchSpecial != null);
+    assert(invalidType != null);
+    assert(invalidReference != null);
     return invalidSearchNumber(this);
   }
 
@@ -315,6 +347,8 @@ class _$InvalidSearchNumber<T> implements InvalidSearchNumber<T> {
     Result invalidSearchQuantity(InvalidSearchQuantity<T> value),
     Result invalidSearchUri(InvalidSearchUri<T> value),
     Result invalidSearchSpecial(InvalidSearchSpecial<T> value),
+    Result invalidType(InvalidType<T> value),
+    Result invalidReference(InvalidReference<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -410,6 +444,8 @@ class _$InvalidSearchDate<T> implements InvalidSearchDate<T> {
     @required Result invalidSearchQuantity(T failedValue),
     @required Result invalidSearchUri(T failedValue),
     @required Result invalidSearchSpecial(T failedValue),
+    @required Result invalidType(T failedValue),
+    @required Result invalidReference(T failedValue),
   }) {
     assert(invalidSearchNumber != null);
     assert(invalidSearchDate != null);
@@ -420,6 +456,8 @@ class _$InvalidSearchDate<T> implements InvalidSearchDate<T> {
     assert(invalidSearchQuantity != null);
     assert(invalidSearchUri != null);
     assert(invalidSearchSpecial != null);
+    assert(invalidType != null);
+    assert(invalidReference != null);
     return invalidSearchDate(failedValue);
   }
 
@@ -435,6 +473,8 @@ class _$InvalidSearchDate<T> implements InvalidSearchDate<T> {
     Result invalidSearchQuantity(T failedValue),
     Result invalidSearchUri(T failedValue),
     Result invalidSearchSpecial(T failedValue),
+    Result invalidType(T failedValue),
+    Result invalidReference(T failedValue),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -456,6 +496,8 @@ class _$InvalidSearchDate<T> implements InvalidSearchDate<T> {
     @required Result invalidSearchQuantity(InvalidSearchQuantity<T> value),
     @required Result invalidSearchUri(InvalidSearchUri<T> value),
     @required Result invalidSearchSpecial(InvalidSearchSpecial<T> value),
+    @required Result invalidType(InvalidType<T> value),
+    @required Result invalidReference(InvalidReference<T> value),
   }) {
     assert(invalidSearchNumber != null);
     assert(invalidSearchDate != null);
@@ -466,6 +508,8 @@ class _$InvalidSearchDate<T> implements InvalidSearchDate<T> {
     assert(invalidSearchQuantity != null);
     assert(invalidSearchUri != null);
     assert(invalidSearchSpecial != null);
+    assert(invalidType != null);
+    assert(invalidReference != null);
     return invalidSearchDate(this);
   }
 
@@ -481,6 +525,8 @@ class _$InvalidSearchDate<T> implements InvalidSearchDate<T> {
     Result invalidSearchQuantity(InvalidSearchQuantity<T> value),
     Result invalidSearchUri(InvalidSearchUri<T> value),
     Result invalidSearchSpecial(InvalidSearchSpecial<T> value),
+    Result invalidType(InvalidType<T> value),
+    Result invalidReference(InvalidReference<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -576,6 +622,8 @@ class _$InvalidSearchString<T> implements InvalidSearchString<T> {
     @required Result invalidSearchQuantity(T failedValue),
     @required Result invalidSearchUri(T failedValue),
     @required Result invalidSearchSpecial(T failedValue),
+    @required Result invalidType(T failedValue),
+    @required Result invalidReference(T failedValue),
   }) {
     assert(invalidSearchNumber != null);
     assert(invalidSearchDate != null);
@@ -586,6 +634,8 @@ class _$InvalidSearchString<T> implements InvalidSearchString<T> {
     assert(invalidSearchQuantity != null);
     assert(invalidSearchUri != null);
     assert(invalidSearchSpecial != null);
+    assert(invalidType != null);
+    assert(invalidReference != null);
     return invalidSearchString(failedValue);
   }
 
@@ -601,6 +651,8 @@ class _$InvalidSearchString<T> implements InvalidSearchString<T> {
     Result invalidSearchQuantity(T failedValue),
     Result invalidSearchUri(T failedValue),
     Result invalidSearchSpecial(T failedValue),
+    Result invalidType(T failedValue),
+    Result invalidReference(T failedValue),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -622,6 +674,8 @@ class _$InvalidSearchString<T> implements InvalidSearchString<T> {
     @required Result invalidSearchQuantity(InvalidSearchQuantity<T> value),
     @required Result invalidSearchUri(InvalidSearchUri<T> value),
     @required Result invalidSearchSpecial(InvalidSearchSpecial<T> value),
+    @required Result invalidType(InvalidType<T> value),
+    @required Result invalidReference(InvalidReference<T> value),
   }) {
     assert(invalidSearchNumber != null);
     assert(invalidSearchDate != null);
@@ -632,6 +686,8 @@ class _$InvalidSearchString<T> implements InvalidSearchString<T> {
     assert(invalidSearchQuantity != null);
     assert(invalidSearchUri != null);
     assert(invalidSearchSpecial != null);
+    assert(invalidType != null);
+    assert(invalidReference != null);
     return invalidSearchString(this);
   }
 
@@ -647,6 +703,8 @@ class _$InvalidSearchString<T> implements InvalidSearchString<T> {
     Result invalidSearchQuantity(InvalidSearchQuantity<T> value),
     Result invalidSearchUri(InvalidSearchUri<T> value),
     Result invalidSearchSpecial(InvalidSearchSpecial<T> value),
+    Result invalidType(InvalidType<T> value),
+    Result invalidReference(InvalidReference<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -742,6 +800,8 @@ class _$InvalidSearchToken<T> implements InvalidSearchToken<T> {
     @required Result invalidSearchQuantity(T failedValue),
     @required Result invalidSearchUri(T failedValue),
     @required Result invalidSearchSpecial(T failedValue),
+    @required Result invalidType(T failedValue),
+    @required Result invalidReference(T failedValue),
   }) {
     assert(invalidSearchNumber != null);
     assert(invalidSearchDate != null);
@@ -752,6 +812,8 @@ class _$InvalidSearchToken<T> implements InvalidSearchToken<T> {
     assert(invalidSearchQuantity != null);
     assert(invalidSearchUri != null);
     assert(invalidSearchSpecial != null);
+    assert(invalidType != null);
+    assert(invalidReference != null);
     return invalidSearchToken(failedValue);
   }
 
@@ -767,6 +829,8 @@ class _$InvalidSearchToken<T> implements InvalidSearchToken<T> {
     Result invalidSearchQuantity(T failedValue),
     Result invalidSearchUri(T failedValue),
     Result invalidSearchSpecial(T failedValue),
+    Result invalidType(T failedValue),
+    Result invalidReference(T failedValue),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -788,6 +852,8 @@ class _$InvalidSearchToken<T> implements InvalidSearchToken<T> {
     @required Result invalidSearchQuantity(InvalidSearchQuantity<T> value),
     @required Result invalidSearchUri(InvalidSearchUri<T> value),
     @required Result invalidSearchSpecial(InvalidSearchSpecial<T> value),
+    @required Result invalidType(InvalidType<T> value),
+    @required Result invalidReference(InvalidReference<T> value),
   }) {
     assert(invalidSearchNumber != null);
     assert(invalidSearchDate != null);
@@ -798,6 +864,8 @@ class _$InvalidSearchToken<T> implements InvalidSearchToken<T> {
     assert(invalidSearchQuantity != null);
     assert(invalidSearchUri != null);
     assert(invalidSearchSpecial != null);
+    assert(invalidType != null);
+    assert(invalidReference != null);
     return invalidSearchToken(this);
   }
 
@@ -813,6 +881,8 @@ class _$InvalidSearchToken<T> implements InvalidSearchToken<T> {
     Result invalidSearchQuantity(InvalidSearchQuantity<T> value),
     Result invalidSearchUri(InvalidSearchUri<T> value),
     Result invalidSearchSpecial(InvalidSearchSpecial<T> value),
+    Result invalidType(InvalidType<T> value),
+    Result invalidReference(InvalidReference<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -909,6 +979,8 @@ class _$InvalidSearchReference<T> implements InvalidSearchReference<T> {
     @required Result invalidSearchQuantity(T failedValue),
     @required Result invalidSearchUri(T failedValue),
     @required Result invalidSearchSpecial(T failedValue),
+    @required Result invalidType(T failedValue),
+    @required Result invalidReference(T failedValue),
   }) {
     assert(invalidSearchNumber != null);
     assert(invalidSearchDate != null);
@@ -919,6 +991,8 @@ class _$InvalidSearchReference<T> implements InvalidSearchReference<T> {
     assert(invalidSearchQuantity != null);
     assert(invalidSearchUri != null);
     assert(invalidSearchSpecial != null);
+    assert(invalidType != null);
+    assert(invalidReference != null);
     return invalidSearchReference(failedValue);
   }
 
@@ -934,6 +1008,8 @@ class _$InvalidSearchReference<T> implements InvalidSearchReference<T> {
     Result invalidSearchQuantity(T failedValue),
     Result invalidSearchUri(T failedValue),
     Result invalidSearchSpecial(T failedValue),
+    Result invalidType(T failedValue),
+    Result invalidReference(T failedValue),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -955,6 +1031,8 @@ class _$InvalidSearchReference<T> implements InvalidSearchReference<T> {
     @required Result invalidSearchQuantity(InvalidSearchQuantity<T> value),
     @required Result invalidSearchUri(InvalidSearchUri<T> value),
     @required Result invalidSearchSpecial(InvalidSearchSpecial<T> value),
+    @required Result invalidType(InvalidType<T> value),
+    @required Result invalidReference(InvalidReference<T> value),
   }) {
     assert(invalidSearchNumber != null);
     assert(invalidSearchDate != null);
@@ -965,6 +1043,8 @@ class _$InvalidSearchReference<T> implements InvalidSearchReference<T> {
     assert(invalidSearchQuantity != null);
     assert(invalidSearchUri != null);
     assert(invalidSearchSpecial != null);
+    assert(invalidType != null);
+    assert(invalidReference != null);
     return invalidSearchReference(this);
   }
 
@@ -980,6 +1060,8 @@ class _$InvalidSearchReference<T> implements InvalidSearchReference<T> {
     Result invalidSearchQuantity(InvalidSearchQuantity<T> value),
     Result invalidSearchUri(InvalidSearchUri<T> value),
     Result invalidSearchSpecial(InvalidSearchSpecial<T> value),
+    Result invalidType(InvalidType<T> value),
+    Result invalidReference(InvalidReference<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1076,6 +1158,8 @@ class _$InvalidSearchComposite<T> implements InvalidSearchComposite<T> {
     @required Result invalidSearchQuantity(T failedValue),
     @required Result invalidSearchUri(T failedValue),
     @required Result invalidSearchSpecial(T failedValue),
+    @required Result invalidType(T failedValue),
+    @required Result invalidReference(T failedValue),
   }) {
     assert(invalidSearchNumber != null);
     assert(invalidSearchDate != null);
@@ -1086,6 +1170,8 @@ class _$InvalidSearchComposite<T> implements InvalidSearchComposite<T> {
     assert(invalidSearchQuantity != null);
     assert(invalidSearchUri != null);
     assert(invalidSearchSpecial != null);
+    assert(invalidType != null);
+    assert(invalidReference != null);
     return invalidSearchComposite(failedValue);
   }
 
@@ -1101,6 +1187,8 @@ class _$InvalidSearchComposite<T> implements InvalidSearchComposite<T> {
     Result invalidSearchQuantity(T failedValue),
     Result invalidSearchUri(T failedValue),
     Result invalidSearchSpecial(T failedValue),
+    Result invalidType(T failedValue),
+    Result invalidReference(T failedValue),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1122,6 +1210,8 @@ class _$InvalidSearchComposite<T> implements InvalidSearchComposite<T> {
     @required Result invalidSearchQuantity(InvalidSearchQuantity<T> value),
     @required Result invalidSearchUri(InvalidSearchUri<T> value),
     @required Result invalidSearchSpecial(InvalidSearchSpecial<T> value),
+    @required Result invalidType(InvalidType<T> value),
+    @required Result invalidReference(InvalidReference<T> value),
   }) {
     assert(invalidSearchNumber != null);
     assert(invalidSearchDate != null);
@@ -1132,6 +1222,8 @@ class _$InvalidSearchComposite<T> implements InvalidSearchComposite<T> {
     assert(invalidSearchQuantity != null);
     assert(invalidSearchUri != null);
     assert(invalidSearchSpecial != null);
+    assert(invalidType != null);
+    assert(invalidReference != null);
     return invalidSearchComposite(this);
   }
 
@@ -1147,6 +1239,8 @@ class _$InvalidSearchComposite<T> implements InvalidSearchComposite<T> {
     Result invalidSearchQuantity(InvalidSearchQuantity<T> value),
     Result invalidSearchUri(InvalidSearchUri<T> value),
     Result invalidSearchSpecial(InvalidSearchSpecial<T> value),
+    Result invalidType(InvalidType<T> value),
+    Result invalidReference(InvalidReference<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1243,6 +1337,8 @@ class _$InvalidSearchQuantity<T> implements InvalidSearchQuantity<T> {
     @required Result invalidSearchQuantity(T failedValue),
     @required Result invalidSearchUri(T failedValue),
     @required Result invalidSearchSpecial(T failedValue),
+    @required Result invalidType(T failedValue),
+    @required Result invalidReference(T failedValue),
   }) {
     assert(invalidSearchNumber != null);
     assert(invalidSearchDate != null);
@@ -1253,6 +1349,8 @@ class _$InvalidSearchQuantity<T> implements InvalidSearchQuantity<T> {
     assert(invalidSearchQuantity != null);
     assert(invalidSearchUri != null);
     assert(invalidSearchSpecial != null);
+    assert(invalidType != null);
+    assert(invalidReference != null);
     return invalidSearchQuantity(failedValue);
   }
 
@@ -1268,6 +1366,8 @@ class _$InvalidSearchQuantity<T> implements InvalidSearchQuantity<T> {
     Result invalidSearchQuantity(T failedValue),
     Result invalidSearchUri(T failedValue),
     Result invalidSearchSpecial(T failedValue),
+    Result invalidType(T failedValue),
+    Result invalidReference(T failedValue),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1289,6 +1389,8 @@ class _$InvalidSearchQuantity<T> implements InvalidSearchQuantity<T> {
     @required Result invalidSearchQuantity(InvalidSearchQuantity<T> value),
     @required Result invalidSearchUri(InvalidSearchUri<T> value),
     @required Result invalidSearchSpecial(InvalidSearchSpecial<T> value),
+    @required Result invalidType(InvalidType<T> value),
+    @required Result invalidReference(InvalidReference<T> value),
   }) {
     assert(invalidSearchNumber != null);
     assert(invalidSearchDate != null);
@@ -1299,6 +1401,8 @@ class _$InvalidSearchQuantity<T> implements InvalidSearchQuantity<T> {
     assert(invalidSearchQuantity != null);
     assert(invalidSearchUri != null);
     assert(invalidSearchSpecial != null);
+    assert(invalidType != null);
+    assert(invalidReference != null);
     return invalidSearchQuantity(this);
   }
 
@@ -1314,6 +1418,8 @@ class _$InvalidSearchQuantity<T> implements InvalidSearchQuantity<T> {
     Result invalidSearchQuantity(InvalidSearchQuantity<T> value),
     Result invalidSearchUri(InvalidSearchUri<T> value),
     Result invalidSearchSpecial(InvalidSearchSpecial<T> value),
+    Result invalidType(InvalidType<T> value),
+    Result invalidReference(InvalidReference<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1408,6 +1514,8 @@ class _$InvalidSearchUri<T> implements InvalidSearchUri<T> {
     @required Result invalidSearchQuantity(T failedValue),
     @required Result invalidSearchUri(T failedValue),
     @required Result invalidSearchSpecial(T failedValue),
+    @required Result invalidType(T failedValue),
+    @required Result invalidReference(T failedValue),
   }) {
     assert(invalidSearchNumber != null);
     assert(invalidSearchDate != null);
@@ -1418,6 +1526,8 @@ class _$InvalidSearchUri<T> implements InvalidSearchUri<T> {
     assert(invalidSearchQuantity != null);
     assert(invalidSearchUri != null);
     assert(invalidSearchSpecial != null);
+    assert(invalidType != null);
+    assert(invalidReference != null);
     return invalidSearchUri(failedValue);
   }
 
@@ -1433,6 +1543,8 @@ class _$InvalidSearchUri<T> implements InvalidSearchUri<T> {
     Result invalidSearchQuantity(T failedValue),
     Result invalidSearchUri(T failedValue),
     Result invalidSearchSpecial(T failedValue),
+    Result invalidType(T failedValue),
+    Result invalidReference(T failedValue),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1454,6 +1566,8 @@ class _$InvalidSearchUri<T> implements InvalidSearchUri<T> {
     @required Result invalidSearchQuantity(InvalidSearchQuantity<T> value),
     @required Result invalidSearchUri(InvalidSearchUri<T> value),
     @required Result invalidSearchSpecial(InvalidSearchSpecial<T> value),
+    @required Result invalidType(InvalidType<T> value),
+    @required Result invalidReference(InvalidReference<T> value),
   }) {
     assert(invalidSearchNumber != null);
     assert(invalidSearchDate != null);
@@ -1464,6 +1578,8 @@ class _$InvalidSearchUri<T> implements InvalidSearchUri<T> {
     assert(invalidSearchQuantity != null);
     assert(invalidSearchUri != null);
     assert(invalidSearchSpecial != null);
+    assert(invalidType != null);
+    assert(invalidReference != null);
     return invalidSearchUri(this);
   }
 
@@ -1479,6 +1595,8 @@ class _$InvalidSearchUri<T> implements InvalidSearchUri<T> {
     Result invalidSearchQuantity(InvalidSearchQuantity<T> value),
     Result invalidSearchUri(InvalidSearchUri<T> value),
     Result invalidSearchSpecial(InvalidSearchSpecial<T> value),
+    Result invalidType(InvalidType<T> value),
+    Result invalidReference(InvalidReference<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1574,6 +1692,8 @@ class _$InvalidSearchSpecial<T> implements InvalidSearchSpecial<T> {
     @required Result invalidSearchQuantity(T failedValue),
     @required Result invalidSearchUri(T failedValue),
     @required Result invalidSearchSpecial(T failedValue),
+    @required Result invalidType(T failedValue),
+    @required Result invalidReference(T failedValue),
   }) {
     assert(invalidSearchNumber != null);
     assert(invalidSearchDate != null);
@@ -1584,6 +1704,8 @@ class _$InvalidSearchSpecial<T> implements InvalidSearchSpecial<T> {
     assert(invalidSearchQuantity != null);
     assert(invalidSearchUri != null);
     assert(invalidSearchSpecial != null);
+    assert(invalidType != null);
+    assert(invalidReference != null);
     return invalidSearchSpecial(failedValue);
   }
 
@@ -1599,6 +1721,8 @@ class _$InvalidSearchSpecial<T> implements InvalidSearchSpecial<T> {
     Result invalidSearchQuantity(T failedValue),
     Result invalidSearchUri(T failedValue),
     Result invalidSearchSpecial(T failedValue),
+    Result invalidType(T failedValue),
+    Result invalidReference(T failedValue),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1620,6 +1744,8 @@ class _$InvalidSearchSpecial<T> implements InvalidSearchSpecial<T> {
     @required Result invalidSearchQuantity(InvalidSearchQuantity<T> value),
     @required Result invalidSearchUri(InvalidSearchUri<T> value),
     @required Result invalidSearchSpecial(InvalidSearchSpecial<T> value),
+    @required Result invalidType(InvalidType<T> value),
+    @required Result invalidReference(InvalidReference<T> value),
   }) {
     assert(invalidSearchNumber != null);
     assert(invalidSearchDate != null);
@@ -1630,6 +1756,8 @@ class _$InvalidSearchSpecial<T> implements InvalidSearchSpecial<T> {
     assert(invalidSearchQuantity != null);
     assert(invalidSearchUri != null);
     assert(invalidSearchSpecial != null);
+    assert(invalidType != null);
+    assert(invalidReference != null);
     return invalidSearchSpecial(this);
   }
 
@@ -1645,6 +1773,8 @@ class _$InvalidSearchSpecial<T> implements InvalidSearchSpecial<T> {
     Result invalidSearchQuantity(InvalidSearchQuantity<T> value),
     Result invalidSearchUri(InvalidSearchUri<T> value),
     Result invalidSearchSpecial(InvalidSearchSpecial<T> value),
+    Result invalidType(InvalidType<T> value),
+    Result invalidReference(InvalidReference<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1663,4 +1793,357 @@ abstract class InvalidSearchSpecial<T> implements SearchFailure<T> {
   T get failedValue;
   @override
   $InvalidSearchSpecialCopyWith<T, InvalidSearchSpecial<T>> get copyWith;
+}
+
+/// @nodoc
+abstract class $InvalidTypeCopyWith<T, $Res>
+    implements $SearchFailureCopyWith<T, $Res> {
+  factory $InvalidTypeCopyWith(
+          InvalidType<T> value, $Res Function(InvalidType<T>) then) =
+      _$InvalidTypeCopyWithImpl<T, $Res>;
+  @override
+  $Res call({T failedValue});
+}
+
+/// @nodoc
+class _$InvalidTypeCopyWithImpl<T, $Res>
+    extends _$SearchFailureCopyWithImpl<T, $Res>
+    implements $InvalidTypeCopyWith<T, $Res> {
+  _$InvalidTypeCopyWithImpl(
+      InvalidType<T> _value, $Res Function(InvalidType<T>) _then)
+      : super(_value, (v) => _then(v as InvalidType<T>));
+
+  @override
+  InvalidType<T> get _value => super._value as InvalidType<T>;
+
+  @override
+  $Res call({
+    Object failedValue = freezed,
+  }) {
+    return _then(InvalidType<T>(
+      failedValue:
+          failedValue == freezed ? _value.failedValue : failedValue as T,
+    ));
+  }
+}
+
+/// @nodoc
+class _$InvalidType<T> implements InvalidType<T> {
+  const _$InvalidType({@required this.failedValue})
+      : assert(failedValue != null);
+
+  @override
+  final T failedValue;
+
+  @override
+  String toString() {
+    return 'SearchFailure<$T>.invalidType(failedValue: $failedValue)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is InvalidType<T> &&
+            (identical(other.failedValue, failedValue) ||
+                const DeepCollectionEquality()
+                    .equals(other.failedValue, failedValue)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+
+  @override
+  $InvalidTypeCopyWith<T, InvalidType<T>> get copyWith =>
+      _$InvalidTypeCopyWithImpl<T, InvalidType<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result invalidSearchNumber(T failedValue),
+    @required Result invalidSearchDate(T failedValue),
+    @required Result invalidSearchString(T failedValue),
+    @required Result invalidSearchToken(T failedValue),
+    @required Result invalidSearchReference(T failedValue),
+    @required Result invalidSearchComposite(T failedValue),
+    @required Result invalidSearchQuantity(T failedValue),
+    @required Result invalidSearchUri(T failedValue),
+    @required Result invalidSearchSpecial(T failedValue),
+    @required Result invalidType(T failedValue),
+    @required Result invalidReference(T failedValue),
+  }) {
+    assert(invalidSearchNumber != null);
+    assert(invalidSearchDate != null);
+    assert(invalidSearchString != null);
+    assert(invalidSearchToken != null);
+    assert(invalidSearchReference != null);
+    assert(invalidSearchComposite != null);
+    assert(invalidSearchQuantity != null);
+    assert(invalidSearchUri != null);
+    assert(invalidSearchSpecial != null);
+    assert(invalidType != null);
+    assert(invalidReference != null);
+    return invalidType(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result invalidSearchNumber(T failedValue),
+    Result invalidSearchDate(T failedValue),
+    Result invalidSearchString(T failedValue),
+    Result invalidSearchToken(T failedValue),
+    Result invalidSearchReference(T failedValue),
+    Result invalidSearchComposite(T failedValue),
+    Result invalidSearchQuantity(T failedValue),
+    Result invalidSearchUri(T failedValue),
+    Result invalidSearchSpecial(T failedValue),
+    Result invalidType(T failedValue),
+    Result invalidReference(T failedValue),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (invalidType != null) {
+      return invalidType(failedValue);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result invalidSearchNumber(InvalidSearchNumber<T> value),
+    @required Result invalidSearchDate(InvalidSearchDate<T> value),
+    @required Result invalidSearchString(InvalidSearchString<T> value),
+    @required Result invalidSearchToken(InvalidSearchToken<T> value),
+    @required Result invalidSearchReference(InvalidSearchReference<T> value),
+    @required Result invalidSearchComposite(InvalidSearchComposite<T> value),
+    @required Result invalidSearchQuantity(InvalidSearchQuantity<T> value),
+    @required Result invalidSearchUri(InvalidSearchUri<T> value),
+    @required Result invalidSearchSpecial(InvalidSearchSpecial<T> value),
+    @required Result invalidType(InvalidType<T> value),
+    @required Result invalidReference(InvalidReference<T> value),
+  }) {
+    assert(invalidSearchNumber != null);
+    assert(invalidSearchDate != null);
+    assert(invalidSearchString != null);
+    assert(invalidSearchToken != null);
+    assert(invalidSearchReference != null);
+    assert(invalidSearchComposite != null);
+    assert(invalidSearchQuantity != null);
+    assert(invalidSearchUri != null);
+    assert(invalidSearchSpecial != null);
+    assert(invalidType != null);
+    assert(invalidReference != null);
+    return invalidType(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result invalidSearchNumber(InvalidSearchNumber<T> value),
+    Result invalidSearchDate(InvalidSearchDate<T> value),
+    Result invalidSearchString(InvalidSearchString<T> value),
+    Result invalidSearchToken(InvalidSearchToken<T> value),
+    Result invalidSearchReference(InvalidSearchReference<T> value),
+    Result invalidSearchComposite(InvalidSearchComposite<T> value),
+    Result invalidSearchQuantity(InvalidSearchQuantity<T> value),
+    Result invalidSearchUri(InvalidSearchUri<T> value),
+    Result invalidSearchSpecial(InvalidSearchSpecial<T> value),
+    Result invalidType(InvalidType<T> value),
+    Result invalidReference(InvalidReference<T> value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (invalidType != null) {
+      return invalidType(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class InvalidType<T> implements SearchFailure<T> {
+  const factory InvalidType({@required T failedValue}) = _$InvalidType<T>;
+
+  @override
+  T get failedValue;
+  @override
+  $InvalidTypeCopyWith<T, InvalidType<T>> get copyWith;
+}
+
+/// @nodoc
+abstract class $InvalidReferenceCopyWith<T, $Res>
+    implements $SearchFailureCopyWith<T, $Res> {
+  factory $InvalidReferenceCopyWith(
+          InvalidReference<T> value, $Res Function(InvalidReference<T>) then) =
+      _$InvalidReferenceCopyWithImpl<T, $Res>;
+  @override
+  $Res call({T failedValue});
+}
+
+/// @nodoc
+class _$InvalidReferenceCopyWithImpl<T, $Res>
+    extends _$SearchFailureCopyWithImpl<T, $Res>
+    implements $InvalidReferenceCopyWith<T, $Res> {
+  _$InvalidReferenceCopyWithImpl(
+      InvalidReference<T> _value, $Res Function(InvalidReference<T>) _then)
+      : super(_value, (v) => _then(v as InvalidReference<T>));
+
+  @override
+  InvalidReference<T> get _value => super._value as InvalidReference<T>;
+
+  @override
+  $Res call({
+    Object failedValue = freezed,
+  }) {
+    return _then(InvalidReference<T>(
+      failedValue:
+          failedValue == freezed ? _value.failedValue : failedValue as T,
+    ));
+  }
+}
+
+/// @nodoc
+class _$InvalidReference<T> implements InvalidReference<T> {
+  const _$InvalidReference({@required this.failedValue})
+      : assert(failedValue != null);
+
+  @override
+  final T failedValue;
+
+  @override
+  String toString() {
+    return 'SearchFailure<$T>.invalidReference(failedValue: $failedValue)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is InvalidReference<T> &&
+            (identical(other.failedValue, failedValue) ||
+                const DeepCollectionEquality()
+                    .equals(other.failedValue, failedValue)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+
+  @override
+  $InvalidReferenceCopyWith<T, InvalidReference<T>> get copyWith =>
+      _$InvalidReferenceCopyWithImpl<T, InvalidReference<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result invalidSearchNumber(T failedValue),
+    @required Result invalidSearchDate(T failedValue),
+    @required Result invalidSearchString(T failedValue),
+    @required Result invalidSearchToken(T failedValue),
+    @required Result invalidSearchReference(T failedValue),
+    @required Result invalidSearchComposite(T failedValue),
+    @required Result invalidSearchQuantity(T failedValue),
+    @required Result invalidSearchUri(T failedValue),
+    @required Result invalidSearchSpecial(T failedValue),
+    @required Result invalidType(T failedValue),
+    @required Result invalidReference(T failedValue),
+  }) {
+    assert(invalidSearchNumber != null);
+    assert(invalidSearchDate != null);
+    assert(invalidSearchString != null);
+    assert(invalidSearchToken != null);
+    assert(invalidSearchReference != null);
+    assert(invalidSearchComposite != null);
+    assert(invalidSearchQuantity != null);
+    assert(invalidSearchUri != null);
+    assert(invalidSearchSpecial != null);
+    assert(invalidType != null);
+    assert(invalidReference != null);
+    return invalidReference(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result invalidSearchNumber(T failedValue),
+    Result invalidSearchDate(T failedValue),
+    Result invalidSearchString(T failedValue),
+    Result invalidSearchToken(T failedValue),
+    Result invalidSearchReference(T failedValue),
+    Result invalidSearchComposite(T failedValue),
+    Result invalidSearchQuantity(T failedValue),
+    Result invalidSearchUri(T failedValue),
+    Result invalidSearchSpecial(T failedValue),
+    Result invalidType(T failedValue),
+    Result invalidReference(T failedValue),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (invalidReference != null) {
+      return invalidReference(failedValue);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result invalidSearchNumber(InvalidSearchNumber<T> value),
+    @required Result invalidSearchDate(InvalidSearchDate<T> value),
+    @required Result invalidSearchString(InvalidSearchString<T> value),
+    @required Result invalidSearchToken(InvalidSearchToken<T> value),
+    @required Result invalidSearchReference(InvalidSearchReference<T> value),
+    @required Result invalidSearchComposite(InvalidSearchComposite<T> value),
+    @required Result invalidSearchQuantity(InvalidSearchQuantity<T> value),
+    @required Result invalidSearchUri(InvalidSearchUri<T> value),
+    @required Result invalidSearchSpecial(InvalidSearchSpecial<T> value),
+    @required Result invalidType(InvalidType<T> value),
+    @required Result invalidReference(InvalidReference<T> value),
+  }) {
+    assert(invalidSearchNumber != null);
+    assert(invalidSearchDate != null);
+    assert(invalidSearchString != null);
+    assert(invalidSearchToken != null);
+    assert(invalidSearchReference != null);
+    assert(invalidSearchComposite != null);
+    assert(invalidSearchQuantity != null);
+    assert(invalidSearchUri != null);
+    assert(invalidSearchSpecial != null);
+    assert(invalidType != null);
+    assert(invalidReference != null);
+    return invalidReference(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result invalidSearchNumber(InvalidSearchNumber<T> value),
+    Result invalidSearchDate(InvalidSearchDate<T> value),
+    Result invalidSearchString(InvalidSearchString<T> value),
+    Result invalidSearchToken(InvalidSearchToken<T> value),
+    Result invalidSearchReference(InvalidSearchReference<T> value),
+    Result invalidSearchComposite(InvalidSearchComposite<T> value),
+    Result invalidSearchQuantity(InvalidSearchQuantity<T> value),
+    Result invalidSearchUri(InvalidSearchUri<T> value),
+    Result invalidSearchSpecial(InvalidSearchSpecial<T> value),
+    Result invalidType(InvalidType<T> value),
+    Result invalidReference(InvalidReference<T> value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (invalidReference != null) {
+      return invalidReference(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class InvalidReference<T> implements SearchFailure<T> {
+  const factory InvalidReference({@required T failedValue}) =
+      _$InvalidReference<T>;
+
+  @override
+  T get failedValue;
+  @override
+  $InvalidReferenceCopyWith<T, InvalidReference<T>> get copyWith;
 }

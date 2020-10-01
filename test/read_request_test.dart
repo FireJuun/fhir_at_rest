@@ -8,7 +8,7 @@ void main() async {
   group('Read Request', () {
     test('Basic Read Request', () async {
       final req = ReadRequest.r4(
-        base: Uri.parse('https://my.fhir.server.com'),
+        base: Uri.parse('http://hapi.fhir.org/baseR4'),
         type: R4Types.patient,
         id: Id('12345'),
       );

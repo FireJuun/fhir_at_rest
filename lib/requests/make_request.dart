@@ -14,7 +14,7 @@ Future<Either<RestfulFailure, dynamic>> makeRequest(
   Response result;
 
   // for testing purposes
-  // return (right(thisRequest));
+  return (right(thisRequest));
 
   try {
     if (function == post || function == put || function == patch) {

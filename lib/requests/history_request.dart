@@ -11,6 +11,7 @@ import 'package:fhir/stu3.dart' as stu3;
 import 'package:fhir/r4.dart' as r4;
 import 'package:fhir/r5.dart' as r5;
 
+import '../search_parameters/search_parameter_types/search_parameter_types.dart';
 import '../failures/restful_failure.dart';
 import '../enums/enums.dart';
 import 'make_request.dart';
@@ -24,48 +25,73 @@ abstract class HistoryRequest with _$HistoryRequest {
     @required Uri base,
     @required Dstu2Types type,
     @required Id id,
+    int count,
+    Instant since,
+    FhirDateTime at,
+    SearchReference reference,
   }) = _HistoryRequestDstu2;
 
   factory HistoryRequest.stu3({
     @required Uri base,
     @required Stu3Types type,
     @required Id id,
+    int count,
+    Instant since,
+    FhirDateTime at,
+    SearchReference reference,
   }) = _HistoryRequestStu3;
 
   factory HistoryRequest.r4({
     @required Uri base,
     @required R4Types type,
     @required Id id,
+    int count,
+    Instant since,
+    FhirDateTime at,
+    SearchReference reference,
   }) = _HistoryRequestR4;
 
   factory HistoryRequest.r5({
     @required Uri base,
     @required R5Types type,
     @required Id id,
+    int count,
+    Instant since,
+    FhirDateTime at,
+    SearchReference reference,
   }) = _HistoryRequestR5;
 
   Future<Either<RestfulFailure, dynamic>> request() async {
     var thisRequest = '${base}/';
     thisRequest += this.map(
       dstu2: (req) => req.type == null
-          ? ""
+          ? ''
           : '${enumToString(req.type)}/'
               '${req.id == null ? "" : "${req.id.toString()}/"}',
       stu3: (req) => req.type == null
-          ? ""
+          ? ''
           : '${enumToString(req.type)}/'
               '${req.id == null ? "" : "${req.id.toString()}/"}',
       r4: (req) => req.type == null
-          ? ""
+          ? ''
           : '${enumToString(req.type)}/'
               '${req.id == null ? "" : "${req.id.toString()}/"}',
       r5: (req) => req.type == null
-          ? ""
+          ? ''
           : '${enumToString(req.type)}/'
               '${req.id == null ? "" : "${req.id.toString()}/"}',
     );
     thisRequest += '_history';
     thisRequest += '&_format=application/fhir+json';
+    thisRequest += int == null ? '' : '&_int=$count';
+    thisRequest += since == null ? '' : '&_since=${since.toString()}';
+    thisRequest += at == null ? '' : '&_at=${at.toString()}';
+    if (reference != null) {
+      thisRequest += reference.searchString().fold(
+            (l) => '',
+            (r) => '&_reference=${r.toString()}',
+          );
+    }
 
     final result = await makeRequest(get, thisRequest);
     return result.fold(

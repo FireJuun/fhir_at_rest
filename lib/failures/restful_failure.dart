@@ -24,4 +24,7 @@ abstract class RestfulFailure<T> with _$RestfulFailure<T> {
   const factory RestfulFailure.noVid({
     @required String errorComment,
   }) = NoVid;
+  const factory RestfulFailure.idDoesNotMatchResource({
+    @required String errorComment,
+  }) = IdDoesNotMatchResource;
 }

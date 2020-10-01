@@ -31,4 +31,10 @@ abstract class SearchFailure<T> with _$SearchFailure<T> {
   const factory SearchFailure.invalidSearchSpecial({
     @required T failedValue,
   }) = InvalidSearchSpecial<T>;
+  const factory SearchFailure.invalidType({
+    @required T failedValue,
+  }) = InvalidType<T>;
+  const factory SearchFailure.invalidReference({
+    @required T failedValue,
+  }) = InvalidReference<T>;
 }

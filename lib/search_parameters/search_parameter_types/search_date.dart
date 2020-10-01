@@ -1,31 +1,29 @@
 import 'package:dartz/dartz.dart';
-import 'package:fhir_at_rest/search_parameters/search_parameter_types/search_failures.dart';
+import 'package:fhir/primitive_types/primitive_types.dart';
 
+import 'search_failures.dart';
 import 'search_objects.dart';
 
 class SearchDate extends SearchObject<String> {
-  @override
-  final Either<SearchFailure<String>, String> value;
+  final FhirDateTime date;
   final bool missing;
   final DatePrefix prefix;
 
-  factory SearchDate(dynamic value, {bool missing, DatePrefix prefix}) {
-    assert(value != null);
+  factory SearchDate(FhirDateTime date, {bool missing, DatePrefix prefix}) {
+    assert(date != null);
     return SearchDate._(
-      validateSearchDate(value),
+      date,
       missing: missing,
       prefix: prefix ?? DatePrefix.eq,
     );
   }
 
-  const SearchDate._(this.value, {this.missing, this.prefix});
+  const SearchDate._(this.date, {this.missing, this.prefix});
 
-  @override
-  String toString() => value.fold(
-        (l) => '${l.failedValue.toString()}',
-        (r) => '=${prefix == DatePrefix.eq ? "" : mapDatePrefix[prefix]}'
-            '$r${missing == null ? "" : ":missing=$missing"}',
-      );
+  Either<SearchFailure<String>, String> searchString() => date.value.isLeft()
+      ? left(SearchFailure.invalidSearchDate(failedValue: date.toString()))
+      : right('=${prefix == DatePrefix.eq ? "" : mapDatePrefix[prefix]}'
+          '${date.toString()}${missing == null ? "" : ":missing=$missing"}');
 }
 
 enum DatePrefix {

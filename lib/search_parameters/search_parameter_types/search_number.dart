@@ -4,27 +4,26 @@ import 'package:fhir_at_rest/search_parameters/search_parameter_types/search_fai
 import 'search_objects.dart';
 
 class SearchNumber extends SearchObject<String> {
-  @override
-  final Either<SearchFailure<String>, String> value;
+  final Either<SearchFailure<String>, String> number;
   final bool missing;
   final NumberPrefix prefix;
 
-  factory SearchNumber(dynamic value, {bool missing, NumberPrefix prefix}) {
-    assert(value != null);
+  factory SearchNumber(dynamic number, {bool missing, NumberPrefix prefix}) {
+    assert(number != null);
     return SearchNumber._(
-      validateSearchNumber(value),
+      validateSearchNumber(number),
       missing: missing,
       prefix: prefix ?? NumberPrefix.eq,
     );
   }
 
-  const SearchNumber._(this.value, {this.missing, this.prefix});
+  const SearchNumber._(this.number, {this.missing, this.prefix});
 
-  @override
-  String toString() => value.fold(
-        (l) => '${l.failedValue.toString()}',
-        (r) => '=${prefix == NumberPrefix.eq ? "" : mapNumberPrefix[prefix]}'
-            '$r${missing == null ? "" : ":missing=$missing"}',
+  Either<SearchFailure<String>, String> searchString() => number.fold(
+        (l) => left(l),
+        (r) =>
+            right('=${prefix == NumberPrefix.eq ? "" : mapNumberPrefix[prefix]}'
+                '$r${missing == null ? "" : ":missing=$missing"}'),
       );
 }
 

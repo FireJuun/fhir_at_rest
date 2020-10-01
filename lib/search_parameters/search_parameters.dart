@@ -5,14 +5,14 @@ import 'package:fhir/primitive_types/primitive_types.dart';
 import 'search_parameter_types/search_parameter_types.dart';
 
 abstract class Dstu2SearchParameters {
-  List<Id> searchId;
-  List<String> searchLastUpdated;
-  List<String> searchTag;
-  List<String> searchProfile;
-  List<String> searchSecurity;
-  List<String> searchText;
-  List<String> searchContent;
-  List<String> searchList;
+  List<SearchToken> searchId;
+  List<Date> searchLastUpdated;
+  List<SearchToken> searchTag;
+  List<SearchUri> searchProfile;
+  List<SearchToken> searchSecurity;
+  List<SearchString> searchText;
+  List<SearchString> searchContent;
+  List<SearchString> searchList;
   List<String> searchHas;
   List<SearchToken> searchType;
 
@@ -20,14 +20,14 @@ abstract class Dstu2SearchParameters {
 }
 
 abstract class Stu3SearchParameters {
-  List<Id> searchId;
-  List<String> searchLastUpdated;
-  List<String> searchTag;
-  List<String> searchProfile;
-  List<String> searchSecurity;
-  List<String> searchText;
-  List<String> searchContent;
-  List<String> searchList;
+  List<SearchToken> searchId;
+  List<Date> searchLastUpdated;
+  List<SearchToken> searchTag;
+  List<SearchUri> searchProfile;
+  List<SearchToken> searchSecurity;
+  List<SearchString> searchText;
+  List<SearchString> searchContent;
+  List<SearchString> searchList;
   List<String> searchHas;
   List<SearchToken> searchType;
 
@@ -35,14 +35,14 @@ abstract class Stu3SearchParameters {
 }
 
 abstract class R4SearchParameters {
-  List<Id> searchId;
-  List<String> searchLastUpdated;
-  List<String> searchTag;
-  List<String> searchProfile;
-  List<String> searchSecurity;
-  List<String> searchText;
-  List<String> searchContent;
-  List<String> searchList;
+  List<SearchToken> searchId;
+  List<Date> searchLastUpdated;
+  List<SearchToken> searchTag;
+  List<SearchUri> searchProfile;
+  List<SearchToken> searchSecurity;
+  List<SearchString> searchText;
+  List<SearchString> searchContent;
+  List<SearchString> searchList;
   List<String> searchHas;
   List<SearchToken> searchType;
 
@@ -50,14 +50,14 @@ abstract class R4SearchParameters {
 }
 
 abstract class R5SearchParameters {
-  List<Id> searchId;
-  List<String> searchLastUpdated;
-  List<String> searchTag;
-  List<String> searchProfile;
-  List<String> searchSecurity;
-  List<String> searchText;
-  List<String> searchContent;
-  List<String> searchList;
+  List<SearchToken> searchId;
+  List<Date> searchLastUpdated;
+  List<SearchToken> searchTag;
+  List<SearchUri> searchProfile;
+  List<SearchToken> searchSecurity;
+  List<SearchString> searchText;
+  List<SearchString> searchContent;
+  List<SearchString> searchList;
   List<String> searchHas;
   List<SearchToken> searchType;
 
@@ -68,42 +68,42 @@ String _parametersToString(dynamic search) {
   var parameterString = '';
   if (search.searchId != null) {
     for (var i in search.searchId) {
-      parameterString += ('&_id=${i.toString()}');
+      parameterString += ('&_id=${i.searchString()}');
     }
   }
   if (search.searchLastUpdated != null) {
     for (var i in search.searchLastUpdated) {
-      parameterString += ('&_lastUpdated=${i.toString()}');
+      parameterString += ('&_lastUpdated=${i.searchString()}');
     }
   }
   if (search.searchTag != null) {
     for (var i in search.searchTag) {
-      parameterString += ('&_tag=${i.toString()}');
+      parameterString += ('&_tag=${i.searchString()}');
     }
   }
   if (search.searchProfile != null) {
     for (var i in search.searchProfile) {
-      parameterString += ('&_profile=${i.toString()}');
+      parameterString += ('&_profile=${i.searchString()}');
     }
   }
   if (search.searchSecurity != null) {
     for (var i in search.searchSecurity) {
-      parameterString += ('&_security=${i.toString()}');
+      parameterString += ('&_security=${i.searchString()}');
     }
   }
   if (search.searchText != null) {
     for (var i in search.searchText) {
-      parameterString += ('&_text=${i.toString()}');
+      parameterString += ('&_text=${i.searchString()}');
     }
   }
   if (search.searchContent != null) {
     for (var i in search.searchContent) {
-      parameterString += ('&_content=${i.toString()}');
+      parameterString += ('&_content=${i.searchString()}');
     }
   }
   if (search.searchList != null) {
     for (var i in search.searchList) {
-      parameterString += ('&_list=${i.toString()}');
+      parameterString += ('&_list=${i.searchString()}');
     }
   }
   if (search.searchHas != null) {
@@ -113,7 +113,7 @@ String _parametersToString(dynamic search) {
   }
   if (search.searchType != null) {
     for (var i in search.searchType) {
-      parameterString += ('&_type=${i.toString()}');
+      parameterString += ('&_type=${i.searchring()}');
     }
   }
   InstanceMirror parameters = reflect(search);

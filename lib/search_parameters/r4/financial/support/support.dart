@@ -7,121 +7,130 @@ import '../../../search_parameters.dart';
 part 'support.freezed.dart';
 
 @freezed
-abstract class CoverageSearch with R4SearchParameters implements _$CoverageSearch {
-CoverageSearch._(); 
- factory CoverageSearch ({
-List<Id> searchId,
-List<String> searchLastUpdated,
-List<String> searchTag,
-List<String> searchProfile,
-List<String> searchSecurity,
-List<String> searchText,
-List<String> searchContent,
-List<String> searchList,
-List<String> searchHas,
-List<SearchToken> searchType,
-List<String> beneficiary,
-List<SearchToken> class_type,
-List<SearchString> class_value,
-List<SearchString> dependent,
-List<SearchToken> identifier,
-List<String> patient,
-List<String> payor,
-List<String> policy_holder,
-List<SearchToken> status,
-List<String> subscriber,
-List<SearchToken> type,
-}) = _CoverageSearch;
+abstract class CoverageSearch
+    with R4SearchParameters
+    implements _$CoverageSearch {
+  CoverageSearch._();
+  factory CoverageSearch({
+    List<SearchToken> searchId,
+    List<Date> searchLastUpdated,
+    List<SearchToken> searchTag,
+    List<SearchUri> searchProfile,
+    List<SearchToken> searchSecurity,
+    List<SearchString> searchText,
+    List<SearchString> searchContent,
+    List<SearchString> searchList,
+    List<String> searchHas,
+    List<SearchToken> searchType,
+    List<String> beneficiary,
+    List<SearchToken> class_type,
+    List<SearchString> class_value,
+    List<SearchString> dependent,
+    List<SearchToken> identifier,
+    List<String> patient,
+    List<String> payor,
+    List<String> policy_holder,
+    List<SearchToken> status,
+    List<String> subscriber,
+    List<SearchToken> type,
+  }) = _CoverageSearch;
 }
 
 @freezed
-abstract class CoverageEligibilityRequestSearch with R4SearchParameters implements _$CoverageEligibilityRequestSearch {
-CoverageEligibilityRequestSearch._(); 
- factory CoverageEligibilityRequestSearch ({
-List<Id> searchId,
-List<String> searchLastUpdated,
-List<String> searchTag,
-List<String> searchProfile,
-List<String> searchSecurity,
-List<String> searchText,
-List<String> searchContent,
-List<String> searchList,
-List<String> searchHas,
-List<SearchToken> searchType,
-List<SearchDate> created,
-List<String> enterer,
-List<String> facility,
-List<SearchToken> identifier,
-List<String> patient,
-List<String> provider,
-List<SearchToken> status,
-}) = _CoverageEligibilityRequestSearch;
+abstract class CoverageEligibilityRequestSearch
+    with R4SearchParameters
+    implements _$CoverageEligibilityRequestSearch {
+  CoverageEligibilityRequestSearch._();
+  factory CoverageEligibilityRequestSearch({
+    List<SearchToken> searchId,
+    List<Date> searchLastUpdated,
+    List<SearchToken> searchTag,
+    List<SearchUri> searchProfile,
+    List<SearchToken> searchSecurity,
+    List<SearchString> searchText,
+    List<SearchString> searchContent,
+    List<SearchString> searchList,
+    List<String> searchHas,
+    List<SearchToken> searchType,
+    List<SearchDate> created,
+    List<String> enterer,
+    List<String> facility,
+    List<SearchToken> identifier,
+    List<String> patient,
+    List<String> provider,
+    List<SearchToken> status,
+  }) = _CoverageEligibilityRequestSearch;
 }
 
 @freezed
-abstract class CoverageEligibilityResponseSearch with R4SearchParameters implements _$CoverageEligibilityResponseSearch {
-CoverageEligibilityResponseSearch._(); 
- factory CoverageEligibilityResponseSearch ({
-List<Id> searchId,
-List<String> searchLastUpdated,
-List<String> searchTag,
-List<String> searchProfile,
-List<String> searchSecurity,
-List<String> searchText,
-List<String> searchContent,
-List<String> searchList,
-List<String> searchHas,
-List<SearchToken> searchType,
-List<SearchDate> created,
-List<SearchString> disposition,
-List<SearchToken> identifier,
-List<String> insurer,
-List<SearchToken> outcome,
-List<String> patient,
-List<String> request,
-List<String> requestor,
-List<SearchToken> status,
-}) = _CoverageEligibilityResponseSearch;
+abstract class CoverageEligibilityResponseSearch
+    with R4SearchParameters
+    implements _$CoverageEligibilityResponseSearch {
+  CoverageEligibilityResponseSearch._();
+  factory CoverageEligibilityResponseSearch({
+    List<SearchToken> searchId,
+    List<Date> searchLastUpdated,
+    List<SearchToken> searchTag,
+    List<SearchUri> searchProfile,
+    List<SearchToken> searchSecurity,
+    List<SearchString> searchText,
+    List<SearchString> searchContent,
+    List<SearchString> searchList,
+    List<String> searchHas,
+    List<SearchToken> searchType,
+    List<SearchDate> created,
+    List<SearchString> disposition,
+    List<SearchToken> identifier,
+    List<String> insurer,
+    List<SearchToken> outcome,
+    List<String> patient,
+    List<String> request,
+    List<String> requestor,
+    List<SearchToken> status,
+  }) = _CoverageEligibilityResponseSearch;
 }
 
 @freezed
-abstract class EnrollmentRequestSearch with R4SearchParameters implements _$EnrollmentRequestSearch {
-EnrollmentRequestSearch._(); 
- factory EnrollmentRequestSearch ({
-List<Id> searchId,
-List<String> searchLastUpdated,
-List<String> searchTag,
-List<String> searchProfile,
-List<String> searchSecurity,
-List<String> searchText,
-List<String> searchContent,
-List<String> searchList,
-List<String> searchHas,
-List<SearchToken> searchType,
-List<SearchToken> identifier,
-List<String> patient,
-List<SearchToken> status,
-List<String> subject,
-}) = _EnrollmentRequestSearch;
+abstract class EnrollmentRequestSearch
+    with R4SearchParameters
+    implements _$EnrollmentRequestSearch {
+  EnrollmentRequestSearch._();
+  factory EnrollmentRequestSearch({
+    List<SearchToken> searchId,
+    List<Date> searchLastUpdated,
+    List<SearchToken> searchTag,
+    List<SearchUri> searchProfile,
+    List<SearchToken> searchSecurity,
+    List<SearchString> searchText,
+    List<SearchString> searchContent,
+    List<SearchString> searchList,
+    List<String> searchHas,
+    List<SearchToken> searchType,
+    List<SearchToken> identifier,
+    List<String> patient,
+    List<SearchToken> status,
+    List<String> subject,
+  }) = _EnrollmentRequestSearch;
 }
 
 @freezed
-abstract class EnrollmentResponseSearch with R4SearchParameters implements _$EnrollmentResponseSearch {
-EnrollmentResponseSearch._(); 
- factory EnrollmentResponseSearch ({
-List<Id> searchId,
-List<String> searchLastUpdated,
-List<String> searchTag,
-List<String> searchProfile,
-List<String> searchSecurity,
-List<String> searchText,
-List<String> searchContent,
-List<String> searchList,
-List<String> searchHas,
-List<SearchToken> searchType,
-List<SearchToken> identifier,
-List<String> request,
-List<SearchToken> status,
-}) = _EnrollmentResponseSearch;
+abstract class EnrollmentResponseSearch
+    with R4SearchParameters
+    implements _$EnrollmentResponseSearch {
+  EnrollmentResponseSearch._();
+  factory EnrollmentResponseSearch({
+    List<SearchToken> searchId,
+    List<Date> searchLastUpdated,
+    List<SearchToken> searchTag,
+    List<SearchUri> searchProfile,
+    List<SearchToken> searchSecurity,
+    List<SearchString> searchText,
+    List<SearchString> searchContent,
+    List<SearchString> searchList,
+    List<String> searchHas,
+    List<SearchToken> searchType,
+    List<SearchToken> identifier,
+    List<String> request,
+    List<SearchToken> status,
+  }) = _EnrollmentResponseSearch;
 }
-

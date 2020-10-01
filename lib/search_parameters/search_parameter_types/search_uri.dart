@@ -1,32 +1,33 @@
 import 'package:dartz/dartz.dart';
-import 'package:fhir_at_rest/search_parameters/search_parameter_types/search_failures.dart';
+import 'package:fhir/primitive_types/primitive_types.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
+import 'search_failures.dart';
 import 'search_objects.dart';
 
 class SearchUri extends SearchObject<String> {
-  @override
-  final Either<SearchFailure<String>, String> value;
+  final FhirUri uri;
   final bool missing;
   final UriModifier modifier;
 
-  factory SearchUri(dynamic value, {bool missing, UriModifier modifier}) {
-    assert(value != null);
+  factory SearchUri(dynamic uri, {bool missing, UriModifier modifier}) {
+    assert(uri != null);
     return SearchUri._(
-      validateSearchUri(value),
+      uri: uri,
       missing: missing,
       modifier: modifier,
     );
   }
 
-  const SearchUri._(this.value, {this.missing, this.modifier});
+  const SearchUri._({@required this.uri, this.missing, this.modifier});
 
-  @override
-  String toString() => value.fold(
-        (l) => '${l.failedValue.toString()}',
-        (r) =>
+  Either<SearchFailure<String>, String> searchString() => uri.value.fold(
+        (l) =>
+            left(SearchFailure.invalidSearchUri(failedValue: uri.toString())),
+        (r) => right(
             '${modifier != null ? modifier == UriModifier.above ? ":above=" : ":below=" : "="}'
             '$r'
-            '${modifier != null ? "" : missing == null ? "" : ":missing=$missing"}',
+            '${modifier != null ? "" : missing == null ? "" : ":missing=$missing"}'),
       );
 }
 

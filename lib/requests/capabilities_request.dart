@@ -46,14 +46,13 @@ abstract class CapabilitiesRequest with _$CapabilitiesRequest {
     @Default(Summary.none) Summary summary,
   }) = _CapabilitiesRequestR5;
 
-  Future<Either<RestfulFailure, dynamic>> request(dynamic resource) async {
+  Future<Either<RestfulFailure, dynamic>> request() async {
     final thisRequest = '${base}/metadata?mode=${enumToString(mode)}'
         '&_format=application/fhir+json'
         '${pretty ? "&_pretty=$pretty" : ""}'
         '${summary != Summary.none ? "&_summary=${enumToString(summary)}" : ""}';
 
-    final result =
-        await makeRequest(put, thisRequest, resource: resource.toJson());
+    final result = await makeRequest(get, thisRequest);
 
     return result.fold(
         (ifLeft) => left(ifLeft),

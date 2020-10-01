@@ -57,6 +57,14 @@ class _$RestfulFailureTearOff {
       errorComment: errorComment,
     );
   }
+
+// ignore: unused_element
+  IdDoesNotMatchResource<T> idDoesNotMatchResource<T>(
+      {@required String errorComment}) {
+    return IdDoesNotMatchResource<T>(
+      errorComment: errorComment,
+    );
+  }
 }
 
 /// @nodoc
@@ -75,6 +83,7 @@ mixin _$RestfulFailure<T> {
     @required Result noType(String errorComment),
     @required Result noId(String errorComment),
     @required Result noVid(String errorComment),
+    @required Result idDoesNotMatchResource(String errorComment),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
@@ -84,6 +93,7 @@ mixin _$RestfulFailure<T> {
     Result noType(String errorComment),
     Result noId(String errorComment),
     Result noVid(String errorComment),
+    Result idDoesNotMatchResource(String errorComment),
     @required Result orElse(),
   });
   @optionalTypeArgs
@@ -94,6 +104,7 @@ mixin _$RestfulFailure<T> {
     @required Result noType(NoType<T> value),
     @required Result noId(NoId<T> value),
     @required Result noVid(NoVid<T> value),
+    @required Result idDoesNotMatchResource(IdDoesNotMatchResource<T> value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
@@ -103,6 +114,7 @@ mixin _$RestfulFailure<T> {
     Result noType(NoType<T> value),
     Result noId(NoId<T> value),
     Result noVid(NoVid<T> value),
+    Result idDoesNotMatchResource(IdDoesNotMatchResource<T> value),
     @required Result orElse(),
   });
 }
@@ -211,6 +223,7 @@ class _$HttpFailure<T> implements HttpFailure<T> {
     @required Result noType(String errorComment),
     @required Result noId(String errorComment),
     @required Result noVid(String errorComment),
+    @required Result idDoesNotMatchResource(String errorComment),
   }) {
     assert(httpFailure != null);
     assert(unknownFailure != null);
@@ -218,6 +231,7 @@ class _$HttpFailure<T> implements HttpFailure<T> {
     assert(noType != null);
     assert(noId != null);
     assert(noVid != null);
+    assert(idDoesNotMatchResource != null);
     return httpFailure(statusCode, errorType, failedValue);
   }
 
@@ -230,6 +244,7 @@ class _$HttpFailure<T> implements HttpFailure<T> {
     Result noType(String errorComment),
     Result noId(String errorComment),
     Result noVid(String errorComment),
+    Result idDoesNotMatchResource(String errorComment),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -248,6 +263,7 @@ class _$HttpFailure<T> implements HttpFailure<T> {
     @required Result noType(NoType<T> value),
     @required Result noId(NoId<T> value),
     @required Result noVid(NoVid<T> value),
+    @required Result idDoesNotMatchResource(IdDoesNotMatchResource<T> value),
   }) {
     assert(httpFailure != null);
     assert(unknownFailure != null);
@@ -255,6 +271,7 @@ class _$HttpFailure<T> implements HttpFailure<T> {
     assert(noType != null);
     assert(noId != null);
     assert(noVid != null);
+    assert(idDoesNotMatchResource != null);
     return httpFailure(this);
   }
 
@@ -267,6 +284,7 @@ class _$HttpFailure<T> implements HttpFailure<T> {
     Result noType(NoType<T> value),
     Result noId(NoId<T> value),
     Result noVid(NoVid<T> value),
+    Result idDoesNotMatchResource(IdDoesNotMatchResource<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -360,6 +378,7 @@ class _$UnknownFailure<T> implements UnknownFailure<T> {
     @required Result noType(String errorComment),
     @required Result noId(String errorComment),
     @required Result noVid(String errorComment),
+    @required Result idDoesNotMatchResource(String errorComment),
   }) {
     assert(httpFailure != null);
     assert(unknownFailure != null);
@@ -367,6 +386,7 @@ class _$UnknownFailure<T> implements UnknownFailure<T> {
     assert(noType != null);
     assert(noId != null);
     assert(noVid != null);
+    assert(idDoesNotMatchResource != null);
     return unknownFailure(failedValue);
   }
 
@@ -379,6 +399,7 @@ class _$UnknownFailure<T> implements UnknownFailure<T> {
     Result noType(String errorComment),
     Result noId(String errorComment),
     Result noVid(String errorComment),
+    Result idDoesNotMatchResource(String errorComment),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -397,6 +418,7 @@ class _$UnknownFailure<T> implements UnknownFailure<T> {
     @required Result noType(NoType<T> value),
     @required Result noId(NoId<T> value),
     @required Result noVid(NoVid<T> value),
+    @required Result idDoesNotMatchResource(IdDoesNotMatchResource<T> value),
   }) {
     assert(httpFailure != null);
     assert(unknownFailure != null);
@@ -404,6 +426,7 @@ class _$UnknownFailure<T> implements UnknownFailure<T> {
     assert(noType != null);
     assert(noId != null);
     assert(noVid != null);
+    assert(idDoesNotMatchResource != null);
     return unknownFailure(this);
   }
 
@@ -416,6 +439,7 @@ class _$UnknownFailure<T> implements UnknownFailure<T> {
     Result noType(NoType<T> value),
     Result noId(NoId<T> value),
     Result noVid(NoVid<T> value),
+    Result idDoesNotMatchResource(IdDoesNotMatchResource<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -504,6 +528,7 @@ class _$NoInternet<T> implements NoInternet<T> {
     @required Result noType(String errorComment),
     @required Result noId(String errorComment),
     @required Result noVid(String errorComment),
+    @required Result idDoesNotMatchResource(String errorComment),
   }) {
     assert(httpFailure != null);
     assert(unknownFailure != null);
@@ -511,6 +536,7 @@ class _$NoInternet<T> implements NoInternet<T> {
     assert(noType != null);
     assert(noId != null);
     assert(noVid != null);
+    assert(idDoesNotMatchResource != null);
     return noInternet(failedValue);
   }
 
@@ -523,6 +549,7 @@ class _$NoInternet<T> implements NoInternet<T> {
     Result noType(String errorComment),
     Result noId(String errorComment),
     Result noVid(String errorComment),
+    Result idDoesNotMatchResource(String errorComment),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -541,6 +568,7 @@ class _$NoInternet<T> implements NoInternet<T> {
     @required Result noType(NoType<T> value),
     @required Result noId(NoId<T> value),
     @required Result noVid(NoVid<T> value),
+    @required Result idDoesNotMatchResource(IdDoesNotMatchResource<T> value),
   }) {
     assert(httpFailure != null);
     assert(unknownFailure != null);
@@ -548,6 +576,7 @@ class _$NoInternet<T> implements NoInternet<T> {
     assert(noType != null);
     assert(noId != null);
     assert(noVid != null);
+    assert(idDoesNotMatchResource != null);
     return noInternet(this);
   }
 
@@ -560,6 +589,7 @@ class _$NoInternet<T> implements NoInternet<T> {
     Result noType(NoType<T> value),
     Result noId(NoId<T> value),
     Result noVid(NoVid<T> value),
+    Result idDoesNotMatchResource(IdDoesNotMatchResource<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -646,6 +676,7 @@ class _$NoType<T> implements NoType<T> {
     @required Result noType(String errorComment),
     @required Result noId(String errorComment),
     @required Result noVid(String errorComment),
+    @required Result idDoesNotMatchResource(String errorComment),
   }) {
     assert(httpFailure != null);
     assert(unknownFailure != null);
@@ -653,6 +684,7 @@ class _$NoType<T> implements NoType<T> {
     assert(noType != null);
     assert(noId != null);
     assert(noVid != null);
+    assert(idDoesNotMatchResource != null);
     return noType(errorComment);
   }
 
@@ -665,6 +697,7 @@ class _$NoType<T> implements NoType<T> {
     Result noType(String errorComment),
     Result noId(String errorComment),
     Result noVid(String errorComment),
+    Result idDoesNotMatchResource(String errorComment),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -683,6 +716,7 @@ class _$NoType<T> implements NoType<T> {
     @required Result noType(NoType<T> value),
     @required Result noId(NoId<T> value),
     @required Result noVid(NoVid<T> value),
+    @required Result idDoesNotMatchResource(IdDoesNotMatchResource<T> value),
   }) {
     assert(httpFailure != null);
     assert(unknownFailure != null);
@@ -690,6 +724,7 @@ class _$NoType<T> implements NoType<T> {
     assert(noType != null);
     assert(noId != null);
     assert(noVid != null);
+    assert(idDoesNotMatchResource != null);
     return noType(this);
   }
 
@@ -702,6 +737,7 @@ class _$NoType<T> implements NoType<T> {
     Result noType(NoType<T> value),
     Result noId(NoId<T> value),
     Result noVid(NoVid<T> value),
+    Result idDoesNotMatchResource(IdDoesNotMatchResource<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -787,6 +823,7 @@ class _$NoId<T> implements NoId<T> {
     @required Result noType(String errorComment),
     @required Result noId(String errorComment),
     @required Result noVid(String errorComment),
+    @required Result idDoesNotMatchResource(String errorComment),
   }) {
     assert(httpFailure != null);
     assert(unknownFailure != null);
@@ -794,6 +831,7 @@ class _$NoId<T> implements NoId<T> {
     assert(noType != null);
     assert(noId != null);
     assert(noVid != null);
+    assert(idDoesNotMatchResource != null);
     return noId(errorComment);
   }
 
@@ -806,6 +844,7 @@ class _$NoId<T> implements NoId<T> {
     Result noType(String errorComment),
     Result noId(String errorComment),
     Result noVid(String errorComment),
+    Result idDoesNotMatchResource(String errorComment),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -824,6 +863,7 @@ class _$NoId<T> implements NoId<T> {
     @required Result noType(NoType<T> value),
     @required Result noId(NoId<T> value),
     @required Result noVid(NoVid<T> value),
+    @required Result idDoesNotMatchResource(IdDoesNotMatchResource<T> value),
   }) {
     assert(httpFailure != null);
     assert(unknownFailure != null);
@@ -831,6 +871,7 @@ class _$NoId<T> implements NoId<T> {
     assert(noType != null);
     assert(noId != null);
     assert(noVid != null);
+    assert(idDoesNotMatchResource != null);
     return noId(this);
   }
 
@@ -843,6 +884,7 @@ class _$NoId<T> implements NoId<T> {
     Result noType(NoType<T> value),
     Result noId(NoId<T> value),
     Result noVid(NoVid<T> value),
+    Result idDoesNotMatchResource(IdDoesNotMatchResource<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -928,6 +970,7 @@ class _$NoVid<T> implements NoVid<T> {
     @required Result noType(String errorComment),
     @required Result noId(String errorComment),
     @required Result noVid(String errorComment),
+    @required Result idDoesNotMatchResource(String errorComment),
   }) {
     assert(httpFailure != null);
     assert(unknownFailure != null);
@@ -935,6 +978,7 @@ class _$NoVid<T> implements NoVid<T> {
     assert(noType != null);
     assert(noId != null);
     assert(noVid != null);
+    assert(idDoesNotMatchResource != null);
     return noVid(errorComment);
   }
 
@@ -947,6 +991,7 @@ class _$NoVid<T> implements NoVid<T> {
     Result noType(String errorComment),
     Result noId(String errorComment),
     Result noVid(String errorComment),
+    Result idDoesNotMatchResource(String errorComment),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -965,6 +1010,7 @@ class _$NoVid<T> implements NoVid<T> {
     @required Result noType(NoType<T> value),
     @required Result noId(NoId<T> value),
     @required Result noVid(NoVid<T> value),
+    @required Result idDoesNotMatchResource(IdDoesNotMatchResource<T> value),
   }) {
     assert(httpFailure != null);
     assert(unknownFailure != null);
@@ -972,6 +1018,7 @@ class _$NoVid<T> implements NoVid<T> {
     assert(noType != null);
     assert(noId != null);
     assert(noVid != null);
+    assert(idDoesNotMatchResource != null);
     return noVid(this);
   }
 
@@ -984,6 +1031,7 @@ class _$NoVid<T> implements NoVid<T> {
     Result noType(NoType<T> value),
     Result noId(NoId<T> value),
     Result noVid(NoVid<T> value),
+    Result idDoesNotMatchResource(IdDoesNotMatchResource<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -999,4 +1047,158 @@ abstract class NoVid<T> implements RestfulFailure<T> {
 
   String get errorComment;
   $NoVidCopyWith<T, NoVid<T>> get copyWith;
+}
+
+/// @nodoc
+abstract class $IdDoesNotMatchResourceCopyWith<T, $Res> {
+  factory $IdDoesNotMatchResourceCopyWith(IdDoesNotMatchResource<T> value,
+          $Res Function(IdDoesNotMatchResource<T>) then) =
+      _$IdDoesNotMatchResourceCopyWithImpl<T, $Res>;
+  $Res call({String errorComment});
+}
+
+/// @nodoc
+class _$IdDoesNotMatchResourceCopyWithImpl<T, $Res>
+    extends _$RestfulFailureCopyWithImpl<T, $Res>
+    implements $IdDoesNotMatchResourceCopyWith<T, $Res> {
+  _$IdDoesNotMatchResourceCopyWithImpl(IdDoesNotMatchResource<T> _value,
+      $Res Function(IdDoesNotMatchResource<T>) _then)
+      : super(_value, (v) => _then(v as IdDoesNotMatchResource<T>));
+
+  @override
+  IdDoesNotMatchResource<T> get _value =>
+      super._value as IdDoesNotMatchResource<T>;
+
+  @override
+  $Res call({
+    Object errorComment = freezed,
+  }) {
+    return _then(IdDoesNotMatchResource<T>(
+      errorComment: errorComment == freezed
+          ? _value.errorComment
+          : errorComment as String,
+    ));
+  }
+}
+
+/// @nodoc
+class _$IdDoesNotMatchResource<T> implements IdDoesNotMatchResource<T> {
+  const _$IdDoesNotMatchResource({@required this.errorComment})
+      : assert(errorComment != null);
+
+  @override
+  final String errorComment;
+
+  @override
+  String toString() {
+    return 'RestfulFailure<$T>.idDoesNotMatchResource(errorComment: $errorComment)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is IdDoesNotMatchResource<T> &&
+            (identical(other.errorComment, errorComment) ||
+                const DeepCollectionEquality()
+                    .equals(other.errorComment, errorComment)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(errorComment);
+
+  @override
+  $IdDoesNotMatchResourceCopyWith<T, IdDoesNotMatchResource<T>> get copyWith =>
+      _$IdDoesNotMatchResourceCopyWithImpl<T, IdDoesNotMatchResource<T>>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required
+        Result httpFailure(
+            int statusCode, String errorType, String failedValue),
+    @required Result unknownFailure(T failedValue),
+    @required Result noInternet(T failedValue),
+    @required Result noType(String errorComment),
+    @required Result noId(String errorComment),
+    @required Result noVid(String errorComment),
+    @required Result idDoesNotMatchResource(String errorComment),
+  }) {
+    assert(httpFailure != null);
+    assert(unknownFailure != null);
+    assert(noInternet != null);
+    assert(noType != null);
+    assert(noId != null);
+    assert(noVid != null);
+    assert(idDoesNotMatchResource != null);
+    return idDoesNotMatchResource(errorComment);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result httpFailure(int statusCode, String errorType, String failedValue),
+    Result unknownFailure(T failedValue),
+    Result noInternet(T failedValue),
+    Result noType(String errorComment),
+    Result noId(String errorComment),
+    Result noVid(String errorComment),
+    Result idDoesNotMatchResource(String errorComment),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (idDoesNotMatchResource != null) {
+      return idDoesNotMatchResource(errorComment);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result httpFailure(HttpFailure<T> value),
+    @required Result unknownFailure(UnknownFailure<T> value),
+    @required Result noInternet(NoInternet<T> value),
+    @required Result noType(NoType<T> value),
+    @required Result noId(NoId<T> value),
+    @required Result noVid(NoVid<T> value),
+    @required Result idDoesNotMatchResource(IdDoesNotMatchResource<T> value),
+  }) {
+    assert(httpFailure != null);
+    assert(unknownFailure != null);
+    assert(noInternet != null);
+    assert(noType != null);
+    assert(noId != null);
+    assert(noVid != null);
+    assert(idDoesNotMatchResource != null);
+    return idDoesNotMatchResource(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result httpFailure(HttpFailure<T> value),
+    Result unknownFailure(UnknownFailure<T> value),
+    Result noInternet(NoInternet<T> value),
+    Result noType(NoType<T> value),
+    Result noId(NoId<T> value),
+    Result noVid(NoVid<T> value),
+    Result idDoesNotMatchResource(IdDoesNotMatchResource<T> value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (idDoesNotMatchResource != null) {
+      return idDoesNotMatchResource(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class IdDoesNotMatchResource<T> implements RestfulFailure<T> {
+  const factory IdDoesNotMatchResource({@required String errorComment}) =
+      _$IdDoesNotMatchResource<T>;
+
+  String get errorComment;
+  $IdDoesNotMatchResourceCopyWith<T, IdDoesNotMatchResource<T>> get copyWith;
 }
