@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:fhir/primitive_types/primitive_types.dart';
 
-import 'search_failures.dart';
+import '../../failures/restful_failure.dart';
 import 'search_objects.dart';
 
 class SearchDate extends SearchObject<String> {
@@ -20,8 +20,9 @@ class SearchDate extends SearchObject<String> {
 
   const SearchDate._(this.date, {this.missing, this.prefix});
 
-  Either<SearchFailure<String>, String> searchString() => date.value.isLeft()
-      ? left(SearchFailure.invalidSearchDate(failedValue: date.toString()))
+  Either<RestfulFailure<String>, String> searchString() => date.value.isLeft()
+      ? left(RestfulFailure.searchFailure(
+          type: "SearchDate", failedValue: date.toString()))
       : right('=${prefix == DatePrefix.eq ? "" : mapDatePrefix[prefix]}'
           '${date.toString()}${missing == null ? "" : ":missing=$missing"}');
 }

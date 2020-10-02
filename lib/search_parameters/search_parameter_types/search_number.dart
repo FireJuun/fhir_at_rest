@@ -1,10 +1,10 @@
 import 'package:dartz/dartz.dart';
-import 'package:fhir_at_rest/search_parameters/search_parameter_types/search_failures.dart';
 
+import '../../failures/restful_failure.dart';
 import 'search_objects.dart';
 
 class SearchNumber extends SearchObject<String> {
-  final Either<SearchFailure<String>, String> number;
+  final Either<RestfulFailure<String>, String> number;
   final bool missing;
   final NumberPrefix prefix;
 
@@ -19,7 +19,7 @@ class SearchNumber extends SearchObject<String> {
 
   const SearchNumber._(this.number, {this.missing, this.prefix});
 
-  Either<SearchFailure<String>, String> searchString() => number.fold(
+  Either<RestfulFailure<String>, String> searchString() => number.fold(
         (l) => left(l),
         (r) =>
             right('=${prefix == NumberPrefix.eq ? "" : mapNumberPrefix[prefix]}'

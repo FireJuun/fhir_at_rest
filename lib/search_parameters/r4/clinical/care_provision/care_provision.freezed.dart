@@ -545,6 +545,11 @@ class _$_ServiceRequestSearch extends _ServiceRequestSearch {
   final List<String> subject;
 
   @override
+  String toString() {
+    return 'ServiceRequestSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, code: $code, identifier: $identifier, patient: $patient, encounter: $encounter, authored: $authored, based_on: $based_on, body_site: $body_site, category: $category, instantiates_canonical: $instantiates_canonical, instantiates_uri: $instantiates_uri, intent: $intent, occurrence: $occurrence, performer: $performer, performer_type: $performer_type, priority: $priority, replaces: $replaces, requester: $requester, requisition: $requisition, specimen: $specimen, status: $status, subject: $subject)';
+  }
+
+  @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _ServiceRequestSearch &&
@@ -1282,6 +1287,11 @@ class _$_CarePlanSearch extends _CarePlanSearch {
   final List<String> subject;
 
   @override
+  String toString() {
+    return 'CarePlanSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, date: $date, identifier: $identifier, patient: $patient, activity_code: $activity_code, activity_date: $activity_date, activity_reference: $activity_reference, based_on: $based_on, care_team: $care_team, category: $category, condition: $condition, encounter: $encounter, goal: $goal, instantiates_canonical: $instantiates_canonical, instantiates_uri: $instantiates_uri, intent: $intent, part_of: $part_of, performer: $performer, replaces: $replaces, status: $status, subject: $subject)';
+  }
+
+  @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _CarePlanSearch &&
@@ -1843,6 +1853,11 @@ class _$_CareTeamSearch extends _CareTeamSearch {
   final List<String> subject;
 
   @override
+  String toString() {
+    return 'CareTeamSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, date: $date, identifier: $identifier, patient: $patient, category: $category, encounter: $encounter, participant: $participant, status: $status, subject: $subject)';
+  }
+
+  @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _CareTeamSearch &&
@@ -2360,6 +2375,11 @@ class _$_RiskAssessmentSearch extends _RiskAssessmentSearch {
   final List<String> subject;
 
   @override
+  String toString() {
+    return 'RiskAssessmentSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, date: $date, identifier: $identifier, patient: $patient, encounter: $encounter, condition: $condition, method: $method, performer: $performer, probability: $probability, risk: $risk, subject: $subject)';
+  }
+
+  @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _RiskAssessmentSearch &&
@@ -2870,6 +2890,11 @@ class _$_GoalSearch extends _GoalSearch {
   final List<String> subject;
   @override
   final List<SearchDate> target_date;
+
+  @override
+  String toString() {
+    return 'GoalSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, identifier: $identifier, patient: $patient, achievement_status: $achievement_status, category: $category, lifecycle_status: $lifecycle_status, start_date: $start_date, subject: $subject, target_date: $target_date)';
+  }
 
   @override
   bool operator ==(dynamic other) {
@@ -3430,6 +3455,11 @@ class _$_NutritionOrderSearch extends _NutritionOrderSearch {
   final List<SearchToken> supplement;
 
   @override
+  String toString() {
+    return 'NutritionOrderSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, identifier: $identifier, patient: $patient, encounter: $encounter, additive: $additive, datetime: $datetime, formula: $formula, instantiates_canonical: $instantiates_canonical, instantiates_uri: $instantiates_uri, oraldiet: $oraldiet, provider: $provider, status: $status, supplement: $supplement)';
+  }
+
+  @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _NutritionOrderSearch &&
@@ -3929,6 +3959,11 @@ class _$_VisionPrescriptionSearch extends _VisionPrescriptionSearch {
   final List<String> prescriber;
   @override
   final List<SearchToken> status;
+
+  @override
+  String toString() {
+    return 'VisionPrescriptionSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, identifier: $identifier, patient: $patient, encounter: $encounter, datewritten: $datewritten, prescriber: $prescriber, status: $status)';
+  }
 
   @override
   bool operator ==(dynamic other) {
@@ -4495,6 +4530,11 @@ class _$_RequestGroupSearch extends _RequestGroupSearch {
   final List<SearchToken> status;
   @override
   final List<String> subject;
+
+  @override
+  String toString() {
+    return 'RequestGroupSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, author: $author, authored: $authored, code: $code, encounter: $encounter, group_identifier: $group_identifier, identifier: $identifier, instantiates_canonical: $instantiates_canonical, instantiates_uri: $instantiates_uri, intent: $intent, participant: $participant, patient: $patient, priority: $priority, status: $status, subject: $subject)';
+  }
 
   @override
   bool operator ==(dynamic other) {

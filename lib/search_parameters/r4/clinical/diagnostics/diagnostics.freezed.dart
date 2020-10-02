@@ -461,6 +461,11 @@ class _$_DiagnosticReportSearch extends _DiagnosticReportSearch {
   final List<String> subject;
 
   @override
+  String toString() {
+    return 'DiagnosticReportSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, code: $code, date: $date, identifier: $identifier, patient: $patient, encounter: $encounter, based_on: $based_on, category: $category, conclusion: $conclusion, issued: $issued, media: $media, performer: $performer, result: $result, results_interpreter: $results_interpreter, specimen: $specimen, status: $status, subject: $subject)';
+  }
+
+  @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _DiagnosticReportSearch &&
@@ -1457,6 +1462,11 @@ class _$_ObservationSearch extends _ObservationSearch {
   final List<String> component_code_value_quantity;
 
   @override
+  String toString() {
+    return 'ObservationSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, code: $code, date: $date, identifier: $identifier, patient: $patient, encounter: $encounter, based_on: $based_on, category: $category, combo_code: $combo_code, combo_data_absent_reason: $combo_data_absent_reason, combo_value_concept: $combo_value_concept, combo_value_quantity: $combo_value_quantity, component_code: $component_code, component_data_absent_reason: $component_data_absent_reason, component_value_concept: $component_value_concept, component_value_quantity: $component_value_quantity, data_absent_reason: $data_absent_reason, derived_from: $derived_from, device: $device, focus: $focus, has_member: $has_member, method: $method, part_of: $part_of, performer: $performer, specimen: $specimen, status: $status, subject: $subject, value_concept: $value_concept, value_date: $value_date, value_quantity: $value_quantity, value_string: $value_string, code_value_concept: $code_value_concept, code_value_date: $code_value_date, code_value_quantity: $code_value_quantity, code_value_string: $code_value_string, combo_code_value_concept: $combo_code_value_concept, combo_code_value_quantity: $combo_code_value_quantity, component_code_value_concept: $component_code_value_concept, component_code_value_quantity: $component_code_value_quantity)';
+  }
+
+  @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _ObservationSearch &&
@@ -2231,6 +2241,11 @@ class _$_ImagingStudySearch extends _ImagingStudySearch {
   final List<String> subject;
 
   @override
+  String toString() {
+    return 'ImagingStudySearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, identifier: $identifier, patient: $patient, basedon: $basedon, bodysite: $bodysite, dicom_class: $dicom_class, encounter: $encounter, endpoint: $endpoint, instance: $instance, interpreter: $interpreter, modality: $modality, performer: $performer, reason: $reason, referrer: $referrer, series: $series, started: $started, status: $status, subject: $subject)';
+  }
+
+  @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _ImagingStudySearch &&
@@ -2725,6 +2740,11 @@ class _$_BodyStructureSearch extends _BodyStructureSearch {
   final List<SearchToken> morphology;
   @override
   final List<String> patient;
+
+  @override
+  String toString() {
+    return 'BodyStructureSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, identifier: $identifier, location: $location, morphology: $morphology, patient: $patient)';
+  }
 
   @override
   bool operator ==(dynamic other) {
@@ -3251,6 +3271,11 @@ class _$_MediaSearch extends _MediaSearch {
   final List<SearchToken> type;
   @override
   final List<SearchToken> view;
+
+  @override
+  String toString() {
+    return 'MediaSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, based_on: $based_on, created: $created, device: $device, encounter: $encounter, identifier: $identifier, modality: $modality, operator: $operator, patient: $patient, site: $site, status: $status, subject: $subject, type: $type, view: $view)';
+  }
 
   @override
   bool operator ==(dynamic other) {
@@ -3874,6 +3899,11 @@ class _$_MolecularSequenceSearch extends _MolecularSequenceSearch {
   final List<String> referenceseqid_window_coordinate;
 
   @override
+  String toString() {
+    return 'MolecularSequenceSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, chromosome: $chromosome, identifier: $identifier, patient: $patient, referenceseqid: $referenceseqid, type: $type, variant_end: $variant_end, variant_start: $variant_start, window_end: $window_end, window_start: $window_start, chromosome_variant_coordinate: $chromosome_variant_coordinate, chromosome_window_coordinate: $chromosome_window_coordinate, referenceseqid_variant_coordinate: $referenceseqid_variant_coordinate, referenceseqid_window_coordinate: $referenceseqid_window_coordinate)';
+  }
+
+  @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _MolecularSequenceSearch &&
@@ -4442,6 +4472,11 @@ class _$_QuestionnaireResponseSearch extends _QuestionnaireResponseSearch {
   final List<SearchToken> status;
   @override
   final List<String> subject;
+
+  @override
+  String toString() {
+    return 'QuestionnaireResponseSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, author: $author, authored: $authored, based_on: $based_on, encounter: $encounter, identifier: $identifier, part_of: $part_of, patient: $patient, questionnaire: $questionnaire, source: $source, status: $status, subject: $subject)';
+  }
 
   @override
   bool operator ==(dynamic other) {
@@ -5016,6 +5051,11 @@ class _$_SpecimenSearch extends _SpecimenSearch {
   final List<String> subject;
   @override
   final List<SearchToken> type;
+
+  @override
+  String toString() {
+    return 'SpecimenSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, accession: $accession, bodysite: $bodysite, collected: $collected, collector: $collector, container: $container, container_id: $container_id, identifier: $identifier, parent: $parent, patient: $patient, status: $status, subject: $subject, type: $type)';
+  }
 
   @override
   bool operator ==(dynamic other) {

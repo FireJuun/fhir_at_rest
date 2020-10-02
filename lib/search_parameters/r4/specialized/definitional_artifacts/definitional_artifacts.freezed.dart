@@ -570,6 +570,11 @@ class _$_ActivityDefinitionSearch extends _ActivityDefinitionSearch {
   final List<String> context_type_value;
 
   @override
+  String toString() {
+    return 'ActivityDefinitionSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, composed_of: $composed_of, context: $context, context_quantity: $context_quantity, context_type: $context_type, date: $date, depends_on: $depends_on, derived_from: $derived_from, description: $description, effective: $effective, identifier: $identifier, jurisdiction: $jurisdiction, name: $name, predecessor: $predecessor, publisher: $publisher, status: $status, successor: $successor, title: $title, topic: $topic, url: $url, version: $version, context_type_quantity: $context_type_quantity, context_type_value: $context_type_value)';
+  }
+
+  @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _ActivityDefinitionSearch &&
@@ -1072,6 +1077,11 @@ class _$_DeviceDefinitionSearch extends _DeviceDefinitionSearch {
   final List<String> parent;
   @override
   final List<SearchToken> type;
+
+  @override
+  String toString() {
+    return 'DeviceDefinitionSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, identifier: $identifier, parent: $parent, type: $type)';
+  }
 
   @override
   bool operator ==(dynamic other) {
@@ -1744,6 +1754,11 @@ class _$_EventDefinitionSearch extends _EventDefinitionSearch {
   final List<String> context_type_quantity;
   @override
   final List<String> context_type_value;
+
+  @override
+  String toString() {
+    return 'EventDefinitionSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, composed_of: $composed_of, context: $context, context_quantity: $context_quantity, context_type: $context_type, date: $date, depends_on: $depends_on, derived_from: $derived_from, description: $description, effective: $effective, identifier: $identifier, jurisdiction: $jurisdiction, name: $name, predecessor: $predecessor, publisher: $publisher, status: $status, successor: $successor, title: $title, topic: $topic, url: $url, version: $version, context_type_quantity: $context_type_quantity, context_type_value: $context_type_value)';
+  }
 
   @override
   bool operator ==(dynamic other) {
@@ -2560,6 +2575,11 @@ class _$_PlanDefinitionSearch extends _PlanDefinitionSearch {
   final List<String> context_type_value;
 
   @override
+  String toString() {
+    return 'PlanDefinitionSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, composed_of: $composed_of, context: $context, context_quantity: $context_quantity, context_type: $context_type, date: $date, definition: $definition, depends_on: $depends_on, derived_from: $derived_from, description: $description, effective: $effective, identifier: $identifier, jurisdiction: $jurisdiction, name: $name, predecessor: $predecessor, publisher: $publisher, status: $status, successor: $successor, title: $title, topic: $topic, type: $type, url: $url, version: $version, context_type_quantity: $context_type_quantity, context_type_value: $context_type_value)';
+  }
+
+  @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _PlanDefinitionSearch &&
@@ -3310,6 +3330,11 @@ class _$_QuestionnaireSearch extends _QuestionnaireSearch {
   final List<String> context_type_value;
 
   @override
+  String toString() {
+    return 'QuestionnaireSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, code: $code, context: $context, context_quantity: $context_quantity, context_type: $context_type, date: $date, definition: $definition, description: $description, effective: $effective, identifier: $identifier, jurisdiction: $jurisdiction, name: $name, publisher: $publisher, status: $status, subject_type: $subject_type, title: $title, url: $url, version: $version, context_type_quantity: $context_type_quantity, context_type_value: $context_type_value)';
+  }
+
+  @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _QuestionnaireSearch &&
@@ -3802,6 +3827,11 @@ class _$_SpecimenDefinitionSearch extends _SpecimenDefinitionSearch {
   final List<SearchToken> identifier;
   @override
   final List<SearchToken> type;
+
+  @override
+  String toString() {
+    return 'SpecimenDefinitionSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, container: $container, identifier: $identifier, type: $type)';
+  }
 
   @override
   bool operator ==(dynamic other) {

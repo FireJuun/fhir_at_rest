@@ -1,6 +1,8 @@
 import 'dart:mirrors';
 
+import 'package:dartz/dartz.dart';
 import 'package:fhir/primitive_types/primitive_types.dart';
+import 'package:fhir_at_rest/failures/restful_failure.dart';
 
 import 'search_parameter_types/search_parameter_types.dart';
 
@@ -16,7 +18,7 @@ abstract class Dstu2SearchParameters {
   List<String> searchHas;
   List<SearchToken> searchType;
 
-  String toString() => _parametersToString(this);
+  Either<RestfulFailure, String> searchString() => _parametersToString(this);
 }
 
 abstract class Stu3SearchParameters {
@@ -31,7 +33,7 @@ abstract class Stu3SearchParameters {
   List<String> searchHas;
   List<SearchToken> searchType;
 
-  String toString() => _parametersToString(this);
+  Either<RestfulFailure, String> searchString() => _parametersToString(this);
 }
 
 abstract class R4SearchParameters {
@@ -46,7 +48,7 @@ abstract class R4SearchParameters {
   List<String> searchHas;
   List<SearchToken> searchType;
 
-  String toString() => _parametersToString(this);
+  Either<RestfulFailure, String> searchString() => _parametersToString(this);
 }
 
 abstract class R5SearchParameters {
@@ -61,59 +63,110 @@ abstract class R5SearchParameters {
   List<String> searchHas;
   List<SearchToken> searchType;
 
-  String toString() => _parametersToString(this);
+  Either<RestfulFailure, String> searchString() => _parametersToString(this);
 }
 
-String _parametersToString(dynamic search) {
+Either<RestfulFailure, String> _parametersToString(dynamic search) {
   var parameterString = '';
+  var validValue;
   if (search.searchId != null) {
     for (var i in search.searchId) {
-      parameterString += ('&_id=${i.searchString()}');
+      Either<RestfulFailure, String> validValue = i.searchString();
+      if (validValue.isLeft()) {
+        return validValue;
+      } else {
+        parameterString += validValue.fold((l) => '', (r) => '&$r');
+      }
     }
   }
   if (search.searchLastUpdated != null) {
     for (var i in search.searchLastUpdated) {
-      parameterString += ('&_lastUpdated=${i.searchString()}');
+      validValue = i.searchString();
+      if (validValue.isLeft()) {
+        return validValue;
+      } else {
+        parameterString += ('&_lastUpdated=${validValue.value}');
+      }
     }
   }
   if (search.searchTag != null) {
     for (var i in search.searchTag) {
-      parameterString += ('&_tag=${i.searchString()}');
+      validValue = i.searchString();
+      if (validValue.isLeft()) {
+        return validValue;
+      } else {
+        parameterString += ('&_tag=${validValue.value}');
+      }
     }
   }
   if (search.searchProfile != null) {
     for (var i in search.searchProfile) {
-      parameterString += ('&_profile=${i.searchString()}');
+      validValue = i.searchString();
+      if (validValue.isLeft()) {
+        return validValue;
+      } else {
+        parameterString += ('&_profile=${validValue.value}');
+      }
     }
   }
   if (search.searchSecurity != null) {
     for (var i in search.searchSecurity) {
-      parameterString += ('&_security=${i.searchString()}');
+      validValue = i.searchString();
+      if (validValue.isLeft()) {
+        return validValue;
+      } else {
+        parameterString += ('&_security=${validValue.value}');
+      }
     }
   }
   if (search.searchText != null) {
     for (var i in search.searchText) {
-      parameterString += ('&_text=${i.searchString()}');
+      validValue = i.searchString();
+      if (validValue.isLeft()) {
+        return validValue;
+      } else {
+        parameterString += ('&_text=${validValue.value}');
+      }
     }
   }
   if (search.searchContent != null) {
     for (var i in search.searchContent) {
-      parameterString += ('&_content=${i.searchString()}');
+      validValue = i.searchString();
+      if (validValue.isLeft()) {
+        return validValue;
+      } else {
+        parameterString += ('&_content=${validValue.value}');
+      }
     }
   }
   if (search.searchList != null) {
     for (var i in search.searchList) {
-      parameterString += ('&_list=${i.searchString()}');
+      validValue = i.searchString();
+      if (validValue.isLeft()) {
+        return validValue;
+      } else {
+        parameterString += ('&_list=${validValue.value}');
+      }
     }
   }
   if (search.searchHas != null) {
     for (var i in search.searchHas) {
-      parameterString += ('&_has=${i.toString()}');
+      validValue = i.searchString();
+      if (validValue.isLeft()) {
+        return validValue;
+      } else {
+        parameterString += ('&_has=${i.searchString()}');
+      }
     }
   }
   if (search.searchType != null) {
     for (var i in search.searchType) {
-      parameterString += ('&_type=${i.searchring()}');
+      validValue = i.searchString();
+      if (validValue.isLeft()) {
+        return validValue;
+      } else {
+        parameterString += ('&_type=${i.searchring()}');
+      }
     }
   }
   InstanceMirror parameters = reflect(search);
@@ -131,7 +184,7 @@ String _parametersToString(dynamic search) {
       }
     }
   }
-  return parameterString;
+  return right(parameterString);
 }
 
 const _commonParameters = [

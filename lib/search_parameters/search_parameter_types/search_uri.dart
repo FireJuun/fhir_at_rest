@@ -2,7 +2,7 @@ import 'package:dartz/dartz.dart';
 import 'package:fhir/primitive_types/primitive_types.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import 'search_failures.dart';
+import '../../failures/restful_failure.dart';
 import 'search_objects.dart';
 
 class SearchUri extends SearchObject<String> {
@@ -21,9 +21,9 @@ class SearchUri extends SearchObject<String> {
 
   const SearchUri._({@required this.uri, this.missing, this.modifier});
 
-  Either<SearchFailure<String>, String> searchString() => uri.value.fold(
-        (l) =>
-            left(SearchFailure.invalidSearchUri(failedValue: uri.toString())),
+  Either<RestfulFailure<String>, String> searchString() => uri.value.fold(
+        (l) => left(RestfulFailure.searchFailure(
+            type: 'Uri', failedValue: uri.toString())),
         (r) => right(
             '${modifier != null ? modifier == UriModifier.above ? ":above=" : ":below=" : "="}'
             '$r'

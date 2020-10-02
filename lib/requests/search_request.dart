@@ -58,14 +58,18 @@ abstract class SearchRequest with _$SearchRequest {
 
     thisRequest += '?_format=application/fhir+json'
         '${pretty ? "&_pretty=$pretty" : ""}';
-    thisRequest += this.map(
-      dstu2: (req) => '${req.parameters.toString()}',
-      stu3: (req) => '${req.parameters.toString()}',
-      r4: (req) => '${req.parameters.toString()}',
-      r5: (req) => '${req.parameters.toString()}',
-    );
-    ;
 
+    final parametersString = this.map(
+      dstu2: (req) => req.parameters.searchString(),
+      stu3: (req) => req.parameters.searchString(),
+      r4: (req) => req.parameters.searchString(),
+      r5: (req) => req.parameters.searchString(),
+    );
+    if (parametersString.isLeft()) {
+      return parametersString;
+    } else {
+      thisRequest += parametersString.fold((l) => '', (r) => r);
+    }
     final result = await makeRequest(get, thisRequest);
 
     // for testing purposes

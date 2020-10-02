@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:fhir/primitive_types/primitive_types.dart';
-import 'package:fhir_at_rest/search_parameters/search_parameter_types/search_failures.dart';
 
+import '../../failures/restful_failure.dart';
 import 'search_objects.dart';
 
 class SearchToken extends SearchObject<String> {
@@ -29,14 +29,15 @@ class SearchToken extends SearchObject<String> {
   const SearchToken._(
       {this.system, this.code, this.value, this.missing, this.modifier});
 
-  Either<SearchFailure<String>, String> searchString() {
+  Either<RestfulFailure, String> searchString() {
     var returnString = '';
     if (system == null && code == null) {
-      return left(SearchFailure.invalidSearchToken(
-          failedValue: 'Error: must have system or code parameters for token'));
+      return left(RestfulFailure.searchFailure(
+          type: 'Token', failedValue: 'Missing system or code parameter'));
     } else if (system != null && code != null) {
       if (system.value.isLeft() && code.value.isLeft()) {
-        return left(SearchFailure.invalidSearchToken(
+        return left(RestfulFailure.searchFailure(
+            type: 'Token',
             failedValue:
                 'Invalid system: ${system.value}\nInvalid code: ${code.value}'));
       } else if (system.value.isLeft()) {
@@ -81,14 +82,15 @@ class SearchToken extends SearchObject<String> {
       case TokenModifier.of_type:
         {
           return value == null
-              ? left(SearchFailure.invalidSearchToken(
+              ? left(RestfulFailure.searchFailure(
+                  type: 'Token',
                   failedValue:
                       'A value must be provided with "of_type" search'))
               : right(':of-type=$returnString|$value$missingString');
         }
       default:
         {
-          return right('=$returnString$missingString');
+          return right('$returnString$missingString');
         }
     }
   }

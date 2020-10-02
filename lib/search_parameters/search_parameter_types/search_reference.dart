@@ -1,13 +1,13 @@
 import 'package:dartz/dartz.dart';
 import 'package:fhir/primitive_types/primitive_types.dart';
 import 'package:fhir_at_rest/enums/enums.dart';
-import 'package:fhir_at_rest/search_parameters/search_parameter_types/search_failures.dart';
 
+import '../../failures/restful_failure.dart';
 import 'search_objects.dart';
 
 class SearchReference extends SearchObject<String> {
   final Id id;
-  final Either<SearchFailure<String>, String> type;
+  final Either<RestfulFailure<String>, String> type;
   final FhirUri url;
 
   factory SearchReference({Id id, dynamic type, FhirUri url}) {
@@ -21,15 +21,15 @@ class SearchReference extends SearchObject<String> {
 
   const SearchReference._({this.id, this.type, this.url});
 
-  Either<SearchFailure<String>, String> searchString() {
+  Either<RestfulFailure<String>, String> searchString() {
     if (id == null && url == null) {
-      return left(
-          SearchFailure.invalidReference(failedValue: 'No Id or Url Provided'));
+      return left(RestfulFailure.searchFailure(
+          type: 'Reference', failedValue: 'No Id or Url Provided'));
     } else {
       if (url != null) {
         if (url.value.isLeft()) {
-          return left(SearchFailure.invalidReference(
-              failedValue: url.value.toString()));
+          return left(RestfulFailure.searchFailure(
+              type: 'Invalid Reference', failedValue: url.value.toString()));
         } else {
           return right('=${url.toString()}');
         }

@@ -39,4 +39,8 @@ abstract class RestfulFailure<T> with _$RestfulFailure<T> {
   const factory RestfulFailure.missingRequestMethod({
     @required String errorComment,
   }) = MissingRequestMethod;
+  const factory RestfulFailure.searchFailure({
+    @required String type,
+    @required String failedValue,
+  }) = SearchFailure;
 }
