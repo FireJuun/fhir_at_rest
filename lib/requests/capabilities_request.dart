@@ -54,6 +54,9 @@ abstract class CapabilitiesRequest with _$CapabilitiesRequest {
 
     final result = await makeRequest(get, thisRequest);
 
+    // for testing purposes
+    return result;
+
     return result.fold(
         (ifLeft) => left(ifLeft),
         (ifRight) => right(this.map(

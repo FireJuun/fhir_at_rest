@@ -53,6 +53,13 @@ abstract class PatchRequest with _$PatchRequest {
   }) = _PatchRequestR5;
 
   Future<Either<RestfulFailure, dynamic>> request(dynamic resource) async {
+    if (resource.id != this.id) {
+      return left(RestfulFailure.idDoesNotMatchResource(
+          errorComment:
+              'For the resource with resourceType: ${resource.resourceType} '
+              'the id: ${resource.id.toString()} does not match the requested '
+              'id: ${this.id.toString()}'));
+    }
     var thisRequest = this.map(
       dstu2: (req) => '${base}/${enumToString(req.type)}/${req.id.toString()}',
       stu3: (req) => '${base}/${enumToString(req.type)}/${req.id.toString()}',
@@ -65,7 +72,10 @@ abstract class PatchRequest with _$PatchRequest {
         '${summary != Summary.none ? "&_summary=${enumToString(summary)}" : ""}';
 
     final result =
-        await makeRequest(put, thisRequest, resource: resource.toJson());
+        await makeRequest(patch, thisRequest, resource: resource.toJson());
+
+    // for testing purposes
+    return result;
 
     return result.fold(
         (ifLeft) => left(ifLeft),

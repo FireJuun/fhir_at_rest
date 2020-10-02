@@ -24,24 +24,32 @@ abstract class DeleteRequest with _$DeleteRequest {
     @required Uri base,
     @required Dstu2Types type,
     @required Id id,
+    @Default(false) bool pretty,
+    @Default(Summary.none) Summary summary,
   }) = _DeleteRequestDstu2;
 
   factory DeleteRequest.stu3({
     @required Uri base,
     @required Stu3Types type,
     @required Id id,
+    @Default(false) bool pretty,
+    @Default(Summary.none) Summary summary,
   }) = _DeleteRequestStu3;
 
   factory DeleteRequest.r4({
     @required Uri base,
     @required R4Types type,
     @required Id id,
+    @Default(false) bool pretty,
+    @Default(Summary.none) Summary summary,
   }) = _DeleteRequestR4;
 
   factory DeleteRequest.r5({
     @required Uri base,
     @required R5Types type,
     @required Id id,
+    @Default(false) bool pretty,
+    @Default(Summary.none) Summary summary,
   }) = _DeleteRequestR5;
 
   Future<Either<RestfulFailure, dynamic>> request() async {
@@ -52,7 +60,14 @@ abstract class DeleteRequest with _$DeleteRequest {
       r5: (req) => '${base}/${enumToString(req.type)}/${req.id.toString()}',
     );
 
+    thisRequest += '?_format=application/fhir+json'
+        '${pretty ? "&_pretty=$pretty" : ""}'
+        '${summary != Summary.none ? "&_summary=${enumToString(summary)}" : ""}';
+
     final result = await makeRequest(delete, thisRequest);
+
+    // for testing purposes
+    return result;
 
     return result.fold(
         (ifLeft) => left(ifLeft),

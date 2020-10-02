@@ -53,12 +53,12 @@ abstract class UpdateRequest with _$UpdateRequest {
   }) = _UpdateRequestR5;
 
   Future<Either<RestfulFailure, dynamic>> request(dynamic resource) async {
-    if (resource.id.toString() != id.toString()) {
+    if (resource.id != this.id) {
       return left(RestfulFailure.idDoesNotMatchResource(
           errorComment:
               'For the resource with resourceType: ${resource.resourceType} '
               'the id: ${resource.id.toString()} does not match the requested '
-              'id: ${id.toString()}'));
+              'id: ${this.id.toString()}'));
     }
     var thisRequest = this.map(
       dstu2: (req) => '${base}/${enumToString(req.type)}/${req.id.toString()}',

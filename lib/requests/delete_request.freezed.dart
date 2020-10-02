@@ -15,41 +15,65 @@ class _$DeleteRequestTearOff {
 
 // ignore: unused_element
   _DeleteRequestDstu2 dstu2(
-      {@required Uri base, @required Dstu2Types type, @required Id id}) {
+      {@required Uri base,
+      @required Dstu2Types type,
+      @required Id id,
+      bool pretty = false,
+      Summary summary = Summary.none}) {
     return _DeleteRequestDstu2(
       base: base,
       type: type,
       id: id,
+      pretty: pretty,
+      summary: summary,
     );
   }
 
 // ignore: unused_element
   _DeleteRequestStu3 stu3(
-      {@required Uri base, @required Stu3Types type, @required Id id}) {
+      {@required Uri base,
+      @required Stu3Types type,
+      @required Id id,
+      bool pretty = false,
+      Summary summary = Summary.none}) {
     return _DeleteRequestStu3(
       base: base,
       type: type,
       id: id,
+      pretty: pretty,
+      summary: summary,
     );
   }
 
 // ignore: unused_element
   _DeleteRequestR4 r4(
-      {@required Uri base, @required R4Types type, @required Id id}) {
+      {@required Uri base,
+      @required R4Types type,
+      @required Id id,
+      bool pretty = false,
+      Summary summary = Summary.none}) {
     return _DeleteRequestR4(
       base: base,
       type: type,
       id: id,
+      pretty: pretty,
+      summary: summary,
     );
   }
 
 // ignore: unused_element
   _DeleteRequestR5 r5(
-      {@required Uri base, @required R5Types type, @required Id id}) {
+      {@required Uri base,
+      @required R5Types type,
+      @required Id id,
+      bool pretty = false,
+      Summary summary = Summary.none}) {
     return _DeleteRequestR5(
       base: base,
       type: type,
       id: id,
+      pretty: pretty,
+      summary: summary,
     );
   }
 }
@@ -62,20 +86,29 @@ const $DeleteRequest = _$DeleteRequestTearOff();
 mixin _$DeleteRequest {
   Uri get base;
   Id get id;
+  bool get pretty;
+  Summary get summary;
 
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result dstu2(Uri base, Dstu2Types type, Id id),
-    @required Result stu3(Uri base, Stu3Types type, Id id),
-    @required Result r4(Uri base, R4Types type, Id id),
-    @required Result r5(Uri base, R5Types type, Id id),
+    @required
+        Result dstu2(
+            Uri base, Dstu2Types type, Id id, bool pretty, Summary summary),
+    @required
+        Result stu3(
+            Uri base, Stu3Types type, Id id, bool pretty, Summary summary),
+    @required
+        Result r4(Uri base, R4Types type, Id id, bool pretty, Summary summary),
+    @required
+        Result r5(Uri base, R5Types type, Id id, bool pretty, Summary summary),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result dstu2(Uri base, Dstu2Types type, Id id),
-    Result stu3(Uri base, Stu3Types type, Id id),
-    Result r4(Uri base, R4Types type, Id id),
-    Result r5(Uri base, R5Types type, Id id),
+    Result dstu2(
+        Uri base, Dstu2Types type, Id id, bool pretty, Summary summary),
+    Result stu3(Uri base, Stu3Types type, Id id, bool pretty, Summary summary),
+    Result r4(Uri base, R4Types type, Id id, bool pretty, Summary summary),
+    Result r5(Uri base, R5Types type, Id id, bool pretty, Summary summary),
     @required Result orElse(),
   });
   @optionalTypeArgs
@@ -102,7 +135,7 @@ abstract class $DeleteRequestCopyWith<$Res> {
   factory $DeleteRequestCopyWith(
           DeleteRequest value, $Res Function(DeleteRequest) then) =
       _$DeleteRequestCopyWithImpl<$Res>;
-  $Res call({Uri base, Id id});
+  $Res call({Uri base, Id id, bool pretty, Summary summary});
 }
 
 /// @nodoc
@@ -118,10 +151,14 @@ class _$DeleteRequestCopyWithImpl<$Res>
   $Res call({
     Object base = freezed,
     Object id = freezed,
+    Object pretty = freezed,
+    Object summary = freezed,
   }) {
     return _then(_value.copyWith(
       base: base == freezed ? _value.base : base as Uri,
       id: id == freezed ? _value.id : id as Id,
+      pretty: pretty == freezed ? _value.pretty : pretty as bool,
+      summary: summary == freezed ? _value.summary : summary as Summary,
     ));
   }
 }
@@ -133,7 +170,7 @@ abstract class _$DeleteRequestDstu2CopyWith<$Res>
           _DeleteRequestDstu2 value, $Res Function(_DeleteRequestDstu2) then) =
       __$DeleteRequestDstu2CopyWithImpl<$Res>;
   @override
-  $Res call({Uri base, Dstu2Types type, Id id});
+  $Res call({Uri base, Dstu2Types type, Id id, bool pretty, Summary summary});
 }
 
 /// @nodoc
@@ -152,11 +189,15 @@ class __$DeleteRequestDstu2CopyWithImpl<$Res>
     Object base = freezed,
     Object type = freezed,
     Object id = freezed,
+    Object pretty = freezed,
+    Object summary = freezed,
   }) {
     return _then(_DeleteRequestDstu2(
       base: base == freezed ? _value.base : base as Uri,
       type: type == freezed ? _value.type : type as Dstu2Types,
       id: id == freezed ? _value.id : id as Id,
+      pretty: pretty == freezed ? _value.pretty : pretty as bool,
+      summary: summary == freezed ? _value.summary : summary as Summary,
     ));
   }
 }
@@ -164,10 +205,16 @@ class __$DeleteRequestDstu2CopyWithImpl<$Res>
 /// @nodoc
 class _$_DeleteRequestDstu2 extends _DeleteRequestDstu2 {
   _$_DeleteRequestDstu2(
-      {@required this.base, @required this.type, @required this.id})
+      {@required this.base,
+      @required this.type,
+      @required this.id,
+      this.pretty = false,
+      this.summary = Summary.none})
       : assert(base != null),
         assert(type != null),
         assert(id != null),
+        assert(pretty != null),
+        assert(summary != null),
         super._();
 
   @override
@@ -176,10 +223,16 @@ class _$_DeleteRequestDstu2 extends _DeleteRequestDstu2 {
   final Dstu2Types type;
   @override
   final Id id;
+  @JsonKey(defaultValue: false)
+  @override
+  final bool pretty;
+  @JsonKey(defaultValue: Summary.none)
+  @override
+  final Summary summary;
 
   @override
   String toString() {
-    return 'DeleteRequest.dstu2(base: $base, type: $type, id: $id)';
+    return 'DeleteRequest.dstu2(base: $base, type: $type, id: $id, pretty: $pretty, summary: $summary)';
   }
 
   @override
@@ -191,7 +244,11 @@ class _$_DeleteRequestDstu2 extends _DeleteRequestDstu2 {
             (identical(other.type, type) ||
                 const DeepCollectionEquality().equals(other.type, type)) &&
             (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)));
+                const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.pretty, pretty) ||
+                const DeepCollectionEquality().equals(other.pretty, pretty)) &&
+            (identical(other.summary, summary) ||
+                const DeepCollectionEquality().equals(other.summary, summary)));
   }
 
   @override
@@ -199,7 +256,9 @@ class _$_DeleteRequestDstu2 extends _DeleteRequestDstu2 {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(base) ^
       const DeepCollectionEquality().hash(type) ^
-      const DeepCollectionEquality().hash(id);
+      const DeepCollectionEquality().hash(id) ^
+      const DeepCollectionEquality().hash(pretty) ^
+      const DeepCollectionEquality().hash(summary);
 
   @override
   _$DeleteRequestDstu2CopyWith<_DeleteRequestDstu2> get copyWith =>
@@ -208,30 +267,37 @@ class _$_DeleteRequestDstu2 extends _DeleteRequestDstu2 {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result dstu2(Uri base, Dstu2Types type, Id id),
-    @required Result stu3(Uri base, Stu3Types type, Id id),
-    @required Result r4(Uri base, R4Types type, Id id),
-    @required Result r5(Uri base, R5Types type, Id id),
+    @required
+        Result dstu2(
+            Uri base, Dstu2Types type, Id id, bool pretty, Summary summary),
+    @required
+        Result stu3(
+            Uri base, Stu3Types type, Id id, bool pretty, Summary summary),
+    @required
+        Result r4(Uri base, R4Types type, Id id, bool pretty, Summary summary),
+    @required
+        Result r5(Uri base, R5Types type, Id id, bool pretty, Summary summary),
   }) {
     assert(dstu2 != null);
     assert(stu3 != null);
     assert(r4 != null);
     assert(r5 != null);
-    return dstu2(base, type, id);
+    return dstu2(base, type, id, pretty, summary);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result dstu2(Uri base, Dstu2Types type, Id id),
-    Result stu3(Uri base, Stu3Types type, Id id),
-    Result r4(Uri base, R4Types type, Id id),
-    Result r5(Uri base, R5Types type, Id id),
+    Result dstu2(
+        Uri base, Dstu2Types type, Id id, bool pretty, Summary summary),
+    Result stu3(Uri base, Stu3Types type, Id id, bool pretty, Summary summary),
+    Result r4(Uri base, R4Types type, Id id, bool pretty, Summary summary),
+    Result r5(Uri base, R5Types type, Id id, bool pretty, Summary summary),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (dstu2 != null) {
-      return dstu2(base, type, id);
+      return dstu2(base, type, id, pretty, summary);
     }
     return orElse();
   }
@@ -273,13 +339,19 @@ abstract class _DeleteRequestDstu2 extends DeleteRequest {
   factory _DeleteRequestDstu2(
       {@required Uri base,
       @required Dstu2Types type,
-      @required Id id}) = _$_DeleteRequestDstu2;
+      @required Id id,
+      bool pretty,
+      Summary summary}) = _$_DeleteRequestDstu2;
 
   @override
   Uri get base;
   Dstu2Types get type;
   @override
   Id get id;
+  @override
+  bool get pretty;
+  @override
+  Summary get summary;
   @override
   _$DeleteRequestDstu2CopyWith<_DeleteRequestDstu2> get copyWith;
 }
@@ -291,7 +363,7 @@ abstract class _$DeleteRequestStu3CopyWith<$Res>
           _DeleteRequestStu3 value, $Res Function(_DeleteRequestStu3) then) =
       __$DeleteRequestStu3CopyWithImpl<$Res>;
   @override
-  $Res call({Uri base, Stu3Types type, Id id});
+  $Res call({Uri base, Stu3Types type, Id id, bool pretty, Summary summary});
 }
 
 /// @nodoc
@@ -310,11 +382,15 @@ class __$DeleteRequestStu3CopyWithImpl<$Res>
     Object base = freezed,
     Object type = freezed,
     Object id = freezed,
+    Object pretty = freezed,
+    Object summary = freezed,
   }) {
     return _then(_DeleteRequestStu3(
       base: base == freezed ? _value.base : base as Uri,
       type: type == freezed ? _value.type : type as Stu3Types,
       id: id == freezed ? _value.id : id as Id,
+      pretty: pretty == freezed ? _value.pretty : pretty as bool,
+      summary: summary == freezed ? _value.summary : summary as Summary,
     ));
   }
 }
@@ -322,10 +398,16 @@ class __$DeleteRequestStu3CopyWithImpl<$Res>
 /// @nodoc
 class _$_DeleteRequestStu3 extends _DeleteRequestStu3 {
   _$_DeleteRequestStu3(
-      {@required this.base, @required this.type, @required this.id})
+      {@required this.base,
+      @required this.type,
+      @required this.id,
+      this.pretty = false,
+      this.summary = Summary.none})
       : assert(base != null),
         assert(type != null),
         assert(id != null),
+        assert(pretty != null),
+        assert(summary != null),
         super._();
 
   @override
@@ -334,10 +416,16 @@ class _$_DeleteRequestStu3 extends _DeleteRequestStu3 {
   final Stu3Types type;
   @override
   final Id id;
+  @JsonKey(defaultValue: false)
+  @override
+  final bool pretty;
+  @JsonKey(defaultValue: Summary.none)
+  @override
+  final Summary summary;
 
   @override
   String toString() {
-    return 'DeleteRequest.stu3(base: $base, type: $type, id: $id)';
+    return 'DeleteRequest.stu3(base: $base, type: $type, id: $id, pretty: $pretty, summary: $summary)';
   }
 
   @override
@@ -349,7 +437,11 @@ class _$_DeleteRequestStu3 extends _DeleteRequestStu3 {
             (identical(other.type, type) ||
                 const DeepCollectionEquality().equals(other.type, type)) &&
             (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)));
+                const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.pretty, pretty) ||
+                const DeepCollectionEquality().equals(other.pretty, pretty)) &&
+            (identical(other.summary, summary) ||
+                const DeepCollectionEquality().equals(other.summary, summary)));
   }
 
   @override
@@ -357,7 +449,9 @@ class _$_DeleteRequestStu3 extends _DeleteRequestStu3 {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(base) ^
       const DeepCollectionEquality().hash(type) ^
-      const DeepCollectionEquality().hash(id);
+      const DeepCollectionEquality().hash(id) ^
+      const DeepCollectionEquality().hash(pretty) ^
+      const DeepCollectionEquality().hash(summary);
 
   @override
   _$DeleteRequestStu3CopyWith<_DeleteRequestStu3> get copyWith =>
@@ -366,30 +460,37 @@ class _$_DeleteRequestStu3 extends _DeleteRequestStu3 {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result dstu2(Uri base, Dstu2Types type, Id id),
-    @required Result stu3(Uri base, Stu3Types type, Id id),
-    @required Result r4(Uri base, R4Types type, Id id),
-    @required Result r5(Uri base, R5Types type, Id id),
+    @required
+        Result dstu2(
+            Uri base, Dstu2Types type, Id id, bool pretty, Summary summary),
+    @required
+        Result stu3(
+            Uri base, Stu3Types type, Id id, bool pretty, Summary summary),
+    @required
+        Result r4(Uri base, R4Types type, Id id, bool pretty, Summary summary),
+    @required
+        Result r5(Uri base, R5Types type, Id id, bool pretty, Summary summary),
   }) {
     assert(dstu2 != null);
     assert(stu3 != null);
     assert(r4 != null);
     assert(r5 != null);
-    return stu3(base, type, id);
+    return stu3(base, type, id, pretty, summary);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result dstu2(Uri base, Dstu2Types type, Id id),
-    Result stu3(Uri base, Stu3Types type, Id id),
-    Result r4(Uri base, R4Types type, Id id),
-    Result r5(Uri base, R5Types type, Id id),
+    Result dstu2(
+        Uri base, Dstu2Types type, Id id, bool pretty, Summary summary),
+    Result stu3(Uri base, Stu3Types type, Id id, bool pretty, Summary summary),
+    Result r4(Uri base, R4Types type, Id id, bool pretty, Summary summary),
+    Result r5(Uri base, R5Types type, Id id, bool pretty, Summary summary),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (stu3 != null) {
-      return stu3(base, type, id);
+      return stu3(base, type, id, pretty, summary);
     }
     return orElse();
   }
@@ -431,13 +532,19 @@ abstract class _DeleteRequestStu3 extends DeleteRequest {
   factory _DeleteRequestStu3(
       {@required Uri base,
       @required Stu3Types type,
-      @required Id id}) = _$_DeleteRequestStu3;
+      @required Id id,
+      bool pretty,
+      Summary summary}) = _$_DeleteRequestStu3;
 
   @override
   Uri get base;
   Stu3Types get type;
   @override
   Id get id;
+  @override
+  bool get pretty;
+  @override
+  Summary get summary;
   @override
   _$DeleteRequestStu3CopyWith<_DeleteRequestStu3> get copyWith;
 }
@@ -449,7 +556,7 @@ abstract class _$DeleteRequestR4CopyWith<$Res>
           _DeleteRequestR4 value, $Res Function(_DeleteRequestR4) then) =
       __$DeleteRequestR4CopyWithImpl<$Res>;
   @override
-  $Res call({Uri base, R4Types type, Id id});
+  $Res call({Uri base, R4Types type, Id id, bool pretty, Summary summary});
 }
 
 /// @nodoc
@@ -468,11 +575,15 @@ class __$DeleteRequestR4CopyWithImpl<$Res>
     Object base = freezed,
     Object type = freezed,
     Object id = freezed,
+    Object pretty = freezed,
+    Object summary = freezed,
   }) {
     return _then(_DeleteRequestR4(
       base: base == freezed ? _value.base : base as Uri,
       type: type == freezed ? _value.type : type as R4Types,
       id: id == freezed ? _value.id : id as Id,
+      pretty: pretty == freezed ? _value.pretty : pretty as bool,
+      summary: summary == freezed ? _value.summary : summary as Summary,
     ));
   }
 }
@@ -480,10 +591,16 @@ class __$DeleteRequestR4CopyWithImpl<$Res>
 /// @nodoc
 class _$_DeleteRequestR4 extends _DeleteRequestR4 {
   _$_DeleteRequestR4(
-      {@required this.base, @required this.type, @required this.id})
+      {@required this.base,
+      @required this.type,
+      @required this.id,
+      this.pretty = false,
+      this.summary = Summary.none})
       : assert(base != null),
         assert(type != null),
         assert(id != null),
+        assert(pretty != null),
+        assert(summary != null),
         super._();
 
   @override
@@ -492,10 +609,16 @@ class _$_DeleteRequestR4 extends _DeleteRequestR4 {
   final R4Types type;
   @override
   final Id id;
+  @JsonKey(defaultValue: false)
+  @override
+  final bool pretty;
+  @JsonKey(defaultValue: Summary.none)
+  @override
+  final Summary summary;
 
   @override
   String toString() {
-    return 'DeleteRequest.r4(base: $base, type: $type, id: $id)';
+    return 'DeleteRequest.r4(base: $base, type: $type, id: $id, pretty: $pretty, summary: $summary)';
   }
 
   @override
@@ -507,7 +630,11 @@ class _$_DeleteRequestR4 extends _DeleteRequestR4 {
             (identical(other.type, type) ||
                 const DeepCollectionEquality().equals(other.type, type)) &&
             (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)));
+                const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.pretty, pretty) ||
+                const DeepCollectionEquality().equals(other.pretty, pretty)) &&
+            (identical(other.summary, summary) ||
+                const DeepCollectionEquality().equals(other.summary, summary)));
   }
 
   @override
@@ -515,7 +642,9 @@ class _$_DeleteRequestR4 extends _DeleteRequestR4 {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(base) ^
       const DeepCollectionEquality().hash(type) ^
-      const DeepCollectionEquality().hash(id);
+      const DeepCollectionEquality().hash(id) ^
+      const DeepCollectionEquality().hash(pretty) ^
+      const DeepCollectionEquality().hash(summary);
 
   @override
   _$DeleteRequestR4CopyWith<_DeleteRequestR4> get copyWith =>
@@ -524,30 +653,37 @@ class _$_DeleteRequestR4 extends _DeleteRequestR4 {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result dstu2(Uri base, Dstu2Types type, Id id),
-    @required Result stu3(Uri base, Stu3Types type, Id id),
-    @required Result r4(Uri base, R4Types type, Id id),
-    @required Result r5(Uri base, R5Types type, Id id),
+    @required
+        Result dstu2(
+            Uri base, Dstu2Types type, Id id, bool pretty, Summary summary),
+    @required
+        Result stu3(
+            Uri base, Stu3Types type, Id id, bool pretty, Summary summary),
+    @required
+        Result r4(Uri base, R4Types type, Id id, bool pretty, Summary summary),
+    @required
+        Result r5(Uri base, R5Types type, Id id, bool pretty, Summary summary),
   }) {
     assert(dstu2 != null);
     assert(stu3 != null);
     assert(r4 != null);
     assert(r5 != null);
-    return r4(base, type, id);
+    return r4(base, type, id, pretty, summary);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result dstu2(Uri base, Dstu2Types type, Id id),
-    Result stu3(Uri base, Stu3Types type, Id id),
-    Result r4(Uri base, R4Types type, Id id),
-    Result r5(Uri base, R5Types type, Id id),
+    Result dstu2(
+        Uri base, Dstu2Types type, Id id, bool pretty, Summary summary),
+    Result stu3(Uri base, Stu3Types type, Id id, bool pretty, Summary summary),
+    Result r4(Uri base, R4Types type, Id id, bool pretty, Summary summary),
+    Result r5(Uri base, R5Types type, Id id, bool pretty, Summary summary),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (r4 != null) {
-      return r4(base, type, id);
+      return r4(base, type, id, pretty, summary);
     }
     return orElse();
   }
@@ -589,13 +725,19 @@ abstract class _DeleteRequestR4 extends DeleteRequest {
   factory _DeleteRequestR4(
       {@required Uri base,
       @required R4Types type,
-      @required Id id}) = _$_DeleteRequestR4;
+      @required Id id,
+      bool pretty,
+      Summary summary}) = _$_DeleteRequestR4;
 
   @override
   Uri get base;
   R4Types get type;
   @override
   Id get id;
+  @override
+  bool get pretty;
+  @override
+  Summary get summary;
   @override
   _$DeleteRequestR4CopyWith<_DeleteRequestR4> get copyWith;
 }
@@ -607,7 +749,7 @@ abstract class _$DeleteRequestR5CopyWith<$Res>
           _DeleteRequestR5 value, $Res Function(_DeleteRequestR5) then) =
       __$DeleteRequestR5CopyWithImpl<$Res>;
   @override
-  $Res call({Uri base, R5Types type, Id id});
+  $Res call({Uri base, R5Types type, Id id, bool pretty, Summary summary});
 }
 
 /// @nodoc
@@ -626,11 +768,15 @@ class __$DeleteRequestR5CopyWithImpl<$Res>
     Object base = freezed,
     Object type = freezed,
     Object id = freezed,
+    Object pretty = freezed,
+    Object summary = freezed,
   }) {
     return _then(_DeleteRequestR5(
       base: base == freezed ? _value.base : base as Uri,
       type: type == freezed ? _value.type : type as R5Types,
       id: id == freezed ? _value.id : id as Id,
+      pretty: pretty == freezed ? _value.pretty : pretty as bool,
+      summary: summary == freezed ? _value.summary : summary as Summary,
     ));
   }
 }
@@ -638,10 +784,16 @@ class __$DeleteRequestR5CopyWithImpl<$Res>
 /// @nodoc
 class _$_DeleteRequestR5 extends _DeleteRequestR5 {
   _$_DeleteRequestR5(
-      {@required this.base, @required this.type, @required this.id})
+      {@required this.base,
+      @required this.type,
+      @required this.id,
+      this.pretty = false,
+      this.summary = Summary.none})
       : assert(base != null),
         assert(type != null),
         assert(id != null),
+        assert(pretty != null),
+        assert(summary != null),
         super._();
 
   @override
@@ -650,10 +802,16 @@ class _$_DeleteRequestR5 extends _DeleteRequestR5 {
   final R5Types type;
   @override
   final Id id;
+  @JsonKey(defaultValue: false)
+  @override
+  final bool pretty;
+  @JsonKey(defaultValue: Summary.none)
+  @override
+  final Summary summary;
 
   @override
   String toString() {
-    return 'DeleteRequest.r5(base: $base, type: $type, id: $id)';
+    return 'DeleteRequest.r5(base: $base, type: $type, id: $id, pretty: $pretty, summary: $summary)';
   }
 
   @override
@@ -665,7 +823,11 @@ class _$_DeleteRequestR5 extends _DeleteRequestR5 {
             (identical(other.type, type) ||
                 const DeepCollectionEquality().equals(other.type, type)) &&
             (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)));
+                const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.pretty, pretty) ||
+                const DeepCollectionEquality().equals(other.pretty, pretty)) &&
+            (identical(other.summary, summary) ||
+                const DeepCollectionEquality().equals(other.summary, summary)));
   }
 
   @override
@@ -673,7 +835,9 @@ class _$_DeleteRequestR5 extends _DeleteRequestR5 {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(base) ^
       const DeepCollectionEquality().hash(type) ^
-      const DeepCollectionEquality().hash(id);
+      const DeepCollectionEquality().hash(id) ^
+      const DeepCollectionEquality().hash(pretty) ^
+      const DeepCollectionEquality().hash(summary);
 
   @override
   _$DeleteRequestR5CopyWith<_DeleteRequestR5> get copyWith =>
@@ -682,30 +846,37 @@ class _$_DeleteRequestR5 extends _DeleteRequestR5 {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result dstu2(Uri base, Dstu2Types type, Id id),
-    @required Result stu3(Uri base, Stu3Types type, Id id),
-    @required Result r4(Uri base, R4Types type, Id id),
-    @required Result r5(Uri base, R5Types type, Id id),
+    @required
+        Result dstu2(
+            Uri base, Dstu2Types type, Id id, bool pretty, Summary summary),
+    @required
+        Result stu3(
+            Uri base, Stu3Types type, Id id, bool pretty, Summary summary),
+    @required
+        Result r4(Uri base, R4Types type, Id id, bool pretty, Summary summary),
+    @required
+        Result r5(Uri base, R5Types type, Id id, bool pretty, Summary summary),
   }) {
     assert(dstu2 != null);
     assert(stu3 != null);
     assert(r4 != null);
     assert(r5 != null);
-    return r5(base, type, id);
+    return r5(base, type, id, pretty, summary);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result dstu2(Uri base, Dstu2Types type, Id id),
-    Result stu3(Uri base, Stu3Types type, Id id),
-    Result r4(Uri base, R4Types type, Id id),
-    Result r5(Uri base, R5Types type, Id id),
+    Result dstu2(
+        Uri base, Dstu2Types type, Id id, bool pretty, Summary summary),
+    Result stu3(Uri base, Stu3Types type, Id id, bool pretty, Summary summary),
+    Result r4(Uri base, R4Types type, Id id, bool pretty, Summary summary),
+    Result r5(Uri base, R5Types type, Id id, bool pretty, Summary summary),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (r5 != null) {
-      return r5(base, type, id);
+      return r5(base, type, id, pretty, summary);
     }
     return orElse();
   }
@@ -747,13 +918,19 @@ abstract class _DeleteRequestR5 extends DeleteRequest {
   factory _DeleteRequestR5(
       {@required Uri base,
       @required R5Types type,
-      @required Id id}) = _$_DeleteRequestR5;
+      @required Id id,
+      bool pretty,
+      Summary summary}) = _$_DeleteRequestR5;
 
   @override
   Uri get base;
   R5Types get type;
   @override
   Id get id;
+  @override
+  bool get pretty;
+  @override
+  Summary get summary;
   @override
   _$DeleteRequestR5CopyWith<_DeleteRequestR5> get copyWith;
 }

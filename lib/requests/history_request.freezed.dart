@@ -16,8 +16,8 @@ class _$HistoryRequestTearOff {
 // ignore: unused_element
   _HistoryRequestDstu2 dstu2(
       {@required Uri base,
-      @required Dstu2Types type,
-      @required Id id,
+      Dstu2Types type,
+      Id id,
       int count,
       Instant since,
       FhirDateTime at,
@@ -36,8 +36,8 @@ class _$HistoryRequestTearOff {
 // ignore: unused_element
   _HistoryRequestStu3 stu3(
       {@required Uri base,
-      @required Stu3Types type,
-      @required Id id,
+      Stu3Types type,
+      Id id,
       int count,
       Instant since,
       FhirDateTime at,
@@ -56,8 +56,8 @@ class _$HistoryRequestTearOff {
 // ignore: unused_element
   _HistoryRequestR4 r4(
       {@required Uri base,
-      @required R4Types type,
-      @required Id id,
+      R4Types type,
+      Id id,
       int count,
       Instant since,
       FhirDateTime at,
@@ -76,8 +76,8 @@ class _$HistoryRequestTearOff {
 // ignore: unused_element
   _HistoryRequestR5 r5(
       {@required Uri base,
-      @required R5Types type,
-      @required Id id,
+      R5Types type,
+      Id id,
       int count,
       Instant since,
       FhirDateTime at,
@@ -254,15 +254,13 @@ class __$HistoryRequestDstu2CopyWithImpl<$Res>
 class _$_HistoryRequestDstu2 extends _HistoryRequestDstu2 {
   _$_HistoryRequestDstu2(
       {@required this.base,
-      @required this.type,
-      @required this.id,
+      this.type,
+      this.id,
       this.count,
       this.since,
       this.at,
       this.reference})
       : assert(base != null),
-        assert(type != null),
-        assert(id != null),
         super._();
 
   @override
@@ -401,8 +399,8 @@ abstract class _HistoryRequestDstu2 extends HistoryRequest {
   _HistoryRequestDstu2._() : super._();
   factory _HistoryRequestDstu2(
       {@required Uri base,
-      @required Dstu2Types type,
-      @required Id id,
+      Dstu2Types type,
+      Id id,
       int count,
       Instant since,
       FhirDateTime at,
@@ -481,15 +479,13 @@ class __$HistoryRequestStu3CopyWithImpl<$Res>
 class _$_HistoryRequestStu3 extends _HistoryRequestStu3 {
   _$_HistoryRequestStu3(
       {@required this.base,
-      @required this.type,
-      @required this.id,
+      this.type,
+      this.id,
       this.count,
       this.since,
       this.at,
       this.reference})
       : assert(base != null),
-        assert(type != null),
-        assert(id != null),
         super._();
 
   @override
@@ -627,8 +623,8 @@ abstract class _HistoryRequestStu3 extends HistoryRequest {
   _HistoryRequestStu3._() : super._();
   factory _HistoryRequestStu3(
       {@required Uri base,
-      @required Stu3Types type,
-      @required Id id,
+      Stu3Types type,
+      Id id,
       int count,
       Instant since,
       FhirDateTime at,
@@ -707,15 +703,13 @@ class __$HistoryRequestR4CopyWithImpl<$Res>
 class _$_HistoryRequestR4 extends _HistoryRequestR4 {
   _$_HistoryRequestR4(
       {@required this.base,
-      @required this.type,
-      @required this.id,
+      this.type,
+      this.id,
       this.count,
       this.since,
       this.at,
       this.reference})
       : assert(base != null),
-        assert(type != null),
-        assert(id != null),
         super._();
 
   @override
@@ -853,8 +847,8 @@ abstract class _HistoryRequestR4 extends HistoryRequest {
   _HistoryRequestR4._() : super._();
   factory _HistoryRequestR4(
       {@required Uri base,
-      @required R4Types type,
-      @required Id id,
+      R4Types type,
+      Id id,
       int count,
       Instant since,
       FhirDateTime at,
@@ -933,15 +927,13 @@ class __$HistoryRequestR5CopyWithImpl<$Res>
 class _$_HistoryRequestR5 extends _HistoryRequestR5 {
   _$_HistoryRequestR5(
       {@required this.base,
-      @required this.type,
-      @required this.id,
+      this.type,
+      this.id,
       this.count,
       this.since,
       this.at,
       this.reference})
       : assert(base != null),
-        assert(type != null),
-        assert(id != null),
         super._();
 
   @override
@@ -1079,8 +1071,8 @@ abstract class _HistoryRequestR5 extends HistoryRequest {
   _HistoryRequestR5._() : super._();
   factory _HistoryRequestR5(
       {@required Uri base,
-      @required R5Types type,
-      @required Id id,
+      R5Types type,
+      Id id,
       int count,
       Instant since,
       FhirDateTime at,

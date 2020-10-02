@@ -62,6 +62,9 @@ abstract class CreateRequest with _$CreateRequest {
     final result =
         await makeRequest(put, thisRequest, resource: resource.toJson());
 
+    // for testing purposes
+    return result;
+
     return result.fold(
         (ifLeft) => left(ifLeft),
         (ifRight) => right(this.map(

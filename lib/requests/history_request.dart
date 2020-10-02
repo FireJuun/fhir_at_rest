@@ -23,8 +23,8 @@ abstract class HistoryRequest with _$HistoryRequest {
   HistoryRequest._();
   factory HistoryRequest.dstu2({
     @required Uri base,
-    @required Dstu2Types type,
-    @required Id id,
+    Dstu2Types type,
+    Id id,
     int count,
     Instant since,
     FhirDateTime at,
@@ -33,8 +33,8 @@ abstract class HistoryRequest with _$HistoryRequest {
 
   factory HistoryRequest.stu3({
     @required Uri base,
-    @required Stu3Types type,
-    @required Id id,
+    Stu3Types type,
+    Id id,
     int count,
     Instant since,
     FhirDateTime at,
@@ -43,8 +43,8 @@ abstract class HistoryRequest with _$HistoryRequest {
 
   factory HistoryRequest.r4({
     @required Uri base,
-    @required R4Types type,
-    @required Id id,
+    R4Types type,
+    Id id,
     int count,
     Instant since,
     FhirDateTime at,
@@ -53,8 +53,8 @@ abstract class HistoryRequest with _$HistoryRequest {
 
   factory HistoryRequest.r5({
     @required Uri base,
-    @required R5Types type,
-    @required Id id,
+    R5Types type,
+    Id id,
     int count,
     Instant since,
     FhirDateTime at,
@@ -82,18 +82,22 @@ abstract class HistoryRequest with _$HistoryRequest {
               '${req.id == null ? "" : "${req.id.toString()}/"}',
     );
     thisRequest += '_history';
-    thisRequest += '&_format=application/fhir+json';
-    thisRequest += int == null ? '' : '&_int=$count';
+    thisRequest += '?_format=application/fhir+json';
+    thisRequest += count == null ? '' : '&_count=$count';
     thisRequest += since == null ? '' : '&_since=${since.toString()}';
-    thisRequest += at == null ? '' : '&_at=${at.toString()}';
-    if (reference != null) {
-      thisRequest += reference.searchString().fold(
-            (l) => '',
-            (r) => '&_reference=${r.toString()}',
-          );
-    }
+    // thisRequest += at == null ? '' : '&_at=${at.toString()}';
+    // if (reference != null) {
+    //   thisRequest += reference.searchString().fold(
+    //         (l) => '',
+    //         (r) => '&_reference=${r.toString()}',
+    //       );
+    // }
 
     final result = await makeRequest(get, thisRequest);
+
+    // for testing purposes
+    return result;
+
     return result.fold(
         (ifLeft) => left(ifLeft),
         (ifRight) => right(this.map(

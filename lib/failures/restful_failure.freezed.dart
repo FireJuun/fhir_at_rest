@@ -65,6 +65,36 @@ class _$RestfulFailureTearOff {
       errorComment: errorComment,
     );
   }
+
+// ignore: unused_element
+  NoBundle<T> noBundle<T>({@required String errorComment}) {
+    return NoBundle<T>(
+      errorComment: errorComment,
+    );
+  }
+
+// ignore: unused_element
+  NotABatchBundle<T> notABatchBundle<T>({@required String errorComment}) {
+    return NotABatchBundle<T>(
+      errorComment: errorComment,
+    );
+  }
+
+// ignore: unused_element
+  MissingEntryRequest<T> missingEntryRequest<T>(
+      {@required String errorComment}) {
+    return MissingEntryRequest<T>(
+      errorComment: errorComment,
+    );
+  }
+
+// ignore: unused_element
+  MissingRequestMethod<T> missingRequestMethod<T>(
+      {@required String errorComment}) {
+    return MissingRequestMethod<T>(
+      errorComment: errorComment,
+    );
+  }
 }
 
 /// @nodoc
@@ -84,6 +114,10 @@ mixin _$RestfulFailure<T> {
     @required Result noId(String errorComment),
     @required Result noVid(String errorComment),
     @required Result idDoesNotMatchResource(String errorComment),
+    @required Result noBundle(String errorComment),
+    @required Result notABatchBundle(String errorComment),
+    @required Result missingEntryRequest(String errorComment),
+    @required Result missingRequestMethod(String errorComment),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
@@ -94,6 +128,10 @@ mixin _$RestfulFailure<T> {
     Result noId(String errorComment),
     Result noVid(String errorComment),
     Result idDoesNotMatchResource(String errorComment),
+    Result noBundle(String errorComment),
+    Result notABatchBundle(String errorComment),
+    Result missingEntryRequest(String errorComment),
+    Result missingRequestMethod(String errorComment),
     @required Result orElse(),
   });
   @optionalTypeArgs
@@ -105,6 +143,10 @@ mixin _$RestfulFailure<T> {
     @required Result noId(NoId<T> value),
     @required Result noVid(NoVid<T> value),
     @required Result idDoesNotMatchResource(IdDoesNotMatchResource<T> value),
+    @required Result noBundle(NoBundle<T> value),
+    @required Result notABatchBundle(NotABatchBundle<T> value),
+    @required Result missingEntryRequest(MissingEntryRequest<T> value),
+    @required Result missingRequestMethod(MissingRequestMethod<T> value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
@@ -115,6 +157,10 @@ mixin _$RestfulFailure<T> {
     Result noId(NoId<T> value),
     Result noVid(NoVid<T> value),
     Result idDoesNotMatchResource(IdDoesNotMatchResource<T> value),
+    Result noBundle(NoBundle<T> value),
+    Result notABatchBundle(NotABatchBundle<T> value),
+    Result missingEntryRequest(MissingEntryRequest<T> value),
+    Result missingRequestMethod(MissingRequestMethod<T> value),
     @required Result orElse(),
   });
 }
@@ -224,6 +270,10 @@ class _$HttpFailure<T> implements HttpFailure<T> {
     @required Result noId(String errorComment),
     @required Result noVid(String errorComment),
     @required Result idDoesNotMatchResource(String errorComment),
+    @required Result noBundle(String errorComment),
+    @required Result notABatchBundle(String errorComment),
+    @required Result missingEntryRequest(String errorComment),
+    @required Result missingRequestMethod(String errorComment),
   }) {
     assert(httpFailure != null);
     assert(unknownFailure != null);
@@ -232,6 +282,10 @@ class _$HttpFailure<T> implements HttpFailure<T> {
     assert(noId != null);
     assert(noVid != null);
     assert(idDoesNotMatchResource != null);
+    assert(noBundle != null);
+    assert(notABatchBundle != null);
+    assert(missingEntryRequest != null);
+    assert(missingRequestMethod != null);
     return httpFailure(statusCode, errorType, failedValue);
   }
 
@@ -245,6 +299,10 @@ class _$HttpFailure<T> implements HttpFailure<T> {
     Result noId(String errorComment),
     Result noVid(String errorComment),
     Result idDoesNotMatchResource(String errorComment),
+    Result noBundle(String errorComment),
+    Result notABatchBundle(String errorComment),
+    Result missingEntryRequest(String errorComment),
+    Result missingRequestMethod(String errorComment),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -264,6 +322,10 @@ class _$HttpFailure<T> implements HttpFailure<T> {
     @required Result noId(NoId<T> value),
     @required Result noVid(NoVid<T> value),
     @required Result idDoesNotMatchResource(IdDoesNotMatchResource<T> value),
+    @required Result noBundle(NoBundle<T> value),
+    @required Result notABatchBundle(NotABatchBundle<T> value),
+    @required Result missingEntryRequest(MissingEntryRequest<T> value),
+    @required Result missingRequestMethod(MissingRequestMethod<T> value),
   }) {
     assert(httpFailure != null);
     assert(unknownFailure != null);
@@ -272,6 +334,10 @@ class _$HttpFailure<T> implements HttpFailure<T> {
     assert(noId != null);
     assert(noVid != null);
     assert(idDoesNotMatchResource != null);
+    assert(noBundle != null);
+    assert(notABatchBundle != null);
+    assert(missingEntryRequest != null);
+    assert(missingRequestMethod != null);
     return httpFailure(this);
   }
 
@@ -285,6 +351,10 @@ class _$HttpFailure<T> implements HttpFailure<T> {
     Result noId(NoId<T> value),
     Result noVid(NoVid<T> value),
     Result idDoesNotMatchResource(IdDoesNotMatchResource<T> value),
+    Result noBundle(NoBundle<T> value),
+    Result notABatchBundle(NotABatchBundle<T> value),
+    Result missingEntryRequest(MissingEntryRequest<T> value),
+    Result missingRequestMethod(MissingRequestMethod<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -379,6 +449,10 @@ class _$UnknownFailure<T> implements UnknownFailure<T> {
     @required Result noId(String errorComment),
     @required Result noVid(String errorComment),
     @required Result idDoesNotMatchResource(String errorComment),
+    @required Result noBundle(String errorComment),
+    @required Result notABatchBundle(String errorComment),
+    @required Result missingEntryRequest(String errorComment),
+    @required Result missingRequestMethod(String errorComment),
   }) {
     assert(httpFailure != null);
     assert(unknownFailure != null);
@@ -387,6 +461,10 @@ class _$UnknownFailure<T> implements UnknownFailure<T> {
     assert(noId != null);
     assert(noVid != null);
     assert(idDoesNotMatchResource != null);
+    assert(noBundle != null);
+    assert(notABatchBundle != null);
+    assert(missingEntryRequest != null);
+    assert(missingRequestMethod != null);
     return unknownFailure(failedValue);
   }
 
@@ -400,6 +478,10 @@ class _$UnknownFailure<T> implements UnknownFailure<T> {
     Result noId(String errorComment),
     Result noVid(String errorComment),
     Result idDoesNotMatchResource(String errorComment),
+    Result noBundle(String errorComment),
+    Result notABatchBundle(String errorComment),
+    Result missingEntryRequest(String errorComment),
+    Result missingRequestMethod(String errorComment),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -419,6 +501,10 @@ class _$UnknownFailure<T> implements UnknownFailure<T> {
     @required Result noId(NoId<T> value),
     @required Result noVid(NoVid<T> value),
     @required Result idDoesNotMatchResource(IdDoesNotMatchResource<T> value),
+    @required Result noBundle(NoBundle<T> value),
+    @required Result notABatchBundle(NotABatchBundle<T> value),
+    @required Result missingEntryRequest(MissingEntryRequest<T> value),
+    @required Result missingRequestMethod(MissingRequestMethod<T> value),
   }) {
     assert(httpFailure != null);
     assert(unknownFailure != null);
@@ -427,6 +513,10 @@ class _$UnknownFailure<T> implements UnknownFailure<T> {
     assert(noId != null);
     assert(noVid != null);
     assert(idDoesNotMatchResource != null);
+    assert(noBundle != null);
+    assert(notABatchBundle != null);
+    assert(missingEntryRequest != null);
+    assert(missingRequestMethod != null);
     return unknownFailure(this);
   }
 
@@ -440,6 +530,10 @@ class _$UnknownFailure<T> implements UnknownFailure<T> {
     Result noId(NoId<T> value),
     Result noVid(NoVid<T> value),
     Result idDoesNotMatchResource(IdDoesNotMatchResource<T> value),
+    Result noBundle(NoBundle<T> value),
+    Result notABatchBundle(NotABatchBundle<T> value),
+    Result missingEntryRequest(MissingEntryRequest<T> value),
+    Result missingRequestMethod(MissingRequestMethod<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -529,6 +623,10 @@ class _$NoInternet<T> implements NoInternet<T> {
     @required Result noId(String errorComment),
     @required Result noVid(String errorComment),
     @required Result idDoesNotMatchResource(String errorComment),
+    @required Result noBundle(String errorComment),
+    @required Result notABatchBundle(String errorComment),
+    @required Result missingEntryRequest(String errorComment),
+    @required Result missingRequestMethod(String errorComment),
   }) {
     assert(httpFailure != null);
     assert(unknownFailure != null);
@@ -537,6 +635,10 @@ class _$NoInternet<T> implements NoInternet<T> {
     assert(noId != null);
     assert(noVid != null);
     assert(idDoesNotMatchResource != null);
+    assert(noBundle != null);
+    assert(notABatchBundle != null);
+    assert(missingEntryRequest != null);
+    assert(missingRequestMethod != null);
     return noInternet(failedValue);
   }
 
@@ -550,6 +652,10 @@ class _$NoInternet<T> implements NoInternet<T> {
     Result noId(String errorComment),
     Result noVid(String errorComment),
     Result idDoesNotMatchResource(String errorComment),
+    Result noBundle(String errorComment),
+    Result notABatchBundle(String errorComment),
+    Result missingEntryRequest(String errorComment),
+    Result missingRequestMethod(String errorComment),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -569,6 +675,10 @@ class _$NoInternet<T> implements NoInternet<T> {
     @required Result noId(NoId<T> value),
     @required Result noVid(NoVid<T> value),
     @required Result idDoesNotMatchResource(IdDoesNotMatchResource<T> value),
+    @required Result noBundle(NoBundle<T> value),
+    @required Result notABatchBundle(NotABatchBundle<T> value),
+    @required Result missingEntryRequest(MissingEntryRequest<T> value),
+    @required Result missingRequestMethod(MissingRequestMethod<T> value),
   }) {
     assert(httpFailure != null);
     assert(unknownFailure != null);
@@ -577,6 +687,10 @@ class _$NoInternet<T> implements NoInternet<T> {
     assert(noId != null);
     assert(noVid != null);
     assert(idDoesNotMatchResource != null);
+    assert(noBundle != null);
+    assert(notABatchBundle != null);
+    assert(missingEntryRequest != null);
+    assert(missingRequestMethod != null);
     return noInternet(this);
   }
 
@@ -590,6 +704,10 @@ class _$NoInternet<T> implements NoInternet<T> {
     Result noId(NoId<T> value),
     Result noVid(NoVid<T> value),
     Result idDoesNotMatchResource(IdDoesNotMatchResource<T> value),
+    Result noBundle(NoBundle<T> value),
+    Result notABatchBundle(NotABatchBundle<T> value),
+    Result missingEntryRequest(MissingEntryRequest<T> value),
+    Result missingRequestMethod(MissingRequestMethod<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -677,6 +795,10 @@ class _$NoType<T> implements NoType<T> {
     @required Result noId(String errorComment),
     @required Result noVid(String errorComment),
     @required Result idDoesNotMatchResource(String errorComment),
+    @required Result noBundle(String errorComment),
+    @required Result notABatchBundle(String errorComment),
+    @required Result missingEntryRequest(String errorComment),
+    @required Result missingRequestMethod(String errorComment),
   }) {
     assert(httpFailure != null);
     assert(unknownFailure != null);
@@ -685,6 +807,10 @@ class _$NoType<T> implements NoType<T> {
     assert(noId != null);
     assert(noVid != null);
     assert(idDoesNotMatchResource != null);
+    assert(noBundle != null);
+    assert(notABatchBundle != null);
+    assert(missingEntryRequest != null);
+    assert(missingRequestMethod != null);
     return noType(errorComment);
   }
 
@@ -698,6 +824,10 @@ class _$NoType<T> implements NoType<T> {
     Result noId(String errorComment),
     Result noVid(String errorComment),
     Result idDoesNotMatchResource(String errorComment),
+    Result noBundle(String errorComment),
+    Result notABatchBundle(String errorComment),
+    Result missingEntryRequest(String errorComment),
+    Result missingRequestMethod(String errorComment),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -717,6 +847,10 @@ class _$NoType<T> implements NoType<T> {
     @required Result noId(NoId<T> value),
     @required Result noVid(NoVid<T> value),
     @required Result idDoesNotMatchResource(IdDoesNotMatchResource<T> value),
+    @required Result noBundle(NoBundle<T> value),
+    @required Result notABatchBundle(NotABatchBundle<T> value),
+    @required Result missingEntryRequest(MissingEntryRequest<T> value),
+    @required Result missingRequestMethod(MissingRequestMethod<T> value),
   }) {
     assert(httpFailure != null);
     assert(unknownFailure != null);
@@ -725,6 +859,10 @@ class _$NoType<T> implements NoType<T> {
     assert(noId != null);
     assert(noVid != null);
     assert(idDoesNotMatchResource != null);
+    assert(noBundle != null);
+    assert(notABatchBundle != null);
+    assert(missingEntryRequest != null);
+    assert(missingRequestMethod != null);
     return noType(this);
   }
 
@@ -738,6 +876,10 @@ class _$NoType<T> implements NoType<T> {
     Result noId(NoId<T> value),
     Result noVid(NoVid<T> value),
     Result idDoesNotMatchResource(IdDoesNotMatchResource<T> value),
+    Result noBundle(NoBundle<T> value),
+    Result notABatchBundle(NotABatchBundle<T> value),
+    Result missingEntryRequest(MissingEntryRequest<T> value),
+    Result missingRequestMethod(MissingRequestMethod<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -824,6 +966,10 @@ class _$NoId<T> implements NoId<T> {
     @required Result noId(String errorComment),
     @required Result noVid(String errorComment),
     @required Result idDoesNotMatchResource(String errorComment),
+    @required Result noBundle(String errorComment),
+    @required Result notABatchBundle(String errorComment),
+    @required Result missingEntryRequest(String errorComment),
+    @required Result missingRequestMethod(String errorComment),
   }) {
     assert(httpFailure != null);
     assert(unknownFailure != null);
@@ -832,6 +978,10 @@ class _$NoId<T> implements NoId<T> {
     assert(noId != null);
     assert(noVid != null);
     assert(idDoesNotMatchResource != null);
+    assert(noBundle != null);
+    assert(notABatchBundle != null);
+    assert(missingEntryRequest != null);
+    assert(missingRequestMethod != null);
     return noId(errorComment);
   }
 
@@ -845,6 +995,10 @@ class _$NoId<T> implements NoId<T> {
     Result noId(String errorComment),
     Result noVid(String errorComment),
     Result idDoesNotMatchResource(String errorComment),
+    Result noBundle(String errorComment),
+    Result notABatchBundle(String errorComment),
+    Result missingEntryRequest(String errorComment),
+    Result missingRequestMethod(String errorComment),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -864,6 +1018,10 @@ class _$NoId<T> implements NoId<T> {
     @required Result noId(NoId<T> value),
     @required Result noVid(NoVid<T> value),
     @required Result idDoesNotMatchResource(IdDoesNotMatchResource<T> value),
+    @required Result noBundle(NoBundle<T> value),
+    @required Result notABatchBundle(NotABatchBundle<T> value),
+    @required Result missingEntryRequest(MissingEntryRequest<T> value),
+    @required Result missingRequestMethod(MissingRequestMethod<T> value),
   }) {
     assert(httpFailure != null);
     assert(unknownFailure != null);
@@ -872,6 +1030,10 @@ class _$NoId<T> implements NoId<T> {
     assert(noId != null);
     assert(noVid != null);
     assert(idDoesNotMatchResource != null);
+    assert(noBundle != null);
+    assert(notABatchBundle != null);
+    assert(missingEntryRequest != null);
+    assert(missingRequestMethod != null);
     return noId(this);
   }
 
@@ -885,6 +1047,10 @@ class _$NoId<T> implements NoId<T> {
     Result noId(NoId<T> value),
     Result noVid(NoVid<T> value),
     Result idDoesNotMatchResource(IdDoesNotMatchResource<T> value),
+    Result noBundle(NoBundle<T> value),
+    Result notABatchBundle(NotABatchBundle<T> value),
+    Result missingEntryRequest(MissingEntryRequest<T> value),
+    Result missingRequestMethod(MissingRequestMethod<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -971,6 +1137,10 @@ class _$NoVid<T> implements NoVid<T> {
     @required Result noId(String errorComment),
     @required Result noVid(String errorComment),
     @required Result idDoesNotMatchResource(String errorComment),
+    @required Result noBundle(String errorComment),
+    @required Result notABatchBundle(String errorComment),
+    @required Result missingEntryRequest(String errorComment),
+    @required Result missingRequestMethod(String errorComment),
   }) {
     assert(httpFailure != null);
     assert(unknownFailure != null);
@@ -979,6 +1149,10 @@ class _$NoVid<T> implements NoVid<T> {
     assert(noId != null);
     assert(noVid != null);
     assert(idDoesNotMatchResource != null);
+    assert(noBundle != null);
+    assert(notABatchBundle != null);
+    assert(missingEntryRequest != null);
+    assert(missingRequestMethod != null);
     return noVid(errorComment);
   }
 
@@ -992,6 +1166,10 @@ class _$NoVid<T> implements NoVid<T> {
     Result noId(String errorComment),
     Result noVid(String errorComment),
     Result idDoesNotMatchResource(String errorComment),
+    Result noBundle(String errorComment),
+    Result notABatchBundle(String errorComment),
+    Result missingEntryRequest(String errorComment),
+    Result missingRequestMethod(String errorComment),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1011,6 +1189,10 @@ class _$NoVid<T> implements NoVid<T> {
     @required Result noId(NoId<T> value),
     @required Result noVid(NoVid<T> value),
     @required Result idDoesNotMatchResource(IdDoesNotMatchResource<T> value),
+    @required Result noBundle(NoBundle<T> value),
+    @required Result notABatchBundle(NotABatchBundle<T> value),
+    @required Result missingEntryRequest(MissingEntryRequest<T> value),
+    @required Result missingRequestMethod(MissingRequestMethod<T> value),
   }) {
     assert(httpFailure != null);
     assert(unknownFailure != null);
@@ -1019,6 +1201,10 @@ class _$NoVid<T> implements NoVid<T> {
     assert(noId != null);
     assert(noVid != null);
     assert(idDoesNotMatchResource != null);
+    assert(noBundle != null);
+    assert(notABatchBundle != null);
+    assert(missingEntryRequest != null);
+    assert(missingRequestMethod != null);
     return noVid(this);
   }
 
@@ -1032,6 +1218,10 @@ class _$NoVid<T> implements NoVid<T> {
     Result noId(NoId<T> value),
     Result noVid(NoVid<T> value),
     Result idDoesNotMatchResource(IdDoesNotMatchResource<T> value),
+    Result noBundle(NoBundle<T> value),
+    Result notABatchBundle(NotABatchBundle<T> value),
+    Result missingEntryRequest(MissingEntryRequest<T> value),
+    Result missingRequestMethod(MissingRequestMethod<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1124,6 +1314,10 @@ class _$IdDoesNotMatchResource<T> implements IdDoesNotMatchResource<T> {
     @required Result noId(String errorComment),
     @required Result noVid(String errorComment),
     @required Result idDoesNotMatchResource(String errorComment),
+    @required Result noBundle(String errorComment),
+    @required Result notABatchBundle(String errorComment),
+    @required Result missingEntryRequest(String errorComment),
+    @required Result missingRequestMethod(String errorComment),
   }) {
     assert(httpFailure != null);
     assert(unknownFailure != null);
@@ -1132,6 +1326,10 @@ class _$IdDoesNotMatchResource<T> implements IdDoesNotMatchResource<T> {
     assert(noId != null);
     assert(noVid != null);
     assert(idDoesNotMatchResource != null);
+    assert(noBundle != null);
+    assert(notABatchBundle != null);
+    assert(missingEntryRequest != null);
+    assert(missingRequestMethod != null);
     return idDoesNotMatchResource(errorComment);
   }
 
@@ -1145,6 +1343,10 @@ class _$IdDoesNotMatchResource<T> implements IdDoesNotMatchResource<T> {
     Result noId(String errorComment),
     Result noVid(String errorComment),
     Result idDoesNotMatchResource(String errorComment),
+    Result noBundle(String errorComment),
+    Result notABatchBundle(String errorComment),
+    Result missingEntryRequest(String errorComment),
+    Result missingRequestMethod(String errorComment),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1164,6 +1366,10 @@ class _$IdDoesNotMatchResource<T> implements IdDoesNotMatchResource<T> {
     @required Result noId(NoId<T> value),
     @required Result noVid(NoVid<T> value),
     @required Result idDoesNotMatchResource(IdDoesNotMatchResource<T> value),
+    @required Result noBundle(NoBundle<T> value),
+    @required Result notABatchBundle(NotABatchBundle<T> value),
+    @required Result missingEntryRequest(MissingEntryRequest<T> value),
+    @required Result missingRequestMethod(MissingRequestMethod<T> value),
   }) {
     assert(httpFailure != null);
     assert(unknownFailure != null);
@@ -1172,6 +1378,10 @@ class _$IdDoesNotMatchResource<T> implements IdDoesNotMatchResource<T> {
     assert(noId != null);
     assert(noVid != null);
     assert(idDoesNotMatchResource != null);
+    assert(noBundle != null);
+    assert(notABatchBundle != null);
+    assert(missingEntryRequest != null);
+    assert(missingRequestMethod != null);
     return idDoesNotMatchResource(this);
   }
 
@@ -1185,6 +1395,10 @@ class _$IdDoesNotMatchResource<T> implements IdDoesNotMatchResource<T> {
     Result noId(NoId<T> value),
     Result noVid(NoVid<T> value),
     Result idDoesNotMatchResource(IdDoesNotMatchResource<T> value),
+    Result noBundle(NoBundle<T> value),
+    Result notABatchBundle(NotABatchBundle<T> value),
+    Result missingEntryRequest(MissingEntryRequest<T> value),
+    Result missingRequestMethod(MissingRequestMethod<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1201,4 +1415,708 @@ abstract class IdDoesNotMatchResource<T> implements RestfulFailure<T> {
 
   String get errorComment;
   $IdDoesNotMatchResourceCopyWith<T, IdDoesNotMatchResource<T>> get copyWith;
+}
+
+/// @nodoc
+abstract class $NoBundleCopyWith<T, $Res> {
+  factory $NoBundleCopyWith(
+          NoBundle<T> value, $Res Function(NoBundle<T>) then) =
+      _$NoBundleCopyWithImpl<T, $Res>;
+  $Res call({String errorComment});
+}
+
+/// @nodoc
+class _$NoBundleCopyWithImpl<T, $Res>
+    extends _$RestfulFailureCopyWithImpl<T, $Res>
+    implements $NoBundleCopyWith<T, $Res> {
+  _$NoBundleCopyWithImpl(NoBundle<T> _value, $Res Function(NoBundle<T>) _then)
+      : super(_value, (v) => _then(v as NoBundle<T>));
+
+  @override
+  NoBundle<T> get _value => super._value as NoBundle<T>;
+
+  @override
+  $Res call({
+    Object errorComment = freezed,
+  }) {
+    return _then(NoBundle<T>(
+      errorComment: errorComment == freezed
+          ? _value.errorComment
+          : errorComment as String,
+    ));
+  }
+}
+
+/// @nodoc
+class _$NoBundle<T> implements NoBundle<T> {
+  const _$NoBundle({@required this.errorComment})
+      : assert(errorComment != null);
+
+  @override
+  final String errorComment;
+
+  @override
+  String toString() {
+    return 'RestfulFailure<$T>.noBundle(errorComment: $errorComment)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is NoBundle<T> &&
+            (identical(other.errorComment, errorComment) ||
+                const DeepCollectionEquality()
+                    .equals(other.errorComment, errorComment)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(errorComment);
+
+  @override
+  $NoBundleCopyWith<T, NoBundle<T>> get copyWith =>
+      _$NoBundleCopyWithImpl<T, NoBundle<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required
+        Result httpFailure(
+            int statusCode, String errorType, String failedValue),
+    @required Result unknownFailure(T failedValue),
+    @required Result noInternet(T failedValue),
+    @required Result noType(String errorComment),
+    @required Result noId(String errorComment),
+    @required Result noVid(String errorComment),
+    @required Result idDoesNotMatchResource(String errorComment),
+    @required Result noBundle(String errorComment),
+    @required Result notABatchBundle(String errorComment),
+    @required Result missingEntryRequest(String errorComment),
+    @required Result missingRequestMethod(String errorComment),
+  }) {
+    assert(httpFailure != null);
+    assert(unknownFailure != null);
+    assert(noInternet != null);
+    assert(noType != null);
+    assert(noId != null);
+    assert(noVid != null);
+    assert(idDoesNotMatchResource != null);
+    assert(noBundle != null);
+    assert(notABatchBundle != null);
+    assert(missingEntryRequest != null);
+    assert(missingRequestMethod != null);
+    return noBundle(errorComment);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result httpFailure(int statusCode, String errorType, String failedValue),
+    Result unknownFailure(T failedValue),
+    Result noInternet(T failedValue),
+    Result noType(String errorComment),
+    Result noId(String errorComment),
+    Result noVid(String errorComment),
+    Result idDoesNotMatchResource(String errorComment),
+    Result noBundle(String errorComment),
+    Result notABatchBundle(String errorComment),
+    Result missingEntryRequest(String errorComment),
+    Result missingRequestMethod(String errorComment),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (noBundle != null) {
+      return noBundle(errorComment);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result httpFailure(HttpFailure<T> value),
+    @required Result unknownFailure(UnknownFailure<T> value),
+    @required Result noInternet(NoInternet<T> value),
+    @required Result noType(NoType<T> value),
+    @required Result noId(NoId<T> value),
+    @required Result noVid(NoVid<T> value),
+    @required Result idDoesNotMatchResource(IdDoesNotMatchResource<T> value),
+    @required Result noBundle(NoBundle<T> value),
+    @required Result notABatchBundle(NotABatchBundle<T> value),
+    @required Result missingEntryRequest(MissingEntryRequest<T> value),
+    @required Result missingRequestMethod(MissingRequestMethod<T> value),
+  }) {
+    assert(httpFailure != null);
+    assert(unknownFailure != null);
+    assert(noInternet != null);
+    assert(noType != null);
+    assert(noId != null);
+    assert(noVid != null);
+    assert(idDoesNotMatchResource != null);
+    assert(noBundle != null);
+    assert(notABatchBundle != null);
+    assert(missingEntryRequest != null);
+    assert(missingRequestMethod != null);
+    return noBundle(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result httpFailure(HttpFailure<T> value),
+    Result unknownFailure(UnknownFailure<T> value),
+    Result noInternet(NoInternet<T> value),
+    Result noType(NoType<T> value),
+    Result noId(NoId<T> value),
+    Result noVid(NoVid<T> value),
+    Result idDoesNotMatchResource(IdDoesNotMatchResource<T> value),
+    Result noBundle(NoBundle<T> value),
+    Result notABatchBundle(NotABatchBundle<T> value),
+    Result missingEntryRequest(MissingEntryRequest<T> value),
+    Result missingRequestMethod(MissingRequestMethod<T> value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (noBundle != null) {
+      return noBundle(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class NoBundle<T> implements RestfulFailure<T> {
+  const factory NoBundle({@required String errorComment}) = _$NoBundle<T>;
+
+  String get errorComment;
+  $NoBundleCopyWith<T, NoBundle<T>> get copyWith;
+}
+
+/// @nodoc
+abstract class $NotABatchBundleCopyWith<T, $Res> {
+  factory $NotABatchBundleCopyWith(
+          NotABatchBundle<T> value, $Res Function(NotABatchBundle<T>) then) =
+      _$NotABatchBundleCopyWithImpl<T, $Res>;
+  $Res call({String errorComment});
+}
+
+/// @nodoc
+class _$NotABatchBundleCopyWithImpl<T, $Res>
+    extends _$RestfulFailureCopyWithImpl<T, $Res>
+    implements $NotABatchBundleCopyWith<T, $Res> {
+  _$NotABatchBundleCopyWithImpl(
+      NotABatchBundle<T> _value, $Res Function(NotABatchBundle<T>) _then)
+      : super(_value, (v) => _then(v as NotABatchBundle<T>));
+
+  @override
+  NotABatchBundle<T> get _value => super._value as NotABatchBundle<T>;
+
+  @override
+  $Res call({
+    Object errorComment = freezed,
+  }) {
+    return _then(NotABatchBundle<T>(
+      errorComment: errorComment == freezed
+          ? _value.errorComment
+          : errorComment as String,
+    ));
+  }
+}
+
+/// @nodoc
+class _$NotABatchBundle<T> implements NotABatchBundle<T> {
+  const _$NotABatchBundle({@required this.errorComment})
+      : assert(errorComment != null);
+
+  @override
+  final String errorComment;
+
+  @override
+  String toString() {
+    return 'RestfulFailure<$T>.notABatchBundle(errorComment: $errorComment)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is NotABatchBundle<T> &&
+            (identical(other.errorComment, errorComment) ||
+                const DeepCollectionEquality()
+                    .equals(other.errorComment, errorComment)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(errorComment);
+
+  @override
+  $NotABatchBundleCopyWith<T, NotABatchBundle<T>> get copyWith =>
+      _$NotABatchBundleCopyWithImpl<T, NotABatchBundle<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required
+        Result httpFailure(
+            int statusCode, String errorType, String failedValue),
+    @required Result unknownFailure(T failedValue),
+    @required Result noInternet(T failedValue),
+    @required Result noType(String errorComment),
+    @required Result noId(String errorComment),
+    @required Result noVid(String errorComment),
+    @required Result idDoesNotMatchResource(String errorComment),
+    @required Result noBundle(String errorComment),
+    @required Result notABatchBundle(String errorComment),
+    @required Result missingEntryRequest(String errorComment),
+    @required Result missingRequestMethod(String errorComment),
+  }) {
+    assert(httpFailure != null);
+    assert(unknownFailure != null);
+    assert(noInternet != null);
+    assert(noType != null);
+    assert(noId != null);
+    assert(noVid != null);
+    assert(idDoesNotMatchResource != null);
+    assert(noBundle != null);
+    assert(notABatchBundle != null);
+    assert(missingEntryRequest != null);
+    assert(missingRequestMethod != null);
+    return notABatchBundle(errorComment);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result httpFailure(int statusCode, String errorType, String failedValue),
+    Result unknownFailure(T failedValue),
+    Result noInternet(T failedValue),
+    Result noType(String errorComment),
+    Result noId(String errorComment),
+    Result noVid(String errorComment),
+    Result idDoesNotMatchResource(String errorComment),
+    Result noBundle(String errorComment),
+    Result notABatchBundle(String errorComment),
+    Result missingEntryRequest(String errorComment),
+    Result missingRequestMethod(String errorComment),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (notABatchBundle != null) {
+      return notABatchBundle(errorComment);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result httpFailure(HttpFailure<T> value),
+    @required Result unknownFailure(UnknownFailure<T> value),
+    @required Result noInternet(NoInternet<T> value),
+    @required Result noType(NoType<T> value),
+    @required Result noId(NoId<T> value),
+    @required Result noVid(NoVid<T> value),
+    @required Result idDoesNotMatchResource(IdDoesNotMatchResource<T> value),
+    @required Result noBundle(NoBundle<T> value),
+    @required Result notABatchBundle(NotABatchBundle<T> value),
+    @required Result missingEntryRequest(MissingEntryRequest<T> value),
+    @required Result missingRequestMethod(MissingRequestMethod<T> value),
+  }) {
+    assert(httpFailure != null);
+    assert(unknownFailure != null);
+    assert(noInternet != null);
+    assert(noType != null);
+    assert(noId != null);
+    assert(noVid != null);
+    assert(idDoesNotMatchResource != null);
+    assert(noBundle != null);
+    assert(notABatchBundle != null);
+    assert(missingEntryRequest != null);
+    assert(missingRequestMethod != null);
+    return notABatchBundle(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result httpFailure(HttpFailure<T> value),
+    Result unknownFailure(UnknownFailure<T> value),
+    Result noInternet(NoInternet<T> value),
+    Result noType(NoType<T> value),
+    Result noId(NoId<T> value),
+    Result noVid(NoVid<T> value),
+    Result idDoesNotMatchResource(IdDoesNotMatchResource<T> value),
+    Result noBundle(NoBundle<T> value),
+    Result notABatchBundle(NotABatchBundle<T> value),
+    Result missingEntryRequest(MissingEntryRequest<T> value),
+    Result missingRequestMethod(MissingRequestMethod<T> value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (notABatchBundle != null) {
+      return notABatchBundle(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class NotABatchBundle<T> implements RestfulFailure<T> {
+  const factory NotABatchBundle({@required String errorComment}) =
+      _$NotABatchBundle<T>;
+
+  String get errorComment;
+  $NotABatchBundleCopyWith<T, NotABatchBundle<T>> get copyWith;
+}
+
+/// @nodoc
+abstract class $MissingEntryRequestCopyWith<T, $Res> {
+  factory $MissingEntryRequestCopyWith(MissingEntryRequest<T> value,
+          $Res Function(MissingEntryRequest<T>) then) =
+      _$MissingEntryRequestCopyWithImpl<T, $Res>;
+  $Res call({String errorComment});
+}
+
+/// @nodoc
+class _$MissingEntryRequestCopyWithImpl<T, $Res>
+    extends _$RestfulFailureCopyWithImpl<T, $Res>
+    implements $MissingEntryRequestCopyWith<T, $Res> {
+  _$MissingEntryRequestCopyWithImpl(MissingEntryRequest<T> _value,
+      $Res Function(MissingEntryRequest<T>) _then)
+      : super(_value, (v) => _then(v as MissingEntryRequest<T>));
+
+  @override
+  MissingEntryRequest<T> get _value => super._value as MissingEntryRequest<T>;
+
+  @override
+  $Res call({
+    Object errorComment = freezed,
+  }) {
+    return _then(MissingEntryRequest<T>(
+      errorComment: errorComment == freezed
+          ? _value.errorComment
+          : errorComment as String,
+    ));
+  }
+}
+
+/// @nodoc
+class _$MissingEntryRequest<T> implements MissingEntryRequest<T> {
+  const _$MissingEntryRequest({@required this.errorComment})
+      : assert(errorComment != null);
+
+  @override
+  final String errorComment;
+
+  @override
+  String toString() {
+    return 'RestfulFailure<$T>.missingEntryRequest(errorComment: $errorComment)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is MissingEntryRequest<T> &&
+            (identical(other.errorComment, errorComment) ||
+                const DeepCollectionEquality()
+                    .equals(other.errorComment, errorComment)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(errorComment);
+
+  @override
+  $MissingEntryRequestCopyWith<T, MissingEntryRequest<T>> get copyWith =>
+      _$MissingEntryRequestCopyWithImpl<T, MissingEntryRequest<T>>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required
+        Result httpFailure(
+            int statusCode, String errorType, String failedValue),
+    @required Result unknownFailure(T failedValue),
+    @required Result noInternet(T failedValue),
+    @required Result noType(String errorComment),
+    @required Result noId(String errorComment),
+    @required Result noVid(String errorComment),
+    @required Result idDoesNotMatchResource(String errorComment),
+    @required Result noBundle(String errorComment),
+    @required Result notABatchBundle(String errorComment),
+    @required Result missingEntryRequest(String errorComment),
+    @required Result missingRequestMethod(String errorComment),
+  }) {
+    assert(httpFailure != null);
+    assert(unknownFailure != null);
+    assert(noInternet != null);
+    assert(noType != null);
+    assert(noId != null);
+    assert(noVid != null);
+    assert(idDoesNotMatchResource != null);
+    assert(noBundle != null);
+    assert(notABatchBundle != null);
+    assert(missingEntryRequest != null);
+    assert(missingRequestMethod != null);
+    return missingEntryRequest(errorComment);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result httpFailure(int statusCode, String errorType, String failedValue),
+    Result unknownFailure(T failedValue),
+    Result noInternet(T failedValue),
+    Result noType(String errorComment),
+    Result noId(String errorComment),
+    Result noVid(String errorComment),
+    Result idDoesNotMatchResource(String errorComment),
+    Result noBundle(String errorComment),
+    Result notABatchBundle(String errorComment),
+    Result missingEntryRequest(String errorComment),
+    Result missingRequestMethod(String errorComment),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (missingEntryRequest != null) {
+      return missingEntryRequest(errorComment);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result httpFailure(HttpFailure<T> value),
+    @required Result unknownFailure(UnknownFailure<T> value),
+    @required Result noInternet(NoInternet<T> value),
+    @required Result noType(NoType<T> value),
+    @required Result noId(NoId<T> value),
+    @required Result noVid(NoVid<T> value),
+    @required Result idDoesNotMatchResource(IdDoesNotMatchResource<T> value),
+    @required Result noBundle(NoBundle<T> value),
+    @required Result notABatchBundle(NotABatchBundle<T> value),
+    @required Result missingEntryRequest(MissingEntryRequest<T> value),
+    @required Result missingRequestMethod(MissingRequestMethod<T> value),
+  }) {
+    assert(httpFailure != null);
+    assert(unknownFailure != null);
+    assert(noInternet != null);
+    assert(noType != null);
+    assert(noId != null);
+    assert(noVid != null);
+    assert(idDoesNotMatchResource != null);
+    assert(noBundle != null);
+    assert(notABatchBundle != null);
+    assert(missingEntryRequest != null);
+    assert(missingRequestMethod != null);
+    return missingEntryRequest(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result httpFailure(HttpFailure<T> value),
+    Result unknownFailure(UnknownFailure<T> value),
+    Result noInternet(NoInternet<T> value),
+    Result noType(NoType<T> value),
+    Result noId(NoId<T> value),
+    Result noVid(NoVid<T> value),
+    Result idDoesNotMatchResource(IdDoesNotMatchResource<T> value),
+    Result noBundle(NoBundle<T> value),
+    Result notABatchBundle(NotABatchBundle<T> value),
+    Result missingEntryRequest(MissingEntryRequest<T> value),
+    Result missingRequestMethod(MissingRequestMethod<T> value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (missingEntryRequest != null) {
+      return missingEntryRequest(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class MissingEntryRequest<T> implements RestfulFailure<T> {
+  const factory MissingEntryRequest({@required String errorComment}) =
+      _$MissingEntryRequest<T>;
+
+  String get errorComment;
+  $MissingEntryRequestCopyWith<T, MissingEntryRequest<T>> get copyWith;
+}
+
+/// @nodoc
+abstract class $MissingRequestMethodCopyWith<T, $Res> {
+  factory $MissingRequestMethodCopyWith(MissingRequestMethod<T> value,
+          $Res Function(MissingRequestMethod<T>) then) =
+      _$MissingRequestMethodCopyWithImpl<T, $Res>;
+  $Res call({String errorComment});
+}
+
+/// @nodoc
+class _$MissingRequestMethodCopyWithImpl<T, $Res>
+    extends _$RestfulFailureCopyWithImpl<T, $Res>
+    implements $MissingRequestMethodCopyWith<T, $Res> {
+  _$MissingRequestMethodCopyWithImpl(MissingRequestMethod<T> _value,
+      $Res Function(MissingRequestMethod<T>) _then)
+      : super(_value, (v) => _then(v as MissingRequestMethod<T>));
+
+  @override
+  MissingRequestMethod<T> get _value => super._value as MissingRequestMethod<T>;
+
+  @override
+  $Res call({
+    Object errorComment = freezed,
+  }) {
+    return _then(MissingRequestMethod<T>(
+      errorComment: errorComment == freezed
+          ? _value.errorComment
+          : errorComment as String,
+    ));
+  }
+}
+
+/// @nodoc
+class _$MissingRequestMethod<T> implements MissingRequestMethod<T> {
+  const _$MissingRequestMethod({@required this.errorComment})
+      : assert(errorComment != null);
+
+  @override
+  final String errorComment;
+
+  @override
+  String toString() {
+    return 'RestfulFailure<$T>.missingRequestMethod(errorComment: $errorComment)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is MissingRequestMethod<T> &&
+            (identical(other.errorComment, errorComment) ||
+                const DeepCollectionEquality()
+                    .equals(other.errorComment, errorComment)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(errorComment);
+
+  @override
+  $MissingRequestMethodCopyWith<T, MissingRequestMethod<T>> get copyWith =>
+      _$MissingRequestMethodCopyWithImpl<T, MissingRequestMethod<T>>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required
+        Result httpFailure(
+            int statusCode, String errorType, String failedValue),
+    @required Result unknownFailure(T failedValue),
+    @required Result noInternet(T failedValue),
+    @required Result noType(String errorComment),
+    @required Result noId(String errorComment),
+    @required Result noVid(String errorComment),
+    @required Result idDoesNotMatchResource(String errorComment),
+    @required Result noBundle(String errorComment),
+    @required Result notABatchBundle(String errorComment),
+    @required Result missingEntryRequest(String errorComment),
+    @required Result missingRequestMethod(String errorComment),
+  }) {
+    assert(httpFailure != null);
+    assert(unknownFailure != null);
+    assert(noInternet != null);
+    assert(noType != null);
+    assert(noId != null);
+    assert(noVid != null);
+    assert(idDoesNotMatchResource != null);
+    assert(noBundle != null);
+    assert(notABatchBundle != null);
+    assert(missingEntryRequest != null);
+    assert(missingRequestMethod != null);
+    return missingRequestMethod(errorComment);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result httpFailure(int statusCode, String errorType, String failedValue),
+    Result unknownFailure(T failedValue),
+    Result noInternet(T failedValue),
+    Result noType(String errorComment),
+    Result noId(String errorComment),
+    Result noVid(String errorComment),
+    Result idDoesNotMatchResource(String errorComment),
+    Result noBundle(String errorComment),
+    Result notABatchBundle(String errorComment),
+    Result missingEntryRequest(String errorComment),
+    Result missingRequestMethod(String errorComment),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (missingRequestMethod != null) {
+      return missingRequestMethod(errorComment);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result httpFailure(HttpFailure<T> value),
+    @required Result unknownFailure(UnknownFailure<T> value),
+    @required Result noInternet(NoInternet<T> value),
+    @required Result noType(NoType<T> value),
+    @required Result noId(NoId<T> value),
+    @required Result noVid(NoVid<T> value),
+    @required Result idDoesNotMatchResource(IdDoesNotMatchResource<T> value),
+    @required Result noBundle(NoBundle<T> value),
+    @required Result notABatchBundle(NotABatchBundle<T> value),
+    @required Result missingEntryRequest(MissingEntryRequest<T> value),
+    @required Result missingRequestMethod(MissingRequestMethod<T> value),
+  }) {
+    assert(httpFailure != null);
+    assert(unknownFailure != null);
+    assert(noInternet != null);
+    assert(noType != null);
+    assert(noId != null);
+    assert(noVid != null);
+    assert(idDoesNotMatchResource != null);
+    assert(noBundle != null);
+    assert(notABatchBundle != null);
+    assert(missingEntryRequest != null);
+    assert(missingRequestMethod != null);
+    return missingRequestMethod(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result httpFailure(HttpFailure<T> value),
+    Result unknownFailure(UnknownFailure<T> value),
+    Result noInternet(NoInternet<T> value),
+    Result noType(NoType<T> value),
+    Result noId(NoId<T> value),
+    Result noVid(NoVid<T> value),
+    Result idDoesNotMatchResource(IdDoesNotMatchResource<T> value),
+    Result noBundle(NoBundle<T> value),
+    Result notABatchBundle(NotABatchBundle<T> value),
+    Result missingEntryRequest(MissingEntryRequest<T> value),
+    Result missingRequestMethod(MissingRequestMethod<T> value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (missingRequestMethod != null) {
+      return missingRequestMethod(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class MissingRequestMethod<T> implements RestfulFailure<T> {
+  const factory MissingRequestMethod({@required String errorComment}) =
+      _$MissingRequestMethod<T>;
+
+  String get errorComment;
+  $MissingRequestMethodCopyWith<T, MissingRequestMethod<T>> get copyWith;
 }

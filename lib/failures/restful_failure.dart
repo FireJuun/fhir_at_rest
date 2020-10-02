@@ -27,4 +27,16 @@ abstract class RestfulFailure<T> with _$RestfulFailure<T> {
   const factory RestfulFailure.idDoesNotMatchResource({
     @required String errorComment,
   }) = IdDoesNotMatchResource;
+  const factory RestfulFailure.noBundle({
+    @required String errorComment,
+  }) = NoBundle;
+  const factory RestfulFailure.notABatchBundle({
+    @required String errorComment,
+  }) = NotABatchBundle;
+  const factory RestfulFailure.missingEntryRequest({
+    @required String errorComment,
+  }) = MissingEntryRequest;
+  const factory RestfulFailure.missingRequestMethod({
+    @required String errorComment,
+  }) = MissingRequestMethod;
 }
