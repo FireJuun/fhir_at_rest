@@ -98,10 +98,13 @@ class _$RestfulFailureTearOff {
 
 // ignore: unused_element
   SearchFailure<T> searchFailure<T>(
-      {@required String type, @required String failedValue}) {
+      {@required String parameter,
+      @required dynamic failedValue,
+      @required String errorMessage}) {
     return SearchFailure<T>(
-      type: type,
+      parameter: parameter,
       failedValue: failedValue,
+      errorMessage: errorMessage,
     );
   }
 }
@@ -127,7 +130,9 @@ mixin _$RestfulFailure<T> {
     @required Result notABatchBundle(String errorComment),
     @required Result missingEntryRequest(String errorComment),
     @required Result missingRequestMethod(String errorComment),
-    @required Result searchFailure(String type, String failedValue),
+    @required
+        Result searchFailure(
+            String parameter, dynamic failedValue, String errorMessage),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
@@ -142,7 +147,8 @@ mixin _$RestfulFailure<T> {
     Result notABatchBundle(String errorComment),
     Result missingEntryRequest(String errorComment),
     Result missingRequestMethod(String errorComment),
-    Result searchFailure(String type, String failedValue),
+    Result searchFailure(
+        String parameter, dynamic failedValue, String errorMessage),
     @required Result orElse(),
   });
   @optionalTypeArgs
@@ -287,7 +293,9 @@ class _$HttpFailure<T> implements HttpFailure<T> {
     @required Result notABatchBundle(String errorComment),
     @required Result missingEntryRequest(String errorComment),
     @required Result missingRequestMethod(String errorComment),
-    @required Result searchFailure(String type, String failedValue),
+    @required
+        Result searchFailure(
+            String parameter, dynamic failedValue, String errorMessage),
   }) {
     assert(httpFailure != null);
     assert(unknownFailure != null);
@@ -318,7 +326,8 @@ class _$HttpFailure<T> implements HttpFailure<T> {
     Result notABatchBundle(String errorComment),
     Result missingEntryRequest(String errorComment),
     Result missingRequestMethod(String errorComment),
-    Result searchFailure(String type, String failedValue),
+    Result searchFailure(
+        String parameter, dynamic failedValue, String errorMessage),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -472,7 +481,9 @@ class _$UnknownFailure<T> implements UnknownFailure<T> {
     @required Result notABatchBundle(String errorComment),
     @required Result missingEntryRequest(String errorComment),
     @required Result missingRequestMethod(String errorComment),
-    @required Result searchFailure(String type, String failedValue),
+    @required
+        Result searchFailure(
+            String parameter, dynamic failedValue, String errorMessage),
   }) {
     assert(httpFailure != null);
     assert(unknownFailure != null);
@@ -503,7 +514,8 @@ class _$UnknownFailure<T> implements UnknownFailure<T> {
     Result notABatchBundle(String errorComment),
     Result missingEntryRequest(String errorComment),
     Result missingRequestMethod(String errorComment),
-    Result searchFailure(String type, String failedValue),
+    Result searchFailure(
+        String parameter, dynamic failedValue, String errorMessage),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -652,7 +664,9 @@ class _$NoInternet<T> implements NoInternet<T> {
     @required Result notABatchBundle(String errorComment),
     @required Result missingEntryRequest(String errorComment),
     @required Result missingRequestMethod(String errorComment),
-    @required Result searchFailure(String type, String failedValue),
+    @required
+        Result searchFailure(
+            String parameter, dynamic failedValue, String errorMessage),
   }) {
     assert(httpFailure != null);
     assert(unknownFailure != null);
@@ -683,7 +697,8 @@ class _$NoInternet<T> implements NoInternet<T> {
     Result notABatchBundle(String errorComment),
     Result missingEntryRequest(String errorComment),
     Result missingRequestMethod(String errorComment),
-    Result searchFailure(String type, String failedValue),
+    Result searchFailure(
+        String parameter, dynamic failedValue, String errorMessage),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -830,7 +845,9 @@ class _$NoType<T> implements NoType<T> {
     @required Result notABatchBundle(String errorComment),
     @required Result missingEntryRequest(String errorComment),
     @required Result missingRequestMethod(String errorComment),
-    @required Result searchFailure(String type, String failedValue),
+    @required
+        Result searchFailure(
+            String parameter, dynamic failedValue, String errorMessage),
   }) {
     assert(httpFailure != null);
     assert(unknownFailure != null);
@@ -861,7 +878,8 @@ class _$NoType<T> implements NoType<T> {
     Result notABatchBundle(String errorComment),
     Result missingEntryRequest(String errorComment),
     Result missingRequestMethod(String errorComment),
-    Result searchFailure(String type, String failedValue),
+    Result searchFailure(
+        String parameter, dynamic failedValue, String errorMessage),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1007,7 +1025,9 @@ class _$NoId<T> implements NoId<T> {
     @required Result notABatchBundle(String errorComment),
     @required Result missingEntryRequest(String errorComment),
     @required Result missingRequestMethod(String errorComment),
-    @required Result searchFailure(String type, String failedValue),
+    @required
+        Result searchFailure(
+            String parameter, dynamic failedValue, String errorMessage),
   }) {
     assert(httpFailure != null);
     assert(unknownFailure != null);
@@ -1038,7 +1058,8 @@ class _$NoId<T> implements NoId<T> {
     Result notABatchBundle(String errorComment),
     Result missingEntryRequest(String errorComment),
     Result missingRequestMethod(String errorComment),
-    Result searchFailure(String type, String failedValue),
+    Result searchFailure(
+        String parameter, dynamic failedValue, String errorMessage),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1184,7 +1205,9 @@ class _$NoVid<T> implements NoVid<T> {
     @required Result notABatchBundle(String errorComment),
     @required Result missingEntryRequest(String errorComment),
     @required Result missingRequestMethod(String errorComment),
-    @required Result searchFailure(String type, String failedValue),
+    @required
+        Result searchFailure(
+            String parameter, dynamic failedValue, String errorMessage),
   }) {
     assert(httpFailure != null);
     assert(unknownFailure != null);
@@ -1215,7 +1238,8 @@ class _$NoVid<T> implements NoVid<T> {
     Result notABatchBundle(String errorComment),
     Result missingEntryRequest(String errorComment),
     Result missingRequestMethod(String errorComment),
-    Result searchFailure(String type, String failedValue),
+    Result searchFailure(
+        String parameter, dynamic failedValue, String errorMessage),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1367,7 +1391,9 @@ class _$IdDoesNotMatchResource<T> implements IdDoesNotMatchResource<T> {
     @required Result notABatchBundle(String errorComment),
     @required Result missingEntryRequest(String errorComment),
     @required Result missingRequestMethod(String errorComment),
-    @required Result searchFailure(String type, String failedValue),
+    @required
+        Result searchFailure(
+            String parameter, dynamic failedValue, String errorMessage),
   }) {
     assert(httpFailure != null);
     assert(unknownFailure != null);
@@ -1398,7 +1424,8 @@ class _$IdDoesNotMatchResource<T> implements IdDoesNotMatchResource<T> {
     Result notABatchBundle(String errorComment),
     Result missingEntryRequest(String errorComment),
     Result missingRequestMethod(String errorComment),
-    Result searchFailure(String type, String failedValue),
+    Result searchFailure(
+        String parameter, dynamic failedValue, String errorMessage),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1548,7 +1575,9 @@ class _$NoBundle<T> implements NoBundle<T> {
     @required Result notABatchBundle(String errorComment),
     @required Result missingEntryRequest(String errorComment),
     @required Result missingRequestMethod(String errorComment),
-    @required Result searchFailure(String type, String failedValue),
+    @required
+        Result searchFailure(
+            String parameter, dynamic failedValue, String errorMessage),
   }) {
     assert(httpFailure != null);
     assert(unknownFailure != null);
@@ -1579,7 +1608,8 @@ class _$NoBundle<T> implements NoBundle<T> {
     Result notABatchBundle(String errorComment),
     Result missingEntryRequest(String errorComment),
     Result missingRequestMethod(String errorComment),
-    Result searchFailure(String type, String failedValue),
+    Result searchFailure(
+        String parameter, dynamic failedValue, String errorMessage),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1729,7 +1759,9 @@ class _$NotABatchBundle<T> implements NotABatchBundle<T> {
     @required Result notABatchBundle(String errorComment),
     @required Result missingEntryRequest(String errorComment),
     @required Result missingRequestMethod(String errorComment),
-    @required Result searchFailure(String type, String failedValue),
+    @required
+        Result searchFailure(
+            String parameter, dynamic failedValue, String errorMessage),
   }) {
     assert(httpFailure != null);
     assert(unknownFailure != null);
@@ -1760,7 +1792,8 @@ class _$NotABatchBundle<T> implements NotABatchBundle<T> {
     Result notABatchBundle(String errorComment),
     Result missingEntryRequest(String errorComment),
     Result missingRequestMethod(String errorComment),
-    Result searchFailure(String type, String failedValue),
+    Result searchFailure(
+        String parameter, dynamic failedValue, String errorMessage),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1912,7 +1945,9 @@ class _$MissingEntryRequest<T> implements MissingEntryRequest<T> {
     @required Result notABatchBundle(String errorComment),
     @required Result missingEntryRequest(String errorComment),
     @required Result missingRequestMethod(String errorComment),
-    @required Result searchFailure(String type, String failedValue),
+    @required
+        Result searchFailure(
+            String parameter, dynamic failedValue, String errorMessage),
   }) {
     assert(httpFailure != null);
     assert(unknownFailure != null);
@@ -1943,7 +1978,8 @@ class _$MissingEntryRequest<T> implements MissingEntryRequest<T> {
     Result notABatchBundle(String errorComment),
     Result missingEntryRequest(String errorComment),
     Result missingRequestMethod(String errorComment),
-    Result searchFailure(String type, String failedValue),
+    Result searchFailure(
+        String parameter, dynamic failedValue, String errorMessage),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -2095,7 +2131,9 @@ class _$MissingRequestMethod<T> implements MissingRequestMethod<T> {
     @required Result notABatchBundle(String errorComment),
     @required Result missingEntryRequest(String errorComment),
     @required Result missingRequestMethod(String errorComment),
-    @required Result searchFailure(String type, String failedValue),
+    @required
+        Result searchFailure(
+            String parameter, dynamic failedValue, String errorMessage),
   }) {
     assert(httpFailure != null);
     assert(unknownFailure != null);
@@ -2126,7 +2164,8 @@ class _$MissingRequestMethod<T> implements MissingRequestMethod<T> {
     Result notABatchBundle(String errorComment),
     Result missingEntryRequest(String errorComment),
     Result missingRequestMethod(String errorComment),
-    Result searchFailure(String type, String failedValue),
+    Result searchFailure(
+        String parameter, dynamic failedValue, String errorMessage),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -2205,7 +2244,7 @@ abstract class $SearchFailureCopyWith<T, $Res> {
   factory $SearchFailureCopyWith(
           SearchFailure<T> value, $Res Function(SearchFailure<T>) then) =
       _$SearchFailureCopyWithImpl<T, $Res>;
-  $Res call({String type, String failedValue});
+  $Res call({String parameter, dynamic failedValue, String errorMessage});
 }
 
 /// @nodoc
@@ -2221,49 +2260,64 @@ class _$SearchFailureCopyWithImpl<T, $Res>
 
   @override
   $Res call({
-    Object type = freezed,
+    Object parameter = freezed,
     Object failedValue = freezed,
+    Object errorMessage = freezed,
   }) {
     return _then(SearchFailure<T>(
-      type: type == freezed ? _value.type : type as String,
+      parameter: parameter == freezed ? _value.parameter : parameter as String,
       failedValue:
-          failedValue == freezed ? _value.failedValue : failedValue as String,
+          failedValue == freezed ? _value.failedValue : failedValue as dynamic,
+      errorMessage: errorMessage == freezed
+          ? _value.errorMessage
+          : errorMessage as String,
     ));
   }
 }
 
 /// @nodoc
 class _$SearchFailure<T> implements SearchFailure<T> {
-  const _$SearchFailure({@required this.type, @required this.failedValue})
-      : assert(type != null),
-        assert(failedValue != null);
+  const _$SearchFailure(
+      {@required this.parameter,
+      @required this.failedValue,
+      @required this.errorMessage})
+      : assert(parameter != null),
+        assert(failedValue != null),
+        assert(errorMessage != null);
 
   @override
-  final String type;
+  final String parameter;
   @override
-  final String failedValue;
+  final dynamic failedValue;
+  @override
+  final String errorMessage;
 
   @override
   String toString() {
-    return 'RestfulFailure<$T>.searchFailure(type: $type, failedValue: $failedValue)';
+    return 'RestfulFailure<$T>.searchFailure(parameter: $parameter, failedValue: $failedValue, errorMessage: $errorMessage)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is SearchFailure<T> &&
-            (identical(other.type, type) ||
-                const DeepCollectionEquality().equals(other.type, type)) &&
+            (identical(other.parameter, parameter) ||
+                const DeepCollectionEquality()
+                    .equals(other.parameter, parameter)) &&
             (identical(other.failedValue, failedValue) ||
                 const DeepCollectionEquality()
-                    .equals(other.failedValue, failedValue)));
+                    .equals(other.failedValue, failedValue)) &&
+            (identical(other.errorMessage, errorMessage) ||
+                const DeepCollectionEquality()
+                    .equals(other.errorMessage, errorMessage)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(type) ^
-      const DeepCollectionEquality().hash(failedValue);
+      const DeepCollectionEquality().hash(parameter) ^
+      const DeepCollectionEquality().hash(failedValue) ^
+      const DeepCollectionEquality().hash(errorMessage);
 
   @override
   $SearchFailureCopyWith<T, SearchFailure<T>> get copyWith =>
@@ -2285,7 +2339,9 @@ class _$SearchFailure<T> implements SearchFailure<T> {
     @required Result notABatchBundle(String errorComment),
     @required Result missingEntryRequest(String errorComment),
     @required Result missingRequestMethod(String errorComment),
-    @required Result searchFailure(String type, String failedValue),
+    @required
+        Result searchFailure(
+            String parameter, dynamic failedValue, String errorMessage),
   }) {
     assert(httpFailure != null);
     assert(unknownFailure != null);
@@ -2299,7 +2355,7 @@ class _$SearchFailure<T> implements SearchFailure<T> {
     assert(missingEntryRequest != null);
     assert(missingRequestMethod != null);
     assert(searchFailure != null);
-    return searchFailure(type, failedValue);
+    return searchFailure(parameter, failedValue, errorMessage);
   }
 
   @override
@@ -2316,12 +2372,13 @@ class _$SearchFailure<T> implements SearchFailure<T> {
     Result notABatchBundle(String errorComment),
     Result missingEntryRequest(String errorComment),
     Result missingRequestMethod(String errorComment),
-    Result searchFailure(String type, String failedValue),
+    Result searchFailure(
+        String parameter, dynamic failedValue, String errorMessage),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (searchFailure != null) {
-      return searchFailure(type, failedValue);
+      return searchFailure(parameter, failedValue, errorMessage);
     }
     return orElse();
   }
@@ -2384,10 +2441,12 @@ class _$SearchFailure<T> implements SearchFailure<T> {
 
 abstract class SearchFailure<T> implements RestfulFailure<T> {
   const factory SearchFailure(
-      {@required String type,
-      @required String failedValue}) = _$SearchFailure<T>;
+      {@required String parameter,
+      @required dynamic failedValue,
+      @required String errorMessage}) = _$SearchFailure<T>;
 
-  String get type;
-  String get failedValue;
+  String get parameter;
+  dynamic get failedValue;
+  String get errorMessage;
   $SearchFailureCopyWith<T, SearchFailure<T>> get copyWith;
 }

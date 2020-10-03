@@ -19,8 +19,7 @@ class Dstu2SearchParameters {
   // List<SearchString> searchHas;
   //List<SearchToken> searchType;
 
-  Either<RestfulFailure<dynamic>, String> searchString() =>
-      _parametersToString(this);
+  Either<SearchFailure, String> searchString() => _parametersToString(this);
 }
 
 class Stu3SearchParameters {
@@ -35,8 +34,7 @@ class Stu3SearchParameters {
   // List<SearchString> searchHas;
   //List<SearchToken> searchType;
 
-  Either<RestfulFailure<dynamic>, String> searchString() =>
-      _parametersToString(this);
+  Either<SearchFailure, String> searchString() => _parametersToString(this);
 }
 
 class R4SearchParameters {
@@ -51,8 +49,7 @@ class R4SearchParameters {
   // List<SearchString> searchHas;
   //List<SearchToken> searchType;
 
-  Either<RestfulFailure<dynamic>, String> searchString() =>
-      _parametersToString(this);
+  Either<SearchFailure, String> searchString() => _parametersToString(this);
 }
 
 class R5SearchParameters {
@@ -67,33 +64,35 @@ class R5SearchParameters {
   // List<SearchString> searchHas;
   //List<SearchToken> searchType;
 
-  Either<RestfulFailure<dynamic>, String> searchString() =>
-      _parametersToString(this);
+  Either<SearchFailure, String> searchString() => _parametersToString(this);
 }
 
-Either<RestfulFailure, String> _parametersToString(dynamic search) {
+Either<SearchFailure, String> _parametersToString(dynamic search) {
   var parameterString = '';
   if (search.searchId != null) {
     for (Id id in search.searchId) {
       if (id.value.isLeft()) {
-        return left(RestfulFailure.searchFailure(
-            type: 'Id', failedValue: 'Invalid Id: ${id.value}'));
+        return left(SearchFailure(
+            parameter: '_id',
+            failedValue: id,
+            errorMessage:
+                'Parameter _id invalid: ${id.value.fold((l) => l.failedValue, (r) => '')}'));
       } else {
         parameterString += id.value.fold((l) => '', (r) => '&_id=$id');
       }
     }
   }
-  if (search.searchLastUpdated != null) {
-    for (var i in search.searchLastUpdated) {
-      Either<RestfulFailure, String> lastUpdated = i.searchString();
-      if (lastUpdated.isLeft()) {
-        return lastUpdated;
-      } else {
-        parameterString +=
-            lastUpdated.fold((l) => '', (r) => '&_lastUpdated$r');
-      }
-    }
-  }
+  // if (search.searchLastUpdated != null) {
+  //   for (var i in search.searchLastUpdated) {
+  //     Either<RestfulFailure, String> lastUpdated = i.searchString();
+  //     if (lastUpdated.isLeft()) {
+  //       return lastUpdated;
+  //     } else {
+  //       parameterString +=
+  //           lastUpdated.fold((l) => '', (r) => '&_lastUpdated$r');
+  //     }
+  //   }
+  // }
   // if (search.searchTag != null) {
   //   for (var i in search.searchTag) {
   //     Either<RestfulFailure, String> tag = i.searchString();

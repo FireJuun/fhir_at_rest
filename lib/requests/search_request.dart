@@ -48,7 +48,7 @@ abstract class SearchRequest with _$SearchRequest {
     R5SearchParameters parameters,
   }) = _SearchRequestR5;
 
-  Future<Either<RestfulFailure, dynamic>> request() async {
+  Future<Either<RestfulFailure<dynamic>, dynamic>> request() async {
     var thisRequest = this.map(
       dstu2: (req) => '${base}/${enumToString(req.type)}',
       stu3: (req) => '${base}/${enumToString(req.type)}',
@@ -65,11 +65,22 @@ abstract class SearchRequest with _$SearchRequest {
       r4: (req) => req.parameters.searchString(),
       r5: (req) => req.parameters.searchString(),
     );
-    if (parametersString.isLeft()) {
-      return parametersString;
-    } else {
-      thisRequest += parametersString.fold((l) => '', (r) => r);
-    }
+    print(parametersString);
+
+    final validatedParameters = parametersString.fold((l) => l, (r) => r);
+    print(validatedParameters.runtimeType == SearchFailure);
+    // print(validatedParameters is RestfulFailure.;
+    print(validatedParameters.runtimeType);
+
+    // if (parametersString is String) {
+    //   thisRequest += parametersString;
+    // } else {
+    //   print(parametersString.type);
+    //   // return left(RestfulFailure.searchFailure(
+    //   //     type: (parametersString as SearchFailure).type,
+    //   //     failedValue: (parametersString as SearchFailure).failedValue));
+    // }
+
     final result = await makeRequest(get, thisRequest);
 
     // for testing purposes
