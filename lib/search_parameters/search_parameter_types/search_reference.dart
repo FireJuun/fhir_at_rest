@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:fhir/primitive_types/primitive_types.dart';
-import 'package:fhir_at_rest/enums/enums.dart';
 
+import '../../enums/enums.dart';
 import '../../failures/restful_failure.dart';
 import 'search_objects.dart';
 

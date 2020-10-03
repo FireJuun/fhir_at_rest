@@ -2,173 +2,178 @@ import 'dart:mirrors';
 
 import 'package:dartz/dartz.dart';
 import 'package:fhir/primitive_types/primitive_types.dart';
-import 'package:fhir_at_rest/failures/restful_failure.dart';
 
-import 'search_parameter_types/search_parameter_types.dart';
+import '../search_parameters/search_parameter_types/search_parameter_types.dart';
+import '../enums/enums.dart';
+import '../failures/restful_failure.dart';
 
-abstract class Dstu2SearchParameters {
-  List<SearchToken> searchId;
-  List<Date> searchLastUpdated;
-  List<SearchToken> searchTag;
-  List<SearchUri> searchProfile;
-  List<SearchToken> searchSecurity;
-  List<SearchString> searchText;
-  List<SearchString> searchContent;
-  List<SearchString> searchList;
-  List<String> searchHas;
-  List<SearchToken> searchType;
+class Dstu2SearchParameters {
+  List<Id> searchId;
+  List<SearchDate> searchLastUpdated;
+  //List<SearchToken> searchTag;
+  //List<SearchUri> searchProfile;
+  //List<SearchToken> searchSecurity;
+  //List<String> searchText;
+  //List<String> searchContent;
+  //List<SearchString> searchList;
+  // List<SearchString> searchHas;
+  //List<SearchToken> searchType;
 
-  Either<RestfulFailure, String> searchString() => _parametersToString(this);
+  Either<RestfulFailure<dynamic>, String> searchString() =>
+      _parametersToString(this);
 }
 
-abstract class Stu3SearchParameters {
-  List<SearchToken> searchId;
-  List<Date> searchLastUpdated;
-  List<SearchToken> searchTag;
-  List<SearchUri> searchProfile;
-  List<SearchToken> searchSecurity;
-  List<SearchString> searchText;
-  List<SearchString> searchContent;
-  List<SearchString> searchList;
-  List<String> searchHas;
-  List<SearchToken> searchType;
+class Stu3SearchParameters {
+  List<Id> searchId;
+  List<SearchDate> searchLastUpdated;
+  //List<SearchToken> searchTag;
+  //List<SearchUri> searchProfile;
+  //List<SearchToken> searchSecurity;
+  //List<String> searchText;
+  //List<String> searchContent;
+  //List<SearchString> searchList;
+  // List<SearchString> searchHas;
+  //List<SearchToken> searchType;
 
-  Either<RestfulFailure, String> searchString() => _parametersToString(this);
+  Either<RestfulFailure<dynamic>, String> searchString() =>
+      _parametersToString(this);
 }
 
-abstract class R4SearchParameters {
-  List<SearchToken> searchId;
-  List<Date> searchLastUpdated;
-  List<SearchToken> searchTag;
-  List<SearchUri> searchProfile;
-  List<SearchToken> searchSecurity;
-  List<SearchString> searchText;
-  List<SearchString> searchContent;
-  List<SearchString> searchList;
-  List<String> searchHas;
-  List<SearchToken> searchType;
+class R4SearchParameters {
+  List<Id> searchId;
+  List<SearchDate> searchLastUpdated;
+  //List<SearchToken> searchTag;
+  //List<SearchUri> searchProfile;
+  //List<SearchToken> searchSecurity;
+  //List<String> searchText;
+  //List<String> searchContent;
+  //List<SearchString> searchList;
+  // List<SearchString> searchHas;
+  //List<SearchToken> searchType;
 
-  Either<RestfulFailure, String> searchString() => _parametersToString(this);
+  Either<RestfulFailure<dynamic>, String> searchString() =>
+      _parametersToString(this);
 }
 
-abstract class R5SearchParameters {
-  List<SearchToken> searchId;
-  List<Date> searchLastUpdated;
-  List<SearchToken> searchTag;
-  List<SearchUri> searchProfile;
-  List<SearchToken> searchSecurity;
-  List<SearchString> searchText;
-  List<SearchString> searchContent;
-  List<SearchString> searchList;
-  List<String> searchHas;
-  List<SearchToken> searchType;
+class R5SearchParameters {
+  List<Id> searchId;
+  List<SearchDate> searchLastUpdated;
+  //List<SearchToken> searchTag;
+  //List<SearchUri> searchProfile;
+  //List<SearchToken> searchSecurity;
+  //List<String> searchText;
+  //List<String> searchContent;
+  //List<SearchString> searchList;
+  // List<SearchString> searchHas;
+  //List<SearchToken> searchType;
 
-  Either<RestfulFailure, String> searchString() => _parametersToString(this);
+  Either<RestfulFailure<dynamic>, String> searchString() =>
+      _parametersToString(this);
 }
 
 Either<RestfulFailure, String> _parametersToString(dynamic search) {
   var parameterString = '';
-  var validValue;
   if (search.searchId != null) {
-    for (var i in search.searchId) {
-      Either<RestfulFailure, String> validValue = i.searchString();
-      if (validValue.isLeft()) {
-        return validValue;
+    for (Id id in search.searchId) {
+      if (id.value.isLeft()) {
+        return left(RestfulFailure.searchFailure(
+            type: 'Id', failedValue: 'Invalid Id: ${id.value}'));
       } else {
-        parameterString += validValue.fold((l) => '', (r) => '&$r');
+        parameterString += id.value.fold((l) => '', (r) => '&_id=$id');
       }
     }
   }
   if (search.searchLastUpdated != null) {
     for (var i in search.searchLastUpdated) {
-      validValue = i.searchString();
-      if (validValue.isLeft()) {
-        return validValue;
+      Either<RestfulFailure, String> lastUpdated = i.searchString();
+      if (lastUpdated.isLeft()) {
+        return lastUpdated;
       } else {
-        parameterString += ('&_lastUpdated=${validValue.value}');
+        parameterString +=
+            lastUpdated.fold((l) => '', (r) => '&_lastUpdated$r');
       }
     }
   }
-  if (search.searchTag != null) {
-    for (var i in search.searchTag) {
-      validValue = i.searchString();
-      if (validValue.isLeft()) {
-        return validValue;
-      } else {
-        parameterString += ('&_tag=${validValue.value}');
-      }
-    }
-  }
-  if (search.searchProfile != null) {
-    for (var i in search.searchProfile) {
-      validValue = i.searchString();
-      if (validValue.isLeft()) {
-        return validValue;
-      } else {
-        parameterString += ('&_profile=${validValue.value}');
-      }
-    }
-  }
-  if (search.searchSecurity != null) {
-    for (var i in search.searchSecurity) {
-      validValue = i.searchString();
-      if (validValue.isLeft()) {
-        return validValue;
-      } else {
-        parameterString += ('&_security=${validValue.value}');
-      }
-    }
-  }
-  if (search.searchText != null) {
-    for (var i in search.searchText) {
-      validValue = i.searchString();
-      if (validValue.isLeft()) {
-        return validValue;
-      } else {
-        parameterString += ('&_text=${validValue.value}');
-      }
-    }
-  }
-  if (search.searchContent != null) {
-    for (var i in search.searchContent) {
-      validValue = i.searchString();
-      if (validValue.isLeft()) {
-        return validValue;
-      } else {
-        parameterString += ('&_content=${validValue.value}');
-      }
-    }
-  }
-  if (search.searchList != null) {
-    for (var i in search.searchList) {
-      validValue = i.searchString();
-      if (validValue.isLeft()) {
-        return validValue;
-      } else {
-        parameterString += ('&_list=${validValue.value}');
-      }
-    }
-  }
-  if (search.searchHas != null) {
-    for (var i in search.searchHas) {
-      validValue = i.searchString();
-      if (validValue.isLeft()) {
-        return validValue;
-      } else {
-        parameterString += ('&_has=${i.searchString()}');
-      }
-    }
-  }
-  if (search.searchType != null) {
-    for (var i in search.searchType) {
-      validValue = i.searchString();
-      if (validValue.isLeft()) {
-        return validValue;
-      } else {
-        parameterString += ('&_type=${i.searchring()}');
-      }
-    }
-  }
+  // if (search.searchTag != null) {
+  //   for (var i in search.searchTag) {
+  //     Either<RestfulFailure, String> tag = i.searchString();
+  //     if (tag.isLeft()) {
+  //       return tag;
+  //     } else {
+  //       parameterString += tag.fold((l) => '', (r) => '&$r');
+  //     }
+  //   }
+  // }
+  // if (search.searchProfile != null) {
+  //   for (var i in search.searchProfile) {
+  //     Either<RestfulFailure, String> profile = i.searchString();
+  //     if (profile.isLeft()) {
+  //       return profile;
+  //     } else {
+  //       parameterString += profile.fold((l) => '', (r) => '&$r');
+  //     }
+  //   }
+  // }
+  // if (search.searchSecurity != null) {
+  //   for (var i in search.searchSecurity) {
+  //     Either<RestfulFailure, String> security = i.searchString();
+  //     if (security.isLeft()) {
+  //       return security;
+  //     } else {
+  //       parameterString += security.fold((l) => '', (r) => '&$r');
+  //     }
+  //   }
+  // }
+  // if (search.searchText != null) {
+  //   for (var i in search.searchText) {
+  //     Either<RestfulFailure, String> text = i.searchString();
+  //     if (text.isLeft()) {
+  //       return text;
+  //     } else {
+  //       parameterString += text.fold((l) => '', (r) => '&$r');
+  //     }
+  //   }
+  // }
+  // if (search.searchContent != null) {
+  //   for (var i in search.searchContent) {
+  //     Either<RestfulFailure, String> content = i.searchString();
+  //     if (content.isLeft()) {
+  //       return content;
+  //     } else {
+  //       parameterString += content.fold((l) => '', (r) => '&$r');
+  //     }
+  //   }
+  // }
+  // if (search.searchList != null) {
+  //   for (var i in search.searchList) {
+  //     Either<RestfulFailure, String> searchLIst = i.searchString();
+  //     if (searchLIst.isLeft()) {
+  //       return searchLIst;
+  //     } else {
+  //       parameterString += searchLIst.fold((l) => '', (r) => '&$r');
+  //     }
+  //   }
+  // }
+  // if (search.searchHas != null) {
+  //   for (var i in search.searchHas) {
+  //     Either<RestfulFailure, String> has = i.searchString();
+  //     if (has.isLeft()) {
+  //       return has;
+  //     } else {
+  //       parameterString += has.fold((l) => '', (r) => '&$r');
+  //     }
+  //   }
+  // }
+  // if (search.searchType != null) {
+  //   for (var i in search.searchType) {
+  //     Either<RestfulFailure, String> type = i.searchString();
+  //     if (type.isLeft()) {
+  //       return type;
+  //     } else {
+  //       parameterString += type.fold((l) => '', (r) => '&$r');
+  //     }
+  //   }
+  // }
   InstanceMirror parameters = reflect(search);
   ClassMirror par = parameters.type;
   for (var v in par.declarations.values) {
@@ -178,7 +183,10 @@ Either<RestfulFailure, String> _parametersToString(dynamic search) {
         for (var n in m.reflectee) {
           if (!_commonParameters
               .contains('${MirrorSystem.getName(v.simpleName)}')) {
-            parameterString += '&${MirrorSystem.getName(v.simpleName)}$n';
+            parameterString += n.searchString().fold(
+                (l) => '',
+                (r) =>
+                    '&${simpleEnumToString(MirrorSystem.getName(v.simpleName)).replaceAll('_', '-')}$r');
           }
         }
       }

@@ -41,15 +41,15 @@ class SearchToken extends SearchObject<String> {
             failedValue:
                 'Invalid system: ${system.value}\nInvalid code: ${code.value}'));
       } else if (system.value.isLeft()) {
-        returnString = '=${code.toString()}';
+        returnString = '${code.toString()}=$value';
       } else if (code.value.isLeft()) {
-        returnString = '=${system.toString()}';
+        returnString = '${system.toString()}=$value';
       } else
-        returnString = '=${system.toString()}|${code.toString()}';
+        returnString = '${system.toString()}|${code.toString()}=$value';
     } else if (system != null) {
-      returnString = '=${system.toString()}';
+      returnString = '${system.toString()}=$value';
     } else {
-      returnString = '=${code.toString()}';
+      returnString = '${code.toString()}=$value';
     }
 
     final missingString = missing == null ? '' : ':missing=$missing';

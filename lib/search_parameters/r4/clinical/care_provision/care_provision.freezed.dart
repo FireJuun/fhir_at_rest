@@ -15,16 +15,8 @@ class _$ServiceRequestSearchTearOff {
 
 // ignore: unused_element
   _ServiceRequestSearch call(
-      {List<SearchToken> searchId,
-      List<Date> searchLastUpdated,
-      List<SearchToken> searchTag,
-      List<SearchUri> searchProfile,
-      List<SearchToken> searchSecurity,
-      List<SearchString> searchText,
-      List<SearchString> searchContent,
-      List<SearchString> searchList,
-      List<String> searchHas,
-      List<SearchToken> searchType,
+      {List<Id> searchId,
+      List<SearchDate> searchLastUpdated,
       List<SearchToken> code,
       List<SearchToken> identifier,
       List<String> patient,
@@ -49,14 +41,6 @@ class _$ServiceRequestSearchTearOff {
     return _ServiceRequestSearch(
       searchId: searchId,
       searchLastUpdated: searchLastUpdated,
-      searchTag: searchTag,
-      searchProfile: searchProfile,
-      searchSecurity: searchSecurity,
-      searchText: searchText,
-      searchContent: searchContent,
-      searchList: searchList,
-      searchHas: searchHas,
-      searchType: searchType,
       code: code,
       identifier: identifier,
       patient: patient,
@@ -88,16 +72,15 @@ const $ServiceRequestSearch = _$ServiceRequestSearchTearOff();
 
 /// @nodoc
 mixin _$ServiceRequestSearch {
-  List<SearchToken> get searchId;
-  List<Date> get searchLastUpdated;
-  List<SearchToken> get searchTag;
-  List<SearchUri> get searchProfile;
-  List<SearchToken> get searchSecurity;
-  List<SearchString> get searchText;
-  List<SearchString> get searchContent;
-  List<SearchString> get searchList;
-  List<String> get searchHas;
-  List<SearchToken> get searchType;
+  List<Id> get searchId;
+  List<SearchDate> get searchLastUpdated; //List<SearchToken> searchTag,
+//List<SearchUri> searchProfile,
+//List<SearchToken> searchSecurity,
+//List<String> searchText,
+//List<String> searchContent,
+//List<SearchString> searchList,
+// List<SearchString> searchHas,
+//List<SearchToken> searchType,
   List<SearchToken> get code;
   List<SearchToken> get identifier;
   List<String> get patient;
@@ -129,16 +112,8 @@ abstract class $ServiceRequestSearchCopyWith<$Res> {
           $Res Function(ServiceRequestSearch) then) =
       _$ServiceRequestSearchCopyWithImpl<$Res>;
   $Res call(
-      {List<SearchToken> searchId,
-      List<Date> searchLastUpdated,
-      List<SearchToken> searchTag,
-      List<SearchUri> searchProfile,
-      List<SearchToken> searchSecurity,
-      List<SearchString> searchText,
-      List<SearchString> searchContent,
-      List<SearchString> searchList,
-      List<String> searchHas,
-      List<SearchToken> searchType,
+      {List<Id> searchId,
+      List<SearchDate> searchLastUpdated,
       List<SearchToken> code,
       List<SearchToken> identifier,
       List<String> patient,
@@ -175,14 +150,6 @@ class _$ServiceRequestSearchCopyWithImpl<$Res>
   $Res call({
     Object searchId = freezed,
     Object searchLastUpdated = freezed,
-    Object searchTag = freezed,
-    Object searchProfile = freezed,
-    Object searchSecurity = freezed,
-    Object searchText = freezed,
-    Object searchContent = freezed,
-    Object searchList = freezed,
-    Object searchHas = freezed,
-    Object searchType = freezed,
     Object code = freezed,
     Object identifier = freezed,
     Object patient = freezed,
@@ -206,34 +173,10 @@ class _$ServiceRequestSearchCopyWithImpl<$Res>
     Object subject = freezed,
   }) {
     return _then(_value.copyWith(
-      searchId:
-          searchId == freezed ? _value.searchId : searchId as List<SearchToken>,
+      searchId: searchId == freezed ? _value.searchId : searchId as List<Id>,
       searchLastUpdated: searchLastUpdated == freezed
           ? _value.searchLastUpdated
-          : searchLastUpdated as List<Date>,
-      searchTag: searchTag == freezed
-          ? _value.searchTag
-          : searchTag as List<SearchToken>,
-      searchProfile: searchProfile == freezed
-          ? _value.searchProfile
-          : searchProfile as List<SearchUri>,
-      searchSecurity: searchSecurity == freezed
-          ? _value.searchSecurity
-          : searchSecurity as List<SearchToken>,
-      searchText: searchText == freezed
-          ? _value.searchText
-          : searchText as List<SearchString>,
-      searchContent: searchContent == freezed
-          ? _value.searchContent
-          : searchContent as List<SearchString>,
-      searchList: searchList == freezed
-          ? _value.searchList
-          : searchList as List<SearchString>,
-      searchHas:
-          searchHas == freezed ? _value.searchHas : searchHas as List<String>,
-      searchType: searchType == freezed
-          ? _value.searchType
-          : searchType as List<SearchToken>,
+          : searchLastUpdated as List<SearchDate>,
       code: code == freezed ? _value.code : code as List<SearchToken>,
       identifier: identifier == freezed
           ? _value.identifier
@@ -290,16 +233,8 @@ abstract class _$ServiceRequestSearchCopyWith<$Res>
       __$ServiceRequestSearchCopyWithImpl<$Res>;
   @override
   $Res call(
-      {List<SearchToken> searchId,
-      List<Date> searchLastUpdated,
-      List<SearchToken> searchTag,
-      List<SearchUri> searchProfile,
-      List<SearchToken> searchSecurity,
-      List<SearchString> searchText,
-      List<SearchString> searchContent,
-      List<SearchString> searchList,
-      List<String> searchHas,
-      List<SearchToken> searchType,
+      {List<Id> searchId,
+      List<SearchDate> searchLastUpdated,
       List<SearchToken> code,
       List<SearchToken> identifier,
       List<String> patient,
@@ -338,14 +273,6 @@ class __$ServiceRequestSearchCopyWithImpl<$Res>
   $Res call({
     Object searchId = freezed,
     Object searchLastUpdated = freezed,
-    Object searchTag = freezed,
-    Object searchProfile = freezed,
-    Object searchSecurity = freezed,
-    Object searchText = freezed,
-    Object searchContent = freezed,
-    Object searchList = freezed,
-    Object searchHas = freezed,
-    Object searchType = freezed,
     Object code = freezed,
     Object identifier = freezed,
     Object patient = freezed,
@@ -369,34 +296,10 @@ class __$ServiceRequestSearchCopyWithImpl<$Res>
     Object subject = freezed,
   }) {
     return _then(_ServiceRequestSearch(
-      searchId:
-          searchId == freezed ? _value.searchId : searchId as List<SearchToken>,
+      searchId: searchId == freezed ? _value.searchId : searchId as List<Id>,
       searchLastUpdated: searchLastUpdated == freezed
           ? _value.searchLastUpdated
-          : searchLastUpdated as List<Date>,
-      searchTag: searchTag == freezed
-          ? _value.searchTag
-          : searchTag as List<SearchToken>,
-      searchProfile: searchProfile == freezed
-          ? _value.searchProfile
-          : searchProfile as List<SearchUri>,
-      searchSecurity: searchSecurity == freezed
-          ? _value.searchSecurity
-          : searchSecurity as List<SearchToken>,
-      searchText: searchText == freezed
-          ? _value.searchText
-          : searchText as List<SearchString>,
-      searchContent: searchContent == freezed
-          ? _value.searchContent
-          : searchContent as List<SearchString>,
-      searchList: searchList == freezed
-          ? _value.searchList
-          : searchList as List<SearchString>,
-      searchHas:
-          searchHas == freezed ? _value.searchHas : searchHas as List<String>,
-      searchType: searchType == freezed
-          ? _value.searchType
-          : searchType as List<SearchToken>,
+          : searchLastUpdated as List<SearchDate>,
       code: code == freezed ? _value.code : code as List<SearchToken>,
       identifier: identifier == freezed
           ? _value.identifier
@@ -450,14 +353,6 @@ class _$_ServiceRequestSearch extends _ServiceRequestSearch {
   _$_ServiceRequestSearch(
       {this.searchId,
       this.searchLastUpdated,
-      this.searchTag,
-      this.searchProfile,
-      this.searchSecurity,
-      this.searchText,
-      this.searchContent,
-      this.searchList,
-      this.searchHas,
-      this.searchType,
       this.code,
       this.identifier,
       this.patient,
@@ -482,26 +377,17 @@ class _$_ServiceRequestSearch extends _ServiceRequestSearch {
       : super._();
 
   @override
-  final List<SearchToken> searchId;
+  final List<Id> searchId;
   @override
-  final List<Date> searchLastUpdated;
-  @override
-  final List<SearchToken> searchTag;
-  @override
-  final List<SearchUri> searchProfile;
-  @override
-  final List<SearchToken> searchSecurity;
-  @override
-  final List<SearchString> searchText;
-  @override
-  final List<SearchString> searchContent;
-  @override
-  final List<SearchString> searchList;
-  @override
-  final List<String> searchHas;
-  @override
-  final List<SearchToken> searchType;
-  @override
+  final List<SearchDate> searchLastUpdated;
+  @override //List<SearchToken> searchTag,
+//List<SearchUri> searchProfile,
+//List<SearchToken> searchSecurity,
+//List<String> searchText,
+//List<String> searchContent,
+//List<SearchString> searchList,
+// List<SearchString> searchHas,
+//List<SearchToken> searchType,
   final List<SearchToken> code;
   @override
   final List<SearchToken> identifier;
@@ -546,7 +432,7 @@ class _$_ServiceRequestSearch extends _ServiceRequestSearch {
 
   @override
   String toString() {
-    return 'ServiceRequestSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, code: $code, identifier: $identifier, patient: $patient, encounter: $encounter, authored: $authored, based_on: $based_on, body_site: $body_site, category: $category, instantiates_canonical: $instantiates_canonical, instantiates_uri: $instantiates_uri, intent: $intent, occurrence: $occurrence, performer: $performer, performer_type: $performer_type, priority: $priority, replaces: $replaces, requester: $requester, requisition: $requisition, specimen: $specimen, status: $status, subject: $subject)';
+    return 'ServiceRequestSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, code: $code, identifier: $identifier, patient: $patient, encounter: $encounter, authored: $authored, based_on: $based_on, body_site: $body_site, category: $category, instantiates_canonical: $instantiates_canonical, instantiates_uri: $instantiates_uri, intent: $intent, occurrence: $occurrence, performer: $performer, performer_type: $performer_type, priority: $priority, replaces: $replaces, requester: $requester, requisition: $requisition, specimen: $specimen, status: $status, subject: $subject)';
   }
 
   @override
@@ -559,30 +445,6 @@ class _$_ServiceRequestSearch extends _ServiceRequestSearch {
             (identical(other.searchLastUpdated, searchLastUpdated) ||
                 const DeepCollectionEquality()
                     .equals(other.searchLastUpdated, searchLastUpdated)) &&
-            (identical(other.searchTag, searchTag) ||
-                const DeepCollectionEquality()
-                    .equals(other.searchTag, searchTag)) &&
-            (identical(other.searchProfile, searchProfile) ||
-                const DeepCollectionEquality()
-                    .equals(other.searchProfile, searchProfile)) &&
-            (identical(other.searchSecurity, searchSecurity) ||
-                const DeepCollectionEquality()
-                    .equals(other.searchSecurity, searchSecurity)) &&
-            (identical(other.searchText, searchText) ||
-                const DeepCollectionEquality()
-                    .equals(other.searchText, searchText)) &&
-            (identical(other.searchContent, searchContent) ||
-                const DeepCollectionEquality()
-                    .equals(other.searchContent, searchContent)) &&
-            (identical(other.searchList, searchList) ||
-                const DeepCollectionEquality()
-                    .equals(other.searchList, searchList)) &&
-            (identical(other.searchHas, searchHas) ||
-                const DeepCollectionEquality()
-                    .equals(other.searchHas, searchHas)) &&
-            (identical(other.searchType, searchType) ||
-                const DeepCollectionEquality()
-                    .equals(other.searchType, searchType)) &&
             (identical(other.code, code) ||
                 const DeepCollectionEquality().equals(other.code, code)) &&
             (identical(other.identifier, identifier) ||
@@ -618,15 +480,30 @@ class _$_ServiceRequestSearch extends _ServiceRequestSearch {
                 const DeepCollectionEquality()
                     .equals(other.occurrence, occurrence)) &&
             (identical(other.performer, performer) ||
-                const DeepCollectionEquality().equals(other.performer, performer)) &&
-            (identical(other.performer_type, performer_type) || const DeepCollectionEquality().equals(other.performer_type, performer_type)) &&
-            (identical(other.priority, priority) || const DeepCollectionEquality().equals(other.priority, priority)) &&
-            (identical(other.replaces, replaces) || const DeepCollectionEquality().equals(other.replaces, replaces)) &&
-            (identical(other.requester, requester) || const DeepCollectionEquality().equals(other.requester, requester)) &&
-            (identical(other.requisition, requisition) || const DeepCollectionEquality().equals(other.requisition, requisition)) &&
-            (identical(other.specimen, specimen) || const DeepCollectionEquality().equals(other.specimen, specimen)) &&
-            (identical(other.status, status) || const DeepCollectionEquality().equals(other.status, status)) &&
-            (identical(other.subject, subject) || const DeepCollectionEquality().equals(other.subject, subject)));
+                const DeepCollectionEquality()
+                    .equals(other.performer, performer)) &&
+            (identical(other.performer_type, performer_type) ||
+                const DeepCollectionEquality()
+                    .equals(other.performer_type, performer_type)) &&
+            (identical(other.priority, priority) ||
+                const DeepCollectionEquality()
+                    .equals(other.priority, priority)) &&
+            (identical(other.replaces, replaces) ||
+                const DeepCollectionEquality()
+                    .equals(other.replaces, replaces)) &&
+            (identical(other.requester, requester) ||
+                const DeepCollectionEquality()
+                    .equals(other.requester, requester)) &&
+            (identical(other.requisition, requisition) ||
+                const DeepCollectionEquality()
+                    .equals(other.requisition, requisition)) &&
+            (identical(other.specimen, specimen) ||
+                const DeepCollectionEquality()
+                    .equals(other.specimen, specimen)) &&
+            (identical(other.status, status) ||
+                const DeepCollectionEquality().equals(other.status, status)) &&
+            (identical(other.subject, subject) ||
+                const DeepCollectionEquality().equals(other.subject, subject)));
   }
 
   @override
@@ -634,14 +511,6 @@ class _$_ServiceRequestSearch extends _ServiceRequestSearch {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(searchId) ^
       const DeepCollectionEquality().hash(searchLastUpdated) ^
-      const DeepCollectionEquality().hash(searchTag) ^
-      const DeepCollectionEquality().hash(searchProfile) ^
-      const DeepCollectionEquality().hash(searchSecurity) ^
-      const DeepCollectionEquality().hash(searchText) ^
-      const DeepCollectionEquality().hash(searchContent) ^
-      const DeepCollectionEquality().hash(searchList) ^
-      const DeepCollectionEquality().hash(searchHas) ^
-      const DeepCollectionEquality().hash(searchType) ^
       const DeepCollectionEquality().hash(code) ^
       const DeepCollectionEquality().hash(identifier) ^
       const DeepCollectionEquality().hash(patient) ^
@@ -673,16 +542,8 @@ class _$_ServiceRequestSearch extends _ServiceRequestSearch {
 abstract class _ServiceRequestSearch extends ServiceRequestSearch {
   _ServiceRequestSearch._() : super._();
   factory _ServiceRequestSearch(
-      {List<SearchToken> searchId,
-      List<Date> searchLastUpdated,
-      List<SearchToken> searchTag,
-      List<SearchUri> searchProfile,
-      List<SearchToken> searchSecurity,
-      List<SearchString> searchText,
-      List<SearchString> searchContent,
-      List<SearchString> searchList,
-      List<String> searchHas,
-      List<SearchToken> searchType,
+      {List<Id> searchId,
+      List<SearchDate> searchLastUpdated,
       List<SearchToken> code,
       List<SearchToken> identifier,
       List<String> patient,
@@ -706,26 +567,17 @@ abstract class _ServiceRequestSearch extends ServiceRequestSearch {
       List<String> subject}) = _$_ServiceRequestSearch;
 
   @override
-  List<SearchToken> get searchId;
+  List<Id> get searchId;
   @override
-  List<Date> get searchLastUpdated;
-  @override
-  List<SearchToken> get searchTag;
-  @override
-  List<SearchUri> get searchProfile;
-  @override
-  List<SearchToken> get searchSecurity;
-  @override
-  List<SearchString> get searchText;
-  @override
-  List<SearchString> get searchContent;
-  @override
-  List<SearchString> get searchList;
-  @override
-  List<String> get searchHas;
-  @override
-  List<SearchToken> get searchType;
-  @override
+  List<SearchDate> get searchLastUpdated;
+  @override //List<SearchToken> searchTag,
+//List<SearchUri> searchProfile,
+//List<SearchToken> searchSecurity,
+//List<String> searchText,
+//List<String> searchContent,
+//List<SearchString> searchList,
+// List<SearchString> searchHas,
+//List<SearchToken> searchType,
   List<SearchToken> get code;
   @override
   List<SearchToken> get identifier;
@@ -777,16 +629,8 @@ class _$CarePlanSearchTearOff {
 
 // ignore: unused_element
   _CarePlanSearch call(
-      {List<SearchToken> searchId,
-      List<Date> searchLastUpdated,
-      List<SearchToken> searchTag,
-      List<SearchUri> searchProfile,
-      List<SearchToken> searchSecurity,
-      List<SearchString> searchText,
-      List<SearchString> searchContent,
-      List<SearchString> searchList,
-      List<String> searchHas,
-      List<SearchToken> searchType,
+      {List<Id> searchId,
+      List<SearchDate> searchLastUpdated,
       List<SearchDate> date,
       List<SearchToken> identifier,
       List<String> patient,
@@ -810,14 +654,6 @@ class _$CarePlanSearchTearOff {
     return _CarePlanSearch(
       searchId: searchId,
       searchLastUpdated: searchLastUpdated,
-      searchTag: searchTag,
-      searchProfile: searchProfile,
-      searchSecurity: searchSecurity,
-      searchText: searchText,
-      searchContent: searchContent,
-      searchList: searchList,
-      searchHas: searchHas,
-      searchType: searchType,
       date: date,
       identifier: identifier,
       patient: patient,
@@ -848,16 +684,15 @@ const $CarePlanSearch = _$CarePlanSearchTearOff();
 
 /// @nodoc
 mixin _$CarePlanSearch {
-  List<SearchToken> get searchId;
-  List<Date> get searchLastUpdated;
-  List<SearchToken> get searchTag;
-  List<SearchUri> get searchProfile;
-  List<SearchToken> get searchSecurity;
-  List<SearchString> get searchText;
-  List<SearchString> get searchContent;
-  List<SearchString> get searchList;
-  List<String> get searchHas;
-  List<SearchToken> get searchType;
+  List<Id> get searchId;
+  List<SearchDate> get searchLastUpdated; //List<SearchToken> searchTag,
+//List<SearchUri> searchProfile,
+//List<SearchToken> searchSecurity,
+//List<String> searchText,
+//List<String> searchContent,
+//List<SearchString> searchList,
+// List<SearchString> searchHas,
+//List<SearchToken> searchType,
   List<SearchDate> get date;
   List<SearchToken> get identifier;
   List<String> get patient;
@@ -888,16 +723,8 @@ abstract class $CarePlanSearchCopyWith<$Res> {
           CarePlanSearch value, $Res Function(CarePlanSearch) then) =
       _$CarePlanSearchCopyWithImpl<$Res>;
   $Res call(
-      {List<SearchToken> searchId,
-      List<Date> searchLastUpdated,
-      List<SearchToken> searchTag,
-      List<SearchUri> searchProfile,
-      List<SearchToken> searchSecurity,
-      List<SearchString> searchText,
-      List<SearchString> searchContent,
-      List<SearchString> searchList,
-      List<String> searchHas,
-      List<SearchToken> searchType,
+      {List<Id> searchId,
+      List<SearchDate> searchLastUpdated,
       List<SearchDate> date,
       List<SearchToken> identifier,
       List<String> patient,
@@ -933,14 +760,6 @@ class _$CarePlanSearchCopyWithImpl<$Res>
   $Res call({
     Object searchId = freezed,
     Object searchLastUpdated = freezed,
-    Object searchTag = freezed,
-    Object searchProfile = freezed,
-    Object searchSecurity = freezed,
-    Object searchText = freezed,
-    Object searchContent = freezed,
-    Object searchList = freezed,
-    Object searchHas = freezed,
-    Object searchType = freezed,
     Object date = freezed,
     Object identifier = freezed,
     Object patient = freezed,
@@ -963,34 +782,10 @@ class _$CarePlanSearchCopyWithImpl<$Res>
     Object subject = freezed,
   }) {
     return _then(_value.copyWith(
-      searchId:
-          searchId == freezed ? _value.searchId : searchId as List<SearchToken>,
+      searchId: searchId == freezed ? _value.searchId : searchId as List<Id>,
       searchLastUpdated: searchLastUpdated == freezed
           ? _value.searchLastUpdated
-          : searchLastUpdated as List<Date>,
-      searchTag: searchTag == freezed
-          ? _value.searchTag
-          : searchTag as List<SearchToken>,
-      searchProfile: searchProfile == freezed
-          ? _value.searchProfile
-          : searchProfile as List<SearchUri>,
-      searchSecurity: searchSecurity == freezed
-          ? _value.searchSecurity
-          : searchSecurity as List<SearchToken>,
-      searchText: searchText == freezed
-          ? _value.searchText
-          : searchText as List<SearchString>,
-      searchContent: searchContent == freezed
-          ? _value.searchContent
-          : searchContent as List<SearchString>,
-      searchList: searchList == freezed
-          ? _value.searchList
-          : searchList as List<SearchString>,
-      searchHas:
-          searchHas == freezed ? _value.searchHas : searchHas as List<String>,
-      searchType: searchType == freezed
-          ? _value.searchType
-          : searchType as List<SearchToken>,
+          : searchLastUpdated as List<SearchDate>,
       date: date == freezed ? _value.date : date as List<SearchDate>,
       identifier: identifier == freezed
           ? _value.identifier
@@ -1042,16 +837,8 @@ abstract class _$CarePlanSearchCopyWith<$Res>
       __$CarePlanSearchCopyWithImpl<$Res>;
   @override
   $Res call(
-      {List<SearchToken> searchId,
-      List<Date> searchLastUpdated,
-      List<SearchToken> searchTag,
-      List<SearchUri> searchProfile,
-      List<SearchToken> searchSecurity,
-      List<SearchString> searchText,
-      List<SearchString> searchContent,
-      List<SearchString> searchList,
-      List<String> searchHas,
-      List<SearchToken> searchType,
+      {List<Id> searchId,
+      List<SearchDate> searchLastUpdated,
       List<SearchDate> date,
       List<SearchToken> identifier,
       List<String> patient,
@@ -1089,14 +876,6 @@ class __$CarePlanSearchCopyWithImpl<$Res>
   $Res call({
     Object searchId = freezed,
     Object searchLastUpdated = freezed,
-    Object searchTag = freezed,
-    Object searchProfile = freezed,
-    Object searchSecurity = freezed,
-    Object searchText = freezed,
-    Object searchContent = freezed,
-    Object searchList = freezed,
-    Object searchHas = freezed,
-    Object searchType = freezed,
     Object date = freezed,
     Object identifier = freezed,
     Object patient = freezed,
@@ -1119,34 +898,10 @@ class __$CarePlanSearchCopyWithImpl<$Res>
     Object subject = freezed,
   }) {
     return _then(_CarePlanSearch(
-      searchId:
-          searchId == freezed ? _value.searchId : searchId as List<SearchToken>,
+      searchId: searchId == freezed ? _value.searchId : searchId as List<Id>,
       searchLastUpdated: searchLastUpdated == freezed
           ? _value.searchLastUpdated
-          : searchLastUpdated as List<Date>,
-      searchTag: searchTag == freezed
-          ? _value.searchTag
-          : searchTag as List<SearchToken>,
-      searchProfile: searchProfile == freezed
-          ? _value.searchProfile
-          : searchProfile as List<SearchUri>,
-      searchSecurity: searchSecurity == freezed
-          ? _value.searchSecurity
-          : searchSecurity as List<SearchToken>,
-      searchText: searchText == freezed
-          ? _value.searchText
-          : searchText as List<SearchString>,
-      searchContent: searchContent == freezed
-          ? _value.searchContent
-          : searchContent as List<SearchString>,
-      searchList: searchList == freezed
-          ? _value.searchList
-          : searchList as List<SearchString>,
-      searchHas:
-          searchHas == freezed ? _value.searchHas : searchHas as List<String>,
-      searchType: searchType == freezed
-          ? _value.searchType
-          : searchType as List<SearchToken>,
+          : searchLastUpdated as List<SearchDate>,
       date: date == freezed ? _value.date : date as List<SearchDate>,
       identifier: identifier == freezed
           ? _value.identifier
@@ -1195,14 +950,6 @@ class _$_CarePlanSearch extends _CarePlanSearch {
   _$_CarePlanSearch(
       {this.searchId,
       this.searchLastUpdated,
-      this.searchTag,
-      this.searchProfile,
-      this.searchSecurity,
-      this.searchText,
-      this.searchContent,
-      this.searchList,
-      this.searchHas,
-      this.searchType,
       this.date,
       this.identifier,
       this.patient,
@@ -1226,26 +973,17 @@ class _$_CarePlanSearch extends _CarePlanSearch {
       : super._();
 
   @override
-  final List<SearchToken> searchId;
+  final List<Id> searchId;
   @override
-  final List<Date> searchLastUpdated;
-  @override
-  final List<SearchToken> searchTag;
-  @override
-  final List<SearchUri> searchProfile;
-  @override
-  final List<SearchToken> searchSecurity;
-  @override
-  final List<SearchString> searchText;
-  @override
-  final List<SearchString> searchContent;
-  @override
-  final List<SearchString> searchList;
-  @override
-  final List<String> searchHas;
-  @override
-  final List<SearchToken> searchType;
-  @override
+  final List<SearchDate> searchLastUpdated;
+  @override //List<SearchToken> searchTag,
+//List<SearchUri> searchProfile,
+//List<SearchToken> searchSecurity,
+//List<String> searchText,
+//List<String> searchContent,
+//List<SearchString> searchList,
+// List<SearchString> searchHas,
+//List<SearchToken> searchType,
   final List<SearchDate> date;
   @override
   final List<SearchToken> identifier;
@@ -1288,7 +1026,7 @@ class _$_CarePlanSearch extends _CarePlanSearch {
 
   @override
   String toString() {
-    return 'CarePlanSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, date: $date, identifier: $identifier, patient: $patient, activity_code: $activity_code, activity_date: $activity_date, activity_reference: $activity_reference, based_on: $based_on, care_team: $care_team, category: $category, condition: $condition, encounter: $encounter, goal: $goal, instantiates_canonical: $instantiates_canonical, instantiates_uri: $instantiates_uri, intent: $intent, part_of: $part_of, performer: $performer, replaces: $replaces, status: $status, subject: $subject)';
+    return 'CarePlanSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, date: $date, identifier: $identifier, patient: $patient, activity_code: $activity_code, activity_date: $activity_date, activity_reference: $activity_reference, based_on: $based_on, care_team: $care_team, category: $category, condition: $condition, encounter: $encounter, goal: $goal, instantiates_canonical: $instantiates_canonical, instantiates_uri: $instantiates_uri, intent: $intent, part_of: $part_of, performer: $performer, replaces: $replaces, status: $status, subject: $subject)';
   }
 
   @override
@@ -1301,30 +1039,6 @@ class _$_CarePlanSearch extends _CarePlanSearch {
             (identical(other.searchLastUpdated, searchLastUpdated) ||
                 const DeepCollectionEquality()
                     .equals(other.searchLastUpdated, searchLastUpdated)) &&
-            (identical(other.searchTag, searchTag) ||
-                const DeepCollectionEquality()
-                    .equals(other.searchTag, searchTag)) &&
-            (identical(other.searchProfile, searchProfile) ||
-                const DeepCollectionEquality()
-                    .equals(other.searchProfile, searchProfile)) &&
-            (identical(other.searchSecurity, searchSecurity) ||
-                const DeepCollectionEquality()
-                    .equals(other.searchSecurity, searchSecurity)) &&
-            (identical(other.searchText, searchText) ||
-                const DeepCollectionEquality()
-                    .equals(other.searchText, searchText)) &&
-            (identical(other.searchContent, searchContent) ||
-                const DeepCollectionEquality()
-                    .equals(other.searchContent, searchContent)) &&
-            (identical(other.searchList, searchList) ||
-                const DeepCollectionEquality()
-                    .equals(other.searchList, searchList)) &&
-            (identical(other.searchHas, searchHas) ||
-                const DeepCollectionEquality()
-                    .equals(other.searchHas, searchHas)) &&
-            (identical(other.searchType, searchType) ||
-                const DeepCollectionEquality()
-                    .equals(other.searchType, searchType)) &&
             (identical(other.date, date) ||
                 const DeepCollectionEquality().equals(other.date, date)) &&
             (identical(other.identifier, identifier) ||
@@ -1360,14 +1074,26 @@ class _$_CarePlanSearch extends _CarePlanSearch {
             (identical(other.goal, goal) ||
                 const DeepCollectionEquality().equals(other.goal, goal)) &&
             (identical(other.instantiates_canonical, instantiates_canonical) ||
-                const DeepCollectionEquality().equals(other.instantiates_canonical, instantiates_canonical)) &&
-            (identical(other.instantiates_uri, instantiates_uri) || const DeepCollectionEquality().equals(other.instantiates_uri, instantiates_uri)) &&
-            (identical(other.intent, intent) || const DeepCollectionEquality().equals(other.intent, intent)) &&
-            (identical(other.part_of, part_of) || const DeepCollectionEquality().equals(other.part_of, part_of)) &&
-            (identical(other.performer, performer) || const DeepCollectionEquality().equals(other.performer, performer)) &&
-            (identical(other.replaces, replaces) || const DeepCollectionEquality().equals(other.replaces, replaces)) &&
-            (identical(other.status, status) || const DeepCollectionEquality().equals(other.status, status)) &&
-            (identical(other.subject, subject) || const DeepCollectionEquality().equals(other.subject, subject)));
+                const DeepCollectionEquality().equals(
+                    other.instantiates_canonical, instantiates_canonical)) &&
+            (identical(other.instantiates_uri, instantiates_uri) ||
+                const DeepCollectionEquality()
+                    .equals(other.instantiates_uri, instantiates_uri)) &&
+            (identical(other.intent, intent) ||
+                const DeepCollectionEquality().equals(other.intent, intent)) &&
+            (identical(other.part_of, part_of) ||
+                const DeepCollectionEquality()
+                    .equals(other.part_of, part_of)) &&
+            (identical(other.performer, performer) ||
+                const DeepCollectionEquality()
+                    .equals(other.performer, performer)) &&
+            (identical(other.replaces, replaces) ||
+                const DeepCollectionEquality()
+                    .equals(other.replaces, replaces)) &&
+            (identical(other.status, status) ||
+                const DeepCollectionEquality().equals(other.status, status)) &&
+            (identical(other.subject, subject) ||
+                const DeepCollectionEquality().equals(other.subject, subject)));
   }
 
   @override
@@ -1375,14 +1101,6 @@ class _$_CarePlanSearch extends _CarePlanSearch {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(searchId) ^
       const DeepCollectionEquality().hash(searchLastUpdated) ^
-      const DeepCollectionEquality().hash(searchTag) ^
-      const DeepCollectionEquality().hash(searchProfile) ^
-      const DeepCollectionEquality().hash(searchSecurity) ^
-      const DeepCollectionEquality().hash(searchText) ^
-      const DeepCollectionEquality().hash(searchContent) ^
-      const DeepCollectionEquality().hash(searchList) ^
-      const DeepCollectionEquality().hash(searchHas) ^
-      const DeepCollectionEquality().hash(searchType) ^
       const DeepCollectionEquality().hash(date) ^
       const DeepCollectionEquality().hash(identifier) ^
       const DeepCollectionEquality().hash(patient) ^
@@ -1412,16 +1130,8 @@ class _$_CarePlanSearch extends _CarePlanSearch {
 abstract class _CarePlanSearch extends CarePlanSearch {
   _CarePlanSearch._() : super._();
   factory _CarePlanSearch(
-      {List<SearchToken> searchId,
-      List<Date> searchLastUpdated,
-      List<SearchToken> searchTag,
-      List<SearchUri> searchProfile,
-      List<SearchToken> searchSecurity,
-      List<SearchString> searchText,
-      List<SearchString> searchContent,
-      List<SearchString> searchList,
-      List<String> searchHas,
-      List<SearchToken> searchType,
+      {List<Id> searchId,
+      List<SearchDate> searchLastUpdated,
       List<SearchDate> date,
       List<SearchToken> identifier,
       List<String> patient,
@@ -1444,26 +1154,17 @@ abstract class _CarePlanSearch extends CarePlanSearch {
       List<String> subject}) = _$_CarePlanSearch;
 
   @override
-  List<SearchToken> get searchId;
+  List<Id> get searchId;
   @override
-  List<Date> get searchLastUpdated;
-  @override
-  List<SearchToken> get searchTag;
-  @override
-  List<SearchUri> get searchProfile;
-  @override
-  List<SearchToken> get searchSecurity;
-  @override
-  List<SearchString> get searchText;
-  @override
-  List<SearchString> get searchContent;
-  @override
-  List<SearchString> get searchList;
-  @override
-  List<String> get searchHas;
-  @override
-  List<SearchToken> get searchType;
-  @override
+  List<SearchDate> get searchLastUpdated;
+  @override //List<SearchToken> searchTag,
+//List<SearchUri> searchProfile,
+//List<SearchToken> searchSecurity,
+//List<String> searchText,
+//List<String> searchContent,
+//List<SearchString> searchList,
+// List<SearchString> searchHas,
+//List<SearchToken> searchType,
   List<SearchDate> get date;
   @override
   List<SearchToken> get identifier;
@@ -1513,16 +1214,8 @@ class _$CareTeamSearchTearOff {
 
 // ignore: unused_element
   _CareTeamSearch call(
-      {List<SearchToken> searchId,
-      List<Date> searchLastUpdated,
-      List<SearchToken> searchTag,
-      List<SearchUri> searchProfile,
-      List<SearchToken> searchSecurity,
-      List<SearchString> searchText,
-      List<SearchString> searchContent,
-      List<SearchString> searchList,
-      List<String> searchHas,
-      List<SearchToken> searchType,
+      {List<Id> searchId,
+      List<SearchDate> searchLastUpdated,
       List<SearchDate> date,
       List<SearchToken> identifier,
       List<String> patient,
@@ -1534,14 +1227,6 @@ class _$CareTeamSearchTearOff {
     return _CareTeamSearch(
       searchId: searchId,
       searchLastUpdated: searchLastUpdated,
-      searchTag: searchTag,
-      searchProfile: searchProfile,
-      searchSecurity: searchSecurity,
-      searchText: searchText,
-      searchContent: searchContent,
-      searchList: searchList,
-      searchHas: searchHas,
-      searchType: searchType,
       date: date,
       identifier: identifier,
       patient: patient,
@@ -1560,16 +1245,15 @@ const $CareTeamSearch = _$CareTeamSearchTearOff();
 
 /// @nodoc
 mixin _$CareTeamSearch {
-  List<SearchToken> get searchId;
-  List<Date> get searchLastUpdated;
-  List<SearchToken> get searchTag;
-  List<SearchUri> get searchProfile;
-  List<SearchToken> get searchSecurity;
-  List<SearchString> get searchText;
-  List<SearchString> get searchContent;
-  List<SearchString> get searchList;
-  List<String> get searchHas;
-  List<SearchToken> get searchType;
+  List<Id> get searchId;
+  List<SearchDate> get searchLastUpdated; //List<SearchToken> searchTag,
+//List<SearchUri> searchProfile,
+//List<SearchToken> searchSecurity,
+//List<String> searchText,
+//List<String> searchContent,
+//List<SearchString> searchList,
+// List<SearchString> searchHas,
+//List<SearchToken> searchType,
   List<SearchDate> get date;
   List<SearchToken> get identifier;
   List<String> get patient;
@@ -1588,16 +1272,8 @@ abstract class $CareTeamSearchCopyWith<$Res> {
           CareTeamSearch value, $Res Function(CareTeamSearch) then) =
       _$CareTeamSearchCopyWithImpl<$Res>;
   $Res call(
-      {List<SearchToken> searchId,
-      List<Date> searchLastUpdated,
-      List<SearchToken> searchTag,
-      List<SearchUri> searchProfile,
-      List<SearchToken> searchSecurity,
-      List<SearchString> searchText,
-      List<SearchString> searchContent,
-      List<SearchString> searchList,
-      List<String> searchHas,
-      List<SearchToken> searchType,
+      {List<Id> searchId,
+      List<SearchDate> searchLastUpdated,
       List<SearchDate> date,
       List<SearchToken> identifier,
       List<String> patient,
@@ -1621,14 +1297,6 @@ class _$CareTeamSearchCopyWithImpl<$Res>
   $Res call({
     Object searchId = freezed,
     Object searchLastUpdated = freezed,
-    Object searchTag = freezed,
-    Object searchProfile = freezed,
-    Object searchSecurity = freezed,
-    Object searchText = freezed,
-    Object searchContent = freezed,
-    Object searchList = freezed,
-    Object searchHas = freezed,
-    Object searchType = freezed,
     Object date = freezed,
     Object identifier = freezed,
     Object patient = freezed,
@@ -1639,34 +1307,10 @@ class _$CareTeamSearchCopyWithImpl<$Res>
     Object subject = freezed,
   }) {
     return _then(_value.copyWith(
-      searchId:
-          searchId == freezed ? _value.searchId : searchId as List<SearchToken>,
+      searchId: searchId == freezed ? _value.searchId : searchId as List<Id>,
       searchLastUpdated: searchLastUpdated == freezed
           ? _value.searchLastUpdated
-          : searchLastUpdated as List<Date>,
-      searchTag: searchTag == freezed
-          ? _value.searchTag
-          : searchTag as List<SearchToken>,
-      searchProfile: searchProfile == freezed
-          ? _value.searchProfile
-          : searchProfile as List<SearchUri>,
-      searchSecurity: searchSecurity == freezed
-          ? _value.searchSecurity
-          : searchSecurity as List<SearchToken>,
-      searchText: searchText == freezed
-          ? _value.searchText
-          : searchText as List<SearchString>,
-      searchContent: searchContent == freezed
-          ? _value.searchContent
-          : searchContent as List<SearchString>,
-      searchList: searchList == freezed
-          ? _value.searchList
-          : searchList as List<SearchString>,
-      searchHas:
-          searchHas == freezed ? _value.searchHas : searchHas as List<String>,
-      searchType: searchType == freezed
-          ? _value.searchType
-          : searchType as List<SearchToken>,
+          : searchLastUpdated as List<SearchDate>,
       date: date == freezed ? _value.date : date as List<SearchDate>,
       identifier: identifier == freezed
           ? _value.identifier
@@ -1693,16 +1337,8 @@ abstract class _$CareTeamSearchCopyWith<$Res>
       __$CareTeamSearchCopyWithImpl<$Res>;
   @override
   $Res call(
-      {List<SearchToken> searchId,
-      List<Date> searchLastUpdated,
-      List<SearchToken> searchTag,
-      List<SearchUri> searchProfile,
-      List<SearchToken> searchSecurity,
-      List<SearchString> searchText,
-      List<SearchString> searchContent,
-      List<SearchString> searchList,
-      List<String> searchHas,
-      List<SearchToken> searchType,
+      {List<Id> searchId,
+      List<SearchDate> searchLastUpdated,
       List<SearchDate> date,
       List<SearchToken> identifier,
       List<String> patient,
@@ -1728,14 +1364,6 @@ class __$CareTeamSearchCopyWithImpl<$Res>
   $Res call({
     Object searchId = freezed,
     Object searchLastUpdated = freezed,
-    Object searchTag = freezed,
-    Object searchProfile = freezed,
-    Object searchSecurity = freezed,
-    Object searchText = freezed,
-    Object searchContent = freezed,
-    Object searchList = freezed,
-    Object searchHas = freezed,
-    Object searchType = freezed,
     Object date = freezed,
     Object identifier = freezed,
     Object patient = freezed,
@@ -1746,34 +1374,10 @@ class __$CareTeamSearchCopyWithImpl<$Res>
     Object subject = freezed,
   }) {
     return _then(_CareTeamSearch(
-      searchId:
-          searchId == freezed ? _value.searchId : searchId as List<SearchToken>,
+      searchId: searchId == freezed ? _value.searchId : searchId as List<Id>,
       searchLastUpdated: searchLastUpdated == freezed
           ? _value.searchLastUpdated
-          : searchLastUpdated as List<Date>,
-      searchTag: searchTag == freezed
-          ? _value.searchTag
-          : searchTag as List<SearchToken>,
-      searchProfile: searchProfile == freezed
-          ? _value.searchProfile
-          : searchProfile as List<SearchUri>,
-      searchSecurity: searchSecurity == freezed
-          ? _value.searchSecurity
-          : searchSecurity as List<SearchToken>,
-      searchText: searchText == freezed
-          ? _value.searchText
-          : searchText as List<SearchString>,
-      searchContent: searchContent == freezed
-          ? _value.searchContent
-          : searchContent as List<SearchString>,
-      searchList: searchList == freezed
-          ? _value.searchList
-          : searchList as List<SearchString>,
-      searchHas:
-          searchHas == freezed ? _value.searchHas : searchHas as List<String>,
-      searchType: searchType == freezed
-          ? _value.searchType
-          : searchType as List<SearchToken>,
+          : searchLastUpdated as List<SearchDate>,
       date: date == freezed ? _value.date : date as List<SearchDate>,
       identifier: identifier == freezed
           ? _value.identifier
@@ -1797,14 +1401,6 @@ class _$_CareTeamSearch extends _CareTeamSearch {
   _$_CareTeamSearch(
       {this.searchId,
       this.searchLastUpdated,
-      this.searchTag,
-      this.searchProfile,
-      this.searchSecurity,
-      this.searchText,
-      this.searchContent,
-      this.searchList,
-      this.searchHas,
-      this.searchType,
       this.date,
       this.identifier,
       this.patient,
@@ -1816,26 +1412,17 @@ class _$_CareTeamSearch extends _CareTeamSearch {
       : super._();
 
   @override
-  final List<SearchToken> searchId;
+  final List<Id> searchId;
   @override
-  final List<Date> searchLastUpdated;
-  @override
-  final List<SearchToken> searchTag;
-  @override
-  final List<SearchUri> searchProfile;
-  @override
-  final List<SearchToken> searchSecurity;
-  @override
-  final List<SearchString> searchText;
-  @override
-  final List<SearchString> searchContent;
-  @override
-  final List<SearchString> searchList;
-  @override
-  final List<String> searchHas;
-  @override
-  final List<SearchToken> searchType;
-  @override
+  final List<SearchDate> searchLastUpdated;
+  @override //List<SearchToken> searchTag,
+//List<SearchUri> searchProfile,
+//List<SearchToken> searchSecurity,
+//List<String> searchText,
+//List<String> searchContent,
+//List<SearchString> searchList,
+// List<SearchString> searchHas,
+//List<SearchToken> searchType,
   final List<SearchDate> date;
   @override
   final List<SearchToken> identifier;
@@ -1854,7 +1441,7 @@ class _$_CareTeamSearch extends _CareTeamSearch {
 
   @override
   String toString() {
-    return 'CareTeamSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, date: $date, identifier: $identifier, patient: $patient, category: $category, encounter: $encounter, participant: $participant, status: $status, subject: $subject)';
+    return 'CareTeamSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, date: $date, identifier: $identifier, patient: $patient, category: $category, encounter: $encounter, participant: $participant, status: $status, subject: $subject)';
   }
 
   @override
@@ -1867,30 +1454,6 @@ class _$_CareTeamSearch extends _CareTeamSearch {
             (identical(other.searchLastUpdated, searchLastUpdated) ||
                 const DeepCollectionEquality()
                     .equals(other.searchLastUpdated, searchLastUpdated)) &&
-            (identical(other.searchTag, searchTag) ||
-                const DeepCollectionEquality()
-                    .equals(other.searchTag, searchTag)) &&
-            (identical(other.searchProfile, searchProfile) ||
-                const DeepCollectionEquality()
-                    .equals(other.searchProfile, searchProfile)) &&
-            (identical(other.searchSecurity, searchSecurity) ||
-                const DeepCollectionEquality()
-                    .equals(other.searchSecurity, searchSecurity)) &&
-            (identical(other.searchText, searchText) ||
-                const DeepCollectionEquality()
-                    .equals(other.searchText, searchText)) &&
-            (identical(other.searchContent, searchContent) ||
-                const DeepCollectionEquality()
-                    .equals(other.searchContent, searchContent)) &&
-            (identical(other.searchList, searchList) ||
-                const DeepCollectionEquality()
-                    .equals(other.searchList, searchList)) &&
-            (identical(other.searchHas, searchHas) ||
-                const DeepCollectionEquality()
-                    .equals(other.searchHas, searchHas)) &&
-            (identical(other.searchType, searchType) ||
-                const DeepCollectionEquality()
-                    .equals(other.searchType, searchType)) &&
             (identical(other.date, date) ||
                 const DeepCollectionEquality().equals(other.date, date)) &&
             (identical(other.identifier, identifier) ||
@@ -1919,14 +1482,6 @@ class _$_CareTeamSearch extends _CareTeamSearch {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(searchId) ^
       const DeepCollectionEquality().hash(searchLastUpdated) ^
-      const DeepCollectionEquality().hash(searchTag) ^
-      const DeepCollectionEquality().hash(searchProfile) ^
-      const DeepCollectionEquality().hash(searchSecurity) ^
-      const DeepCollectionEquality().hash(searchText) ^
-      const DeepCollectionEquality().hash(searchContent) ^
-      const DeepCollectionEquality().hash(searchList) ^
-      const DeepCollectionEquality().hash(searchHas) ^
-      const DeepCollectionEquality().hash(searchType) ^
       const DeepCollectionEquality().hash(date) ^
       const DeepCollectionEquality().hash(identifier) ^
       const DeepCollectionEquality().hash(patient) ^
@@ -1944,16 +1499,8 @@ class _$_CareTeamSearch extends _CareTeamSearch {
 abstract class _CareTeamSearch extends CareTeamSearch {
   _CareTeamSearch._() : super._();
   factory _CareTeamSearch(
-      {List<SearchToken> searchId,
-      List<Date> searchLastUpdated,
-      List<SearchToken> searchTag,
-      List<SearchUri> searchProfile,
-      List<SearchToken> searchSecurity,
-      List<SearchString> searchText,
-      List<SearchString> searchContent,
-      List<SearchString> searchList,
-      List<String> searchHas,
-      List<SearchToken> searchType,
+      {List<Id> searchId,
+      List<SearchDate> searchLastUpdated,
       List<SearchDate> date,
       List<SearchToken> identifier,
       List<String> patient,
@@ -1964,26 +1511,17 @@ abstract class _CareTeamSearch extends CareTeamSearch {
       List<String> subject}) = _$_CareTeamSearch;
 
   @override
-  List<SearchToken> get searchId;
+  List<Id> get searchId;
   @override
-  List<Date> get searchLastUpdated;
-  @override
-  List<SearchToken> get searchTag;
-  @override
-  List<SearchUri> get searchProfile;
-  @override
-  List<SearchToken> get searchSecurity;
-  @override
-  List<SearchString> get searchText;
-  @override
-  List<SearchString> get searchContent;
-  @override
-  List<SearchString> get searchList;
-  @override
-  List<String> get searchHas;
-  @override
-  List<SearchToken> get searchType;
-  @override
+  List<SearchDate> get searchLastUpdated;
+  @override //List<SearchToken> searchTag,
+//List<SearchUri> searchProfile,
+//List<SearchToken> searchSecurity,
+//List<String> searchText,
+//List<String> searchContent,
+//List<SearchString> searchList,
+// List<SearchString> searchHas,
+//List<SearchToken> searchType,
   List<SearchDate> get date;
   @override
   List<SearchToken> get identifier;
@@ -2009,16 +1547,8 @@ class _$RiskAssessmentSearchTearOff {
 
 // ignore: unused_element
   _RiskAssessmentSearch call(
-      {List<SearchToken> searchId,
-      List<Date> searchLastUpdated,
-      List<SearchToken> searchTag,
-      List<SearchUri> searchProfile,
-      List<SearchToken> searchSecurity,
-      List<SearchString> searchText,
-      List<SearchString> searchContent,
-      List<SearchString> searchList,
-      List<String> searchHas,
-      List<SearchToken> searchType,
+      {List<Id> searchId,
+      List<SearchDate> searchLastUpdated,
       List<SearchDate> date,
       List<SearchToken> identifier,
       List<String> patient,
@@ -2032,14 +1562,6 @@ class _$RiskAssessmentSearchTearOff {
     return _RiskAssessmentSearch(
       searchId: searchId,
       searchLastUpdated: searchLastUpdated,
-      searchTag: searchTag,
-      searchProfile: searchProfile,
-      searchSecurity: searchSecurity,
-      searchText: searchText,
-      searchContent: searchContent,
-      searchList: searchList,
-      searchHas: searchHas,
-      searchType: searchType,
       date: date,
       identifier: identifier,
       patient: patient,
@@ -2060,16 +1582,15 @@ const $RiskAssessmentSearch = _$RiskAssessmentSearchTearOff();
 
 /// @nodoc
 mixin _$RiskAssessmentSearch {
-  List<SearchToken> get searchId;
-  List<Date> get searchLastUpdated;
-  List<SearchToken> get searchTag;
-  List<SearchUri> get searchProfile;
-  List<SearchToken> get searchSecurity;
-  List<SearchString> get searchText;
-  List<SearchString> get searchContent;
-  List<SearchString> get searchList;
-  List<String> get searchHas;
-  List<SearchToken> get searchType;
+  List<Id> get searchId;
+  List<SearchDate> get searchLastUpdated; //List<SearchToken> searchTag,
+//List<SearchUri> searchProfile,
+//List<SearchToken> searchSecurity,
+//List<String> searchText,
+//List<String> searchContent,
+//List<SearchString> searchList,
+// List<SearchString> searchHas,
+//List<SearchToken> searchType,
   List<SearchDate> get date;
   List<SearchToken> get identifier;
   List<String> get patient;
@@ -2090,16 +1611,8 @@ abstract class $RiskAssessmentSearchCopyWith<$Res> {
           $Res Function(RiskAssessmentSearch) then) =
       _$RiskAssessmentSearchCopyWithImpl<$Res>;
   $Res call(
-      {List<SearchToken> searchId,
-      List<Date> searchLastUpdated,
-      List<SearchToken> searchTag,
-      List<SearchUri> searchProfile,
-      List<SearchToken> searchSecurity,
-      List<SearchString> searchText,
-      List<SearchString> searchContent,
-      List<SearchString> searchList,
-      List<String> searchHas,
-      List<SearchToken> searchType,
+      {List<Id> searchId,
+      List<SearchDate> searchLastUpdated,
       List<SearchDate> date,
       List<SearchToken> identifier,
       List<String> patient,
@@ -2125,14 +1638,6 @@ class _$RiskAssessmentSearchCopyWithImpl<$Res>
   $Res call({
     Object searchId = freezed,
     Object searchLastUpdated = freezed,
-    Object searchTag = freezed,
-    Object searchProfile = freezed,
-    Object searchSecurity = freezed,
-    Object searchText = freezed,
-    Object searchContent = freezed,
-    Object searchList = freezed,
-    Object searchHas = freezed,
-    Object searchType = freezed,
     Object date = freezed,
     Object identifier = freezed,
     Object patient = freezed,
@@ -2145,34 +1650,10 @@ class _$RiskAssessmentSearchCopyWithImpl<$Res>
     Object subject = freezed,
   }) {
     return _then(_value.copyWith(
-      searchId:
-          searchId == freezed ? _value.searchId : searchId as List<SearchToken>,
+      searchId: searchId == freezed ? _value.searchId : searchId as List<Id>,
       searchLastUpdated: searchLastUpdated == freezed
           ? _value.searchLastUpdated
-          : searchLastUpdated as List<Date>,
-      searchTag: searchTag == freezed
-          ? _value.searchTag
-          : searchTag as List<SearchToken>,
-      searchProfile: searchProfile == freezed
-          ? _value.searchProfile
-          : searchProfile as List<SearchUri>,
-      searchSecurity: searchSecurity == freezed
-          ? _value.searchSecurity
-          : searchSecurity as List<SearchToken>,
-      searchText: searchText == freezed
-          ? _value.searchText
-          : searchText as List<SearchString>,
-      searchContent: searchContent == freezed
-          ? _value.searchContent
-          : searchContent as List<SearchString>,
-      searchList: searchList == freezed
-          ? _value.searchList
-          : searchList as List<SearchString>,
-      searchHas:
-          searchHas == freezed ? _value.searchHas : searchHas as List<String>,
-      searchType: searchType == freezed
-          ? _value.searchType
-          : searchType as List<SearchToken>,
+          : searchLastUpdated as List<SearchDate>,
       date: date == freezed ? _value.date : date as List<SearchDate>,
       identifier: identifier == freezed
           ? _value.identifier
@@ -2202,16 +1683,8 @@ abstract class _$RiskAssessmentSearchCopyWith<$Res>
       __$RiskAssessmentSearchCopyWithImpl<$Res>;
   @override
   $Res call(
-      {List<SearchToken> searchId,
-      List<Date> searchLastUpdated,
-      List<SearchToken> searchTag,
-      List<SearchUri> searchProfile,
-      List<SearchToken> searchSecurity,
-      List<SearchString> searchText,
-      List<SearchString> searchContent,
-      List<SearchString> searchList,
-      List<String> searchHas,
-      List<SearchToken> searchType,
+      {List<Id> searchId,
+      List<SearchDate> searchLastUpdated,
       List<SearchDate> date,
       List<SearchToken> identifier,
       List<String> patient,
@@ -2239,14 +1712,6 @@ class __$RiskAssessmentSearchCopyWithImpl<$Res>
   $Res call({
     Object searchId = freezed,
     Object searchLastUpdated = freezed,
-    Object searchTag = freezed,
-    Object searchProfile = freezed,
-    Object searchSecurity = freezed,
-    Object searchText = freezed,
-    Object searchContent = freezed,
-    Object searchList = freezed,
-    Object searchHas = freezed,
-    Object searchType = freezed,
     Object date = freezed,
     Object identifier = freezed,
     Object patient = freezed,
@@ -2259,34 +1724,10 @@ class __$RiskAssessmentSearchCopyWithImpl<$Res>
     Object subject = freezed,
   }) {
     return _then(_RiskAssessmentSearch(
-      searchId:
-          searchId == freezed ? _value.searchId : searchId as List<SearchToken>,
+      searchId: searchId == freezed ? _value.searchId : searchId as List<Id>,
       searchLastUpdated: searchLastUpdated == freezed
           ? _value.searchLastUpdated
-          : searchLastUpdated as List<Date>,
-      searchTag: searchTag == freezed
-          ? _value.searchTag
-          : searchTag as List<SearchToken>,
-      searchProfile: searchProfile == freezed
-          ? _value.searchProfile
-          : searchProfile as List<SearchUri>,
-      searchSecurity: searchSecurity == freezed
-          ? _value.searchSecurity
-          : searchSecurity as List<SearchToken>,
-      searchText: searchText == freezed
-          ? _value.searchText
-          : searchText as List<SearchString>,
-      searchContent: searchContent == freezed
-          ? _value.searchContent
-          : searchContent as List<SearchString>,
-      searchList: searchList == freezed
-          ? _value.searchList
-          : searchList as List<SearchString>,
-      searchHas:
-          searchHas == freezed ? _value.searchHas : searchHas as List<String>,
-      searchType: searchType == freezed
-          ? _value.searchType
-          : searchType as List<SearchToken>,
+          : searchLastUpdated as List<SearchDate>,
       date: date == freezed ? _value.date : date as List<SearchDate>,
       identifier: identifier == freezed
           ? _value.identifier
@@ -2313,14 +1754,6 @@ class _$_RiskAssessmentSearch extends _RiskAssessmentSearch {
   _$_RiskAssessmentSearch(
       {this.searchId,
       this.searchLastUpdated,
-      this.searchTag,
-      this.searchProfile,
-      this.searchSecurity,
-      this.searchText,
-      this.searchContent,
-      this.searchList,
-      this.searchHas,
-      this.searchType,
       this.date,
       this.identifier,
       this.patient,
@@ -2334,26 +1767,17 @@ class _$_RiskAssessmentSearch extends _RiskAssessmentSearch {
       : super._();
 
   @override
-  final List<SearchToken> searchId;
+  final List<Id> searchId;
   @override
-  final List<Date> searchLastUpdated;
-  @override
-  final List<SearchToken> searchTag;
-  @override
-  final List<SearchUri> searchProfile;
-  @override
-  final List<SearchToken> searchSecurity;
-  @override
-  final List<SearchString> searchText;
-  @override
-  final List<SearchString> searchContent;
-  @override
-  final List<SearchString> searchList;
-  @override
-  final List<String> searchHas;
-  @override
-  final List<SearchToken> searchType;
-  @override
+  final List<SearchDate> searchLastUpdated;
+  @override //List<SearchToken> searchTag,
+//List<SearchUri> searchProfile,
+//List<SearchToken> searchSecurity,
+//List<String> searchText,
+//List<String> searchContent,
+//List<SearchString> searchList,
+// List<SearchString> searchHas,
+//List<SearchToken> searchType,
   final List<SearchDate> date;
   @override
   final List<SearchToken> identifier;
@@ -2376,7 +1800,7 @@ class _$_RiskAssessmentSearch extends _RiskAssessmentSearch {
 
   @override
   String toString() {
-    return 'RiskAssessmentSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, date: $date, identifier: $identifier, patient: $patient, encounter: $encounter, condition: $condition, method: $method, performer: $performer, probability: $probability, risk: $risk, subject: $subject)';
+    return 'RiskAssessmentSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, date: $date, identifier: $identifier, patient: $patient, encounter: $encounter, condition: $condition, method: $method, performer: $performer, probability: $probability, risk: $risk, subject: $subject)';
   }
 
   @override
@@ -2389,30 +1813,6 @@ class _$_RiskAssessmentSearch extends _RiskAssessmentSearch {
             (identical(other.searchLastUpdated, searchLastUpdated) ||
                 const DeepCollectionEquality()
                     .equals(other.searchLastUpdated, searchLastUpdated)) &&
-            (identical(other.searchTag, searchTag) ||
-                const DeepCollectionEquality()
-                    .equals(other.searchTag, searchTag)) &&
-            (identical(other.searchProfile, searchProfile) ||
-                const DeepCollectionEquality()
-                    .equals(other.searchProfile, searchProfile)) &&
-            (identical(other.searchSecurity, searchSecurity) ||
-                const DeepCollectionEquality()
-                    .equals(other.searchSecurity, searchSecurity)) &&
-            (identical(other.searchText, searchText) ||
-                const DeepCollectionEquality()
-                    .equals(other.searchText, searchText)) &&
-            (identical(other.searchContent, searchContent) ||
-                const DeepCollectionEquality()
-                    .equals(other.searchContent, searchContent)) &&
-            (identical(other.searchList, searchList) ||
-                const DeepCollectionEquality()
-                    .equals(other.searchList, searchList)) &&
-            (identical(other.searchHas, searchHas) ||
-                const DeepCollectionEquality()
-                    .equals(other.searchHas, searchHas)) &&
-            (identical(other.searchType, searchType) ||
-                const DeepCollectionEquality()
-                    .equals(other.searchType, searchType)) &&
             (identical(other.date, date) ||
                 const DeepCollectionEquality().equals(other.date, date)) &&
             (identical(other.identifier, identifier) ||
@@ -2446,14 +1846,6 @@ class _$_RiskAssessmentSearch extends _RiskAssessmentSearch {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(searchId) ^
       const DeepCollectionEquality().hash(searchLastUpdated) ^
-      const DeepCollectionEquality().hash(searchTag) ^
-      const DeepCollectionEquality().hash(searchProfile) ^
-      const DeepCollectionEquality().hash(searchSecurity) ^
-      const DeepCollectionEquality().hash(searchText) ^
-      const DeepCollectionEquality().hash(searchContent) ^
-      const DeepCollectionEquality().hash(searchList) ^
-      const DeepCollectionEquality().hash(searchHas) ^
-      const DeepCollectionEquality().hash(searchType) ^
       const DeepCollectionEquality().hash(date) ^
       const DeepCollectionEquality().hash(identifier) ^
       const DeepCollectionEquality().hash(patient) ^
@@ -2474,16 +1866,8 @@ class _$_RiskAssessmentSearch extends _RiskAssessmentSearch {
 abstract class _RiskAssessmentSearch extends RiskAssessmentSearch {
   _RiskAssessmentSearch._() : super._();
   factory _RiskAssessmentSearch(
-      {List<SearchToken> searchId,
-      List<Date> searchLastUpdated,
-      List<SearchToken> searchTag,
-      List<SearchUri> searchProfile,
-      List<SearchToken> searchSecurity,
-      List<SearchString> searchText,
-      List<SearchString> searchContent,
-      List<SearchString> searchList,
-      List<String> searchHas,
-      List<SearchToken> searchType,
+      {List<Id> searchId,
+      List<SearchDate> searchLastUpdated,
       List<SearchDate> date,
       List<SearchToken> identifier,
       List<String> patient,
@@ -2496,26 +1880,17 @@ abstract class _RiskAssessmentSearch extends RiskAssessmentSearch {
       List<String> subject}) = _$_RiskAssessmentSearch;
 
   @override
-  List<SearchToken> get searchId;
+  List<Id> get searchId;
   @override
-  List<Date> get searchLastUpdated;
-  @override
-  List<SearchToken> get searchTag;
-  @override
-  List<SearchUri> get searchProfile;
-  @override
-  List<SearchToken> get searchSecurity;
-  @override
-  List<SearchString> get searchText;
-  @override
-  List<SearchString> get searchContent;
-  @override
-  List<SearchString> get searchList;
-  @override
-  List<String> get searchHas;
-  @override
-  List<SearchToken> get searchType;
-  @override
+  List<SearchDate> get searchLastUpdated;
+  @override //List<SearchToken> searchTag,
+//List<SearchUri> searchProfile,
+//List<SearchToken> searchSecurity,
+//List<String> searchText,
+//List<String> searchContent,
+//List<SearchString> searchList,
+// List<SearchString> searchHas,
+//List<SearchToken> searchType,
   List<SearchDate> get date;
   @override
   List<SearchToken> get identifier;
@@ -2545,16 +1920,8 @@ class _$GoalSearchTearOff {
 
 // ignore: unused_element
   _GoalSearch call(
-      {List<SearchToken> searchId,
-      List<Date> searchLastUpdated,
-      List<SearchToken> searchTag,
-      List<SearchUri> searchProfile,
-      List<SearchToken> searchSecurity,
-      List<SearchString> searchText,
-      List<SearchString> searchContent,
-      List<SearchString> searchList,
-      List<String> searchHas,
-      List<SearchToken> searchType,
+      {List<Id> searchId,
+      List<SearchDate> searchLastUpdated,
       List<SearchToken> identifier,
       List<String> patient,
       List<SearchToken> achievement_status,
@@ -2566,14 +1933,6 @@ class _$GoalSearchTearOff {
     return _GoalSearch(
       searchId: searchId,
       searchLastUpdated: searchLastUpdated,
-      searchTag: searchTag,
-      searchProfile: searchProfile,
-      searchSecurity: searchSecurity,
-      searchText: searchText,
-      searchContent: searchContent,
-      searchList: searchList,
-      searchHas: searchHas,
-      searchType: searchType,
       identifier: identifier,
       patient: patient,
       achievement_status: achievement_status,
@@ -2592,16 +1951,15 @@ const $GoalSearch = _$GoalSearchTearOff();
 
 /// @nodoc
 mixin _$GoalSearch {
-  List<SearchToken> get searchId;
-  List<Date> get searchLastUpdated;
-  List<SearchToken> get searchTag;
-  List<SearchUri> get searchProfile;
-  List<SearchToken> get searchSecurity;
-  List<SearchString> get searchText;
-  List<SearchString> get searchContent;
-  List<SearchString> get searchList;
-  List<String> get searchHas;
-  List<SearchToken> get searchType;
+  List<Id> get searchId;
+  List<SearchDate> get searchLastUpdated; //List<SearchToken> searchTag,
+//List<SearchUri> searchProfile,
+//List<SearchToken> searchSecurity,
+//List<String> searchText,
+//List<String> searchContent,
+//List<SearchString> searchList,
+// List<SearchString> searchHas,
+//List<SearchToken> searchType,
   List<SearchToken> get identifier;
   List<String> get patient;
   List<SearchToken> get achievement_status;
@@ -2620,16 +1978,8 @@ abstract class $GoalSearchCopyWith<$Res> {
           GoalSearch value, $Res Function(GoalSearch) then) =
       _$GoalSearchCopyWithImpl<$Res>;
   $Res call(
-      {List<SearchToken> searchId,
-      List<Date> searchLastUpdated,
-      List<SearchToken> searchTag,
-      List<SearchUri> searchProfile,
-      List<SearchToken> searchSecurity,
-      List<SearchString> searchText,
-      List<SearchString> searchContent,
-      List<SearchString> searchList,
-      List<String> searchHas,
-      List<SearchToken> searchType,
+      {List<Id> searchId,
+      List<SearchDate> searchLastUpdated,
       List<SearchToken> identifier,
       List<String> patient,
       List<SearchToken> achievement_status,
@@ -2652,14 +2002,6 @@ class _$GoalSearchCopyWithImpl<$Res> implements $GoalSearchCopyWith<$Res> {
   $Res call({
     Object searchId = freezed,
     Object searchLastUpdated = freezed,
-    Object searchTag = freezed,
-    Object searchProfile = freezed,
-    Object searchSecurity = freezed,
-    Object searchText = freezed,
-    Object searchContent = freezed,
-    Object searchList = freezed,
-    Object searchHas = freezed,
-    Object searchType = freezed,
     Object identifier = freezed,
     Object patient = freezed,
     Object achievement_status = freezed,
@@ -2670,34 +2012,10 @@ class _$GoalSearchCopyWithImpl<$Res> implements $GoalSearchCopyWith<$Res> {
     Object target_date = freezed,
   }) {
     return _then(_value.copyWith(
-      searchId:
-          searchId == freezed ? _value.searchId : searchId as List<SearchToken>,
+      searchId: searchId == freezed ? _value.searchId : searchId as List<Id>,
       searchLastUpdated: searchLastUpdated == freezed
           ? _value.searchLastUpdated
-          : searchLastUpdated as List<Date>,
-      searchTag: searchTag == freezed
-          ? _value.searchTag
-          : searchTag as List<SearchToken>,
-      searchProfile: searchProfile == freezed
-          ? _value.searchProfile
-          : searchProfile as List<SearchUri>,
-      searchSecurity: searchSecurity == freezed
-          ? _value.searchSecurity
-          : searchSecurity as List<SearchToken>,
-      searchText: searchText == freezed
-          ? _value.searchText
-          : searchText as List<SearchString>,
-      searchContent: searchContent == freezed
-          ? _value.searchContent
-          : searchContent as List<SearchString>,
-      searchList: searchList == freezed
-          ? _value.searchList
-          : searchList as List<SearchString>,
-      searchHas:
-          searchHas == freezed ? _value.searchHas : searchHas as List<String>,
-      searchType: searchType == freezed
-          ? _value.searchType
-          : searchType as List<SearchToken>,
+          : searchLastUpdated as List<SearchDate>,
       identifier: identifier == freezed
           ? _value.identifier
           : identifier as List<SearchToken>,
@@ -2728,16 +2046,8 @@ abstract class _$GoalSearchCopyWith<$Res> implements $GoalSearchCopyWith<$Res> {
       __$GoalSearchCopyWithImpl<$Res>;
   @override
   $Res call(
-      {List<SearchToken> searchId,
-      List<Date> searchLastUpdated,
-      List<SearchToken> searchTag,
-      List<SearchUri> searchProfile,
-      List<SearchToken> searchSecurity,
-      List<SearchString> searchText,
-      List<SearchString> searchContent,
-      List<SearchString> searchList,
-      List<String> searchHas,
-      List<SearchToken> searchType,
+      {List<Id> searchId,
+      List<SearchDate> searchLastUpdated,
       List<SearchToken> identifier,
       List<String> patient,
       List<SearchToken> achievement_status,
@@ -2762,14 +2072,6 @@ class __$GoalSearchCopyWithImpl<$Res> extends _$GoalSearchCopyWithImpl<$Res>
   $Res call({
     Object searchId = freezed,
     Object searchLastUpdated = freezed,
-    Object searchTag = freezed,
-    Object searchProfile = freezed,
-    Object searchSecurity = freezed,
-    Object searchText = freezed,
-    Object searchContent = freezed,
-    Object searchList = freezed,
-    Object searchHas = freezed,
-    Object searchType = freezed,
     Object identifier = freezed,
     Object patient = freezed,
     Object achievement_status = freezed,
@@ -2780,34 +2082,10 @@ class __$GoalSearchCopyWithImpl<$Res> extends _$GoalSearchCopyWithImpl<$Res>
     Object target_date = freezed,
   }) {
     return _then(_GoalSearch(
-      searchId:
-          searchId == freezed ? _value.searchId : searchId as List<SearchToken>,
+      searchId: searchId == freezed ? _value.searchId : searchId as List<Id>,
       searchLastUpdated: searchLastUpdated == freezed
           ? _value.searchLastUpdated
-          : searchLastUpdated as List<Date>,
-      searchTag: searchTag == freezed
-          ? _value.searchTag
-          : searchTag as List<SearchToken>,
-      searchProfile: searchProfile == freezed
-          ? _value.searchProfile
-          : searchProfile as List<SearchUri>,
-      searchSecurity: searchSecurity == freezed
-          ? _value.searchSecurity
-          : searchSecurity as List<SearchToken>,
-      searchText: searchText == freezed
-          ? _value.searchText
-          : searchText as List<SearchString>,
-      searchContent: searchContent == freezed
-          ? _value.searchContent
-          : searchContent as List<SearchString>,
-      searchList: searchList == freezed
-          ? _value.searchList
-          : searchList as List<SearchString>,
-      searchHas:
-          searchHas == freezed ? _value.searchHas : searchHas as List<String>,
-      searchType: searchType == freezed
-          ? _value.searchType
-          : searchType as List<SearchToken>,
+          : searchLastUpdated as List<SearchDate>,
       identifier: identifier == freezed
           ? _value.identifier
           : identifier as List<SearchToken>,
@@ -2836,14 +2114,6 @@ class _$_GoalSearch extends _GoalSearch {
   _$_GoalSearch(
       {this.searchId,
       this.searchLastUpdated,
-      this.searchTag,
-      this.searchProfile,
-      this.searchSecurity,
-      this.searchText,
-      this.searchContent,
-      this.searchList,
-      this.searchHas,
-      this.searchType,
       this.identifier,
       this.patient,
       this.achievement_status,
@@ -2855,26 +2125,17 @@ class _$_GoalSearch extends _GoalSearch {
       : super._();
 
   @override
-  final List<SearchToken> searchId;
+  final List<Id> searchId;
   @override
-  final List<Date> searchLastUpdated;
-  @override
-  final List<SearchToken> searchTag;
-  @override
-  final List<SearchUri> searchProfile;
-  @override
-  final List<SearchToken> searchSecurity;
-  @override
-  final List<SearchString> searchText;
-  @override
-  final List<SearchString> searchContent;
-  @override
-  final List<SearchString> searchList;
-  @override
-  final List<String> searchHas;
-  @override
-  final List<SearchToken> searchType;
-  @override
+  final List<SearchDate> searchLastUpdated;
+  @override //List<SearchToken> searchTag,
+//List<SearchUri> searchProfile,
+//List<SearchToken> searchSecurity,
+//List<String> searchText,
+//List<String> searchContent,
+//List<SearchString> searchList,
+// List<SearchString> searchHas,
+//List<SearchToken> searchType,
   final List<SearchToken> identifier;
   @override
   final List<String> patient;
@@ -2893,7 +2154,7 @@ class _$_GoalSearch extends _GoalSearch {
 
   @override
   String toString() {
-    return 'GoalSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, identifier: $identifier, patient: $patient, achievement_status: $achievement_status, category: $category, lifecycle_status: $lifecycle_status, start_date: $start_date, subject: $subject, target_date: $target_date)';
+    return 'GoalSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, identifier: $identifier, patient: $patient, achievement_status: $achievement_status, category: $category, lifecycle_status: $lifecycle_status, start_date: $start_date, subject: $subject, target_date: $target_date)';
   }
 
   @override
@@ -2906,30 +2167,6 @@ class _$_GoalSearch extends _GoalSearch {
             (identical(other.searchLastUpdated, searchLastUpdated) ||
                 const DeepCollectionEquality()
                     .equals(other.searchLastUpdated, searchLastUpdated)) &&
-            (identical(other.searchTag, searchTag) ||
-                const DeepCollectionEquality()
-                    .equals(other.searchTag, searchTag)) &&
-            (identical(other.searchProfile, searchProfile) ||
-                const DeepCollectionEquality()
-                    .equals(other.searchProfile, searchProfile)) &&
-            (identical(other.searchSecurity, searchSecurity) ||
-                const DeepCollectionEquality()
-                    .equals(other.searchSecurity, searchSecurity)) &&
-            (identical(other.searchText, searchText) ||
-                const DeepCollectionEquality()
-                    .equals(other.searchText, searchText)) &&
-            (identical(other.searchContent, searchContent) ||
-                const DeepCollectionEquality()
-                    .equals(other.searchContent, searchContent)) &&
-            (identical(other.searchList, searchList) ||
-                const DeepCollectionEquality()
-                    .equals(other.searchList, searchList)) &&
-            (identical(other.searchHas, searchHas) ||
-                const DeepCollectionEquality()
-                    .equals(other.searchHas, searchHas)) &&
-            (identical(other.searchType, searchType) ||
-                const DeepCollectionEquality()
-                    .equals(other.searchType, searchType)) &&
             (identical(other.identifier, identifier) ||
                 const DeepCollectionEquality()
                     .equals(other.identifier, identifier)) &&
@@ -2961,14 +2198,6 @@ class _$_GoalSearch extends _GoalSearch {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(searchId) ^
       const DeepCollectionEquality().hash(searchLastUpdated) ^
-      const DeepCollectionEquality().hash(searchTag) ^
-      const DeepCollectionEquality().hash(searchProfile) ^
-      const DeepCollectionEquality().hash(searchSecurity) ^
-      const DeepCollectionEquality().hash(searchText) ^
-      const DeepCollectionEquality().hash(searchContent) ^
-      const DeepCollectionEquality().hash(searchList) ^
-      const DeepCollectionEquality().hash(searchHas) ^
-      const DeepCollectionEquality().hash(searchType) ^
       const DeepCollectionEquality().hash(identifier) ^
       const DeepCollectionEquality().hash(patient) ^
       const DeepCollectionEquality().hash(achievement_status) ^
@@ -2986,16 +2215,8 @@ class _$_GoalSearch extends _GoalSearch {
 abstract class _GoalSearch extends GoalSearch {
   _GoalSearch._() : super._();
   factory _GoalSearch(
-      {List<SearchToken> searchId,
-      List<Date> searchLastUpdated,
-      List<SearchToken> searchTag,
-      List<SearchUri> searchProfile,
-      List<SearchToken> searchSecurity,
-      List<SearchString> searchText,
-      List<SearchString> searchContent,
-      List<SearchString> searchList,
-      List<String> searchHas,
-      List<SearchToken> searchType,
+      {List<Id> searchId,
+      List<SearchDate> searchLastUpdated,
       List<SearchToken> identifier,
       List<String> patient,
       List<SearchToken> achievement_status,
@@ -3006,26 +2227,17 @@ abstract class _GoalSearch extends GoalSearch {
       List<SearchDate> target_date}) = _$_GoalSearch;
 
   @override
-  List<SearchToken> get searchId;
+  List<Id> get searchId;
   @override
-  List<Date> get searchLastUpdated;
-  @override
-  List<SearchToken> get searchTag;
-  @override
-  List<SearchUri> get searchProfile;
-  @override
-  List<SearchToken> get searchSecurity;
-  @override
-  List<SearchString> get searchText;
-  @override
-  List<SearchString> get searchContent;
-  @override
-  List<SearchString> get searchList;
-  @override
-  List<String> get searchHas;
-  @override
-  List<SearchToken> get searchType;
-  @override
+  List<SearchDate> get searchLastUpdated;
+  @override //List<SearchToken> searchTag,
+//List<SearchUri> searchProfile,
+//List<SearchToken> searchSecurity,
+//List<String> searchText,
+//List<String> searchContent,
+//List<SearchString> searchList,
+// List<SearchString> searchHas,
+//List<SearchToken> searchType,
   List<SearchToken> get identifier;
   @override
   List<String> get patient;
@@ -3051,16 +2263,8 @@ class _$NutritionOrderSearchTearOff {
 
 // ignore: unused_element
   _NutritionOrderSearch call(
-      {List<SearchToken> searchId,
-      List<Date> searchLastUpdated,
-      List<SearchToken> searchTag,
-      List<SearchUri> searchProfile,
-      List<SearchToken> searchSecurity,
-      List<SearchString> searchText,
-      List<SearchString> searchContent,
-      List<SearchString> searchList,
-      List<String> searchHas,
-      List<SearchToken> searchType,
+      {List<Id> searchId,
+      List<SearchDate> searchLastUpdated,
       List<SearchToken> identifier,
       List<String> patient,
       List<String> encounter,
@@ -3076,14 +2280,6 @@ class _$NutritionOrderSearchTearOff {
     return _NutritionOrderSearch(
       searchId: searchId,
       searchLastUpdated: searchLastUpdated,
-      searchTag: searchTag,
-      searchProfile: searchProfile,
-      searchSecurity: searchSecurity,
-      searchText: searchText,
-      searchContent: searchContent,
-      searchList: searchList,
-      searchHas: searchHas,
-      searchType: searchType,
       identifier: identifier,
       patient: patient,
       encounter: encounter,
@@ -3106,16 +2302,15 @@ const $NutritionOrderSearch = _$NutritionOrderSearchTearOff();
 
 /// @nodoc
 mixin _$NutritionOrderSearch {
-  List<SearchToken> get searchId;
-  List<Date> get searchLastUpdated;
-  List<SearchToken> get searchTag;
-  List<SearchUri> get searchProfile;
-  List<SearchToken> get searchSecurity;
-  List<SearchString> get searchText;
-  List<SearchString> get searchContent;
-  List<SearchString> get searchList;
-  List<String> get searchHas;
-  List<SearchToken> get searchType;
+  List<Id> get searchId;
+  List<SearchDate> get searchLastUpdated; //List<SearchToken> searchTag,
+//List<SearchUri> searchProfile,
+//List<SearchToken> searchSecurity,
+//List<String> searchText,
+//List<String> searchContent,
+//List<SearchString> searchList,
+// List<SearchString> searchHas,
+//List<SearchToken> searchType,
   List<SearchToken> get identifier;
   List<String> get patient;
   List<String> get encounter;
@@ -3138,16 +2333,8 @@ abstract class $NutritionOrderSearchCopyWith<$Res> {
           $Res Function(NutritionOrderSearch) then) =
       _$NutritionOrderSearchCopyWithImpl<$Res>;
   $Res call(
-      {List<SearchToken> searchId,
-      List<Date> searchLastUpdated,
-      List<SearchToken> searchTag,
-      List<SearchUri> searchProfile,
-      List<SearchToken> searchSecurity,
-      List<SearchString> searchText,
-      List<SearchString> searchContent,
-      List<SearchString> searchList,
-      List<String> searchHas,
-      List<SearchToken> searchType,
+      {List<Id> searchId,
+      List<SearchDate> searchLastUpdated,
       List<SearchToken> identifier,
       List<String> patient,
       List<String> encounter,
@@ -3175,14 +2362,6 @@ class _$NutritionOrderSearchCopyWithImpl<$Res>
   $Res call({
     Object searchId = freezed,
     Object searchLastUpdated = freezed,
-    Object searchTag = freezed,
-    Object searchProfile = freezed,
-    Object searchSecurity = freezed,
-    Object searchText = freezed,
-    Object searchContent = freezed,
-    Object searchList = freezed,
-    Object searchHas = freezed,
-    Object searchType = freezed,
     Object identifier = freezed,
     Object patient = freezed,
     Object encounter = freezed,
@@ -3197,34 +2376,10 @@ class _$NutritionOrderSearchCopyWithImpl<$Res>
     Object supplement = freezed,
   }) {
     return _then(_value.copyWith(
-      searchId:
-          searchId == freezed ? _value.searchId : searchId as List<SearchToken>,
+      searchId: searchId == freezed ? _value.searchId : searchId as List<Id>,
       searchLastUpdated: searchLastUpdated == freezed
           ? _value.searchLastUpdated
-          : searchLastUpdated as List<Date>,
-      searchTag: searchTag == freezed
-          ? _value.searchTag
-          : searchTag as List<SearchToken>,
-      searchProfile: searchProfile == freezed
-          ? _value.searchProfile
-          : searchProfile as List<SearchUri>,
-      searchSecurity: searchSecurity == freezed
-          ? _value.searchSecurity
-          : searchSecurity as List<SearchToken>,
-      searchText: searchText == freezed
-          ? _value.searchText
-          : searchText as List<SearchString>,
-      searchContent: searchContent == freezed
-          ? _value.searchContent
-          : searchContent as List<SearchString>,
-      searchList: searchList == freezed
-          ? _value.searchList
-          : searchList as List<SearchString>,
-      searchHas:
-          searchHas == freezed ? _value.searchHas : searchHas as List<String>,
-      searchType: searchType == freezed
-          ? _value.searchType
-          : searchType as List<SearchToken>,
+          : searchLastUpdated as List<SearchDate>,
       identifier: identifier == freezed
           ? _value.identifier
           : identifier as List<SearchToken>,
@@ -3263,16 +2418,8 @@ abstract class _$NutritionOrderSearchCopyWith<$Res>
       __$NutritionOrderSearchCopyWithImpl<$Res>;
   @override
   $Res call(
-      {List<SearchToken> searchId,
-      List<Date> searchLastUpdated,
-      List<SearchToken> searchTag,
-      List<SearchUri> searchProfile,
-      List<SearchToken> searchSecurity,
-      List<SearchString> searchText,
-      List<SearchString> searchContent,
-      List<SearchString> searchList,
-      List<String> searchHas,
-      List<SearchToken> searchType,
+      {List<Id> searchId,
+      List<SearchDate> searchLastUpdated,
       List<SearchToken> identifier,
       List<String> patient,
       List<String> encounter,
@@ -3302,14 +2449,6 @@ class __$NutritionOrderSearchCopyWithImpl<$Res>
   $Res call({
     Object searchId = freezed,
     Object searchLastUpdated = freezed,
-    Object searchTag = freezed,
-    Object searchProfile = freezed,
-    Object searchSecurity = freezed,
-    Object searchText = freezed,
-    Object searchContent = freezed,
-    Object searchList = freezed,
-    Object searchHas = freezed,
-    Object searchType = freezed,
     Object identifier = freezed,
     Object patient = freezed,
     Object encounter = freezed,
@@ -3324,34 +2463,10 @@ class __$NutritionOrderSearchCopyWithImpl<$Res>
     Object supplement = freezed,
   }) {
     return _then(_NutritionOrderSearch(
-      searchId:
-          searchId == freezed ? _value.searchId : searchId as List<SearchToken>,
+      searchId: searchId == freezed ? _value.searchId : searchId as List<Id>,
       searchLastUpdated: searchLastUpdated == freezed
           ? _value.searchLastUpdated
-          : searchLastUpdated as List<Date>,
-      searchTag: searchTag == freezed
-          ? _value.searchTag
-          : searchTag as List<SearchToken>,
-      searchProfile: searchProfile == freezed
-          ? _value.searchProfile
-          : searchProfile as List<SearchUri>,
-      searchSecurity: searchSecurity == freezed
-          ? _value.searchSecurity
-          : searchSecurity as List<SearchToken>,
-      searchText: searchText == freezed
-          ? _value.searchText
-          : searchText as List<SearchString>,
-      searchContent: searchContent == freezed
-          ? _value.searchContent
-          : searchContent as List<SearchString>,
-      searchList: searchList == freezed
-          ? _value.searchList
-          : searchList as List<SearchString>,
-      searchHas:
-          searchHas == freezed ? _value.searchHas : searchHas as List<String>,
-      searchType: searchType == freezed
-          ? _value.searchType
-          : searchType as List<SearchToken>,
+          : searchLastUpdated as List<SearchDate>,
       identifier: identifier == freezed
           ? _value.identifier
           : identifier as List<SearchToken>,
@@ -3387,14 +2502,6 @@ class _$_NutritionOrderSearch extends _NutritionOrderSearch {
   _$_NutritionOrderSearch(
       {this.searchId,
       this.searchLastUpdated,
-      this.searchTag,
-      this.searchProfile,
-      this.searchSecurity,
-      this.searchText,
-      this.searchContent,
-      this.searchList,
-      this.searchHas,
-      this.searchType,
       this.identifier,
       this.patient,
       this.encounter,
@@ -3410,26 +2517,17 @@ class _$_NutritionOrderSearch extends _NutritionOrderSearch {
       : super._();
 
   @override
-  final List<SearchToken> searchId;
+  final List<Id> searchId;
   @override
-  final List<Date> searchLastUpdated;
-  @override
-  final List<SearchToken> searchTag;
-  @override
-  final List<SearchUri> searchProfile;
-  @override
-  final List<SearchToken> searchSecurity;
-  @override
-  final List<SearchString> searchText;
-  @override
-  final List<SearchString> searchContent;
-  @override
-  final List<SearchString> searchList;
-  @override
-  final List<String> searchHas;
-  @override
-  final List<SearchToken> searchType;
-  @override
+  final List<SearchDate> searchLastUpdated;
+  @override //List<SearchToken> searchTag,
+//List<SearchUri> searchProfile,
+//List<SearchToken> searchSecurity,
+//List<String> searchText,
+//List<String> searchContent,
+//List<SearchString> searchList,
+// List<SearchString> searchHas,
+//List<SearchToken> searchType,
   final List<SearchToken> identifier;
   @override
   final List<String> patient;
@@ -3456,7 +2554,7 @@ class _$_NutritionOrderSearch extends _NutritionOrderSearch {
 
   @override
   String toString() {
-    return 'NutritionOrderSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, identifier: $identifier, patient: $patient, encounter: $encounter, additive: $additive, datetime: $datetime, formula: $formula, instantiates_canonical: $instantiates_canonical, instantiates_uri: $instantiates_uri, oraldiet: $oraldiet, provider: $provider, status: $status, supplement: $supplement)';
+    return 'NutritionOrderSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, identifier: $identifier, patient: $patient, encounter: $encounter, additive: $additive, datetime: $datetime, formula: $formula, instantiates_canonical: $instantiates_canonical, instantiates_uri: $instantiates_uri, oraldiet: $oraldiet, provider: $provider, status: $status, supplement: $supplement)';
   }
 
   @override
@@ -3469,30 +2567,6 @@ class _$_NutritionOrderSearch extends _NutritionOrderSearch {
             (identical(other.searchLastUpdated, searchLastUpdated) ||
                 const DeepCollectionEquality()
                     .equals(other.searchLastUpdated, searchLastUpdated)) &&
-            (identical(other.searchTag, searchTag) ||
-                const DeepCollectionEquality()
-                    .equals(other.searchTag, searchTag)) &&
-            (identical(other.searchProfile, searchProfile) ||
-                const DeepCollectionEquality()
-                    .equals(other.searchProfile, searchProfile)) &&
-            (identical(other.searchSecurity, searchSecurity) ||
-                const DeepCollectionEquality()
-                    .equals(other.searchSecurity, searchSecurity)) &&
-            (identical(other.searchText, searchText) ||
-                const DeepCollectionEquality()
-                    .equals(other.searchText, searchText)) &&
-            (identical(other.searchContent, searchContent) ||
-                const DeepCollectionEquality()
-                    .equals(other.searchContent, searchContent)) &&
-            (identical(other.searchList, searchList) ||
-                const DeepCollectionEquality()
-                    .equals(other.searchList, searchList)) &&
-            (identical(other.searchHas, searchHas) ||
-                const DeepCollectionEquality()
-                    .equals(other.searchHas, searchHas)) &&
-            (identical(other.searchType, searchType) ||
-                const DeepCollectionEquality()
-                    .equals(other.searchType, searchType)) &&
             (identical(other.identifier, identifier) ||
                 const DeepCollectionEquality()
                     .equals(other.identifier, identifier)) &&
@@ -3535,14 +2609,6 @@ class _$_NutritionOrderSearch extends _NutritionOrderSearch {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(searchId) ^
       const DeepCollectionEquality().hash(searchLastUpdated) ^
-      const DeepCollectionEquality().hash(searchTag) ^
-      const DeepCollectionEquality().hash(searchProfile) ^
-      const DeepCollectionEquality().hash(searchSecurity) ^
-      const DeepCollectionEquality().hash(searchText) ^
-      const DeepCollectionEquality().hash(searchContent) ^
-      const DeepCollectionEquality().hash(searchList) ^
-      const DeepCollectionEquality().hash(searchHas) ^
-      const DeepCollectionEquality().hash(searchType) ^
       const DeepCollectionEquality().hash(identifier) ^
       const DeepCollectionEquality().hash(patient) ^
       const DeepCollectionEquality().hash(encounter) ^
@@ -3565,16 +2631,8 @@ class _$_NutritionOrderSearch extends _NutritionOrderSearch {
 abstract class _NutritionOrderSearch extends NutritionOrderSearch {
   _NutritionOrderSearch._() : super._();
   factory _NutritionOrderSearch(
-      {List<SearchToken> searchId,
-      List<Date> searchLastUpdated,
-      List<SearchToken> searchTag,
-      List<SearchUri> searchProfile,
-      List<SearchToken> searchSecurity,
-      List<SearchString> searchText,
-      List<SearchString> searchContent,
-      List<SearchString> searchList,
-      List<String> searchHas,
-      List<SearchToken> searchType,
+      {List<Id> searchId,
+      List<SearchDate> searchLastUpdated,
       List<SearchToken> identifier,
       List<String> patient,
       List<String> encounter,
@@ -3589,26 +2647,17 @@ abstract class _NutritionOrderSearch extends NutritionOrderSearch {
       List<SearchToken> supplement}) = _$_NutritionOrderSearch;
 
   @override
-  List<SearchToken> get searchId;
+  List<Id> get searchId;
   @override
-  List<Date> get searchLastUpdated;
-  @override
-  List<SearchToken> get searchTag;
-  @override
-  List<SearchUri> get searchProfile;
-  @override
-  List<SearchToken> get searchSecurity;
-  @override
-  List<SearchString> get searchText;
-  @override
-  List<SearchString> get searchContent;
-  @override
-  List<SearchString> get searchList;
-  @override
-  List<String> get searchHas;
-  @override
-  List<SearchToken> get searchType;
-  @override
+  List<SearchDate> get searchLastUpdated;
+  @override //List<SearchToken> searchTag,
+//List<SearchUri> searchProfile,
+//List<SearchToken> searchSecurity,
+//List<String> searchText,
+//List<String> searchContent,
+//List<SearchString> searchList,
+// List<SearchString> searchHas,
+//List<SearchToken> searchType,
   List<SearchToken> get identifier;
   @override
   List<String> get patient;
@@ -3642,16 +2691,8 @@ class _$VisionPrescriptionSearchTearOff {
 
 // ignore: unused_element
   _VisionPrescriptionSearch call(
-      {List<SearchToken> searchId,
-      List<Date> searchLastUpdated,
-      List<SearchToken> searchTag,
-      List<SearchUri> searchProfile,
-      List<SearchToken> searchSecurity,
-      List<SearchString> searchText,
-      List<SearchString> searchContent,
-      List<SearchString> searchList,
-      List<String> searchHas,
-      List<SearchToken> searchType,
+      {List<Id> searchId,
+      List<SearchDate> searchLastUpdated,
       List<SearchToken> identifier,
       List<String> patient,
       List<String> encounter,
@@ -3661,14 +2702,6 @@ class _$VisionPrescriptionSearchTearOff {
     return _VisionPrescriptionSearch(
       searchId: searchId,
       searchLastUpdated: searchLastUpdated,
-      searchTag: searchTag,
-      searchProfile: searchProfile,
-      searchSecurity: searchSecurity,
-      searchText: searchText,
-      searchContent: searchContent,
-      searchList: searchList,
-      searchHas: searchHas,
-      searchType: searchType,
       identifier: identifier,
       patient: patient,
       encounter: encounter,
@@ -3685,16 +2718,15 @@ const $VisionPrescriptionSearch = _$VisionPrescriptionSearchTearOff();
 
 /// @nodoc
 mixin _$VisionPrescriptionSearch {
-  List<SearchToken> get searchId;
-  List<Date> get searchLastUpdated;
-  List<SearchToken> get searchTag;
-  List<SearchUri> get searchProfile;
-  List<SearchToken> get searchSecurity;
-  List<SearchString> get searchText;
-  List<SearchString> get searchContent;
-  List<SearchString> get searchList;
-  List<String> get searchHas;
-  List<SearchToken> get searchType;
+  List<Id> get searchId;
+  List<SearchDate> get searchLastUpdated; //List<SearchToken> searchTag,
+//List<SearchUri> searchProfile,
+//List<SearchToken> searchSecurity,
+//List<String> searchText,
+//List<String> searchContent,
+//List<SearchString> searchList,
+// List<SearchString> searchHas,
+//List<SearchToken> searchType,
   List<SearchToken> get identifier;
   List<String> get patient;
   List<String> get encounter;
@@ -3711,16 +2743,8 @@ abstract class $VisionPrescriptionSearchCopyWith<$Res> {
           $Res Function(VisionPrescriptionSearch) then) =
       _$VisionPrescriptionSearchCopyWithImpl<$Res>;
   $Res call(
-      {List<SearchToken> searchId,
-      List<Date> searchLastUpdated,
-      List<SearchToken> searchTag,
-      List<SearchUri> searchProfile,
-      List<SearchToken> searchSecurity,
-      List<SearchString> searchText,
-      List<SearchString> searchContent,
-      List<SearchString> searchList,
-      List<String> searchHas,
-      List<SearchToken> searchType,
+      {List<Id> searchId,
+      List<SearchDate> searchLastUpdated,
       List<SearchToken> identifier,
       List<String> patient,
       List<String> encounter,
@@ -3742,14 +2766,6 @@ class _$VisionPrescriptionSearchCopyWithImpl<$Res>
   $Res call({
     Object searchId = freezed,
     Object searchLastUpdated = freezed,
-    Object searchTag = freezed,
-    Object searchProfile = freezed,
-    Object searchSecurity = freezed,
-    Object searchText = freezed,
-    Object searchContent = freezed,
-    Object searchList = freezed,
-    Object searchHas = freezed,
-    Object searchType = freezed,
     Object identifier = freezed,
     Object patient = freezed,
     Object encounter = freezed,
@@ -3758,34 +2774,10 @@ class _$VisionPrescriptionSearchCopyWithImpl<$Res>
     Object status = freezed,
   }) {
     return _then(_value.copyWith(
-      searchId:
-          searchId == freezed ? _value.searchId : searchId as List<SearchToken>,
+      searchId: searchId == freezed ? _value.searchId : searchId as List<Id>,
       searchLastUpdated: searchLastUpdated == freezed
           ? _value.searchLastUpdated
-          : searchLastUpdated as List<Date>,
-      searchTag: searchTag == freezed
-          ? _value.searchTag
-          : searchTag as List<SearchToken>,
-      searchProfile: searchProfile == freezed
-          ? _value.searchProfile
-          : searchProfile as List<SearchUri>,
-      searchSecurity: searchSecurity == freezed
-          ? _value.searchSecurity
-          : searchSecurity as List<SearchToken>,
-      searchText: searchText == freezed
-          ? _value.searchText
-          : searchText as List<SearchString>,
-      searchContent: searchContent == freezed
-          ? _value.searchContent
-          : searchContent as List<SearchString>,
-      searchList: searchList == freezed
-          ? _value.searchList
-          : searchList as List<SearchString>,
-      searchHas:
-          searchHas == freezed ? _value.searchHas : searchHas as List<String>,
-      searchType: searchType == freezed
-          ? _value.searchType
-          : searchType as List<SearchToken>,
+          : searchLastUpdated as List<SearchDate>,
       identifier: identifier == freezed
           ? _value.identifier
           : identifier as List<SearchToken>,
@@ -3811,16 +2803,8 @@ abstract class _$VisionPrescriptionSearchCopyWith<$Res>
       __$VisionPrescriptionSearchCopyWithImpl<$Res>;
   @override
   $Res call(
-      {List<SearchToken> searchId,
-      List<Date> searchLastUpdated,
-      List<SearchToken> searchTag,
-      List<SearchUri> searchProfile,
-      List<SearchToken> searchSecurity,
-      List<SearchString> searchText,
-      List<SearchString> searchContent,
-      List<SearchString> searchList,
-      List<String> searchHas,
-      List<SearchToken> searchType,
+      {List<Id> searchId,
+      List<SearchDate> searchLastUpdated,
       List<SearchToken> identifier,
       List<String> patient,
       List<String> encounter,
@@ -3845,14 +2829,6 @@ class __$VisionPrescriptionSearchCopyWithImpl<$Res>
   $Res call({
     Object searchId = freezed,
     Object searchLastUpdated = freezed,
-    Object searchTag = freezed,
-    Object searchProfile = freezed,
-    Object searchSecurity = freezed,
-    Object searchText = freezed,
-    Object searchContent = freezed,
-    Object searchList = freezed,
-    Object searchHas = freezed,
-    Object searchType = freezed,
     Object identifier = freezed,
     Object patient = freezed,
     Object encounter = freezed,
@@ -3861,34 +2837,10 @@ class __$VisionPrescriptionSearchCopyWithImpl<$Res>
     Object status = freezed,
   }) {
     return _then(_VisionPrescriptionSearch(
-      searchId:
-          searchId == freezed ? _value.searchId : searchId as List<SearchToken>,
+      searchId: searchId == freezed ? _value.searchId : searchId as List<Id>,
       searchLastUpdated: searchLastUpdated == freezed
           ? _value.searchLastUpdated
-          : searchLastUpdated as List<Date>,
-      searchTag: searchTag == freezed
-          ? _value.searchTag
-          : searchTag as List<SearchToken>,
-      searchProfile: searchProfile == freezed
-          ? _value.searchProfile
-          : searchProfile as List<SearchUri>,
-      searchSecurity: searchSecurity == freezed
-          ? _value.searchSecurity
-          : searchSecurity as List<SearchToken>,
-      searchText: searchText == freezed
-          ? _value.searchText
-          : searchText as List<SearchString>,
-      searchContent: searchContent == freezed
-          ? _value.searchContent
-          : searchContent as List<SearchString>,
-      searchList: searchList == freezed
-          ? _value.searchList
-          : searchList as List<SearchString>,
-      searchHas:
-          searchHas == freezed ? _value.searchHas : searchHas as List<String>,
-      searchType: searchType == freezed
-          ? _value.searchType
-          : searchType as List<SearchToken>,
+          : searchLastUpdated as List<SearchDate>,
       identifier: identifier == freezed
           ? _value.identifier
           : identifier as List<SearchToken>,
@@ -3911,14 +2863,6 @@ class _$_VisionPrescriptionSearch extends _VisionPrescriptionSearch {
   _$_VisionPrescriptionSearch(
       {this.searchId,
       this.searchLastUpdated,
-      this.searchTag,
-      this.searchProfile,
-      this.searchSecurity,
-      this.searchText,
-      this.searchContent,
-      this.searchList,
-      this.searchHas,
-      this.searchType,
       this.identifier,
       this.patient,
       this.encounter,
@@ -3928,26 +2872,17 @@ class _$_VisionPrescriptionSearch extends _VisionPrescriptionSearch {
       : super._();
 
   @override
-  final List<SearchToken> searchId;
+  final List<Id> searchId;
   @override
-  final List<Date> searchLastUpdated;
-  @override
-  final List<SearchToken> searchTag;
-  @override
-  final List<SearchUri> searchProfile;
-  @override
-  final List<SearchToken> searchSecurity;
-  @override
-  final List<SearchString> searchText;
-  @override
-  final List<SearchString> searchContent;
-  @override
-  final List<SearchString> searchList;
-  @override
-  final List<String> searchHas;
-  @override
-  final List<SearchToken> searchType;
-  @override
+  final List<SearchDate> searchLastUpdated;
+  @override //List<SearchToken> searchTag,
+//List<SearchUri> searchProfile,
+//List<SearchToken> searchSecurity,
+//List<String> searchText,
+//List<String> searchContent,
+//List<SearchString> searchList,
+// List<SearchString> searchHas,
+//List<SearchToken> searchType,
   final List<SearchToken> identifier;
   @override
   final List<String> patient;
@@ -3962,7 +2897,7 @@ class _$_VisionPrescriptionSearch extends _VisionPrescriptionSearch {
 
   @override
   String toString() {
-    return 'VisionPrescriptionSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, identifier: $identifier, patient: $patient, encounter: $encounter, datewritten: $datewritten, prescriber: $prescriber, status: $status)';
+    return 'VisionPrescriptionSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, identifier: $identifier, patient: $patient, encounter: $encounter, datewritten: $datewritten, prescriber: $prescriber, status: $status)';
   }
 
   @override
@@ -3975,30 +2910,6 @@ class _$_VisionPrescriptionSearch extends _VisionPrescriptionSearch {
             (identical(other.searchLastUpdated, searchLastUpdated) ||
                 const DeepCollectionEquality()
                     .equals(other.searchLastUpdated, searchLastUpdated)) &&
-            (identical(other.searchTag, searchTag) ||
-                const DeepCollectionEquality()
-                    .equals(other.searchTag, searchTag)) &&
-            (identical(other.searchProfile, searchProfile) ||
-                const DeepCollectionEquality()
-                    .equals(other.searchProfile, searchProfile)) &&
-            (identical(other.searchSecurity, searchSecurity) ||
-                const DeepCollectionEquality()
-                    .equals(other.searchSecurity, searchSecurity)) &&
-            (identical(other.searchText, searchText) ||
-                const DeepCollectionEquality()
-                    .equals(other.searchText, searchText)) &&
-            (identical(other.searchContent, searchContent) ||
-                const DeepCollectionEquality()
-                    .equals(other.searchContent, searchContent)) &&
-            (identical(other.searchList, searchList) ||
-                const DeepCollectionEquality()
-                    .equals(other.searchList, searchList)) &&
-            (identical(other.searchHas, searchHas) ||
-                const DeepCollectionEquality()
-                    .equals(other.searchHas, searchHas)) &&
-            (identical(other.searchType, searchType) ||
-                const DeepCollectionEquality()
-                    .equals(other.searchType, searchType)) &&
             (identical(other.identifier, identifier) ||
                 const DeepCollectionEquality()
                     .equals(other.identifier, identifier)) &&
@@ -4023,14 +2934,6 @@ class _$_VisionPrescriptionSearch extends _VisionPrescriptionSearch {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(searchId) ^
       const DeepCollectionEquality().hash(searchLastUpdated) ^
-      const DeepCollectionEquality().hash(searchTag) ^
-      const DeepCollectionEquality().hash(searchProfile) ^
-      const DeepCollectionEquality().hash(searchSecurity) ^
-      const DeepCollectionEquality().hash(searchText) ^
-      const DeepCollectionEquality().hash(searchContent) ^
-      const DeepCollectionEquality().hash(searchList) ^
-      const DeepCollectionEquality().hash(searchHas) ^
-      const DeepCollectionEquality().hash(searchType) ^
       const DeepCollectionEquality().hash(identifier) ^
       const DeepCollectionEquality().hash(patient) ^
       const DeepCollectionEquality().hash(encounter) ^
@@ -4047,16 +2950,8 @@ class _$_VisionPrescriptionSearch extends _VisionPrescriptionSearch {
 abstract class _VisionPrescriptionSearch extends VisionPrescriptionSearch {
   _VisionPrescriptionSearch._() : super._();
   factory _VisionPrescriptionSearch(
-      {List<SearchToken> searchId,
-      List<Date> searchLastUpdated,
-      List<SearchToken> searchTag,
-      List<SearchUri> searchProfile,
-      List<SearchToken> searchSecurity,
-      List<SearchString> searchText,
-      List<SearchString> searchContent,
-      List<SearchString> searchList,
-      List<String> searchHas,
-      List<SearchToken> searchType,
+      {List<Id> searchId,
+      List<SearchDate> searchLastUpdated,
       List<SearchToken> identifier,
       List<String> patient,
       List<String> encounter,
@@ -4065,26 +2960,17 @@ abstract class _VisionPrescriptionSearch extends VisionPrescriptionSearch {
       List<SearchToken> status}) = _$_VisionPrescriptionSearch;
 
   @override
-  List<SearchToken> get searchId;
+  List<Id> get searchId;
   @override
-  List<Date> get searchLastUpdated;
-  @override
-  List<SearchToken> get searchTag;
-  @override
-  List<SearchUri> get searchProfile;
-  @override
-  List<SearchToken> get searchSecurity;
-  @override
-  List<SearchString> get searchText;
-  @override
-  List<SearchString> get searchContent;
-  @override
-  List<SearchString> get searchList;
-  @override
-  List<String> get searchHas;
-  @override
-  List<SearchToken> get searchType;
-  @override
+  List<SearchDate> get searchLastUpdated;
+  @override //List<SearchToken> searchTag,
+//List<SearchUri> searchProfile,
+//List<SearchToken> searchSecurity,
+//List<String> searchText,
+//List<String> searchContent,
+//List<SearchString> searchList,
+// List<SearchString> searchHas,
+//List<SearchToken> searchType,
   List<SearchToken> get identifier;
   @override
   List<String> get patient;
@@ -4106,16 +2992,8 @@ class _$RequestGroupSearchTearOff {
 
 // ignore: unused_element
   _RequestGroupSearch call(
-      {List<SearchToken> searchId,
-      List<Date> searchLastUpdated,
-      List<SearchToken> searchTag,
-      List<SearchUri> searchProfile,
-      List<SearchToken> searchSecurity,
-      List<SearchString> searchText,
-      List<SearchString> searchContent,
-      List<SearchString> searchList,
-      List<String> searchHas,
-      List<SearchToken> searchType,
+      {List<Id> searchId,
+      List<SearchDate> searchLastUpdated,
       List<String> author,
       List<SearchDate> authored,
       List<SearchToken> code,
@@ -4133,14 +3011,6 @@ class _$RequestGroupSearchTearOff {
     return _RequestGroupSearch(
       searchId: searchId,
       searchLastUpdated: searchLastUpdated,
-      searchTag: searchTag,
-      searchProfile: searchProfile,
-      searchSecurity: searchSecurity,
-      searchText: searchText,
-      searchContent: searchContent,
-      searchList: searchList,
-      searchHas: searchHas,
-      searchType: searchType,
       author: author,
       authored: authored,
       code: code,
@@ -4165,16 +3035,15 @@ const $RequestGroupSearch = _$RequestGroupSearchTearOff();
 
 /// @nodoc
 mixin _$RequestGroupSearch {
-  List<SearchToken> get searchId;
-  List<Date> get searchLastUpdated;
-  List<SearchToken> get searchTag;
-  List<SearchUri> get searchProfile;
-  List<SearchToken> get searchSecurity;
-  List<SearchString> get searchText;
-  List<SearchString> get searchContent;
-  List<SearchString> get searchList;
-  List<String> get searchHas;
-  List<SearchToken> get searchType;
+  List<Id> get searchId;
+  List<SearchDate> get searchLastUpdated; //List<SearchToken> searchTag,
+//List<SearchUri> searchProfile,
+//List<SearchToken> searchSecurity,
+//List<String> searchText,
+//List<String> searchContent,
+//List<SearchString> searchList,
+// List<SearchString> searchHas,
+//List<SearchToken> searchType,
   List<String> get author;
   List<SearchDate> get authored;
   List<SearchToken> get code;
@@ -4199,16 +3068,8 @@ abstract class $RequestGroupSearchCopyWith<$Res> {
           RequestGroupSearch value, $Res Function(RequestGroupSearch) then) =
       _$RequestGroupSearchCopyWithImpl<$Res>;
   $Res call(
-      {List<SearchToken> searchId,
-      List<Date> searchLastUpdated,
-      List<SearchToken> searchTag,
-      List<SearchUri> searchProfile,
-      List<SearchToken> searchSecurity,
-      List<SearchString> searchText,
-      List<SearchString> searchContent,
-      List<SearchString> searchList,
-      List<String> searchHas,
-      List<SearchToken> searchType,
+      {List<Id> searchId,
+      List<SearchDate> searchLastUpdated,
       List<String> author,
       List<SearchDate> authored,
       List<SearchToken> code,
@@ -4238,14 +3099,6 @@ class _$RequestGroupSearchCopyWithImpl<$Res>
   $Res call({
     Object searchId = freezed,
     Object searchLastUpdated = freezed,
-    Object searchTag = freezed,
-    Object searchProfile = freezed,
-    Object searchSecurity = freezed,
-    Object searchText = freezed,
-    Object searchContent = freezed,
-    Object searchList = freezed,
-    Object searchHas = freezed,
-    Object searchType = freezed,
     Object author = freezed,
     Object authored = freezed,
     Object code = freezed,
@@ -4262,34 +3115,10 @@ class _$RequestGroupSearchCopyWithImpl<$Res>
     Object subject = freezed,
   }) {
     return _then(_value.copyWith(
-      searchId:
-          searchId == freezed ? _value.searchId : searchId as List<SearchToken>,
+      searchId: searchId == freezed ? _value.searchId : searchId as List<Id>,
       searchLastUpdated: searchLastUpdated == freezed
           ? _value.searchLastUpdated
-          : searchLastUpdated as List<Date>,
-      searchTag: searchTag == freezed
-          ? _value.searchTag
-          : searchTag as List<SearchToken>,
-      searchProfile: searchProfile == freezed
-          ? _value.searchProfile
-          : searchProfile as List<SearchUri>,
-      searchSecurity: searchSecurity == freezed
-          ? _value.searchSecurity
-          : searchSecurity as List<SearchToken>,
-      searchText: searchText == freezed
-          ? _value.searchText
-          : searchText as List<SearchString>,
-      searchContent: searchContent == freezed
-          ? _value.searchContent
-          : searchContent as List<SearchString>,
-      searchList: searchList == freezed
-          ? _value.searchList
-          : searchList as List<SearchString>,
-      searchHas:
-          searchHas == freezed ? _value.searchHas : searchHas as List<String>,
-      searchType: searchType == freezed
-          ? _value.searchType
-          : searchType as List<SearchToken>,
+          : searchLastUpdated as List<SearchDate>,
       author: author == freezed ? _value.author : author as List<String>,
       authored:
           authored == freezed ? _value.authored : authored as List<SearchDate>,
@@ -4329,16 +3158,8 @@ abstract class _$RequestGroupSearchCopyWith<$Res>
       __$RequestGroupSearchCopyWithImpl<$Res>;
   @override
   $Res call(
-      {List<SearchToken> searchId,
-      List<Date> searchLastUpdated,
-      List<SearchToken> searchTag,
-      List<SearchUri> searchProfile,
-      List<SearchToken> searchSecurity,
-      List<SearchString> searchText,
-      List<SearchString> searchContent,
-      List<SearchString> searchList,
-      List<String> searchHas,
-      List<SearchToken> searchType,
+      {List<Id> searchId,
+      List<SearchDate> searchLastUpdated,
       List<String> author,
       List<SearchDate> authored,
       List<SearchToken> code,
@@ -4370,14 +3191,6 @@ class __$RequestGroupSearchCopyWithImpl<$Res>
   $Res call({
     Object searchId = freezed,
     Object searchLastUpdated = freezed,
-    Object searchTag = freezed,
-    Object searchProfile = freezed,
-    Object searchSecurity = freezed,
-    Object searchText = freezed,
-    Object searchContent = freezed,
-    Object searchList = freezed,
-    Object searchHas = freezed,
-    Object searchType = freezed,
     Object author = freezed,
     Object authored = freezed,
     Object code = freezed,
@@ -4394,34 +3207,10 @@ class __$RequestGroupSearchCopyWithImpl<$Res>
     Object subject = freezed,
   }) {
     return _then(_RequestGroupSearch(
-      searchId:
-          searchId == freezed ? _value.searchId : searchId as List<SearchToken>,
+      searchId: searchId == freezed ? _value.searchId : searchId as List<Id>,
       searchLastUpdated: searchLastUpdated == freezed
           ? _value.searchLastUpdated
-          : searchLastUpdated as List<Date>,
-      searchTag: searchTag == freezed
-          ? _value.searchTag
-          : searchTag as List<SearchToken>,
-      searchProfile: searchProfile == freezed
-          ? _value.searchProfile
-          : searchProfile as List<SearchUri>,
-      searchSecurity: searchSecurity == freezed
-          ? _value.searchSecurity
-          : searchSecurity as List<SearchToken>,
-      searchText: searchText == freezed
-          ? _value.searchText
-          : searchText as List<SearchString>,
-      searchContent: searchContent == freezed
-          ? _value.searchContent
-          : searchContent as List<SearchString>,
-      searchList: searchList == freezed
-          ? _value.searchList
-          : searchList as List<SearchString>,
-      searchHas:
-          searchHas == freezed ? _value.searchHas : searchHas as List<String>,
-      searchType: searchType == freezed
-          ? _value.searchType
-          : searchType as List<SearchToken>,
+          : searchLastUpdated as List<SearchDate>,
       author: author == freezed ? _value.author : author as List<String>,
       authored:
           authored == freezed ? _value.authored : authored as List<SearchDate>,
@@ -4458,14 +3247,6 @@ class _$_RequestGroupSearch extends _RequestGroupSearch {
   _$_RequestGroupSearch(
       {this.searchId,
       this.searchLastUpdated,
-      this.searchTag,
-      this.searchProfile,
-      this.searchSecurity,
-      this.searchText,
-      this.searchContent,
-      this.searchList,
-      this.searchHas,
-      this.searchType,
       this.author,
       this.authored,
       this.code,
@@ -4483,26 +3264,17 @@ class _$_RequestGroupSearch extends _RequestGroupSearch {
       : super._();
 
   @override
-  final List<SearchToken> searchId;
+  final List<Id> searchId;
   @override
-  final List<Date> searchLastUpdated;
-  @override
-  final List<SearchToken> searchTag;
-  @override
-  final List<SearchUri> searchProfile;
-  @override
-  final List<SearchToken> searchSecurity;
-  @override
-  final List<SearchString> searchText;
-  @override
-  final List<SearchString> searchContent;
-  @override
-  final List<SearchString> searchList;
-  @override
-  final List<String> searchHas;
-  @override
-  final List<SearchToken> searchType;
-  @override
+  final List<SearchDate> searchLastUpdated;
+  @override //List<SearchToken> searchTag,
+//List<SearchUri> searchProfile,
+//List<SearchToken> searchSecurity,
+//List<String> searchText,
+//List<String> searchContent,
+//List<SearchString> searchList,
+// List<SearchString> searchHas,
+//List<SearchToken> searchType,
   final List<String> author;
   @override
   final List<SearchDate> authored;
@@ -4533,7 +3305,7 @@ class _$_RequestGroupSearch extends _RequestGroupSearch {
 
   @override
   String toString() {
-    return 'RequestGroupSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, searchHas: $searchHas, searchType: $searchType, author: $author, authored: $authored, code: $code, encounter: $encounter, group_identifier: $group_identifier, identifier: $identifier, instantiates_canonical: $instantiates_canonical, instantiates_uri: $instantiates_uri, intent: $intent, participant: $participant, patient: $patient, priority: $priority, status: $status, subject: $subject)';
+    return 'RequestGroupSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, author: $author, authored: $authored, code: $code, encounter: $encounter, group_identifier: $group_identifier, identifier: $identifier, instantiates_canonical: $instantiates_canonical, instantiates_uri: $instantiates_uri, intent: $intent, participant: $participant, patient: $patient, priority: $priority, status: $status, subject: $subject)';
   }
 
   @override
@@ -4546,30 +3318,6 @@ class _$_RequestGroupSearch extends _RequestGroupSearch {
             (identical(other.searchLastUpdated, searchLastUpdated) ||
                 const DeepCollectionEquality()
                     .equals(other.searchLastUpdated, searchLastUpdated)) &&
-            (identical(other.searchTag, searchTag) ||
-                const DeepCollectionEquality()
-                    .equals(other.searchTag, searchTag)) &&
-            (identical(other.searchProfile, searchProfile) ||
-                const DeepCollectionEquality()
-                    .equals(other.searchProfile, searchProfile)) &&
-            (identical(other.searchSecurity, searchSecurity) ||
-                const DeepCollectionEquality()
-                    .equals(other.searchSecurity, searchSecurity)) &&
-            (identical(other.searchText, searchText) ||
-                const DeepCollectionEquality()
-                    .equals(other.searchText, searchText)) &&
-            (identical(other.searchContent, searchContent) ||
-                const DeepCollectionEquality()
-                    .equals(other.searchContent, searchContent)) &&
-            (identical(other.searchList, searchList) ||
-                const DeepCollectionEquality()
-                    .equals(other.searchList, searchList)) &&
-            (identical(other.searchHas, searchHas) ||
-                const DeepCollectionEquality()
-                    .equals(other.searchHas, searchHas)) &&
-            (identical(other.searchType, searchType) ||
-                const DeepCollectionEquality()
-                    .equals(other.searchType, searchType)) &&
             (identical(other.author, author) ||
                 const DeepCollectionEquality().equals(other.author, author)) &&
             (identical(other.authored, authored) ||
@@ -4614,14 +3362,6 @@ class _$_RequestGroupSearch extends _RequestGroupSearch {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(searchId) ^
       const DeepCollectionEquality().hash(searchLastUpdated) ^
-      const DeepCollectionEquality().hash(searchTag) ^
-      const DeepCollectionEquality().hash(searchProfile) ^
-      const DeepCollectionEquality().hash(searchSecurity) ^
-      const DeepCollectionEquality().hash(searchText) ^
-      const DeepCollectionEquality().hash(searchContent) ^
-      const DeepCollectionEquality().hash(searchList) ^
-      const DeepCollectionEquality().hash(searchHas) ^
-      const DeepCollectionEquality().hash(searchType) ^
       const DeepCollectionEquality().hash(author) ^
       const DeepCollectionEquality().hash(authored) ^
       const DeepCollectionEquality().hash(code) ^
@@ -4645,16 +3385,8 @@ class _$_RequestGroupSearch extends _RequestGroupSearch {
 abstract class _RequestGroupSearch extends RequestGroupSearch {
   _RequestGroupSearch._() : super._();
   factory _RequestGroupSearch(
-      {List<SearchToken> searchId,
-      List<Date> searchLastUpdated,
-      List<SearchToken> searchTag,
-      List<SearchUri> searchProfile,
-      List<SearchToken> searchSecurity,
-      List<SearchString> searchText,
-      List<SearchString> searchContent,
-      List<SearchString> searchList,
-      List<String> searchHas,
-      List<SearchToken> searchType,
+      {List<Id> searchId,
+      List<SearchDate> searchLastUpdated,
       List<String> author,
       List<SearchDate> authored,
       List<SearchToken> code,
@@ -4671,26 +3403,17 @@ abstract class _RequestGroupSearch extends RequestGroupSearch {
       List<String> subject}) = _$_RequestGroupSearch;
 
   @override
-  List<SearchToken> get searchId;
+  List<Id> get searchId;
   @override
-  List<Date> get searchLastUpdated;
-  @override
-  List<SearchToken> get searchTag;
-  @override
-  List<SearchUri> get searchProfile;
-  @override
-  List<SearchToken> get searchSecurity;
-  @override
-  List<SearchString> get searchText;
-  @override
-  List<SearchString> get searchContent;
-  @override
-  List<SearchString> get searchList;
-  @override
-  List<String> get searchHas;
-  @override
-  List<SearchToken> get searchType;
-  @override
+  List<SearchDate> get searchLastUpdated;
+  @override //List<SearchToken> searchTag,
+//List<SearchUri> searchProfile,
+//List<SearchToken> searchSecurity,
+//List<String> searchText,
+//List<String> searchContent,
+//List<SearchString> searchList,
+// List<SearchString> searchHas,
+//List<SearchToken> searchType,
   List<String> get author;
   @override
   List<SearchDate> get authored;

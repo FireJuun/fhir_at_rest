@@ -1,8 +1,9 @@
 import 'dart:convert';
 
 import 'package:dartz/dartz.dart';
-import 'package:fhir_at_rest/failures/restful_failure.dart';
 import 'package:http/http.dart';
+
+import '../failures/restful_failure.dart';
 
 Future<Either<RestfulFailure, dynamic>> makeRequest(
   Function function,

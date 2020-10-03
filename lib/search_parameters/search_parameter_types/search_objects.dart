@@ -1,9 +1,9 @@
 import 'package:dartz/dartz.dart';
-import 'package:fhir/r5.dart';
-import 'package:fhir_at_rest/enums/enums.dart';
-import 'package:fhir_at_rest/resource_types/resource_types.dart';
+import 'package:fhir/primitive_types/primitive_types.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
+import '../../enums/enums.dart';
+import '../../resource_types/resource_types.dart';
 import '../../failures/restful_failure.dart';
 
 @immutable

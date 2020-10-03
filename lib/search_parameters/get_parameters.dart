@@ -154,16 +154,16 @@ void main() async {
             '${j.value1.toString()}Search with R4SearchParameters implements '
             '_\$${j.value1.toString()}Search {\n'
             '${j.value1.toString()}Search._(); \n factory ${j.value1.toString()}Search ({\n'
-            'List<SearchToken> searchId,\n'
-            'List<Date> searchLastUpdated,\n'
-            'List<SearchToken> searchTag,\n'
-            'List<SearchUri> searchProfile,\n'
-            'List<SearchToken> searchSecurity,\n'
-            'List<SearchString> searchText,\n'
-            'List<SearchString> searchContent,\n'
-            'List<SearchString> searchList,\n'
-            'List<String> searchHas,\n'
-            'List<SearchToken> searchType,\n';
+            'List<Id> searchId,\n'
+            'List<SearchDate> searchLastUpdated,\n'
+            '//List<SearchToken> searchTag,\n'
+            '//List<SearchUri> searchProfile,\n'
+            '//List<SearchToken> searchSecurity,\n'
+            '//List<String> searchText,\n'
+            '//List<String> searchContent,\n'
+            '//List<SearchString> searchList,\n'
+            'List<SearchString> searchHas,\n'
+            '//List<SearchToken> searchType,\n';
 
         for (var i in j.value2) {
           fileString += parameterTypeToString(i.value1.toString());

@@ -2,7 +2,6 @@ import 'dart:convert';
 
 import 'package:dartz/dartz.dart';
 import 'package:fhir/primitive_types/primitive_types.dart';
-import 'package:fhir_at_rest/resource_types/resource_types.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:http/http.dart';
 
@@ -12,8 +11,9 @@ import 'package:fhir/r4.dart' as r4;
 import 'package:fhir/r5.dart' as r5;
 
 import '../search_parameters/search_parameter_types/search_parameter_types.dart';
-import '../failures/restful_failure.dart';
+import '../resource_types/resource_types.dart';
 import '../enums/enums.dart';
+import '../failures/restful_failure.dart';
 import 'make_request.dart';
 
 part 'history_request.freezed.dart';

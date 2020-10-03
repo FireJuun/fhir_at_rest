@@ -1,4 +1,4 @@
-import 'enums.dart';
+import '../enums/enums.dart';
 import '../resource_types/resource_types.dart';
 
 String enumToString<T>(T enumValue) {
