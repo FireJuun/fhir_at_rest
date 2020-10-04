@@ -25,4 +25,4 @@ String enumToString<T>(T enumValue) {
 }
 
 String simpleEnumToString<T>(T enumValue) =>
-    enumValue.toString().split('.').last;
+    enumValue == null ? null : enumValue.toString().split('.').last;

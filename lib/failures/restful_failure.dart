@@ -4,11 +4,12 @@ part 'restful_failure.freezed.dart';
 
 @freezed
 abstract class RestfulFailure<T> with _$RestfulFailure<T> {
+  const RestfulFailure._();
   const factory RestfulFailure.httpFailure({
     int statusCode,
     String errorType,
-    String failedValue,
-  }) = HttpFailure;
+    T failedValue,
+  }) = HttpFailure<T>;
   const factory RestfulFailure.unknownFailure({
     @required T failedValue,
   }) = UnknownFailure<T>;
@@ -16,32 +17,66 @@ abstract class RestfulFailure<T> with _$RestfulFailure<T> {
     @required T failedValue,
   }) = NoInternet<T>;
   const factory RestfulFailure.noType({
-    @required String errorComment,
-  }) = NoType;
+    @required T failedValue,
+  }) = NoType<T>;
   const factory RestfulFailure.noId({
-    @required String errorComment,
-  }) = NoId;
+    @required T failedValue,
+  }) = NoId<T>;
   const factory RestfulFailure.noVid({
-    @required String errorComment,
-  }) = NoVid;
+    @required T failedValue,
+  }) = NoVid<T>;
   const factory RestfulFailure.idDoesNotMatchResource({
-    @required String errorComment,
-  }) = IdDoesNotMatchResource;
+    @required T failedValue,
+  }) = IdDoesNotMatchResource<T>;
   const factory RestfulFailure.noBundle({
-    @required String errorComment,
-  }) = NoBundle;
+    @required T failedValue,
+    @required String batchOrTransaction,
+  }) = NoBundle<T>;
   const factory RestfulFailure.notABatchBundle({
-    @required String errorComment,
-  }) = NotABatchBundle;
+    @required T failedValue,
+  }) = NotABatchBundle<T>;
+  const factory RestfulFailure.notATransactionBundle({
+    @required T failedValue,
+  }) = NotATransactionBundle<T>;
   const factory RestfulFailure.missingEntryRequest({
-    @required String errorComment,
-  }) = MissingEntryRequest;
+    @required T failedValue,
+  }) = MissingEntryRequest<T>;
   const factory RestfulFailure.missingRequestMethod({
-    @required String errorComment,
-  }) = MissingRequestMethod;
-  const factory RestfulFailure.searchFailure({
+    @required T failedValue,
+  }) = MissingRequestMethod<T>;
+  const factory RestfulFailure.primitiveFailure({
     @required String parameter,
-    @required dynamic failedValue,
-    @required String errorMessage,
-  }) = SearchFailure;
+    @required T failedValue,
+  }) = PrimitiveFailure<T>;
+  const factory RestfulFailure.searchParameterFailure({
+    @required String parameter,
+    @required T failedValue,
+  }) = SearchParameterFailure<T>;
+
+  String errorMessage() => this.map(
+        httpFailure: (f) => '',
+        unknownFailure: (f) => '',
+        noInternet: (f) => '',
+        noType: (f) => '',
+        noId: (f) => '',
+        noVid: (f) => '',
+        idDoesNotMatchResource: (f) => 'The ID for the request does not match '
+            'the id of the resource.',
+        noBundle: (f) =>
+            '${f.batchOrTransaction} Requests require a Bundle type resource, '
+            'you passed a ${f.failedValue.runtimeType}.',
+        notABatchBundle: (f) =>
+            'A Batch request was made, but the Bundle is not a Batch Type.',
+        notATransactionBundle: (f) =>
+            'A Transaction request was made, but the Bundle is not a Transaction Type.',
+        missingEntryRequest: (f) =>
+            'Each bundle entry requires a request, but some of the the entries '
+            'in this bundle are missing a request.',
+        missingRequestMethod: (f) =>
+            'Each bundle entry request needs a method type specified, but some '
+            'of the entries in this bundle are missing a method.',
+        primitiveFailure: (f) => '${f.failedValue.toString()}',
+        searchParameterFailure: (f) =>
+            '${f.failedValue} is not a valid ${f.parameter}.',
+      );
 }

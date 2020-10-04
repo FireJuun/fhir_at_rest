@@ -14,7 +14,7 @@ abstract class MedicationSearch
   factory MedicationSearch({
     List<Id> searchId,
     List<SearchDate> searchLastUpdated,
-    //List<SearchToken> searchTag,
+    List<SearchToken> searchTag,
     //List<SearchUri> searchProfile,
     //List<SearchToken> searchSecurity,
     //List<String> searchText,
@@ -42,7 +42,7 @@ abstract class MedicationAdministrationSearch
   factory MedicationAdministrationSearch({
     List<Id> searchId,
     List<SearchDate> searchLastUpdated,
-    //List<SearchToken> searchTag,
+    List<SearchToken> searchTag,
     //List<SearchUri> searchProfile,
     //List<SearchToken> searchSecurity,
     //List<String> searchText,
@@ -74,7 +74,7 @@ abstract class MedicationDispenseSearch
   factory MedicationDispenseSearch({
     List<Id> searchId,
     List<SearchDate> searchLastUpdated,
-    //List<SearchToken> searchTag,
+    List<SearchToken> searchTag,
     //List<SearchUri> searchProfile,
     //List<SearchToken> searchSecurity,
     //List<String> searchText,
@@ -108,7 +108,7 @@ abstract class MedicationRequestSearch
   factory MedicationRequestSearch({
     List<Id> searchId,
     List<SearchDate> searchLastUpdated,
-    //List<SearchToken> searchTag,
+    List<SearchToken> searchTag,
     //List<SearchUri> searchProfile,
     //List<SearchToken> searchSecurity,
     //List<String> searchText,
@@ -143,7 +143,7 @@ abstract class MedicationStatementSearch
   factory MedicationStatementSearch({
     List<Id> searchId,
     List<SearchDate> searchLastUpdated,
-    //List<SearchToken> searchTag,
+    List<SearchToken> searchTag,
     //List<SearchUri> searchProfile,
     //List<SearchToken> searchSecurity,
     //List<String> searchText,
@@ -173,7 +173,7 @@ abstract class ImmunizationSearch
   factory ImmunizationSearch({
     List<Id> searchId,
     List<SearchDate> searchLastUpdated,
-    //List<SearchToken> searchTag,
+    List<SearchToken> searchTag,
     //List<SearchUri> searchProfile,
     //List<SearchToken> searchSecurity,
     //List<String> searchText,
@@ -208,7 +208,7 @@ abstract class ImmunizationEvaluationSearch
   factory ImmunizationEvaluationSearch({
     List<Id> searchId,
     List<SearchDate> searchLastUpdated,
-    //List<SearchToken> searchTag,
+    List<SearchToken> searchTag,
     //List<SearchUri> searchProfile,
     //List<SearchToken> searchSecurity,
     //List<String> searchText,
@@ -234,7 +234,7 @@ abstract class ImmunizationRecommendationSearch
   factory ImmunizationRecommendationSearch({
     List<Id> searchId,
     List<SearchDate> searchLastUpdated,
-    //List<SearchToken> searchTag,
+    List<SearchToken> searchTag,
     //List<SearchUri> searchProfile,
     //List<SearchToken> searchSecurity,
     //List<String> searchText,
@@ -261,7 +261,7 @@ abstract class MedicationKnowledgeSearch
   factory MedicationKnowledgeSearch({
     List<Id> searchId,
     List<SearchDate> searchLastUpdated,
-    //List<SearchToken> searchTag,
+    List<SearchToken> searchTag,
     //List<SearchUri> searchProfile,
     //List<SearchToken> searchSecurity,
     //List<String> searchText,

@@ -32,24 +32,28 @@ class SearchToken extends SearchObject<String> {
   Either<RestfulFailure, String> searchString() {
     var returnString = '';
     if (system == null && code == null) {
-      return left(RestfulFailure.searchFailure(
-          type: 'Token', failedValue: 'Missing system or code parameter'));
+      return left(RestfulFailure.searchParameterFailure(
+          parameter: 'Token',
+          failedValue: 'Neither system or code parameterwas provided. This'));
     } else if (system != null && code != null) {
       if (system.value.isLeft() && code.value.isLeft()) {
-        return left(RestfulFailure.searchFailure(
-            type: 'Token',
+        return left(RestfulFailure.searchParameterFailure(
+            parameter: 'Token',
             failedValue:
-                'Invalid system: ${system.value}\nInvalid code: ${code.value}'));
+                'Invalid system: ${system.value}\nInvalid code: ${code.value}'
+                '\nThis'));
       } else if (system.value.isLeft()) {
-        returnString = '${code.toString()}=$value';
+        left(RestfulFailure.primitiveFailure(
+            parameter: 'Uri', failedValue: system));
       } else if (code.value.isLeft()) {
-        returnString = '${system.toString()}=$value';
+        left(RestfulFailure.primitiveFailure(
+            parameter: 'Code', failedValue: code));
       } else
-        returnString = '${system.toString()}|${code.toString()}=$value';
+        returnString = '${system.toString()}|${code.toString()}';
     } else if (system != null) {
-      returnString = '${system.toString()}=$value';
+      returnString = system.toString();
     } else {
-      returnString = '${code.toString()}=$value';
+      returnString = code.toString();
     }
 
     final missingString = missing == null ? '' : ':missing=$missing';
@@ -82,10 +86,10 @@ class SearchToken extends SearchObject<String> {
       case TokenModifier.of_type:
         {
           return value == null
-              ? left(RestfulFailure.searchFailure(
-                  type: 'Token',
+              ? left(RestfulFailure.searchParameterFailure(
+                  parameter: 'Token',
                   failedValue:
-                      'A value must be provided with "of_type" search'))
+                      'A value must be provided with "of_type" search, This'))
               : right(':of-type=$returnString|$value$missingString');
         }
       default:

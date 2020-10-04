@@ -1,7 +1,6 @@
 import 'dart:convert';
 
 import 'package:dartz/dartz.dart';
-import 'package:fhir_at_rest/search_parameters/search_parameters.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:http/http.dart';
 
@@ -10,6 +9,7 @@ import 'package:fhir/stu3.dart' as stu3;
 import 'package:fhir/r4.dart' as r4;
 import 'package:fhir/r5.dart' as r5;
 
+import '../search_parameters/search_parameters.dart';
 import '../resource_types/resource_types.dart';
 import '../enums/enums.dart';
 import '../failures/restful_failure.dart';
@@ -65,21 +65,13 @@ abstract class SearchRequest with _$SearchRequest {
       r4: (req) => req.parameters.searchString(),
       r5: (req) => req.parameters.searchString(),
     );
-    print(parametersString);
 
-    final validatedParameters = parametersString.fold((l) => l, (r) => r);
-    print(validatedParameters.runtimeType == SearchFailure);
-    // print(validatedParameters is RestfulFailure.;
-    print(validatedParameters.runtimeType);
-
-    // if (parametersString is String) {
-    //   thisRequest += parametersString;
-    // } else {
-    //   print(parametersString.type);
-    //   // return left(RestfulFailure.searchFailure(
-    //   //     type: (parametersString as SearchFailure).type,
-    //   //     failedValue: (parametersString as SearchFailure).failedValue));
-    // }
+    if (parametersString.isRight()) {
+      thisRequest += parametersString.getOrElse(() => '');
+    } else {
+      return left(parametersString.fold((l) => l,
+          (r) => RestfulFailure.unknownFailure(failedValue: parametersString)));
+    }
 
     final result = await makeRequest(get, thisRequest);
 

@@ -10,7 +10,9 @@ dependencies:
   freezed_annotation: ^0.12.0
   dartz: ^0.9.1
   http: ^0.12.2
-  fhir: ^0.0.7
+  fhir:
+    git:
+      url: git://github.com/Dokotela/fhir.git
 
 dev_dependencies:
   json_serializable: ^3.4.1

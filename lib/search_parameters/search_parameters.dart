@@ -10,7 +10,7 @@ import '../failures/restful_failure.dart';
 class Dstu2SearchParameters {
   List<Id> searchId;
   List<SearchDate> searchLastUpdated;
-  //List<SearchToken> searchTag;
+  List<SearchToken> searchTag;
   //List<SearchUri> searchProfile;
   //List<SearchToken> searchSecurity;
   //List<String> searchText;
@@ -19,13 +19,13 @@ class Dstu2SearchParameters {
   // List<SearchString> searchHas;
   //List<SearchToken> searchType;
 
-  Either<SearchFailure, String> searchString() => _parametersToString(this);
+  Either<RestfulFailure, String> searchString() => _parametersToString(this);
 }
 
 class Stu3SearchParameters {
   List<Id> searchId;
   List<SearchDate> searchLastUpdated;
-  //List<SearchToken> searchTag;
+  List<SearchToken> searchTag;
   //List<SearchUri> searchProfile;
   //List<SearchToken> searchSecurity;
   //List<String> searchText;
@@ -34,13 +34,13 @@ class Stu3SearchParameters {
   // List<SearchString> searchHas;
   //List<SearchToken> searchType;
 
-  Either<SearchFailure, String> searchString() => _parametersToString(this);
+  Either<RestfulFailure, String> searchString() => _parametersToString(this);
 }
 
 class R4SearchParameters {
   List<Id> searchId;
   List<SearchDate> searchLastUpdated;
-  //List<SearchToken> searchTag;
+  List<SearchToken> searchTag;
   //List<SearchUri> searchProfile;
   //List<SearchToken> searchSecurity;
   //List<String> searchText;
@@ -49,13 +49,13 @@ class R4SearchParameters {
   // List<SearchString> searchHas;
   //List<SearchToken> searchType;
 
-  Either<SearchFailure, String> searchString() => _parametersToString(this);
+  Either<RestfulFailure, String> searchString() => _parametersToString(this);
 }
 
 class R5SearchParameters {
   List<Id> searchId;
   List<SearchDate> searchLastUpdated;
-  //List<SearchToken> searchTag;
+  List<SearchToken> searchTag;
   //List<SearchUri> searchProfile;
   //List<SearchToken> searchSecurity;
   //List<String> searchText;
@@ -64,45 +64,50 @@ class R5SearchParameters {
   // List<SearchString> searchHas;
   //List<SearchToken> searchType;
 
-  Either<SearchFailure, String> searchString() => _parametersToString(this);
+  Either<RestfulFailure, String> searchString() => _parametersToString(this);
 }
 
-Either<SearchFailure, String> _parametersToString(dynamic search) {
+Either<RestfulFailure, String> _parametersToString(dynamic search) {
   var parameterString = '';
   if (search.searchId != null) {
     for (Id id in search.searchId) {
       if (id.value.isLeft()) {
-        return left(SearchFailure(
-            parameter: '_id',
-            failedValue: id,
-            errorMessage:
-                'Parameter _id invalid: ${id.value.fold((l) => l.failedValue, (r) => '')}'));
+        return left(RestfulFailure.searchParameterFailure(
+          parameter: '_id',
+          failedValue: '${id.toString()}. This therefore',
+        ));
       } else {
         parameterString += id.value.fold((l) => '', (r) => '&_id=$id');
       }
     }
   }
-  // if (search.searchLastUpdated != null) {
-  //   for (var i in search.searchLastUpdated) {
-  //     Either<RestfulFailure, String> lastUpdated = i.searchString();
-  //     if (lastUpdated.isLeft()) {
-  //       return lastUpdated;
-  //     } else {
-  //       parameterString +=
-  //           lastUpdated.fold((l) => '', (r) => '&_lastUpdated$r');
-  //     }
-  //   }
-  // }
-  // if (search.searchTag != null) {
-  //   for (var i in search.searchTag) {
-  //     Either<RestfulFailure, String> tag = i.searchString();
-  //     if (tag.isLeft()) {
-  //       return tag;
-  //     } else {
-  //       parameterString += tag.fold((l) => '', (r) => '&$r');
-  //     }
-  //   }
-  // }
+  if (search.searchLastUpdated != null) {
+    for (var i in search.searchLastUpdated) {
+      Either<RestfulFailure, String> lastUpdated = i.searchString();
+      if (lastUpdated.isLeft()) {
+        return left(lastUpdated.fold(
+            (l) => RestfulFailure.searchParameterFailure(
+                parameter: '_lastUpdated', failedValue: l.errorMessage()),
+            (r) => RestfulFailure.unknownFailure(failedValue: r)));
+      } else {
+        parameterString +=
+            lastUpdated.fold((l) => '', (r) => '&_lastUpdated$r');
+      }
+    }
+  }
+  if (search.searchTag != null) {
+    for (var i in search.searchTag) {
+      Either<RestfulFailure, String> tag = i.searchString();
+      if (tag.isLeft()) {
+        return left(tag.fold(
+            (l) => RestfulFailure.searchParameterFailure(
+                parameter: '_tag', failedValue: l.errorMessage()),
+            (r) => RestfulFailure.unknownFailure(failedValue: r)));
+      } else {
+        parameterString += tag.fold((l) => '', (r) => '&_tag$r');
+      }
+    }
+  }
   // if (search.searchProfile != null) {
   //   for (var i in search.searchProfile) {
   //     Either<RestfulFailure, String> profile = i.searchString();

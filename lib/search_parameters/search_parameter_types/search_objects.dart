@@ -11,37 +11,37 @@ abstract class SearchObject<T> {
   const SearchObject();
 }
 
-Either<RestfulFailure<String>, String> validateSearchNumber(dynamic value) =>
+Either<RestfulFailure, String> validateSearchNumber(dynamic value) =>
     value is num
         ? right(value.toString())
         : num.tryParse(value) != null
             ? right(value)
-            : left(RestfulFailure.searchFailure(
-                type: 'SearchNumber', failedValue: value));
+            : left(RestfulFailure.searchParameterFailure(
+                parameter: 'SearchNumber', failedValue: value));
 
-Either<RestfulFailure<String>, String> validateSearchDate(dynamic value) =>
+Either<RestfulFailure, String> validateSearchDate(dynamic value) =>
     FhirDateTime(value).value.isRight()
         ? right(value.toString())
-        : left(RestfulFailure.searchFailure(
-            type: 'SearchDate', failedValue: value));
+        : left(RestfulFailure.searchParameterFailure(
+            parameter: 'SearchDate', failedValue: value));
 
-Either<RestfulFailure<String>, String> validateSearchUri(dynamic value) =>
+Either<RestfulFailure, String> validateSearchUri(dynamic value) =>
     FhirUri(value).value.isRight()
         ? right(value.toString())
-        : left(RestfulFailure.searchFailure(
-            type: 'SearchDate', failedValue: value));
+        : left(RestfulFailure.searchParameterFailure(
+            parameter: 'SearchDate', failedValue: value));
 
-Either<RestfulFailure<String>, String> validateSearchType(dynamic value) {
+Either<RestfulFailure, String> validateSearchType(dynamic value) {
   if (value is Dstu2Types ||
       value is Stu3Types ||
       value is R4Types ||
       value is R5Types) {
     return enumToString(value) != 'none'
         ? right(enumToString(value))
-        : left(RestfulFailure.searchFailure(
-            type: 'Invalid Type', failedValue: 'No Type Provided'));
+        : left(RestfulFailure.searchParameterFailure(
+            parameter: 'Invalid Type', failedValue: 'No Type Provided'));
   } else {
-    return left(
-        RestfulFailure.searchFailure(type: 'Invalid Type', failedValue: value));
+    return left(RestfulFailure.searchParameterFailure(
+        parameter: 'Invalid Type', failedValue: value));
   }
 }

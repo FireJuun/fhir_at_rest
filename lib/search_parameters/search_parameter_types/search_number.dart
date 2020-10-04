@@ -19,8 +19,9 @@ class SearchNumber extends SearchObject<String> {
 
   const SearchNumber._(this.number, {this.missing, this.prefix});
 
-  Either<RestfulFailure<String>, String> searchString() => number.fold(
-        (l) => left(l),
+  Either<RestfulFailure, String> searchString() => number.fold(
+        (l) => left(RestfulFailure.primitiveFailure(
+            parameter: "Number", failedValue: l)),
         (r) =>
             right('=${prefix == NumberPrefix.eq ? "" : mapNumberPrefix[prefix]}'
                 '$r${missing == null ? "" : ":missing=$missing"}'),

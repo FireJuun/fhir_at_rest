@@ -156,7 +156,7 @@ void main() async {
             '${j.value1.toString()}Search._(); \n factory ${j.value1.toString()}Search ({\n'
             'List<Id> searchId,\n'
             'List<SearchDate> searchLastUpdated,\n'
-            '//List<SearchToken> searchTag,\n'
+            'List<SearchToken> searchTag,\n'
             '//List<SearchUri> searchProfile,\n'
             '//List<SearchToken> searchSecurity,\n'
             '//List<String> searchText,\n'

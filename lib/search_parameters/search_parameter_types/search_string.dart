@@ -21,7 +21,7 @@ class SearchString extends SearchObject<String> {
 
   const SearchString._({@required this.string, this.missing, this.modifier});
 
-  Either<RestfulFailure<String>, String> searchString() => right(
+  Either<RestfulFailure, String> searchString() => right(
       '${modifier != null ? modifier == StringModifier.contains ? ":contains=" : ":exact=" : "="}'
       '$string'
       '${modifier != null ? "" : missing != null ? ":missing=$missing" : ""}');

@@ -15,7 +15,7 @@ class _$RestfulFailureTearOff {
 
 // ignore: unused_element
   HttpFailure<T> httpFailure<T>(
-      {int statusCode, String errorType, String failedValue}) {
+      {int statusCode, String errorType, T failedValue}) {
     return HttpFailure<T>(
       statusCode: statusCode,
       errorType: errorType,
@@ -38,73 +38,86 @@ class _$RestfulFailureTearOff {
   }
 
 // ignore: unused_element
-  NoType<T> noType<T>({@required String errorComment}) {
+  NoType<T> noType<T>({@required T failedValue}) {
     return NoType<T>(
-      errorComment: errorComment,
+      failedValue: failedValue,
     );
   }
 
 // ignore: unused_element
-  NoId<T> noId<T>({@required String errorComment}) {
+  NoId<T> noId<T>({@required T failedValue}) {
     return NoId<T>(
-      errorComment: errorComment,
+      failedValue: failedValue,
     );
   }
 
 // ignore: unused_element
-  NoVid<T> noVid<T>({@required String errorComment}) {
+  NoVid<T> noVid<T>({@required T failedValue}) {
     return NoVid<T>(
-      errorComment: errorComment,
+      failedValue: failedValue,
     );
   }
 
 // ignore: unused_element
   IdDoesNotMatchResource<T> idDoesNotMatchResource<T>(
-      {@required String errorComment}) {
+      {@required T failedValue}) {
     return IdDoesNotMatchResource<T>(
-      errorComment: errorComment,
+      failedValue: failedValue,
     );
   }
 
 // ignore: unused_element
-  NoBundle<T> noBundle<T>({@required String errorComment}) {
+  NoBundle<T> noBundle<T>(
+      {@required T failedValue, @required String batchOrTransaction}) {
     return NoBundle<T>(
-      errorComment: errorComment,
+      failedValue: failedValue,
+      batchOrTransaction: batchOrTransaction,
     );
   }
 
 // ignore: unused_element
-  NotABatchBundle<T> notABatchBundle<T>({@required String errorComment}) {
+  NotABatchBundle<T> notABatchBundle<T>({@required T failedValue}) {
     return NotABatchBundle<T>(
-      errorComment: errorComment,
+      failedValue: failedValue,
     );
   }
 
 // ignore: unused_element
-  MissingEntryRequest<T> missingEntryRequest<T>(
-      {@required String errorComment}) {
+  NotATransactionBundle<T> notATransactionBundle<T>({@required T failedValue}) {
+    return NotATransactionBundle<T>(
+      failedValue: failedValue,
+    );
+  }
+
+// ignore: unused_element
+  MissingEntryRequest<T> missingEntryRequest<T>({@required T failedValue}) {
     return MissingEntryRequest<T>(
-      errorComment: errorComment,
+      failedValue: failedValue,
     );
   }
 
 // ignore: unused_element
-  MissingRequestMethod<T> missingRequestMethod<T>(
-      {@required String errorComment}) {
+  MissingRequestMethod<T> missingRequestMethod<T>({@required T failedValue}) {
     return MissingRequestMethod<T>(
-      errorComment: errorComment,
+      failedValue: failedValue,
     );
   }
 
 // ignore: unused_element
-  SearchFailure<T> searchFailure<T>(
-      {@required String parameter,
-      @required dynamic failedValue,
-      @required String errorMessage}) {
-    return SearchFailure<T>(
+  PrimitiveFailure<T> primitiveFailure<T>(
+      {@required String parameter, @required T failedValue}) {
+    return PrimitiveFailure<T>(
       parameter: parameter,
       failedValue: failedValue,
-      errorMessage: errorMessage,
+    );
+  }
+
+// ignore: unused_element
+  SearchParameterFailure<T> searchParameterFailure<T>(
+      {@required String parameter, @required T failedValue}) {
+    return SearchParameterFailure<T>(
+      parameter: parameter,
+      failedValue: failedValue,
     );
   }
 }
@@ -115,40 +128,42 @@ const $RestfulFailure = _$RestfulFailureTearOff();
 
 /// @nodoc
 mixin _$RestfulFailure<T> {
+  T get failedValue;
+
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required
-        Result httpFailure(
-            int statusCode, String errorType, String failedValue),
+        Result httpFailure(int statusCode, String errorType, T failedValue),
     @required Result unknownFailure(T failedValue),
     @required Result noInternet(T failedValue),
-    @required Result noType(String errorComment),
-    @required Result noId(String errorComment),
-    @required Result noVid(String errorComment),
-    @required Result idDoesNotMatchResource(String errorComment),
-    @required Result noBundle(String errorComment),
-    @required Result notABatchBundle(String errorComment),
-    @required Result missingEntryRequest(String errorComment),
-    @required Result missingRequestMethod(String errorComment),
-    @required
-        Result searchFailure(
-            String parameter, dynamic failedValue, String errorMessage),
+    @required Result noType(T failedValue),
+    @required Result noId(T failedValue),
+    @required Result noVid(T failedValue),
+    @required Result idDoesNotMatchResource(T failedValue),
+    @required Result noBundle(T failedValue, String batchOrTransaction),
+    @required Result notABatchBundle(T failedValue),
+    @required Result notATransactionBundle(T failedValue),
+    @required Result missingEntryRequest(T failedValue),
+    @required Result missingRequestMethod(T failedValue),
+    @required Result primitiveFailure(String parameter, T failedValue),
+    @required Result searchParameterFailure(String parameter, T failedValue),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result httpFailure(int statusCode, String errorType, String failedValue),
+    Result httpFailure(int statusCode, String errorType, T failedValue),
     Result unknownFailure(T failedValue),
     Result noInternet(T failedValue),
-    Result noType(String errorComment),
-    Result noId(String errorComment),
-    Result noVid(String errorComment),
-    Result idDoesNotMatchResource(String errorComment),
-    Result noBundle(String errorComment),
-    Result notABatchBundle(String errorComment),
-    Result missingEntryRequest(String errorComment),
-    Result missingRequestMethod(String errorComment),
-    Result searchFailure(
-        String parameter, dynamic failedValue, String errorMessage),
+    Result noType(T failedValue),
+    Result noId(T failedValue),
+    Result noVid(T failedValue),
+    Result idDoesNotMatchResource(T failedValue),
+    Result noBundle(T failedValue, String batchOrTransaction),
+    Result notABatchBundle(T failedValue),
+    Result notATransactionBundle(T failedValue),
+    Result missingEntryRequest(T failedValue),
+    Result missingRequestMethod(T failedValue),
+    Result primitiveFailure(String parameter, T failedValue),
+    Result searchParameterFailure(String parameter, T failedValue),
     @required Result orElse(),
   });
   @optionalTypeArgs
@@ -162,9 +177,11 @@ mixin _$RestfulFailure<T> {
     @required Result idDoesNotMatchResource(IdDoesNotMatchResource<T> value),
     @required Result noBundle(NoBundle<T> value),
     @required Result notABatchBundle(NotABatchBundle<T> value),
+    @required Result notATransactionBundle(NotATransactionBundle<T> value),
     @required Result missingEntryRequest(MissingEntryRequest<T> value),
     @required Result missingRequestMethod(MissingRequestMethod<T> value),
-    @required Result searchFailure(SearchFailure<T> value),
+    @required Result primitiveFailure(PrimitiveFailure<T> value),
+    @required Result searchParameterFailure(SearchParameterFailure<T> value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
@@ -177,11 +194,15 @@ mixin _$RestfulFailure<T> {
     Result idDoesNotMatchResource(IdDoesNotMatchResource<T> value),
     Result noBundle(NoBundle<T> value),
     Result notABatchBundle(NotABatchBundle<T> value),
+    Result notATransactionBundle(NotATransactionBundle<T> value),
     Result missingEntryRequest(MissingEntryRequest<T> value),
     Result missingRequestMethod(MissingRequestMethod<T> value),
-    Result searchFailure(SearchFailure<T> value),
+    Result primitiveFailure(PrimitiveFailure<T> value),
+    Result searchParameterFailure(SearchParameterFailure<T> value),
     @required Result orElse(),
   });
+
+  $RestfulFailureCopyWith<T, RestfulFailure<T>> get copyWith;
 }
 
 /// @nodoc
@@ -189,6 +210,7 @@ abstract class $RestfulFailureCopyWith<T, $Res> {
   factory $RestfulFailureCopyWith(
           RestfulFailure<T> value, $Res Function(RestfulFailure<T>) then) =
       _$RestfulFailureCopyWithImpl<T, $Res>;
+  $Res call({T failedValue});
 }
 
 /// @nodoc
@@ -199,14 +221,26 @@ class _$RestfulFailureCopyWithImpl<T, $Res>
   final RestfulFailure<T> _value;
   // ignore: unused_field
   final $Res Function(RestfulFailure<T>) _then;
+
+  @override
+  $Res call({
+    Object failedValue = freezed,
+  }) {
+    return _then(_value.copyWith(
+      failedValue:
+          failedValue == freezed ? _value.failedValue : failedValue as T,
+    ));
+  }
 }
 
 /// @nodoc
-abstract class $HttpFailureCopyWith<T, $Res> {
+abstract class $HttpFailureCopyWith<T, $Res>
+    implements $RestfulFailureCopyWith<T, $Res> {
   factory $HttpFailureCopyWith(
           HttpFailure<T> value, $Res Function(HttpFailure<T>) then) =
       _$HttpFailureCopyWithImpl<T, $Res>;
-  $Res call({int statusCode, String errorType, String failedValue});
+  @override
+  $Res call({int statusCode, String errorType, T failedValue});
 }
 
 /// @nodoc
@@ -230,21 +264,22 @@ class _$HttpFailureCopyWithImpl<T, $Res>
       statusCode: statusCode == freezed ? _value.statusCode : statusCode as int,
       errorType: errorType == freezed ? _value.errorType : errorType as String,
       failedValue:
-          failedValue == freezed ? _value.failedValue : failedValue as String,
+          failedValue == freezed ? _value.failedValue : failedValue as T,
     ));
   }
 }
 
 /// @nodoc
-class _$HttpFailure<T> implements HttpFailure<T> {
-  const _$HttpFailure({this.statusCode, this.errorType, this.failedValue});
+class _$HttpFailure<T> extends HttpFailure<T> {
+  const _$HttpFailure({this.statusCode, this.errorType, this.failedValue})
+      : super._();
 
   @override
   final int statusCode;
   @override
   final String errorType;
   @override
-  final String failedValue;
+  final T failedValue;
 
   @override
   String toString() {
@@ -281,21 +316,20 @@ class _$HttpFailure<T> implements HttpFailure<T> {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required
-        Result httpFailure(
-            int statusCode, String errorType, String failedValue),
+        Result httpFailure(int statusCode, String errorType, T failedValue),
     @required Result unknownFailure(T failedValue),
     @required Result noInternet(T failedValue),
-    @required Result noType(String errorComment),
-    @required Result noId(String errorComment),
-    @required Result noVid(String errorComment),
-    @required Result idDoesNotMatchResource(String errorComment),
-    @required Result noBundle(String errorComment),
-    @required Result notABatchBundle(String errorComment),
-    @required Result missingEntryRequest(String errorComment),
-    @required Result missingRequestMethod(String errorComment),
-    @required
-        Result searchFailure(
-            String parameter, dynamic failedValue, String errorMessage),
+    @required Result noType(T failedValue),
+    @required Result noId(T failedValue),
+    @required Result noVid(T failedValue),
+    @required Result idDoesNotMatchResource(T failedValue),
+    @required Result noBundle(T failedValue, String batchOrTransaction),
+    @required Result notABatchBundle(T failedValue),
+    @required Result notATransactionBundle(T failedValue),
+    @required Result missingEntryRequest(T failedValue),
+    @required Result missingRequestMethod(T failedValue),
+    @required Result primitiveFailure(String parameter, T failedValue),
+    @required Result searchParameterFailure(String parameter, T failedValue),
   }) {
     assert(httpFailure != null);
     assert(unknownFailure != null);
@@ -306,28 +340,31 @@ class _$HttpFailure<T> implements HttpFailure<T> {
     assert(idDoesNotMatchResource != null);
     assert(noBundle != null);
     assert(notABatchBundle != null);
+    assert(notATransactionBundle != null);
     assert(missingEntryRequest != null);
     assert(missingRequestMethod != null);
-    assert(searchFailure != null);
+    assert(primitiveFailure != null);
+    assert(searchParameterFailure != null);
     return httpFailure(statusCode, errorType, failedValue);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result httpFailure(int statusCode, String errorType, String failedValue),
+    Result httpFailure(int statusCode, String errorType, T failedValue),
     Result unknownFailure(T failedValue),
     Result noInternet(T failedValue),
-    Result noType(String errorComment),
-    Result noId(String errorComment),
-    Result noVid(String errorComment),
-    Result idDoesNotMatchResource(String errorComment),
-    Result noBundle(String errorComment),
-    Result notABatchBundle(String errorComment),
-    Result missingEntryRequest(String errorComment),
-    Result missingRequestMethod(String errorComment),
-    Result searchFailure(
-        String parameter, dynamic failedValue, String errorMessage),
+    Result noType(T failedValue),
+    Result noId(T failedValue),
+    Result noVid(T failedValue),
+    Result idDoesNotMatchResource(T failedValue),
+    Result noBundle(T failedValue, String batchOrTransaction),
+    Result notABatchBundle(T failedValue),
+    Result notATransactionBundle(T failedValue),
+    Result missingEntryRequest(T failedValue),
+    Result missingRequestMethod(T failedValue),
+    Result primitiveFailure(String parameter, T failedValue),
+    Result searchParameterFailure(String parameter, T failedValue),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -349,9 +386,11 @@ class _$HttpFailure<T> implements HttpFailure<T> {
     @required Result idDoesNotMatchResource(IdDoesNotMatchResource<T> value),
     @required Result noBundle(NoBundle<T> value),
     @required Result notABatchBundle(NotABatchBundle<T> value),
+    @required Result notATransactionBundle(NotATransactionBundle<T> value),
     @required Result missingEntryRequest(MissingEntryRequest<T> value),
     @required Result missingRequestMethod(MissingRequestMethod<T> value),
-    @required Result searchFailure(SearchFailure<T> value),
+    @required Result primitiveFailure(PrimitiveFailure<T> value),
+    @required Result searchParameterFailure(SearchParameterFailure<T> value),
   }) {
     assert(httpFailure != null);
     assert(unknownFailure != null);
@@ -362,9 +401,11 @@ class _$HttpFailure<T> implements HttpFailure<T> {
     assert(idDoesNotMatchResource != null);
     assert(noBundle != null);
     assert(notABatchBundle != null);
+    assert(notATransactionBundle != null);
     assert(missingEntryRequest != null);
     assert(missingRequestMethod != null);
-    assert(searchFailure != null);
+    assert(primitiveFailure != null);
+    assert(searchParameterFailure != null);
     return httpFailure(this);
   }
 
@@ -380,9 +421,11 @@ class _$HttpFailure<T> implements HttpFailure<T> {
     Result idDoesNotMatchResource(IdDoesNotMatchResource<T> value),
     Result noBundle(NoBundle<T> value),
     Result notABatchBundle(NotABatchBundle<T> value),
+    Result notATransactionBundle(NotATransactionBundle<T> value),
     Result missingEntryRequest(MissingEntryRequest<T> value),
     Result missingRequestMethod(MissingRequestMethod<T> value),
-    Result searchFailure(SearchFailure<T> value),
+    Result primitiveFailure(PrimitiveFailure<T> value),
+    Result searchParameterFailure(SearchParameterFailure<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -393,23 +436,26 @@ class _$HttpFailure<T> implements HttpFailure<T> {
   }
 }
 
-abstract class HttpFailure<T> implements RestfulFailure<T> {
-  const factory HttpFailure(
-      {int statusCode,
-      String errorType,
-      String failedValue}) = _$HttpFailure<T>;
+abstract class HttpFailure<T> extends RestfulFailure<T> {
+  const HttpFailure._() : super._();
+  const factory HttpFailure({int statusCode, String errorType, T failedValue}) =
+      _$HttpFailure<T>;
 
   int get statusCode;
   String get errorType;
-  String get failedValue;
+  @override
+  T get failedValue;
+  @override
   $HttpFailureCopyWith<T, HttpFailure<T>> get copyWith;
 }
 
 /// @nodoc
-abstract class $UnknownFailureCopyWith<T, $Res> {
+abstract class $UnknownFailureCopyWith<T, $Res>
+    implements $RestfulFailureCopyWith<T, $Res> {
   factory $UnknownFailureCopyWith(
           UnknownFailure<T> value, $Res Function(UnknownFailure<T>) then) =
       _$UnknownFailureCopyWithImpl<T, $Res>;
+  @override
   $Res call({T failedValue});
 }
 
@@ -436,9 +482,10 @@ class _$UnknownFailureCopyWithImpl<T, $Res>
 }
 
 /// @nodoc
-class _$UnknownFailure<T> implements UnknownFailure<T> {
+class _$UnknownFailure<T> extends UnknownFailure<T> {
   const _$UnknownFailure({@required this.failedValue})
-      : assert(failedValue != null);
+      : assert(failedValue != null),
+        super._();
 
   @override
   final T failedValue;
@@ -469,21 +516,20 @@ class _$UnknownFailure<T> implements UnknownFailure<T> {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required
-        Result httpFailure(
-            int statusCode, String errorType, String failedValue),
+        Result httpFailure(int statusCode, String errorType, T failedValue),
     @required Result unknownFailure(T failedValue),
     @required Result noInternet(T failedValue),
-    @required Result noType(String errorComment),
-    @required Result noId(String errorComment),
-    @required Result noVid(String errorComment),
-    @required Result idDoesNotMatchResource(String errorComment),
-    @required Result noBundle(String errorComment),
-    @required Result notABatchBundle(String errorComment),
-    @required Result missingEntryRequest(String errorComment),
-    @required Result missingRequestMethod(String errorComment),
-    @required
-        Result searchFailure(
-            String parameter, dynamic failedValue, String errorMessage),
+    @required Result noType(T failedValue),
+    @required Result noId(T failedValue),
+    @required Result noVid(T failedValue),
+    @required Result idDoesNotMatchResource(T failedValue),
+    @required Result noBundle(T failedValue, String batchOrTransaction),
+    @required Result notABatchBundle(T failedValue),
+    @required Result notATransactionBundle(T failedValue),
+    @required Result missingEntryRequest(T failedValue),
+    @required Result missingRequestMethod(T failedValue),
+    @required Result primitiveFailure(String parameter, T failedValue),
+    @required Result searchParameterFailure(String parameter, T failedValue),
   }) {
     assert(httpFailure != null);
     assert(unknownFailure != null);
@@ -494,28 +540,31 @@ class _$UnknownFailure<T> implements UnknownFailure<T> {
     assert(idDoesNotMatchResource != null);
     assert(noBundle != null);
     assert(notABatchBundle != null);
+    assert(notATransactionBundle != null);
     assert(missingEntryRequest != null);
     assert(missingRequestMethod != null);
-    assert(searchFailure != null);
+    assert(primitiveFailure != null);
+    assert(searchParameterFailure != null);
     return unknownFailure(failedValue);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result httpFailure(int statusCode, String errorType, String failedValue),
+    Result httpFailure(int statusCode, String errorType, T failedValue),
     Result unknownFailure(T failedValue),
     Result noInternet(T failedValue),
-    Result noType(String errorComment),
-    Result noId(String errorComment),
-    Result noVid(String errorComment),
-    Result idDoesNotMatchResource(String errorComment),
-    Result noBundle(String errorComment),
-    Result notABatchBundle(String errorComment),
-    Result missingEntryRequest(String errorComment),
-    Result missingRequestMethod(String errorComment),
-    Result searchFailure(
-        String parameter, dynamic failedValue, String errorMessage),
+    Result noType(T failedValue),
+    Result noId(T failedValue),
+    Result noVid(T failedValue),
+    Result idDoesNotMatchResource(T failedValue),
+    Result noBundle(T failedValue, String batchOrTransaction),
+    Result notABatchBundle(T failedValue),
+    Result notATransactionBundle(T failedValue),
+    Result missingEntryRequest(T failedValue),
+    Result missingRequestMethod(T failedValue),
+    Result primitiveFailure(String parameter, T failedValue),
+    Result searchParameterFailure(String parameter, T failedValue),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -537,9 +586,11 @@ class _$UnknownFailure<T> implements UnknownFailure<T> {
     @required Result idDoesNotMatchResource(IdDoesNotMatchResource<T> value),
     @required Result noBundle(NoBundle<T> value),
     @required Result notABatchBundle(NotABatchBundle<T> value),
+    @required Result notATransactionBundle(NotATransactionBundle<T> value),
     @required Result missingEntryRequest(MissingEntryRequest<T> value),
     @required Result missingRequestMethod(MissingRequestMethod<T> value),
-    @required Result searchFailure(SearchFailure<T> value),
+    @required Result primitiveFailure(PrimitiveFailure<T> value),
+    @required Result searchParameterFailure(SearchParameterFailure<T> value),
   }) {
     assert(httpFailure != null);
     assert(unknownFailure != null);
@@ -550,9 +601,11 @@ class _$UnknownFailure<T> implements UnknownFailure<T> {
     assert(idDoesNotMatchResource != null);
     assert(noBundle != null);
     assert(notABatchBundle != null);
+    assert(notATransactionBundle != null);
     assert(missingEntryRequest != null);
     assert(missingRequestMethod != null);
-    assert(searchFailure != null);
+    assert(primitiveFailure != null);
+    assert(searchParameterFailure != null);
     return unknownFailure(this);
   }
 
@@ -568,9 +621,11 @@ class _$UnknownFailure<T> implements UnknownFailure<T> {
     Result idDoesNotMatchResource(IdDoesNotMatchResource<T> value),
     Result noBundle(NoBundle<T> value),
     Result notABatchBundle(NotABatchBundle<T> value),
+    Result notATransactionBundle(NotATransactionBundle<T> value),
     Result missingEntryRequest(MissingEntryRequest<T> value),
     Result missingRequestMethod(MissingRequestMethod<T> value),
-    Result searchFailure(SearchFailure<T> value),
+    Result primitiveFailure(PrimitiveFailure<T> value),
+    Result searchParameterFailure(SearchParameterFailure<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -581,18 +636,23 @@ class _$UnknownFailure<T> implements UnknownFailure<T> {
   }
 }
 
-abstract class UnknownFailure<T> implements RestfulFailure<T> {
+abstract class UnknownFailure<T> extends RestfulFailure<T> {
+  const UnknownFailure._() : super._();
   const factory UnknownFailure({@required T failedValue}) = _$UnknownFailure<T>;
 
+  @override
   T get failedValue;
+  @override
   $UnknownFailureCopyWith<T, UnknownFailure<T>> get copyWith;
 }
 
 /// @nodoc
-abstract class $NoInternetCopyWith<T, $Res> {
+abstract class $NoInternetCopyWith<T, $Res>
+    implements $RestfulFailureCopyWith<T, $Res> {
   factory $NoInternetCopyWith(
           NoInternet<T> value, $Res Function(NoInternet<T>) then) =
       _$NoInternetCopyWithImpl<T, $Res>;
+  @override
   $Res call({T failedValue});
 }
 
@@ -619,9 +679,10 @@ class _$NoInternetCopyWithImpl<T, $Res>
 }
 
 /// @nodoc
-class _$NoInternet<T> implements NoInternet<T> {
+class _$NoInternet<T> extends NoInternet<T> {
   const _$NoInternet({@required this.failedValue})
-      : assert(failedValue != null);
+      : assert(failedValue != null),
+        super._();
 
   @override
   final T failedValue;
@@ -652,21 +713,20 @@ class _$NoInternet<T> implements NoInternet<T> {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required
-        Result httpFailure(
-            int statusCode, String errorType, String failedValue),
+        Result httpFailure(int statusCode, String errorType, T failedValue),
     @required Result unknownFailure(T failedValue),
     @required Result noInternet(T failedValue),
-    @required Result noType(String errorComment),
-    @required Result noId(String errorComment),
-    @required Result noVid(String errorComment),
-    @required Result idDoesNotMatchResource(String errorComment),
-    @required Result noBundle(String errorComment),
-    @required Result notABatchBundle(String errorComment),
-    @required Result missingEntryRequest(String errorComment),
-    @required Result missingRequestMethod(String errorComment),
-    @required
-        Result searchFailure(
-            String parameter, dynamic failedValue, String errorMessage),
+    @required Result noType(T failedValue),
+    @required Result noId(T failedValue),
+    @required Result noVid(T failedValue),
+    @required Result idDoesNotMatchResource(T failedValue),
+    @required Result noBundle(T failedValue, String batchOrTransaction),
+    @required Result notABatchBundle(T failedValue),
+    @required Result notATransactionBundle(T failedValue),
+    @required Result missingEntryRequest(T failedValue),
+    @required Result missingRequestMethod(T failedValue),
+    @required Result primitiveFailure(String parameter, T failedValue),
+    @required Result searchParameterFailure(String parameter, T failedValue),
   }) {
     assert(httpFailure != null);
     assert(unknownFailure != null);
@@ -677,28 +737,31 @@ class _$NoInternet<T> implements NoInternet<T> {
     assert(idDoesNotMatchResource != null);
     assert(noBundle != null);
     assert(notABatchBundle != null);
+    assert(notATransactionBundle != null);
     assert(missingEntryRequest != null);
     assert(missingRequestMethod != null);
-    assert(searchFailure != null);
+    assert(primitiveFailure != null);
+    assert(searchParameterFailure != null);
     return noInternet(failedValue);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result httpFailure(int statusCode, String errorType, String failedValue),
+    Result httpFailure(int statusCode, String errorType, T failedValue),
     Result unknownFailure(T failedValue),
     Result noInternet(T failedValue),
-    Result noType(String errorComment),
-    Result noId(String errorComment),
-    Result noVid(String errorComment),
-    Result idDoesNotMatchResource(String errorComment),
-    Result noBundle(String errorComment),
-    Result notABatchBundle(String errorComment),
-    Result missingEntryRequest(String errorComment),
-    Result missingRequestMethod(String errorComment),
-    Result searchFailure(
-        String parameter, dynamic failedValue, String errorMessage),
+    Result noType(T failedValue),
+    Result noId(T failedValue),
+    Result noVid(T failedValue),
+    Result idDoesNotMatchResource(T failedValue),
+    Result noBundle(T failedValue, String batchOrTransaction),
+    Result notABatchBundle(T failedValue),
+    Result notATransactionBundle(T failedValue),
+    Result missingEntryRequest(T failedValue),
+    Result missingRequestMethod(T failedValue),
+    Result primitiveFailure(String parameter, T failedValue),
+    Result searchParameterFailure(String parameter, T failedValue),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -720,9 +783,11 @@ class _$NoInternet<T> implements NoInternet<T> {
     @required Result idDoesNotMatchResource(IdDoesNotMatchResource<T> value),
     @required Result noBundle(NoBundle<T> value),
     @required Result notABatchBundle(NotABatchBundle<T> value),
+    @required Result notATransactionBundle(NotATransactionBundle<T> value),
     @required Result missingEntryRequest(MissingEntryRequest<T> value),
     @required Result missingRequestMethod(MissingRequestMethod<T> value),
-    @required Result searchFailure(SearchFailure<T> value),
+    @required Result primitiveFailure(PrimitiveFailure<T> value),
+    @required Result searchParameterFailure(SearchParameterFailure<T> value),
   }) {
     assert(httpFailure != null);
     assert(unknownFailure != null);
@@ -733,9 +798,11 @@ class _$NoInternet<T> implements NoInternet<T> {
     assert(idDoesNotMatchResource != null);
     assert(noBundle != null);
     assert(notABatchBundle != null);
+    assert(notATransactionBundle != null);
     assert(missingEntryRequest != null);
     assert(missingRequestMethod != null);
-    assert(searchFailure != null);
+    assert(primitiveFailure != null);
+    assert(searchParameterFailure != null);
     return noInternet(this);
   }
 
@@ -751,9 +818,11 @@ class _$NoInternet<T> implements NoInternet<T> {
     Result idDoesNotMatchResource(IdDoesNotMatchResource<T> value),
     Result noBundle(NoBundle<T> value),
     Result notABatchBundle(NotABatchBundle<T> value),
+    Result notATransactionBundle(NotATransactionBundle<T> value),
     Result missingEntryRequest(MissingEntryRequest<T> value),
     Result missingRequestMethod(MissingRequestMethod<T> value),
-    Result searchFailure(SearchFailure<T> value),
+    Result primitiveFailure(PrimitiveFailure<T> value),
+    Result searchParameterFailure(SearchParameterFailure<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -764,18 +833,23 @@ class _$NoInternet<T> implements NoInternet<T> {
   }
 }
 
-abstract class NoInternet<T> implements RestfulFailure<T> {
+abstract class NoInternet<T> extends RestfulFailure<T> {
+  const NoInternet._() : super._();
   const factory NoInternet({@required T failedValue}) = _$NoInternet<T>;
 
+  @override
   T get failedValue;
+  @override
   $NoInternetCopyWith<T, NoInternet<T>> get copyWith;
 }
 
 /// @nodoc
-abstract class $NoTypeCopyWith<T, $Res> {
+abstract class $NoTypeCopyWith<T, $Res>
+    implements $RestfulFailureCopyWith<T, $Res> {
   factory $NoTypeCopyWith(NoType<T> value, $Res Function(NoType<T>) then) =
       _$NoTypeCopyWithImpl<T, $Res>;
-  $Res call({String errorComment});
+  @override
+  $Res call({T failedValue});
 }
 
 /// @nodoc
@@ -790,40 +864,41 @@ class _$NoTypeCopyWithImpl<T, $Res>
 
   @override
   $Res call({
-    Object errorComment = freezed,
+    Object failedValue = freezed,
   }) {
     return _then(NoType<T>(
-      errorComment: errorComment == freezed
-          ? _value.errorComment
-          : errorComment as String,
+      failedValue:
+          failedValue == freezed ? _value.failedValue : failedValue as T,
     ));
   }
 }
 
 /// @nodoc
-class _$NoType<T> implements NoType<T> {
-  const _$NoType({@required this.errorComment}) : assert(errorComment != null);
+class _$NoType<T> extends NoType<T> {
+  const _$NoType({@required this.failedValue})
+      : assert(failedValue != null),
+        super._();
 
   @override
-  final String errorComment;
+  final T failedValue;
 
   @override
   String toString() {
-    return 'RestfulFailure<$T>.noType(errorComment: $errorComment)';
+    return 'RestfulFailure<$T>.noType(failedValue: $failedValue)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is NoType<T> &&
-            (identical(other.errorComment, errorComment) ||
+            (identical(other.failedValue, failedValue) ||
                 const DeepCollectionEquality()
-                    .equals(other.errorComment, errorComment)));
+                    .equals(other.failedValue, failedValue)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(errorComment);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
 
   @override
   $NoTypeCopyWith<T, NoType<T>> get copyWith =>
@@ -833,21 +908,20 @@ class _$NoType<T> implements NoType<T> {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required
-        Result httpFailure(
-            int statusCode, String errorType, String failedValue),
+        Result httpFailure(int statusCode, String errorType, T failedValue),
     @required Result unknownFailure(T failedValue),
     @required Result noInternet(T failedValue),
-    @required Result noType(String errorComment),
-    @required Result noId(String errorComment),
-    @required Result noVid(String errorComment),
-    @required Result idDoesNotMatchResource(String errorComment),
-    @required Result noBundle(String errorComment),
-    @required Result notABatchBundle(String errorComment),
-    @required Result missingEntryRequest(String errorComment),
-    @required Result missingRequestMethod(String errorComment),
-    @required
-        Result searchFailure(
-            String parameter, dynamic failedValue, String errorMessage),
+    @required Result noType(T failedValue),
+    @required Result noId(T failedValue),
+    @required Result noVid(T failedValue),
+    @required Result idDoesNotMatchResource(T failedValue),
+    @required Result noBundle(T failedValue, String batchOrTransaction),
+    @required Result notABatchBundle(T failedValue),
+    @required Result notATransactionBundle(T failedValue),
+    @required Result missingEntryRequest(T failedValue),
+    @required Result missingRequestMethod(T failedValue),
+    @required Result primitiveFailure(String parameter, T failedValue),
+    @required Result searchParameterFailure(String parameter, T failedValue),
   }) {
     assert(httpFailure != null);
     assert(unknownFailure != null);
@@ -858,33 +932,36 @@ class _$NoType<T> implements NoType<T> {
     assert(idDoesNotMatchResource != null);
     assert(noBundle != null);
     assert(notABatchBundle != null);
+    assert(notATransactionBundle != null);
     assert(missingEntryRequest != null);
     assert(missingRequestMethod != null);
-    assert(searchFailure != null);
-    return noType(errorComment);
+    assert(primitiveFailure != null);
+    assert(searchParameterFailure != null);
+    return noType(failedValue);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result httpFailure(int statusCode, String errorType, String failedValue),
+    Result httpFailure(int statusCode, String errorType, T failedValue),
     Result unknownFailure(T failedValue),
     Result noInternet(T failedValue),
-    Result noType(String errorComment),
-    Result noId(String errorComment),
-    Result noVid(String errorComment),
-    Result idDoesNotMatchResource(String errorComment),
-    Result noBundle(String errorComment),
-    Result notABatchBundle(String errorComment),
-    Result missingEntryRequest(String errorComment),
-    Result missingRequestMethod(String errorComment),
-    Result searchFailure(
-        String parameter, dynamic failedValue, String errorMessage),
+    Result noType(T failedValue),
+    Result noId(T failedValue),
+    Result noVid(T failedValue),
+    Result idDoesNotMatchResource(T failedValue),
+    Result noBundle(T failedValue, String batchOrTransaction),
+    Result notABatchBundle(T failedValue),
+    Result notATransactionBundle(T failedValue),
+    Result missingEntryRequest(T failedValue),
+    Result missingRequestMethod(T failedValue),
+    Result primitiveFailure(String parameter, T failedValue),
+    Result searchParameterFailure(String parameter, T failedValue),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (noType != null) {
-      return noType(errorComment);
+      return noType(failedValue);
     }
     return orElse();
   }
@@ -901,9 +978,11 @@ class _$NoType<T> implements NoType<T> {
     @required Result idDoesNotMatchResource(IdDoesNotMatchResource<T> value),
     @required Result noBundle(NoBundle<T> value),
     @required Result notABatchBundle(NotABatchBundle<T> value),
+    @required Result notATransactionBundle(NotATransactionBundle<T> value),
     @required Result missingEntryRequest(MissingEntryRequest<T> value),
     @required Result missingRequestMethod(MissingRequestMethod<T> value),
-    @required Result searchFailure(SearchFailure<T> value),
+    @required Result primitiveFailure(PrimitiveFailure<T> value),
+    @required Result searchParameterFailure(SearchParameterFailure<T> value),
   }) {
     assert(httpFailure != null);
     assert(unknownFailure != null);
@@ -914,9 +993,11 @@ class _$NoType<T> implements NoType<T> {
     assert(idDoesNotMatchResource != null);
     assert(noBundle != null);
     assert(notABatchBundle != null);
+    assert(notATransactionBundle != null);
     assert(missingEntryRequest != null);
     assert(missingRequestMethod != null);
-    assert(searchFailure != null);
+    assert(primitiveFailure != null);
+    assert(searchParameterFailure != null);
     return noType(this);
   }
 
@@ -932,9 +1013,11 @@ class _$NoType<T> implements NoType<T> {
     Result idDoesNotMatchResource(IdDoesNotMatchResource<T> value),
     Result noBundle(NoBundle<T> value),
     Result notABatchBundle(NotABatchBundle<T> value),
+    Result notATransactionBundle(NotATransactionBundle<T> value),
     Result missingEntryRequest(MissingEntryRequest<T> value),
     Result missingRequestMethod(MissingRequestMethod<T> value),
-    Result searchFailure(SearchFailure<T> value),
+    Result primitiveFailure(PrimitiveFailure<T> value),
+    Result searchParameterFailure(SearchParameterFailure<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -945,18 +1028,23 @@ class _$NoType<T> implements NoType<T> {
   }
 }
 
-abstract class NoType<T> implements RestfulFailure<T> {
-  const factory NoType({@required String errorComment}) = _$NoType<T>;
+abstract class NoType<T> extends RestfulFailure<T> {
+  const NoType._() : super._();
+  const factory NoType({@required T failedValue}) = _$NoType<T>;
 
-  String get errorComment;
+  @override
+  T get failedValue;
+  @override
   $NoTypeCopyWith<T, NoType<T>> get copyWith;
 }
 
 /// @nodoc
-abstract class $NoIdCopyWith<T, $Res> {
+abstract class $NoIdCopyWith<T, $Res>
+    implements $RestfulFailureCopyWith<T, $Res> {
   factory $NoIdCopyWith(NoId<T> value, $Res Function(NoId<T>) then) =
       _$NoIdCopyWithImpl<T, $Res>;
-  $Res call({String errorComment});
+  @override
+  $Res call({T failedValue});
 }
 
 /// @nodoc
@@ -970,40 +1058,41 @@ class _$NoIdCopyWithImpl<T, $Res> extends _$RestfulFailureCopyWithImpl<T, $Res>
 
   @override
   $Res call({
-    Object errorComment = freezed,
+    Object failedValue = freezed,
   }) {
     return _then(NoId<T>(
-      errorComment: errorComment == freezed
-          ? _value.errorComment
-          : errorComment as String,
+      failedValue:
+          failedValue == freezed ? _value.failedValue : failedValue as T,
     ));
   }
 }
 
 /// @nodoc
-class _$NoId<T> implements NoId<T> {
-  const _$NoId({@required this.errorComment}) : assert(errorComment != null);
+class _$NoId<T> extends NoId<T> {
+  const _$NoId({@required this.failedValue})
+      : assert(failedValue != null),
+        super._();
 
   @override
-  final String errorComment;
+  final T failedValue;
 
   @override
   String toString() {
-    return 'RestfulFailure<$T>.noId(errorComment: $errorComment)';
+    return 'RestfulFailure<$T>.noId(failedValue: $failedValue)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is NoId<T> &&
-            (identical(other.errorComment, errorComment) ||
+            (identical(other.failedValue, failedValue) ||
                 const DeepCollectionEquality()
-                    .equals(other.errorComment, errorComment)));
+                    .equals(other.failedValue, failedValue)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(errorComment);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
 
   @override
   $NoIdCopyWith<T, NoId<T>> get copyWith =>
@@ -1013,21 +1102,20 @@ class _$NoId<T> implements NoId<T> {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required
-        Result httpFailure(
-            int statusCode, String errorType, String failedValue),
+        Result httpFailure(int statusCode, String errorType, T failedValue),
     @required Result unknownFailure(T failedValue),
     @required Result noInternet(T failedValue),
-    @required Result noType(String errorComment),
-    @required Result noId(String errorComment),
-    @required Result noVid(String errorComment),
-    @required Result idDoesNotMatchResource(String errorComment),
-    @required Result noBundle(String errorComment),
-    @required Result notABatchBundle(String errorComment),
-    @required Result missingEntryRequest(String errorComment),
-    @required Result missingRequestMethod(String errorComment),
-    @required
-        Result searchFailure(
-            String parameter, dynamic failedValue, String errorMessage),
+    @required Result noType(T failedValue),
+    @required Result noId(T failedValue),
+    @required Result noVid(T failedValue),
+    @required Result idDoesNotMatchResource(T failedValue),
+    @required Result noBundle(T failedValue, String batchOrTransaction),
+    @required Result notABatchBundle(T failedValue),
+    @required Result notATransactionBundle(T failedValue),
+    @required Result missingEntryRequest(T failedValue),
+    @required Result missingRequestMethod(T failedValue),
+    @required Result primitiveFailure(String parameter, T failedValue),
+    @required Result searchParameterFailure(String parameter, T failedValue),
   }) {
     assert(httpFailure != null);
     assert(unknownFailure != null);
@@ -1038,33 +1126,36 @@ class _$NoId<T> implements NoId<T> {
     assert(idDoesNotMatchResource != null);
     assert(noBundle != null);
     assert(notABatchBundle != null);
+    assert(notATransactionBundle != null);
     assert(missingEntryRequest != null);
     assert(missingRequestMethod != null);
-    assert(searchFailure != null);
-    return noId(errorComment);
+    assert(primitiveFailure != null);
+    assert(searchParameterFailure != null);
+    return noId(failedValue);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result httpFailure(int statusCode, String errorType, String failedValue),
+    Result httpFailure(int statusCode, String errorType, T failedValue),
     Result unknownFailure(T failedValue),
     Result noInternet(T failedValue),
-    Result noType(String errorComment),
-    Result noId(String errorComment),
-    Result noVid(String errorComment),
-    Result idDoesNotMatchResource(String errorComment),
-    Result noBundle(String errorComment),
-    Result notABatchBundle(String errorComment),
-    Result missingEntryRequest(String errorComment),
-    Result missingRequestMethod(String errorComment),
-    Result searchFailure(
-        String parameter, dynamic failedValue, String errorMessage),
+    Result noType(T failedValue),
+    Result noId(T failedValue),
+    Result noVid(T failedValue),
+    Result idDoesNotMatchResource(T failedValue),
+    Result noBundle(T failedValue, String batchOrTransaction),
+    Result notABatchBundle(T failedValue),
+    Result notATransactionBundle(T failedValue),
+    Result missingEntryRequest(T failedValue),
+    Result missingRequestMethod(T failedValue),
+    Result primitiveFailure(String parameter, T failedValue),
+    Result searchParameterFailure(String parameter, T failedValue),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (noId != null) {
-      return noId(errorComment);
+      return noId(failedValue);
     }
     return orElse();
   }
@@ -1081,9 +1172,11 @@ class _$NoId<T> implements NoId<T> {
     @required Result idDoesNotMatchResource(IdDoesNotMatchResource<T> value),
     @required Result noBundle(NoBundle<T> value),
     @required Result notABatchBundle(NotABatchBundle<T> value),
+    @required Result notATransactionBundle(NotATransactionBundle<T> value),
     @required Result missingEntryRequest(MissingEntryRequest<T> value),
     @required Result missingRequestMethod(MissingRequestMethod<T> value),
-    @required Result searchFailure(SearchFailure<T> value),
+    @required Result primitiveFailure(PrimitiveFailure<T> value),
+    @required Result searchParameterFailure(SearchParameterFailure<T> value),
   }) {
     assert(httpFailure != null);
     assert(unknownFailure != null);
@@ -1094,9 +1187,11 @@ class _$NoId<T> implements NoId<T> {
     assert(idDoesNotMatchResource != null);
     assert(noBundle != null);
     assert(notABatchBundle != null);
+    assert(notATransactionBundle != null);
     assert(missingEntryRequest != null);
     assert(missingRequestMethod != null);
-    assert(searchFailure != null);
+    assert(primitiveFailure != null);
+    assert(searchParameterFailure != null);
     return noId(this);
   }
 
@@ -1112,9 +1207,11 @@ class _$NoId<T> implements NoId<T> {
     Result idDoesNotMatchResource(IdDoesNotMatchResource<T> value),
     Result noBundle(NoBundle<T> value),
     Result notABatchBundle(NotABatchBundle<T> value),
+    Result notATransactionBundle(NotATransactionBundle<T> value),
     Result missingEntryRequest(MissingEntryRequest<T> value),
     Result missingRequestMethod(MissingRequestMethod<T> value),
-    Result searchFailure(SearchFailure<T> value),
+    Result primitiveFailure(PrimitiveFailure<T> value),
+    Result searchParameterFailure(SearchParameterFailure<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1125,18 +1222,23 @@ class _$NoId<T> implements NoId<T> {
   }
 }
 
-abstract class NoId<T> implements RestfulFailure<T> {
-  const factory NoId({@required String errorComment}) = _$NoId<T>;
+abstract class NoId<T> extends RestfulFailure<T> {
+  const NoId._() : super._();
+  const factory NoId({@required T failedValue}) = _$NoId<T>;
 
-  String get errorComment;
+  @override
+  T get failedValue;
+  @override
   $NoIdCopyWith<T, NoId<T>> get copyWith;
 }
 
 /// @nodoc
-abstract class $NoVidCopyWith<T, $Res> {
+abstract class $NoVidCopyWith<T, $Res>
+    implements $RestfulFailureCopyWith<T, $Res> {
   factory $NoVidCopyWith(NoVid<T> value, $Res Function(NoVid<T>) then) =
       _$NoVidCopyWithImpl<T, $Res>;
-  $Res call({String errorComment});
+  @override
+  $Res call({T failedValue});
 }
 
 /// @nodoc
@@ -1150,40 +1252,41 @@ class _$NoVidCopyWithImpl<T, $Res> extends _$RestfulFailureCopyWithImpl<T, $Res>
 
   @override
   $Res call({
-    Object errorComment = freezed,
+    Object failedValue = freezed,
   }) {
     return _then(NoVid<T>(
-      errorComment: errorComment == freezed
-          ? _value.errorComment
-          : errorComment as String,
+      failedValue:
+          failedValue == freezed ? _value.failedValue : failedValue as T,
     ));
   }
 }
 
 /// @nodoc
-class _$NoVid<T> implements NoVid<T> {
-  const _$NoVid({@required this.errorComment}) : assert(errorComment != null);
+class _$NoVid<T> extends NoVid<T> {
+  const _$NoVid({@required this.failedValue})
+      : assert(failedValue != null),
+        super._();
 
   @override
-  final String errorComment;
+  final T failedValue;
 
   @override
   String toString() {
-    return 'RestfulFailure<$T>.noVid(errorComment: $errorComment)';
+    return 'RestfulFailure<$T>.noVid(failedValue: $failedValue)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is NoVid<T> &&
-            (identical(other.errorComment, errorComment) ||
+            (identical(other.failedValue, failedValue) ||
                 const DeepCollectionEquality()
-                    .equals(other.errorComment, errorComment)));
+                    .equals(other.failedValue, failedValue)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(errorComment);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
 
   @override
   $NoVidCopyWith<T, NoVid<T>> get copyWith =>
@@ -1193,21 +1296,20 @@ class _$NoVid<T> implements NoVid<T> {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required
-        Result httpFailure(
-            int statusCode, String errorType, String failedValue),
+        Result httpFailure(int statusCode, String errorType, T failedValue),
     @required Result unknownFailure(T failedValue),
     @required Result noInternet(T failedValue),
-    @required Result noType(String errorComment),
-    @required Result noId(String errorComment),
-    @required Result noVid(String errorComment),
-    @required Result idDoesNotMatchResource(String errorComment),
-    @required Result noBundle(String errorComment),
-    @required Result notABatchBundle(String errorComment),
-    @required Result missingEntryRequest(String errorComment),
-    @required Result missingRequestMethod(String errorComment),
-    @required
-        Result searchFailure(
-            String parameter, dynamic failedValue, String errorMessage),
+    @required Result noType(T failedValue),
+    @required Result noId(T failedValue),
+    @required Result noVid(T failedValue),
+    @required Result idDoesNotMatchResource(T failedValue),
+    @required Result noBundle(T failedValue, String batchOrTransaction),
+    @required Result notABatchBundle(T failedValue),
+    @required Result notATransactionBundle(T failedValue),
+    @required Result missingEntryRequest(T failedValue),
+    @required Result missingRequestMethod(T failedValue),
+    @required Result primitiveFailure(String parameter, T failedValue),
+    @required Result searchParameterFailure(String parameter, T failedValue),
   }) {
     assert(httpFailure != null);
     assert(unknownFailure != null);
@@ -1218,33 +1320,36 @@ class _$NoVid<T> implements NoVid<T> {
     assert(idDoesNotMatchResource != null);
     assert(noBundle != null);
     assert(notABatchBundle != null);
+    assert(notATransactionBundle != null);
     assert(missingEntryRequest != null);
     assert(missingRequestMethod != null);
-    assert(searchFailure != null);
-    return noVid(errorComment);
+    assert(primitiveFailure != null);
+    assert(searchParameterFailure != null);
+    return noVid(failedValue);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result httpFailure(int statusCode, String errorType, String failedValue),
+    Result httpFailure(int statusCode, String errorType, T failedValue),
     Result unknownFailure(T failedValue),
     Result noInternet(T failedValue),
-    Result noType(String errorComment),
-    Result noId(String errorComment),
-    Result noVid(String errorComment),
-    Result idDoesNotMatchResource(String errorComment),
-    Result noBundle(String errorComment),
-    Result notABatchBundle(String errorComment),
-    Result missingEntryRequest(String errorComment),
-    Result missingRequestMethod(String errorComment),
-    Result searchFailure(
-        String parameter, dynamic failedValue, String errorMessage),
+    Result noType(T failedValue),
+    Result noId(T failedValue),
+    Result noVid(T failedValue),
+    Result idDoesNotMatchResource(T failedValue),
+    Result noBundle(T failedValue, String batchOrTransaction),
+    Result notABatchBundle(T failedValue),
+    Result notATransactionBundle(T failedValue),
+    Result missingEntryRequest(T failedValue),
+    Result missingRequestMethod(T failedValue),
+    Result primitiveFailure(String parameter, T failedValue),
+    Result searchParameterFailure(String parameter, T failedValue),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (noVid != null) {
-      return noVid(errorComment);
+      return noVid(failedValue);
     }
     return orElse();
   }
@@ -1261,9 +1366,11 @@ class _$NoVid<T> implements NoVid<T> {
     @required Result idDoesNotMatchResource(IdDoesNotMatchResource<T> value),
     @required Result noBundle(NoBundle<T> value),
     @required Result notABatchBundle(NotABatchBundle<T> value),
+    @required Result notATransactionBundle(NotATransactionBundle<T> value),
     @required Result missingEntryRequest(MissingEntryRequest<T> value),
     @required Result missingRequestMethod(MissingRequestMethod<T> value),
-    @required Result searchFailure(SearchFailure<T> value),
+    @required Result primitiveFailure(PrimitiveFailure<T> value),
+    @required Result searchParameterFailure(SearchParameterFailure<T> value),
   }) {
     assert(httpFailure != null);
     assert(unknownFailure != null);
@@ -1274,9 +1381,11 @@ class _$NoVid<T> implements NoVid<T> {
     assert(idDoesNotMatchResource != null);
     assert(noBundle != null);
     assert(notABatchBundle != null);
+    assert(notATransactionBundle != null);
     assert(missingEntryRequest != null);
     assert(missingRequestMethod != null);
-    assert(searchFailure != null);
+    assert(primitiveFailure != null);
+    assert(searchParameterFailure != null);
     return noVid(this);
   }
 
@@ -1292,9 +1401,11 @@ class _$NoVid<T> implements NoVid<T> {
     Result idDoesNotMatchResource(IdDoesNotMatchResource<T> value),
     Result noBundle(NoBundle<T> value),
     Result notABatchBundle(NotABatchBundle<T> value),
+    Result notATransactionBundle(NotATransactionBundle<T> value),
     Result missingEntryRequest(MissingEntryRequest<T> value),
     Result missingRequestMethod(MissingRequestMethod<T> value),
-    Result searchFailure(SearchFailure<T> value),
+    Result primitiveFailure(PrimitiveFailure<T> value),
+    Result searchParameterFailure(SearchParameterFailure<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1305,19 +1416,24 @@ class _$NoVid<T> implements NoVid<T> {
   }
 }
 
-abstract class NoVid<T> implements RestfulFailure<T> {
-  const factory NoVid({@required String errorComment}) = _$NoVid<T>;
+abstract class NoVid<T> extends RestfulFailure<T> {
+  const NoVid._() : super._();
+  const factory NoVid({@required T failedValue}) = _$NoVid<T>;
 
-  String get errorComment;
+  @override
+  T get failedValue;
+  @override
   $NoVidCopyWith<T, NoVid<T>> get copyWith;
 }
 
 /// @nodoc
-abstract class $IdDoesNotMatchResourceCopyWith<T, $Res> {
+abstract class $IdDoesNotMatchResourceCopyWith<T, $Res>
+    implements $RestfulFailureCopyWith<T, $Res> {
   factory $IdDoesNotMatchResourceCopyWith(IdDoesNotMatchResource<T> value,
           $Res Function(IdDoesNotMatchResource<T>) then) =
       _$IdDoesNotMatchResourceCopyWithImpl<T, $Res>;
-  $Res call({String errorComment});
+  @override
+  $Res call({T failedValue});
 }
 
 /// @nodoc
@@ -1334,41 +1450,41 @@ class _$IdDoesNotMatchResourceCopyWithImpl<T, $Res>
 
   @override
   $Res call({
-    Object errorComment = freezed,
+    Object failedValue = freezed,
   }) {
     return _then(IdDoesNotMatchResource<T>(
-      errorComment: errorComment == freezed
-          ? _value.errorComment
-          : errorComment as String,
+      failedValue:
+          failedValue == freezed ? _value.failedValue : failedValue as T,
     ));
   }
 }
 
 /// @nodoc
-class _$IdDoesNotMatchResource<T> implements IdDoesNotMatchResource<T> {
-  const _$IdDoesNotMatchResource({@required this.errorComment})
-      : assert(errorComment != null);
+class _$IdDoesNotMatchResource<T> extends IdDoesNotMatchResource<T> {
+  const _$IdDoesNotMatchResource({@required this.failedValue})
+      : assert(failedValue != null),
+        super._();
 
   @override
-  final String errorComment;
+  final T failedValue;
 
   @override
   String toString() {
-    return 'RestfulFailure<$T>.idDoesNotMatchResource(errorComment: $errorComment)';
+    return 'RestfulFailure<$T>.idDoesNotMatchResource(failedValue: $failedValue)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is IdDoesNotMatchResource<T> &&
-            (identical(other.errorComment, errorComment) ||
+            (identical(other.failedValue, failedValue) ||
                 const DeepCollectionEquality()
-                    .equals(other.errorComment, errorComment)));
+                    .equals(other.failedValue, failedValue)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(errorComment);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
 
   @override
   $IdDoesNotMatchResourceCopyWith<T, IdDoesNotMatchResource<T>> get copyWith =>
@@ -1379,21 +1495,20 @@ class _$IdDoesNotMatchResource<T> implements IdDoesNotMatchResource<T> {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required
-        Result httpFailure(
-            int statusCode, String errorType, String failedValue),
+        Result httpFailure(int statusCode, String errorType, T failedValue),
     @required Result unknownFailure(T failedValue),
     @required Result noInternet(T failedValue),
-    @required Result noType(String errorComment),
-    @required Result noId(String errorComment),
-    @required Result noVid(String errorComment),
-    @required Result idDoesNotMatchResource(String errorComment),
-    @required Result noBundle(String errorComment),
-    @required Result notABatchBundle(String errorComment),
-    @required Result missingEntryRequest(String errorComment),
-    @required Result missingRequestMethod(String errorComment),
-    @required
-        Result searchFailure(
-            String parameter, dynamic failedValue, String errorMessage),
+    @required Result noType(T failedValue),
+    @required Result noId(T failedValue),
+    @required Result noVid(T failedValue),
+    @required Result idDoesNotMatchResource(T failedValue),
+    @required Result noBundle(T failedValue, String batchOrTransaction),
+    @required Result notABatchBundle(T failedValue),
+    @required Result notATransactionBundle(T failedValue),
+    @required Result missingEntryRequest(T failedValue),
+    @required Result missingRequestMethod(T failedValue),
+    @required Result primitiveFailure(String parameter, T failedValue),
+    @required Result searchParameterFailure(String parameter, T failedValue),
   }) {
     assert(httpFailure != null);
     assert(unknownFailure != null);
@@ -1404,33 +1519,36 @@ class _$IdDoesNotMatchResource<T> implements IdDoesNotMatchResource<T> {
     assert(idDoesNotMatchResource != null);
     assert(noBundle != null);
     assert(notABatchBundle != null);
+    assert(notATransactionBundle != null);
     assert(missingEntryRequest != null);
     assert(missingRequestMethod != null);
-    assert(searchFailure != null);
-    return idDoesNotMatchResource(errorComment);
+    assert(primitiveFailure != null);
+    assert(searchParameterFailure != null);
+    return idDoesNotMatchResource(failedValue);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result httpFailure(int statusCode, String errorType, String failedValue),
+    Result httpFailure(int statusCode, String errorType, T failedValue),
     Result unknownFailure(T failedValue),
     Result noInternet(T failedValue),
-    Result noType(String errorComment),
-    Result noId(String errorComment),
-    Result noVid(String errorComment),
-    Result idDoesNotMatchResource(String errorComment),
-    Result noBundle(String errorComment),
-    Result notABatchBundle(String errorComment),
-    Result missingEntryRequest(String errorComment),
-    Result missingRequestMethod(String errorComment),
-    Result searchFailure(
-        String parameter, dynamic failedValue, String errorMessage),
+    Result noType(T failedValue),
+    Result noId(T failedValue),
+    Result noVid(T failedValue),
+    Result idDoesNotMatchResource(T failedValue),
+    Result noBundle(T failedValue, String batchOrTransaction),
+    Result notABatchBundle(T failedValue),
+    Result notATransactionBundle(T failedValue),
+    Result missingEntryRequest(T failedValue),
+    Result missingRequestMethod(T failedValue),
+    Result primitiveFailure(String parameter, T failedValue),
+    Result searchParameterFailure(String parameter, T failedValue),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (idDoesNotMatchResource != null) {
-      return idDoesNotMatchResource(errorComment);
+      return idDoesNotMatchResource(failedValue);
     }
     return orElse();
   }
@@ -1447,9 +1565,11 @@ class _$IdDoesNotMatchResource<T> implements IdDoesNotMatchResource<T> {
     @required Result idDoesNotMatchResource(IdDoesNotMatchResource<T> value),
     @required Result noBundle(NoBundle<T> value),
     @required Result notABatchBundle(NotABatchBundle<T> value),
+    @required Result notATransactionBundle(NotATransactionBundle<T> value),
     @required Result missingEntryRequest(MissingEntryRequest<T> value),
     @required Result missingRequestMethod(MissingRequestMethod<T> value),
-    @required Result searchFailure(SearchFailure<T> value),
+    @required Result primitiveFailure(PrimitiveFailure<T> value),
+    @required Result searchParameterFailure(SearchParameterFailure<T> value),
   }) {
     assert(httpFailure != null);
     assert(unknownFailure != null);
@@ -1460,9 +1580,11 @@ class _$IdDoesNotMatchResource<T> implements IdDoesNotMatchResource<T> {
     assert(idDoesNotMatchResource != null);
     assert(noBundle != null);
     assert(notABatchBundle != null);
+    assert(notATransactionBundle != null);
     assert(missingEntryRequest != null);
     assert(missingRequestMethod != null);
-    assert(searchFailure != null);
+    assert(primitiveFailure != null);
+    assert(searchParameterFailure != null);
     return idDoesNotMatchResource(this);
   }
 
@@ -1478,9 +1600,11 @@ class _$IdDoesNotMatchResource<T> implements IdDoesNotMatchResource<T> {
     Result idDoesNotMatchResource(IdDoesNotMatchResource<T> value),
     Result noBundle(NoBundle<T> value),
     Result notABatchBundle(NotABatchBundle<T> value),
+    Result notATransactionBundle(NotATransactionBundle<T> value),
     Result missingEntryRequest(MissingEntryRequest<T> value),
     Result missingRequestMethod(MissingRequestMethod<T> value),
-    Result searchFailure(SearchFailure<T> value),
+    Result primitiveFailure(PrimitiveFailure<T> value),
+    Result searchParameterFailure(SearchParameterFailure<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1491,20 +1615,25 @@ class _$IdDoesNotMatchResource<T> implements IdDoesNotMatchResource<T> {
   }
 }
 
-abstract class IdDoesNotMatchResource<T> implements RestfulFailure<T> {
-  const factory IdDoesNotMatchResource({@required String errorComment}) =
+abstract class IdDoesNotMatchResource<T> extends RestfulFailure<T> {
+  const IdDoesNotMatchResource._() : super._();
+  const factory IdDoesNotMatchResource({@required T failedValue}) =
       _$IdDoesNotMatchResource<T>;
 
-  String get errorComment;
+  @override
+  T get failedValue;
+  @override
   $IdDoesNotMatchResourceCopyWith<T, IdDoesNotMatchResource<T>> get copyWith;
 }
 
 /// @nodoc
-abstract class $NoBundleCopyWith<T, $Res> {
+abstract class $NoBundleCopyWith<T, $Res>
+    implements $RestfulFailureCopyWith<T, $Res> {
   factory $NoBundleCopyWith(
           NoBundle<T> value, $Res Function(NoBundle<T>) then) =
       _$NoBundleCopyWithImpl<T, $Res>;
-  $Res call({String errorComment});
+  @override
+  $Res call({T failedValue, String batchOrTransaction});
 }
 
 /// @nodoc
@@ -1519,41 +1648,54 @@ class _$NoBundleCopyWithImpl<T, $Res>
 
   @override
   $Res call({
-    Object errorComment = freezed,
+    Object failedValue = freezed,
+    Object batchOrTransaction = freezed,
   }) {
     return _then(NoBundle<T>(
-      errorComment: errorComment == freezed
-          ? _value.errorComment
-          : errorComment as String,
+      failedValue:
+          failedValue == freezed ? _value.failedValue : failedValue as T,
+      batchOrTransaction: batchOrTransaction == freezed
+          ? _value.batchOrTransaction
+          : batchOrTransaction as String,
     ));
   }
 }
 
 /// @nodoc
-class _$NoBundle<T> implements NoBundle<T> {
-  const _$NoBundle({@required this.errorComment})
-      : assert(errorComment != null);
+class _$NoBundle<T> extends NoBundle<T> {
+  const _$NoBundle(
+      {@required this.failedValue, @required this.batchOrTransaction})
+      : assert(failedValue != null),
+        assert(batchOrTransaction != null),
+        super._();
 
   @override
-  final String errorComment;
+  final T failedValue;
+  @override
+  final String batchOrTransaction;
 
   @override
   String toString() {
-    return 'RestfulFailure<$T>.noBundle(errorComment: $errorComment)';
+    return 'RestfulFailure<$T>.noBundle(failedValue: $failedValue, batchOrTransaction: $batchOrTransaction)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is NoBundle<T> &&
-            (identical(other.errorComment, errorComment) ||
+            (identical(other.failedValue, failedValue) ||
                 const DeepCollectionEquality()
-                    .equals(other.errorComment, errorComment)));
+                    .equals(other.failedValue, failedValue)) &&
+            (identical(other.batchOrTransaction, batchOrTransaction) ||
+                const DeepCollectionEquality()
+                    .equals(other.batchOrTransaction, batchOrTransaction)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(errorComment);
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(failedValue) ^
+      const DeepCollectionEquality().hash(batchOrTransaction);
 
   @override
   $NoBundleCopyWith<T, NoBundle<T>> get copyWith =>
@@ -1563,21 +1705,20 @@ class _$NoBundle<T> implements NoBundle<T> {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required
-        Result httpFailure(
-            int statusCode, String errorType, String failedValue),
+        Result httpFailure(int statusCode, String errorType, T failedValue),
     @required Result unknownFailure(T failedValue),
     @required Result noInternet(T failedValue),
-    @required Result noType(String errorComment),
-    @required Result noId(String errorComment),
-    @required Result noVid(String errorComment),
-    @required Result idDoesNotMatchResource(String errorComment),
-    @required Result noBundle(String errorComment),
-    @required Result notABatchBundle(String errorComment),
-    @required Result missingEntryRequest(String errorComment),
-    @required Result missingRequestMethod(String errorComment),
-    @required
-        Result searchFailure(
-            String parameter, dynamic failedValue, String errorMessage),
+    @required Result noType(T failedValue),
+    @required Result noId(T failedValue),
+    @required Result noVid(T failedValue),
+    @required Result idDoesNotMatchResource(T failedValue),
+    @required Result noBundle(T failedValue, String batchOrTransaction),
+    @required Result notABatchBundle(T failedValue),
+    @required Result notATransactionBundle(T failedValue),
+    @required Result missingEntryRequest(T failedValue),
+    @required Result missingRequestMethod(T failedValue),
+    @required Result primitiveFailure(String parameter, T failedValue),
+    @required Result searchParameterFailure(String parameter, T failedValue),
   }) {
     assert(httpFailure != null);
     assert(unknownFailure != null);
@@ -1588,33 +1729,36 @@ class _$NoBundle<T> implements NoBundle<T> {
     assert(idDoesNotMatchResource != null);
     assert(noBundle != null);
     assert(notABatchBundle != null);
+    assert(notATransactionBundle != null);
     assert(missingEntryRequest != null);
     assert(missingRequestMethod != null);
-    assert(searchFailure != null);
-    return noBundle(errorComment);
+    assert(primitiveFailure != null);
+    assert(searchParameterFailure != null);
+    return noBundle(failedValue, batchOrTransaction);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result httpFailure(int statusCode, String errorType, String failedValue),
+    Result httpFailure(int statusCode, String errorType, T failedValue),
     Result unknownFailure(T failedValue),
     Result noInternet(T failedValue),
-    Result noType(String errorComment),
-    Result noId(String errorComment),
-    Result noVid(String errorComment),
-    Result idDoesNotMatchResource(String errorComment),
-    Result noBundle(String errorComment),
-    Result notABatchBundle(String errorComment),
-    Result missingEntryRequest(String errorComment),
-    Result missingRequestMethod(String errorComment),
-    Result searchFailure(
-        String parameter, dynamic failedValue, String errorMessage),
+    Result noType(T failedValue),
+    Result noId(T failedValue),
+    Result noVid(T failedValue),
+    Result idDoesNotMatchResource(T failedValue),
+    Result noBundle(T failedValue, String batchOrTransaction),
+    Result notABatchBundle(T failedValue),
+    Result notATransactionBundle(T failedValue),
+    Result missingEntryRequest(T failedValue),
+    Result missingRequestMethod(T failedValue),
+    Result primitiveFailure(String parameter, T failedValue),
+    Result searchParameterFailure(String parameter, T failedValue),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (noBundle != null) {
-      return noBundle(errorComment);
+      return noBundle(failedValue, batchOrTransaction);
     }
     return orElse();
   }
@@ -1631,9 +1775,11 @@ class _$NoBundle<T> implements NoBundle<T> {
     @required Result idDoesNotMatchResource(IdDoesNotMatchResource<T> value),
     @required Result noBundle(NoBundle<T> value),
     @required Result notABatchBundle(NotABatchBundle<T> value),
+    @required Result notATransactionBundle(NotATransactionBundle<T> value),
     @required Result missingEntryRequest(MissingEntryRequest<T> value),
     @required Result missingRequestMethod(MissingRequestMethod<T> value),
-    @required Result searchFailure(SearchFailure<T> value),
+    @required Result primitiveFailure(PrimitiveFailure<T> value),
+    @required Result searchParameterFailure(SearchParameterFailure<T> value),
   }) {
     assert(httpFailure != null);
     assert(unknownFailure != null);
@@ -1644,9 +1790,11 @@ class _$NoBundle<T> implements NoBundle<T> {
     assert(idDoesNotMatchResource != null);
     assert(noBundle != null);
     assert(notABatchBundle != null);
+    assert(notATransactionBundle != null);
     assert(missingEntryRequest != null);
     assert(missingRequestMethod != null);
-    assert(searchFailure != null);
+    assert(primitiveFailure != null);
+    assert(searchParameterFailure != null);
     return noBundle(this);
   }
 
@@ -1662,9 +1810,11 @@ class _$NoBundle<T> implements NoBundle<T> {
     Result idDoesNotMatchResource(IdDoesNotMatchResource<T> value),
     Result noBundle(NoBundle<T> value),
     Result notABatchBundle(NotABatchBundle<T> value),
+    Result notATransactionBundle(NotATransactionBundle<T> value),
     Result missingEntryRequest(MissingEntryRequest<T> value),
     Result missingRequestMethod(MissingRequestMethod<T> value),
-    Result searchFailure(SearchFailure<T> value),
+    Result primitiveFailure(PrimitiveFailure<T> value),
+    Result searchParameterFailure(SearchParameterFailure<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1675,19 +1825,27 @@ class _$NoBundle<T> implements NoBundle<T> {
   }
 }
 
-abstract class NoBundle<T> implements RestfulFailure<T> {
-  const factory NoBundle({@required String errorComment}) = _$NoBundle<T>;
+abstract class NoBundle<T> extends RestfulFailure<T> {
+  const NoBundle._() : super._();
+  const factory NoBundle(
+      {@required T failedValue,
+      @required String batchOrTransaction}) = _$NoBundle<T>;
 
-  String get errorComment;
+  @override
+  T get failedValue;
+  String get batchOrTransaction;
+  @override
   $NoBundleCopyWith<T, NoBundle<T>> get copyWith;
 }
 
 /// @nodoc
-abstract class $NotABatchBundleCopyWith<T, $Res> {
+abstract class $NotABatchBundleCopyWith<T, $Res>
+    implements $RestfulFailureCopyWith<T, $Res> {
   factory $NotABatchBundleCopyWith(
           NotABatchBundle<T> value, $Res Function(NotABatchBundle<T>) then) =
       _$NotABatchBundleCopyWithImpl<T, $Res>;
-  $Res call({String errorComment});
+  @override
+  $Res call({T failedValue});
 }
 
 /// @nodoc
@@ -1703,41 +1861,41 @@ class _$NotABatchBundleCopyWithImpl<T, $Res>
 
   @override
   $Res call({
-    Object errorComment = freezed,
+    Object failedValue = freezed,
   }) {
     return _then(NotABatchBundle<T>(
-      errorComment: errorComment == freezed
-          ? _value.errorComment
-          : errorComment as String,
+      failedValue:
+          failedValue == freezed ? _value.failedValue : failedValue as T,
     ));
   }
 }
 
 /// @nodoc
-class _$NotABatchBundle<T> implements NotABatchBundle<T> {
-  const _$NotABatchBundle({@required this.errorComment})
-      : assert(errorComment != null);
+class _$NotABatchBundle<T> extends NotABatchBundle<T> {
+  const _$NotABatchBundle({@required this.failedValue})
+      : assert(failedValue != null),
+        super._();
 
   @override
-  final String errorComment;
+  final T failedValue;
 
   @override
   String toString() {
-    return 'RestfulFailure<$T>.notABatchBundle(errorComment: $errorComment)';
+    return 'RestfulFailure<$T>.notABatchBundle(failedValue: $failedValue)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is NotABatchBundle<T> &&
-            (identical(other.errorComment, errorComment) ||
+            (identical(other.failedValue, failedValue) ||
                 const DeepCollectionEquality()
-                    .equals(other.errorComment, errorComment)));
+                    .equals(other.failedValue, failedValue)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(errorComment);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
 
   @override
   $NotABatchBundleCopyWith<T, NotABatchBundle<T>> get copyWith =>
@@ -1747,21 +1905,20 @@ class _$NotABatchBundle<T> implements NotABatchBundle<T> {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required
-        Result httpFailure(
-            int statusCode, String errorType, String failedValue),
+        Result httpFailure(int statusCode, String errorType, T failedValue),
     @required Result unknownFailure(T failedValue),
     @required Result noInternet(T failedValue),
-    @required Result noType(String errorComment),
-    @required Result noId(String errorComment),
-    @required Result noVid(String errorComment),
-    @required Result idDoesNotMatchResource(String errorComment),
-    @required Result noBundle(String errorComment),
-    @required Result notABatchBundle(String errorComment),
-    @required Result missingEntryRequest(String errorComment),
-    @required Result missingRequestMethod(String errorComment),
-    @required
-        Result searchFailure(
-            String parameter, dynamic failedValue, String errorMessage),
+    @required Result noType(T failedValue),
+    @required Result noId(T failedValue),
+    @required Result noVid(T failedValue),
+    @required Result idDoesNotMatchResource(T failedValue),
+    @required Result noBundle(T failedValue, String batchOrTransaction),
+    @required Result notABatchBundle(T failedValue),
+    @required Result notATransactionBundle(T failedValue),
+    @required Result missingEntryRequest(T failedValue),
+    @required Result missingRequestMethod(T failedValue),
+    @required Result primitiveFailure(String parameter, T failedValue),
+    @required Result searchParameterFailure(String parameter, T failedValue),
   }) {
     assert(httpFailure != null);
     assert(unknownFailure != null);
@@ -1772,33 +1929,36 @@ class _$NotABatchBundle<T> implements NotABatchBundle<T> {
     assert(idDoesNotMatchResource != null);
     assert(noBundle != null);
     assert(notABatchBundle != null);
+    assert(notATransactionBundle != null);
     assert(missingEntryRequest != null);
     assert(missingRequestMethod != null);
-    assert(searchFailure != null);
-    return notABatchBundle(errorComment);
+    assert(primitiveFailure != null);
+    assert(searchParameterFailure != null);
+    return notABatchBundle(failedValue);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result httpFailure(int statusCode, String errorType, String failedValue),
+    Result httpFailure(int statusCode, String errorType, T failedValue),
     Result unknownFailure(T failedValue),
     Result noInternet(T failedValue),
-    Result noType(String errorComment),
-    Result noId(String errorComment),
-    Result noVid(String errorComment),
-    Result idDoesNotMatchResource(String errorComment),
-    Result noBundle(String errorComment),
-    Result notABatchBundle(String errorComment),
-    Result missingEntryRequest(String errorComment),
-    Result missingRequestMethod(String errorComment),
-    Result searchFailure(
-        String parameter, dynamic failedValue, String errorMessage),
+    Result noType(T failedValue),
+    Result noId(T failedValue),
+    Result noVid(T failedValue),
+    Result idDoesNotMatchResource(T failedValue),
+    Result noBundle(T failedValue, String batchOrTransaction),
+    Result notABatchBundle(T failedValue),
+    Result notATransactionBundle(T failedValue),
+    Result missingEntryRequest(T failedValue),
+    Result missingRequestMethod(T failedValue),
+    Result primitiveFailure(String parameter, T failedValue),
+    Result searchParameterFailure(String parameter, T failedValue),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (notABatchBundle != null) {
-      return notABatchBundle(errorComment);
+      return notABatchBundle(failedValue);
     }
     return orElse();
   }
@@ -1815,9 +1975,11 @@ class _$NotABatchBundle<T> implements NotABatchBundle<T> {
     @required Result idDoesNotMatchResource(IdDoesNotMatchResource<T> value),
     @required Result noBundle(NoBundle<T> value),
     @required Result notABatchBundle(NotABatchBundle<T> value),
+    @required Result notATransactionBundle(NotATransactionBundle<T> value),
     @required Result missingEntryRequest(MissingEntryRequest<T> value),
     @required Result missingRequestMethod(MissingRequestMethod<T> value),
-    @required Result searchFailure(SearchFailure<T> value),
+    @required Result primitiveFailure(PrimitiveFailure<T> value),
+    @required Result searchParameterFailure(SearchParameterFailure<T> value),
   }) {
     assert(httpFailure != null);
     assert(unknownFailure != null);
@@ -1828,9 +1990,11 @@ class _$NotABatchBundle<T> implements NotABatchBundle<T> {
     assert(idDoesNotMatchResource != null);
     assert(noBundle != null);
     assert(notABatchBundle != null);
+    assert(notATransactionBundle != null);
     assert(missingEntryRequest != null);
     assert(missingRequestMethod != null);
-    assert(searchFailure != null);
+    assert(primitiveFailure != null);
+    assert(searchParameterFailure != null);
     return notABatchBundle(this);
   }
 
@@ -1846,9 +2010,11 @@ class _$NotABatchBundle<T> implements NotABatchBundle<T> {
     Result idDoesNotMatchResource(IdDoesNotMatchResource<T> value),
     Result noBundle(NoBundle<T> value),
     Result notABatchBundle(NotABatchBundle<T> value),
+    Result notATransactionBundle(NotATransactionBundle<T> value),
     Result missingEntryRequest(MissingEntryRequest<T> value),
     Result missingRequestMethod(MissingRequestMethod<T> value),
-    Result searchFailure(SearchFailure<T> value),
+    Result primitiveFailure(PrimitiveFailure<T> value),
+    Result searchParameterFailure(SearchParameterFailure<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1859,20 +2025,225 @@ class _$NotABatchBundle<T> implements NotABatchBundle<T> {
   }
 }
 
-abstract class NotABatchBundle<T> implements RestfulFailure<T> {
-  const factory NotABatchBundle({@required String errorComment}) =
+abstract class NotABatchBundle<T> extends RestfulFailure<T> {
+  const NotABatchBundle._() : super._();
+  const factory NotABatchBundle({@required T failedValue}) =
       _$NotABatchBundle<T>;
 
-  String get errorComment;
+  @override
+  T get failedValue;
+  @override
   $NotABatchBundleCopyWith<T, NotABatchBundle<T>> get copyWith;
 }
 
 /// @nodoc
-abstract class $MissingEntryRequestCopyWith<T, $Res> {
+abstract class $NotATransactionBundleCopyWith<T, $Res>
+    implements $RestfulFailureCopyWith<T, $Res> {
+  factory $NotATransactionBundleCopyWith(NotATransactionBundle<T> value,
+          $Res Function(NotATransactionBundle<T>) then) =
+      _$NotATransactionBundleCopyWithImpl<T, $Res>;
+  @override
+  $Res call({T failedValue});
+}
+
+/// @nodoc
+class _$NotATransactionBundleCopyWithImpl<T, $Res>
+    extends _$RestfulFailureCopyWithImpl<T, $Res>
+    implements $NotATransactionBundleCopyWith<T, $Res> {
+  _$NotATransactionBundleCopyWithImpl(NotATransactionBundle<T> _value,
+      $Res Function(NotATransactionBundle<T>) _then)
+      : super(_value, (v) => _then(v as NotATransactionBundle<T>));
+
+  @override
+  NotATransactionBundle<T> get _value =>
+      super._value as NotATransactionBundle<T>;
+
+  @override
+  $Res call({
+    Object failedValue = freezed,
+  }) {
+    return _then(NotATransactionBundle<T>(
+      failedValue:
+          failedValue == freezed ? _value.failedValue : failedValue as T,
+    ));
+  }
+}
+
+/// @nodoc
+class _$NotATransactionBundle<T> extends NotATransactionBundle<T> {
+  const _$NotATransactionBundle({@required this.failedValue})
+      : assert(failedValue != null),
+        super._();
+
+  @override
+  final T failedValue;
+
+  @override
+  String toString() {
+    return 'RestfulFailure<$T>.notATransactionBundle(failedValue: $failedValue)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is NotATransactionBundle<T> &&
+            (identical(other.failedValue, failedValue) ||
+                const DeepCollectionEquality()
+                    .equals(other.failedValue, failedValue)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+
+  @override
+  $NotATransactionBundleCopyWith<T, NotATransactionBundle<T>> get copyWith =>
+      _$NotATransactionBundleCopyWithImpl<T, NotATransactionBundle<T>>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required
+        Result httpFailure(int statusCode, String errorType, T failedValue),
+    @required Result unknownFailure(T failedValue),
+    @required Result noInternet(T failedValue),
+    @required Result noType(T failedValue),
+    @required Result noId(T failedValue),
+    @required Result noVid(T failedValue),
+    @required Result idDoesNotMatchResource(T failedValue),
+    @required Result noBundle(T failedValue, String batchOrTransaction),
+    @required Result notABatchBundle(T failedValue),
+    @required Result notATransactionBundle(T failedValue),
+    @required Result missingEntryRequest(T failedValue),
+    @required Result missingRequestMethod(T failedValue),
+    @required Result primitiveFailure(String parameter, T failedValue),
+    @required Result searchParameterFailure(String parameter, T failedValue),
+  }) {
+    assert(httpFailure != null);
+    assert(unknownFailure != null);
+    assert(noInternet != null);
+    assert(noType != null);
+    assert(noId != null);
+    assert(noVid != null);
+    assert(idDoesNotMatchResource != null);
+    assert(noBundle != null);
+    assert(notABatchBundle != null);
+    assert(notATransactionBundle != null);
+    assert(missingEntryRequest != null);
+    assert(missingRequestMethod != null);
+    assert(primitiveFailure != null);
+    assert(searchParameterFailure != null);
+    return notATransactionBundle(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result httpFailure(int statusCode, String errorType, T failedValue),
+    Result unknownFailure(T failedValue),
+    Result noInternet(T failedValue),
+    Result noType(T failedValue),
+    Result noId(T failedValue),
+    Result noVid(T failedValue),
+    Result idDoesNotMatchResource(T failedValue),
+    Result noBundle(T failedValue, String batchOrTransaction),
+    Result notABatchBundle(T failedValue),
+    Result notATransactionBundle(T failedValue),
+    Result missingEntryRequest(T failedValue),
+    Result missingRequestMethod(T failedValue),
+    Result primitiveFailure(String parameter, T failedValue),
+    Result searchParameterFailure(String parameter, T failedValue),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (notATransactionBundle != null) {
+      return notATransactionBundle(failedValue);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result httpFailure(HttpFailure<T> value),
+    @required Result unknownFailure(UnknownFailure<T> value),
+    @required Result noInternet(NoInternet<T> value),
+    @required Result noType(NoType<T> value),
+    @required Result noId(NoId<T> value),
+    @required Result noVid(NoVid<T> value),
+    @required Result idDoesNotMatchResource(IdDoesNotMatchResource<T> value),
+    @required Result noBundle(NoBundle<T> value),
+    @required Result notABatchBundle(NotABatchBundle<T> value),
+    @required Result notATransactionBundle(NotATransactionBundle<T> value),
+    @required Result missingEntryRequest(MissingEntryRequest<T> value),
+    @required Result missingRequestMethod(MissingRequestMethod<T> value),
+    @required Result primitiveFailure(PrimitiveFailure<T> value),
+    @required Result searchParameterFailure(SearchParameterFailure<T> value),
+  }) {
+    assert(httpFailure != null);
+    assert(unknownFailure != null);
+    assert(noInternet != null);
+    assert(noType != null);
+    assert(noId != null);
+    assert(noVid != null);
+    assert(idDoesNotMatchResource != null);
+    assert(noBundle != null);
+    assert(notABatchBundle != null);
+    assert(notATransactionBundle != null);
+    assert(missingEntryRequest != null);
+    assert(missingRequestMethod != null);
+    assert(primitiveFailure != null);
+    assert(searchParameterFailure != null);
+    return notATransactionBundle(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result httpFailure(HttpFailure<T> value),
+    Result unknownFailure(UnknownFailure<T> value),
+    Result noInternet(NoInternet<T> value),
+    Result noType(NoType<T> value),
+    Result noId(NoId<T> value),
+    Result noVid(NoVid<T> value),
+    Result idDoesNotMatchResource(IdDoesNotMatchResource<T> value),
+    Result noBundle(NoBundle<T> value),
+    Result notABatchBundle(NotABatchBundle<T> value),
+    Result notATransactionBundle(NotATransactionBundle<T> value),
+    Result missingEntryRequest(MissingEntryRequest<T> value),
+    Result missingRequestMethod(MissingRequestMethod<T> value),
+    Result primitiveFailure(PrimitiveFailure<T> value),
+    Result searchParameterFailure(SearchParameterFailure<T> value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (notATransactionBundle != null) {
+      return notATransactionBundle(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class NotATransactionBundle<T> extends RestfulFailure<T> {
+  const NotATransactionBundle._() : super._();
+  const factory NotATransactionBundle({@required T failedValue}) =
+      _$NotATransactionBundle<T>;
+
+  @override
+  T get failedValue;
+  @override
+  $NotATransactionBundleCopyWith<T, NotATransactionBundle<T>> get copyWith;
+}
+
+/// @nodoc
+abstract class $MissingEntryRequestCopyWith<T, $Res>
+    implements $RestfulFailureCopyWith<T, $Res> {
   factory $MissingEntryRequestCopyWith(MissingEntryRequest<T> value,
           $Res Function(MissingEntryRequest<T>) then) =
       _$MissingEntryRequestCopyWithImpl<T, $Res>;
-  $Res call({String errorComment});
+  @override
+  $Res call({T failedValue});
 }
 
 /// @nodoc
@@ -1888,41 +2259,41 @@ class _$MissingEntryRequestCopyWithImpl<T, $Res>
 
   @override
   $Res call({
-    Object errorComment = freezed,
+    Object failedValue = freezed,
   }) {
     return _then(MissingEntryRequest<T>(
-      errorComment: errorComment == freezed
-          ? _value.errorComment
-          : errorComment as String,
+      failedValue:
+          failedValue == freezed ? _value.failedValue : failedValue as T,
     ));
   }
 }
 
 /// @nodoc
-class _$MissingEntryRequest<T> implements MissingEntryRequest<T> {
-  const _$MissingEntryRequest({@required this.errorComment})
-      : assert(errorComment != null);
+class _$MissingEntryRequest<T> extends MissingEntryRequest<T> {
+  const _$MissingEntryRequest({@required this.failedValue})
+      : assert(failedValue != null),
+        super._();
 
   @override
-  final String errorComment;
+  final T failedValue;
 
   @override
   String toString() {
-    return 'RestfulFailure<$T>.missingEntryRequest(errorComment: $errorComment)';
+    return 'RestfulFailure<$T>.missingEntryRequest(failedValue: $failedValue)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is MissingEntryRequest<T> &&
-            (identical(other.errorComment, errorComment) ||
+            (identical(other.failedValue, failedValue) ||
                 const DeepCollectionEquality()
-                    .equals(other.errorComment, errorComment)));
+                    .equals(other.failedValue, failedValue)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(errorComment);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
 
   @override
   $MissingEntryRequestCopyWith<T, MissingEntryRequest<T>> get copyWith =>
@@ -1933,21 +2304,20 @@ class _$MissingEntryRequest<T> implements MissingEntryRequest<T> {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required
-        Result httpFailure(
-            int statusCode, String errorType, String failedValue),
+        Result httpFailure(int statusCode, String errorType, T failedValue),
     @required Result unknownFailure(T failedValue),
     @required Result noInternet(T failedValue),
-    @required Result noType(String errorComment),
-    @required Result noId(String errorComment),
-    @required Result noVid(String errorComment),
-    @required Result idDoesNotMatchResource(String errorComment),
-    @required Result noBundle(String errorComment),
-    @required Result notABatchBundle(String errorComment),
-    @required Result missingEntryRequest(String errorComment),
-    @required Result missingRequestMethod(String errorComment),
-    @required
-        Result searchFailure(
-            String parameter, dynamic failedValue, String errorMessage),
+    @required Result noType(T failedValue),
+    @required Result noId(T failedValue),
+    @required Result noVid(T failedValue),
+    @required Result idDoesNotMatchResource(T failedValue),
+    @required Result noBundle(T failedValue, String batchOrTransaction),
+    @required Result notABatchBundle(T failedValue),
+    @required Result notATransactionBundle(T failedValue),
+    @required Result missingEntryRequest(T failedValue),
+    @required Result missingRequestMethod(T failedValue),
+    @required Result primitiveFailure(String parameter, T failedValue),
+    @required Result searchParameterFailure(String parameter, T failedValue),
   }) {
     assert(httpFailure != null);
     assert(unknownFailure != null);
@@ -1958,33 +2328,36 @@ class _$MissingEntryRequest<T> implements MissingEntryRequest<T> {
     assert(idDoesNotMatchResource != null);
     assert(noBundle != null);
     assert(notABatchBundle != null);
+    assert(notATransactionBundle != null);
     assert(missingEntryRequest != null);
     assert(missingRequestMethod != null);
-    assert(searchFailure != null);
-    return missingEntryRequest(errorComment);
+    assert(primitiveFailure != null);
+    assert(searchParameterFailure != null);
+    return missingEntryRequest(failedValue);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result httpFailure(int statusCode, String errorType, String failedValue),
+    Result httpFailure(int statusCode, String errorType, T failedValue),
     Result unknownFailure(T failedValue),
     Result noInternet(T failedValue),
-    Result noType(String errorComment),
-    Result noId(String errorComment),
-    Result noVid(String errorComment),
-    Result idDoesNotMatchResource(String errorComment),
-    Result noBundle(String errorComment),
-    Result notABatchBundle(String errorComment),
-    Result missingEntryRequest(String errorComment),
-    Result missingRequestMethod(String errorComment),
-    Result searchFailure(
-        String parameter, dynamic failedValue, String errorMessage),
+    Result noType(T failedValue),
+    Result noId(T failedValue),
+    Result noVid(T failedValue),
+    Result idDoesNotMatchResource(T failedValue),
+    Result noBundle(T failedValue, String batchOrTransaction),
+    Result notABatchBundle(T failedValue),
+    Result notATransactionBundle(T failedValue),
+    Result missingEntryRequest(T failedValue),
+    Result missingRequestMethod(T failedValue),
+    Result primitiveFailure(String parameter, T failedValue),
+    Result searchParameterFailure(String parameter, T failedValue),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (missingEntryRequest != null) {
-      return missingEntryRequest(errorComment);
+      return missingEntryRequest(failedValue);
     }
     return orElse();
   }
@@ -2001,9 +2374,11 @@ class _$MissingEntryRequest<T> implements MissingEntryRequest<T> {
     @required Result idDoesNotMatchResource(IdDoesNotMatchResource<T> value),
     @required Result noBundle(NoBundle<T> value),
     @required Result notABatchBundle(NotABatchBundle<T> value),
+    @required Result notATransactionBundle(NotATransactionBundle<T> value),
     @required Result missingEntryRequest(MissingEntryRequest<T> value),
     @required Result missingRequestMethod(MissingRequestMethod<T> value),
-    @required Result searchFailure(SearchFailure<T> value),
+    @required Result primitiveFailure(PrimitiveFailure<T> value),
+    @required Result searchParameterFailure(SearchParameterFailure<T> value),
   }) {
     assert(httpFailure != null);
     assert(unknownFailure != null);
@@ -2014,9 +2389,11 @@ class _$MissingEntryRequest<T> implements MissingEntryRequest<T> {
     assert(idDoesNotMatchResource != null);
     assert(noBundle != null);
     assert(notABatchBundle != null);
+    assert(notATransactionBundle != null);
     assert(missingEntryRequest != null);
     assert(missingRequestMethod != null);
-    assert(searchFailure != null);
+    assert(primitiveFailure != null);
+    assert(searchParameterFailure != null);
     return missingEntryRequest(this);
   }
 
@@ -2032,9 +2409,11 @@ class _$MissingEntryRequest<T> implements MissingEntryRequest<T> {
     Result idDoesNotMatchResource(IdDoesNotMatchResource<T> value),
     Result noBundle(NoBundle<T> value),
     Result notABatchBundle(NotABatchBundle<T> value),
+    Result notATransactionBundle(NotATransactionBundle<T> value),
     Result missingEntryRequest(MissingEntryRequest<T> value),
     Result missingRequestMethod(MissingRequestMethod<T> value),
-    Result searchFailure(SearchFailure<T> value),
+    Result primitiveFailure(PrimitiveFailure<T> value),
+    Result searchParameterFailure(SearchParameterFailure<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -2045,20 +2424,25 @@ class _$MissingEntryRequest<T> implements MissingEntryRequest<T> {
   }
 }
 
-abstract class MissingEntryRequest<T> implements RestfulFailure<T> {
-  const factory MissingEntryRequest({@required String errorComment}) =
+abstract class MissingEntryRequest<T> extends RestfulFailure<T> {
+  const MissingEntryRequest._() : super._();
+  const factory MissingEntryRequest({@required T failedValue}) =
       _$MissingEntryRequest<T>;
 
-  String get errorComment;
+  @override
+  T get failedValue;
+  @override
   $MissingEntryRequestCopyWith<T, MissingEntryRequest<T>> get copyWith;
 }
 
 /// @nodoc
-abstract class $MissingRequestMethodCopyWith<T, $Res> {
+abstract class $MissingRequestMethodCopyWith<T, $Res>
+    implements $RestfulFailureCopyWith<T, $Res> {
   factory $MissingRequestMethodCopyWith(MissingRequestMethod<T> value,
           $Res Function(MissingRequestMethod<T>) then) =
       _$MissingRequestMethodCopyWithImpl<T, $Res>;
-  $Res call({String errorComment});
+  @override
+  $Res call({T failedValue});
 }
 
 /// @nodoc
@@ -2074,41 +2458,41 @@ class _$MissingRequestMethodCopyWithImpl<T, $Res>
 
   @override
   $Res call({
-    Object errorComment = freezed,
+    Object failedValue = freezed,
   }) {
     return _then(MissingRequestMethod<T>(
-      errorComment: errorComment == freezed
-          ? _value.errorComment
-          : errorComment as String,
+      failedValue:
+          failedValue == freezed ? _value.failedValue : failedValue as T,
     ));
   }
 }
 
 /// @nodoc
-class _$MissingRequestMethod<T> implements MissingRequestMethod<T> {
-  const _$MissingRequestMethod({@required this.errorComment})
-      : assert(errorComment != null);
+class _$MissingRequestMethod<T> extends MissingRequestMethod<T> {
+  const _$MissingRequestMethod({@required this.failedValue})
+      : assert(failedValue != null),
+        super._();
 
   @override
-  final String errorComment;
+  final T failedValue;
 
   @override
   String toString() {
-    return 'RestfulFailure<$T>.missingRequestMethod(errorComment: $errorComment)';
+    return 'RestfulFailure<$T>.missingRequestMethod(failedValue: $failedValue)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is MissingRequestMethod<T> &&
-            (identical(other.errorComment, errorComment) ||
+            (identical(other.failedValue, failedValue) ||
                 const DeepCollectionEquality()
-                    .equals(other.errorComment, errorComment)));
+                    .equals(other.failedValue, failedValue)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(errorComment);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
 
   @override
   $MissingRequestMethodCopyWith<T, MissingRequestMethod<T>> get copyWith =>
@@ -2119,21 +2503,20 @@ class _$MissingRequestMethod<T> implements MissingRequestMethod<T> {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required
-        Result httpFailure(
-            int statusCode, String errorType, String failedValue),
+        Result httpFailure(int statusCode, String errorType, T failedValue),
     @required Result unknownFailure(T failedValue),
     @required Result noInternet(T failedValue),
-    @required Result noType(String errorComment),
-    @required Result noId(String errorComment),
-    @required Result noVid(String errorComment),
-    @required Result idDoesNotMatchResource(String errorComment),
-    @required Result noBundle(String errorComment),
-    @required Result notABatchBundle(String errorComment),
-    @required Result missingEntryRequest(String errorComment),
-    @required Result missingRequestMethod(String errorComment),
-    @required
-        Result searchFailure(
-            String parameter, dynamic failedValue, String errorMessage),
+    @required Result noType(T failedValue),
+    @required Result noId(T failedValue),
+    @required Result noVid(T failedValue),
+    @required Result idDoesNotMatchResource(T failedValue),
+    @required Result noBundle(T failedValue, String batchOrTransaction),
+    @required Result notABatchBundle(T failedValue),
+    @required Result notATransactionBundle(T failedValue),
+    @required Result missingEntryRequest(T failedValue),
+    @required Result missingRequestMethod(T failedValue),
+    @required Result primitiveFailure(String parameter, T failedValue),
+    @required Result searchParameterFailure(String parameter, T failedValue),
   }) {
     assert(httpFailure != null);
     assert(unknownFailure != null);
@@ -2144,33 +2527,36 @@ class _$MissingRequestMethod<T> implements MissingRequestMethod<T> {
     assert(idDoesNotMatchResource != null);
     assert(noBundle != null);
     assert(notABatchBundle != null);
+    assert(notATransactionBundle != null);
     assert(missingEntryRequest != null);
     assert(missingRequestMethod != null);
-    assert(searchFailure != null);
-    return missingRequestMethod(errorComment);
+    assert(primitiveFailure != null);
+    assert(searchParameterFailure != null);
+    return missingRequestMethod(failedValue);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result httpFailure(int statusCode, String errorType, String failedValue),
+    Result httpFailure(int statusCode, String errorType, T failedValue),
     Result unknownFailure(T failedValue),
     Result noInternet(T failedValue),
-    Result noType(String errorComment),
-    Result noId(String errorComment),
-    Result noVid(String errorComment),
-    Result idDoesNotMatchResource(String errorComment),
-    Result noBundle(String errorComment),
-    Result notABatchBundle(String errorComment),
-    Result missingEntryRequest(String errorComment),
-    Result missingRequestMethod(String errorComment),
-    Result searchFailure(
-        String parameter, dynamic failedValue, String errorMessage),
+    Result noType(T failedValue),
+    Result noId(T failedValue),
+    Result noVid(T failedValue),
+    Result idDoesNotMatchResource(T failedValue),
+    Result noBundle(T failedValue, String batchOrTransaction),
+    Result notABatchBundle(T failedValue),
+    Result notATransactionBundle(T failedValue),
+    Result missingEntryRequest(T failedValue),
+    Result missingRequestMethod(T failedValue),
+    Result primitiveFailure(String parameter, T failedValue),
+    Result searchParameterFailure(String parameter, T failedValue),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (missingRequestMethod != null) {
-      return missingRequestMethod(errorComment);
+      return missingRequestMethod(failedValue);
     }
     return orElse();
   }
@@ -2187,9 +2573,11 @@ class _$MissingRequestMethod<T> implements MissingRequestMethod<T> {
     @required Result idDoesNotMatchResource(IdDoesNotMatchResource<T> value),
     @required Result noBundle(NoBundle<T> value),
     @required Result notABatchBundle(NotABatchBundle<T> value),
+    @required Result notATransactionBundle(NotATransactionBundle<T> value),
     @required Result missingEntryRequest(MissingEntryRequest<T> value),
     @required Result missingRequestMethod(MissingRequestMethod<T> value),
-    @required Result searchFailure(SearchFailure<T> value),
+    @required Result primitiveFailure(PrimitiveFailure<T> value),
+    @required Result searchParameterFailure(SearchParameterFailure<T> value),
   }) {
     assert(httpFailure != null);
     assert(unknownFailure != null);
@@ -2200,9 +2588,11 @@ class _$MissingRequestMethod<T> implements MissingRequestMethod<T> {
     assert(idDoesNotMatchResource != null);
     assert(noBundle != null);
     assert(notABatchBundle != null);
+    assert(notATransactionBundle != null);
     assert(missingEntryRequest != null);
     assert(missingRequestMethod != null);
-    assert(searchFailure != null);
+    assert(primitiveFailure != null);
+    assert(searchParameterFailure != null);
     return missingRequestMethod(this);
   }
 
@@ -2218,9 +2608,11 @@ class _$MissingRequestMethod<T> implements MissingRequestMethod<T> {
     Result idDoesNotMatchResource(IdDoesNotMatchResource<T> value),
     Result noBundle(NoBundle<T> value),
     Result notABatchBundle(NotABatchBundle<T> value),
+    Result notATransactionBundle(NotATransactionBundle<T> value),
     Result missingEntryRequest(MissingEntryRequest<T> value),
     Result missingRequestMethod(MissingRequestMethod<T> value),
-    Result searchFailure(SearchFailure<T> value),
+    Result primitiveFailure(PrimitiveFailure<T> value),
+    Result searchParameterFailure(SearchParameterFailure<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -2231,117 +2623,109 @@ class _$MissingRequestMethod<T> implements MissingRequestMethod<T> {
   }
 }
 
-abstract class MissingRequestMethod<T> implements RestfulFailure<T> {
-  const factory MissingRequestMethod({@required String errorComment}) =
+abstract class MissingRequestMethod<T> extends RestfulFailure<T> {
+  const MissingRequestMethod._() : super._();
+  const factory MissingRequestMethod({@required T failedValue}) =
       _$MissingRequestMethod<T>;
 
-  String get errorComment;
+  @override
+  T get failedValue;
+  @override
   $MissingRequestMethodCopyWith<T, MissingRequestMethod<T>> get copyWith;
 }
 
 /// @nodoc
-abstract class $SearchFailureCopyWith<T, $Res> {
-  factory $SearchFailureCopyWith(
-          SearchFailure<T> value, $Res Function(SearchFailure<T>) then) =
-      _$SearchFailureCopyWithImpl<T, $Res>;
-  $Res call({String parameter, dynamic failedValue, String errorMessage});
+abstract class $PrimitiveFailureCopyWith<T, $Res>
+    implements $RestfulFailureCopyWith<T, $Res> {
+  factory $PrimitiveFailureCopyWith(
+          PrimitiveFailure<T> value, $Res Function(PrimitiveFailure<T>) then) =
+      _$PrimitiveFailureCopyWithImpl<T, $Res>;
+  @override
+  $Res call({String parameter, T failedValue});
 }
 
 /// @nodoc
-class _$SearchFailureCopyWithImpl<T, $Res>
+class _$PrimitiveFailureCopyWithImpl<T, $Res>
     extends _$RestfulFailureCopyWithImpl<T, $Res>
-    implements $SearchFailureCopyWith<T, $Res> {
-  _$SearchFailureCopyWithImpl(
-      SearchFailure<T> _value, $Res Function(SearchFailure<T>) _then)
-      : super(_value, (v) => _then(v as SearchFailure<T>));
+    implements $PrimitiveFailureCopyWith<T, $Res> {
+  _$PrimitiveFailureCopyWithImpl(
+      PrimitiveFailure<T> _value, $Res Function(PrimitiveFailure<T>) _then)
+      : super(_value, (v) => _then(v as PrimitiveFailure<T>));
 
   @override
-  SearchFailure<T> get _value => super._value as SearchFailure<T>;
+  PrimitiveFailure<T> get _value => super._value as PrimitiveFailure<T>;
 
   @override
   $Res call({
     Object parameter = freezed,
     Object failedValue = freezed,
-    Object errorMessage = freezed,
   }) {
-    return _then(SearchFailure<T>(
+    return _then(PrimitiveFailure<T>(
       parameter: parameter == freezed ? _value.parameter : parameter as String,
       failedValue:
-          failedValue == freezed ? _value.failedValue : failedValue as dynamic,
-      errorMessage: errorMessage == freezed
-          ? _value.errorMessage
-          : errorMessage as String,
+          failedValue == freezed ? _value.failedValue : failedValue as T,
     ));
   }
 }
 
 /// @nodoc
-class _$SearchFailure<T> implements SearchFailure<T> {
-  const _$SearchFailure(
-      {@required this.parameter,
-      @required this.failedValue,
-      @required this.errorMessage})
+class _$PrimitiveFailure<T> extends PrimitiveFailure<T> {
+  const _$PrimitiveFailure(
+      {@required this.parameter, @required this.failedValue})
       : assert(parameter != null),
         assert(failedValue != null),
-        assert(errorMessage != null);
+        super._();
 
   @override
   final String parameter;
   @override
-  final dynamic failedValue;
-  @override
-  final String errorMessage;
+  final T failedValue;
 
   @override
   String toString() {
-    return 'RestfulFailure<$T>.searchFailure(parameter: $parameter, failedValue: $failedValue, errorMessage: $errorMessage)';
+    return 'RestfulFailure<$T>.primitiveFailure(parameter: $parameter, failedValue: $failedValue)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is SearchFailure<T> &&
+        (other is PrimitiveFailure<T> &&
             (identical(other.parameter, parameter) ||
                 const DeepCollectionEquality()
                     .equals(other.parameter, parameter)) &&
             (identical(other.failedValue, failedValue) ||
                 const DeepCollectionEquality()
-                    .equals(other.failedValue, failedValue)) &&
-            (identical(other.errorMessage, errorMessage) ||
-                const DeepCollectionEquality()
-                    .equals(other.errorMessage, errorMessage)));
+                    .equals(other.failedValue, failedValue)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(parameter) ^
-      const DeepCollectionEquality().hash(failedValue) ^
-      const DeepCollectionEquality().hash(errorMessage);
+      const DeepCollectionEquality().hash(failedValue);
 
   @override
-  $SearchFailureCopyWith<T, SearchFailure<T>> get copyWith =>
-      _$SearchFailureCopyWithImpl<T, SearchFailure<T>>(this, _$identity);
+  $PrimitiveFailureCopyWith<T, PrimitiveFailure<T>> get copyWith =>
+      _$PrimitiveFailureCopyWithImpl<T, PrimitiveFailure<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required
-        Result httpFailure(
-            int statusCode, String errorType, String failedValue),
+        Result httpFailure(int statusCode, String errorType, T failedValue),
     @required Result unknownFailure(T failedValue),
     @required Result noInternet(T failedValue),
-    @required Result noType(String errorComment),
-    @required Result noId(String errorComment),
-    @required Result noVid(String errorComment),
-    @required Result idDoesNotMatchResource(String errorComment),
-    @required Result noBundle(String errorComment),
-    @required Result notABatchBundle(String errorComment),
-    @required Result missingEntryRequest(String errorComment),
-    @required Result missingRequestMethod(String errorComment),
-    @required
-        Result searchFailure(
-            String parameter, dynamic failedValue, String errorMessage),
+    @required Result noType(T failedValue),
+    @required Result noId(T failedValue),
+    @required Result noVid(T failedValue),
+    @required Result idDoesNotMatchResource(T failedValue),
+    @required Result noBundle(T failedValue, String batchOrTransaction),
+    @required Result notABatchBundle(T failedValue),
+    @required Result notATransactionBundle(T failedValue),
+    @required Result missingEntryRequest(T failedValue),
+    @required Result missingRequestMethod(T failedValue),
+    @required Result primitiveFailure(String parameter, T failedValue),
+    @required Result searchParameterFailure(String parameter, T failedValue),
   }) {
     assert(httpFailure != null);
     assert(unknownFailure != null);
@@ -2352,33 +2736,36 @@ class _$SearchFailure<T> implements SearchFailure<T> {
     assert(idDoesNotMatchResource != null);
     assert(noBundle != null);
     assert(notABatchBundle != null);
+    assert(notATransactionBundle != null);
     assert(missingEntryRequest != null);
     assert(missingRequestMethod != null);
-    assert(searchFailure != null);
-    return searchFailure(parameter, failedValue, errorMessage);
+    assert(primitiveFailure != null);
+    assert(searchParameterFailure != null);
+    return primitiveFailure(parameter, failedValue);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result httpFailure(int statusCode, String errorType, String failedValue),
+    Result httpFailure(int statusCode, String errorType, T failedValue),
     Result unknownFailure(T failedValue),
     Result noInternet(T failedValue),
-    Result noType(String errorComment),
-    Result noId(String errorComment),
-    Result noVid(String errorComment),
-    Result idDoesNotMatchResource(String errorComment),
-    Result noBundle(String errorComment),
-    Result notABatchBundle(String errorComment),
-    Result missingEntryRequest(String errorComment),
-    Result missingRequestMethod(String errorComment),
-    Result searchFailure(
-        String parameter, dynamic failedValue, String errorMessage),
+    Result noType(T failedValue),
+    Result noId(T failedValue),
+    Result noVid(T failedValue),
+    Result idDoesNotMatchResource(T failedValue),
+    Result noBundle(T failedValue, String batchOrTransaction),
+    Result notABatchBundle(T failedValue),
+    Result notATransactionBundle(T failedValue),
+    Result missingEntryRequest(T failedValue),
+    Result missingRequestMethod(T failedValue),
+    Result primitiveFailure(String parameter, T failedValue),
+    Result searchParameterFailure(String parameter, T failedValue),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (searchFailure != null) {
-      return searchFailure(parameter, failedValue, errorMessage);
+    if (primitiveFailure != null) {
+      return primitiveFailure(parameter, failedValue);
     }
     return orElse();
   }
@@ -2395,9 +2782,11 @@ class _$SearchFailure<T> implements SearchFailure<T> {
     @required Result idDoesNotMatchResource(IdDoesNotMatchResource<T> value),
     @required Result noBundle(NoBundle<T> value),
     @required Result notABatchBundle(NotABatchBundle<T> value),
+    @required Result notATransactionBundle(NotATransactionBundle<T> value),
     @required Result missingEntryRequest(MissingEntryRequest<T> value),
     @required Result missingRequestMethod(MissingRequestMethod<T> value),
-    @required Result searchFailure(SearchFailure<T> value),
+    @required Result primitiveFailure(PrimitiveFailure<T> value),
+    @required Result searchParameterFailure(SearchParameterFailure<T> value),
   }) {
     assert(httpFailure != null);
     assert(unknownFailure != null);
@@ -2408,10 +2797,12 @@ class _$SearchFailure<T> implements SearchFailure<T> {
     assert(idDoesNotMatchResource != null);
     assert(noBundle != null);
     assert(notABatchBundle != null);
+    assert(notATransactionBundle != null);
     assert(missingEntryRequest != null);
     assert(missingRequestMethod != null);
-    assert(searchFailure != null);
-    return searchFailure(this);
+    assert(primitiveFailure != null);
+    assert(searchParameterFailure != null);
+    return primitiveFailure(this);
   }
 
   @override
@@ -2426,27 +2817,243 @@ class _$SearchFailure<T> implements SearchFailure<T> {
     Result idDoesNotMatchResource(IdDoesNotMatchResource<T> value),
     Result noBundle(NoBundle<T> value),
     Result notABatchBundle(NotABatchBundle<T> value),
+    Result notATransactionBundle(NotATransactionBundle<T> value),
     Result missingEntryRequest(MissingEntryRequest<T> value),
     Result missingRequestMethod(MissingRequestMethod<T> value),
-    Result searchFailure(SearchFailure<T> value),
+    Result primitiveFailure(PrimitiveFailure<T> value),
+    Result searchParameterFailure(SearchParameterFailure<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (searchFailure != null) {
-      return searchFailure(this);
+    if (primitiveFailure != null) {
+      return primitiveFailure(this);
     }
     return orElse();
   }
 }
 
-abstract class SearchFailure<T> implements RestfulFailure<T> {
-  const factory SearchFailure(
+abstract class PrimitiveFailure<T> extends RestfulFailure<T> {
+  const PrimitiveFailure._() : super._();
+  const factory PrimitiveFailure(
       {@required String parameter,
-      @required dynamic failedValue,
-      @required String errorMessage}) = _$SearchFailure<T>;
+      @required T failedValue}) = _$PrimitiveFailure<T>;
 
   String get parameter;
-  dynamic get failedValue;
-  String get errorMessage;
-  $SearchFailureCopyWith<T, SearchFailure<T>> get copyWith;
+  @override
+  T get failedValue;
+  @override
+  $PrimitiveFailureCopyWith<T, PrimitiveFailure<T>> get copyWith;
+}
+
+/// @nodoc
+abstract class $SearchParameterFailureCopyWith<T, $Res>
+    implements $RestfulFailureCopyWith<T, $Res> {
+  factory $SearchParameterFailureCopyWith(SearchParameterFailure<T> value,
+          $Res Function(SearchParameterFailure<T>) then) =
+      _$SearchParameterFailureCopyWithImpl<T, $Res>;
+  @override
+  $Res call({String parameter, T failedValue});
+}
+
+/// @nodoc
+class _$SearchParameterFailureCopyWithImpl<T, $Res>
+    extends _$RestfulFailureCopyWithImpl<T, $Res>
+    implements $SearchParameterFailureCopyWith<T, $Res> {
+  _$SearchParameterFailureCopyWithImpl(SearchParameterFailure<T> _value,
+      $Res Function(SearchParameterFailure<T>) _then)
+      : super(_value, (v) => _then(v as SearchParameterFailure<T>));
+
+  @override
+  SearchParameterFailure<T> get _value =>
+      super._value as SearchParameterFailure<T>;
+
+  @override
+  $Res call({
+    Object parameter = freezed,
+    Object failedValue = freezed,
+  }) {
+    return _then(SearchParameterFailure<T>(
+      parameter: parameter == freezed ? _value.parameter : parameter as String,
+      failedValue:
+          failedValue == freezed ? _value.failedValue : failedValue as T,
+    ));
+  }
+}
+
+/// @nodoc
+class _$SearchParameterFailure<T> extends SearchParameterFailure<T> {
+  const _$SearchParameterFailure(
+      {@required this.parameter, @required this.failedValue})
+      : assert(parameter != null),
+        assert(failedValue != null),
+        super._();
+
+  @override
+  final String parameter;
+  @override
+  final T failedValue;
+
+  @override
+  String toString() {
+    return 'RestfulFailure<$T>.searchParameterFailure(parameter: $parameter, failedValue: $failedValue)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is SearchParameterFailure<T> &&
+            (identical(other.parameter, parameter) ||
+                const DeepCollectionEquality()
+                    .equals(other.parameter, parameter)) &&
+            (identical(other.failedValue, failedValue) ||
+                const DeepCollectionEquality()
+                    .equals(other.failedValue, failedValue)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(parameter) ^
+      const DeepCollectionEquality().hash(failedValue);
+
+  @override
+  $SearchParameterFailureCopyWith<T, SearchParameterFailure<T>> get copyWith =>
+      _$SearchParameterFailureCopyWithImpl<T, SearchParameterFailure<T>>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required
+        Result httpFailure(int statusCode, String errorType, T failedValue),
+    @required Result unknownFailure(T failedValue),
+    @required Result noInternet(T failedValue),
+    @required Result noType(T failedValue),
+    @required Result noId(T failedValue),
+    @required Result noVid(T failedValue),
+    @required Result idDoesNotMatchResource(T failedValue),
+    @required Result noBundle(T failedValue, String batchOrTransaction),
+    @required Result notABatchBundle(T failedValue),
+    @required Result notATransactionBundle(T failedValue),
+    @required Result missingEntryRequest(T failedValue),
+    @required Result missingRequestMethod(T failedValue),
+    @required Result primitiveFailure(String parameter, T failedValue),
+    @required Result searchParameterFailure(String parameter, T failedValue),
+  }) {
+    assert(httpFailure != null);
+    assert(unknownFailure != null);
+    assert(noInternet != null);
+    assert(noType != null);
+    assert(noId != null);
+    assert(noVid != null);
+    assert(idDoesNotMatchResource != null);
+    assert(noBundle != null);
+    assert(notABatchBundle != null);
+    assert(notATransactionBundle != null);
+    assert(missingEntryRequest != null);
+    assert(missingRequestMethod != null);
+    assert(primitiveFailure != null);
+    assert(searchParameterFailure != null);
+    return searchParameterFailure(parameter, failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result httpFailure(int statusCode, String errorType, T failedValue),
+    Result unknownFailure(T failedValue),
+    Result noInternet(T failedValue),
+    Result noType(T failedValue),
+    Result noId(T failedValue),
+    Result noVid(T failedValue),
+    Result idDoesNotMatchResource(T failedValue),
+    Result noBundle(T failedValue, String batchOrTransaction),
+    Result notABatchBundle(T failedValue),
+    Result notATransactionBundle(T failedValue),
+    Result missingEntryRequest(T failedValue),
+    Result missingRequestMethod(T failedValue),
+    Result primitiveFailure(String parameter, T failedValue),
+    Result searchParameterFailure(String parameter, T failedValue),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (searchParameterFailure != null) {
+      return searchParameterFailure(parameter, failedValue);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result httpFailure(HttpFailure<T> value),
+    @required Result unknownFailure(UnknownFailure<T> value),
+    @required Result noInternet(NoInternet<T> value),
+    @required Result noType(NoType<T> value),
+    @required Result noId(NoId<T> value),
+    @required Result noVid(NoVid<T> value),
+    @required Result idDoesNotMatchResource(IdDoesNotMatchResource<T> value),
+    @required Result noBundle(NoBundle<T> value),
+    @required Result notABatchBundle(NotABatchBundle<T> value),
+    @required Result notATransactionBundle(NotATransactionBundle<T> value),
+    @required Result missingEntryRequest(MissingEntryRequest<T> value),
+    @required Result missingRequestMethod(MissingRequestMethod<T> value),
+    @required Result primitiveFailure(PrimitiveFailure<T> value),
+    @required Result searchParameterFailure(SearchParameterFailure<T> value),
+  }) {
+    assert(httpFailure != null);
+    assert(unknownFailure != null);
+    assert(noInternet != null);
+    assert(noType != null);
+    assert(noId != null);
+    assert(noVid != null);
+    assert(idDoesNotMatchResource != null);
+    assert(noBundle != null);
+    assert(notABatchBundle != null);
+    assert(notATransactionBundle != null);
+    assert(missingEntryRequest != null);
+    assert(missingRequestMethod != null);
+    assert(primitiveFailure != null);
+    assert(searchParameterFailure != null);
+    return searchParameterFailure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result httpFailure(HttpFailure<T> value),
+    Result unknownFailure(UnknownFailure<T> value),
+    Result noInternet(NoInternet<T> value),
+    Result noType(NoType<T> value),
+    Result noId(NoId<T> value),
+    Result noVid(NoVid<T> value),
+    Result idDoesNotMatchResource(IdDoesNotMatchResource<T> value),
+    Result noBundle(NoBundle<T> value),
+    Result notABatchBundle(NotABatchBundle<T> value),
+    Result notATransactionBundle(NotATransactionBundle<T> value),
+    Result missingEntryRequest(MissingEntryRequest<T> value),
+    Result missingRequestMethod(MissingRequestMethod<T> value),
+    Result primitiveFailure(PrimitiveFailure<T> value),
+    Result searchParameterFailure(SearchParameterFailure<T> value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (searchParameterFailure != null) {
+      return searchParameterFailure(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SearchParameterFailure<T> extends RestfulFailure<T> {
+  const SearchParameterFailure._() : super._();
+  const factory SearchParameterFailure(
+      {@required String parameter,
+      @required T failedValue}) = _$SearchParameterFailure<T>;
+
+  String get parameter;
+  @override
+  T get failedValue;
+  @override
+  $SearchParameterFailureCopyWith<T, SearchParameterFailure<T>> get copyWith;
 }

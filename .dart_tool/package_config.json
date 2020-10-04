@@ -147,7 +147,7 @@
     },
     {
       "name": "fhir",
-      "rootUri": "file:///home/grey/.pub-cache/hosted/pub.dartlang.org/fhir-0.0.7",
+      "rootUri": "file:///home/grey/.pub-cache/git/fhir-0ca756ec6485282fd8922da6670c77ebbd107544/",
       "packageUri": "lib/",
       "languageVersion": "2.1"
     },
@@ -470,7 +470,7 @@
       "languageVersion": "2.1"
     }
   ],
-  "generated": "2020-09-28T19:25:15.731938Z",
+  "generated": "2020-10-04T12:52:25.196860Z",
   "generator": "pub",
-  "generatorVersion": "2.9.3"
+  "generatorVersion": "2.10.0"
 }

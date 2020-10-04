@@ -7,7 +7,7 @@ import 'search_objects.dart';
 
 class SearchReference extends SearchObject<String> {
   final Id id;
-  final Either<RestfulFailure<String>, String> type;
+  final Either<RestfulFailure, String> type;
   final FhirUri url;
 
   factory SearchReference({Id id, dynamic type, FhirUri url}) {
@@ -21,15 +21,16 @@ class SearchReference extends SearchObject<String> {
 
   const SearchReference._({this.id, this.type, this.url});
 
-  Either<RestfulFailure<String>, String> searchString() {
+  Either<RestfulFailure, String> searchString() {
     if (id == null && url == null) {
-      return left(RestfulFailure.searchFailure(
-          type: 'Reference', failedValue: 'No Id or Url Provided'));
+      return left(RestfulFailure.searchParameterFailure(
+          parameter: 'SearchReference',
+          failedValue: 'No Id or Url Provided. This '));
     } else {
       if (url != null) {
         if (url.value.isLeft()) {
-          return left(RestfulFailure.searchFailure(
-              type: 'Invalid Reference', failedValue: url.value.toString()));
+          return left(RestfulFailure.primitiveFailure(
+              parameter: 'Reference', failedValue: url));
         } else {
           return right('=${url.toString()}');
         }

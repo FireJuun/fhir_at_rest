@@ -1,7 +1,6 @@
 import 'dart:convert';
 
 import 'package:dartz/dartz.dart';
-import 'package:fhir/dstu2/resource_types/infrastructure_types/structure/structure.enums.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:http/http.dart';
 
@@ -50,27 +49,25 @@ abstract class TransactionRequest with _$TransactionRequest {
         r4: (req) => resource is! r4.Bundle,
         r5: (req) => resource is! r5.Bundle)) {
       return left(RestfulFailure.noBundle(
-          errorComment: 'Batch Requests require a Bundle type resource'));
+        failedValue: resource,
+        batchOrTransaction: 'Transaction',
+      ));
     }
 
     if (this.map(
-        dstu2: (req) => resource.type != BundleType.transaction,
+        dstu2: (req) => resource.type != dstu2.BundleType.transaction,
         stu3: (req) => resource.type != stu3.BundleType.transaction,
         r4: (req) => resource.type != r4.BundleType.transaction,
         r5: (req) => resource.type != r5.BundleType.transaction)) {
-      return left(RestfulFailure.notABatchBundle(
-          errorComment: 'Bundle is not of Batch Type'));
+      return left(RestfulFailure.notATransactionBundle(failedValue: resource));
     }
 
     if (resource.entry != null) {
       for (var entry in resource.entry) {
         if (entry.request == null) {
-          return left(RestfulFailure.missingEntryRequest(
-              errorComment: 'Each bundle entry requires a request'));
+          return left(RestfulFailure.missingEntryRequest(failedValue: entry));
         } else if (entry.request.method == null) {
-          return left(RestfulFailure.missingRequestMethod(
-              errorComment:
-                  'Each bundle entry request needs a method type specified'));
+          return left(RestfulFailure.missingRequestMethod(failedValue: entry));
         }
       }
     }
