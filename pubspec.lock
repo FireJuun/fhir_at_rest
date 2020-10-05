@@ -174,7 +174,7 @@ packages:
     description:
       path: "."
       ref: HEAD
-      resolved-ref: "35fc0d8da3f429ddae27cdf3bb23c1a80473ae96"
+      resolved-ref: "69fe496d217ae920133b949ad622804443bdf928"
       url: "git://github.com/Dokotela/fhir.git"
     source: git
     version: "0.0.8"

@@ -11,7 +11,7 @@ class Dstu2SearchParameters {
   List<Id> searchId;
   List<SearchDate> searchLastUpdated;
   List<SearchToken> searchTag;
-  //List<SearchUri> searchProfile;
+  List<SearchUri> searchProfile;
   List<SearchToken> searchSecurity;
   //List<String> searchText;
   //List<String> searchContent;
@@ -26,7 +26,7 @@ class Stu3SearchParameters {
   List<Id> searchId;
   List<SearchDate> searchLastUpdated;
   List<SearchToken> searchTag;
-  //List<SearchUri> searchProfile;
+  List<SearchUri> searchProfile;
   List<SearchToken> searchSecurity;
   //List<String> searchText;
   //List<String> searchContent;
@@ -41,7 +41,7 @@ class R4SearchParameters {
   List<Id> searchId;
   List<SearchDate> searchLastUpdated;
   List<SearchToken> searchTag;
-  //List<SearchUri> searchProfile;
+  List<SearchUri> searchProfile;
   List<SearchToken> searchSecurity;
   //List<String> searchText;
   //List<String> searchContent;
@@ -56,7 +56,7 @@ class R5SearchParameters {
   List<Id> searchId;
   List<SearchDate> searchLastUpdated;
   List<SearchToken> searchTag;
-  //List<SearchUri> searchProfile;
+  List<SearchUri> searchProfile;
   List<SearchToken> searchSecurity;
   //List<String> searchText;
   //List<String> searchContent;
