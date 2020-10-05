@@ -61,50 +61,119 @@ void main() async {
   // response = await request.request();
   // print(response.fold((l) => l.errorMessage(), (r) => r));
 
-  request = SearchRequest.r4(
-    base: Uri.parse('http://all.your.base.belong.to.us'),
-    type: R4Types.immunization,
-    parameters: ImmunizationSearch(
-      searchId: [Id('12345')],
-      searchLastUpdated: [
-        SearchDate(
-          FhirDateTime('1981-09-18'),
-          prefix: DatePrefix.gt,
-        )
-      ],
-      searchTag: [
-        SearchToken(
-            system: FhirUri('http://acme.org/codes'),
-            modifier: TokenModifier.in_)
-      ],
-    ),
-  );
-  response = await request.request();
-  print(response.fold((l) => l.errorMessage(), (r) => r));
+  // request = SearchRequest.r4(
+  //   base: Uri.parse('http://all.your.base.belong.to.us'),
+  //   type: R4Types.immunization,
+  //   parameters: ImmunizationSearch(
+  //     searchId: [Id('12345')],
+  //     searchLastUpdated: [
+  //       SearchDate(
+  //         FhirDateTime('1981-09-18'),
+  //         prefix: DatePrefix.gt,
+  //       )
+  //     ],
+  //     searchTag: [
+  //       SearchToken(
+  //           system: FhirUri('http://acme.org/codes'),
+  //           modifier: TokenModifier.in_)
+  //     ],
+  //   ),
+  // );
+  // response = await request.request();
+  // print(response.fold((l) => l.errorMessage(), (r) => r));
 
-  request = SearchRequest.r4(
-    base: Uri.parse('http://all.your.base.belong.to.us'),
-    type: R4Types.immunization,
-    parameters: ImmunizationSearch(
-      searchId: [Id('12345')],
-      searchLastUpdated: [
-        SearchDate(
-          FhirDateTime('1981-09-18'),
-          prefix: DatePrefix.gt,
-        )
-      ],
-      searchTag: [
-        SearchToken(
-            system: FhirUri('http://acme.org/codes'),
-            value: 'needs-review',
-            modifier: TokenModifier.in_)
-      ],
-    ),
-  );
-  response = await request.request();
-  print('\n');
-  print(response.fold((l) => l.errorMessage(), (r) => r));
+  // request = SearchRequest.r4(
+  //   base: Uri.parse('http://all.your.base.belong.to.us'),
+  //   type: R4Types.immunization,
+  //   parameters: ImmunizationSearch(
+  //     searchId: [Id('12345')],
+  //     searchLastUpdated: [
+  //       SearchDate(
+  //         FhirDateTime('1981-09-18'),
+  //         prefix: DatePrefix.gt,
+  //       )
+  //     ],
+  //     searchTag: [
+  //       SearchToken(
+  //           system: FhirUri('http://acme.org/codes'),
+  //           value: 'needs-review',
+  //           modifier: TokenModifier.in_)
+  //     ],
+  //   ),
+  // );
+  // response = await request.request();
+  // print('\n');
+  // print(response.fold((l) => l.errorMessage(), (r) => r));
 
+  // request = SearchRequest.r4(
+  //   base: Uri.parse('http://all.your.base.belong.to.us'),
+  //   type: R4Types.immunization,
+  //   parameters: ImmunizationSearch(
+  //     searchId: [Id('12345')],
+  //     searchLastUpdated: [
+  //       SearchDate(
+  //         FhirDateTime('1981-09-18'),
+  //         prefix: DatePrefix.gt,
+  //       )
+  //     ],
+  //     searchTag: [
+  //       SearchToken(
+  //           system: FhirUri('http://acme.org/codes'),
+  //           code: Code('needs-review'),
+  //           value: 'needs-review',
+  //           modifier: TokenModifier.in_)
+  //     ],
+  //   ),
+  // );
+  // response = await request.request();
+  // print('\n');
+  // print(response.fold((l) => l.errorMessage(), (r) => r));
+
+  // request = SearchRequest.r4(
+  //   base: Uri.parse('http://all.your.base.belong.to.us'),
+  //   type: R4Types.immunization,
+  //   parameters: ImmunizationSearch(
+  //     searchId: [Id('12345')],
+  //     searchLastUpdated: [
+  //       SearchDate(
+  //         FhirDateTime('1981-09-18'),
+  //         prefix: DatePrefix.gt,
+  //       )
+  //     ],
+  //     searchTag: [
+  //       SearchToken(
+  //           system: FhirUri('http://acme.org/codes'),
+  //           code: Code('needs-review'),
+  //           modifier: TokenModifier.in_)
+  //     ],
+  //   ),
+  // );
+  // response = await request.request();
+  // print('\n');
+  // print(response.fold((l) => l.errorMessage(), (r) => r));
+
+  // request = SearchRequest.r4(
+  //   base: Uri.parse('http://all.your.base.belong.to.us'),
+  //   type: R4Types.immunization,
+  //   parameters: ImmunizationSearch(
+  //     searchId: [Id('12345')],
+  //     searchLastUpdated: [
+  //       SearchDate(
+  //         FhirDateTime('1981-09-18'),
+  //         prefix: DatePrefix.gt,
+  //       )
+  //     ],
+  //     searchTag: [
+  //       SearchToken(
+  //           system: FhirUri('http://acme.org/codes'),
+  //           code: Code('needs-review'),
+  //           modifier: TokenModifier.of_type)
+  //     ],
+  //   ),
+  // );
+  // response = await request.request();
+  // print('\n');
+  // print(response.fold((l) => l.errorMessage(), (r) => r));
   request = SearchRequest.r4(
     base: Uri.parse('http://all.your.base.belong.to.us'),
     type: R4Types.immunization,
@@ -120,53 +189,7 @@ void main() async {
         SearchToken(
             system: FhirUri('http://acme.org/codes'),
             code: Code('needs-review'),
-            value: 'needs-review',
-            modifier: TokenModifier.in_)
-      ],
-    ),
-  );
-  response = await request.request();
-  print('\n');
-  print(response.fold((l) => l.errorMessage(), (r) => r));
-
-  request = SearchRequest.r4(
-    base: Uri.parse('http://all.your.base.belong.to.us'),
-    type: R4Types.immunization,
-    parameters: ImmunizationSearch(
-      searchId: [Id('12345')],
-      searchLastUpdated: [
-        SearchDate(
-          FhirDateTime('1981-09-18'),
-          prefix: DatePrefix.gt,
-        )
-      ],
-      searchTag: [
-        SearchToken(
-            system: FhirUri('http://acme.org/codes'),
-            code: Code('needs-review'),
-            modifier: TokenModifier.in_)
-      ],
-    ),
-  );
-  response = await request.request();
-  print('\n');
-  print(response.fold((l) => l.errorMessage(), (r) => r));
-
-  request = SearchRequest.r4(
-    base: Uri.parse('http://all.your.base.belong.to.us'),
-    type: R4Types.immunization,
-    parameters: ImmunizationSearch(
-      searchId: [Id('12345')],
-      searchLastUpdated: [
-        SearchDate(
-          FhirDateTime('1981-09-18'),
-          prefix: DatePrefix.gt,
-        )
-      ],
-      searchTag: [
-        SearchToken(
-            system: FhirUri('http://acme.org/codes'),
-            code: Code('needs-review'),
+            value: 'still-needs-review',
             modifier: TokenModifier.of_type)
       ],
     ),
@@ -174,6 +197,7 @@ void main() async {
   response = await request.request();
   print('\n');
   print(response.fold((l) => l.errorMessage(), (r) => r));
+
   request = SearchRequest.r4(
     base: Uri.parse('http://all.your.base.belong.to.us'),
     type: R4Types.immunization,

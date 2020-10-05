@@ -158,7 +158,7 @@ void main() async {
             'List<SearchDate> searchLastUpdated,\n'
             'List<SearchToken> searchTag,\n'
             '//List<SearchUri> searchProfile,\n'
-            '//List<SearchToken> searchSecurity,\n'
+            'List<SearchToken> searchSecurity,\n'
             '//List<String> searchText,\n'
             '//List<String> searchContent,\n'
             '//List<SearchString> searchList,\n'

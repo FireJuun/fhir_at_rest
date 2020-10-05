@@ -12,7 +12,7 @@ class Dstu2SearchParameters {
   List<SearchDate> searchLastUpdated;
   List<SearchToken> searchTag;
   //List<SearchUri> searchProfile;
-  //List<SearchToken> searchSecurity;
+  List<SearchToken> searchSecurity;
   //List<String> searchText;
   //List<String> searchContent;
   //List<SearchString> searchList;
@@ -27,7 +27,7 @@ class Stu3SearchParameters {
   List<SearchDate> searchLastUpdated;
   List<SearchToken> searchTag;
   //List<SearchUri> searchProfile;
-  //List<SearchToken> searchSecurity;
+  List<SearchToken> searchSecurity;
   //List<String> searchText;
   //List<String> searchContent;
   //List<SearchString> searchList;
@@ -42,7 +42,7 @@ class R4SearchParameters {
   List<SearchDate> searchLastUpdated;
   List<SearchToken> searchTag;
   //List<SearchUri> searchProfile;
-  //List<SearchToken> searchSecurity;
+  List<SearchToken> searchSecurity;
   //List<String> searchText;
   //List<String> searchContent;
   //List<SearchString> searchList;
@@ -57,7 +57,7 @@ class R5SearchParameters {
   List<SearchDate> searchLastUpdated;
   List<SearchToken> searchTag;
   //List<SearchUri> searchProfile;
-  //List<SearchToken> searchSecurity;
+  List<SearchToken> searchSecurity;
   //List<String> searchText;
   //List<String> searchContent;
   //List<SearchString> searchList;
@@ -118,16 +118,19 @@ Either<RestfulFailure, String> _parametersToString(dynamic search) {
   //     }
   //   }
   // }
-  // if (search.searchSecurity != null) {
-  //   for (var i in search.searchSecurity) {
-  //     Either<RestfulFailure, String> security = i.searchString();
-  //     if (security.isLeft()) {
-  //       return security;
-  //     } else {
-  //       parameterString += security.fold((l) => '', (r) => '&$r');
-  //     }
-  //   }
-  // }
+  if (search.searchSecurity != null) {
+    for (var i in search.searchSecurity) {
+      Either<RestfulFailure, String> security = i.searchString();
+      if (security.isLeft()) {
+        return left(security.fold(
+            (l) => RestfulFailure.searchParameterFailure(
+                parameter: '_security', failedValue: l.errorMessage()),
+            (r) => RestfulFailure.unknownFailure(failedValue: r)));
+      } else {
+        parameterString += security.fold((l) => '', (r) => '&_security$r');
+      }
+    }
+  }
   // if (search.searchText != null) {
   //   for (var i in search.searchText) {
   //     Either<RestfulFailure, String> text = i.searchString();
