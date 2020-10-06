@@ -157,12 +157,12 @@ void main() async {
             'List<Id> searchId,\n'
             'List<SearchDate> searchLastUpdated,\n'
             'List<SearchToken> searchTag,\n'
-            '//List<SearchUri> searchProfile,\n'
+            'List<SearchUri> searchProfile,\n'
             'List<SearchToken> searchSecurity,\n'
-            '//List<String> searchText,\n'
-            '//List<String> searchContent,\n'
-            '//List<SearchString> searchList,\n'
-            'List<SearchString> searchHas,\n'
+            'List<SearchString> searchText,\n'
+            'List<SearchString> searchContent,\n'
+            'List<Id> searchList,\n'
+            '//List<SearchString> searchHas,\n'
             '//List<SearchToken> searchType,\n';
 
         for (var i in j.value2) {
@@ -183,5 +183,10 @@ String parameterTypeToString(String type) {
   if (type == 'string') return 'List<SearchString>';
   if (type == 'token') return 'List<SearchToken>';
   if (type == 'uri') return 'List<SearchUri>';
+  if (type == 'quantity') return 'List<SearchQuantity>';
+  if (type == 'reference') return 'List<SearchReference>';
+  if (type == 'composite') return 'List<SearchComposite>';
+  if (type == 'special') return 'List<SearchSpecial>';
+  print(type);
   return 'List<String>';
 }

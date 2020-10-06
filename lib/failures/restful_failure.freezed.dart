@@ -14,6 +14,13 @@ class _$RestfulFailureTearOff {
   const _$RestfulFailureTearOff();
 
 // ignore: unused_element
+  SearchStringTest<T> searchStringTest<T>({String searchString}) {
+    return SearchStringTest<T>(
+      searchString: searchString,
+    );
+  }
+
+// ignore: unused_element
   HttpFailure<T> httpFailure<T>(
       {int statusCode, String errorType, T failedValue}) {
     return HttpFailure<T>(
@@ -128,10 +135,9 @@ const $RestfulFailure = _$RestfulFailureTearOff();
 
 /// @nodoc
 mixin _$RestfulFailure<T> {
-  T get failedValue;
-
   @optionalTypeArgs
   Result when<Result extends Object>({
+    @required Result searchStringTest(String searchString),
     @required
         Result httpFailure(int statusCode, String errorType, T failedValue),
     @required Result unknownFailure(T failedValue),
@@ -150,6 +156,7 @@ mixin _$RestfulFailure<T> {
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
+    Result searchStringTest(String searchString),
     Result httpFailure(int statusCode, String errorType, T failedValue),
     Result unknownFailure(T failedValue),
     Result noInternet(T failedValue),
@@ -168,6 +175,7 @@ mixin _$RestfulFailure<T> {
   });
   @optionalTypeArgs
   Result map<Result extends Object>({
+    @required Result searchStringTest(SearchStringTest<T> value),
     @required Result httpFailure(HttpFailure<T> value),
     @required Result unknownFailure(UnknownFailure<T> value),
     @required Result noInternet(NoInternet<T> value),
@@ -185,6 +193,7 @@ mixin _$RestfulFailure<T> {
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
+    Result searchStringTest(SearchStringTest<T> value),
     Result httpFailure(HttpFailure<T> value),
     Result unknownFailure(UnknownFailure<T> value),
     Result noInternet(NoInternet<T> value),
@@ -201,8 +210,6 @@ mixin _$RestfulFailure<T> {
     Result searchParameterFailure(SearchParameterFailure<T> value),
     @required Result orElse(),
   });
-
-  $RestfulFailureCopyWith<T, RestfulFailure<T>> get copyWith;
 }
 
 /// @nodoc
@@ -210,7 +217,6 @@ abstract class $RestfulFailureCopyWith<T, $Res> {
   factory $RestfulFailureCopyWith(
           RestfulFailure<T> value, $Res Function(RestfulFailure<T>) then) =
       _$RestfulFailureCopyWithImpl<T, $Res>;
-  $Res call({T failedValue});
 }
 
 /// @nodoc
@@ -221,25 +227,211 @@ class _$RestfulFailureCopyWithImpl<T, $Res>
   final RestfulFailure<T> _value;
   // ignore: unused_field
   final $Res Function(RestfulFailure<T>) _then;
+}
+
+/// @nodoc
+abstract class $SearchStringTestCopyWith<T, $Res> {
+  factory $SearchStringTestCopyWith(
+          SearchStringTest<T> value, $Res Function(SearchStringTest<T>) then) =
+      _$SearchStringTestCopyWithImpl<T, $Res>;
+  $Res call({String searchString});
+}
+
+/// @nodoc
+class _$SearchStringTestCopyWithImpl<T, $Res>
+    extends _$RestfulFailureCopyWithImpl<T, $Res>
+    implements $SearchStringTestCopyWith<T, $Res> {
+  _$SearchStringTestCopyWithImpl(
+      SearchStringTest<T> _value, $Res Function(SearchStringTest<T>) _then)
+      : super(_value, (v) => _then(v as SearchStringTest<T>));
+
+  @override
+  SearchStringTest<T> get _value => super._value as SearchStringTest<T>;
 
   @override
   $Res call({
-    Object failedValue = freezed,
+    Object searchString = freezed,
   }) {
-    return _then(_value.copyWith(
-      failedValue:
-          failedValue == freezed ? _value.failedValue : failedValue as T,
+    return _then(SearchStringTest<T>(
+      searchString: searchString == freezed
+          ? _value.searchString
+          : searchString as String,
     ));
   }
 }
 
 /// @nodoc
-abstract class $HttpFailureCopyWith<T, $Res>
-    implements $RestfulFailureCopyWith<T, $Res> {
+class _$SearchStringTest<T> extends SearchStringTest<T> {
+  const _$SearchStringTest({this.searchString}) : super._();
+
+  @override
+  final String searchString;
+
+  @override
+  String toString() {
+    return 'RestfulFailure<$T>.searchStringTest(searchString: $searchString)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is SearchStringTest<T> &&
+            (identical(other.searchString, searchString) ||
+                const DeepCollectionEquality()
+                    .equals(other.searchString, searchString)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(searchString);
+
+  @override
+  $SearchStringTestCopyWith<T, SearchStringTest<T>> get copyWith =>
+      _$SearchStringTestCopyWithImpl<T, SearchStringTest<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result searchStringTest(String searchString),
+    @required
+        Result httpFailure(int statusCode, String errorType, T failedValue),
+    @required Result unknownFailure(T failedValue),
+    @required Result noInternet(T failedValue),
+    @required Result noType(T failedValue),
+    @required Result noId(T failedValue),
+    @required Result noVid(T failedValue),
+    @required Result idDoesNotMatchResource(T failedValue),
+    @required Result noBundle(T failedValue, String batchOrTransaction),
+    @required Result notABatchBundle(T failedValue),
+    @required Result notATransactionBundle(T failedValue),
+    @required Result missingEntryRequest(T failedValue),
+    @required Result missingRequestMethod(T failedValue),
+    @required Result primitiveFailure(String parameter, T failedValue),
+    @required Result searchParameterFailure(String parameter, T failedValue),
+  }) {
+    assert(searchStringTest != null);
+    assert(httpFailure != null);
+    assert(unknownFailure != null);
+    assert(noInternet != null);
+    assert(noType != null);
+    assert(noId != null);
+    assert(noVid != null);
+    assert(idDoesNotMatchResource != null);
+    assert(noBundle != null);
+    assert(notABatchBundle != null);
+    assert(notATransactionBundle != null);
+    assert(missingEntryRequest != null);
+    assert(missingRequestMethod != null);
+    assert(primitiveFailure != null);
+    assert(searchParameterFailure != null);
+    return searchStringTest(searchString);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result searchStringTest(String searchString),
+    Result httpFailure(int statusCode, String errorType, T failedValue),
+    Result unknownFailure(T failedValue),
+    Result noInternet(T failedValue),
+    Result noType(T failedValue),
+    Result noId(T failedValue),
+    Result noVid(T failedValue),
+    Result idDoesNotMatchResource(T failedValue),
+    Result noBundle(T failedValue, String batchOrTransaction),
+    Result notABatchBundle(T failedValue),
+    Result notATransactionBundle(T failedValue),
+    Result missingEntryRequest(T failedValue),
+    Result missingRequestMethod(T failedValue),
+    Result primitiveFailure(String parameter, T failedValue),
+    Result searchParameterFailure(String parameter, T failedValue),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (searchStringTest != null) {
+      return searchStringTest(searchString);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result searchStringTest(SearchStringTest<T> value),
+    @required Result httpFailure(HttpFailure<T> value),
+    @required Result unknownFailure(UnknownFailure<T> value),
+    @required Result noInternet(NoInternet<T> value),
+    @required Result noType(NoType<T> value),
+    @required Result noId(NoId<T> value),
+    @required Result noVid(NoVid<T> value),
+    @required Result idDoesNotMatchResource(IdDoesNotMatchResource<T> value),
+    @required Result noBundle(NoBundle<T> value),
+    @required Result notABatchBundle(NotABatchBundle<T> value),
+    @required Result notATransactionBundle(NotATransactionBundle<T> value),
+    @required Result missingEntryRequest(MissingEntryRequest<T> value),
+    @required Result missingRequestMethod(MissingRequestMethod<T> value),
+    @required Result primitiveFailure(PrimitiveFailure<T> value),
+    @required Result searchParameterFailure(SearchParameterFailure<T> value),
+  }) {
+    assert(searchStringTest != null);
+    assert(httpFailure != null);
+    assert(unknownFailure != null);
+    assert(noInternet != null);
+    assert(noType != null);
+    assert(noId != null);
+    assert(noVid != null);
+    assert(idDoesNotMatchResource != null);
+    assert(noBundle != null);
+    assert(notABatchBundle != null);
+    assert(notATransactionBundle != null);
+    assert(missingEntryRequest != null);
+    assert(missingRequestMethod != null);
+    assert(primitiveFailure != null);
+    assert(searchParameterFailure != null);
+    return searchStringTest(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result searchStringTest(SearchStringTest<T> value),
+    Result httpFailure(HttpFailure<T> value),
+    Result unknownFailure(UnknownFailure<T> value),
+    Result noInternet(NoInternet<T> value),
+    Result noType(NoType<T> value),
+    Result noId(NoId<T> value),
+    Result noVid(NoVid<T> value),
+    Result idDoesNotMatchResource(IdDoesNotMatchResource<T> value),
+    Result noBundle(NoBundle<T> value),
+    Result notABatchBundle(NotABatchBundle<T> value),
+    Result notATransactionBundle(NotATransactionBundle<T> value),
+    Result missingEntryRequest(MissingEntryRequest<T> value),
+    Result missingRequestMethod(MissingRequestMethod<T> value),
+    Result primitiveFailure(PrimitiveFailure<T> value),
+    Result searchParameterFailure(SearchParameterFailure<T> value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (searchStringTest != null) {
+      return searchStringTest(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SearchStringTest<T> extends RestfulFailure<T> {
+  const SearchStringTest._() : super._();
+  const factory SearchStringTest({String searchString}) = _$SearchStringTest<T>;
+
+  String get searchString;
+  $SearchStringTestCopyWith<T, SearchStringTest<T>> get copyWith;
+}
+
+/// @nodoc
+abstract class $HttpFailureCopyWith<T, $Res> {
   factory $HttpFailureCopyWith(
           HttpFailure<T> value, $Res Function(HttpFailure<T>) then) =
       _$HttpFailureCopyWithImpl<T, $Res>;
-  @override
   $Res call({int statusCode, String errorType, T failedValue});
 }
 
@@ -315,6 +507,7 @@ class _$HttpFailure<T> extends HttpFailure<T> {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
+    @required Result searchStringTest(String searchString),
     @required
         Result httpFailure(int statusCode, String errorType, T failedValue),
     @required Result unknownFailure(T failedValue),
@@ -331,6 +524,7 @@ class _$HttpFailure<T> extends HttpFailure<T> {
     @required Result primitiveFailure(String parameter, T failedValue),
     @required Result searchParameterFailure(String parameter, T failedValue),
   }) {
+    assert(searchStringTest != null);
     assert(httpFailure != null);
     assert(unknownFailure != null);
     assert(noInternet != null);
@@ -351,6 +545,7 @@ class _$HttpFailure<T> extends HttpFailure<T> {
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
+    Result searchStringTest(String searchString),
     Result httpFailure(int statusCode, String errorType, T failedValue),
     Result unknownFailure(T failedValue),
     Result noInternet(T failedValue),
@@ -377,6 +572,7 @@ class _$HttpFailure<T> extends HttpFailure<T> {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
+    @required Result searchStringTest(SearchStringTest<T> value),
     @required Result httpFailure(HttpFailure<T> value),
     @required Result unknownFailure(UnknownFailure<T> value),
     @required Result noInternet(NoInternet<T> value),
@@ -392,6 +588,7 @@ class _$HttpFailure<T> extends HttpFailure<T> {
     @required Result primitiveFailure(PrimitiveFailure<T> value),
     @required Result searchParameterFailure(SearchParameterFailure<T> value),
   }) {
+    assert(searchStringTest != null);
     assert(httpFailure != null);
     assert(unknownFailure != null);
     assert(noInternet != null);
@@ -412,6 +609,7 @@ class _$HttpFailure<T> extends HttpFailure<T> {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
+    Result searchStringTest(SearchStringTest<T> value),
     Result httpFailure(HttpFailure<T> value),
     Result unknownFailure(UnknownFailure<T> value),
     Result noInternet(NoInternet<T> value),
@@ -443,19 +641,15 @@ abstract class HttpFailure<T> extends RestfulFailure<T> {
 
   int get statusCode;
   String get errorType;
-  @override
   T get failedValue;
-  @override
   $HttpFailureCopyWith<T, HttpFailure<T>> get copyWith;
 }
 
 /// @nodoc
-abstract class $UnknownFailureCopyWith<T, $Res>
-    implements $RestfulFailureCopyWith<T, $Res> {
+abstract class $UnknownFailureCopyWith<T, $Res> {
   factory $UnknownFailureCopyWith(
           UnknownFailure<T> value, $Res Function(UnknownFailure<T>) then) =
       _$UnknownFailureCopyWithImpl<T, $Res>;
-  @override
   $Res call({T failedValue});
 }
 
@@ -515,6 +709,7 @@ class _$UnknownFailure<T> extends UnknownFailure<T> {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
+    @required Result searchStringTest(String searchString),
     @required
         Result httpFailure(int statusCode, String errorType, T failedValue),
     @required Result unknownFailure(T failedValue),
@@ -531,6 +726,7 @@ class _$UnknownFailure<T> extends UnknownFailure<T> {
     @required Result primitiveFailure(String parameter, T failedValue),
     @required Result searchParameterFailure(String parameter, T failedValue),
   }) {
+    assert(searchStringTest != null);
     assert(httpFailure != null);
     assert(unknownFailure != null);
     assert(noInternet != null);
@@ -551,6 +747,7 @@ class _$UnknownFailure<T> extends UnknownFailure<T> {
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
+    Result searchStringTest(String searchString),
     Result httpFailure(int statusCode, String errorType, T failedValue),
     Result unknownFailure(T failedValue),
     Result noInternet(T failedValue),
@@ -577,6 +774,7 @@ class _$UnknownFailure<T> extends UnknownFailure<T> {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
+    @required Result searchStringTest(SearchStringTest<T> value),
     @required Result httpFailure(HttpFailure<T> value),
     @required Result unknownFailure(UnknownFailure<T> value),
     @required Result noInternet(NoInternet<T> value),
@@ -592,6 +790,7 @@ class _$UnknownFailure<T> extends UnknownFailure<T> {
     @required Result primitiveFailure(PrimitiveFailure<T> value),
     @required Result searchParameterFailure(SearchParameterFailure<T> value),
   }) {
+    assert(searchStringTest != null);
     assert(httpFailure != null);
     assert(unknownFailure != null);
     assert(noInternet != null);
@@ -612,6 +811,7 @@ class _$UnknownFailure<T> extends UnknownFailure<T> {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
+    Result searchStringTest(SearchStringTest<T> value),
     Result httpFailure(HttpFailure<T> value),
     Result unknownFailure(UnknownFailure<T> value),
     Result noInternet(NoInternet<T> value),
@@ -640,19 +840,15 @@ abstract class UnknownFailure<T> extends RestfulFailure<T> {
   const UnknownFailure._() : super._();
   const factory UnknownFailure({@required T failedValue}) = _$UnknownFailure<T>;
 
-  @override
   T get failedValue;
-  @override
   $UnknownFailureCopyWith<T, UnknownFailure<T>> get copyWith;
 }
 
 /// @nodoc
-abstract class $NoInternetCopyWith<T, $Res>
-    implements $RestfulFailureCopyWith<T, $Res> {
+abstract class $NoInternetCopyWith<T, $Res> {
   factory $NoInternetCopyWith(
           NoInternet<T> value, $Res Function(NoInternet<T>) then) =
       _$NoInternetCopyWithImpl<T, $Res>;
-  @override
   $Res call({T failedValue});
 }
 
@@ -712,6 +908,7 @@ class _$NoInternet<T> extends NoInternet<T> {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
+    @required Result searchStringTest(String searchString),
     @required
         Result httpFailure(int statusCode, String errorType, T failedValue),
     @required Result unknownFailure(T failedValue),
@@ -728,6 +925,7 @@ class _$NoInternet<T> extends NoInternet<T> {
     @required Result primitiveFailure(String parameter, T failedValue),
     @required Result searchParameterFailure(String parameter, T failedValue),
   }) {
+    assert(searchStringTest != null);
     assert(httpFailure != null);
     assert(unknownFailure != null);
     assert(noInternet != null);
@@ -748,6 +946,7 @@ class _$NoInternet<T> extends NoInternet<T> {
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
+    Result searchStringTest(String searchString),
     Result httpFailure(int statusCode, String errorType, T failedValue),
     Result unknownFailure(T failedValue),
     Result noInternet(T failedValue),
@@ -774,6 +973,7 @@ class _$NoInternet<T> extends NoInternet<T> {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
+    @required Result searchStringTest(SearchStringTest<T> value),
     @required Result httpFailure(HttpFailure<T> value),
     @required Result unknownFailure(UnknownFailure<T> value),
     @required Result noInternet(NoInternet<T> value),
@@ -789,6 +989,7 @@ class _$NoInternet<T> extends NoInternet<T> {
     @required Result primitiveFailure(PrimitiveFailure<T> value),
     @required Result searchParameterFailure(SearchParameterFailure<T> value),
   }) {
+    assert(searchStringTest != null);
     assert(httpFailure != null);
     assert(unknownFailure != null);
     assert(noInternet != null);
@@ -809,6 +1010,7 @@ class _$NoInternet<T> extends NoInternet<T> {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
+    Result searchStringTest(SearchStringTest<T> value),
     Result httpFailure(HttpFailure<T> value),
     Result unknownFailure(UnknownFailure<T> value),
     Result noInternet(NoInternet<T> value),
@@ -837,18 +1039,14 @@ abstract class NoInternet<T> extends RestfulFailure<T> {
   const NoInternet._() : super._();
   const factory NoInternet({@required T failedValue}) = _$NoInternet<T>;
 
-  @override
   T get failedValue;
-  @override
   $NoInternetCopyWith<T, NoInternet<T>> get copyWith;
 }
 
 /// @nodoc
-abstract class $NoTypeCopyWith<T, $Res>
-    implements $RestfulFailureCopyWith<T, $Res> {
+abstract class $NoTypeCopyWith<T, $Res> {
   factory $NoTypeCopyWith(NoType<T> value, $Res Function(NoType<T>) then) =
       _$NoTypeCopyWithImpl<T, $Res>;
-  @override
   $Res call({T failedValue});
 }
 
@@ -907,6 +1105,7 @@ class _$NoType<T> extends NoType<T> {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
+    @required Result searchStringTest(String searchString),
     @required
         Result httpFailure(int statusCode, String errorType, T failedValue),
     @required Result unknownFailure(T failedValue),
@@ -923,6 +1122,7 @@ class _$NoType<T> extends NoType<T> {
     @required Result primitiveFailure(String parameter, T failedValue),
     @required Result searchParameterFailure(String parameter, T failedValue),
   }) {
+    assert(searchStringTest != null);
     assert(httpFailure != null);
     assert(unknownFailure != null);
     assert(noInternet != null);
@@ -943,6 +1143,7 @@ class _$NoType<T> extends NoType<T> {
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
+    Result searchStringTest(String searchString),
     Result httpFailure(int statusCode, String errorType, T failedValue),
     Result unknownFailure(T failedValue),
     Result noInternet(T failedValue),
@@ -969,6 +1170,7 @@ class _$NoType<T> extends NoType<T> {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
+    @required Result searchStringTest(SearchStringTest<T> value),
     @required Result httpFailure(HttpFailure<T> value),
     @required Result unknownFailure(UnknownFailure<T> value),
     @required Result noInternet(NoInternet<T> value),
@@ -984,6 +1186,7 @@ class _$NoType<T> extends NoType<T> {
     @required Result primitiveFailure(PrimitiveFailure<T> value),
     @required Result searchParameterFailure(SearchParameterFailure<T> value),
   }) {
+    assert(searchStringTest != null);
     assert(httpFailure != null);
     assert(unknownFailure != null);
     assert(noInternet != null);
@@ -1004,6 +1207,7 @@ class _$NoType<T> extends NoType<T> {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
+    Result searchStringTest(SearchStringTest<T> value),
     Result httpFailure(HttpFailure<T> value),
     Result unknownFailure(UnknownFailure<T> value),
     Result noInternet(NoInternet<T> value),
@@ -1032,18 +1236,14 @@ abstract class NoType<T> extends RestfulFailure<T> {
   const NoType._() : super._();
   const factory NoType({@required T failedValue}) = _$NoType<T>;
 
-  @override
   T get failedValue;
-  @override
   $NoTypeCopyWith<T, NoType<T>> get copyWith;
 }
 
 /// @nodoc
-abstract class $NoIdCopyWith<T, $Res>
-    implements $RestfulFailureCopyWith<T, $Res> {
+abstract class $NoIdCopyWith<T, $Res> {
   factory $NoIdCopyWith(NoId<T> value, $Res Function(NoId<T>) then) =
       _$NoIdCopyWithImpl<T, $Res>;
-  @override
   $Res call({T failedValue});
 }
 
@@ -1101,6 +1301,7 @@ class _$NoId<T> extends NoId<T> {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
+    @required Result searchStringTest(String searchString),
     @required
         Result httpFailure(int statusCode, String errorType, T failedValue),
     @required Result unknownFailure(T failedValue),
@@ -1117,6 +1318,7 @@ class _$NoId<T> extends NoId<T> {
     @required Result primitiveFailure(String parameter, T failedValue),
     @required Result searchParameterFailure(String parameter, T failedValue),
   }) {
+    assert(searchStringTest != null);
     assert(httpFailure != null);
     assert(unknownFailure != null);
     assert(noInternet != null);
@@ -1137,6 +1339,7 @@ class _$NoId<T> extends NoId<T> {
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
+    Result searchStringTest(String searchString),
     Result httpFailure(int statusCode, String errorType, T failedValue),
     Result unknownFailure(T failedValue),
     Result noInternet(T failedValue),
@@ -1163,6 +1366,7 @@ class _$NoId<T> extends NoId<T> {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
+    @required Result searchStringTest(SearchStringTest<T> value),
     @required Result httpFailure(HttpFailure<T> value),
     @required Result unknownFailure(UnknownFailure<T> value),
     @required Result noInternet(NoInternet<T> value),
@@ -1178,6 +1382,7 @@ class _$NoId<T> extends NoId<T> {
     @required Result primitiveFailure(PrimitiveFailure<T> value),
     @required Result searchParameterFailure(SearchParameterFailure<T> value),
   }) {
+    assert(searchStringTest != null);
     assert(httpFailure != null);
     assert(unknownFailure != null);
     assert(noInternet != null);
@@ -1198,6 +1403,7 @@ class _$NoId<T> extends NoId<T> {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
+    Result searchStringTest(SearchStringTest<T> value),
     Result httpFailure(HttpFailure<T> value),
     Result unknownFailure(UnknownFailure<T> value),
     Result noInternet(NoInternet<T> value),
@@ -1226,18 +1432,14 @@ abstract class NoId<T> extends RestfulFailure<T> {
   const NoId._() : super._();
   const factory NoId({@required T failedValue}) = _$NoId<T>;
 
-  @override
   T get failedValue;
-  @override
   $NoIdCopyWith<T, NoId<T>> get copyWith;
 }
 
 /// @nodoc
-abstract class $NoVidCopyWith<T, $Res>
-    implements $RestfulFailureCopyWith<T, $Res> {
+abstract class $NoVidCopyWith<T, $Res> {
   factory $NoVidCopyWith(NoVid<T> value, $Res Function(NoVid<T>) then) =
       _$NoVidCopyWithImpl<T, $Res>;
-  @override
   $Res call({T failedValue});
 }
 
@@ -1295,6 +1497,7 @@ class _$NoVid<T> extends NoVid<T> {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
+    @required Result searchStringTest(String searchString),
     @required
         Result httpFailure(int statusCode, String errorType, T failedValue),
     @required Result unknownFailure(T failedValue),
@@ -1311,6 +1514,7 @@ class _$NoVid<T> extends NoVid<T> {
     @required Result primitiveFailure(String parameter, T failedValue),
     @required Result searchParameterFailure(String parameter, T failedValue),
   }) {
+    assert(searchStringTest != null);
     assert(httpFailure != null);
     assert(unknownFailure != null);
     assert(noInternet != null);
@@ -1331,6 +1535,7 @@ class _$NoVid<T> extends NoVid<T> {
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
+    Result searchStringTest(String searchString),
     Result httpFailure(int statusCode, String errorType, T failedValue),
     Result unknownFailure(T failedValue),
     Result noInternet(T failedValue),
@@ -1357,6 +1562,7 @@ class _$NoVid<T> extends NoVid<T> {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
+    @required Result searchStringTest(SearchStringTest<T> value),
     @required Result httpFailure(HttpFailure<T> value),
     @required Result unknownFailure(UnknownFailure<T> value),
     @required Result noInternet(NoInternet<T> value),
@@ -1372,6 +1578,7 @@ class _$NoVid<T> extends NoVid<T> {
     @required Result primitiveFailure(PrimitiveFailure<T> value),
     @required Result searchParameterFailure(SearchParameterFailure<T> value),
   }) {
+    assert(searchStringTest != null);
     assert(httpFailure != null);
     assert(unknownFailure != null);
     assert(noInternet != null);
@@ -1392,6 +1599,7 @@ class _$NoVid<T> extends NoVid<T> {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
+    Result searchStringTest(SearchStringTest<T> value),
     Result httpFailure(HttpFailure<T> value),
     Result unknownFailure(UnknownFailure<T> value),
     Result noInternet(NoInternet<T> value),
@@ -1420,19 +1628,15 @@ abstract class NoVid<T> extends RestfulFailure<T> {
   const NoVid._() : super._();
   const factory NoVid({@required T failedValue}) = _$NoVid<T>;
 
-  @override
   T get failedValue;
-  @override
   $NoVidCopyWith<T, NoVid<T>> get copyWith;
 }
 
 /// @nodoc
-abstract class $IdDoesNotMatchResourceCopyWith<T, $Res>
-    implements $RestfulFailureCopyWith<T, $Res> {
+abstract class $IdDoesNotMatchResourceCopyWith<T, $Res> {
   factory $IdDoesNotMatchResourceCopyWith(IdDoesNotMatchResource<T> value,
           $Res Function(IdDoesNotMatchResource<T>) then) =
       _$IdDoesNotMatchResourceCopyWithImpl<T, $Res>;
-  @override
   $Res call({T failedValue});
 }
 
@@ -1494,6 +1698,7 @@ class _$IdDoesNotMatchResource<T> extends IdDoesNotMatchResource<T> {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
+    @required Result searchStringTest(String searchString),
     @required
         Result httpFailure(int statusCode, String errorType, T failedValue),
     @required Result unknownFailure(T failedValue),
@@ -1510,6 +1715,7 @@ class _$IdDoesNotMatchResource<T> extends IdDoesNotMatchResource<T> {
     @required Result primitiveFailure(String parameter, T failedValue),
     @required Result searchParameterFailure(String parameter, T failedValue),
   }) {
+    assert(searchStringTest != null);
     assert(httpFailure != null);
     assert(unknownFailure != null);
     assert(noInternet != null);
@@ -1530,6 +1736,7 @@ class _$IdDoesNotMatchResource<T> extends IdDoesNotMatchResource<T> {
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
+    Result searchStringTest(String searchString),
     Result httpFailure(int statusCode, String errorType, T failedValue),
     Result unknownFailure(T failedValue),
     Result noInternet(T failedValue),
@@ -1556,6 +1763,7 @@ class _$IdDoesNotMatchResource<T> extends IdDoesNotMatchResource<T> {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
+    @required Result searchStringTest(SearchStringTest<T> value),
     @required Result httpFailure(HttpFailure<T> value),
     @required Result unknownFailure(UnknownFailure<T> value),
     @required Result noInternet(NoInternet<T> value),
@@ -1571,6 +1779,7 @@ class _$IdDoesNotMatchResource<T> extends IdDoesNotMatchResource<T> {
     @required Result primitiveFailure(PrimitiveFailure<T> value),
     @required Result searchParameterFailure(SearchParameterFailure<T> value),
   }) {
+    assert(searchStringTest != null);
     assert(httpFailure != null);
     assert(unknownFailure != null);
     assert(noInternet != null);
@@ -1591,6 +1800,7 @@ class _$IdDoesNotMatchResource<T> extends IdDoesNotMatchResource<T> {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
+    Result searchStringTest(SearchStringTest<T> value),
     Result httpFailure(HttpFailure<T> value),
     Result unknownFailure(UnknownFailure<T> value),
     Result noInternet(NoInternet<T> value),
@@ -1620,19 +1830,15 @@ abstract class IdDoesNotMatchResource<T> extends RestfulFailure<T> {
   const factory IdDoesNotMatchResource({@required T failedValue}) =
       _$IdDoesNotMatchResource<T>;
 
-  @override
   T get failedValue;
-  @override
   $IdDoesNotMatchResourceCopyWith<T, IdDoesNotMatchResource<T>> get copyWith;
 }
 
 /// @nodoc
-abstract class $NoBundleCopyWith<T, $Res>
-    implements $RestfulFailureCopyWith<T, $Res> {
+abstract class $NoBundleCopyWith<T, $Res> {
   factory $NoBundleCopyWith(
           NoBundle<T> value, $Res Function(NoBundle<T>) then) =
       _$NoBundleCopyWithImpl<T, $Res>;
-  @override
   $Res call({T failedValue, String batchOrTransaction});
 }
 
@@ -1704,6 +1910,7 @@ class _$NoBundle<T> extends NoBundle<T> {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
+    @required Result searchStringTest(String searchString),
     @required
         Result httpFailure(int statusCode, String errorType, T failedValue),
     @required Result unknownFailure(T failedValue),
@@ -1720,6 +1927,7 @@ class _$NoBundle<T> extends NoBundle<T> {
     @required Result primitiveFailure(String parameter, T failedValue),
     @required Result searchParameterFailure(String parameter, T failedValue),
   }) {
+    assert(searchStringTest != null);
     assert(httpFailure != null);
     assert(unknownFailure != null);
     assert(noInternet != null);
@@ -1740,6 +1948,7 @@ class _$NoBundle<T> extends NoBundle<T> {
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
+    Result searchStringTest(String searchString),
     Result httpFailure(int statusCode, String errorType, T failedValue),
     Result unknownFailure(T failedValue),
     Result noInternet(T failedValue),
@@ -1766,6 +1975,7 @@ class _$NoBundle<T> extends NoBundle<T> {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
+    @required Result searchStringTest(SearchStringTest<T> value),
     @required Result httpFailure(HttpFailure<T> value),
     @required Result unknownFailure(UnknownFailure<T> value),
     @required Result noInternet(NoInternet<T> value),
@@ -1781,6 +1991,7 @@ class _$NoBundle<T> extends NoBundle<T> {
     @required Result primitiveFailure(PrimitiveFailure<T> value),
     @required Result searchParameterFailure(SearchParameterFailure<T> value),
   }) {
+    assert(searchStringTest != null);
     assert(httpFailure != null);
     assert(unknownFailure != null);
     assert(noInternet != null);
@@ -1801,6 +2012,7 @@ class _$NoBundle<T> extends NoBundle<T> {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
+    Result searchStringTest(SearchStringTest<T> value),
     Result httpFailure(HttpFailure<T> value),
     Result unknownFailure(UnknownFailure<T> value),
     Result noInternet(NoInternet<T> value),
@@ -1831,20 +2043,16 @@ abstract class NoBundle<T> extends RestfulFailure<T> {
       {@required T failedValue,
       @required String batchOrTransaction}) = _$NoBundle<T>;
 
-  @override
   T get failedValue;
   String get batchOrTransaction;
-  @override
   $NoBundleCopyWith<T, NoBundle<T>> get copyWith;
 }
 
 /// @nodoc
-abstract class $NotABatchBundleCopyWith<T, $Res>
-    implements $RestfulFailureCopyWith<T, $Res> {
+abstract class $NotABatchBundleCopyWith<T, $Res> {
   factory $NotABatchBundleCopyWith(
           NotABatchBundle<T> value, $Res Function(NotABatchBundle<T>) then) =
       _$NotABatchBundleCopyWithImpl<T, $Res>;
-  @override
   $Res call({T failedValue});
 }
 
@@ -1904,6 +2112,7 @@ class _$NotABatchBundle<T> extends NotABatchBundle<T> {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
+    @required Result searchStringTest(String searchString),
     @required
         Result httpFailure(int statusCode, String errorType, T failedValue),
     @required Result unknownFailure(T failedValue),
@@ -1920,6 +2129,7 @@ class _$NotABatchBundle<T> extends NotABatchBundle<T> {
     @required Result primitiveFailure(String parameter, T failedValue),
     @required Result searchParameterFailure(String parameter, T failedValue),
   }) {
+    assert(searchStringTest != null);
     assert(httpFailure != null);
     assert(unknownFailure != null);
     assert(noInternet != null);
@@ -1940,6 +2150,7 @@ class _$NotABatchBundle<T> extends NotABatchBundle<T> {
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
+    Result searchStringTest(String searchString),
     Result httpFailure(int statusCode, String errorType, T failedValue),
     Result unknownFailure(T failedValue),
     Result noInternet(T failedValue),
@@ -1966,6 +2177,7 @@ class _$NotABatchBundle<T> extends NotABatchBundle<T> {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
+    @required Result searchStringTest(SearchStringTest<T> value),
     @required Result httpFailure(HttpFailure<T> value),
     @required Result unknownFailure(UnknownFailure<T> value),
     @required Result noInternet(NoInternet<T> value),
@@ -1981,6 +2193,7 @@ class _$NotABatchBundle<T> extends NotABatchBundle<T> {
     @required Result primitiveFailure(PrimitiveFailure<T> value),
     @required Result searchParameterFailure(SearchParameterFailure<T> value),
   }) {
+    assert(searchStringTest != null);
     assert(httpFailure != null);
     assert(unknownFailure != null);
     assert(noInternet != null);
@@ -2001,6 +2214,7 @@ class _$NotABatchBundle<T> extends NotABatchBundle<T> {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
+    Result searchStringTest(SearchStringTest<T> value),
     Result httpFailure(HttpFailure<T> value),
     Result unknownFailure(UnknownFailure<T> value),
     Result noInternet(NoInternet<T> value),
@@ -2030,19 +2244,15 @@ abstract class NotABatchBundle<T> extends RestfulFailure<T> {
   const factory NotABatchBundle({@required T failedValue}) =
       _$NotABatchBundle<T>;
 
-  @override
   T get failedValue;
-  @override
   $NotABatchBundleCopyWith<T, NotABatchBundle<T>> get copyWith;
 }
 
 /// @nodoc
-abstract class $NotATransactionBundleCopyWith<T, $Res>
-    implements $RestfulFailureCopyWith<T, $Res> {
+abstract class $NotATransactionBundleCopyWith<T, $Res> {
   factory $NotATransactionBundleCopyWith(NotATransactionBundle<T> value,
           $Res Function(NotATransactionBundle<T>) then) =
       _$NotATransactionBundleCopyWithImpl<T, $Res>;
-  @override
   $Res call({T failedValue});
 }
 
@@ -2104,6 +2314,7 @@ class _$NotATransactionBundle<T> extends NotATransactionBundle<T> {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
+    @required Result searchStringTest(String searchString),
     @required
         Result httpFailure(int statusCode, String errorType, T failedValue),
     @required Result unknownFailure(T failedValue),
@@ -2120,6 +2331,7 @@ class _$NotATransactionBundle<T> extends NotATransactionBundle<T> {
     @required Result primitiveFailure(String parameter, T failedValue),
     @required Result searchParameterFailure(String parameter, T failedValue),
   }) {
+    assert(searchStringTest != null);
     assert(httpFailure != null);
     assert(unknownFailure != null);
     assert(noInternet != null);
@@ -2140,6 +2352,7 @@ class _$NotATransactionBundle<T> extends NotATransactionBundle<T> {
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
+    Result searchStringTest(String searchString),
     Result httpFailure(int statusCode, String errorType, T failedValue),
     Result unknownFailure(T failedValue),
     Result noInternet(T failedValue),
@@ -2166,6 +2379,7 @@ class _$NotATransactionBundle<T> extends NotATransactionBundle<T> {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
+    @required Result searchStringTest(SearchStringTest<T> value),
     @required Result httpFailure(HttpFailure<T> value),
     @required Result unknownFailure(UnknownFailure<T> value),
     @required Result noInternet(NoInternet<T> value),
@@ -2181,6 +2395,7 @@ class _$NotATransactionBundle<T> extends NotATransactionBundle<T> {
     @required Result primitiveFailure(PrimitiveFailure<T> value),
     @required Result searchParameterFailure(SearchParameterFailure<T> value),
   }) {
+    assert(searchStringTest != null);
     assert(httpFailure != null);
     assert(unknownFailure != null);
     assert(noInternet != null);
@@ -2201,6 +2416,7 @@ class _$NotATransactionBundle<T> extends NotATransactionBundle<T> {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
+    Result searchStringTest(SearchStringTest<T> value),
     Result httpFailure(HttpFailure<T> value),
     Result unknownFailure(UnknownFailure<T> value),
     Result noInternet(NoInternet<T> value),
@@ -2230,19 +2446,15 @@ abstract class NotATransactionBundle<T> extends RestfulFailure<T> {
   const factory NotATransactionBundle({@required T failedValue}) =
       _$NotATransactionBundle<T>;
 
-  @override
   T get failedValue;
-  @override
   $NotATransactionBundleCopyWith<T, NotATransactionBundle<T>> get copyWith;
 }
 
 /// @nodoc
-abstract class $MissingEntryRequestCopyWith<T, $Res>
-    implements $RestfulFailureCopyWith<T, $Res> {
+abstract class $MissingEntryRequestCopyWith<T, $Res> {
   factory $MissingEntryRequestCopyWith(MissingEntryRequest<T> value,
           $Res Function(MissingEntryRequest<T>) then) =
       _$MissingEntryRequestCopyWithImpl<T, $Res>;
-  @override
   $Res call({T failedValue});
 }
 
@@ -2303,6 +2515,7 @@ class _$MissingEntryRequest<T> extends MissingEntryRequest<T> {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
+    @required Result searchStringTest(String searchString),
     @required
         Result httpFailure(int statusCode, String errorType, T failedValue),
     @required Result unknownFailure(T failedValue),
@@ -2319,6 +2532,7 @@ class _$MissingEntryRequest<T> extends MissingEntryRequest<T> {
     @required Result primitiveFailure(String parameter, T failedValue),
     @required Result searchParameterFailure(String parameter, T failedValue),
   }) {
+    assert(searchStringTest != null);
     assert(httpFailure != null);
     assert(unknownFailure != null);
     assert(noInternet != null);
@@ -2339,6 +2553,7 @@ class _$MissingEntryRequest<T> extends MissingEntryRequest<T> {
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
+    Result searchStringTest(String searchString),
     Result httpFailure(int statusCode, String errorType, T failedValue),
     Result unknownFailure(T failedValue),
     Result noInternet(T failedValue),
@@ -2365,6 +2580,7 @@ class _$MissingEntryRequest<T> extends MissingEntryRequest<T> {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
+    @required Result searchStringTest(SearchStringTest<T> value),
     @required Result httpFailure(HttpFailure<T> value),
     @required Result unknownFailure(UnknownFailure<T> value),
     @required Result noInternet(NoInternet<T> value),
@@ -2380,6 +2596,7 @@ class _$MissingEntryRequest<T> extends MissingEntryRequest<T> {
     @required Result primitiveFailure(PrimitiveFailure<T> value),
     @required Result searchParameterFailure(SearchParameterFailure<T> value),
   }) {
+    assert(searchStringTest != null);
     assert(httpFailure != null);
     assert(unknownFailure != null);
     assert(noInternet != null);
@@ -2400,6 +2617,7 @@ class _$MissingEntryRequest<T> extends MissingEntryRequest<T> {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
+    Result searchStringTest(SearchStringTest<T> value),
     Result httpFailure(HttpFailure<T> value),
     Result unknownFailure(UnknownFailure<T> value),
     Result noInternet(NoInternet<T> value),
@@ -2429,19 +2647,15 @@ abstract class MissingEntryRequest<T> extends RestfulFailure<T> {
   const factory MissingEntryRequest({@required T failedValue}) =
       _$MissingEntryRequest<T>;
 
-  @override
   T get failedValue;
-  @override
   $MissingEntryRequestCopyWith<T, MissingEntryRequest<T>> get copyWith;
 }
 
 /// @nodoc
-abstract class $MissingRequestMethodCopyWith<T, $Res>
-    implements $RestfulFailureCopyWith<T, $Res> {
+abstract class $MissingRequestMethodCopyWith<T, $Res> {
   factory $MissingRequestMethodCopyWith(MissingRequestMethod<T> value,
           $Res Function(MissingRequestMethod<T>) then) =
       _$MissingRequestMethodCopyWithImpl<T, $Res>;
-  @override
   $Res call({T failedValue});
 }
 
@@ -2502,6 +2716,7 @@ class _$MissingRequestMethod<T> extends MissingRequestMethod<T> {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
+    @required Result searchStringTest(String searchString),
     @required
         Result httpFailure(int statusCode, String errorType, T failedValue),
     @required Result unknownFailure(T failedValue),
@@ -2518,6 +2733,7 @@ class _$MissingRequestMethod<T> extends MissingRequestMethod<T> {
     @required Result primitiveFailure(String parameter, T failedValue),
     @required Result searchParameterFailure(String parameter, T failedValue),
   }) {
+    assert(searchStringTest != null);
     assert(httpFailure != null);
     assert(unknownFailure != null);
     assert(noInternet != null);
@@ -2538,6 +2754,7 @@ class _$MissingRequestMethod<T> extends MissingRequestMethod<T> {
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
+    Result searchStringTest(String searchString),
     Result httpFailure(int statusCode, String errorType, T failedValue),
     Result unknownFailure(T failedValue),
     Result noInternet(T failedValue),
@@ -2564,6 +2781,7 @@ class _$MissingRequestMethod<T> extends MissingRequestMethod<T> {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
+    @required Result searchStringTest(SearchStringTest<T> value),
     @required Result httpFailure(HttpFailure<T> value),
     @required Result unknownFailure(UnknownFailure<T> value),
     @required Result noInternet(NoInternet<T> value),
@@ -2579,6 +2797,7 @@ class _$MissingRequestMethod<T> extends MissingRequestMethod<T> {
     @required Result primitiveFailure(PrimitiveFailure<T> value),
     @required Result searchParameterFailure(SearchParameterFailure<T> value),
   }) {
+    assert(searchStringTest != null);
     assert(httpFailure != null);
     assert(unknownFailure != null);
     assert(noInternet != null);
@@ -2599,6 +2818,7 @@ class _$MissingRequestMethod<T> extends MissingRequestMethod<T> {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
+    Result searchStringTest(SearchStringTest<T> value),
     Result httpFailure(HttpFailure<T> value),
     Result unknownFailure(UnknownFailure<T> value),
     Result noInternet(NoInternet<T> value),
@@ -2628,19 +2848,15 @@ abstract class MissingRequestMethod<T> extends RestfulFailure<T> {
   const factory MissingRequestMethod({@required T failedValue}) =
       _$MissingRequestMethod<T>;
 
-  @override
   T get failedValue;
-  @override
   $MissingRequestMethodCopyWith<T, MissingRequestMethod<T>> get copyWith;
 }
 
 /// @nodoc
-abstract class $PrimitiveFailureCopyWith<T, $Res>
-    implements $RestfulFailureCopyWith<T, $Res> {
+abstract class $PrimitiveFailureCopyWith<T, $Res> {
   factory $PrimitiveFailureCopyWith(
           PrimitiveFailure<T> value, $Res Function(PrimitiveFailure<T>) then) =
       _$PrimitiveFailureCopyWithImpl<T, $Res>;
-  @override
   $Res call({String parameter, T failedValue});
 }
 
@@ -2711,6 +2927,7 @@ class _$PrimitiveFailure<T> extends PrimitiveFailure<T> {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
+    @required Result searchStringTest(String searchString),
     @required
         Result httpFailure(int statusCode, String errorType, T failedValue),
     @required Result unknownFailure(T failedValue),
@@ -2727,6 +2944,7 @@ class _$PrimitiveFailure<T> extends PrimitiveFailure<T> {
     @required Result primitiveFailure(String parameter, T failedValue),
     @required Result searchParameterFailure(String parameter, T failedValue),
   }) {
+    assert(searchStringTest != null);
     assert(httpFailure != null);
     assert(unknownFailure != null);
     assert(noInternet != null);
@@ -2747,6 +2965,7 @@ class _$PrimitiveFailure<T> extends PrimitiveFailure<T> {
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
+    Result searchStringTest(String searchString),
     Result httpFailure(int statusCode, String errorType, T failedValue),
     Result unknownFailure(T failedValue),
     Result noInternet(T failedValue),
@@ -2773,6 +2992,7 @@ class _$PrimitiveFailure<T> extends PrimitiveFailure<T> {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
+    @required Result searchStringTest(SearchStringTest<T> value),
     @required Result httpFailure(HttpFailure<T> value),
     @required Result unknownFailure(UnknownFailure<T> value),
     @required Result noInternet(NoInternet<T> value),
@@ -2788,6 +3008,7 @@ class _$PrimitiveFailure<T> extends PrimitiveFailure<T> {
     @required Result primitiveFailure(PrimitiveFailure<T> value),
     @required Result searchParameterFailure(SearchParameterFailure<T> value),
   }) {
+    assert(searchStringTest != null);
     assert(httpFailure != null);
     assert(unknownFailure != null);
     assert(noInternet != null);
@@ -2808,6 +3029,7 @@ class _$PrimitiveFailure<T> extends PrimitiveFailure<T> {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
+    Result searchStringTest(SearchStringTest<T> value),
     Result httpFailure(HttpFailure<T> value),
     Result unknownFailure(UnknownFailure<T> value),
     Result noInternet(NoInternet<T> value),
@@ -2839,19 +3061,15 @@ abstract class PrimitiveFailure<T> extends RestfulFailure<T> {
       @required T failedValue}) = _$PrimitiveFailure<T>;
 
   String get parameter;
-  @override
   T get failedValue;
-  @override
   $PrimitiveFailureCopyWith<T, PrimitiveFailure<T>> get copyWith;
 }
 
 /// @nodoc
-abstract class $SearchParameterFailureCopyWith<T, $Res>
-    implements $RestfulFailureCopyWith<T, $Res> {
+abstract class $SearchParameterFailureCopyWith<T, $Res> {
   factory $SearchParameterFailureCopyWith(SearchParameterFailure<T> value,
           $Res Function(SearchParameterFailure<T>) then) =
       _$SearchParameterFailureCopyWithImpl<T, $Res>;
-  @override
   $Res call({String parameter, T failedValue});
 }
 
@@ -2924,6 +3142,7 @@ class _$SearchParameterFailure<T> extends SearchParameterFailure<T> {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
+    @required Result searchStringTest(String searchString),
     @required
         Result httpFailure(int statusCode, String errorType, T failedValue),
     @required Result unknownFailure(T failedValue),
@@ -2940,6 +3159,7 @@ class _$SearchParameterFailure<T> extends SearchParameterFailure<T> {
     @required Result primitiveFailure(String parameter, T failedValue),
     @required Result searchParameterFailure(String parameter, T failedValue),
   }) {
+    assert(searchStringTest != null);
     assert(httpFailure != null);
     assert(unknownFailure != null);
     assert(noInternet != null);
@@ -2960,6 +3180,7 @@ class _$SearchParameterFailure<T> extends SearchParameterFailure<T> {
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
+    Result searchStringTest(String searchString),
     Result httpFailure(int statusCode, String errorType, T failedValue),
     Result unknownFailure(T failedValue),
     Result noInternet(T failedValue),
@@ -2986,6 +3207,7 @@ class _$SearchParameterFailure<T> extends SearchParameterFailure<T> {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
+    @required Result searchStringTest(SearchStringTest<T> value),
     @required Result httpFailure(HttpFailure<T> value),
     @required Result unknownFailure(UnknownFailure<T> value),
     @required Result noInternet(NoInternet<T> value),
@@ -3001,6 +3223,7 @@ class _$SearchParameterFailure<T> extends SearchParameterFailure<T> {
     @required Result primitiveFailure(PrimitiveFailure<T> value),
     @required Result searchParameterFailure(SearchParameterFailure<T> value),
   }) {
+    assert(searchStringTest != null);
     assert(httpFailure != null);
     assert(unknownFailure != null);
     assert(noInternet != null);
@@ -3021,6 +3244,7 @@ class _$SearchParameterFailure<T> extends SearchParameterFailure<T> {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
+    Result searchStringTest(SearchStringTest<T> value),
     Result httpFailure(HttpFailure<T> value),
     Result unknownFailure(UnknownFailure<T> value),
     Result noInternet(NoInternet<T> value),
@@ -3052,8 +3276,6 @@ abstract class SearchParameterFailure<T> extends RestfulFailure<T> {
       @required T failedValue}) = _$SearchParameterFailure<T>;
 
   String get parameter;
-  @override
   T get failedValue;
-  @override
   $SearchParameterFailureCopyWith<T, SearchParameterFailure<T>> get copyWith;
 }

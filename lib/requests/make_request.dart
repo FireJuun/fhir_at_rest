@@ -15,7 +15,7 @@ Future<Either<RestfulFailure, dynamic>> makeRequest(
   Response result;
 
   // for testing purposes
-  return (right(thisRequest));
+  return (left(RestfulFailure.searchStringTest(searchString: thisRequest)));
 
   try {
     if (function == post || function == put || function == patch) {

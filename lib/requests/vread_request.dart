@@ -74,9 +74,6 @@ abstract class VreadRequest with _$VreadRequest {
 
     final result = await makeRequest(get, thisRequest);
 
-    // for testing purposes
-    return result;
-
     return result.fold(
         (l) => left(l),
         (r) => right(this.map(

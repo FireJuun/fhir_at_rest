@@ -70,9 +70,6 @@ abstract class UpdateRequest with _$UpdateRequest {
     final result =
         await makeRequest(put, thisRequest, resource: resource.toJson());
 
-    // for testing purposes
-    return result;
-
     return result.fold(
         (ifLeft) => left(ifLeft),
         (ifRight) => right(this.map(

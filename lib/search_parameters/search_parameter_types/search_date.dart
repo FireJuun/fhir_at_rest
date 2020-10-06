@@ -1,5 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:fhir/primitive_types/primitive_types.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../../failures/restful_failure.dart';
 import 'search_objects.dart';
@@ -9,16 +10,17 @@ class SearchDate extends SearchObject<String> {
   final bool missing;
   final DatePrefix prefix;
 
-  factory SearchDate(FhirDateTime date, {bool missing, DatePrefix prefix}) {
+  factory SearchDate(
+      {@required FhirDateTime date, bool missing, DatePrefix prefix}) {
     assert(date != null);
     return SearchDate._(
-      date,
+      date: date,
       missing: missing,
       prefix: prefix ?? DatePrefix.eq,
     );
   }
 
-  const SearchDate._(this.date, {this.missing, this.prefix});
+  const SearchDate._({this.date, this.missing, this.prefix});
 
   Either<RestfulFailure, String> searchString() => date.value.isLeft()
       ? left(

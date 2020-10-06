@@ -10,7 +10,8 @@ class SearchUri extends SearchObject<String> {
   final bool missing;
   final UriModifier modifier;
 
-  factory SearchUri(dynamic uri, {bool missing, UriModifier modifier}) {
+  factory SearchUri(
+      {@required FhirUri uri, bool missing, UriModifier modifier}) {
     assert(uri != null);
     return SearchUri._(
       uri: uri,

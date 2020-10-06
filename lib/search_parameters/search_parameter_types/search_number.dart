@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../../failures/restful_failure.dart';
 import 'search_objects.dart';
@@ -8,16 +9,17 @@ class SearchNumber extends SearchObject<String> {
   final bool missing;
   final NumberPrefix prefix;
 
-  factory SearchNumber(dynamic number, {bool missing, NumberPrefix prefix}) {
+  factory SearchNumber(
+      {@required dynamic number, bool missing, NumberPrefix prefix}) {
     assert(number != null);
     return SearchNumber._(
-      validateSearchNumber(number),
+      number: validateSearchNumber(number),
       missing: missing,
       prefix: prefix ?? NumberPrefix.eq,
     );
   }
 
-  const SearchNumber._(this.number, {this.missing, this.prefix});
+  const SearchNumber._({@required this.number, this.missing, this.prefix});
 
   Either<RestfulFailure, String> searchString() => number.fold(
         (l) => left(RestfulFailure.primitiveFailure(

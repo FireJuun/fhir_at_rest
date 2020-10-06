@@ -5,6 +5,7 @@ import '../../enums/enums.dart';
 import '../../failures/restful_failure.dart';
 import 'search_objects.dart';
 
+// ToDo: identifier
 class SearchReference extends SearchObject<String> {
   final Id id;
   final Either<RestfulFailure, String> type;

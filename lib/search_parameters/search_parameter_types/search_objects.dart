@@ -19,6 +19,14 @@ Either<RestfulFailure, String> validateSearchNumber(dynamic value) =>
             : left(RestfulFailure.searchParameterFailure(
                 parameter: 'SearchNumber', failedValue: value));
 
+Either<RestfulFailure, String> validateSearchQuantity(dynamic value) =>
+    value is num
+        ? right(value.toString())
+        : num.tryParse(value) != null
+            ? right(value)
+            : left(RestfulFailure.searchParameterFailure(
+                parameter: 'SearchQuantity', failedValue: value));
+
 Either<RestfulFailure, String> validateSearchDate(dynamic value) =>
     FhirDateTime(value).value.isRight()
         ? right(value.toString())

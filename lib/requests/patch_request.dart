@@ -70,9 +70,6 @@ abstract class PatchRequest with _$PatchRequest {
     final result =
         await makeRequest(patch, thisRequest, resource: resource.toJson());
 
-    // for testing purposes
-    return result;
-
     return result.fold(
         (ifLeft) => left(ifLeft),
         (ifRight) => right(this.map(

@@ -5,6 +5,9 @@ part 'restful_failure.freezed.dart';
 @freezed
 abstract class RestfulFailure<T> with _$RestfulFailure<T> {
   const RestfulFailure._();
+  const factory RestfulFailure.searchStringTest({
+    String searchString,
+  }) = SearchStringTest;
   const factory RestfulFailure.httpFailure({
     int statusCode,
     String errorType,
@@ -54,6 +57,7 @@ abstract class RestfulFailure<T> with _$RestfulFailure<T> {
   }) = SearchParameterFailure<T>;
 
   String errorMessage() => this.map(
+        searchStringTest: (f) => f.searchString,
         httpFailure: (f) => '',
         unknownFailure: (f) => '',
         noInternet: (f) => '',

@@ -79,7 +79,7 @@ class SearchToken extends SearchObject<String> {
         {
           return right(':in=$returnString$missingString');
         }
-      case TokenModifier.not_in_:
+      case TokenModifier.not_in:
         {
           return right(':not-in=$returnString$missingString');
         }
@@ -94,7 +94,7 @@ class SearchToken extends SearchObject<String> {
         }
       default:
         {
-          return right('$returnString$missingString');
+          return right('=$returnString$missingString');
         }
     }
   }
@@ -106,6 +106,6 @@ enum TokenModifier {
   above,
   below,
   in_,
-  not_in_,
+  not_in,
   of_type,
 }

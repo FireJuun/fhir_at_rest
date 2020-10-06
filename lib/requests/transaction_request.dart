@@ -79,9 +79,6 @@ abstract class TransactionRequest with _$TransactionRequest {
     final result =
         await makeRequest(put, thisRequest, resource: resource.toJson());
 
-    // for testing purposes
-    return result;
-
     return result.fold(
         (ifLeft) => left(ifLeft),
         (ifRight) => right(this.map(

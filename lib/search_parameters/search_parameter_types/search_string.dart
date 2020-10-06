@@ -10,7 +10,8 @@ class SearchString extends SearchObject<String> {
   final bool missing;
   final StringModifier modifier;
 
-  factory SearchString(String string, {bool missing, StringModifier modifier}) {
+  factory SearchString(
+      {@required String string, bool missing, StringModifier modifier}) {
     assert(string != null);
     return SearchString._(
       string: string,

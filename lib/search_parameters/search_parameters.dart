@@ -13,9 +13,9 @@ class Dstu2SearchParameters {
   List<SearchToken> searchTag;
   List<SearchUri> searchProfile;
   List<SearchToken> searchSecurity;
-  //List<String> searchText;
-  //List<String> searchContent;
-  //List<SearchString> searchList;
+  List<SearchString> searchText;
+  List<SearchString> searchContent;
+  List<Id> searchList;
   // List<SearchString> searchHas;
   //List<SearchToken> searchType;
 
@@ -28,9 +28,9 @@ class Stu3SearchParameters {
   List<SearchToken> searchTag;
   List<SearchUri> searchProfile;
   List<SearchToken> searchSecurity;
-  //List<String> searchText;
-  //List<String> searchContent;
-  //List<SearchString> searchList;
+  List<SearchString> searchText;
+  List<SearchString> searchContent;
+  List<Id> searchList;
   // List<SearchString> searchHas;
   //List<SearchToken> searchType;
 
@@ -43,9 +43,9 @@ class R4SearchParameters {
   List<SearchToken> searchTag;
   List<SearchUri> searchProfile;
   List<SearchToken> searchSecurity;
-  //List<String> searchText;
-  //List<String> searchContent;
-  //List<SearchString> searchList;
+  List<SearchString> searchText;
+  List<SearchString> searchContent;
+  List<Id> searchList;
   // List<SearchString> searchHas;
   //List<SearchToken> searchType;
 
@@ -58,9 +58,9 @@ class R5SearchParameters {
   List<SearchToken> searchTag;
   List<SearchUri> searchProfile;
   List<SearchToken> searchSecurity;
-  //List<String> searchText;
-  //List<String> searchContent;
-  //List<SearchString> searchList;
+  List<SearchString> searchText;
+  List<SearchString> searchContent;
+  List<Id> searchList;
   // List<SearchString> searchHas;
   //List<SearchToken> searchType;
 
@@ -108,16 +108,19 @@ Either<RestfulFailure, String> _parametersToString(dynamic search) {
       }
     }
   }
-  // if (search.searchProfile != null) {
-  //   for (var i in search.searchProfile) {
-  //     Either<RestfulFailure, String> profile = i.searchString();
-  //     if (profile.isLeft()) {
-  //       return profile;
-  //     } else {
-  //       parameterString += profile.fold((l) => '', (r) => '&$r');
-  //     }
-  //   }
-  // }
+  if (search.searchProfile != null) {
+    for (var i in search.searchProfile) {
+      Either<RestfulFailure, String> profile = i.searchString();
+      if (profile.isLeft()) {
+        return left(profile.fold(
+            (l) => RestfulFailure.searchParameterFailure(
+                parameter: '_profile', failedValue: l.errorMessage()),
+            (r) => RestfulFailure.unknownFailure(failedValue: r)));
+      } else {
+        parameterString += profile.fold((l) => '', (r) => '&_profile$r');
+      }
+    }
+  }
   if (search.searchSecurity != null) {
     for (var i in search.searchSecurity) {
       Either<RestfulFailure, String> security = i.searchString();
@@ -131,36 +134,44 @@ Either<RestfulFailure, String> _parametersToString(dynamic search) {
       }
     }
   }
-  // if (search.searchText != null) {
-  //   for (var i in search.searchText) {
-  //     Either<RestfulFailure, String> text = i.searchString();
-  //     if (text.isLeft()) {
-  //       return text;
-  //     } else {
-  //       parameterString += text.fold((l) => '', (r) => '&$r');
-  //     }
-  //   }
-  // }
-  // if (search.searchContent != null) {
-  //   for (var i in search.searchContent) {
-  //     Either<RestfulFailure, String> content = i.searchString();
-  //     if (content.isLeft()) {
-  //       return content;
-  //     } else {
-  //       parameterString += content.fold((l) => '', (r) => '&$r');
-  //     }
-  //   }
-  // }
-  // if (search.searchList != null) {
-  //   for (var i in search.searchList) {
-  //     Either<RestfulFailure, String> searchLIst = i.searchString();
-  //     if (searchLIst.isLeft()) {
-  //       return searchLIst;
-  //     } else {
-  //       parameterString += searchLIst.fold((l) => '', (r) => '&$r');
-  //     }
-  //   }
-  // }
+  if (search.searchText != null) {
+    for (var i in search.searchText) {
+      Either<RestfulFailure, String> text = i.searchString();
+      if (text.isLeft()) {
+        return left(text.fold(
+            (l) => RestfulFailure.searchParameterFailure(
+                parameter: '_text', failedValue: l.errorMessage()),
+            (r) => RestfulFailure.unknownFailure(failedValue: r)));
+      } else {
+        parameterString += text.fold((l) => '', (r) => '&_text$r');
+      }
+    }
+  }
+  if (search.searchContent != null) {
+    for (var i in search.searchContent) {
+      Either<RestfulFailure, String> content = i.searchString();
+      if (content.isLeft()) {
+        return left(content.fold(
+            (l) => RestfulFailure.searchParameterFailure(
+                parameter: '_content', failedValue: l.errorMessage()),
+            (r) => RestfulFailure.unknownFailure(failedValue: r)));
+      } else {
+        parameterString += content.fold((l) => '', (r) => '&_content$r');
+      }
+    }
+  }
+  if (search.searchList != null) {
+    for (Id id in search.searchList) {
+      if (id.value.isLeft()) {
+        return left(RestfulFailure.searchParameterFailure(
+          parameter: '_list',
+          failedValue: '${id.toString()}. This therefore',
+        ));
+      } else {
+        parameterString += id.value.fold((l) => '', (r) => '&_list=$id');
+      }
+    }
+  }
   // if (search.searchHas != null) {
   //   for (var i in search.searchHas) {
   //     Either<RestfulFailure, String> has = i.searchString();

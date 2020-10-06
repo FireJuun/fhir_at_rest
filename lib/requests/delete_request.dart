@@ -66,9 +66,6 @@ abstract class DeleteRequest with _$DeleteRequest {
 
     final result = await makeRequest(delete, thisRequest);
 
-    // for testing purposes
-    return result;
-
     return result.fold(
         (ifLeft) => left(ifLeft),
         (ifRight) => right(this.map(
