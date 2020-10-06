@@ -5,7 +5,7 @@ import '../../failures/restful_failure.dart';
 import 'search_objects.dart';
 
 class SearchNumber extends SearchObject<String> {
-  final Either<RestfulFailure<String>, String> number;
+  final Either<RestfulFailure, String> number;
   final bool missing;
   final NumberPrefix prefix;
 
@@ -22,8 +22,10 @@ class SearchNumber extends SearchObject<String> {
   const SearchNumber._({@required this.number, this.missing, this.prefix});
 
   Either<RestfulFailure, String> searchString() => number.fold(
-        (l) => left(RestfulFailure.primitiveFailure(
-            parameter: "Number", failedValue: l)),
+        (l) => missing == null
+            ? left(RestfulFailure.primitiveFailure(
+                parameter: "Number", failedValue: l))
+            : right(':missing=$missing'),
         (r) =>
             right('=${prefix == NumberPrefix.eq ? "" : mapNumberPrefix[prefix]}'
                 '$r${missing == null ? "" : ":missing=$missing"}'),

@@ -149,8 +149,6 @@ POST http://hapi.fhir.org/baseR4/Patient?_format=application/fhir+json
 ```
 One important thing to note on create is that no ID is provided in the request, and the server will ignore the id that is in the resource. The server will create a new Id for this resource when it is created and that will replace ```'12345'```. (I'm actually still working on trying to be able to update the version number and id offline).
 
-### Search - ToDo
-
 ### Capabilities
 This is to request the server's capabilities. It uses a ```GET``` and can pass in a ```Mode``` parameter. ```Mode``` may be ```full```, ```normative```, or ```terminology```. If none is passed, it will default to ```full```.
 
@@ -261,3 +259,149 @@ Result:
 http://hapi.fhir.org/baseR4/Observation/12345/_history&_format=application/fhir+json&_count=10&_since=2020-10-02T14:28:34.714205Z
 ```
 ### HEAD - same as get requests, but I haven't implemented them. Not sure I will.
+
+## Search - ToDo
+Searching is challenging. I've tried to detail it by showing examples how you would perform all of the searches listed on the [HL7 page](https://www.hl7.org/fhir/search.html). Note - all searches, like above requests, will be of formatted as fhir+json. For each type of resource there are some common fields that can be searched on. ```_content, _id, _lastUpdated, _profile, _query, _security, _source, _tag```. 
+
+ToDo: text/filter
+
+Basic formatting for the search request is as follows:
+```
+  var request = SearchRequest.r4(
+    base: //base fhir URL,
+    type: //whatever resource you're looking for
+    parameters: //parameters that are appropriate for that particular resource
+  );
+  var response = await request.request();
+```
+[Parameters are all lists](https://www.hl7.org/fhir/search.html#ptypes), and are of the following types: ```SearchComposite, SearchDate, SearchNumber, SearchQuantity, SearchReference, SearchSpecial, SearchString, SearchToken, SearchUri```.
+
+These basic examples are from the [HL7 Summary of searching](https://www.hl7.org/fhir/search.html#standard). To search for the patient with an id of 23:
+```
+  var request = SearchRequest.r4(
+    base: Uri.parse('http://hapi.fhir.org/baseR4'),
+    type: R4Types.patient,
+    parameters: PatientSearch(searchId: [Id('12345')]),
+  );
+  var response = await request.request();
+```
+Result:
+```
+GET http://hapi.fhir.org/baseR4/Patient?_format=application/fhir+json&_id=23
+```
+
+
+To search for all observations that have changed since 2010-10-01:
+```
+  request = SearchRequest.r4(
+    base: Uri.parse('http://hapi.fhir.org/baseR4'),
+    type: R4Types.observation,
+    parameters: ObservationSearch(searchLastUpdated: [
+      SearchDate(date: FhirDateTime('2010-10-01'), prefix: DatePrefix.gt)
+    ]),
+  );
+  response = await request.request();
+```
+Result: 
+```
+GET http://hapi.fhir.org/baseR4/Observation?_format=application/fhir+json&_lastUpdated=gt2010-10-01T00:00:00.000
+```
+```_tag``` is an example of a searchToken type.
+```
+  request = SearchRequest.r4(
+    base: Uri.parse('http://hapi.fhir.org/baseR4'),
+    type: R4Types.condition,
+    parameters: ConditionSearch(
+      searchTag: [
+        SearchToken(
+            system: FhirUri('http://acme.org/codes'),
+            code: Code('needs-review'))
+      ],
+    ),
+  );
+  response = await request.request();
+```
+Result:
+```
+GET http://hapi.fhir.org/baseR4/Condition?_format=application/fhir+json&_tag=http://acme.org/codes|needs-review
+```
+```_profile``` is a type of searchUrl
+```
+  request = SearchRequest.r4(
+    base: Uri.parse('http://hapi.fhir.org/baseR4'),
+    type: R4Types.diagnosticreport,
+    parameters: DiagnosticReportSearch(
+      searchProfile: [SearchUri(uri: FhirUri('http://acme.org/codes'))],
+    ),
+  );
+  response = await request.request();
+```
+Result: 
+```
+GET http://hapi.fhir.org/baseR4/DiagnosticReport?_format=application/fhir+json&_profile=http://acme.org/codes
+```
+[Modifiers](https://www.hl7.org/fhir/search.html#modifiers) are defined per resource. All interactions (except combination) can contain a password called ```:missing```. To search for all patients that don't have a gender (you can also use ```:missing=false``` if you want to search patients that do have a recorded gender):
+```
+    request = SearchRequest.r4(
+    base: Uri.parse('http://hapi.fhir.org/baseR4'),
+    type: R4Types.patient,
+    parameters: PatientSearch(gender: [SearchToken(missing: false)]),
+  );
+  response = await request.request();
+  ```
+Result:
+```
+GET http://hapi.fhir.org/baseR4/Patient?_format=application/fhir+json&gender:missing=true
+```
+For strings, options are ```:exact``` or ```:contains```.
+```
+  request = SearchRequest.r4(
+    base: Uri.parse('http://hapi.fhir.org/baseR4'),
+    type: R4Types.patient,
+    parameters: PatientSearch(searchText: [
+      SearchString(string: 'Stark', modifier: StringModifier.exact)
+    ]),
+  );
+  response = await request.request();
+```
+Result:
+```
+GET http://hapi.fhir.org/baseR4/Patient?_format=application/fhir+json&_text:exact=Stark
+```
+Similarly ```:text``` can be used in a searchToken, ```:[type]``` can be used in a searchReference, and ```:below``` and ```:above``` can be used for searchUri. We will discuss all of these more below.
+
+### [Prefixes](https://www.hl7.org/fhir/search.html#prefix)
+
+For ordered types (number, date and quantity), the following values can be used: ```eq, ne, gt, lt, ge, le, sa, eb, and ap```. They are equivalent to ==, !=, >, <, >=, <=, starts after, ends before, approximately the same as (usually applied as ~10%). If not prefix, eq is ```assumed```. See the HL7 link for more details. Once again, using this prefix:
+```
+  request = SearchRequest.r4(
+    base: Uri.parse('http://hapi.fhir.org/baseR4'),
+    type: R4Types.observation,
+    parameters: ObservationSearch(searchLastUpdated: [
+      SearchDate(date: FhirDateTime('2010-10-01'), prefix: DatePrefix.le)
+    ]),
+  );
+  response = await request.request();
+```
+Result:
+```
+GET http://hapi.fhir.org/baseR4/Observation?_format=application/fhir+json&_lastUpdated=le2010-10-01T00:00:00.000
+```
+There are some specifications on exaclty how the comparisons are done using dates, [you can find them here](https://www.hl7.org/fhir/search.html#date). One more example is finding an event between two dates.
+```
+  request = SearchRequest.r4(
+    base: Uri.parse('http://hapi.fhir.org/baseR4'),
+    type: R4Types.patient,
+    parameters: PatientSearch(birthdate: [
+      SearchDate(date: FhirDateTime('2010-01-01'), prefix: DatePrefix.ge),
+      SearchDate(date: FhirDateTime('2011-12-31'), prefix: DatePrefix.le)
+    ]),
+  );
+  response = await request.request();
+```
+Result:
+```
+GET http://hapi.fhir.org/baseR4/Patient?_format=application/fhir+json&birthdate=ge2010-01-01T00:00:00.000&birthdate=le2011-12-31T00:00:00.000
+```
+
+

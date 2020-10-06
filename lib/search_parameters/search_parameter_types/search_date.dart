@@ -23,8 +23,10 @@ class SearchDate extends SearchObject<String> {
   const SearchDate._({this.date, this.missing, this.prefix});
 
   Either<RestfulFailure, String> searchString() => date.value.isLeft()
-      ? left(
-          RestfulFailure.primitiveFailure(parameter: "Date", failedValue: date))
+      ? missing == null
+          ? left(RestfulFailure.primitiveFailure(
+              parameter: "Date", failedValue: date))
+          : right(':missing=$missing')
       : right('=${prefix == DatePrefix.eq ? "" : mapDatePrefix[prefix]}'
           '${date.toString()}${missing == null ? "" : ":missing=$missing"}');
 }

@@ -32,9 +32,12 @@ class SearchToken extends SearchObject<String> {
   Either<RestfulFailure, String> searchString() {
     var returnString = '';
     if (system == null && code == null) {
-      return left(RestfulFailure.searchParameterFailure(
-          parameter: 'Token',
-          failedValue: 'Neither system or code parameterwas provided. This'));
+      return missing == null
+          ? left(RestfulFailure.searchParameterFailure(
+              parameter: 'Token',
+              failedValue:
+                  'Neither system or code parameterwas provided. This'))
+          : right(':missing=$missing');
     } else if (system != null && code != null) {
       if (system.value.isLeft() && code.value.isLeft()) {
         return left(RestfulFailure.searchParameterFailure(

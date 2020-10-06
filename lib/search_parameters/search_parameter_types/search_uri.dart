@@ -23,8 +23,10 @@ class SearchUri extends SearchObject<String> {
   const SearchUri._({@required this.uri, this.missing, this.modifier});
 
   Either<RestfulFailure, String> searchString() => uri.value.fold(
-        (l) => left(RestfulFailure.primitiveFailure(
-            parameter: 'Uri', failedValue: uri)),
+        (l) => missing == null
+            ? left(RestfulFailure.primitiveFailure(
+                parameter: 'Uri', failedValue: uri))
+            : right(':missing=$missing'),
         (r) => right(
             '${modifier != null ? modifier == UriModifier.above ? ":above=" : ":below=" : "="}'
             '$r'

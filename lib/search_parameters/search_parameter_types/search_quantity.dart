@@ -7,7 +7,7 @@ import 'search_objects.dart';
 
 class SearchQuantity extends SearchObject<String> {
   final QuantityPrefix prefix;
-  final Either<RestfulFailure<String>, String> number;
+  final Either<RestfulFailure, String> number;
   final FhirUri system;
   final Code code;
   final bool missing;
@@ -36,8 +36,10 @@ class SearchQuantity extends SearchObject<String> {
       this.prefix});
 
   Either<RestfulFailure, String> searchString() => number.fold(
-        (l) => left(RestfulFailure.primitiveFailure(
-            parameter: "Quantity", failedValue: l)),
+        (l) => missing == null
+            ? left(RestfulFailure.primitiveFailure(
+                parameter: "Quantity", failedValue: l))
+            : right(':missing=$missing'),
         (r) {
           var returnString =
               '=${prefix == QuantityPrefix.eq ? "" : mapQuantityPrefix[prefix]}$r';
