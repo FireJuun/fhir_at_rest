@@ -403,5 +403,29 @@ Result:
 ```
 GET http://hapi.fhir.org/baseR4/Patient?_format=application/fhir+json&birthdate=ge2010-01-01T00:00:00.000&birthdate=le2011-12-31T00:00:00.000
 ```
+Searching for strings is pretty straight forward. You can add the modifier ```:contains=``` and the search will return any patient with a given part containing the string in any position, ```:exact=``` would match a name exactly (no longer, no shorter, and is case sensitive). For the sake of time, I included all of them in a single query:
+```
+  request = SearchRequest.r4(
+      base: Uri.parse('http://hapi.fhir.org/baseR4'),
+      type: R4Types.patient,
+      parameters: PatientSearch(
+        given: [
+          SearchString(string: 'eve'),
+          SearchString(string: 'eve', modifier: StringModifier.contains),
+          SearchString(string: 'eve', modifier: StringModifier.exact)
+        ],
+      ));
+  response = await request.request();
+```
+Result: 
+```
+GET http://hapi.fhir.org/baseR4/Patient?_format=application/fhir+json&given=eve&given:contains=eve&given:exact=eve
+```
+For a ```URI``` search, the prefixes are ```:above=``` and ```:below=```. This basically walks down the directory structure. So [(from HL7's website)](https://www.hl7.org/fhir/search.html#uri):
+```
+ GET [base]/ValueSet?url:below=http://acme.org/fhir/
+ GET [base]/ValueSet?url:above=http://acme.org/fhir/ValueSet/123/_history/5
+ ```
+ The first would search for anything with a URL that begins with "http://acme.org/fhir/". The second would match the URL, and anything shorter than it ("http://acme.org/fhir/ValueSet/123/" for instance).
 
-
+ 

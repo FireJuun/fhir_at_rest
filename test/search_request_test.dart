@@ -114,16 +114,19 @@ void main() async {
   print('\n');
   print(response.fold((l) => l.errorMessage(), (r) => r));
 
-  // request = SearchRequest.r4(
-  //   base: Uri.parse('http://hapi.fhir.org/baseR4'),
-  //   type: R4Types.immunization,
-  //   parameters: ImmunizationSearch(
-  //       searchId: [Id('12345')],
-  //       searchLastUpdated: [SearchDate(FhirDateTime('1981-09-18'))]),
-  // );
-  // response = await request.request();
-  // print('\n');
-  // print(response.fold((l) => l.errorMessage(), (r) => r));
+  request = SearchRequest.r4(
+      base: Uri.parse('http://hapi.fhir.org/baseR4'),
+      type: R4Types.patient,
+      parameters: PatientSearch(
+        given: [
+          SearchString(string: 'eve'),
+          SearchString(string: 'eve', modifier: StringModifier.contains),
+          SearchString(string: 'eve', modifier: StringModifier.exact)
+        ],
+      ));
+  response = await request.request();
+  print('\n');
+  print(response.fold((l) => l.errorMessage(), (r) => r));
 
   // request = SearchRequest.r4(
   //   base: Uri.parse('http://hapi.fhir.org/baseR4'),
