@@ -67,8 +67,10 @@ abstract class PatchRequest with _$PatchRequest {
         '${pretty ? "&_pretty=$pretty" : ""}'
         '${summary != Summary.none ? "&_summary=${enumToString(summary)}" : ""}';
 
-    final result =
-        await makeRequest(patch, thisRequest, resource: resource.toJson());
+    final result = await makeRequest(
+        type: RestfulRequest.patch_,
+        thisRequest: thisRequest,
+        resource: resource.toJson());
 
     return result.fold(
         (ifLeft) => left(ifLeft),

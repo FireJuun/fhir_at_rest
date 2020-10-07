@@ -93,7 +93,10 @@ abstract class HistoryRequest with _$HistoryRequest {
     //       );
     // }
 
-    final result = await makeRequest(get, thisRequest);
+    final result = await makeRequest(
+      type: RestfulRequest.get_,
+      thisRequest: thisRequest,
+    );
 
     return result.fold(
         (ifLeft) => left(ifLeft),

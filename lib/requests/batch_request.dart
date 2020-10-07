@@ -74,8 +74,10 @@ abstract class BatchRequest with _$BatchRequest {
         '${pretty ? "&_pretty=$pretty" : ""}'
         '${summary != Summary.none ? "&_summary=${enumToString(summary)}" : ""}';
 
-    final result =
-        await makeRequest(put, thisRequest, resource: resource.toJson());
+    final result = await makeRequest(
+        type: RestfulRequest.post_,
+        thisRequest: thisRequest,
+        resource: resource.toJson());
 
     return result.fold(
         (ifLeft) => left(ifLeft),

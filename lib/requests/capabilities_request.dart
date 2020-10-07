@@ -52,7 +52,10 @@ abstract class CapabilitiesRequest with _$CapabilitiesRequest {
         '${pretty ? "&_pretty=$pretty" : ""}'
         '${summary != Summary.none ? "&_summary=${enumToString(summary)}" : ""}';
 
-    final result = await makeRequest(get, thisRequest);
+    final result = await makeRequest(
+      type: RestfulRequest.get_,
+      thisRequest: thisRequest,
+    );
 
     return result.fold(
         (ifLeft) => left(ifLeft),

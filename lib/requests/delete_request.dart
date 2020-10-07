@@ -64,7 +64,10 @@ abstract class DeleteRequest with _$DeleteRequest {
         '${pretty ? "&_pretty=$pretty" : ""}'
         '${summary != Summary.none ? "&_summary=${enumToString(summary)}" : ""}';
 
-    final result = await makeRequest(delete, thisRequest);
+    final result = await makeRequest(
+      type: RestfulRequest.delete_,
+      thisRequest: thisRequest,
+    );
 
     return result.fold(
         (ifLeft) => left(ifLeft),

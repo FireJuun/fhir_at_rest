@@ -73,7 +73,10 @@ abstract class SearchRequest with _$SearchRequest {
           (r) => RestfulFailure.unknownFailure(failedValue: parametersString)));
     }
 
-    final result = await makeRequest(get, thisRequest);
+    final result = await makeRequest(
+      type: RestfulRequest.get_,
+      thisRequest: thisRequest,
+    );
 
     return result.fold(
       (l) => left(l),
