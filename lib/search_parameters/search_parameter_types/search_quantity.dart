@@ -41,8 +41,13 @@ class SearchQuantity extends SearchObject<String> {
                 parameter: "Quantity", failedValue: l))
             : right(':missing=$missing'),
         (r) {
+          final value = num.tryParse(r.toString());
+          if (value == null) {
+            return left(RestfulFailure.primitiveFailure(
+                parameter: 'Number', failedValue: number));
+          }
           var returnString =
-              '=${prefix == QuantityPrefix.eq ? "" : mapQuantityPrefix[prefix]}$r';
+              '=${prefix == QuantityPrefix.eq ? "" : mapQuantityPrefix[prefix]}$value';
           if (system != null && code != null) {
             if (system.value.isLeft() && code.value.isLeft()) {
               return left(RestfulFailure.searchParameterFailure(
@@ -57,7 +62,7 @@ class SearchQuantity extends SearchObject<String> {
               left(RestfulFailure.primitiveFailure(
                   parameter: 'Code', failedValue: code));
             } else
-              returnString = '|${system.toString()}|${code.toString()}';
+              returnString += '|${system.toString()}|${code.toString()}';
           } else if (code != null) {
             if (code.value.isLeft()) {
               return left(RestfulFailure.primitiveFailure(

@@ -372,6 +372,8 @@ Similarly ```:text``` can be used in a searchToken, ```:[type]``` can be used in
 
 ### [Prefixes](https://www.hl7.org/fhir/search.html#prefix)
 
+#### *Number, Date and Quantity*
+
 For ordered types (number, date and quantity), the following values can be used: ```eq, ne, gt, lt, ge, le, sa, eb, and ap```. They are equivalent to ==, !=, >, <, >=, <=, starts after, ends before, approximately the same as (usually applied as ~10%). If not prefix, eq is ```assumed```. See the HL7 link for more details. Once again, using this prefix:
 ```
   request = SearchRequest.r4(
@@ -387,6 +389,7 @@ Result:
 ```
 GET http://hapi.fhir.org/baseR4/Observation?_format=application/fhir+json&_lastUpdated=le2010-10-01T00:00:00.000
 ```
+#### *Date*
 There are some specifications on exaclty how the comparisons are done using dates, [you can find them here](https://www.hl7.org/fhir/search.html#date). One more example is finding an event between two dates.
 ```
   request = SearchRequest.r4(
@@ -403,6 +406,7 @@ Result:
 ```
 GET http://hapi.fhir.org/baseR4/Patient?_format=application/fhir+json&birthdate=ge2010-01-01T00:00:00.000&birthdate=le2011-12-31T00:00:00.000
 ```
+#### *String*
 Searching for strings is pretty straight forward. You can add the modifier ```:contains=``` and the search will return any patient with a given part containing the string in any position, ```:exact=``` would match a name exactly (no longer, no shorter, and is case sensitive). For the sake of time, I included all of them in a single query:
 ```
   request = SearchRequest.r4(
@@ -421,6 +425,7 @@ Result:
 ```
 GET http://hapi.fhir.org/baseR4/Patient?_format=application/fhir+json&given=eve&given:contains=eve&given:exact=eve
 ```
+#### *Uri/Url*
 For a ```URI``` search, the prefixes are ```:above=``` and ```:below=```. This basically walks down the directory structure. So [(from HL7's website)](https://www.hl7.org/fhir/search.html#uri):
 ```
  GET [base]/ValueSet?url:below=http://acme.org/fhir/
@@ -428,4 +433,107 @@ For a ```URI``` search, the prefixes are ```:above=``` and ```:below=```. This b
  ```
  The first would search for anything with a URL that begins with "http://acme.org/fhir/". The second would match the URL, and anything shorter than it ("http://acme.org/fhir/ValueSet/123/" for instance).
 
- 
+ #### [*Token*](https://www.hl7.org/fhir/search.html#token)
+Just read the HL7 page for a description, it's easier. A token can contain a system, a code or both. And can contain the prefixes, ```:text, :not, :above, :below, :in, :not-in, and :of-type```. I'm including a number of examples (all stolen from the above link, so HL7 please don't be mad).
+
+Search for all the patients with an identifier with key = "2345" in the system "http://acme.org/patient"
+```
+  request = SearchRequest.r4(
+      base: Uri.parse('http://hapi.fhir.org/baseR4'),
+      type: R4Types.patient,
+      parameters: PatientSearch(
+        identifier: [
+          SearchToken(
+              system: FhirUri('http://acme.org/patient'), code: Code('2345'))
+        ],
+      ));
+  response = await request.request();
+```
+Result:
+```
+GET http://hapi.fhir.org/baseR4/Patient?_format=application/fhir+json&identifier=http://acme.org/patient|2345
+
+Search for any Composition that does not contain an Allergies and adverse reaction section. Note that this search does not return "any document that has a section that is not an Allergies and adverse reaction section" (e.g. in the presence of multiple possible matches, the negation applies to the set, not each individual entry)
+```
+  request = SearchRequest.r4(
+      base: Uri.parse('http://hapi.fhir.org/baseR4'),
+      type: R4Types.composition,
+      parameters: CompositionSearch(
+        section: [
+          SearchToken(
+              code: Code('48765-2'),
+              modifier: TokenModifier.not)
+        ],
+      ));
+  response = await request.request();
+```
+Result:
+```
+GET http://hapi.fhir.org/baseR4/Composition?_format=application/fhir+json&section:not=48765-2
+
+Search for any condition in the SNOMED CT value set "http://snomed.info/sct?fhir_vs=isa/126851005" that includes all descendants of "Neoplasm of liver"
+```
+  request = SearchRequest.r4(
+      base: Uri.parse('http://hapi.fhir.org/baseR4'),
+      type: R4Types.condition,
+      parameters: ConditionSearch(
+        code: [
+          SearchToken(
+              system: FhirUri(
+                  'http%3A%2F%2Fsnomed.info%2Fsct%3Ffhir_vs%3Disa%2F126851005'),
+              modifier: TokenModifier.in_)
+        ],
+      ));
+  response = await request.request();
+```
+Result:
+```
+GET http://hapi.fhir.org/baseR4/Condition?_format=application/fhir+json&code:in=http%3A%2F%2Fsnomed.info%2Fsct%3Ffhir_vs%3Disa%2F126851005
+```
+Search for the Medical Record Number 446053 - this is useful where the system id for the MRN is not known
+```
+  request = SearchRequest.r4(
+      base: Uri.parse('http://hapi.fhir.org/baseR4'),
+      type: R4Types.patient,
+      parameters: PatientSearch(
+        identifier: [
+          SearchToken(
+            system: FhirUri('http://terminology.hl7.org/CodeSystem/v2-0203'),
+            code: Code('MR'),
+            value: '446053',
+            modifier: TokenModifier.of_type,
+          ),
+        ],
+      ));
+  response = await request.request();
+```
+Result:
+```
+GET http://hapi.fhir.org/baseR4/Patient?_format=application/fhir+json&identifier:of-type=http://terminology.hl7.org/CodeSystem/v2-0203|MR|446053
+```
+Please note that for the prefix ```:of-type``` it requires ALL 3 parameters, a system, a code and a value, or else it will return a failure.
+#### *Quantity*
+For quantity you're allowed to define a prefix, number, system and code. Sysem and code are similar to Token above, except that if you put a system, you also need a code, but otherwise both are optional. So you could just put  a number (```5.4```), you could put a number and a code (```5.4||mg```) or a number, system and a code (```5.4|http://unitsofmeasure.org|mg```). Putting them all together to search for all the observations where the value of is about 5.4 mg where mg is understood as a UCUM unit
+```
+  request = SearchRequest.r4(
+    base: Uri.parse('http://hapi.fhir.org/baseR4'),
+    type: R4Types.observation,
+    parameters: ObservationSearch(
+      value_quantity: [
+        SearchQuantity(
+          number: 5.4,
+          system: FhirUri('http://unitsofmeasure.org'),
+          code: Code('mg'),
+          prefix: QuantityPrefix.ap,
+        ),
+      ],
+    ),
+  );
+  response = await request.request();
+```
+Result:
+```
+GET http://hapi.fhir.org/baseR4/Observation?_format=application/fhir+json&value-quantity=ap5.4|http://unitsofmeasure.org|mg
+```
+#### *Reference*
+A reference takes an id, a type and id, or a url. 
