@@ -55,6 +55,9 @@ abstract class RestfulFailure<T> with _$RestfulFailure<T> {
     @required String parameter,
     @required T failedValue,
   }) = SearchParameterFailure<T>;
+  const factory RestfulFailure.emptySearchParameters({
+    @required String parameter,
+  }) = EmptySearchParameters;
 
   String errorMessage() => this.map(
         searchStringTest: (f) => f.searchString,
@@ -82,5 +85,7 @@ abstract class RestfulFailure<T> with _$RestfulFailure<T> {
         primitiveFailure: (f) => '${f.failedValue.toString()}',
         searchParameterFailure: (f) =>
             '${f.failedValue} is not a valid ${f.parameter}.',
+        emptySearchParameters: (f) =>
+            'No arguments were passed for this ${f.parameter} search, it is invalid.',
       );
 }

@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:fhir/primitive_types/primitive_types.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:fhir_at_rest/enums/enums.dart';
 
 import '../../failures/restful_failure.dart';
 import 'search_objects.dart';
@@ -10,9 +10,7 @@ class SearchUri extends SearchObject<String> {
   final bool missing;
   final UriModifier modifier;
 
-  factory SearchUri(
-      {@required FhirUri uri, bool missing, UriModifier modifier}) {
-    assert(uri != null);
+  factory SearchUri({FhirUri uri, bool missing, UriModifier modifier}) {
     return SearchUri._(
       uri: uri,
       missing: missing,
@@ -20,18 +18,15 @@ class SearchUri extends SearchObject<String> {
     );
   }
 
-  const SearchUri._({@required this.uri, this.missing, this.modifier});
+  const SearchUri._({this.uri, this.missing, this.modifier});
 
-  Either<RestfulFailure, String> searchString() => uri.value.fold(
-        (l) => missing == null
-            ? left(RestfulFailure.primitiveFailure(
-                parameter: 'Uri', failedValue: uri))
-            : right(':missing=$missing'),
-        (r) => right(
-            '${modifier != null ? modifier == UriModifier.above ? ":above=" : ":below=" : "="}'
-            '$r'
-            '${modifier != null ? "" : missing == null ? "" : ":missing=$missing"}'),
-      );
+  Either<RestfulFailure, String> searchString() => missing != null
+      ? right(':missing=$missing')
+      : uri.value.fold(
+          (l) => left(RestfulFailure.primitiveFailure(
+              parameter: 'Uri', failedValue: uri)),
+          (r) => right(
+              '${modifier != null ? ":${simpleEnumToString(modifier)}=" : "="}$r'));
 }
 
 enum UriModifier {

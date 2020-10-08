@@ -14,31 +14,23 @@ class _$SmartTearOff {
   const _$SmartTearOff();
 
 // ignore: unused_element
-  SmartDstu2 dstu2({String baseUrl}) {
-    return SmartDstu2(
-      baseUrl: baseUrl,
-    );
+  SmartDstu2 dstu2() {
+    return SmartDstu2();
   }
 
 // ignore: unused_element
-  SmartStu3 stu3({String baseUrl}) {
-    return SmartStu3(
-      baseUrl: baseUrl,
-    );
+  SmartStu3 stu3() {
+    return SmartStu3();
   }
 
 // ignore: unused_element
-  SmartR4 r4({String baseUrl}) {
-    return SmartR4(
-      baseUrl: baseUrl,
-    );
+  SmartR4 r4() {
+    return SmartR4();
   }
 
 // ignore: unused_element
-  SmartR5 r5({String baseUrl}) {
-    return SmartR5(
-      baseUrl: baseUrl,
-    );
+  SmartR5 r5() {
+    return SmartR5();
   }
 }
 
@@ -48,21 +40,19 @@ const $Smart = _$SmartTearOff();
 
 /// @nodoc
 mixin _$Smart {
-  String get baseUrl;
-
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result dstu2(String baseUrl),
-    @required Result stu3(String baseUrl),
-    @required Result r4(String baseUrl),
-    @required Result r5(String baseUrl),
+    @required Result dstu2(),
+    @required Result stu3(),
+    @required Result r4(),
+    @required Result r5(),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result dstu2(String baseUrl),
-    Result stu3(String baseUrl),
-    Result r4(String baseUrl),
-    Result r5(String baseUrl),
+    Result dstu2(),
+    Result stu3(),
+    Result r4(),
+    Result r5(),
     @required Result orElse(),
   });
   @optionalTypeArgs
@@ -80,15 +70,12 @@ mixin _$Smart {
     Result r5(SmartR5 value),
     @required Result orElse(),
   });
-
-  $SmartCopyWith<Smart> get copyWith;
 }
 
 /// @nodoc
 abstract class $SmartCopyWith<$Res> {
   factory $SmartCopyWith(Smart value, $Res Function(Smart) then) =
       _$SmartCopyWithImpl<$Res>;
-  $Res call({String baseUrl});
 }
 
 /// @nodoc
@@ -98,24 +85,13 @@ class _$SmartCopyWithImpl<$Res> implements $SmartCopyWith<$Res> {
   final Smart _value;
   // ignore: unused_field
   final $Res Function(Smart) _then;
-
-  @override
-  $Res call({
-    Object baseUrl = freezed,
-  }) {
-    return _then(_value.copyWith(
-      baseUrl: baseUrl == freezed ? _value.baseUrl : baseUrl as String,
-    ));
-  }
 }
 
 /// @nodoc
-abstract class $SmartDstu2CopyWith<$Res> implements $SmartCopyWith<$Res> {
+abstract class $SmartDstu2CopyWith<$Res> {
   factory $SmartDstu2CopyWith(
           SmartDstu2 value, $Res Function(SmartDstu2) then) =
       _$SmartDstu2CopyWithImpl<$Res>;
-  @override
-  $Res call({String baseUrl});
 }
 
 /// @nodoc
@@ -126,72 +102,52 @@ class _$SmartDstu2CopyWithImpl<$Res> extends _$SmartCopyWithImpl<$Res>
 
   @override
   SmartDstu2 get _value => super._value as SmartDstu2;
-
-  @override
-  $Res call({
-    Object baseUrl = freezed,
-  }) {
-    return _then(SmartDstu2(
-      baseUrl: baseUrl == freezed ? _value.baseUrl : baseUrl as String,
-    ));
-  }
 }
 
 /// @nodoc
 class _$SmartDstu2 extends SmartDstu2 {
-  _$SmartDstu2({this.baseUrl}) : super._();
-
-  @override
-  final String baseUrl;
+  _$SmartDstu2() : super._();
 
   @override
   String toString() {
-    return 'Smart.dstu2(baseUrl: $baseUrl)';
+    return 'Smart.dstu2()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is SmartDstu2 &&
-            (identical(other.baseUrl, baseUrl) ||
-                const DeepCollectionEquality().equals(other.baseUrl, baseUrl)));
+    return identical(this, other) || (other is SmartDstu2);
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(baseUrl);
-
-  @override
-  $SmartDstu2CopyWith<SmartDstu2> get copyWith =>
-      _$SmartDstu2CopyWithImpl<SmartDstu2>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result dstu2(String baseUrl),
-    @required Result stu3(String baseUrl),
-    @required Result r4(String baseUrl),
-    @required Result r5(String baseUrl),
+    @required Result dstu2(),
+    @required Result stu3(),
+    @required Result r4(),
+    @required Result r5(),
   }) {
     assert(dstu2 != null);
     assert(stu3 != null);
     assert(r4 != null);
     assert(r5 != null);
-    return dstu2(baseUrl);
+    return dstu2();
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result dstu2(String baseUrl),
-    Result stu3(String baseUrl),
-    Result r4(String baseUrl),
-    Result r5(String baseUrl),
+    Result dstu2(),
+    Result stu3(),
+    Result r4(),
+    Result r5(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (dstu2 != null) {
-      return dstu2(baseUrl);
+      return dstu2();
     }
     return orElse();
   }
@@ -230,20 +186,13 @@ class _$SmartDstu2 extends SmartDstu2 {
 
 abstract class SmartDstu2 extends Smart {
   SmartDstu2._() : super._();
-  factory SmartDstu2({String baseUrl}) = _$SmartDstu2;
-
-  @override
-  String get baseUrl;
-  @override
-  $SmartDstu2CopyWith<SmartDstu2> get copyWith;
+  factory SmartDstu2() = _$SmartDstu2;
 }
 
 /// @nodoc
-abstract class $SmartStu3CopyWith<$Res> implements $SmartCopyWith<$Res> {
+abstract class $SmartStu3CopyWith<$Res> {
   factory $SmartStu3CopyWith(SmartStu3 value, $Res Function(SmartStu3) then) =
       _$SmartStu3CopyWithImpl<$Res>;
-  @override
-  $Res call({String baseUrl});
 }
 
 /// @nodoc
@@ -254,72 +203,52 @@ class _$SmartStu3CopyWithImpl<$Res> extends _$SmartCopyWithImpl<$Res>
 
   @override
   SmartStu3 get _value => super._value as SmartStu3;
-
-  @override
-  $Res call({
-    Object baseUrl = freezed,
-  }) {
-    return _then(SmartStu3(
-      baseUrl: baseUrl == freezed ? _value.baseUrl : baseUrl as String,
-    ));
-  }
 }
 
 /// @nodoc
 class _$SmartStu3 extends SmartStu3 {
-  _$SmartStu3({this.baseUrl}) : super._();
-
-  @override
-  final String baseUrl;
+  _$SmartStu3() : super._();
 
   @override
   String toString() {
-    return 'Smart.stu3(baseUrl: $baseUrl)';
+    return 'Smart.stu3()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is SmartStu3 &&
-            (identical(other.baseUrl, baseUrl) ||
-                const DeepCollectionEquality().equals(other.baseUrl, baseUrl)));
+    return identical(this, other) || (other is SmartStu3);
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(baseUrl);
-
-  @override
-  $SmartStu3CopyWith<SmartStu3> get copyWith =>
-      _$SmartStu3CopyWithImpl<SmartStu3>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result dstu2(String baseUrl),
-    @required Result stu3(String baseUrl),
-    @required Result r4(String baseUrl),
-    @required Result r5(String baseUrl),
+    @required Result dstu2(),
+    @required Result stu3(),
+    @required Result r4(),
+    @required Result r5(),
   }) {
     assert(dstu2 != null);
     assert(stu3 != null);
     assert(r4 != null);
     assert(r5 != null);
-    return stu3(baseUrl);
+    return stu3();
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result dstu2(String baseUrl),
-    Result stu3(String baseUrl),
-    Result r4(String baseUrl),
-    Result r5(String baseUrl),
+    Result dstu2(),
+    Result stu3(),
+    Result r4(),
+    Result r5(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (stu3 != null) {
-      return stu3(baseUrl);
+      return stu3();
     }
     return orElse();
   }
@@ -358,20 +287,13 @@ class _$SmartStu3 extends SmartStu3 {
 
 abstract class SmartStu3 extends Smart {
   SmartStu3._() : super._();
-  factory SmartStu3({String baseUrl}) = _$SmartStu3;
-
-  @override
-  String get baseUrl;
-  @override
-  $SmartStu3CopyWith<SmartStu3> get copyWith;
+  factory SmartStu3() = _$SmartStu3;
 }
 
 /// @nodoc
-abstract class $SmartR4CopyWith<$Res> implements $SmartCopyWith<$Res> {
+abstract class $SmartR4CopyWith<$Res> {
   factory $SmartR4CopyWith(SmartR4 value, $Res Function(SmartR4) then) =
       _$SmartR4CopyWithImpl<$Res>;
-  @override
-  $Res call({String baseUrl});
 }
 
 /// @nodoc
@@ -382,72 +304,52 @@ class _$SmartR4CopyWithImpl<$Res> extends _$SmartCopyWithImpl<$Res>
 
   @override
   SmartR4 get _value => super._value as SmartR4;
-
-  @override
-  $Res call({
-    Object baseUrl = freezed,
-  }) {
-    return _then(SmartR4(
-      baseUrl: baseUrl == freezed ? _value.baseUrl : baseUrl as String,
-    ));
-  }
 }
 
 /// @nodoc
 class _$SmartR4 extends SmartR4 {
-  _$SmartR4({this.baseUrl}) : super._();
-
-  @override
-  final String baseUrl;
+  _$SmartR4() : super._();
 
   @override
   String toString() {
-    return 'Smart.r4(baseUrl: $baseUrl)';
+    return 'Smart.r4()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is SmartR4 &&
-            (identical(other.baseUrl, baseUrl) ||
-                const DeepCollectionEquality().equals(other.baseUrl, baseUrl)));
+    return identical(this, other) || (other is SmartR4);
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(baseUrl);
-
-  @override
-  $SmartR4CopyWith<SmartR4> get copyWith =>
-      _$SmartR4CopyWithImpl<SmartR4>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result dstu2(String baseUrl),
-    @required Result stu3(String baseUrl),
-    @required Result r4(String baseUrl),
-    @required Result r5(String baseUrl),
+    @required Result dstu2(),
+    @required Result stu3(),
+    @required Result r4(),
+    @required Result r5(),
   }) {
     assert(dstu2 != null);
     assert(stu3 != null);
     assert(r4 != null);
     assert(r5 != null);
-    return r4(baseUrl);
+    return r4();
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result dstu2(String baseUrl),
-    Result stu3(String baseUrl),
-    Result r4(String baseUrl),
-    Result r5(String baseUrl),
+    Result dstu2(),
+    Result stu3(),
+    Result r4(),
+    Result r5(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (r4 != null) {
-      return r4(baseUrl);
+      return r4();
     }
     return orElse();
   }
@@ -486,20 +388,13 @@ class _$SmartR4 extends SmartR4 {
 
 abstract class SmartR4 extends Smart {
   SmartR4._() : super._();
-  factory SmartR4({String baseUrl}) = _$SmartR4;
-
-  @override
-  String get baseUrl;
-  @override
-  $SmartR4CopyWith<SmartR4> get copyWith;
+  factory SmartR4() = _$SmartR4;
 }
 
 /// @nodoc
-abstract class $SmartR5CopyWith<$Res> implements $SmartCopyWith<$Res> {
+abstract class $SmartR5CopyWith<$Res> {
   factory $SmartR5CopyWith(SmartR5 value, $Res Function(SmartR5) then) =
       _$SmartR5CopyWithImpl<$Res>;
-  @override
-  $Res call({String baseUrl});
 }
 
 /// @nodoc
@@ -510,72 +405,52 @@ class _$SmartR5CopyWithImpl<$Res> extends _$SmartCopyWithImpl<$Res>
 
   @override
   SmartR5 get _value => super._value as SmartR5;
-
-  @override
-  $Res call({
-    Object baseUrl = freezed,
-  }) {
-    return _then(SmartR5(
-      baseUrl: baseUrl == freezed ? _value.baseUrl : baseUrl as String,
-    ));
-  }
 }
 
 /// @nodoc
 class _$SmartR5 extends SmartR5 {
-  _$SmartR5({this.baseUrl}) : super._();
-
-  @override
-  final String baseUrl;
+  _$SmartR5() : super._();
 
   @override
   String toString() {
-    return 'Smart.r5(baseUrl: $baseUrl)';
+    return 'Smart.r5()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is SmartR5 &&
-            (identical(other.baseUrl, baseUrl) ||
-                const DeepCollectionEquality().equals(other.baseUrl, baseUrl)));
+    return identical(this, other) || (other is SmartR5);
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(baseUrl);
-
-  @override
-  $SmartR5CopyWith<SmartR5> get copyWith =>
-      _$SmartR5CopyWithImpl<SmartR5>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result dstu2(String baseUrl),
-    @required Result stu3(String baseUrl),
-    @required Result r4(String baseUrl),
-    @required Result r5(String baseUrl),
+    @required Result dstu2(),
+    @required Result stu3(),
+    @required Result r4(),
+    @required Result r5(),
   }) {
     assert(dstu2 != null);
     assert(stu3 != null);
     assert(r4 != null);
     assert(r5 != null);
-    return r5(baseUrl);
+    return r5();
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result dstu2(String baseUrl),
-    Result stu3(String baseUrl),
-    Result r4(String baseUrl),
-    Result r5(String baseUrl),
+    Result dstu2(),
+    Result stu3(),
+    Result r4(),
+    Result r5(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (r5 != null) {
-      return r5(baseUrl);
+      return r5();
     }
     return orElse();
   }
@@ -614,10 +489,5 @@ class _$SmartR5 extends SmartR5 {
 
 abstract class SmartR5 extends Smart {
   SmartR5._() : super._();
-  factory SmartR5({String baseUrl}) = _$SmartR5;
-
-  @override
-  String get baseUrl;
-  @override
-  $SmartR5CopyWith<SmartR5> get copyWith;
+  factory SmartR5() = _$SmartR5;
 }

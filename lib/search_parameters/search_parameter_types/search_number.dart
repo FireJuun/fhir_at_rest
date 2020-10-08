@@ -21,15 +21,15 @@ class SearchNumber extends SearchObject<String> {
 
   const SearchNumber._({@required this.number, this.missing, this.prefix});
 
-  Either<RestfulFailure, String> searchString() => number.fold(
-        (l) => missing == null
-            ? left(RestfulFailure.primitiveFailure(
-                parameter: "Number", failedValue: l))
-            : right(':missing=$missing'),
-        (r) =>
-            right('=${prefix == NumberPrefix.eq ? "" : mapNumberPrefix[prefix]}'
-                '$r${missing == null ? "" : ":missing=$missing"}'),
-      );
+  Either<RestfulFailure, String> searchString() => missing != null
+      ? right(':missing=$missing')
+      : number.fold(
+          (l) => left(RestfulFailure.primitiveFailure(
+              parameter: "Number", failedValue: l)),
+          (r) => right(
+              '=${prefix == NumberPrefix.eq ? "" : mapNumberPrefix[prefix]}'
+              '$r${missing == null ? "" : ":missing=$missing"}'),
+        );
 }
 
 enum NumberPrefix {

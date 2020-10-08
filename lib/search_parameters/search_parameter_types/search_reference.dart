@@ -13,7 +13,6 @@ class SearchReference extends SearchObject<String> {
   final bool missing;
 
   factory SearchReference({Id id, dynamic type, FhirUri url, bool missing}) {
-    assert(id != null || url != null);
     return SearchReference._(
       id: id,
       type: validateSearchType(type),
@@ -25,12 +24,12 @@ class SearchReference extends SearchObject<String> {
   const SearchReference._({this.id, this.type, this.url, this.missing});
 
   Either<RestfulFailure, String> searchString() {
-    if (id == null && url == null) {
-      return missing == null
-          ? left(RestfulFailure.searchParameterFailure(
-              parameter: 'SearchReference',
-              failedValue: 'No Id or Url Provided. This '))
-          : right(':missing=$missing');
+    if (missing != null) {
+      return right(':missing=$missing');
+    } else if (id == null && url == null) {
+      return left(RestfulFailure.searchParameterFailure(
+          parameter: 'SearchReference',
+          failedValue: 'No Id or Url Provided. This '));
     } else {
       if (url != null) {
         if (url.value.isLeft()) {

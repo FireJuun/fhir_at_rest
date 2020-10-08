@@ -3,7 +3,6 @@ import 'dart:convert';
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:fhir/primitive_types/id.dart';
-import 'package:http/http.dart';
 
 import 'package:fhir/dstu2.dart' as dstu2;
 import 'package:fhir/stu3.dart' as stu3;
@@ -78,12 +77,15 @@ abstract class VreadRequest with _$VreadRequest {
     );
 
     return result.fold(
-        (l) => left(l),
-        (r) => right(this.map(
-              dstu2: (i) => dstu2.Resource.fromJson(json.decode(r.body)),
-              stu3: (i) => stu3.Resource.fromJson(json.decode(r.body)),
-              r4: (i) => r4.Resource.fromJson(json.decode(r.body)),
-              r5: (i) => r5.Resource.fromJson(json.decode(r.body)),
-            )));
+      (l) => left(l),
+      (r) => right(
+        this.map(
+          dstu2: (i) => dstu2.Resource.fromJson(json.decode(r.body)),
+          stu3: (i) => stu3.Resource.fromJson(json.decode(r.body)),
+          r4: (i) => r4.Resource.fromJson(json.decode(r.body)),
+          r5: (i) => r5.Resource.fromJson(json.decode(r.body)),
+        ),
+      ),
+    );
   }
 }

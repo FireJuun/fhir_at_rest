@@ -127,6 +127,14 @@ class _$RestfulFailureTearOff {
       failedValue: failedValue,
     );
   }
+
+// ignore: unused_element
+  EmptySearchParameters<T> emptySearchParameters<T>(
+      {@required String parameter}) {
+    return EmptySearchParameters<T>(
+      parameter: parameter,
+    );
+  }
 }
 
 /// @nodoc
@@ -153,6 +161,7 @@ mixin _$RestfulFailure<T> {
     @required Result missingRequestMethod(T failedValue),
     @required Result primitiveFailure(String parameter, T failedValue),
     @required Result searchParameterFailure(String parameter, T failedValue),
+    @required Result emptySearchParameters(String parameter),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
@@ -171,6 +180,7 @@ mixin _$RestfulFailure<T> {
     Result missingRequestMethod(T failedValue),
     Result primitiveFailure(String parameter, T failedValue),
     Result searchParameterFailure(String parameter, T failedValue),
+    Result emptySearchParameters(String parameter),
     @required Result orElse(),
   });
   @optionalTypeArgs
@@ -190,6 +200,7 @@ mixin _$RestfulFailure<T> {
     @required Result missingRequestMethod(MissingRequestMethod<T> value),
     @required Result primitiveFailure(PrimitiveFailure<T> value),
     @required Result searchParameterFailure(SearchParameterFailure<T> value),
+    @required Result emptySearchParameters(EmptySearchParameters<T> value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
@@ -208,6 +219,7 @@ mixin _$RestfulFailure<T> {
     Result missingRequestMethod(MissingRequestMethod<T> value),
     Result primitiveFailure(PrimitiveFailure<T> value),
     Result searchParameterFailure(SearchParameterFailure<T> value),
+    Result emptySearchParameters(EmptySearchParameters<T> value),
     @required Result orElse(),
   });
 }
@@ -308,6 +320,7 @@ class _$SearchStringTest<T> extends SearchStringTest<T> {
     @required Result missingRequestMethod(T failedValue),
     @required Result primitiveFailure(String parameter, T failedValue),
     @required Result searchParameterFailure(String parameter, T failedValue),
+    @required Result emptySearchParameters(String parameter),
   }) {
     assert(searchStringTest != null);
     assert(httpFailure != null);
@@ -324,6 +337,7 @@ class _$SearchStringTest<T> extends SearchStringTest<T> {
     assert(missingRequestMethod != null);
     assert(primitiveFailure != null);
     assert(searchParameterFailure != null);
+    assert(emptySearchParameters != null);
     return searchStringTest(searchString);
   }
 
@@ -345,6 +359,7 @@ class _$SearchStringTest<T> extends SearchStringTest<T> {
     Result missingRequestMethod(T failedValue),
     Result primitiveFailure(String parameter, T failedValue),
     Result searchParameterFailure(String parameter, T failedValue),
+    Result emptySearchParameters(String parameter),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -372,6 +387,7 @@ class _$SearchStringTest<T> extends SearchStringTest<T> {
     @required Result missingRequestMethod(MissingRequestMethod<T> value),
     @required Result primitiveFailure(PrimitiveFailure<T> value),
     @required Result searchParameterFailure(SearchParameterFailure<T> value),
+    @required Result emptySearchParameters(EmptySearchParameters<T> value),
   }) {
     assert(searchStringTest != null);
     assert(httpFailure != null);
@@ -388,6 +404,7 @@ class _$SearchStringTest<T> extends SearchStringTest<T> {
     assert(missingRequestMethod != null);
     assert(primitiveFailure != null);
     assert(searchParameterFailure != null);
+    assert(emptySearchParameters != null);
     return searchStringTest(this);
   }
 
@@ -409,6 +426,7 @@ class _$SearchStringTest<T> extends SearchStringTest<T> {
     Result missingRequestMethod(MissingRequestMethod<T> value),
     Result primitiveFailure(PrimitiveFailure<T> value),
     Result searchParameterFailure(SearchParameterFailure<T> value),
+    Result emptySearchParameters(EmptySearchParameters<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -523,6 +541,7 @@ class _$HttpFailure<T> extends HttpFailure<T> {
     @required Result missingRequestMethod(T failedValue),
     @required Result primitiveFailure(String parameter, T failedValue),
     @required Result searchParameterFailure(String parameter, T failedValue),
+    @required Result emptySearchParameters(String parameter),
   }) {
     assert(searchStringTest != null);
     assert(httpFailure != null);
@@ -539,6 +558,7 @@ class _$HttpFailure<T> extends HttpFailure<T> {
     assert(missingRequestMethod != null);
     assert(primitiveFailure != null);
     assert(searchParameterFailure != null);
+    assert(emptySearchParameters != null);
     return httpFailure(statusCode, errorType, failedValue);
   }
 
@@ -560,6 +580,7 @@ class _$HttpFailure<T> extends HttpFailure<T> {
     Result missingRequestMethod(T failedValue),
     Result primitiveFailure(String parameter, T failedValue),
     Result searchParameterFailure(String parameter, T failedValue),
+    Result emptySearchParameters(String parameter),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -587,6 +608,7 @@ class _$HttpFailure<T> extends HttpFailure<T> {
     @required Result missingRequestMethod(MissingRequestMethod<T> value),
     @required Result primitiveFailure(PrimitiveFailure<T> value),
     @required Result searchParameterFailure(SearchParameterFailure<T> value),
+    @required Result emptySearchParameters(EmptySearchParameters<T> value),
   }) {
     assert(searchStringTest != null);
     assert(httpFailure != null);
@@ -603,6 +625,7 @@ class _$HttpFailure<T> extends HttpFailure<T> {
     assert(missingRequestMethod != null);
     assert(primitiveFailure != null);
     assert(searchParameterFailure != null);
+    assert(emptySearchParameters != null);
     return httpFailure(this);
   }
 
@@ -624,6 +647,7 @@ class _$HttpFailure<T> extends HttpFailure<T> {
     Result missingRequestMethod(MissingRequestMethod<T> value),
     Result primitiveFailure(PrimitiveFailure<T> value),
     Result searchParameterFailure(SearchParameterFailure<T> value),
+    Result emptySearchParameters(EmptySearchParameters<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -725,6 +749,7 @@ class _$UnknownFailure<T> extends UnknownFailure<T> {
     @required Result missingRequestMethod(T failedValue),
     @required Result primitiveFailure(String parameter, T failedValue),
     @required Result searchParameterFailure(String parameter, T failedValue),
+    @required Result emptySearchParameters(String parameter),
   }) {
     assert(searchStringTest != null);
     assert(httpFailure != null);
@@ -741,6 +766,7 @@ class _$UnknownFailure<T> extends UnknownFailure<T> {
     assert(missingRequestMethod != null);
     assert(primitiveFailure != null);
     assert(searchParameterFailure != null);
+    assert(emptySearchParameters != null);
     return unknownFailure(failedValue);
   }
 
@@ -762,6 +788,7 @@ class _$UnknownFailure<T> extends UnknownFailure<T> {
     Result missingRequestMethod(T failedValue),
     Result primitiveFailure(String parameter, T failedValue),
     Result searchParameterFailure(String parameter, T failedValue),
+    Result emptySearchParameters(String parameter),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -789,6 +816,7 @@ class _$UnknownFailure<T> extends UnknownFailure<T> {
     @required Result missingRequestMethod(MissingRequestMethod<T> value),
     @required Result primitiveFailure(PrimitiveFailure<T> value),
     @required Result searchParameterFailure(SearchParameterFailure<T> value),
+    @required Result emptySearchParameters(EmptySearchParameters<T> value),
   }) {
     assert(searchStringTest != null);
     assert(httpFailure != null);
@@ -805,6 +833,7 @@ class _$UnknownFailure<T> extends UnknownFailure<T> {
     assert(missingRequestMethod != null);
     assert(primitiveFailure != null);
     assert(searchParameterFailure != null);
+    assert(emptySearchParameters != null);
     return unknownFailure(this);
   }
 
@@ -826,6 +855,7 @@ class _$UnknownFailure<T> extends UnknownFailure<T> {
     Result missingRequestMethod(MissingRequestMethod<T> value),
     Result primitiveFailure(PrimitiveFailure<T> value),
     Result searchParameterFailure(SearchParameterFailure<T> value),
+    Result emptySearchParameters(EmptySearchParameters<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -924,6 +954,7 @@ class _$NoInternet<T> extends NoInternet<T> {
     @required Result missingRequestMethod(T failedValue),
     @required Result primitiveFailure(String parameter, T failedValue),
     @required Result searchParameterFailure(String parameter, T failedValue),
+    @required Result emptySearchParameters(String parameter),
   }) {
     assert(searchStringTest != null);
     assert(httpFailure != null);
@@ -940,6 +971,7 @@ class _$NoInternet<T> extends NoInternet<T> {
     assert(missingRequestMethod != null);
     assert(primitiveFailure != null);
     assert(searchParameterFailure != null);
+    assert(emptySearchParameters != null);
     return noInternet(failedValue);
   }
 
@@ -961,6 +993,7 @@ class _$NoInternet<T> extends NoInternet<T> {
     Result missingRequestMethod(T failedValue),
     Result primitiveFailure(String parameter, T failedValue),
     Result searchParameterFailure(String parameter, T failedValue),
+    Result emptySearchParameters(String parameter),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -988,6 +1021,7 @@ class _$NoInternet<T> extends NoInternet<T> {
     @required Result missingRequestMethod(MissingRequestMethod<T> value),
     @required Result primitiveFailure(PrimitiveFailure<T> value),
     @required Result searchParameterFailure(SearchParameterFailure<T> value),
+    @required Result emptySearchParameters(EmptySearchParameters<T> value),
   }) {
     assert(searchStringTest != null);
     assert(httpFailure != null);
@@ -1004,6 +1038,7 @@ class _$NoInternet<T> extends NoInternet<T> {
     assert(missingRequestMethod != null);
     assert(primitiveFailure != null);
     assert(searchParameterFailure != null);
+    assert(emptySearchParameters != null);
     return noInternet(this);
   }
 
@@ -1025,6 +1060,7 @@ class _$NoInternet<T> extends NoInternet<T> {
     Result missingRequestMethod(MissingRequestMethod<T> value),
     Result primitiveFailure(PrimitiveFailure<T> value),
     Result searchParameterFailure(SearchParameterFailure<T> value),
+    Result emptySearchParameters(EmptySearchParameters<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1121,6 +1157,7 @@ class _$NoType<T> extends NoType<T> {
     @required Result missingRequestMethod(T failedValue),
     @required Result primitiveFailure(String parameter, T failedValue),
     @required Result searchParameterFailure(String parameter, T failedValue),
+    @required Result emptySearchParameters(String parameter),
   }) {
     assert(searchStringTest != null);
     assert(httpFailure != null);
@@ -1137,6 +1174,7 @@ class _$NoType<T> extends NoType<T> {
     assert(missingRequestMethod != null);
     assert(primitiveFailure != null);
     assert(searchParameterFailure != null);
+    assert(emptySearchParameters != null);
     return noType(failedValue);
   }
 
@@ -1158,6 +1196,7 @@ class _$NoType<T> extends NoType<T> {
     Result missingRequestMethod(T failedValue),
     Result primitiveFailure(String parameter, T failedValue),
     Result searchParameterFailure(String parameter, T failedValue),
+    Result emptySearchParameters(String parameter),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1185,6 +1224,7 @@ class _$NoType<T> extends NoType<T> {
     @required Result missingRequestMethod(MissingRequestMethod<T> value),
     @required Result primitiveFailure(PrimitiveFailure<T> value),
     @required Result searchParameterFailure(SearchParameterFailure<T> value),
+    @required Result emptySearchParameters(EmptySearchParameters<T> value),
   }) {
     assert(searchStringTest != null);
     assert(httpFailure != null);
@@ -1201,6 +1241,7 @@ class _$NoType<T> extends NoType<T> {
     assert(missingRequestMethod != null);
     assert(primitiveFailure != null);
     assert(searchParameterFailure != null);
+    assert(emptySearchParameters != null);
     return noType(this);
   }
 
@@ -1222,6 +1263,7 @@ class _$NoType<T> extends NoType<T> {
     Result missingRequestMethod(MissingRequestMethod<T> value),
     Result primitiveFailure(PrimitiveFailure<T> value),
     Result searchParameterFailure(SearchParameterFailure<T> value),
+    Result emptySearchParameters(EmptySearchParameters<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1317,6 +1359,7 @@ class _$NoId<T> extends NoId<T> {
     @required Result missingRequestMethod(T failedValue),
     @required Result primitiveFailure(String parameter, T failedValue),
     @required Result searchParameterFailure(String parameter, T failedValue),
+    @required Result emptySearchParameters(String parameter),
   }) {
     assert(searchStringTest != null);
     assert(httpFailure != null);
@@ -1333,6 +1376,7 @@ class _$NoId<T> extends NoId<T> {
     assert(missingRequestMethod != null);
     assert(primitiveFailure != null);
     assert(searchParameterFailure != null);
+    assert(emptySearchParameters != null);
     return noId(failedValue);
   }
 
@@ -1354,6 +1398,7 @@ class _$NoId<T> extends NoId<T> {
     Result missingRequestMethod(T failedValue),
     Result primitiveFailure(String parameter, T failedValue),
     Result searchParameterFailure(String parameter, T failedValue),
+    Result emptySearchParameters(String parameter),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1381,6 +1426,7 @@ class _$NoId<T> extends NoId<T> {
     @required Result missingRequestMethod(MissingRequestMethod<T> value),
     @required Result primitiveFailure(PrimitiveFailure<T> value),
     @required Result searchParameterFailure(SearchParameterFailure<T> value),
+    @required Result emptySearchParameters(EmptySearchParameters<T> value),
   }) {
     assert(searchStringTest != null);
     assert(httpFailure != null);
@@ -1397,6 +1443,7 @@ class _$NoId<T> extends NoId<T> {
     assert(missingRequestMethod != null);
     assert(primitiveFailure != null);
     assert(searchParameterFailure != null);
+    assert(emptySearchParameters != null);
     return noId(this);
   }
 
@@ -1418,6 +1465,7 @@ class _$NoId<T> extends NoId<T> {
     Result missingRequestMethod(MissingRequestMethod<T> value),
     Result primitiveFailure(PrimitiveFailure<T> value),
     Result searchParameterFailure(SearchParameterFailure<T> value),
+    Result emptySearchParameters(EmptySearchParameters<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1513,6 +1561,7 @@ class _$NoVid<T> extends NoVid<T> {
     @required Result missingRequestMethod(T failedValue),
     @required Result primitiveFailure(String parameter, T failedValue),
     @required Result searchParameterFailure(String parameter, T failedValue),
+    @required Result emptySearchParameters(String parameter),
   }) {
     assert(searchStringTest != null);
     assert(httpFailure != null);
@@ -1529,6 +1578,7 @@ class _$NoVid<T> extends NoVid<T> {
     assert(missingRequestMethod != null);
     assert(primitiveFailure != null);
     assert(searchParameterFailure != null);
+    assert(emptySearchParameters != null);
     return noVid(failedValue);
   }
 
@@ -1550,6 +1600,7 @@ class _$NoVid<T> extends NoVid<T> {
     Result missingRequestMethod(T failedValue),
     Result primitiveFailure(String parameter, T failedValue),
     Result searchParameterFailure(String parameter, T failedValue),
+    Result emptySearchParameters(String parameter),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1577,6 +1628,7 @@ class _$NoVid<T> extends NoVid<T> {
     @required Result missingRequestMethod(MissingRequestMethod<T> value),
     @required Result primitiveFailure(PrimitiveFailure<T> value),
     @required Result searchParameterFailure(SearchParameterFailure<T> value),
+    @required Result emptySearchParameters(EmptySearchParameters<T> value),
   }) {
     assert(searchStringTest != null);
     assert(httpFailure != null);
@@ -1593,6 +1645,7 @@ class _$NoVid<T> extends NoVid<T> {
     assert(missingRequestMethod != null);
     assert(primitiveFailure != null);
     assert(searchParameterFailure != null);
+    assert(emptySearchParameters != null);
     return noVid(this);
   }
 
@@ -1614,6 +1667,7 @@ class _$NoVid<T> extends NoVid<T> {
     Result missingRequestMethod(MissingRequestMethod<T> value),
     Result primitiveFailure(PrimitiveFailure<T> value),
     Result searchParameterFailure(SearchParameterFailure<T> value),
+    Result emptySearchParameters(EmptySearchParameters<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1714,6 +1768,7 @@ class _$IdDoesNotMatchResource<T> extends IdDoesNotMatchResource<T> {
     @required Result missingRequestMethod(T failedValue),
     @required Result primitiveFailure(String parameter, T failedValue),
     @required Result searchParameterFailure(String parameter, T failedValue),
+    @required Result emptySearchParameters(String parameter),
   }) {
     assert(searchStringTest != null);
     assert(httpFailure != null);
@@ -1730,6 +1785,7 @@ class _$IdDoesNotMatchResource<T> extends IdDoesNotMatchResource<T> {
     assert(missingRequestMethod != null);
     assert(primitiveFailure != null);
     assert(searchParameterFailure != null);
+    assert(emptySearchParameters != null);
     return idDoesNotMatchResource(failedValue);
   }
 
@@ -1751,6 +1807,7 @@ class _$IdDoesNotMatchResource<T> extends IdDoesNotMatchResource<T> {
     Result missingRequestMethod(T failedValue),
     Result primitiveFailure(String parameter, T failedValue),
     Result searchParameterFailure(String parameter, T failedValue),
+    Result emptySearchParameters(String parameter),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1778,6 +1835,7 @@ class _$IdDoesNotMatchResource<T> extends IdDoesNotMatchResource<T> {
     @required Result missingRequestMethod(MissingRequestMethod<T> value),
     @required Result primitiveFailure(PrimitiveFailure<T> value),
     @required Result searchParameterFailure(SearchParameterFailure<T> value),
+    @required Result emptySearchParameters(EmptySearchParameters<T> value),
   }) {
     assert(searchStringTest != null);
     assert(httpFailure != null);
@@ -1794,6 +1852,7 @@ class _$IdDoesNotMatchResource<T> extends IdDoesNotMatchResource<T> {
     assert(missingRequestMethod != null);
     assert(primitiveFailure != null);
     assert(searchParameterFailure != null);
+    assert(emptySearchParameters != null);
     return idDoesNotMatchResource(this);
   }
 
@@ -1815,6 +1874,7 @@ class _$IdDoesNotMatchResource<T> extends IdDoesNotMatchResource<T> {
     Result missingRequestMethod(MissingRequestMethod<T> value),
     Result primitiveFailure(PrimitiveFailure<T> value),
     Result searchParameterFailure(SearchParameterFailure<T> value),
+    Result emptySearchParameters(EmptySearchParameters<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1926,6 +1986,7 @@ class _$NoBundle<T> extends NoBundle<T> {
     @required Result missingRequestMethod(T failedValue),
     @required Result primitiveFailure(String parameter, T failedValue),
     @required Result searchParameterFailure(String parameter, T failedValue),
+    @required Result emptySearchParameters(String parameter),
   }) {
     assert(searchStringTest != null);
     assert(httpFailure != null);
@@ -1942,6 +2003,7 @@ class _$NoBundle<T> extends NoBundle<T> {
     assert(missingRequestMethod != null);
     assert(primitiveFailure != null);
     assert(searchParameterFailure != null);
+    assert(emptySearchParameters != null);
     return noBundle(failedValue, batchOrTransaction);
   }
 
@@ -1963,6 +2025,7 @@ class _$NoBundle<T> extends NoBundle<T> {
     Result missingRequestMethod(T failedValue),
     Result primitiveFailure(String parameter, T failedValue),
     Result searchParameterFailure(String parameter, T failedValue),
+    Result emptySearchParameters(String parameter),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1990,6 +2053,7 @@ class _$NoBundle<T> extends NoBundle<T> {
     @required Result missingRequestMethod(MissingRequestMethod<T> value),
     @required Result primitiveFailure(PrimitiveFailure<T> value),
     @required Result searchParameterFailure(SearchParameterFailure<T> value),
+    @required Result emptySearchParameters(EmptySearchParameters<T> value),
   }) {
     assert(searchStringTest != null);
     assert(httpFailure != null);
@@ -2006,6 +2070,7 @@ class _$NoBundle<T> extends NoBundle<T> {
     assert(missingRequestMethod != null);
     assert(primitiveFailure != null);
     assert(searchParameterFailure != null);
+    assert(emptySearchParameters != null);
     return noBundle(this);
   }
 
@@ -2027,6 +2092,7 @@ class _$NoBundle<T> extends NoBundle<T> {
     Result missingRequestMethod(MissingRequestMethod<T> value),
     Result primitiveFailure(PrimitiveFailure<T> value),
     Result searchParameterFailure(SearchParameterFailure<T> value),
+    Result emptySearchParameters(EmptySearchParameters<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -2128,6 +2194,7 @@ class _$NotABatchBundle<T> extends NotABatchBundle<T> {
     @required Result missingRequestMethod(T failedValue),
     @required Result primitiveFailure(String parameter, T failedValue),
     @required Result searchParameterFailure(String parameter, T failedValue),
+    @required Result emptySearchParameters(String parameter),
   }) {
     assert(searchStringTest != null);
     assert(httpFailure != null);
@@ -2144,6 +2211,7 @@ class _$NotABatchBundle<T> extends NotABatchBundle<T> {
     assert(missingRequestMethod != null);
     assert(primitiveFailure != null);
     assert(searchParameterFailure != null);
+    assert(emptySearchParameters != null);
     return notABatchBundle(failedValue);
   }
 
@@ -2165,6 +2233,7 @@ class _$NotABatchBundle<T> extends NotABatchBundle<T> {
     Result missingRequestMethod(T failedValue),
     Result primitiveFailure(String parameter, T failedValue),
     Result searchParameterFailure(String parameter, T failedValue),
+    Result emptySearchParameters(String parameter),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -2192,6 +2261,7 @@ class _$NotABatchBundle<T> extends NotABatchBundle<T> {
     @required Result missingRequestMethod(MissingRequestMethod<T> value),
     @required Result primitiveFailure(PrimitiveFailure<T> value),
     @required Result searchParameterFailure(SearchParameterFailure<T> value),
+    @required Result emptySearchParameters(EmptySearchParameters<T> value),
   }) {
     assert(searchStringTest != null);
     assert(httpFailure != null);
@@ -2208,6 +2278,7 @@ class _$NotABatchBundle<T> extends NotABatchBundle<T> {
     assert(missingRequestMethod != null);
     assert(primitiveFailure != null);
     assert(searchParameterFailure != null);
+    assert(emptySearchParameters != null);
     return notABatchBundle(this);
   }
 
@@ -2229,6 +2300,7 @@ class _$NotABatchBundle<T> extends NotABatchBundle<T> {
     Result missingRequestMethod(MissingRequestMethod<T> value),
     Result primitiveFailure(PrimitiveFailure<T> value),
     Result searchParameterFailure(SearchParameterFailure<T> value),
+    Result emptySearchParameters(EmptySearchParameters<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -2330,6 +2402,7 @@ class _$NotATransactionBundle<T> extends NotATransactionBundle<T> {
     @required Result missingRequestMethod(T failedValue),
     @required Result primitiveFailure(String parameter, T failedValue),
     @required Result searchParameterFailure(String parameter, T failedValue),
+    @required Result emptySearchParameters(String parameter),
   }) {
     assert(searchStringTest != null);
     assert(httpFailure != null);
@@ -2346,6 +2419,7 @@ class _$NotATransactionBundle<T> extends NotATransactionBundle<T> {
     assert(missingRequestMethod != null);
     assert(primitiveFailure != null);
     assert(searchParameterFailure != null);
+    assert(emptySearchParameters != null);
     return notATransactionBundle(failedValue);
   }
 
@@ -2367,6 +2441,7 @@ class _$NotATransactionBundle<T> extends NotATransactionBundle<T> {
     Result missingRequestMethod(T failedValue),
     Result primitiveFailure(String parameter, T failedValue),
     Result searchParameterFailure(String parameter, T failedValue),
+    Result emptySearchParameters(String parameter),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -2394,6 +2469,7 @@ class _$NotATransactionBundle<T> extends NotATransactionBundle<T> {
     @required Result missingRequestMethod(MissingRequestMethod<T> value),
     @required Result primitiveFailure(PrimitiveFailure<T> value),
     @required Result searchParameterFailure(SearchParameterFailure<T> value),
+    @required Result emptySearchParameters(EmptySearchParameters<T> value),
   }) {
     assert(searchStringTest != null);
     assert(httpFailure != null);
@@ -2410,6 +2486,7 @@ class _$NotATransactionBundle<T> extends NotATransactionBundle<T> {
     assert(missingRequestMethod != null);
     assert(primitiveFailure != null);
     assert(searchParameterFailure != null);
+    assert(emptySearchParameters != null);
     return notATransactionBundle(this);
   }
 
@@ -2431,6 +2508,7 @@ class _$NotATransactionBundle<T> extends NotATransactionBundle<T> {
     Result missingRequestMethod(MissingRequestMethod<T> value),
     Result primitiveFailure(PrimitiveFailure<T> value),
     Result searchParameterFailure(SearchParameterFailure<T> value),
+    Result emptySearchParameters(EmptySearchParameters<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -2531,6 +2609,7 @@ class _$MissingEntryRequest<T> extends MissingEntryRequest<T> {
     @required Result missingRequestMethod(T failedValue),
     @required Result primitiveFailure(String parameter, T failedValue),
     @required Result searchParameterFailure(String parameter, T failedValue),
+    @required Result emptySearchParameters(String parameter),
   }) {
     assert(searchStringTest != null);
     assert(httpFailure != null);
@@ -2547,6 +2626,7 @@ class _$MissingEntryRequest<T> extends MissingEntryRequest<T> {
     assert(missingRequestMethod != null);
     assert(primitiveFailure != null);
     assert(searchParameterFailure != null);
+    assert(emptySearchParameters != null);
     return missingEntryRequest(failedValue);
   }
 
@@ -2568,6 +2648,7 @@ class _$MissingEntryRequest<T> extends MissingEntryRequest<T> {
     Result missingRequestMethod(T failedValue),
     Result primitiveFailure(String parameter, T failedValue),
     Result searchParameterFailure(String parameter, T failedValue),
+    Result emptySearchParameters(String parameter),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -2595,6 +2676,7 @@ class _$MissingEntryRequest<T> extends MissingEntryRequest<T> {
     @required Result missingRequestMethod(MissingRequestMethod<T> value),
     @required Result primitiveFailure(PrimitiveFailure<T> value),
     @required Result searchParameterFailure(SearchParameterFailure<T> value),
+    @required Result emptySearchParameters(EmptySearchParameters<T> value),
   }) {
     assert(searchStringTest != null);
     assert(httpFailure != null);
@@ -2611,6 +2693,7 @@ class _$MissingEntryRequest<T> extends MissingEntryRequest<T> {
     assert(missingRequestMethod != null);
     assert(primitiveFailure != null);
     assert(searchParameterFailure != null);
+    assert(emptySearchParameters != null);
     return missingEntryRequest(this);
   }
 
@@ -2632,6 +2715,7 @@ class _$MissingEntryRequest<T> extends MissingEntryRequest<T> {
     Result missingRequestMethod(MissingRequestMethod<T> value),
     Result primitiveFailure(PrimitiveFailure<T> value),
     Result searchParameterFailure(SearchParameterFailure<T> value),
+    Result emptySearchParameters(EmptySearchParameters<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -2732,6 +2816,7 @@ class _$MissingRequestMethod<T> extends MissingRequestMethod<T> {
     @required Result missingRequestMethod(T failedValue),
     @required Result primitiveFailure(String parameter, T failedValue),
     @required Result searchParameterFailure(String parameter, T failedValue),
+    @required Result emptySearchParameters(String parameter),
   }) {
     assert(searchStringTest != null);
     assert(httpFailure != null);
@@ -2748,6 +2833,7 @@ class _$MissingRequestMethod<T> extends MissingRequestMethod<T> {
     assert(missingRequestMethod != null);
     assert(primitiveFailure != null);
     assert(searchParameterFailure != null);
+    assert(emptySearchParameters != null);
     return missingRequestMethod(failedValue);
   }
 
@@ -2769,6 +2855,7 @@ class _$MissingRequestMethod<T> extends MissingRequestMethod<T> {
     Result missingRequestMethod(T failedValue),
     Result primitiveFailure(String parameter, T failedValue),
     Result searchParameterFailure(String parameter, T failedValue),
+    Result emptySearchParameters(String parameter),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -2796,6 +2883,7 @@ class _$MissingRequestMethod<T> extends MissingRequestMethod<T> {
     @required Result missingRequestMethod(MissingRequestMethod<T> value),
     @required Result primitiveFailure(PrimitiveFailure<T> value),
     @required Result searchParameterFailure(SearchParameterFailure<T> value),
+    @required Result emptySearchParameters(EmptySearchParameters<T> value),
   }) {
     assert(searchStringTest != null);
     assert(httpFailure != null);
@@ -2812,6 +2900,7 @@ class _$MissingRequestMethod<T> extends MissingRequestMethod<T> {
     assert(missingRequestMethod != null);
     assert(primitiveFailure != null);
     assert(searchParameterFailure != null);
+    assert(emptySearchParameters != null);
     return missingRequestMethod(this);
   }
 
@@ -2833,6 +2922,7 @@ class _$MissingRequestMethod<T> extends MissingRequestMethod<T> {
     Result missingRequestMethod(MissingRequestMethod<T> value),
     Result primitiveFailure(PrimitiveFailure<T> value),
     Result searchParameterFailure(SearchParameterFailure<T> value),
+    Result emptySearchParameters(EmptySearchParameters<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -2943,6 +3033,7 @@ class _$PrimitiveFailure<T> extends PrimitiveFailure<T> {
     @required Result missingRequestMethod(T failedValue),
     @required Result primitiveFailure(String parameter, T failedValue),
     @required Result searchParameterFailure(String parameter, T failedValue),
+    @required Result emptySearchParameters(String parameter),
   }) {
     assert(searchStringTest != null);
     assert(httpFailure != null);
@@ -2959,6 +3050,7 @@ class _$PrimitiveFailure<T> extends PrimitiveFailure<T> {
     assert(missingRequestMethod != null);
     assert(primitiveFailure != null);
     assert(searchParameterFailure != null);
+    assert(emptySearchParameters != null);
     return primitiveFailure(parameter, failedValue);
   }
 
@@ -2980,6 +3072,7 @@ class _$PrimitiveFailure<T> extends PrimitiveFailure<T> {
     Result missingRequestMethod(T failedValue),
     Result primitiveFailure(String parameter, T failedValue),
     Result searchParameterFailure(String parameter, T failedValue),
+    Result emptySearchParameters(String parameter),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -3007,6 +3100,7 @@ class _$PrimitiveFailure<T> extends PrimitiveFailure<T> {
     @required Result missingRequestMethod(MissingRequestMethod<T> value),
     @required Result primitiveFailure(PrimitiveFailure<T> value),
     @required Result searchParameterFailure(SearchParameterFailure<T> value),
+    @required Result emptySearchParameters(EmptySearchParameters<T> value),
   }) {
     assert(searchStringTest != null);
     assert(httpFailure != null);
@@ -3023,6 +3117,7 @@ class _$PrimitiveFailure<T> extends PrimitiveFailure<T> {
     assert(missingRequestMethod != null);
     assert(primitiveFailure != null);
     assert(searchParameterFailure != null);
+    assert(emptySearchParameters != null);
     return primitiveFailure(this);
   }
 
@@ -3044,6 +3139,7 @@ class _$PrimitiveFailure<T> extends PrimitiveFailure<T> {
     Result missingRequestMethod(MissingRequestMethod<T> value),
     Result primitiveFailure(PrimitiveFailure<T> value),
     Result searchParameterFailure(SearchParameterFailure<T> value),
+    Result emptySearchParameters(EmptySearchParameters<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -3158,6 +3254,7 @@ class _$SearchParameterFailure<T> extends SearchParameterFailure<T> {
     @required Result missingRequestMethod(T failedValue),
     @required Result primitiveFailure(String parameter, T failedValue),
     @required Result searchParameterFailure(String parameter, T failedValue),
+    @required Result emptySearchParameters(String parameter),
   }) {
     assert(searchStringTest != null);
     assert(httpFailure != null);
@@ -3174,6 +3271,7 @@ class _$SearchParameterFailure<T> extends SearchParameterFailure<T> {
     assert(missingRequestMethod != null);
     assert(primitiveFailure != null);
     assert(searchParameterFailure != null);
+    assert(emptySearchParameters != null);
     return searchParameterFailure(parameter, failedValue);
   }
 
@@ -3195,6 +3293,7 @@ class _$SearchParameterFailure<T> extends SearchParameterFailure<T> {
     Result missingRequestMethod(T failedValue),
     Result primitiveFailure(String parameter, T failedValue),
     Result searchParameterFailure(String parameter, T failedValue),
+    Result emptySearchParameters(String parameter),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -3222,6 +3321,7 @@ class _$SearchParameterFailure<T> extends SearchParameterFailure<T> {
     @required Result missingRequestMethod(MissingRequestMethod<T> value),
     @required Result primitiveFailure(PrimitiveFailure<T> value),
     @required Result searchParameterFailure(SearchParameterFailure<T> value),
+    @required Result emptySearchParameters(EmptySearchParameters<T> value),
   }) {
     assert(searchStringTest != null);
     assert(httpFailure != null);
@@ -3238,6 +3338,7 @@ class _$SearchParameterFailure<T> extends SearchParameterFailure<T> {
     assert(missingRequestMethod != null);
     assert(primitiveFailure != null);
     assert(searchParameterFailure != null);
+    assert(emptySearchParameters != null);
     return searchParameterFailure(this);
   }
 
@@ -3259,6 +3360,7 @@ class _$SearchParameterFailure<T> extends SearchParameterFailure<T> {
     Result missingRequestMethod(MissingRequestMethod<T> value),
     Result primitiveFailure(PrimitiveFailure<T> value),
     Result searchParameterFailure(SearchParameterFailure<T> value),
+    Result emptySearchParameters(EmptySearchParameters<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -3278,4 +3380,211 @@ abstract class SearchParameterFailure<T> extends RestfulFailure<T> {
   String get parameter;
   T get failedValue;
   $SearchParameterFailureCopyWith<T, SearchParameterFailure<T>> get copyWith;
+}
+
+/// @nodoc
+abstract class $EmptySearchParametersCopyWith<T, $Res> {
+  factory $EmptySearchParametersCopyWith(EmptySearchParameters<T> value,
+          $Res Function(EmptySearchParameters<T>) then) =
+      _$EmptySearchParametersCopyWithImpl<T, $Res>;
+  $Res call({String parameter});
+}
+
+/// @nodoc
+class _$EmptySearchParametersCopyWithImpl<T, $Res>
+    extends _$RestfulFailureCopyWithImpl<T, $Res>
+    implements $EmptySearchParametersCopyWith<T, $Res> {
+  _$EmptySearchParametersCopyWithImpl(EmptySearchParameters<T> _value,
+      $Res Function(EmptySearchParameters<T>) _then)
+      : super(_value, (v) => _then(v as EmptySearchParameters<T>));
+
+  @override
+  EmptySearchParameters<T> get _value =>
+      super._value as EmptySearchParameters<T>;
+
+  @override
+  $Res call({
+    Object parameter = freezed,
+  }) {
+    return _then(EmptySearchParameters<T>(
+      parameter: parameter == freezed ? _value.parameter : parameter as String,
+    ));
+  }
+}
+
+/// @nodoc
+class _$EmptySearchParameters<T> extends EmptySearchParameters<T> {
+  const _$EmptySearchParameters({@required this.parameter})
+      : assert(parameter != null),
+        super._();
+
+  @override
+  final String parameter;
+
+  @override
+  String toString() {
+    return 'RestfulFailure<$T>.emptySearchParameters(parameter: $parameter)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is EmptySearchParameters<T> &&
+            (identical(other.parameter, parameter) ||
+                const DeepCollectionEquality()
+                    .equals(other.parameter, parameter)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(parameter);
+
+  @override
+  $EmptySearchParametersCopyWith<T, EmptySearchParameters<T>> get copyWith =>
+      _$EmptySearchParametersCopyWithImpl<T, EmptySearchParameters<T>>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result searchStringTest(String searchString),
+    @required
+        Result httpFailure(int statusCode, String errorType, T failedValue),
+    @required Result unknownFailure(T failedValue),
+    @required Result noInternet(T failedValue),
+    @required Result noType(T failedValue),
+    @required Result noId(T failedValue),
+    @required Result noVid(T failedValue),
+    @required Result idDoesNotMatchResource(T failedValue),
+    @required Result noBundle(T failedValue, String batchOrTransaction),
+    @required Result notABatchBundle(T failedValue),
+    @required Result notATransactionBundle(T failedValue),
+    @required Result missingEntryRequest(T failedValue),
+    @required Result missingRequestMethod(T failedValue),
+    @required Result primitiveFailure(String parameter, T failedValue),
+    @required Result searchParameterFailure(String parameter, T failedValue),
+    @required Result emptySearchParameters(String parameter),
+  }) {
+    assert(searchStringTest != null);
+    assert(httpFailure != null);
+    assert(unknownFailure != null);
+    assert(noInternet != null);
+    assert(noType != null);
+    assert(noId != null);
+    assert(noVid != null);
+    assert(idDoesNotMatchResource != null);
+    assert(noBundle != null);
+    assert(notABatchBundle != null);
+    assert(notATransactionBundle != null);
+    assert(missingEntryRequest != null);
+    assert(missingRequestMethod != null);
+    assert(primitiveFailure != null);
+    assert(searchParameterFailure != null);
+    assert(emptySearchParameters != null);
+    return emptySearchParameters(parameter);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result searchStringTest(String searchString),
+    Result httpFailure(int statusCode, String errorType, T failedValue),
+    Result unknownFailure(T failedValue),
+    Result noInternet(T failedValue),
+    Result noType(T failedValue),
+    Result noId(T failedValue),
+    Result noVid(T failedValue),
+    Result idDoesNotMatchResource(T failedValue),
+    Result noBundle(T failedValue, String batchOrTransaction),
+    Result notABatchBundle(T failedValue),
+    Result notATransactionBundle(T failedValue),
+    Result missingEntryRequest(T failedValue),
+    Result missingRequestMethod(T failedValue),
+    Result primitiveFailure(String parameter, T failedValue),
+    Result searchParameterFailure(String parameter, T failedValue),
+    Result emptySearchParameters(String parameter),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (emptySearchParameters != null) {
+      return emptySearchParameters(parameter);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result searchStringTest(SearchStringTest<T> value),
+    @required Result httpFailure(HttpFailure<T> value),
+    @required Result unknownFailure(UnknownFailure<T> value),
+    @required Result noInternet(NoInternet<T> value),
+    @required Result noType(NoType<T> value),
+    @required Result noId(NoId<T> value),
+    @required Result noVid(NoVid<T> value),
+    @required Result idDoesNotMatchResource(IdDoesNotMatchResource<T> value),
+    @required Result noBundle(NoBundle<T> value),
+    @required Result notABatchBundle(NotABatchBundle<T> value),
+    @required Result notATransactionBundle(NotATransactionBundle<T> value),
+    @required Result missingEntryRequest(MissingEntryRequest<T> value),
+    @required Result missingRequestMethod(MissingRequestMethod<T> value),
+    @required Result primitiveFailure(PrimitiveFailure<T> value),
+    @required Result searchParameterFailure(SearchParameterFailure<T> value),
+    @required Result emptySearchParameters(EmptySearchParameters<T> value),
+  }) {
+    assert(searchStringTest != null);
+    assert(httpFailure != null);
+    assert(unknownFailure != null);
+    assert(noInternet != null);
+    assert(noType != null);
+    assert(noId != null);
+    assert(noVid != null);
+    assert(idDoesNotMatchResource != null);
+    assert(noBundle != null);
+    assert(notABatchBundle != null);
+    assert(notATransactionBundle != null);
+    assert(missingEntryRequest != null);
+    assert(missingRequestMethod != null);
+    assert(primitiveFailure != null);
+    assert(searchParameterFailure != null);
+    assert(emptySearchParameters != null);
+    return emptySearchParameters(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result searchStringTest(SearchStringTest<T> value),
+    Result httpFailure(HttpFailure<T> value),
+    Result unknownFailure(UnknownFailure<T> value),
+    Result noInternet(NoInternet<T> value),
+    Result noType(NoType<T> value),
+    Result noId(NoId<T> value),
+    Result noVid(NoVid<T> value),
+    Result idDoesNotMatchResource(IdDoesNotMatchResource<T> value),
+    Result noBundle(NoBundle<T> value),
+    Result notABatchBundle(NotABatchBundle<T> value),
+    Result notATransactionBundle(NotATransactionBundle<T> value),
+    Result missingEntryRequest(MissingEntryRequest<T> value),
+    Result missingRequestMethod(MissingRequestMethod<T> value),
+    Result primitiveFailure(PrimitiveFailure<T> value),
+    Result searchParameterFailure(SearchParameterFailure<T> value),
+    Result emptySearchParameters(EmptySearchParameters<T> value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (emptySearchParameters != null) {
+      return emptySearchParameters(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class EmptySearchParameters<T> extends RestfulFailure<T> {
+  const EmptySearchParameters._() : super._();
+  const factory EmptySearchParameters({@required String parameter}) =
+      _$EmptySearchParameters<T>;
+
+  String get parameter;
+  $EmptySearchParametersCopyWith<T, EmptySearchParameters<T>> get copyWith;
 }

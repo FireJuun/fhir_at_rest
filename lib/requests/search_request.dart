@@ -2,7 +2,6 @@ import 'dart:convert';
 
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:http/http.dart';
 
 import 'package:fhir/dstu2.dart' as dstu2;
 import 'package:fhir/stu3.dart' as stu3;

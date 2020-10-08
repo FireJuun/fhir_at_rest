@@ -1,5 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:fhir_at_rest/enums/enums.dart';
 
 import '../../failures/restful_failure.dart';
 import 'search_objects.dart';
@@ -10,9 +10,7 @@ class SearchString extends SearchObject<String> {
   final bool missing;
   final StringModifier modifier;
 
-  factory SearchString(
-      {@required String string, bool missing, StringModifier modifier}) {
-    assert(string != null);
+  factory SearchString({String string, bool missing, StringModifier modifier}) {
     return SearchString._(
       string: string,
       missing: missing,
@@ -20,12 +18,15 @@ class SearchString extends SearchObject<String> {
     );
   }
 
-  const SearchString._({@required this.string, this.missing, this.modifier});
+  const SearchString._({this.string, this.missing, this.modifier});
 
-  Either<RestfulFailure, String> searchString() => right(
-      '${modifier != null ? modifier == StringModifier.contains ? ":contains=" : ":exact=" : "="}'
-      '$string'
-      '${modifier != null ? "" : missing != null ? ":missing=$missing" : ""}');
+  Either<RestfulFailure, String> searchString() => missing != null
+      ? right(':missing=$missing')
+      : string != null
+          ? right(
+              '${modifier != null ? ":${simpleEnumToString(modifier)}=" : "="}'
+              '$string')
+          : left(RestfulFailure.emptySearchParameters(parameter: 'String'));
 }
 
 enum StringModifier {

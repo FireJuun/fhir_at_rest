@@ -9,28 +9,15 @@ import 'package:fhir/stu3.dart' as stu3;
 import 'package:fhir/r4.dart' as r4;
 import 'package:fhir/r5.dart' as r5;
 
-import '../requests/request_types.dart';
-import '../failures/restful_failure.dart';
-
 part 'smart.freezed.dart';
 
 @freezed
 abstract class Smart with _$Smart {
   Smart._();
-  factory Smart.dstu2({String baseUrl}) = SmartDstu2;
-  factory Smart.stu3({String baseUrl}) = SmartStu3;
-  factory Smart.r4({String baseUrl}) = SmartR4;
-  factory Smart.r5({String baseUrl}) = SmartR5;
-
-  Future launch() async {
-    final conformanceStatement = await conformance();
-    if (conformanceStatement.isLeft()) {
-      return conformanceStatement.getOrElse(null);
-    }
-    //
-    // final token = '';
-    // final authorize = '';
-  }
+  factory Smart.dstu2() = SmartDstu2;
+  factory Smart.stu3() = SmartStu3;
+  factory Smart.r4() = SmartR4;
+  factory Smart.r5() = SmartR5;
 
   Future conformance() async => this.map(
         dstu2: (f) async {
@@ -44,20 +31,8 @@ abstract class Smart with _$Smart {
           conformanceStatement.fold(
             (l) => null,
             (r) {
-              final token = (r as dstu2.Conformance)
-                  .rest[0]
-                  .security
-                  .extension_[0]
-                  .extension_
-                  .firstWhere((ext) => ext.url.toString() == 'token')
-                  .valueUri;
-              final authorize = (r as r4.CapabilityStatement)
-                  .rest[0]
-                  .security
-                  .extension_[0]
-                  .extension_
-                  .firstWhere((ext) => ext.url.toString() == 'authorize')
-                  .valueUri;
+              final token = _tokenUri(r as dstu2.Conformance);
+              final authorize = _authUri(r as dstu2.Conformance);
               print(token);
               print(authorize);
             },
@@ -69,25 +44,13 @@ abstract class Smart with _$Smart {
           //       'https://stu3immunizationtesting.aidbox.app/fhir/metadata'),
           // ).request() as stu3.CapabilityStatement;
           final conformanceStatement = right(stu3.CapabilityStatement.fromJson(
-              json.decode(await File('./lib/smart/dstu2metadata.json')
-                  .readAsString())));
+              json.decode(
+                  await File('./lib/smart/stu3metadata.json').readAsString())));
           conformanceStatement.fold(
             (l) => null,
             (r) {
-              final token = (r as stu3.CapabilityStatement)
-                  .rest[0]
-                  .security
-                  .extension_[0]
-                  .extension_
-                  .firstWhere((ext) => ext.url.toString() == 'token')
-                  .valueUri;
-              final authorize = (r as stu3.CapabilityStatement)
-                  .rest[0]
-                  .security
-                  .extension_[0]
-                  .extension_
-                  .firstWhere((ext) => ext.url.toString() == 'authorize')
-                  .valueUri;
+              final token = _tokenUri(r as stu3.CapabilityStatement);
+              final authorize = _authUri(r as stu3.CapabilityStatement);
               print(token);
               print(authorize);
             },
@@ -103,22 +66,11 @@ abstract class Smart with _$Smart {
           conformanceStatement.fold(
             (l) => null,
             (r) {
-              final token = (r as r4.CapabilityStatement)
-                  .rest[0]
-                  .security
-                  .extension_[0]
-                  .extension_
-                  .firstWhere((ext) => ext.url.toString() == 'token')
-                  .valueUri;
-              final authorize = (r as r4.CapabilityStatement)
-                  .rest[0]
-                  .security
-                  .extension_[0]
-                  .extension_
-                  .firstWhere((ext) => ext.url.toString() == 'authorize')
-                  .valueUri;
+              final token = _tokenUri(r as r4.CapabilityStatement);
+              final authorize = _authUri(r as r4.CapabilityStatement);
               print(token);
               print(authorize);
+              var authRequest = ('$authorize?response_type=code');
             },
           );
         },
@@ -132,34 +84,36 @@ abstract class Smart with _$Smart {
           conformanceStatement.fold(
             (l) => null,
             (r) {
-              final token = (r as r5.CapabilityStatement)
-                  .rest[0]
-                  .security
-                  .extension_[0]
-                  .extension_
-                  .firstWhere((ext) => ext.url.toString() == 'token')
-                  .valueUri;
-              final authorize = (r as r5.CapabilityStatement)
-                  .rest[0]
-                  .security
-                  .extension_[0]
-                  .extension_
-                  .firstWhere((ext) => ext.url.toString() == 'authorize')
-                  .valueUri;
+              final token = _tokenUri(r as r5.CapabilityStatement);
+              final authorize = _authUri(r as r5.CapabilityStatement);
               print(token);
               print(authorize);
             },
           );
         },
       );
+
+  dynamic _tokenUri(dynamic capabilityStatement) =>
+      capabilityStatement.rest[0].security.extension_[0].extension_
+          .firstWhere((ext) => ext.url.toString() == 'token')
+          .valueUri;
+
+  dynamic _authUri(dynamic capabilityStatement) =>
+      capabilityStatement.rest[0].security.extension_[0].extension_
+          .firstWhere((ext) => ext.url.toString() == 'authorize')
+          .valueUri;
 }
 
 const baseUrl =
     'http://hapi.fhir.org/baseR4/metadata?_format=application/fhir+json';
 
 Future main() async {
-  // var smart2 = Smart.dstu2();
+  var smart2 = Smart.dstu2();
+  var smart3 = Smart.stu3();
   var smart4 = Smart.r4();
-  // await smart2.conformance();
+  var smart5 = Smart.r5();
+  await smart2.conformance();
+  await smart3.conformance();
   await smart4.conformance();
+  await smart5.conformance();
 }
