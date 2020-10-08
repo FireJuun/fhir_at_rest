@@ -48,23 +48,50 @@ abstract class Smart with _$Smart {
                   .rest[0]
                   .security
                   .extension_[0]
-                  .extension_[0];
-              final authorize = '';
+                  .extension_
+                  .firstWhere((ext) => ext.url.toString() == 'token')
+                  .valueUri;
+              final authorize = (r as r4.CapabilityStatement)
+                  .rest[0]
+                  .security
+                  .extension_[0]
+                  .extension_
+                  .firstWhere((ext) => ext.url.toString() == 'authorize')
+                  .valueUri;
               print(token);
               print(authorize);
             },
           );
         },
         stu3: (f) async {
-          final conformanceStatment = await CapabilitiesRequest.stu3(
-            base: Uri.parse(
-                'https://stu3immunizationtesting.aidbox.app/fhir/metadata'),
-          ).request() as stu3.CapabilityStatement;
-          // final token =
-          //     conformanceStatment.rest[0].security.extension_[0].extension_[0];
-          // final authorize = '';
-          // print(token);
-          // print(authorize);
+          // final conformanceStatment = await CapabilitiesRequest.stu3(
+          //   base: Uri.parse(
+          //       'https://stu3immunizationtesting.aidbox.app/fhir/metadata'),
+          // ).request() as stu3.CapabilityStatement;
+          final conformanceStatement = right(stu3.CapabilityStatement.fromJson(
+              json.decode(await File('./lib/smart/dstu2metadata.json')
+                  .readAsString())));
+          conformanceStatement.fold(
+            (l) => null,
+            (r) {
+              final token = (r as stu3.CapabilityStatement)
+                  .rest[0]
+                  .security
+                  .extension_[0]
+                  .extension_
+                  .firstWhere((ext) => ext.url.toString() == 'token')
+                  .valueUri;
+              final authorize = (r as stu3.CapabilityStatement)
+                  .rest[0]
+                  .security
+                  .extension_[0]
+                  .extension_
+                  .firstWhere((ext) => ext.url.toString() == 'authorize')
+                  .valueUri;
+              print(token);
+              print(authorize);
+            },
+          );
         },
         r4: (f) async {
           // final conformanceStatement = await CapabilitiesRequest.r4(
@@ -80,17 +107,28 @@ abstract class Smart with _$Smart {
                   .rest[0]
                   .security
                   .extension_[0]
-                  .extension_[0];
-              final authorize = '';
+                  .extension_
+                  .firstWhere((ext) => ext.url.toString() == 'token')
+                  .valueUri;
+              final authorize = (r as r4.CapabilityStatement)
+                  .rest[0]
+                  .security
+                  .extension_[0]
+                  .extension_
+                  .firstWhere((ext) => ext.url.toString() == 'authorize')
+                  .valueUri;
               print(token);
               print(authorize);
             },
           );
         },
         r5: (f) async {
-          final conformanceStatement = await CapabilitiesRequest.r5(
-            base: Uri.parse(baseUrl),
-          ).request();
+          // final conformanceStatement = await CapabilitiesRequest.r5(
+          //   base: Uri.parse('https://r5immunizationtesting.aidbox.app'),
+          // ).request();
+          final conformanceStatement = right(r5.CapabilityStatement.fromJson(
+              json.decode(
+                  await File('./lib/smart/r5metadata.json').readAsString())));
           conformanceStatement.fold(
             (l) => null,
             (r) {
@@ -98,8 +136,16 @@ abstract class Smart with _$Smart {
                   .rest[0]
                   .security
                   .extension_[0]
-                  .extension_[0];
-              final authorize = '';
+                  .extension_
+                  .firstWhere((ext) => ext.url.toString() == 'token')
+                  .valueUri;
+              final authorize = (r as r5.CapabilityStatement)
+                  .rest[0]
+                  .security
+                  .extension_[0]
+                  .extension_
+                  .firstWhere((ext) => ext.url.toString() == 'authorize')
+                  .valueUri;
               print(token);
               print(authorize);
             },

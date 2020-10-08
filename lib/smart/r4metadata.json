@@ -806,7 +806,9 @@
                     "searchParam": [],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "AccessPolicy",
                     "interaction": [
@@ -894,7 +896,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "Account",
                     "interaction": [
@@ -1042,7 +1046,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "ActivityDefinition",
                     "interaction": [
@@ -1150,7 +1156,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "AdverseEvent",
                     "interaction": [
@@ -1197,7 +1205,9 @@
                     "searchParam": [],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "AidboxConfig",
                     "interaction": [
@@ -1244,7 +1254,9 @@
                     "searchParam": [],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "AidboxJob",
                     "interaction": [
@@ -1297,7 +1309,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "AidboxJobStatus",
                     "interaction": [
@@ -1344,7 +1358,9 @@
                     "searchParam": [],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "AidboxMigration",
                     "interaction": [
@@ -1391,7 +1407,9 @@
                     "searchParam": [],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "AidboxProfile",
                     "interaction": [
@@ -1438,7 +1456,9 @@
                     "searchParam": [],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "AidboxQuery",
                     "interaction": [
@@ -1485,7 +1505,9 @@
                     "searchParam": [],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "AidboxSubscription",
                     "interaction": [
@@ -1613,7 +1635,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "AllergyIntolerance",
                     "interaction": [
@@ -1660,7 +1684,9 @@
                     "searchParam": [],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "AlphaSDC",
                     "interaction": [
@@ -1707,7 +1733,9 @@
                     "searchParam": [],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "App",
                     "interaction": [
@@ -1840,7 +1868,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "Appointment",
                     "interaction": [
@@ -1923,7 +1953,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "AppointmentResponse",
                     "interaction": [
@@ -1981,7 +2013,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "Attribute",
                     "interaction": [
@@ -2119,7 +2153,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "AuditEvent",
                     "interaction": [
@@ -2166,7 +2202,9 @@
                     "searchParam": [],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "AzureAccount",
                     "interaction": [
@@ -2213,7 +2251,9 @@
                     "searchParam": [],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "AzureContainer",
                     "interaction": [
@@ -2291,7 +2331,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "Basic",
                     "interaction": [
@@ -2338,7 +2380,9 @@
                     "searchParam": [],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "Binary",
                     "interaction": [
@@ -2385,7 +2429,9 @@
                     "searchParam": [],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "BiologicallyDerivedProduct",
                     "interaction": [
@@ -2453,7 +2499,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "BodyStructure",
                     "interaction": [
@@ -2500,7 +2548,9 @@
                     "searchParam": [],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "BulkImportStatus",
                     "interaction": [
@@ -2573,7 +2623,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "Bundle",
                     "interaction": [
@@ -2721,7 +2773,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "CarePlan",
                     "interaction": [
@@ -2809,7 +2863,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "CareTeam",
                     "interaction": [
@@ -2856,7 +2912,9 @@
                     "searchParam": [],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "CatalogEntry",
                     "interaction": [
@@ -2989,7 +3047,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "ChargeItem",
                     "interaction": [
@@ -3102,7 +3162,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "ChargeItemDefinition",
                     "interaction": [
@@ -3235,7 +3297,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "Claim",
                     "interaction": [
@@ -3338,7 +3402,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "ClaimResponse",
                     "interaction": [
@@ -3385,7 +3451,9 @@
                     "searchParam": [],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "Client",
                     "interaction": [
@@ -3498,7 +3566,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "ClinicalImpression",
                     "interaction": [
@@ -3636,7 +3706,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "CodeSystem",
                     "interaction": [
@@ -3759,7 +3831,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "Communication",
                     "interaction": [
@@ -3887,7 +3961,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "CommunicationRequest",
                     "interaction": [
@@ -3995,7 +4071,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "CompartmentDefinition",
                     "interaction": [
@@ -4133,7 +4211,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "Composition",
                     "interaction": [
@@ -4216,7 +4296,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "Concept",
                     "interaction": [
@@ -4384,7 +4466,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "ConceptMap",
                     "interaction": [
@@ -4537,7 +4621,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "Condition",
                     "interaction": [
@@ -4660,7 +4746,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "Consent",
                     "interaction": [
@@ -4758,7 +4846,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "Contract",
                     "interaction": [
@@ -4861,7 +4951,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "Coverage",
                     "interaction": [
@@ -4944,7 +5036,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "CoverageEligibilityRequest",
                     "interaction": [
@@ -5037,7 +5131,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "CoverageEligibilityResponse",
                     "interaction": [
@@ -5084,7 +5180,9 @@
                     "searchParam": [],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "CronJob",
                     "interaction": [
@@ -5131,7 +5229,9 @@
                     "searchParam": [],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "CronJobRun",
                     "interaction": [
@@ -5178,7 +5278,9 @@
                     "searchParam": [],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "CronJobStatus",
                     "interaction": [
@@ -5256,7 +5358,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "DetectedIssue",
                     "interaction": [
@@ -5364,7 +5468,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "Device",
                     "interaction": [
@@ -5427,7 +5533,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "DeviceDefinition",
                     "interaction": [
@@ -5500,7 +5608,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "DeviceMetric",
                     "interaction": [
@@ -5638,7 +5748,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "DeviceRequest",
                     "interaction": [
@@ -5706,7 +5818,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "DeviceUseStatement",
                     "interaction": [
@@ -5834,7 +5948,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "DiagnosticReport",
                     "interaction": [
@@ -5947,7 +6063,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "DocumentManifest",
                     "interaction": [
@@ -6115,7 +6233,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "DocumentReference",
                     "interaction": [
@@ -6233,7 +6353,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "EffectEvidenceSynthesis",
                     "interaction": [
@@ -6396,7 +6518,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "Encounter",
                     "interaction": [
@@ -6474,7 +6598,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "Endpoint",
                     "interaction": [
@@ -6542,7 +6668,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "EnrollmentRequest",
                     "interaction": [
@@ -6605,7 +6733,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "EnrollmentResponse",
                     "interaction": [
@@ -6668,7 +6798,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "Entity",
                     "interaction": [
@@ -6761,7 +6893,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "EpisodeOfCare",
                     "interaction": [
@@ -6909,7 +7043,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "EventDefinition",
                     "interaction": [
@@ -7057,7 +7193,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "Evidence",
                     "interaction": [
@@ -7205,7 +7343,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "EvidenceVariable",
                     "interaction": [
@@ -7308,7 +7448,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "ExampleScenario",
                     "interaction": [
@@ -7441,7 +7583,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "ExplanationOfBenefit",
                     "interaction": [
@@ -7534,7 +7678,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "FamilyMemberHistory",
                     "interaction": [
@@ -7612,7 +7758,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "Flag",
                     "interaction": [
@@ -7700,7 +7848,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "Goal",
                     "interaction": [
@@ -7747,7 +7897,9 @@
                     "searchParam": [],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "Grant",
                     "interaction": [
@@ -7855,7 +8007,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "GraphDefinition",
                     "interaction": [
@@ -7948,7 +8102,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "Group",
                     "interaction": [
@@ -8016,7 +8172,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "GuidanceResponse",
                     "interaction": [
@@ -8124,7 +8282,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "HealthcareService",
                     "interaction": [
@@ -8171,7 +8331,9 @@
                     "searchParam": [],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "Hl7v2Config",
                     "interaction": [
@@ -8234,7 +8396,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "Hl7v2Message",
                     "interaction": [
@@ -8281,7 +8445,9 @@
                     "searchParam": [],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "IdentityProvider",
                     "interaction": [
@@ -8414,7 +8580,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "ImagingStudy",
                     "interaction": [
@@ -8542,7 +8710,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "Immunization",
                     "interaction": [
@@ -8625,7 +8795,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "ImmunizationEvaluation",
                     "interaction": [
@@ -8713,7 +8885,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "ImmunizationRecommendation",
                     "interaction": [
@@ -8841,7 +9015,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "ImplementationGuide",
                     "interaction": [
@@ -8959,7 +9135,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "InsurancePlan",
                     "interaction": [
@@ -9072,7 +9250,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "Invoice",
                     "interaction": [
@@ -9119,7 +9299,9 @@
                     "searchParam": [],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "Lambda",
                     "interaction": [
@@ -9277,7 +9459,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "Library",
                     "interaction": [
@@ -9340,7 +9524,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "Linkage",
                     "interaction": [
@@ -9448,7 +9634,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "List",
                     "interaction": [
@@ -9566,7 +9754,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "Location",
                     "interaction": [
@@ -9613,7 +9803,9 @@
                     "searchParam": [],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "Mapping",
                     "interaction": [
@@ -9761,7 +9953,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "Measure",
                     "interaction": [
@@ -9854,7 +10048,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "MeasureReport",
                     "interaction": [
@@ -9967,7 +10163,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "Media",
                     "interaction": [
@@ -10060,7 +10258,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "Medication",
                     "interaction": [
@@ -10173,7 +10373,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "MedicationAdministration",
                     "interaction": [
@@ -10296,7 +10498,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "MedicationDispense",
                     "interaction": [
@@ -10409,7 +10613,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "MedicationKnowledge",
                     "interaction": [
@@ -10537,7 +10743,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "MedicationRequest",
                     "interaction": [
@@ -10640,7 +10848,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "MedicationStatement",
                     "interaction": [
@@ -10703,7 +10913,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "MedicinalProduct",
                     "interaction": [
@@ -10776,7 +10988,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "MedicinalProductAuthorization",
                     "interaction": [
@@ -10829,7 +11043,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "MedicinalProductContraindication",
                     "interaction": [
@@ -10882,7 +11098,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "MedicinalProductIndication",
                     "interaction": [
@@ -10929,7 +11147,9 @@
                     "searchParam": [],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "MedicinalProductIngredient",
                     "interaction": [
@@ -10982,7 +11202,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "MedicinalProductInteraction",
                     "interaction": [
@@ -11029,7 +11251,9 @@
                     "searchParam": [],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "MedicinalProductManufactured",
                     "interaction": [
@@ -11087,7 +11311,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "MedicinalProductPackaged",
                     "interaction": [
@@ -11150,7 +11376,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "MedicinalProductPharmaceutical",
                     "interaction": [
@@ -11203,7 +11431,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "MedicinalProductUndesirableEffect",
                     "interaction": [
@@ -11336,7 +11566,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "MessageDefinition",
                     "interaction": [
@@ -11454,7 +11686,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "MessageHeader",
                     "interaction": [
@@ -11501,7 +11735,9 @@
                     "searchParam": [],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "Module",
                     "interaction": [
@@ -11594,7 +11830,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "MolecularSequence",
                     "interaction": [
@@ -11727,7 +11965,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "NamingSystem",
                     "interaction": [
@@ -11774,7 +12014,9 @@
                     "searchParam": [],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "Notification",
                     "interaction": [
@@ -11821,7 +12063,9 @@
                     "searchParam": [],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "NotificationTemplate",
                     "interaction": [
@@ -11929,7 +12173,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "NutritionOrder",
                     "interaction": [
@@ -12127,7 +12373,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "Observation",
                     "interaction": [
@@ -12174,7 +12422,9 @@
                     "searchParam": [],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "ObservationDefinition",
                     "interaction": [
@@ -12221,7 +12471,9 @@
                     "searchParam": [],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "Operation",
                     "interaction": [
@@ -12369,7 +12621,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "OperationDefinition",
                     "interaction": [
@@ -12416,7 +12670,9 @@
                     "searchParam": [],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "OperationOutcome",
                     "interaction": [
@@ -12529,7 +12785,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "Organization",
                     "interaction": [
@@ -12647,7 +12905,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "OrganizationAffiliation",
                     "interaction": [
@@ -12694,7 +12954,9 @@
                     "searchParam": [],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "PGSequence",
                     "interaction": [
@@ -12741,7 +13003,9 @@
                     "searchParam": [],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "Parameters",
                     "interaction": [
@@ -12904,7 +13168,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "Patient",
                     "interaction": [
@@ -12987,7 +13253,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "PaymentNotice",
                     "interaction": [
@@ -13075,7 +13343,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "PaymentReconciliation",
                     "interaction": [
@@ -13218,7 +13488,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "Person",
                     "interaction": [
@@ -13376,7 +13648,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "PlanDefinition",
                     "interaction": [
@@ -13509,7 +13783,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "Practitioner",
                     "interaction": [
@@ -13622,7 +13898,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "PractitionerRole",
                     "interaction": [
@@ -13750,7 +14028,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "Procedure",
                     "interaction": [
@@ -13848,7 +14128,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "Provenance",
                     "interaction": [
@@ -13981,7 +14263,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "Questionnaire",
                     "interaction": [
@@ -14084,7 +14368,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "QuestionnaireResponse",
                     "interaction": [
@@ -14131,7 +14417,9 @@
                     "searchParam": [],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "Registration",
                     "interaction": [
@@ -14264,7 +14552,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "RelatedPerson",
                     "interaction": [
@@ -14382,7 +14672,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "RequestGroup",
                     "interaction": [
@@ -14530,7 +14822,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "ResearchDefinition",
                     "interaction": [
@@ -14678,7 +14972,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "ResearchElementDefinition",
                     "interaction": [
@@ -14791,7 +15087,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "ResearchStudy",
                     "interaction": [
@@ -14869,7 +15167,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "ResearchSubject",
                     "interaction": [
@@ -14967,7 +15267,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "RiskAssessment",
                     "interaction": [
@@ -15085,7 +15387,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "RiskEvidenceSynthesis",
                     "interaction": [
@@ -15143,7 +15447,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "Role",
                     "interaction": [
@@ -15226,7 +15532,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "Schedule",
                     "interaction": [
@@ -15273,7 +15581,9 @@
                     "searchParam": [],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "Search",
                     "interaction": [
@@ -15326,7 +15636,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "SearchParameter",
                     "interaction": [
@@ -15373,7 +15685,9 @@
                     "searchParam": [],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "SearchQuery",
                     "interaction": [
@@ -15526,7 +15840,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "ServiceRequest",
                     "interaction": [
@@ -15573,7 +15889,9 @@
                     "searchParam": [],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "Session",
                     "interaction": [
@@ -15661,7 +15979,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "Slot",
                     "interaction": [
@@ -15769,7 +16089,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "Specimen",
                     "interaction": [
@@ -15832,7 +16154,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "SpecimenDefinition",
                     "interaction": [
@@ -15945,7 +16269,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "StructureMap",
                     "interaction": [
@@ -15992,7 +16318,9 @@
                     "searchParam": [],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "SubsNotification",
                     "interaction": [
@@ -16039,7 +16367,9 @@
                     "searchParam": [],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "SubsSubscription",
                     "interaction": [
@@ -16127,7 +16457,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "Substance",
                     "interaction": [
@@ -16174,7 +16506,9 @@
                     "searchParam": [],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "SubstanceNucleicAcid",
                     "interaction": [
@@ -16221,7 +16555,9 @@
                     "searchParam": [],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "SubstancePolymer",
                     "interaction": [
@@ -16268,7 +16604,9 @@
                     "searchParam": [],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "SubstanceProtein",
                     "interaction": [
@@ -16315,7 +16653,9 @@
                     "searchParam": [],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "SubstanceReferenceInformation",
                     "interaction": [
@@ -16362,7 +16702,9 @@
                     "searchParam": [],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "SubstanceSourceMaterial",
                     "interaction": [
@@ -16415,7 +16757,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "SubstanceSpecification",
                     "interaction": [
@@ -16488,7 +16832,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "SupplyDelivery",
                     "interaction": [
@@ -16571,7 +16917,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "SupplyRequest",
                     "interaction": [
@@ -16714,7 +17062,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "Task",
                     "interaction": [
@@ -16761,7 +17111,9 @@
                     "searchParam": [],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "TokenIntrospector",
                     "interaction": [
@@ -16808,7 +17160,9 @@
                     "searchParam": [],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "User",
                     "interaction": [
@@ -16936,7 +17290,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "ValueSet",
                     "interaction": [
@@ -16989,7 +17345,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "VerificationResult",
                     "interaction": [
@@ -17067,7 +17425,9 @@
                     ],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "VisionPrescription",
                     "interaction": [
@@ -17114,7 +17474,9 @@
                     "searchParam": [],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "ui_history",
                     "interaction": [
@@ -17161,7 +17523,9 @@
                     "searchParam": [],
                     "conditionalUpdate": true,
                     "conditionalRead": "full-support",
-                    "referencePolicy": "local",
+                    "referencePolicy": [
+                        "local"
+                    ],
                     "readHistory": true,
                     "type": "ui_snippet",
                     "interaction": [
