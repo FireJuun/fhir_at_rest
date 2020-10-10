@@ -8,6 +8,9 @@ part of 'payment.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
+PaymentNoticeSearch _$PaymentNoticeSearchFromJson(Map<String, dynamic> json) {
+  return _PaymentNoticeSearch.fromJson(json);
+}
 
 /// @nodoc
 class _$PaymentNoticeSearchTearOff {
@@ -25,7 +28,7 @@ class _$PaymentNoticeSearchTearOff {
       List<Id> searchList,
       List<SearchDate> created,
       List<SearchToken> identifier,
-      List<SearchToken> payment_status,
+      @JsonKey(name: 'payment-status') List<SearchToken> paymentStatus,
       List<SearchReference> provider,
       List<SearchReference> request,
       List<SearchReference> response,
@@ -41,12 +44,17 @@ class _$PaymentNoticeSearchTearOff {
       searchList: searchList,
       created: created,
       identifier: identifier,
-      payment_status: payment_status,
+      paymentStatus: paymentStatus,
       provider: provider,
       request: request,
       response: response,
       status: status,
     );
+  }
+
+// ignore: unused_element
+  PaymentNoticeSearch fromJson(Map<String, Object> json) {
+    return PaymentNoticeSearch.fromJson(json);
   }
 }
 
@@ -67,12 +75,14 @@ mixin _$PaymentNoticeSearch {
 //List<SearchToken> searchType,
   List<SearchDate> get created;
   List<SearchToken> get identifier;
-  List<SearchToken> get payment_status;
+  @JsonKey(name: 'payment-status')
+  List<SearchToken> get paymentStatus;
   List<SearchReference> get provider;
   List<SearchReference> get request;
   List<SearchReference> get response;
   List<SearchToken> get status;
 
+  Map<String, dynamic> toJson();
   $PaymentNoticeSearchCopyWith<PaymentNoticeSearch> get copyWith;
 }
 
@@ -92,7 +102,7 @@ abstract class $PaymentNoticeSearchCopyWith<$Res> {
       List<Id> searchList,
       List<SearchDate> created,
       List<SearchToken> identifier,
-      List<SearchToken> payment_status,
+      @JsonKey(name: 'payment-status') List<SearchToken> paymentStatus,
       List<SearchReference> provider,
       List<SearchReference> request,
       List<SearchReference> response,
@@ -120,7 +130,7 @@ class _$PaymentNoticeSearchCopyWithImpl<$Res>
     Object searchList = freezed,
     Object created = freezed,
     Object identifier = freezed,
-    Object payment_status = freezed,
+    Object paymentStatus = freezed,
     Object provider = freezed,
     Object request = freezed,
     Object response = freezed,
@@ -153,9 +163,9 @@ class _$PaymentNoticeSearchCopyWithImpl<$Res>
       identifier: identifier == freezed
           ? _value.identifier
           : identifier as List<SearchToken>,
-      payment_status: payment_status == freezed
-          ? _value.payment_status
-          : payment_status as List<SearchToken>,
+      paymentStatus: paymentStatus == freezed
+          ? _value.paymentStatus
+          : paymentStatus as List<SearchToken>,
       provider: provider == freezed
           ? _value.provider
           : provider as List<SearchReference>,
@@ -188,7 +198,7 @@ abstract class _$PaymentNoticeSearchCopyWith<$Res>
       List<Id> searchList,
       List<SearchDate> created,
       List<SearchToken> identifier,
-      List<SearchToken> payment_status,
+      @JsonKey(name: 'payment-status') List<SearchToken> paymentStatus,
       List<SearchReference> provider,
       List<SearchReference> request,
       List<SearchReference> response,
@@ -218,7 +228,7 @@ class __$PaymentNoticeSearchCopyWithImpl<$Res>
     Object searchList = freezed,
     Object created = freezed,
     Object identifier = freezed,
-    Object payment_status = freezed,
+    Object paymentStatus = freezed,
     Object provider = freezed,
     Object request = freezed,
     Object response = freezed,
@@ -251,9 +261,9 @@ class __$PaymentNoticeSearchCopyWithImpl<$Res>
       identifier: identifier == freezed
           ? _value.identifier
           : identifier as List<SearchToken>,
-      payment_status: payment_status == freezed
-          ? _value.payment_status
-          : payment_status as List<SearchToken>,
+      paymentStatus: paymentStatus == freezed
+          ? _value.paymentStatus
+          : paymentStatus as List<SearchToken>,
       provider: provider == freezed
           ? _value.provider
           : provider as List<SearchReference>,
@@ -268,6 +278,8 @@ class __$PaymentNoticeSearchCopyWithImpl<$Res>
   }
 }
 
+@JsonSerializable()
+
 /// @nodoc
 class _$_PaymentNoticeSearch extends _PaymentNoticeSearch {
   _$_PaymentNoticeSearch(
@@ -281,12 +293,15 @@ class _$_PaymentNoticeSearch extends _PaymentNoticeSearch {
       this.searchList,
       this.created,
       this.identifier,
-      this.payment_status,
+      @JsonKey(name: 'payment-status') this.paymentStatus,
       this.provider,
       this.request,
       this.response,
       this.status})
       : super._();
+
+  factory _$_PaymentNoticeSearch.fromJson(Map<String, dynamic> json) =>
+      _$_$_PaymentNoticeSearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -310,7 +325,8 @@ class _$_PaymentNoticeSearch extends _PaymentNoticeSearch {
   @override
   final List<SearchToken> identifier;
   @override
-  final List<SearchToken> payment_status;
+  @JsonKey(name: 'payment-status')
+  final List<SearchToken> paymentStatus;
   @override
   final List<SearchReference> provider;
   @override
@@ -322,7 +338,7 @@ class _$_PaymentNoticeSearch extends _PaymentNoticeSearch {
 
   @override
   String toString() {
-    return 'PaymentNoticeSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, created: $created, identifier: $identifier, payment_status: $payment_status, provider: $provider, request: $request, response: $response, status: $status)';
+    return 'PaymentNoticeSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, created: $created, identifier: $identifier, paymentStatus: $paymentStatus, provider: $provider, request: $request, response: $response, status: $status)';
   }
 
   @override
@@ -359,9 +375,9 @@ class _$_PaymentNoticeSearch extends _PaymentNoticeSearch {
             (identical(other.identifier, identifier) ||
                 const DeepCollectionEquality()
                     .equals(other.identifier, identifier)) &&
-            (identical(other.payment_status, payment_status) ||
+            (identical(other.paymentStatus, paymentStatus) ||
                 const DeepCollectionEquality()
-                    .equals(other.payment_status, payment_status)) &&
+                    .equals(other.paymentStatus, paymentStatus)) &&
             (identical(other.provider, provider) ||
                 const DeepCollectionEquality()
                     .equals(other.provider, provider)) &&
@@ -388,7 +404,7 @@ class _$_PaymentNoticeSearch extends _PaymentNoticeSearch {
       const DeepCollectionEquality().hash(searchList) ^
       const DeepCollectionEquality().hash(created) ^
       const DeepCollectionEquality().hash(identifier) ^
-      const DeepCollectionEquality().hash(payment_status) ^
+      const DeepCollectionEquality().hash(paymentStatus) ^
       const DeepCollectionEquality().hash(provider) ^
       const DeepCollectionEquality().hash(request) ^
       const DeepCollectionEquality().hash(response) ^
@@ -398,6 +414,11 @@ class _$_PaymentNoticeSearch extends _PaymentNoticeSearch {
   _$PaymentNoticeSearchCopyWith<_PaymentNoticeSearch> get copyWith =>
       __$PaymentNoticeSearchCopyWithImpl<_PaymentNoticeSearch>(
           this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_PaymentNoticeSearchToJson(this);
+  }
 }
 
 abstract class _PaymentNoticeSearch extends PaymentNoticeSearch {
@@ -413,11 +434,14 @@ abstract class _PaymentNoticeSearch extends PaymentNoticeSearch {
       List<Id> searchList,
       List<SearchDate> created,
       List<SearchToken> identifier,
-      List<SearchToken> payment_status,
+      @JsonKey(name: 'payment-status') List<SearchToken> paymentStatus,
       List<SearchReference> provider,
       List<SearchReference> request,
       List<SearchReference> response,
       List<SearchToken> status}) = _$_PaymentNoticeSearch;
+
+  factory _PaymentNoticeSearch.fromJson(Map<String, dynamic> json) =
+      _$_PaymentNoticeSearch.fromJson;
 
   @override
   List<Id> get searchId;
@@ -441,7 +465,8 @@ abstract class _PaymentNoticeSearch extends PaymentNoticeSearch {
   @override
   List<SearchToken> get identifier;
   @override
-  List<SearchToken> get payment_status;
+  @JsonKey(name: 'payment-status')
+  List<SearchToken> get paymentStatus;
   @override
   List<SearchReference> get provider;
   @override
@@ -452,6 +477,11 @@ abstract class _PaymentNoticeSearch extends PaymentNoticeSearch {
   List<SearchToken> get status;
   @override
   _$PaymentNoticeSearchCopyWith<_PaymentNoticeSearch> get copyWith;
+}
+
+PaymentReconciliationSearch _$PaymentReconciliationSearchFromJson(
+    Map<String, dynamic> json) {
+  return _PaymentReconciliationSearch.fromJson(json);
 }
 
 /// @nodoc
@@ -472,7 +502,7 @@ class _$PaymentReconciliationSearchTearOff {
       List<SearchString> disposition,
       List<SearchToken> identifier,
       List<SearchToken> outcome,
-      List<SearchReference> payment_issuer,
+      @JsonKey(name: 'payment-issuer') List<SearchReference> paymentIssuer,
       List<SearchReference> request,
       List<SearchReference> requestor,
       List<SearchToken> status}) {
@@ -489,11 +519,16 @@ class _$PaymentReconciliationSearchTearOff {
       disposition: disposition,
       identifier: identifier,
       outcome: outcome,
-      payment_issuer: payment_issuer,
+      paymentIssuer: paymentIssuer,
       request: request,
       requestor: requestor,
       status: status,
     );
+  }
+
+// ignore: unused_element
+  PaymentReconciliationSearch fromJson(Map<String, Object> json) {
+    return PaymentReconciliationSearch.fromJson(json);
   }
 }
 
@@ -516,11 +551,13 @@ mixin _$PaymentReconciliationSearch {
   List<SearchString> get disposition;
   List<SearchToken> get identifier;
   List<SearchToken> get outcome;
-  List<SearchReference> get payment_issuer;
+  @JsonKey(name: 'payment-issuer')
+  List<SearchReference> get paymentIssuer;
   List<SearchReference> get request;
   List<SearchReference> get requestor;
   List<SearchToken> get status;
 
+  Map<String, dynamic> toJson();
   $PaymentReconciliationSearchCopyWith<PaymentReconciliationSearch>
       get copyWith;
 }
@@ -544,7 +581,7 @@ abstract class $PaymentReconciliationSearchCopyWith<$Res> {
       List<SearchString> disposition,
       List<SearchToken> identifier,
       List<SearchToken> outcome,
-      List<SearchReference> payment_issuer,
+      @JsonKey(name: 'payment-issuer') List<SearchReference> paymentIssuer,
       List<SearchReference> request,
       List<SearchReference> requestor,
       List<SearchToken> status});
@@ -573,7 +610,7 @@ class _$PaymentReconciliationSearchCopyWithImpl<$Res>
     Object disposition = freezed,
     Object identifier = freezed,
     Object outcome = freezed,
-    Object payment_issuer = freezed,
+    Object paymentIssuer = freezed,
     Object request = freezed,
     Object requestor = freezed,
     Object status = freezed,
@@ -610,9 +647,9 @@ class _$PaymentReconciliationSearchCopyWithImpl<$Res>
           : identifier as List<SearchToken>,
       outcome:
           outcome == freezed ? _value.outcome : outcome as List<SearchToken>,
-      payment_issuer: payment_issuer == freezed
-          ? _value.payment_issuer
-          : payment_issuer as List<SearchReference>,
+      paymentIssuer: paymentIssuer == freezed
+          ? _value.paymentIssuer
+          : paymentIssuer as List<SearchReference>,
       request: request == freezed
           ? _value.request
           : request as List<SearchReference>,
@@ -645,7 +682,7 @@ abstract class _$PaymentReconciliationSearchCopyWith<$Res>
       List<SearchString> disposition,
       List<SearchToken> identifier,
       List<SearchToken> outcome,
-      List<SearchReference> payment_issuer,
+      @JsonKey(name: 'payment-issuer') List<SearchReference> paymentIssuer,
       List<SearchReference> request,
       List<SearchReference> requestor,
       List<SearchToken> status});
@@ -678,7 +715,7 @@ class __$PaymentReconciliationSearchCopyWithImpl<$Res>
     Object disposition = freezed,
     Object identifier = freezed,
     Object outcome = freezed,
-    Object payment_issuer = freezed,
+    Object paymentIssuer = freezed,
     Object request = freezed,
     Object requestor = freezed,
     Object status = freezed,
@@ -715,9 +752,9 @@ class __$PaymentReconciliationSearchCopyWithImpl<$Res>
           : identifier as List<SearchToken>,
       outcome:
           outcome == freezed ? _value.outcome : outcome as List<SearchToken>,
-      payment_issuer: payment_issuer == freezed
-          ? _value.payment_issuer
-          : payment_issuer as List<SearchReference>,
+      paymentIssuer: paymentIssuer == freezed
+          ? _value.paymentIssuer
+          : paymentIssuer as List<SearchReference>,
       request: request == freezed
           ? _value.request
           : request as List<SearchReference>,
@@ -728,6 +765,8 @@ class __$PaymentReconciliationSearchCopyWithImpl<$Res>
     ));
   }
 }
+
+@JsonSerializable()
 
 /// @nodoc
 class _$_PaymentReconciliationSearch extends _PaymentReconciliationSearch {
@@ -744,11 +783,14 @@ class _$_PaymentReconciliationSearch extends _PaymentReconciliationSearch {
       this.disposition,
       this.identifier,
       this.outcome,
-      this.payment_issuer,
+      @JsonKey(name: 'payment-issuer') this.paymentIssuer,
       this.request,
       this.requestor,
       this.status})
       : super._();
+
+  factory _$_PaymentReconciliationSearch.fromJson(Map<String, dynamic> json) =>
+      _$_$_PaymentReconciliationSearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -776,7 +818,8 @@ class _$_PaymentReconciliationSearch extends _PaymentReconciliationSearch {
   @override
   final List<SearchToken> outcome;
   @override
-  final List<SearchReference> payment_issuer;
+  @JsonKey(name: 'payment-issuer')
+  final List<SearchReference> paymentIssuer;
   @override
   final List<SearchReference> request;
   @override
@@ -786,7 +829,7 @@ class _$_PaymentReconciliationSearch extends _PaymentReconciliationSearch {
 
   @override
   String toString() {
-    return 'PaymentReconciliationSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, created: $created, disposition: $disposition, identifier: $identifier, outcome: $outcome, payment_issuer: $payment_issuer, request: $request, requestor: $requestor, status: $status)';
+    return 'PaymentReconciliationSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, created: $created, disposition: $disposition, identifier: $identifier, outcome: $outcome, paymentIssuer: $paymentIssuer, request: $request, requestor: $requestor, status: $status)';
   }
 
   @override
@@ -829,9 +872,9 @@ class _$_PaymentReconciliationSearch extends _PaymentReconciliationSearch {
             (identical(other.outcome, outcome) ||
                 const DeepCollectionEquality()
                     .equals(other.outcome, outcome)) &&
-            (identical(other.payment_issuer, payment_issuer) ||
+            (identical(other.paymentIssuer, paymentIssuer) ||
                 const DeepCollectionEquality()
-                    .equals(other.payment_issuer, payment_issuer)) &&
+                    .equals(other.paymentIssuer, paymentIssuer)) &&
             (identical(other.request, request) ||
                 const DeepCollectionEquality()
                     .equals(other.request, request)) &&
@@ -857,7 +900,7 @@ class _$_PaymentReconciliationSearch extends _PaymentReconciliationSearch {
       const DeepCollectionEquality().hash(disposition) ^
       const DeepCollectionEquality().hash(identifier) ^
       const DeepCollectionEquality().hash(outcome) ^
-      const DeepCollectionEquality().hash(payment_issuer) ^
+      const DeepCollectionEquality().hash(paymentIssuer) ^
       const DeepCollectionEquality().hash(request) ^
       const DeepCollectionEquality().hash(requestor) ^
       const DeepCollectionEquality().hash(status);
@@ -866,6 +909,11 @@ class _$_PaymentReconciliationSearch extends _PaymentReconciliationSearch {
   _$PaymentReconciliationSearchCopyWith<_PaymentReconciliationSearch>
       get copyWith => __$PaymentReconciliationSearchCopyWithImpl<
           _PaymentReconciliationSearch>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_PaymentReconciliationSearchToJson(this);
+  }
 }
 
 abstract class _PaymentReconciliationSearch
@@ -884,10 +932,13 @@ abstract class _PaymentReconciliationSearch
       List<SearchString> disposition,
       List<SearchToken> identifier,
       List<SearchToken> outcome,
-      List<SearchReference> payment_issuer,
+      @JsonKey(name: 'payment-issuer') List<SearchReference> paymentIssuer,
       List<SearchReference> request,
       List<SearchReference> requestor,
       List<SearchToken> status}) = _$_PaymentReconciliationSearch;
+
+  factory _PaymentReconciliationSearch.fromJson(Map<String, dynamic> json) =
+      _$_PaymentReconciliationSearch.fromJson;
 
   @override
   List<Id> get searchId;
@@ -915,7 +966,8 @@ abstract class _PaymentReconciliationSearch
   @override
   List<SearchToken> get outcome;
   @override
-  List<SearchReference> get payment_issuer;
+  @JsonKey(name: 'payment-issuer')
+  List<SearchReference> get paymentIssuer;
   @override
   List<SearchReference> get request;
   @override

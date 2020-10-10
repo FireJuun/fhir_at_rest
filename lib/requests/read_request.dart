@@ -53,10 +53,10 @@ abstract class ReadRequest with _$ReadRequest {
 
   Future<Either<RestfulFailure, dynamic>> request() async {
     var thisRequest = this.map(
-      dstu2: (req) => '${base}/${enumToString(req.type)}/${req.id.toString()}',
-      stu3: (req) => '${base}/${enumToString(req.type)}/${req.id.toString()}',
-      r4: (req) => '${base}/${enumToString(req.type)}/${req.id.toString()}',
-      r5: (req) => '${base}/${enumToString(req.type)}/${req.id.toString()}',
+      dstu2: (req) => '$base/${enumToString(req.type)}/${req.id.toString()}',
+      stu3: (req) => '$base/${enumToString(req.type)}/${req.id.toString()}',
+      r4: (req) => '$base/${enumToString(req.type)}/${req.id.toString()}',
+      r5: (req) => '$base/${enumToString(req.type)}/${req.id.toString()}',
     );
 
     thisRequest += '?_format=application/fhir+json'

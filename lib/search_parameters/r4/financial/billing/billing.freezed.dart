@@ -8,6 +8,9 @@ part of 'billing.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
+ClaimSearch _$ClaimSearchFromJson(Map<String, dynamic> json) {
+  return _ClaimSearch.fromJson(json);
+}
 
 /// @nodoc
 class _$ClaimSearchTearOff {
@@ -23,22 +26,22 @@ class _$ClaimSearchTearOff {
       List<SearchString> searchText,
       List<SearchString> searchContent,
       List<Id> searchList,
-      List<SearchReference> care_team,
+      @JsonKey(name: 'care-team') List<SearchReference> careTeam,
       List<SearchDate> created,
-      List<SearchReference> detail_udi,
+      @JsonKey(name: 'detail-udi') List<SearchReference> detailUdi,
       List<SearchReference> encounter,
       List<SearchReference> enterer,
       List<SearchReference> facility,
       List<SearchToken> identifier,
       List<SearchReference> insurer,
-      List<SearchReference> item_udi,
+      @JsonKey(name: 'item-udi') List<SearchReference> itemUdi,
       List<SearchReference> patient,
       List<SearchReference> payee,
       List<SearchToken> priority,
-      List<SearchReference> procedure_udi,
+      @JsonKey(name: 'procedure-udi') List<SearchReference> procedureUdi,
       List<SearchReference> provider,
       List<SearchToken> status,
-      List<SearchReference> subdetail_udi,
+      @JsonKey(name: 'subdetail-udi') List<SearchReference> subdetailUdi,
       List<SearchToken> use}) {
     return _ClaimSearch(
       searchId: searchId,
@@ -49,24 +52,29 @@ class _$ClaimSearchTearOff {
       searchText: searchText,
       searchContent: searchContent,
       searchList: searchList,
-      care_team: care_team,
+      careTeam: careTeam,
       created: created,
-      detail_udi: detail_udi,
+      detailUdi: detailUdi,
       encounter: encounter,
       enterer: enterer,
       facility: facility,
       identifier: identifier,
       insurer: insurer,
-      item_udi: item_udi,
+      itemUdi: itemUdi,
       patient: patient,
       payee: payee,
       priority: priority,
-      procedure_udi: procedure_udi,
+      procedureUdi: procedureUdi,
       provider: provider,
       status: status,
-      subdetail_udi: subdetail_udi,
+      subdetailUdi: subdetailUdi,
       use: use,
     );
+  }
+
+// ignore: unused_element
+  ClaimSearch fromJson(Map<String, Object> json) {
+    return ClaimSearch.fromJson(json);
   }
 }
 
@@ -85,24 +93,30 @@ mixin _$ClaimSearch {
   List<SearchString> get searchContent;
   List<Id> get searchList; //List<SearchString> searchHas,
 //List<SearchToken> searchType,
-  List<SearchReference> get care_team;
+  @JsonKey(name: 'care-team')
+  List<SearchReference> get careTeam;
   List<SearchDate> get created;
-  List<SearchReference> get detail_udi;
+  @JsonKey(name: 'detail-udi')
+  List<SearchReference> get detailUdi;
   List<SearchReference> get encounter;
   List<SearchReference> get enterer;
   List<SearchReference> get facility;
   List<SearchToken> get identifier;
   List<SearchReference> get insurer;
-  List<SearchReference> get item_udi;
+  @JsonKey(name: 'item-udi')
+  List<SearchReference> get itemUdi;
   List<SearchReference> get patient;
   List<SearchReference> get payee;
   List<SearchToken> get priority;
-  List<SearchReference> get procedure_udi;
+  @JsonKey(name: 'procedure-udi')
+  List<SearchReference> get procedureUdi;
   List<SearchReference> get provider;
   List<SearchToken> get status;
-  List<SearchReference> get subdetail_udi;
+  @JsonKey(name: 'subdetail-udi')
+  List<SearchReference> get subdetailUdi;
   List<SearchToken> get use;
 
+  Map<String, dynamic> toJson();
   $ClaimSearchCopyWith<ClaimSearch> get copyWith;
 }
 
@@ -120,22 +134,22 @@ abstract class $ClaimSearchCopyWith<$Res> {
       List<SearchString> searchText,
       List<SearchString> searchContent,
       List<Id> searchList,
-      List<SearchReference> care_team,
+      @JsonKey(name: 'care-team') List<SearchReference> careTeam,
       List<SearchDate> created,
-      List<SearchReference> detail_udi,
+      @JsonKey(name: 'detail-udi') List<SearchReference> detailUdi,
       List<SearchReference> encounter,
       List<SearchReference> enterer,
       List<SearchReference> facility,
       List<SearchToken> identifier,
       List<SearchReference> insurer,
-      List<SearchReference> item_udi,
+      @JsonKey(name: 'item-udi') List<SearchReference> itemUdi,
       List<SearchReference> patient,
       List<SearchReference> payee,
       List<SearchToken> priority,
-      List<SearchReference> procedure_udi,
+      @JsonKey(name: 'procedure-udi') List<SearchReference> procedureUdi,
       List<SearchReference> provider,
       List<SearchToken> status,
-      List<SearchReference> subdetail_udi,
+      @JsonKey(name: 'subdetail-udi') List<SearchReference> subdetailUdi,
       List<SearchToken> use});
 }
 
@@ -157,22 +171,22 @@ class _$ClaimSearchCopyWithImpl<$Res> implements $ClaimSearchCopyWith<$Res> {
     Object searchText = freezed,
     Object searchContent = freezed,
     Object searchList = freezed,
-    Object care_team = freezed,
+    Object careTeam = freezed,
     Object created = freezed,
-    Object detail_udi = freezed,
+    Object detailUdi = freezed,
     Object encounter = freezed,
     Object enterer = freezed,
     Object facility = freezed,
     Object identifier = freezed,
     Object insurer = freezed,
-    Object item_udi = freezed,
+    Object itemUdi = freezed,
     Object patient = freezed,
     Object payee = freezed,
     Object priority = freezed,
-    Object procedure_udi = freezed,
+    Object procedureUdi = freezed,
     Object provider = freezed,
     Object status = freezed,
-    Object subdetail_udi = freezed,
+    Object subdetailUdi = freezed,
     Object use = freezed,
   }) {
     return _then(_value.copyWith(
@@ -197,14 +211,14 @@ class _$ClaimSearchCopyWithImpl<$Res> implements $ClaimSearchCopyWith<$Res> {
           : searchContent as List<SearchString>,
       searchList:
           searchList == freezed ? _value.searchList : searchList as List<Id>,
-      care_team: care_team == freezed
-          ? _value.care_team
-          : care_team as List<SearchReference>,
+      careTeam: careTeam == freezed
+          ? _value.careTeam
+          : careTeam as List<SearchReference>,
       created:
           created == freezed ? _value.created : created as List<SearchDate>,
-      detail_udi: detail_udi == freezed
-          ? _value.detail_udi
-          : detail_udi as List<SearchReference>,
+      detailUdi: detailUdi == freezed
+          ? _value.detailUdi
+          : detailUdi as List<SearchReference>,
       encounter: encounter == freezed
           ? _value.encounter
           : encounter as List<SearchReference>,
@@ -220,25 +234,25 @@ class _$ClaimSearchCopyWithImpl<$Res> implements $ClaimSearchCopyWith<$Res> {
       insurer: insurer == freezed
           ? _value.insurer
           : insurer as List<SearchReference>,
-      item_udi: item_udi == freezed
-          ? _value.item_udi
-          : item_udi as List<SearchReference>,
+      itemUdi: itemUdi == freezed
+          ? _value.itemUdi
+          : itemUdi as List<SearchReference>,
       patient: patient == freezed
           ? _value.patient
           : patient as List<SearchReference>,
       payee: payee == freezed ? _value.payee : payee as List<SearchReference>,
       priority:
           priority == freezed ? _value.priority : priority as List<SearchToken>,
-      procedure_udi: procedure_udi == freezed
-          ? _value.procedure_udi
-          : procedure_udi as List<SearchReference>,
+      procedureUdi: procedureUdi == freezed
+          ? _value.procedureUdi
+          : procedureUdi as List<SearchReference>,
       provider: provider == freezed
           ? _value.provider
           : provider as List<SearchReference>,
       status: status == freezed ? _value.status : status as List<SearchToken>,
-      subdetail_udi: subdetail_udi == freezed
-          ? _value.subdetail_udi
-          : subdetail_udi as List<SearchReference>,
+      subdetailUdi: subdetailUdi == freezed
+          ? _value.subdetailUdi
+          : subdetailUdi as List<SearchReference>,
       use: use == freezed ? _value.use : use as List<SearchToken>,
     ));
   }
@@ -260,22 +274,22 @@ abstract class _$ClaimSearchCopyWith<$Res>
       List<SearchString> searchText,
       List<SearchString> searchContent,
       List<Id> searchList,
-      List<SearchReference> care_team,
+      @JsonKey(name: 'care-team') List<SearchReference> careTeam,
       List<SearchDate> created,
-      List<SearchReference> detail_udi,
+      @JsonKey(name: 'detail-udi') List<SearchReference> detailUdi,
       List<SearchReference> encounter,
       List<SearchReference> enterer,
       List<SearchReference> facility,
       List<SearchToken> identifier,
       List<SearchReference> insurer,
-      List<SearchReference> item_udi,
+      @JsonKey(name: 'item-udi') List<SearchReference> itemUdi,
       List<SearchReference> patient,
       List<SearchReference> payee,
       List<SearchToken> priority,
-      List<SearchReference> procedure_udi,
+      @JsonKey(name: 'procedure-udi') List<SearchReference> procedureUdi,
       List<SearchReference> provider,
       List<SearchToken> status,
-      List<SearchReference> subdetail_udi,
+      @JsonKey(name: 'subdetail-udi') List<SearchReference> subdetailUdi,
       List<SearchToken> use});
 }
 
@@ -299,22 +313,22 @@ class __$ClaimSearchCopyWithImpl<$Res> extends _$ClaimSearchCopyWithImpl<$Res>
     Object searchText = freezed,
     Object searchContent = freezed,
     Object searchList = freezed,
-    Object care_team = freezed,
+    Object careTeam = freezed,
     Object created = freezed,
-    Object detail_udi = freezed,
+    Object detailUdi = freezed,
     Object encounter = freezed,
     Object enterer = freezed,
     Object facility = freezed,
     Object identifier = freezed,
     Object insurer = freezed,
-    Object item_udi = freezed,
+    Object itemUdi = freezed,
     Object patient = freezed,
     Object payee = freezed,
     Object priority = freezed,
-    Object procedure_udi = freezed,
+    Object procedureUdi = freezed,
     Object provider = freezed,
     Object status = freezed,
-    Object subdetail_udi = freezed,
+    Object subdetailUdi = freezed,
     Object use = freezed,
   }) {
     return _then(_ClaimSearch(
@@ -339,14 +353,14 @@ class __$ClaimSearchCopyWithImpl<$Res> extends _$ClaimSearchCopyWithImpl<$Res>
           : searchContent as List<SearchString>,
       searchList:
           searchList == freezed ? _value.searchList : searchList as List<Id>,
-      care_team: care_team == freezed
-          ? _value.care_team
-          : care_team as List<SearchReference>,
+      careTeam: careTeam == freezed
+          ? _value.careTeam
+          : careTeam as List<SearchReference>,
       created:
           created == freezed ? _value.created : created as List<SearchDate>,
-      detail_udi: detail_udi == freezed
-          ? _value.detail_udi
-          : detail_udi as List<SearchReference>,
+      detailUdi: detailUdi == freezed
+          ? _value.detailUdi
+          : detailUdi as List<SearchReference>,
       encounter: encounter == freezed
           ? _value.encounter
           : encounter as List<SearchReference>,
@@ -362,29 +376,31 @@ class __$ClaimSearchCopyWithImpl<$Res> extends _$ClaimSearchCopyWithImpl<$Res>
       insurer: insurer == freezed
           ? _value.insurer
           : insurer as List<SearchReference>,
-      item_udi: item_udi == freezed
-          ? _value.item_udi
-          : item_udi as List<SearchReference>,
+      itemUdi: itemUdi == freezed
+          ? _value.itemUdi
+          : itemUdi as List<SearchReference>,
       patient: patient == freezed
           ? _value.patient
           : patient as List<SearchReference>,
       payee: payee == freezed ? _value.payee : payee as List<SearchReference>,
       priority:
           priority == freezed ? _value.priority : priority as List<SearchToken>,
-      procedure_udi: procedure_udi == freezed
-          ? _value.procedure_udi
-          : procedure_udi as List<SearchReference>,
+      procedureUdi: procedureUdi == freezed
+          ? _value.procedureUdi
+          : procedureUdi as List<SearchReference>,
       provider: provider == freezed
           ? _value.provider
           : provider as List<SearchReference>,
       status: status == freezed ? _value.status : status as List<SearchToken>,
-      subdetail_udi: subdetail_udi == freezed
-          ? _value.subdetail_udi
-          : subdetail_udi as List<SearchReference>,
+      subdetailUdi: subdetailUdi == freezed
+          ? _value.subdetailUdi
+          : subdetailUdi as List<SearchReference>,
       use: use == freezed ? _value.use : use as List<SearchToken>,
     ));
   }
 }
+
+@JsonSerializable()
 
 /// @nodoc
 class _$_ClaimSearch extends _ClaimSearch {
@@ -397,24 +413,27 @@ class _$_ClaimSearch extends _ClaimSearch {
       this.searchText,
       this.searchContent,
       this.searchList,
-      this.care_team,
+      @JsonKey(name: 'care-team') this.careTeam,
       this.created,
-      this.detail_udi,
+      @JsonKey(name: 'detail-udi') this.detailUdi,
       this.encounter,
       this.enterer,
       this.facility,
       this.identifier,
       this.insurer,
-      this.item_udi,
+      @JsonKey(name: 'item-udi') this.itemUdi,
       this.patient,
       this.payee,
       this.priority,
-      this.procedure_udi,
+      @JsonKey(name: 'procedure-udi') this.procedureUdi,
       this.provider,
       this.status,
-      this.subdetail_udi,
+      @JsonKey(name: 'subdetail-udi') this.subdetailUdi,
       this.use})
       : super._();
+
+  factory _$_ClaimSearch.fromJson(Map<String, dynamic> json) =>
+      _$_$_ClaimSearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -434,11 +453,13 @@ class _$_ClaimSearch extends _ClaimSearch {
   final List<Id> searchList;
   @override //List<SearchString> searchHas,
 //List<SearchToken> searchType,
-  final List<SearchReference> care_team;
+  @JsonKey(name: 'care-team')
+  final List<SearchReference> careTeam;
   @override
   final List<SearchDate> created;
   @override
-  final List<SearchReference> detail_udi;
+  @JsonKey(name: 'detail-udi')
+  final List<SearchReference> detailUdi;
   @override
   final List<SearchReference> encounter;
   @override
@@ -450,7 +471,8 @@ class _$_ClaimSearch extends _ClaimSearch {
   @override
   final List<SearchReference> insurer;
   @override
-  final List<SearchReference> item_udi;
+  @JsonKey(name: 'item-udi')
+  final List<SearchReference> itemUdi;
   @override
   final List<SearchReference> patient;
   @override
@@ -458,19 +480,21 @@ class _$_ClaimSearch extends _ClaimSearch {
   @override
   final List<SearchToken> priority;
   @override
-  final List<SearchReference> procedure_udi;
+  @JsonKey(name: 'procedure-udi')
+  final List<SearchReference> procedureUdi;
   @override
   final List<SearchReference> provider;
   @override
   final List<SearchToken> status;
   @override
-  final List<SearchReference> subdetail_udi;
+  @JsonKey(name: 'subdetail-udi')
+  final List<SearchReference> subdetailUdi;
   @override
   final List<SearchToken> use;
 
   @override
   String toString() {
-    return 'ClaimSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, care_team: $care_team, created: $created, detail_udi: $detail_udi, encounter: $encounter, enterer: $enterer, facility: $facility, identifier: $identifier, insurer: $insurer, item_udi: $item_udi, patient: $patient, payee: $payee, priority: $priority, procedure_udi: $procedure_udi, provider: $provider, status: $status, subdetail_udi: $subdetail_udi, use: $use)';
+    return 'ClaimSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, careTeam: $careTeam, created: $created, detailUdi: $detailUdi, encounter: $encounter, enterer: $enterer, facility: $facility, identifier: $identifier, insurer: $insurer, itemUdi: $itemUdi, patient: $patient, payee: $payee, priority: $priority, procedureUdi: $procedureUdi, provider: $provider, status: $status, subdetailUdi: $subdetailUdi, use: $use)';
   }
 
   @override
@@ -501,15 +525,15 @@ class _$_ClaimSearch extends _ClaimSearch {
             (identical(other.searchList, searchList) ||
                 const DeepCollectionEquality()
                     .equals(other.searchList, searchList)) &&
-            (identical(other.care_team, care_team) ||
+            (identical(other.careTeam, careTeam) ||
                 const DeepCollectionEquality()
-                    .equals(other.care_team, care_team)) &&
+                    .equals(other.careTeam, careTeam)) &&
             (identical(other.created, created) ||
                 const DeepCollectionEquality()
                     .equals(other.created, created)) &&
-            (identical(other.detail_udi, detail_udi) ||
+            (identical(other.detailUdi, detailUdi) ||
                 const DeepCollectionEquality()
-                    .equals(other.detail_udi, detail_udi)) &&
+                    .equals(other.detailUdi, detailUdi)) &&
             (identical(other.encounter, encounter) ||
                 const DeepCollectionEquality()
                     .equals(other.encounter, encounter)) &&
@@ -525,9 +549,9 @@ class _$_ClaimSearch extends _ClaimSearch {
             (identical(other.insurer, insurer) ||
                 const DeepCollectionEquality()
                     .equals(other.insurer, insurer)) &&
-            (identical(other.item_udi, item_udi) ||
+            (identical(other.itemUdi, itemUdi) ||
                 const DeepCollectionEquality()
-                    .equals(other.item_udi, item_udi)) &&
+                    .equals(other.itemUdi, itemUdi)) &&
             (identical(other.patient, patient) ||
                 const DeepCollectionEquality()
                     .equals(other.patient, patient)) &&
@@ -536,14 +560,14 @@ class _$_ClaimSearch extends _ClaimSearch {
             (identical(other.priority, priority) ||
                 const DeepCollectionEquality()
                     .equals(other.priority, priority)) &&
-            (identical(other.procedure_udi, procedure_udi) ||
+            (identical(other.procedureUdi, procedureUdi) ||
                 const DeepCollectionEquality()
-                    .equals(other.procedure_udi, procedure_udi)) &&
+                    .equals(other.procedureUdi, procedureUdi)) &&
             (identical(other.provider, provider) ||
                 const DeepCollectionEquality()
                     .equals(other.provider, provider)) &&
             (identical(other.status, status) || const DeepCollectionEquality().equals(other.status, status)) &&
-            (identical(other.subdetail_udi, subdetail_udi) || const DeepCollectionEquality().equals(other.subdetail_udi, subdetail_udi)) &&
+            (identical(other.subdetailUdi, subdetailUdi) || const DeepCollectionEquality().equals(other.subdetailUdi, subdetailUdi)) &&
             (identical(other.use, use) || const DeepCollectionEquality().equals(other.use, use)));
   }
 
@@ -558,27 +582,32 @@ class _$_ClaimSearch extends _ClaimSearch {
       const DeepCollectionEquality().hash(searchText) ^
       const DeepCollectionEquality().hash(searchContent) ^
       const DeepCollectionEquality().hash(searchList) ^
-      const DeepCollectionEquality().hash(care_team) ^
+      const DeepCollectionEquality().hash(careTeam) ^
       const DeepCollectionEquality().hash(created) ^
-      const DeepCollectionEquality().hash(detail_udi) ^
+      const DeepCollectionEquality().hash(detailUdi) ^
       const DeepCollectionEquality().hash(encounter) ^
       const DeepCollectionEquality().hash(enterer) ^
       const DeepCollectionEquality().hash(facility) ^
       const DeepCollectionEquality().hash(identifier) ^
       const DeepCollectionEquality().hash(insurer) ^
-      const DeepCollectionEquality().hash(item_udi) ^
+      const DeepCollectionEquality().hash(itemUdi) ^
       const DeepCollectionEquality().hash(patient) ^
       const DeepCollectionEquality().hash(payee) ^
       const DeepCollectionEquality().hash(priority) ^
-      const DeepCollectionEquality().hash(procedure_udi) ^
+      const DeepCollectionEquality().hash(procedureUdi) ^
       const DeepCollectionEquality().hash(provider) ^
       const DeepCollectionEquality().hash(status) ^
-      const DeepCollectionEquality().hash(subdetail_udi) ^
+      const DeepCollectionEquality().hash(subdetailUdi) ^
       const DeepCollectionEquality().hash(use);
 
   @override
   _$ClaimSearchCopyWith<_ClaimSearch> get copyWith =>
       __$ClaimSearchCopyWithImpl<_ClaimSearch>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_ClaimSearchToJson(this);
+  }
 }
 
 abstract class _ClaimSearch extends ClaimSearch {
@@ -592,23 +621,26 @@ abstract class _ClaimSearch extends ClaimSearch {
       List<SearchString> searchText,
       List<SearchString> searchContent,
       List<Id> searchList,
-      List<SearchReference> care_team,
+      @JsonKey(name: 'care-team') List<SearchReference> careTeam,
       List<SearchDate> created,
-      List<SearchReference> detail_udi,
+      @JsonKey(name: 'detail-udi') List<SearchReference> detailUdi,
       List<SearchReference> encounter,
       List<SearchReference> enterer,
       List<SearchReference> facility,
       List<SearchToken> identifier,
       List<SearchReference> insurer,
-      List<SearchReference> item_udi,
+      @JsonKey(name: 'item-udi') List<SearchReference> itemUdi,
       List<SearchReference> patient,
       List<SearchReference> payee,
       List<SearchToken> priority,
-      List<SearchReference> procedure_udi,
+      @JsonKey(name: 'procedure-udi') List<SearchReference> procedureUdi,
       List<SearchReference> provider,
       List<SearchToken> status,
-      List<SearchReference> subdetail_udi,
+      @JsonKey(name: 'subdetail-udi') List<SearchReference> subdetailUdi,
       List<SearchToken> use}) = _$_ClaimSearch;
+
+  factory _ClaimSearch.fromJson(Map<String, dynamic> json) =
+      _$_ClaimSearch.fromJson;
 
   @override
   List<Id> get searchId;
@@ -628,11 +660,13 @@ abstract class _ClaimSearch extends ClaimSearch {
   List<Id> get searchList;
   @override //List<SearchString> searchHas,
 //List<SearchToken> searchType,
-  List<SearchReference> get care_team;
+  @JsonKey(name: 'care-team')
+  List<SearchReference> get careTeam;
   @override
   List<SearchDate> get created;
   @override
-  List<SearchReference> get detail_udi;
+  @JsonKey(name: 'detail-udi')
+  List<SearchReference> get detailUdi;
   @override
   List<SearchReference> get encounter;
   @override
@@ -644,7 +678,8 @@ abstract class _ClaimSearch extends ClaimSearch {
   @override
   List<SearchReference> get insurer;
   @override
-  List<SearchReference> get item_udi;
+  @JsonKey(name: 'item-udi')
+  List<SearchReference> get itemUdi;
   @override
   List<SearchReference> get patient;
   @override
@@ -652,17 +687,23 @@ abstract class _ClaimSearch extends ClaimSearch {
   @override
   List<SearchToken> get priority;
   @override
-  List<SearchReference> get procedure_udi;
+  @JsonKey(name: 'procedure-udi')
+  List<SearchReference> get procedureUdi;
   @override
   List<SearchReference> get provider;
   @override
   List<SearchToken> get status;
   @override
-  List<SearchReference> get subdetail_udi;
+  @JsonKey(name: 'subdetail-udi')
+  List<SearchReference> get subdetailUdi;
   @override
   List<SearchToken> get use;
   @override
   _$ClaimSearchCopyWith<_ClaimSearch> get copyWith;
+}
+
+ClaimResponseSearch _$ClaimResponseSearchFromJson(Map<String, dynamic> json) {
+  return _ClaimResponseSearch.fromJson(json);
 }
 
 /// @nodoc
@@ -685,7 +726,7 @@ class _$ClaimResponseSearchTearOff {
       List<SearchReference> insurer,
       List<SearchToken> outcome,
       List<SearchReference> patient,
-      List<SearchDate> payment_date,
+      @JsonKey(name: 'payment-date') List<SearchDate> paymentDate,
       List<SearchReference> request,
       List<SearchReference> requestor,
       List<SearchToken> status,
@@ -705,12 +746,17 @@ class _$ClaimResponseSearchTearOff {
       insurer: insurer,
       outcome: outcome,
       patient: patient,
-      payment_date: payment_date,
+      paymentDate: paymentDate,
       request: request,
       requestor: requestor,
       status: status,
       use: use,
     );
+  }
+
+// ignore: unused_element
+  ClaimResponseSearch fromJson(Map<String, Object> json) {
+    return ClaimResponseSearch.fromJson(json);
   }
 }
 
@@ -735,12 +781,14 @@ mixin _$ClaimResponseSearch {
   List<SearchReference> get insurer;
   List<SearchToken> get outcome;
   List<SearchReference> get patient;
-  List<SearchDate> get payment_date;
+  @JsonKey(name: 'payment-date')
+  List<SearchDate> get paymentDate;
   List<SearchReference> get request;
   List<SearchReference> get requestor;
   List<SearchToken> get status;
   List<SearchToken> get use;
 
+  Map<String, dynamic> toJson();
   $ClaimResponseSearchCopyWith<ClaimResponseSearch> get copyWith;
 }
 
@@ -764,7 +812,7 @@ abstract class $ClaimResponseSearchCopyWith<$Res> {
       List<SearchReference> insurer,
       List<SearchToken> outcome,
       List<SearchReference> patient,
-      List<SearchDate> payment_date,
+      @JsonKey(name: 'payment-date') List<SearchDate> paymentDate,
       List<SearchReference> request,
       List<SearchReference> requestor,
       List<SearchToken> status,
@@ -796,7 +844,7 @@ class _$ClaimResponseSearchCopyWithImpl<$Res>
     Object insurer = freezed,
     Object outcome = freezed,
     Object patient = freezed,
-    Object payment_date = freezed,
+    Object paymentDate = freezed,
     Object request = freezed,
     Object requestor = freezed,
     Object status = freezed,
@@ -840,9 +888,9 @@ class _$ClaimResponseSearchCopyWithImpl<$Res>
       patient: patient == freezed
           ? _value.patient
           : patient as List<SearchReference>,
-      payment_date: payment_date == freezed
-          ? _value.payment_date
-          : payment_date as List<SearchDate>,
+      paymentDate: paymentDate == freezed
+          ? _value.paymentDate
+          : paymentDate as List<SearchDate>,
       request: request == freezed
           ? _value.request
           : request as List<SearchReference>,
@@ -877,7 +925,7 @@ abstract class _$ClaimResponseSearchCopyWith<$Res>
       List<SearchReference> insurer,
       List<SearchToken> outcome,
       List<SearchReference> patient,
-      List<SearchDate> payment_date,
+      @JsonKey(name: 'payment-date') List<SearchDate> paymentDate,
       List<SearchReference> request,
       List<SearchReference> requestor,
       List<SearchToken> status,
@@ -911,7 +959,7 @@ class __$ClaimResponseSearchCopyWithImpl<$Res>
     Object insurer = freezed,
     Object outcome = freezed,
     Object patient = freezed,
-    Object payment_date = freezed,
+    Object paymentDate = freezed,
     Object request = freezed,
     Object requestor = freezed,
     Object status = freezed,
@@ -955,9 +1003,9 @@ class __$ClaimResponseSearchCopyWithImpl<$Res>
       patient: patient == freezed
           ? _value.patient
           : patient as List<SearchReference>,
-      payment_date: payment_date == freezed
-          ? _value.payment_date
-          : payment_date as List<SearchDate>,
+      paymentDate: paymentDate == freezed
+          ? _value.paymentDate
+          : paymentDate as List<SearchDate>,
       request: request == freezed
           ? _value.request
           : request as List<SearchReference>,
@@ -969,6 +1017,8 @@ class __$ClaimResponseSearchCopyWithImpl<$Res>
     ));
   }
 }
+
+@JsonSerializable()
 
 /// @nodoc
 class _$_ClaimResponseSearch extends _ClaimResponseSearch {
@@ -987,12 +1037,15 @@ class _$_ClaimResponseSearch extends _ClaimResponseSearch {
       this.insurer,
       this.outcome,
       this.patient,
-      this.payment_date,
+      @JsonKey(name: 'payment-date') this.paymentDate,
       this.request,
       this.requestor,
       this.status,
       this.use})
       : super._();
+
+  factory _$_ClaimResponseSearch.fromJson(Map<String, dynamic> json) =>
+      _$_$_ClaimResponseSearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -1024,7 +1077,8 @@ class _$_ClaimResponseSearch extends _ClaimResponseSearch {
   @override
   final List<SearchReference> patient;
   @override
-  final List<SearchDate> payment_date;
+  @JsonKey(name: 'payment-date')
+  final List<SearchDate> paymentDate;
   @override
   final List<SearchReference> request;
   @override
@@ -1036,7 +1090,7 @@ class _$_ClaimResponseSearch extends _ClaimResponseSearch {
 
   @override
   String toString() {
-    return 'ClaimResponseSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, created: $created, disposition: $disposition, identifier: $identifier, insurer: $insurer, outcome: $outcome, patient: $patient, payment_date: $payment_date, request: $request, requestor: $requestor, status: $status, use: $use)';
+    return 'ClaimResponseSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, created: $created, disposition: $disposition, identifier: $identifier, insurer: $insurer, outcome: $outcome, patient: $patient, paymentDate: $paymentDate, request: $request, requestor: $requestor, status: $status, use: $use)';
   }
 
   @override
@@ -1085,9 +1139,9 @@ class _$_ClaimResponseSearch extends _ClaimResponseSearch {
             (identical(other.patient, patient) ||
                 const DeepCollectionEquality()
                     .equals(other.patient, patient)) &&
-            (identical(other.payment_date, payment_date) ||
+            (identical(other.paymentDate, paymentDate) ||
                 const DeepCollectionEquality()
-                    .equals(other.payment_date, payment_date)) &&
+                    .equals(other.paymentDate, paymentDate)) &&
             (identical(other.request, request) ||
                 const DeepCollectionEquality()
                     .equals(other.request, request)) &&
@@ -1117,7 +1171,7 @@ class _$_ClaimResponseSearch extends _ClaimResponseSearch {
       const DeepCollectionEquality().hash(insurer) ^
       const DeepCollectionEquality().hash(outcome) ^
       const DeepCollectionEquality().hash(patient) ^
-      const DeepCollectionEquality().hash(payment_date) ^
+      const DeepCollectionEquality().hash(paymentDate) ^
       const DeepCollectionEquality().hash(request) ^
       const DeepCollectionEquality().hash(requestor) ^
       const DeepCollectionEquality().hash(status) ^
@@ -1127,6 +1181,11 @@ class _$_ClaimResponseSearch extends _ClaimResponseSearch {
   _$ClaimResponseSearchCopyWith<_ClaimResponseSearch> get copyWith =>
       __$ClaimResponseSearchCopyWithImpl<_ClaimResponseSearch>(
           this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_ClaimResponseSearchToJson(this);
+  }
 }
 
 abstract class _ClaimResponseSearch extends ClaimResponseSearch {
@@ -1146,11 +1205,14 @@ abstract class _ClaimResponseSearch extends ClaimResponseSearch {
       List<SearchReference> insurer,
       List<SearchToken> outcome,
       List<SearchReference> patient,
-      List<SearchDate> payment_date,
+      @JsonKey(name: 'payment-date') List<SearchDate> paymentDate,
       List<SearchReference> request,
       List<SearchReference> requestor,
       List<SearchToken> status,
       List<SearchToken> use}) = _$_ClaimResponseSearch;
+
+  factory _ClaimResponseSearch.fromJson(Map<String, dynamic> json) =
+      _$_ClaimResponseSearch.fromJson;
 
   @override
   List<Id> get searchId;
@@ -1182,7 +1244,8 @@ abstract class _ClaimResponseSearch extends ClaimResponseSearch {
   @override
   List<SearchReference> get patient;
   @override
-  List<SearchDate> get payment_date;
+  @JsonKey(name: 'payment-date')
+  List<SearchDate> get paymentDate;
   @override
   List<SearchReference> get request;
   @override
@@ -1193,6 +1256,10 @@ abstract class _ClaimResponseSearch extends ClaimResponseSearch {
   List<SearchToken> get use;
   @override
   _$ClaimResponseSearchCopyWith<_ClaimResponseSearch> get copyWith;
+}
+
+InvoiceSearch _$InvoiceSearchFromJson(Map<String, dynamic> json) {
+  return _InvoiceSearch.fromJson(json);
 }
 
 /// @nodoc
@@ -1214,7 +1281,7 @@ class _$InvoiceSearchTearOff {
       List<SearchToken> identifier,
       List<SearchReference> issuer,
       List<SearchReference> participant,
-      List<SearchToken> participant_role,
+      @JsonKey(name: 'participant-role') List<SearchToken> participantRole,
       List<SearchReference> patient,
       List<SearchReference> recipient,
       List<SearchToken> status,
@@ -1236,7 +1303,7 @@ class _$InvoiceSearchTearOff {
       identifier: identifier,
       issuer: issuer,
       participant: participant,
-      participant_role: participant_role,
+      participantRole: participantRole,
       patient: patient,
       recipient: recipient,
       status: status,
@@ -1245,6 +1312,11 @@ class _$InvoiceSearchTearOff {
       totalnet: totalnet,
       type: type,
     );
+  }
+
+// ignore: unused_element
+  InvoiceSearch fromJson(Map<String, Object> json) {
+    return InvoiceSearch.fromJson(json);
   }
 }
 
@@ -1268,7 +1340,8 @@ mixin _$InvoiceSearch {
   List<SearchToken> get identifier;
   List<SearchReference> get issuer;
   List<SearchReference> get participant;
-  List<SearchToken> get participant_role;
+  @JsonKey(name: 'participant-role')
+  List<SearchToken> get participantRole;
   List<SearchReference> get patient;
   List<SearchReference> get recipient;
   List<SearchToken> get status;
@@ -1277,6 +1350,7 @@ mixin _$InvoiceSearch {
   List<SearchQuantity> get totalnet;
   List<SearchToken> get type;
 
+  Map<String, dynamic> toJson();
   $InvoiceSearchCopyWith<InvoiceSearch> get copyWith;
 }
 
@@ -1299,7 +1373,7 @@ abstract class $InvoiceSearchCopyWith<$Res> {
       List<SearchToken> identifier,
       List<SearchReference> issuer,
       List<SearchReference> participant,
-      List<SearchToken> participant_role,
+      @JsonKey(name: 'participant-role') List<SearchToken> participantRole,
       List<SearchReference> patient,
       List<SearchReference> recipient,
       List<SearchToken> status,
@@ -1333,7 +1407,7 @@ class _$InvoiceSearchCopyWithImpl<$Res>
     Object identifier = freezed,
     Object issuer = freezed,
     Object participant = freezed,
-    Object participant_role = freezed,
+    Object participantRole = freezed,
     Object patient = freezed,
     Object recipient = freezed,
     Object status = freezed,
@@ -1376,9 +1450,9 @@ class _$InvoiceSearchCopyWithImpl<$Res>
       participant: participant == freezed
           ? _value.participant
           : participant as List<SearchReference>,
-      participant_role: participant_role == freezed
-          ? _value.participant_role
-          : participant_role as List<SearchToken>,
+      participantRole: participantRole == freezed
+          ? _value.participantRole
+          : participantRole as List<SearchToken>,
       patient: patient == freezed
           ? _value.patient
           : patient as List<SearchReference>,
@@ -1421,7 +1495,7 @@ abstract class _$InvoiceSearchCopyWith<$Res>
       List<SearchToken> identifier,
       List<SearchReference> issuer,
       List<SearchReference> participant,
-      List<SearchToken> participant_role,
+      @JsonKey(name: 'participant-role') List<SearchToken> participantRole,
       List<SearchReference> patient,
       List<SearchReference> recipient,
       List<SearchToken> status,
@@ -1457,7 +1531,7 @@ class __$InvoiceSearchCopyWithImpl<$Res>
     Object identifier = freezed,
     Object issuer = freezed,
     Object participant = freezed,
-    Object participant_role = freezed,
+    Object participantRole = freezed,
     Object patient = freezed,
     Object recipient = freezed,
     Object status = freezed,
@@ -1500,9 +1574,9 @@ class __$InvoiceSearchCopyWithImpl<$Res>
       participant: participant == freezed
           ? _value.participant
           : participant as List<SearchReference>,
-      participant_role: participant_role == freezed
-          ? _value.participant_role
-          : participant_role as List<SearchToken>,
+      participantRole: participantRole == freezed
+          ? _value.participantRole
+          : participantRole as List<SearchToken>,
       patient: patient == freezed
           ? _value.patient
           : patient as List<SearchReference>,
@@ -1524,6 +1598,8 @@ class __$InvoiceSearchCopyWithImpl<$Res>
   }
 }
 
+@JsonSerializable()
+
 /// @nodoc
 class _$_InvoiceSearch extends _InvoiceSearch {
   _$_InvoiceSearch(
@@ -1540,7 +1616,7 @@ class _$_InvoiceSearch extends _InvoiceSearch {
       this.identifier,
       this.issuer,
       this.participant,
-      this.participant_role,
+      @JsonKey(name: 'participant-role') this.participantRole,
       this.patient,
       this.recipient,
       this.status,
@@ -1549,6 +1625,9 @@ class _$_InvoiceSearch extends _InvoiceSearch {
       this.totalnet,
       this.type})
       : super._();
+
+  factory _$_InvoiceSearch.fromJson(Map<String, dynamic> json) =>
+      _$_$_InvoiceSearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -1578,7 +1657,8 @@ class _$_InvoiceSearch extends _InvoiceSearch {
   @override
   final List<SearchReference> participant;
   @override
-  final List<SearchToken> participant_role;
+  @JsonKey(name: 'participant-role')
+  final List<SearchToken> participantRole;
   @override
   final List<SearchReference> patient;
   @override
@@ -1596,7 +1676,7 @@ class _$_InvoiceSearch extends _InvoiceSearch {
 
   @override
   String toString() {
-    return 'InvoiceSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, account: $account, date: $date, identifier: $identifier, issuer: $issuer, participant: $participant, participant_role: $participant_role, patient: $patient, recipient: $recipient, status: $status, subject: $subject, totalgross: $totalgross, totalnet: $totalnet, type: $type)';
+    return 'InvoiceSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, account: $account, date: $date, identifier: $identifier, issuer: $issuer, participant: $participant, participantRole: $participantRole, patient: $patient, recipient: $recipient, status: $status, subject: $subject, totalgross: $totalgross, totalnet: $totalnet, type: $type)';
   }
 
   @override
@@ -1640,9 +1720,9 @@ class _$_InvoiceSearch extends _InvoiceSearch {
             (identical(other.participant, participant) ||
                 const DeepCollectionEquality()
                     .equals(other.participant, participant)) &&
-            (identical(other.participant_role, participant_role) ||
+            (identical(other.participantRole, participantRole) ||
                 const DeepCollectionEquality()
-                    .equals(other.participant_role, participant_role)) &&
+                    .equals(other.participantRole, participantRole)) &&
             (identical(other.patient, patient) ||
                 const DeepCollectionEquality()
                     .equals(other.patient, patient)) &&
@@ -1680,7 +1760,7 @@ class _$_InvoiceSearch extends _InvoiceSearch {
       const DeepCollectionEquality().hash(identifier) ^
       const DeepCollectionEquality().hash(issuer) ^
       const DeepCollectionEquality().hash(participant) ^
-      const DeepCollectionEquality().hash(participant_role) ^
+      const DeepCollectionEquality().hash(participantRole) ^
       const DeepCollectionEquality().hash(patient) ^
       const DeepCollectionEquality().hash(recipient) ^
       const DeepCollectionEquality().hash(status) ^
@@ -1692,6 +1772,11 @@ class _$_InvoiceSearch extends _InvoiceSearch {
   @override
   _$InvoiceSearchCopyWith<_InvoiceSearch> get copyWith =>
       __$InvoiceSearchCopyWithImpl<_InvoiceSearch>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_InvoiceSearchToJson(this);
+  }
 }
 
 abstract class _InvoiceSearch extends InvoiceSearch {
@@ -1710,7 +1795,7 @@ abstract class _InvoiceSearch extends InvoiceSearch {
       List<SearchToken> identifier,
       List<SearchReference> issuer,
       List<SearchReference> participant,
-      List<SearchToken> participant_role,
+      @JsonKey(name: 'participant-role') List<SearchToken> participantRole,
       List<SearchReference> patient,
       List<SearchReference> recipient,
       List<SearchToken> status,
@@ -1718,6 +1803,9 @@ abstract class _InvoiceSearch extends InvoiceSearch {
       List<SearchQuantity> totalgross,
       List<SearchQuantity> totalnet,
       List<SearchToken> type}) = _$_InvoiceSearch;
+
+  factory _InvoiceSearch.fromJson(Map<String, dynamic> json) =
+      _$_InvoiceSearch.fromJson;
 
   @override
   List<Id> get searchId;
@@ -1747,7 +1835,8 @@ abstract class _InvoiceSearch extends InvoiceSearch {
   @override
   List<SearchReference> get participant;
   @override
-  List<SearchToken> get participant_role;
+  @JsonKey(name: 'participant-role')
+  List<SearchToken> get participantRole;
   @override
   List<SearchReference> get patient;
   @override

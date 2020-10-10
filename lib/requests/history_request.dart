@@ -61,7 +61,7 @@ abstract class HistoryRequest with _$HistoryRequest {
   }) = _HistoryRequestR5;
 
   Future<Either<RestfulFailure, dynamic>> request() async {
-    var thisRequest = '${base}/';
+    var thisRequest = '$base/';
     thisRequest += this.map(
       dstu2: (req) => req.type == null
           ? ''

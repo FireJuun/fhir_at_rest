@@ -8,6 +8,9 @@ part of 'summary.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
+AdverseEventSearch _$AdverseEventSearchFromJson(Map<String, dynamic> json) {
+  return _AdverseEventSearch.fromJson(json);
+}
 
 /// @nodoc
 class _$AdverseEventSearchTearOff {
@@ -58,6 +61,11 @@ class _$AdverseEventSearchTearOff {
       substance: substance,
     );
   }
+
+// ignore: unused_element
+  AdverseEventSearch fromJson(Map<String, Object> json) {
+    return AdverseEventSearch.fromJson(json);
+  }
 }
 
 /// @nodoc
@@ -88,6 +96,7 @@ mixin _$AdverseEventSearch {
   List<SearchReference> get subject;
   List<SearchReference> get substance;
 
+  Map<String, dynamic> toJson();
   $AdverseEventSearchCopyWith<AdverseEventSearch> get copyWith;
 }
 
@@ -323,6 +332,8 @@ class __$AdverseEventSearchCopyWithImpl<$Res>
   }
 }
 
+@JsonSerializable()
+
 /// @nodoc
 class _$_AdverseEventSearch extends _AdverseEventSearch {
   _$_AdverseEventSearch(
@@ -347,6 +358,9 @@ class _$_AdverseEventSearch extends _AdverseEventSearch {
       this.subject,
       this.substance})
       : super._();
+
+  factory _$_AdverseEventSearch.fromJson(Map<String, dynamic> json) =>
+      _$_$_AdverseEventSearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -485,6 +499,11 @@ class _$_AdverseEventSearch extends _AdverseEventSearch {
   @override
   _$AdverseEventSearchCopyWith<_AdverseEventSearch> get copyWith =>
       __$AdverseEventSearchCopyWithImpl<_AdverseEventSearch>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_AdverseEventSearchToJson(this);
+  }
 }
 
 abstract class _AdverseEventSearch extends AdverseEventSearch {
@@ -510,6 +529,9 @@ abstract class _AdverseEventSearch extends AdverseEventSearch {
       List<SearchReference> study,
       List<SearchReference> subject,
       List<SearchReference> substance}) = _$_AdverseEventSearch;
+
+  factory _AdverseEventSearch.fromJson(Map<String, dynamic> json) =
+      _$_AdverseEventSearch.fromJson;
 
   @override
   List<Id> get searchId;
@@ -556,6 +578,11 @@ abstract class _AdverseEventSearch extends AdverseEventSearch {
   _$AdverseEventSearchCopyWith<_AdverseEventSearch> get copyWith;
 }
 
+AllergyIntoleranceSearch _$AllergyIntoleranceSearchFromJson(
+    Map<String, dynamic> json) {
+  return _AllergyIntoleranceSearch.fromJson(json);
+}
+
 /// @nodoc
 class _$AllergyIntoleranceSearchTearOff {
   const _$AllergyIntoleranceSearchTearOff();
@@ -572,12 +599,14 @@ class _$AllergyIntoleranceSearchTearOff {
       List<Id> searchList,
       List<SearchReference> asserter,
       List<SearchToken> category,
-      List<SearchToken> clinical_status,
+      @JsonKey(name: 'clinical-status')
+          List<SearchToken> clinicalStatus,
       List<SearchToken> code,
       List<SearchToken> criticality,
       List<SearchDate> date,
       List<SearchToken> identifier,
-      List<SearchDate> last_date,
+      @JsonKey(name: 'last-date')
+          List<SearchDate> lastDate,
       List<SearchToken> manifestation,
       List<SearchDate> onset,
       List<SearchReference> patient,
@@ -585,7 +614,8 @@ class _$AllergyIntoleranceSearchTearOff {
       List<SearchToken> route,
       List<SearchToken> severity,
       List<SearchToken> type,
-      List<SearchToken> verification_status}) {
+      @JsonKey(name: 'verification-status')
+          List<SearchToken> verificationStatus}) {
     return _AllergyIntoleranceSearch(
       searchId: searchId,
       searchLastUpdated: searchLastUpdated,
@@ -597,12 +627,12 @@ class _$AllergyIntoleranceSearchTearOff {
       searchList: searchList,
       asserter: asserter,
       category: category,
-      clinical_status: clinical_status,
+      clinicalStatus: clinicalStatus,
       code: code,
       criticality: criticality,
       date: date,
       identifier: identifier,
-      last_date: last_date,
+      lastDate: lastDate,
       manifestation: manifestation,
       onset: onset,
       patient: patient,
@@ -610,8 +640,13 @@ class _$AllergyIntoleranceSearchTearOff {
       route: route,
       severity: severity,
       type: type,
-      verification_status: verification_status,
+      verificationStatus: verificationStatus,
     );
+  }
+
+// ignore: unused_element
+  AllergyIntoleranceSearch fromJson(Map<String, Object> json) {
+    return AllergyIntoleranceSearch.fromJson(json);
   }
 }
 
@@ -632,12 +667,14 @@ mixin _$AllergyIntoleranceSearch {
 //List<SearchToken> searchType,
   List<SearchReference> get asserter;
   List<SearchToken> get category;
-  List<SearchToken> get clinical_status;
+  @JsonKey(name: 'clinical-status')
+  List<SearchToken> get clinicalStatus;
   List<SearchToken> get code;
   List<SearchToken> get criticality;
   List<SearchDate> get date;
   List<SearchToken> get identifier;
-  List<SearchDate> get last_date;
+  @JsonKey(name: 'last-date')
+  List<SearchDate> get lastDate;
   List<SearchToken> get manifestation;
   List<SearchDate> get onset;
   List<SearchReference> get patient;
@@ -645,8 +682,10 @@ mixin _$AllergyIntoleranceSearch {
   List<SearchToken> get route;
   List<SearchToken> get severity;
   List<SearchToken> get type;
-  List<SearchToken> get verification_status;
+  @JsonKey(name: 'verification-status')
+  List<SearchToken> get verificationStatus;
 
+  Map<String, dynamic> toJson();
   $AllergyIntoleranceSearchCopyWith<AllergyIntoleranceSearch> get copyWith;
 }
 
@@ -666,12 +705,14 @@ abstract class $AllergyIntoleranceSearchCopyWith<$Res> {
       List<Id> searchList,
       List<SearchReference> asserter,
       List<SearchToken> category,
-      List<SearchToken> clinical_status,
+      @JsonKey(name: 'clinical-status')
+          List<SearchToken> clinicalStatus,
       List<SearchToken> code,
       List<SearchToken> criticality,
       List<SearchDate> date,
       List<SearchToken> identifier,
-      List<SearchDate> last_date,
+      @JsonKey(name: 'last-date')
+          List<SearchDate> lastDate,
       List<SearchToken> manifestation,
       List<SearchDate> onset,
       List<SearchReference> patient,
@@ -679,7 +720,8 @@ abstract class $AllergyIntoleranceSearchCopyWith<$Res> {
       List<SearchToken> route,
       List<SearchToken> severity,
       List<SearchToken> type,
-      List<SearchToken> verification_status});
+      @JsonKey(name: 'verification-status')
+          List<SearchToken> verificationStatus});
 }
 
 /// @nodoc
@@ -703,12 +745,12 @@ class _$AllergyIntoleranceSearchCopyWithImpl<$Res>
     Object searchList = freezed,
     Object asserter = freezed,
     Object category = freezed,
-    Object clinical_status = freezed,
+    Object clinicalStatus = freezed,
     Object code = freezed,
     Object criticality = freezed,
     Object date = freezed,
     Object identifier = freezed,
-    Object last_date = freezed,
+    Object lastDate = freezed,
     Object manifestation = freezed,
     Object onset = freezed,
     Object patient = freezed,
@@ -716,7 +758,7 @@ class _$AllergyIntoleranceSearchCopyWithImpl<$Res>
     Object route = freezed,
     Object severity = freezed,
     Object type = freezed,
-    Object verification_status = freezed,
+    Object verificationStatus = freezed,
   }) {
     return _then(_value.copyWith(
       searchId: searchId == freezed ? _value.searchId : searchId as List<Id>,
@@ -745,9 +787,9 @@ class _$AllergyIntoleranceSearchCopyWithImpl<$Res>
           : asserter as List<SearchReference>,
       category:
           category == freezed ? _value.category : category as List<SearchToken>,
-      clinical_status: clinical_status == freezed
-          ? _value.clinical_status
-          : clinical_status as List<SearchToken>,
+      clinicalStatus: clinicalStatus == freezed
+          ? _value.clinicalStatus
+          : clinicalStatus as List<SearchToken>,
       code: code == freezed ? _value.code : code as List<SearchToken>,
       criticality: criticality == freezed
           ? _value.criticality
@@ -756,9 +798,8 @@ class _$AllergyIntoleranceSearchCopyWithImpl<$Res>
       identifier: identifier == freezed
           ? _value.identifier
           : identifier as List<SearchToken>,
-      last_date: last_date == freezed
-          ? _value.last_date
-          : last_date as List<SearchDate>,
+      lastDate:
+          lastDate == freezed ? _value.lastDate : lastDate as List<SearchDate>,
       manifestation: manifestation == freezed
           ? _value.manifestation
           : manifestation as List<SearchToken>,
@@ -773,9 +814,9 @@ class _$AllergyIntoleranceSearchCopyWithImpl<$Res>
       severity:
           severity == freezed ? _value.severity : severity as List<SearchToken>,
       type: type == freezed ? _value.type : type as List<SearchToken>,
-      verification_status: verification_status == freezed
-          ? _value.verification_status
-          : verification_status as List<SearchToken>,
+      verificationStatus: verificationStatus == freezed
+          ? _value.verificationStatus
+          : verificationStatus as List<SearchToken>,
     ));
   }
 }
@@ -798,12 +839,14 @@ abstract class _$AllergyIntoleranceSearchCopyWith<$Res>
       List<Id> searchList,
       List<SearchReference> asserter,
       List<SearchToken> category,
-      List<SearchToken> clinical_status,
+      @JsonKey(name: 'clinical-status')
+          List<SearchToken> clinicalStatus,
       List<SearchToken> code,
       List<SearchToken> criticality,
       List<SearchDate> date,
       List<SearchToken> identifier,
-      List<SearchDate> last_date,
+      @JsonKey(name: 'last-date')
+          List<SearchDate> lastDate,
       List<SearchToken> manifestation,
       List<SearchDate> onset,
       List<SearchReference> patient,
@@ -811,7 +854,8 @@ abstract class _$AllergyIntoleranceSearchCopyWith<$Res>
       List<SearchToken> route,
       List<SearchToken> severity,
       List<SearchToken> type,
-      List<SearchToken> verification_status});
+      @JsonKey(name: 'verification-status')
+          List<SearchToken> verificationStatus});
 }
 
 /// @nodoc
@@ -838,12 +882,12 @@ class __$AllergyIntoleranceSearchCopyWithImpl<$Res>
     Object searchList = freezed,
     Object asserter = freezed,
     Object category = freezed,
-    Object clinical_status = freezed,
+    Object clinicalStatus = freezed,
     Object code = freezed,
     Object criticality = freezed,
     Object date = freezed,
     Object identifier = freezed,
-    Object last_date = freezed,
+    Object lastDate = freezed,
     Object manifestation = freezed,
     Object onset = freezed,
     Object patient = freezed,
@@ -851,7 +895,7 @@ class __$AllergyIntoleranceSearchCopyWithImpl<$Res>
     Object route = freezed,
     Object severity = freezed,
     Object type = freezed,
-    Object verification_status = freezed,
+    Object verificationStatus = freezed,
   }) {
     return _then(_AllergyIntoleranceSearch(
       searchId: searchId == freezed ? _value.searchId : searchId as List<Id>,
@@ -880,9 +924,9 @@ class __$AllergyIntoleranceSearchCopyWithImpl<$Res>
           : asserter as List<SearchReference>,
       category:
           category == freezed ? _value.category : category as List<SearchToken>,
-      clinical_status: clinical_status == freezed
-          ? _value.clinical_status
-          : clinical_status as List<SearchToken>,
+      clinicalStatus: clinicalStatus == freezed
+          ? _value.clinicalStatus
+          : clinicalStatus as List<SearchToken>,
       code: code == freezed ? _value.code : code as List<SearchToken>,
       criticality: criticality == freezed
           ? _value.criticality
@@ -891,9 +935,8 @@ class __$AllergyIntoleranceSearchCopyWithImpl<$Res>
       identifier: identifier == freezed
           ? _value.identifier
           : identifier as List<SearchToken>,
-      last_date: last_date == freezed
-          ? _value.last_date
-          : last_date as List<SearchDate>,
+      lastDate:
+          lastDate == freezed ? _value.lastDate : lastDate as List<SearchDate>,
       manifestation: manifestation == freezed
           ? _value.manifestation
           : manifestation as List<SearchToken>,
@@ -908,12 +951,14 @@ class __$AllergyIntoleranceSearchCopyWithImpl<$Res>
       severity:
           severity == freezed ? _value.severity : severity as List<SearchToken>,
       type: type == freezed ? _value.type : type as List<SearchToken>,
-      verification_status: verification_status == freezed
-          ? _value.verification_status
-          : verification_status as List<SearchToken>,
+      verificationStatus: verificationStatus == freezed
+          ? _value.verificationStatus
+          : verificationStatus as List<SearchToken>,
     ));
   }
 }
+
+@JsonSerializable()
 
 /// @nodoc
 class _$_AllergyIntoleranceSearch extends _AllergyIntoleranceSearch {
@@ -928,12 +973,12 @@ class _$_AllergyIntoleranceSearch extends _AllergyIntoleranceSearch {
       this.searchList,
       this.asserter,
       this.category,
-      this.clinical_status,
+      @JsonKey(name: 'clinical-status') this.clinicalStatus,
       this.code,
       this.criticality,
       this.date,
       this.identifier,
-      this.last_date,
+      @JsonKey(name: 'last-date') this.lastDate,
       this.manifestation,
       this.onset,
       this.patient,
@@ -941,8 +986,11 @@ class _$_AllergyIntoleranceSearch extends _AllergyIntoleranceSearch {
       this.route,
       this.severity,
       this.type,
-      this.verification_status})
+      @JsonKey(name: 'verification-status') this.verificationStatus})
       : super._();
+
+  factory _$_AllergyIntoleranceSearch.fromJson(Map<String, dynamic> json) =>
+      _$_$_AllergyIntoleranceSearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -966,7 +1014,8 @@ class _$_AllergyIntoleranceSearch extends _AllergyIntoleranceSearch {
   @override
   final List<SearchToken> category;
   @override
-  final List<SearchToken> clinical_status;
+  @JsonKey(name: 'clinical-status')
+  final List<SearchToken> clinicalStatus;
   @override
   final List<SearchToken> code;
   @override
@@ -976,7 +1025,8 @@ class _$_AllergyIntoleranceSearch extends _AllergyIntoleranceSearch {
   @override
   final List<SearchToken> identifier;
   @override
-  final List<SearchDate> last_date;
+  @JsonKey(name: 'last-date')
+  final List<SearchDate> lastDate;
   @override
   final List<SearchToken> manifestation;
   @override
@@ -992,11 +1042,12 @@ class _$_AllergyIntoleranceSearch extends _AllergyIntoleranceSearch {
   @override
   final List<SearchToken> type;
   @override
-  final List<SearchToken> verification_status;
+  @JsonKey(name: 'verification-status')
+  final List<SearchToken> verificationStatus;
 
   @override
   String toString() {
-    return 'AllergyIntoleranceSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, asserter: $asserter, category: $category, clinical_status: $clinical_status, code: $code, criticality: $criticality, date: $date, identifier: $identifier, last_date: $last_date, manifestation: $manifestation, onset: $onset, patient: $patient, recorder: $recorder, route: $route, severity: $severity, type: $type, verification_status: $verification_status)';
+    return 'AllergyIntoleranceSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, asserter: $asserter, category: $category, clinicalStatus: $clinicalStatus, code: $code, criticality: $criticality, date: $date, identifier: $identifier, lastDate: $lastDate, manifestation: $manifestation, onset: $onset, patient: $patient, recorder: $recorder, route: $route, severity: $severity, type: $type, verificationStatus: $verificationStatus)';
   }
 
   @override
@@ -1033,9 +1084,9 @@ class _$_AllergyIntoleranceSearch extends _AllergyIntoleranceSearch {
             (identical(other.category, category) ||
                 const DeepCollectionEquality()
                     .equals(other.category, category)) &&
-            (identical(other.clinical_status, clinical_status) ||
+            (identical(other.clinicalStatus, clinicalStatus) ||
                 const DeepCollectionEquality()
-                    .equals(other.clinical_status, clinical_status)) &&
+                    .equals(other.clinicalStatus, clinicalStatus)) &&
             (identical(other.code, code) ||
                 const DeepCollectionEquality().equals(other.code, code)) &&
             (identical(other.criticality, criticality) ||
@@ -1046,9 +1097,9 @@ class _$_AllergyIntoleranceSearch extends _AllergyIntoleranceSearch {
             (identical(other.identifier, identifier) ||
                 const DeepCollectionEquality()
                     .equals(other.identifier, identifier)) &&
-            (identical(other.last_date, last_date) ||
+            (identical(other.lastDate, lastDate) ||
                 const DeepCollectionEquality()
-                    .equals(other.last_date, last_date)) &&
+                    .equals(other.lastDate, lastDate)) &&
             (identical(other.manifestation, manifestation) ||
                 const DeepCollectionEquality()
                     .equals(other.manifestation, manifestation)) &&
@@ -1067,9 +1118,9 @@ class _$_AllergyIntoleranceSearch extends _AllergyIntoleranceSearch {
                     .equals(other.severity, severity)) &&
             (identical(other.type, type) ||
                 const DeepCollectionEquality().equals(other.type, type)) &&
-            (identical(other.verification_status, verification_status) ||
+            (identical(other.verificationStatus, verificationStatus) ||
                 const DeepCollectionEquality()
-                    .equals(other.verification_status, verification_status)));
+                    .equals(other.verificationStatus, verificationStatus)));
   }
 
   @override
@@ -1085,12 +1136,12 @@ class _$_AllergyIntoleranceSearch extends _AllergyIntoleranceSearch {
       const DeepCollectionEquality().hash(searchList) ^
       const DeepCollectionEquality().hash(asserter) ^
       const DeepCollectionEquality().hash(category) ^
-      const DeepCollectionEquality().hash(clinical_status) ^
+      const DeepCollectionEquality().hash(clinicalStatus) ^
       const DeepCollectionEquality().hash(code) ^
       const DeepCollectionEquality().hash(criticality) ^
       const DeepCollectionEquality().hash(date) ^
       const DeepCollectionEquality().hash(identifier) ^
-      const DeepCollectionEquality().hash(last_date) ^
+      const DeepCollectionEquality().hash(lastDate) ^
       const DeepCollectionEquality().hash(manifestation) ^
       const DeepCollectionEquality().hash(onset) ^
       const DeepCollectionEquality().hash(patient) ^
@@ -1098,12 +1149,17 @@ class _$_AllergyIntoleranceSearch extends _AllergyIntoleranceSearch {
       const DeepCollectionEquality().hash(route) ^
       const DeepCollectionEquality().hash(severity) ^
       const DeepCollectionEquality().hash(type) ^
-      const DeepCollectionEquality().hash(verification_status);
+      const DeepCollectionEquality().hash(verificationStatus);
 
   @override
   _$AllergyIntoleranceSearchCopyWith<_AllergyIntoleranceSearch> get copyWith =>
       __$AllergyIntoleranceSearchCopyWithImpl<_AllergyIntoleranceSearch>(
           this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_AllergyIntoleranceSearchToJson(this);
+  }
 }
 
 abstract class _AllergyIntoleranceSearch extends AllergyIntoleranceSearch {
@@ -1119,12 +1175,14 @@ abstract class _AllergyIntoleranceSearch extends AllergyIntoleranceSearch {
       List<Id> searchList,
       List<SearchReference> asserter,
       List<SearchToken> category,
-      List<SearchToken> clinical_status,
+      @JsonKey(name: 'clinical-status')
+          List<SearchToken> clinicalStatus,
       List<SearchToken> code,
       List<SearchToken> criticality,
       List<SearchDate> date,
       List<SearchToken> identifier,
-      List<SearchDate> last_date,
+      @JsonKey(name: 'last-date')
+          List<SearchDate> lastDate,
       List<SearchToken> manifestation,
       List<SearchDate> onset,
       List<SearchReference> patient,
@@ -1132,7 +1190,11 @@ abstract class _AllergyIntoleranceSearch extends AllergyIntoleranceSearch {
       List<SearchToken> route,
       List<SearchToken> severity,
       List<SearchToken> type,
-      List<SearchToken> verification_status}) = _$_AllergyIntoleranceSearch;
+      @JsonKey(name: 'verification-status')
+          List<SearchToken> verificationStatus}) = _$_AllergyIntoleranceSearch;
+
+  factory _AllergyIntoleranceSearch.fromJson(Map<String, dynamic> json) =
+      _$_AllergyIntoleranceSearch.fromJson;
 
   @override
   List<Id> get searchId;
@@ -1156,7 +1218,8 @@ abstract class _AllergyIntoleranceSearch extends AllergyIntoleranceSearch {
   @override
   List<SearchToken> get category;
   @override
-  List<SearchToken> get clinical_status;
+  @JsonKey(name: 'clinical-status')
+  List<SearchToken> get clinicalStatus;
   @override
   List<SearchToken> get code;
   @override
@@ -1166,7 +1229,8 @@ abstract class _AllergyIntoleranceSearch extends AllergyIntoleranceSearch {
   @override
   List<SearchToken> get identifier;
   @override
-  List<SearchDate> get last_date;
+  @JsonKey(name: 'last-date')
+  List<SearchDate> get lastDate;
   @override
   List<SearchToken> get manifestation;
   @override
@@ -1182,9 +1246,14 @@ abstract class _AllergyIntoleranceSearch extends AllergyIntoleranceSearch {
   @override
   List<SearchToken> get type;
   @override
-  List<SearchToken> get verification_status;
+  @JsonKey(name: 'verification-status')
+  List<SearchToken> get verificationStatus;
   @override
   _$AllergyIntoleranceSearchCopyWith<_AllergyIntoleranceSearch> get copyWith;
+}
+
+ConditionSearch _$ConditionSearchFromJson(Map<String, dynamic> json) {
+  return _ConditionSearch.fromJson(json);
 }
 
 /// @nodoc
@@ -1204,24 +1273,35 @@ class _$ConditionSearchTearOff {
       List<SearchToken> code,
       List<SearchToken> identifier,
       List<SearchReference> patient,
-      List<SearchQuantity> abatement_age,
-      List<SearchDate> abatement_date,
-      List<SearchString> abatement_string,
+      @JsonKey(name: 'abatement-age')
+          List<SearchQuantity> abatementAge,
+      @JsonKey(name: 'abatement-date')
+          List<SearchDate> abatementDate,
+      @JsonKey(name: 'abatement-string')
+          List<SearchString> abatementString,
       List<SearchReference> asserter,
-      List<SearchToken> body_site,
+      @JsonKey(name: 'body-site')
+          List<SearchToken> bodySite,
       List<SearchToken> category,
-      List<SearchToken> clinical_status,
+      @JsonKey(name: 'clinical-status')
+          List<SearchToken> clinicalStatus,
       List<SearchReference> encounter,
       List<SearchToken> evidence,
-      List<SearchReference> evidence_detail,
-      List<SearchQuantity> onset_age,
-      List<SearchDate> onset_date,
-      List<SearchString> onset_info,
-      List<SearchDate> recorded_date,
+      @JsonKey(name: 'evidence-detail')
+          List<SearchReference> evidenceDetail,
+      @JsonKey(name: 'onset-age')
+          List<SearchQuantity> onsetAge,
+      @JsonKey(name: 'onset-date')
+          List<SearchDate> onsetDate,
+      @JsonKey(name: 'onset-info')
+          List<SearchString> onsetInfo,
+      @JsonKey(name: 'recorded-date')
+          List<SearchDate> recordedDate,
       List<SearchToken> severity,
       List<SearchToken> stage,
       List<SearchReference> subject,
-      List<SearchToken> verification_status}) {
+      @JsonKey(name: 'verification-status')
+          List<SearchToken> verificationStatus}) {
     return _ConditionSearch(
       searchId: searchId,
       searchLastUpdated: searchLastUpdated,
@@ -1234,25 +1314,30 @@ class _$ConditionSearchTearOff {
       code: code,
       identifier: identifier,
       patient: patient,
-      abatement_age: abatement_age,
-      abatement_date: abatement_date,
-      abatement_string: abatement_string,
+      abatementAge: abatementAge,
+      abatementDate: abatementDate,
+      abatementString: abatementString,
       asserter: asserter,
-      body_site: body_site,
+      bodySite: bodySite,
       category: category,
-      clinical_status: clinical_status,
+      clinicalStatus: clinicalStatus,
       encounter: encounter,
       evidence: evidence,
-      evidence_detail: evidence_detail,
-      onset_age: onset_age,
-      onset_date: onset_date,
-      onset_info: onset_info,
-      recorded_date: recorded_date,
+      evidenceDetail: evidenceDetail,
+      onsetAge: onsetAge,
+      onsetDate: onsetDate,
+      onsetInfo: onsetInfo,
+      recordedDate: recordedDate,
       severity: severity,
       stage: stage,
       subject: subject,
-      verification_status: verification_status,
+      verificationStatus: verificationStatus,
     );
+  }
+
+// ignore: unused_element
+  ConditionSearch fromJson(Map<String, Object> json) {
+    return ConditionSearch.fromJson(json);
   }
 }
 
@@ -1274,25 +1359,37 @@ mixin _$ConditionSearch {
   List<SearchToken> get code;
   List<SearchToken> get identifier;
   List<SearchReference> get patient;
-  List<SearchQuantity> get abatement_age;
-  List<SearchDate> get abatement_date;
-  List<SearchString> get abatement_string;
+  @JsonKey(name: 'abatement-age')
+  List<SearchQuantity> get abatementAge;
+  @JsonKey(name: 'abatement-date')
+  List<SearchDate> get abatementDate;
+  @JsonKey(name: 'abatement-string')
+  List<SearchString> get abatementString;
   List<SearchReference> get asserter;
-  List<SearchToken> get body_site;
+  @JsonKey(name: 'body-site')
+  List<SearchToken> get bodySite;
   List<SearchToken> get category;
-  List<SearchToken> get clinical_status;
+  @JsonKey(name: 'clinical-status')
+  List<SearchToken> get clinicalStatus;
   List<SearchReference> get encounter;
   List<SearchToken> get evidence;
-  List<SearchReference> get evidence_detail;
-  List<SearchQuantity> get onset_age;
-  List<SearchDate> get onset_date;
-  List<SearchString> get onset_info;
-  List<SearchDate> get recorded_date;
+  @JsonKey(name: 'evidence-detail')
+  List<SearchReference> get evidenceDetail;
+  @JsonKey(name: 'onset-age')
+  List<SearchQuantity> get onsetAge;
+  @JsonKey(name: 'onset-date')
+  List<SearchDate> get onsetDate;
+  @JsonKey(name: 'onset-info')
+  List<SearchString> get onsetInfo;
+  @JsonKey(name: 'recorded-date')
+  List<SearchDate> get recordedDate;
   List<SearchToken> get severity;
   List<SearchToken> get stage;
   List<SearchReference> get subject;
-  List<SearchToken> get verification_status;
+  @JsonKey(name: 'verification-status')
+  List<SearchToken> get verificationStatus;
 
+  Map<String, dynamic> toJson();
   $ConditionSearchCopyWith<ConditionSearch> get copyWith;
 }
 
@@ -1313,24 +1410,35 @@ abstract class $ConditionSearchCopyWith<$Res> {
       List<SearchToken> code,
       List<SearchToken> identifier,
       List<SearchReference> patient,
-      List<SearchQuantity> abatement_age,
-      List<SearchDate> abatement_date,
-      List<SearchString> abatement_string,
+      @JsonKey(name: 'abatement-age')
+          List<SearchQuantity> abatementAge,
+      @JsonKey(name: 'abatement-date')
+          List<SearchDate> abatementDate,
+      @JsonKey(name: 'abatement-string')
+          List<SearchString> abatementString,
       List<SearchReference> asserter,
-      List<SearchToken> body_site,
+      @JsonKey(name: 'body-site')
+          List<SearchToken> bodySite,
       List<SearchToken> category,
-      List<SearchToken> clinical_status,
+      @JsonKey(name: 'clinical-status')
+          List<SearchToken> clinicalStatus,
       List<SearchReference> encounter,
       List<SearchToken> evidence,
-      List<SearchReference> evidence_detail,
-      List<SearchQuantity> onset_age,
-      List<SearchDate> onset_date,
-      List<SearchString> onset_info,
-      List<SearchDate> recorded_date,
+      @JsonKey(name: 'evidence-detail')
+          List<SearchReference> evidenceDetail,
+      @JsonKey(name: 'onset-age')
+          List<SearchQuantity> onsetAge,
+      @JsonKey(name: 'onset-date')
+          List<SearchDate> onsetDate,
+      @JsonKey(name: 'onset-info')
+          List<SearchString> onsetInfo,
+      @JsonKey(name: 'recorded-date')
+          List<SearchDate> recordedDate,
       List<SearchToken> severity,
       List<SearchToken> stage,
       List<SearchReference> subject,
-      List<SearchToken> verification_status});
+      @JsonKey(name: 'verification-status')
+          List<SearchToken> verificationStatus});
 }
 
 /// @nodoc
@@ -1355,24 +1463,24 @@ class _$ConditionSearchCopyWithImpl<$Res>
     Object code = freezed,
     Object identifier = freezed,
     Object patient = freezed,
-    Object abatement_age = freezed,
-    Object abatement_date = freezed,
-    Object abatement_string = freezed,
+    Object abatementAge = freezed,
+    Object abatementDate = freezed,
+    Object abatementString = freezed,
     Object asserter = freezed,
-    Object body_site = freezed,
+    Object bodySite = freezed,
     Object category = freezed,
-    Object clinical_status = freezed,
+    Object clinicalStatus = freezed,
     Object encounter = freezed,
     Object evidence = freezed,
-    Object evidence_detail = freezed,
-    Object onset_age = freezed,
-    Object onset_date = freezed,
-    Object onset_info = freezed,
-    Object recorded_date = freezed,
+    Object evidenceDetail = freezed,
+    Object onsetAge = freezed,
+    Object onsetDate = freezed,
+    Object onsetInfo = freezed,
+    Object recordedDate = freezed,
     Object severity = freezed,
     Object stage = freezed,
     Object subject = freezed,
-    Object verification_status = freezed,
+    Object verificationStatus = freezed,
   }) {
     return _then(_value.copyWith(
       searchId: searchId == freezed ? _value.searchId : searchId as List<Id>,
@@ -1403,55 +1511,54 @@ class _$ConditionSearchCopyWithImpl<$Res>
       patient: patient == freezed
           ? _value.patient
           : patient as List<SearchReference>,
-      abatement_age: abatement_age == freezed
-          ? _value.abatement_age
-          : abatement_age as List<SearchQuantity>,
-      abatement_date: abatement_date == freezed
-          ? _value.abatement_date
-          : abatement_date as List<SearchDate>,
-      abatement_string: abatement_string == freezed
-          ? _value.abatement_string
-          : abatement_string as List<SearchString>,
+      abatementAge: abatementAge == freezed
+          ? _value.abatementAge
+          : abatementAge as List<SearchQuantity>,
+      abatementDate: abatementDate == freezed
+          ? _value.abatementDate
+          : abatementDate as List<SearchDate>,
+      abatementString: abatementString == freezed
+          ? _value.abatementString
+          : abatementString as List<SearchString>,
       asserter: asserter == freezed
           ? _value.asserter
           : asserter as List<SearchReference>,
-      body_site: body_site == freezed
-          ? _value.body_site
-          : body_site as List<SearchToken>,
+      bodySite:
+          bodySite == freezed ? _value.bodySite : bodySite as List<SearchToken>,
       category:
           category == freezed ? _value.category : category as List<SearchToken>,
-      clinical_status: clinical_status == freezed
-          ? _value.clinical_status
-          : clinical_status as List<SearchToken>,
+      clinicalStatus: clinicalStatus == freezed
+          ? _value.clinicalStatus
+          : clinicalStatus as List<SearchToken>,
       encounter: encounter == freezed
           ? _value.encounter
           : encounter as List<SearchReference>,
       evidence:
           evidence == freezed ? _value.evidence : evidence as List<SearchToken>,
-      evidence_detail: evidence_detail == freezed
-          ? _value.evidence_detail
-          : evidence_detail as List<SearchReference>,
-      onset_age: onset_age == freezed
-          ? _value.onset_age
-          : onset_age as List<SearchQuantity>,
-      onset_date: onset_date == freezed
-          ? _value.onset_date
-          : onset_date as List<SearchDate>,
-      onset_info: onset_info == freezed
-          ? _value.onset_info
-          : onset_info as List<SearchString>,
-      recorded_date: recorded_date == freezed
-          ? _value.recorded_date
-          : recorded_date as List<SearchDate>,
+      evidenceDetail: evidenceDetail == freezed
+          ? _value.evidenceDetail
+          : evidenceDetail as List<SearchReference>,
+      onsetAge: onsetAge == freezed
+          ? _value.onsetAge
+          : onsetAge as List<SearchQuantity>,
+      onsetDate: onsetDate == freezed
+          ? _value.onsetDate
+          : onsetDate as List<SearchDate>,
+      onsetInfo: onsetInfo == freezed
+          ? _value.onsetInfo
+          : onsetInfo as List<SearchString>,
+      recordedDate: recordedDate == freezed
+          ? _value.recordedDate
+          : recordedDate as List<SearchDate>,
       severity:
           severity == freezed ? _value.severity : severity as List<SearchToken>,
       stage: stage == freezed ? _value.stage : stage as List<SearchToken>,
       subject: subject == freezed
           ? _value.subject
           : subject as List<SearchReference>,
-      verification_status: verification_status == freezed
-          ? _value.verification_status
-          : verification_status as List<SearchToken>,
+      verificationStatus: verificationStatus == freezed
+          ? _value.verificationStatus
+          : verificationStatus as List<SearchToken>,
     ));
   }
 }
@@ -1475,24 +1582,35 @@ abstract class _$ConditionSearchCopyWith<$Res>
       List<SearchToken> code,
       List<SearchToken> identifier,
       List<SearchReference> patient,
-      List<SearchQuantity> abatement_age,
-      List<SearchDate> abatement_date,
-      List<SearchString> abatement_string,
+      @JsonKey(name: 'abatement-age')
+          List<SearchQuantity> abatementAge,
+      @JsonKey(name: 'abatement-date')
+          List<SearchDate> abatementDate,
+      @JsonKey(name: 'abatement-string')
+          List<SearchString> abatementString,
       List<SearchReference> asserter,
-      List<SearchToken> body_site,
+      @JsonKey(name: 'body-site')
+          List<SearchToken> bodySite,
       List<SearchToken> category,
-      List<SearchToken> clinical_status,
+      @JsonKey(name: 'clinical-status')
+          List<SearchToken> clinicalStatus,
       List<SearchReference> encounter,
       List<SearchToken> evidence,
-      List<SearchReference> evidence_detail,
-      List<SearchQuantity> onset_age,
-      List<SearchDate> onset_date,
-      List<SearchString> onset_info,
-      List<SearchDate> recorded_date,
+      @JsonKey(name: 'evidence-detail')
+          List<SearchReference> evidenceDetail,
+      @JsonKey(name: 'onset-age')
+          List<SearchQuantity> onsetAge,
+      @JsonKey(name: 'onset-date')
+          List<SearchDate> onsetDate,
+      @JsonKey(name: 'onset-info')
+          List<SearchString> onsetInfo,
+      @JsonKey(name: 'recorded-date')
+          List<SearchDate> recordedDate,
       List<SearchToken> severity,
       List<SearchToken> stage,
       List<SearchReference> subject,
-      List<SearchToken> verification_status});
+      @JsonKey(name: 'verification-status')
+          List<SearchToken> verificationStatus});
 }
 
 /// @nodoc
@@ -1519,24 +1637,24 @@ class __$ConditionSearchCopyWithImpl<$Res>
     Object code = freezed,
     Object identifier = freezed,
     Object patient = freezed,
-    Object abatement_age = freezed,
-    Object abatement_date = freezed,
-    Object abatement_string = freezed,
+    Object abatementAge = freezed,
+    Object abatementDate = freezed,
+    Object abatementString = freezed,
     Object asserter = freezed,
-    Object body_site = freezed,
+    Object bodySite = freezed,
     Object category = freezed,
-    Object clinical_status = freezed,
+    Object clinicalStatus = freezed,
     Object encounter = freezed,
     Object evidence = freezed,
-    Object evidence_detail = freezed,
-    Object onset_age = freezed,
-    Object onset_date = freezed,
-    Object onset_info = freezed,
-    Object recorded_date = freezed,
+    Object evidenceDetail = freezed,
+    Object onsetAge = freezed,
+    Object onsetDate = freezed,
+    Object onsetInfo = freezed,
+    Object recordedDate = freezed,
     Object severity = freezed,
     Object stage = freezed,
     Object subject = freezed,
-    Object verification_status = freezed,
+    Object verificationStatus = freezed,
   }) {
     return _then(_ConditionSearch(
       searchId: searchId == freezed ? _value.searchId : searchId as List<Id>,
@@ -1567,58 +1685,59 @@ class __$ConditionSearchCopyWithImpl<$Res>
       patient: patient == freezed
           ? _value.patient
           : patient as List<SearchReference>,
-      abatement_age: abatement_age == freezed
-          ? _value.abatement_age
-          : abatement_age as List<SearchQuantity>,
-      abatement_date: abatement_date == freezed
-          ? _value.abatement_date
-          : abatement_date as List<SearchDate>,
-      abatement_string: abatement_string == freezed
-          ? _value.abatement_string
-          : abatement_string as List<SearchString>,
+      abatementAge: abatementAge == freezed
+          ? _value.abatementAge
+          : abatementAge as List<SearchQuantity>,
+      abatementDate: abatementDate == freezed
+          ? _value.abatementDate
+          : abatementDate as List<SearchDate>,
+      abatementString: abatementString == freezed
+          ? _value.abatementString
+          : abatementString as List<SearchString>,
       asserter: asserter == freezed
           ? _value.asserter
           : asserter as List<SearchReference>,
-      body_site: body_site == freezed
-          ? _value.body_site
-          : body_site as List<SearchToken>,
+      bodySite:
+          bodySite == freezed ? _value.bodySite : bodySite as List<SearchToken>,
       category:
           category == freezed ? _value.category : category as List<SearchToken>,
-      clinical_status: clinical_status == freezed
-          ? _value.clinical_status
-          : clinical_status as List<SearchToken>,
+      clinicalStatus: clinicalStatus == freezed
+          ? _value.clinicalStatus
+          : clinicalStatus as List<SearchToken>,
       encounter: encounter == freezed
           ? _value.encounter
           : encounter as List<SearchReference>,
       evidence:
           evidence == freezed ? _value.evidence : evidence as List<SearchToken>,
-      evidence_detail: evidence_detail == freezed
-          ? _value.evidence_detail
-          : evidence_detail as List<SearchReference>,
-      onset_age: onset_age == freezed
-          ? _value.onset_age
-          : onset_age as List<SearchQuantity>,
-      onset_date: onset_date == freezed
-          ? _value.onset_date
-          : onset_date as List<SearchDate>,
-      onset_info: onset_info == freezed
-          ? _value.onset_info
-          : onset_info as List<SearchString>,
-      recorded_date: recorded_date == freezed
-          ? _value.recorded_date
-          : recorded_date as List<SearchDate>,
+      evidenceDetail: evidenceDetail == freezed
+          ? _value.evidenceDetail
+          : evidenceDetail as List<SearchReference>,
+      onsetAge: onsetAge == freezed
+          ? _value.onsetAge
+          : onsetAge as List<SearchQuantity>,
+      onsetDate: onsetDate == freezed
+          ? _value.onsetDate
+          : onsetDate as List<SearchDate>,
+      onsetInfo: onsetInfo == freezed
+          ? _value.onsetInfo
+          : onsetInfo as List<SearchString>,
+      recordedDate: recordedDate == freezed
+          ? _value.recordedDate
+          : recordedDate as List<SearchDate>,
       severity:
           severity == freezed ? _value.severity : severity as List<SearchToken>,
       stage: stage == freezed ? _value.stage : stage as List<SearchToken>,
       subject: subject == freezed
           ? _value.subject
           : subject as List<SearchReference>,
-      verification_status: verification_status == freezed
-          ? _value.verification_status
-          : verification_status as List<SearchToken>,
+      verificationStatus: verificationStatus == freezed
+          ? _value.verificationStatus
+          : verificationStatus as List<SearchToken>,
     ));
   }
 }
+
+@JsonSerializable()
 
 /// @nodoc
 class _$_ConditionSearch extends _ConditionSearch {
@@ -1634,25 +1753,28 @@ class _$_ConditionSearch extends _ConditionSearch {
       this.code,
       this.identifier,
       this.patient,
-      this.abatement_age,
-      this.abatement_date,
-      this.abatement_string,
+      @JsonKey(name: 'abatement-age') this.abatementAge,
+      @JsonKey(name: 'abatement-date') this.abatementDate,
+      @JsonKey(name: 'abatement-string') this.abatementString,
       this.asserter,
-      this.body_site,
+      @JsonKey(name: 'body-site') this.bodySite,
       this.category,
-      this.clinical_status,
+      @JsonKey(name: 'clinical-status') this.clinicalStatus,
       this.encounter,
       this.evidence,
-      this.evidence_detail,
-      this.onset_age,
-      this.onset_date,
-      this.onset_info,
-      this.recorded_date,
+      @JsonKey(name: 'evidence-detail') this.evidenceDetail,
+      @JsonKey(name: 'onset-age') this.onsetAge,
+      @JsonKey(name: 'onset-date') this.onsetDate,
+      @JsonKey(name: 'onset-info') this.onsetInfo,
+      @JsonKey(name: 'recorded-date') this.recordedDate,
       this.severity,
       this.stage,
       this.subject,
-      this.verification_status})
+      @JsonKey(name: 'verification-status') this.verificationStatus})
       : super._();
+
+  factory _$_ConditionSearch.fromJson(Map<String, dynamic> json) =>
+      _$_$_ConditionSearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -1678,33 +1800,43 @@ class _$_ConditionSearch extends _ConditionSearch {
   @override
   final List<SearchReference> patient;
   @override
-  final List<SearchQuantity> abatement_age;
+  @JsonKey(name: 'abatement-age')
+  final List<SearchQuantity> abatementAge;
   @override
-  final List<SearchDate> abatement_date;
+  @JsonKey(name: 'abatement-date')
+  final List<SearchDate> abatementDate;
   @override
-  final List<SearchString> abatement_string;
+  @JsonKey(name: 'abatement-string')
+  final List<SearchString> abatementString;
   @override
   final List<SearchReference> asserter;
   @override
-  final List<SearchToken> body_site;
+  @JsonKey(name: 'body-site')
+  final List<SearchToken> bodySite;
   @override
   final List<SearchToken> category;
   @override
-  final List<SearchToken> clinical_status;
+  @JsonKey(name: 'clinical-status')
+  final List<SearchToken> clinicalStatus;
   @override
   final List<SearchReference> encounter;
   @override
   final List<SearchToken> evidence;
   @override
-  final List<SearchReference> evidence_detail;
+  @JsonKey(name: 'evidence-detail')
+  final List<SearchReference> evidenceDetail;
   @override
-  final List<SearchQuantity> onset_age;
+  @JsonKey(name: 'onset-age')
+  final List<SearchQuantity> onsetAge;
   @override
-  final List<SearchDate> onset_date;
+  @JsonKey(name: 'onset-date')
+  final List<SearchDate> onsetDate;
   @override
-  final List<SearchString> onset_info;
+  @JsonKey(name: 'onset-info')
+  final List<SearchString> onsetInfo;
   @override
-  final List<SearchDate> recorded_date;
+  @JsonKey(name: 'recorded-date')
+  final List<SearchDate> recordedDate;
   @override
   final List<SearchToken> severity;
   @override
@@ -1712,11 +1844,12 @@ class _$_ConditionSearch extends _ConditionSearch {
   @override
   final List<SearchReference> subject;
   @override
-  final List<SearchToken> verification_status;
+  @JsonKey(name: 'verification-status')
+  final List<SearchToken> verificationStatus;
 
   @override
   String toString() {
-    return 'ConditionSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, code: $code, identifier: $identifier, patient: $patient, abatement_age: $abatement_age, abatement_date: $abatement_date, abatement_string: $abatement_string, asserter: $asserter, body_site: $body_site, category: $category, clinical_status: $clinical_status, encounter: $encounter, evidence: $evidence, evidence_detail: $evidence_detail, onset_age: $onset_age, onset_date: $onset_date, onset_info: $onset_info, recorded_date: $recorded_date, severity: $severity, stage: $stage, subject: $subject, verification_status: $verification_status)';
+    return 'ConditionSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, code: $code, identifier: $identifier, patient: $patient, abatementAge: $abatementAge, abatementDate: $abatementDate, abatementString: $abatementString, asserter: $asserter, bodySite: $bodySite, category: $category, clinicalStatus: $clinicalStatus, encounter: $encounter, evidence: $evidence, evidenceDetail: $evidenceDetail, onsetAge: $onsetAge, onsetDate: $onsetDate, onsetInfo: $onsetInfo, recordedDate: $recordedDate, severity: $severity, stage: $stage, subject: $subject, verificationStatus: $verificationStatus)';
   }
 
   @override
@@ -1755,46 +1888,46 @@ class _$_ConditionSearch extends _ConditionSearch {
             (identical(other.patient, patient) ||
                 const DeepCollectionEquality()
                     .equals(other.patient, patient)) &&
-            (identical(other.abatement_age, abatement_age) ||
+            (identical(other.abatementAge, abatementAge) ||
                 const DeepCollectionEquality()
-                    .equals(other.abatement_age, abatement_age)) &&
-            (identical(other.abatement_date, abatement_date) ||
+                    .equals(other.abatementAge, abatementAge)) &&
+            (identical(other.abatementDate, abatementDate) ||
                 const DeepCollectionEquality()
-                    .equals(other.abatement_date, abatement_date)) &&
-            (identical(other.abatement_string, abatement_string) ||
+                    .equals(other.abatementDate, abatementDate)) &&
+            (identical(other.abatementString, abatementString) ||
                 const DeepCollectionEquality()
-                    .equals(other.abatement_string, abatement_string)) &&
+                    .equals(other.abatementString, abatementString)) &&
             (identical(other.asserter, asserter) ||
                 const DeepCollectionEquality()
                     .equals(other.asserter, asserter)) &&
-            (identical(other.body_site, body_site) ||
+            (identical(other.bodySite, bodySite) ||
                 const DeepCollectionEquality()
-                    .equals(other.body_site, body_site)) &&
+                    .equals(other.bodySite, bodySite)) &&
             (identical(other.category, category) ||
                 const DeepCollectionEquality()
                     .equals(other.category, category)) &&
-            (identical(other.clinical_status, clinical_status) ||
+            (identical(other.clinicalStatus, clinicalStatus) ||
                 const DeepCollectionEquality()
-                    .equals(other.clinical_status, clinical_status)) &&
+                    .equals(other.clinicalStatus, clinicalStatus)) &&
             (identical(other.encounter, encounter) ||
                 const DeepCollectionEquality()
                     .equals(other.encounter, encounter)) &&
             (identical(other.evidence, evidence) ||
                 const DeepCollectionEquality()
                     .equals(other.evidence, evidence)) &&
-            (identical(other.evidence_detail, evidence_detail) ||
+            (identical(other.evidenceDetail, evidenceDetail) ||
                 const DeepCollectionEquality()
-                    .equals(other.evidence_detail, evidence_detail)) &&
-            (identical(other.onset_age, onset_age) ||
+                    .equals(other.evidenceDetail, evidenceDetail)) &&
+            (identical(other.onsetAge, onsetAge) ||
                 const DeepCollectionEquality()
-                    .equals(other.onset_age, onset_age)) &&
-            (identical(other.onset_date, onset_date) || const DeepCollectionEquality().equals(other.onset_date, onset_date)) &&
-            (identical(other.onset_info, onset_info) || const DeepCollectionEquality().equals(other.onset_info, onset_info)) &&
-            (identical(other.recorded_date, recorded_date) || const DeepCollectionEquality().equals(other.recorded_date, recorded_date)) &&
+                    .equals(other.onsetAge, onsetAge)) &&
+            (identical(other.onsetDate, onsetDate) || const DeepCollectionEquality().equals(other.onsetDate, onsetDate)) &&
+            (identical(other.onsetInfo, onsetInfo) || const DeepCollectionEquality().equals(other.onsetInfo, onsetInfo)) &&
+            (identical(other.recordedDate, recordedDate) || const DeepCollectionEquality().equals(other.recordedDate, recordedDate)) &&
             (identical(other.severity, severity) || const DeepCollectionEquality().equals(other.severity, severity)) &&
             (identical(other.stage, stage) || const DeepCollectionEquality().equals(other.stage, stage)) &&
             (identical(other.subject, subject) || const DeepCollectionEquality().equals(other.subject, subject)) &&
-            (identical(other.verification_status, verification_status) || const DeepCollectionEquality().equals(other.verification_status, verification_status)));
+            (identical(other.verificationStatus, verificationStatus) || const DeepCollectionEquality().equals(other.verificationStatus, verificationStatus)));
   }
 
   @override
@@ -1811,28 +1944,33 @@ class _$_ConditionSearch extends _ConditionSearch {
       const DeepCollectionEquality().hash(code) ^
       const DeepCollectionEquality().hash(identifier) ^
       const DeepCollectionEquality().hash(patient) ^
-      const DeepCollectionEquality().hash(abatement_age) ^
-      const DeepCollectionEquality().hash(abatement_date) ^
-      const DeepCollectionEquality().hash(abatement_string) ^
+      const DeepCollectionEquality().hash(abatementAge) ^
+      const DeepCollectionEquality().hash(abatementDate) ^
+      const DeepCollectionEquality().hash(abatementString) ^
       const DeepCollectionEquality().hash(asserter) ^
-      const DeepCollectionEquality().hash(body_site) ^
+      const DeepCollectionEquality().hash(bodySite) ^
       const DeepCollectionEquality().hash(category) ^
-      const DeepCollectionEquality().hash(clinical_status) ^
+      const DeepCollectionEquality().hash(clinicalStatus) ^
       const DeepCollectionEquality().hash(encounter) ^
       const DeepCollectionEquality().hash(evidence) ^
-      const DeepCollectionEquality().hash(evidence_detail) ^
-      const DeepCollectionEquality().hash(onset_age) ^
-      const DeepCollectionEquality().hash(onset_date) ^
-      const DeepCollectionEquality().hash(onset_info) ^
-      const DeepCollectionEquality().hash(recorded_date) ^
+      const DeepCollectionEquality().hash(evidenceDetail) ^
+      const DeepCollectionEquality().hash(onsetAge) ^
+      const DeepCollectionEquality().hash(onsetDate) ^
+      const DeepCollectionEquality().hash(onsetInfo) ^
+      const DeepCollectionEquality().hash(recordedDate) ^
       const DeepCollectionEquality().hash(severity) ^
       const DeepCollectionEquality().hash(stage) ^
       const DeepCollectionEquality().hash(subject) ^
-      const DeepCollectionEquality().hash(verification_status);
+      const DeepCollectionEquality().hash(verificationStatus);
 
   @override
   _$ConditionSearchCopyWith<_ConditionSearch> get copyWith =>
       __$ConditionSearchCopyWithImpl<_ConditionSearch>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_ConditionSearchToJson(this);
+  }
 }
 
 abstract class _ConditionSearch extends ConditionSearch {
@@ -1849,24 +1987,38 @@ abstract class _ConditionSearch extends ConditionSearch {
       List<SearchToken> code,
       List<SearchToken> identifier,
       List<SearchReference> patient,
-      List<SearchQuantity> abatement_age,
-      List<SearchDate> abatement_date,
-      List<SearchString> abatement_string,
+      @JsonKey(name: 'abatement-age')
+          List<SearchQuantity> abatementAge,
+      @JsonKey(name: 'abatement-date')
+          List<SearchDate> abatementDate,
+      @JsonKey(name: 'abatement-string')
+          List<SearchString> abatementString,
       List<SearchReference> asserter,
-      List<SearchToken> body_site,
+      @JsonKey(name: 'body-site')
+          List<SearchToken> bodySite,
       List<SearchToken> category,
-      List<SearchToken> clinical_status,
+      @JsonKey(name: 'clinical-status')
+          List<SearchToken> clinicalStatus,
       List<SearchReference> encounter,
       List<SearchToken> evidence,
-      List<SearchReference> evidence_detail,
-      List<SearchQuantity> onset_age,
-      List<SearchDate> onset_date,
-      List<SearchString> onset_info,
-      List<SearchDate> recorded_date,
+      @JsonKey(name: 'evidence-detail')
+          List<SearchReference> evidenceDetail,
+      @JsonKey(name: 'onset-age')
+          List<SearchQuantity> onsetAge,
+      @JsonKey(name: 'onset-date')
+          List<SearchDate> onsetDate,
+      @JsonKey(name: 'onset-info')
+          List<SearchString> onsetInfo,
+      @JsonKey(name: 'recorded-date')
+          List<SearchDate> recordedDate,
       List<SearchToken> severity,
       List<SearchToken> stage,
       List<SearchReference> subject,
-      List<SearchToken> verification_status}) = _$_ConditionSearch;
+      @JsonKey(name: 'verification-status')
+          List<SearchToken> verificationStatus}) = _$_ConditionSearch;
+
+  factory _ConditionSearch.fromJson(Map<String, dynamic> json) =
+      _$_ConditionSearch.fromJson;
 
   @override
   List<Id> get searchId;
@@ -1892,33 +2044,43 @@ abstract class _ConditionSearch extends ConditionSearch {
   @override
   List<SearchReference> get patient;
   @override
-  List<SearchQuantity> get abatement_age;
+  @JsonKey(name: 'abatement-age')
+  List<SearchQuantity> get abatementAge;
   @override
-  List<SearchDate> get abatement_date;
+  @JsonKey(name: 'abatement-date')
+  List<SearchDate> get abatementDate;
   @override
-  List<SearchString> get abatement_string;
+  @JsonKey(name: 'abatement-string')
+  List<SearchString> get abatementString;
   @override
   List<SearchReference> get asserter;
   @override
-  List<SearchToken> get body_site;
+  @JsonKey(name: 'body-site')
+  List<SearchToken> get bodySite;
   @override
   List<SearchToken> get category;
   @override
-  List<SearchToken> get clinical_status;
+  @JsonKey(name: 'clinical-status')
+  List<SearchToken> get clinicalStatus;
   @override
   List<SearchReference> get encounter;
   @override
   List<SearchToken> get evidence;
   @override
-  List<SearchReference> get evidence_detail;
+  @JsonKey(name: 'evidence-detail')
+  List<SearchReference> get evidenceDetail;
   @override
-  List<SearchQuantity> get onset_age;
+  @JsonKey(name: 'onset-age')
+  List<SearchQuantity> get onsetAge;
   @override
-  List<SearchDate> get onset_date;
+  @JsonKey(name: 'onset-date')
+  List<SearchDate> get onsetDate;
   @override
-  List<SearchString> get onset_info;
+  @JsonKey(name: 'onset-info')
+  List<SearchString> get onsetInfo;
   @override
-  List<SearchDate> get recorded_date;
+  @JsonKey(name: 'recorded-date')
+  List<SearchDate> get recordedDate;
   @override
   List<SearchToken> get severity;
   @override
@@ -1926,9 +2088,15 @@ abstract class _ConditionSearch extends ConditionSearch {
   @override
   List<SearchReference> get subject;
   @override
-  List<SearchToken> get verification_status;
+  @JsonKey(name: 'verification-status')
+  List<SearchToken> get verificationStatus;
   @override
   _$ConditionSearchCopyWith<_ConditionSearch> get copyWith;
+}
+
+FamilyMemberHistorySearch _$FamilyMemberHistorySearchFromJson(
+    Map<String, dynamic> json) {
+  return _FamilyMemberHistorySearch.fromJson(json);
 }
 
 /// @nodoc
@@ -1949,8 +2117,10 @@ class _$FamilyMemberHistorySearchTearOff {
       List<SearchDate> date,
       List<SearchToken> identifier,
       List<SearchReference> patient,
-      List<SearchReference> instantiates_canonical,
-      List<SearchUri> instantiates_uri,
+      @JsonKey(name: 'instantiates-canonical')
+          List<SearchReference> instantiatesCanonical,
+      @JsonKey(name: 'instantiates-uri')
+          List<SearchUri> instantiatesUri,
       List<SearchToken> relationship,
       List<SearchToken> sex,
       List<SearchToken> status}) {
@@ -1967,12 +2137,17 @@ class _$FamilyMemberHistorySearchTearOff {
       date: date,
       identifier: identifier,
       patient: patient,
-      instantiates_canonical: instantiates_canonical,
-      instantiates_uri: instantiates_uri,
+      instantiatesCanonical: instantiatesCanonical,
+      instantiatesUri: instantiatesUri,
       relationship: relationship,
       sex: sex,
       status: status,
     );
+  }
+
+// ignore: unused_element
+  FamilyMemberHistorySearch fromJson(Map<String, Object> json) {
+    return FamilyMemberHistorySearch.fromJson(json);
   }
 }
 
@@ -1995,12 +2170,15 @@ mixin _$FamilyMemberHistorySearch {
   List<SearchDate> get date;
   List<SearchToken> get identifier;
   List<SearchReference> get patient;
-  List<SearchReference> get instantiates_canonical;
-  List<SearchUri> get instantiates_uri;
+  @JsonKey(name: 'instantiates-canonical')
+  List<SearchReference> get instantiatesCanonical;
+  @JsonKey(name: 'instantiates-uri')
+  List<SearchUri> get instantiatesUri;
   List<SearchToken> get relationship;
   List<SearchToken> get sex;
   List<SearchToken> get status;
 
+  Map<String, dynamic> toJson();
   $FamilyMemberHistorySearchCopyWith<FamilyMemberHistorySearch> get copyWith;
 }
 
@@ -2022,8 +2200,10 @@ abstract class $FamilyMemberHistorySearchCopyWith<$Res> {
       List<SearchDate> date,
       List<SearchToken> identifier,
       List<SearchReference> patient,
-      List<SearchReference> instantiates_canonical,
-      List<SearchUri> instantiates_uri,
+      @JsonKey(name: 'instantiates-canonical')
+          List<SearchReference> instantiatesCanonical,
+      @JsonKey(name: 'instantiates-uri')
+          List<SearchUri> instantiatesUri,
       List<SearchToken> relationship,
       List<SearchToken> sex,
       List<SearchToken> status});
@@ -2052,8 +2232,8 @@ class _$FamilyMemberHistorySearchCopyWithImpl<$Res>
     Object date = freezed,
     Object identifier = freezed,
     Object patient = freezed,
-    Object instantiates_canonical = freezed,
-    Object instantiates_uri = freezed,
+    Object instantiatesCanonical = freezed,
+    Object instantiatesUri = freezed,
     Object relationship = freezed,
     Object sex = freezed,
     Object status = freezed,
@@ -2088,12 +2268,12 @@ class _$FamilyMemberHistorySearchCopyWithImpl<$Res>
       patient: patient == freezed
           ? _value.patient
           : patient as List<SearchReference>,
-      instantiates_canonical: instantiates_canonical == freezed
-          ? _value.instantiates_canonical
-          : instantiates_canonical as List<SearchReference>,
-      instantiates_uri: instantiates_uri == freezed
-          ? _value.instantiates_uri
-          : instantiates_uri as List<SearchUri>,
+      instantiatesCanonical: instantiatesCanonical == freezed
+          ? _value.instantiatesCanonical
+          : instantiatesCanonical as List<SearchReference>,
+      instantiatesUri: instantiatesUri == freezed
+          ? _value.instantiatesUri
+          : instantiatesUri as List<SearchUri>,
       relationship: relationship == freezed
           ? _value.relationship
           : relationship as List<SearchToken>,
@@ -2123,8 +2303,10 @@ abstract class _$FamilyMemberHistorySearchCopyWith<$Res>
       List<SearchDate> date,
       List<SearchToken> identifier,
       List<SearchReference> patient,
-      List<SearchReference> instantiates_canonical,
-      List<SearchUri> instantiates_uri,
+      @JsonKey(name: 'instantiates-canonical')
+          List<SearchReference> instantiatesCanonical,
+      @JsonKey(name: 'instantiates-uri')
+          List<SearchUri> instantiatesUri,
       List<SearchToken> relationship,
       List<SearchToken> sex,
       List<SearchToken> status});
@@ -2156,8 +2338,8 @@ class __$FamilyMemberHistorySearchCopyWithImpl<$Res>
     Object date = freezed,
     Object identifier = freezed,
     Object patient = freezed,
-    Object instantiates_canonical = freezed,
-    Object instantiates_uri = freezed,
+    Object instantiatesCanonical = freezed,
+    Object instantiatesUri = freezed,
     Object relationship = freezed,
     Object sex = freezed,
     Object status = freezed,
@@ -2192,12 +2374,12 @@ class __$FamilyMemberHistorySearchCopyWithImpl<$Res>
       patient: patient == freezed
           ? _value.patient
           : patient as List<SearchReference>,
-      instantiates_canonical: instantiates_canonical == freezed
-          ? _value.instantiates_canonical
-          : instantiates_canonical as List<SearchReference>,
-      instantiates_uri: instantiates_uri == freezed
-          ? _value.instantiates_uri
-          : instantiates_uri as List<SearchUri>,
+      instantiatesCanonical: instantiatesCanonical == freezed
+          ? _value.instantiatesCanonical
+          : instantiatesCanonical as List<SearchReference>,
+      instantiatesUri: instantiatesUri == freezed
+          ? _value.instantiatesUri
+          : instantiatesUri as List<SearchUri>,
       relationship: relationship == freezed
           ? _value.relationship
           : relationship as List<SearchToken>,
@@ -2206,6 +2388,8 @@ class __$FamilyMemberHistorySearchCopyWithImpl<$Res>
     ));
   }
 }
+
+@JsonSerializable()
 
 /// @nodoc
 class _$_FamilyMemberHistorySearch extends _FamilyMemberHistorySearch {
@@ -2222,12 +2406,15 @@ class _$_FamilyMemberHistorySearch extends _FamilyMemberHistorySearch {
       this.date,
       this.identifier,
       this.patient,
-      this.instantiates_canonical,
-      this.instantiates_uri,
+      @JsonKey(name: 'instantiates-canonical') this.instantiatesCanonical,
+      @JsonKey(name: 'instantiates-uri') this.instantiatesUri,
       this.relationship,
       this.sex,
       this.status})
       : super._();
+
+  factory _$_FamilyMemberHistorySearch.fromJson(Map<String, dynamic> json) =>
+      _$_$_FamilyMemberHistorySearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -2255,9 +2442,11 @@ class _$_FamilyMemberHistorySearch extends _FamilyMemberHistorySearch {
   @override
   final List<SearchReference> patient;
   @override
-  final List<SearchReference> instantiates_canonical;
+  @JsonKey(name: 'instantiates-canonical')
+  final List<SearchReference> instantiatesCanonical;
   @override
-  final List<SearchUri> instantiates_uri;
+  @JsonKey(name: 'instantiates-uri')
+  final List<SearchUri> instantiatesUri;
   @override
   final List<SearchToken> relationship;
   @override
@@ -2267,7 +2456,7 @@ class _$_FamilyMemberHistorySearch extends _FamilyMemberHistorySearch {
 
   @override
   String toString() {
-    return 'FamilyMemberHistorySearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, code: $code, date: $date, identifier: $identifier, patient: $patient, instantiates_canonical: $instantiates_canonical, instantiates_uri: $instantiates_uri, relationship: $relationship, sex: $sex, status: $status)';
+    return 'FamilyMemberHistorySearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, code: $code, date: $date, identifier: $identifier, patient: $patient, instantiatesCanonical: $instantiatesCanonical, instantiatesUri: $instantiatesUri, relationship: $relationship, sex: $sex, status: $status)';
   }
 
   @override
@@ -2308,12 +2497,12 @@ class _$_FamilyMemberHistorySearch extends _FamilyMemberHistorySearch {
             (identical(other.patient, patient) ||
                 const DeepCollectionEquality()
                     .equals(other.patient, patient)) &&
-            (identical(other.instantiates_canonical, instantiates_canonical) ||
+            (identical(other.instantiatesCanonical, instantiatesCanonical) ||
                 const DeepCollectionEquality().equals(
-                    other.instantiates_canonical, instantiates_canonical)) &&
-            (identical(other.instantiates_uri, instantiates_uri) ||
+                    other.instantiatesCanonical, instantiatesCanonical)) &&
+            (identical(other.instantiatesUri, instantiatesUri) ||
                 const DeepCollectionEquality()
-                    .equals(other.instantiates_uri, instantiates_uri)) &&
+                    .equals(other.instantiatesUri, instantiatesUri)) &&
             (identical(other.relationship, relationship) ||
                 const DeepCollectionEquality()
                     .equals(other.relationship, relationship)) &&
@@ -2338,8 +2527,8 @@ class _$_FamilyMemberHistorySearch extends _FamilyMemberHistorySearch {
       const DeepCollectionEquality().hash(date) ^
       const DeepCollectionEquality().hash(identifier) ^
       const DeepCollectionEquality().hash(patient) ^
-      const DeepCollectionEquality().hash(instantiates_canonical) ^
-      const DeepCollectionEquality().hash(instantiates_uri) ^
+      const DeepCollectionEquality().hash(instantiatesCanonical) ^
+      const DeepCollectionEquality().hash(instantiatesUri) ^
       const DeepCollectionEquality().hash(relationship) ^
       const DeepCollectionEquality().hash(sex) ^
       const DeepCollectionEquality().hash(status);
@@ -2349,6 +2538,11 @@ class _$_FamilyMemberHistorySearch extends _FamilyMemberHistorySearch {
       get copyWith =>
           __$FamilyMemberHistorySearchCopyWithImpl<_FamilyMemberHistorySearch>(
               this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_FamilyMemberHistorySearchToJson(this);
+  }
 }
 
 abstract class _FamilyMemberHistorySearch extends FamilyMemberHistorySearch {
@@ -2366,11 +2560,16 @@ abstract class _FamilyMemberHistorySearch extends FamilyMemberHistorySearch {
       List<SearchDate> date,
       List<SearchToken> identifier,
       List<SearchReference> patient,
-      List<SearchReference> instantiates_canonical,
-      List<SearchUri> instantiates_uri,
+      @JsonKey(name: 'instantiates-canonical')
+          List<SearchReference> instantiatesCanonical,
+      @JsonKey(name: 'instantiates-uri')
+          List<SearchUri> instantiatesUri,
       List<SearchToken> relationship,
       List<SearchToken> sex,
       List<SearchToken> status}) = _$_FamilyMemberHistorySearch;
+
+  factory _FamilyMemberHistorySearch.fromJson(Map<String, dynamic> json) =
+      _$_FamilyMemberHistorySearch.fromJson;
 
   @override
   List<Id> get searchId;
@@ -2398,9 +2597,11 @@ abstract class _FamilyMemberHistorySearch extends FamilyMemberHistorySearch {
   @override
   List<SearchReference> get patient;
   @override
-  List<SearchReference> get instantiates_canonical;
+  @JsonKey(name: 'instantiates-canonical')
+  List<SearchReference> get instantiatesCanonical;
   @override
-  List<SearchUri> get instantiates_uri;
+  @JsonKey(name: 'instantiates-uri')
+  List<SearchUri> get instantiatesUri;
   @override
   List<SearchToken> get relationship;
   @override
@@ -2409,6 +2610,10 @@ abstract class _FamilyMemberHistorySearch extends FamilyMemberHistorySearch {
   List<SearchToken> get status;
   @override
   _$FamilyMemberHistorySearchCopyWith<_FamilyMemberHistorySearch> get copyWith;
+}
+
+ProcedureSearch _$ProcedureSearchFromJson(Map<String, dynamic> json) {
+  return _ProcedureSearch.fromJson(json);
 }
 
 /// @nodoc
@@ -2430,15 +2635,21 @@ class _$ProcedureSearchTearOff {
       List<SearchToken> identifier,
       List<SearchReference> patient,
       List<SearchReference> encounter,
-      List<SearchReference> based_on,
+      @JsonKey(name: 'based-on')
+          List<SearchReference> basedOn,
       List<SearchToken> category,
-      List<SearchReference> instantiates_canonical,
-      List<SearchUri> instantiates_uri,
+      @JsonKey(name: 'instantiates-canonical')
+          List<SearchReference> instantiatesCanonical,
+      @JsonKey(name: 'instantiates-uri')
+          List<SearchUri> instantiatesUri,
       List<SearchReference> location,
-      List<SearchReference> part_of,
+      @JsonKey(name: 'part-of')
+          List<SearchReference> partOf,
       List<SearchReference> performer,
-      List<SearchToken> reason_code,
-      List<SearchReference> reason_reference,
+      @JsonKey(name: 'reason-code')
+          List<SearchToken> reasonCode,
+      @JsonKey(name: 'reason-reference')
+          List<SearchReference> reasonReference,
       List<SearchToken> status,
       List<SearchReference> subject}) {
     return _ProcedureSearch(
@@ -2455,18 +2666,23 @@ class _$ProcedureSearchTearOff {
       identifier: identifier,
       patient: patient,
       encounter: encounter,
-      based_on: based_on,
+      basedOn: basedOn,
       category: category,
-      instantiates_canonical: instantiates_canonical,
-      instantiates_uri: instantiates_uri,
+      instantiatesCanonical: instantiatesCanonical,
+      instantiatesUri: instantiatesUri,
       location: location,
-      part_of: part_of,
+      partOf: partOf,
       performer: performer,
-      reason_code: reason_code,
-      reason_reference: reason_reference,
+      reasonCode: reasonCode,
+      reasonReference: reasonReference,
       status: status,
       subject: subject,
     );
+  }
+
+// ignore: unused_element
+  ProcedureSearch fromJson(Map<String, Object> json) {
+    return ProcedureSearch.fromJson(json);
   }
 }
 
@@ -2490,18 +2706,25 @@ mixin _$ProcedureSearch {
   List<SearchToken> get identifier;
   List<SearchReference> get patient;
   List<SearchReference> get encounter;
-  List<SearchReference> get based_on;
+  @JsonKey(name: 'based-on')
+  List<SearchReference> get basedOn;
   List<SearchToken> get category;
-  List<SearchReference> get instantiates_canonical;
-  List<SearchUri> get instantiates_uri;
+  @JsonKey(name: 'instantiates-canonical')
+  List<SearchReference> get instantiatesCanonical;
+  @JsonKey(name: 'instantiates-uri')
+  List<SearchUri> get instantiatesUri;
   List<SearchReference> get location;
-  List<SearchReference> get part_of;
+  @JsonKey(name: 'part-of')
+  List<SearchReference> get partOf;
   List<SearchReference> get performer;
-  List<SearchToken> get reason_code;
-  List<SearchReference> get reason_reference;
+  @JsonKey(name: 'reason-code')
+  List<SearchToken> get reasonCode;
+  @JsonKey(name: 'reason-reference')
+  List<SearchReference> get reasonReference;
   List<SearchToken> get status;
   List<SearchReference> get subject;
 
+  Map<String, dynamic> toJson();
   $ProcedureSearchCopyWith<ProcedureSearch> get copyWith;
 }
 
@@ -2524,15 +2747,21 @@ abstract class $ProcedureSearchCopyWith<$Res> {
       List<SearchToken> identifier,
       List<SearchReference> patient,
       List<SearchReference> encounter,
-      List<SearchReference> based_on,
+      @JsonKey(name: 'based-on')
+          List<SearchReference> basedOn,
       List<SearchToken> category,
-      List<SearchReference> instantiates_canonical,
-      List<SearchUri> instantiates_uri,
+      @JsonKey(name: 'instantiates-canonical')
+          List<SearchReference> instantiatesCanonical,
+      @JsonKey(name: 'instantiates-uri')
+          List<SearchUri> instantiatesUri,
       List<SearchReference> location,
-      List<SearchReference> part_of,
+      @JsonKey(name: 'part-of')
+          List<SearchReference> partOf,
       List<SearchReference> performer,
-      List<SearchToken> reason_code,
-      List<SearchReference> reason_reference,
+      @JsonKey(name: 'reason-code')
+          List<SearchToken> reasonCode,
+      @JsonKey(name: 'reason-reference')
+          List<SearchReference> reasonReference,
       List<SearchToken> status,
       List<SearchReference> subject});
 }
@@ -2561,15 +2790,15 @@ class _$ProcedureSearchCopyWithImpl<$Res>
     Object identifier = freezed,
     Object patient = freezed,
     Object encounter = freezed,
-    Object based_on = freezed,
+    Object basedOn = freezed,
     Object category = freezed,
-    Object instantiates_canonical = freezed,
-    Object instantiates_uri = freezed,
+    Object instantiatesCanonical = freezed,
+    Object instantiatesUri = freezed,
     Object location = freezed,
-    Object part_of = freezed,
+    Object partOf = freezed,
     Object performer = freezed,
-    Object reason_code = freezed,
-    Object reason_reference = freezed,
+    Object reasonCode = freezed,
+    Object reasonReference = freezed,
     Object status = freezed,
     Object subject = freezed,
   }) {
@@ -2606,32 +2835,31 @@ class _$ProcedureSearchCopyWithImpl<$Res>
       encounter: encounter == freezed
           ? _value.encounter
           : encounter as List<SearchReference>,
-      based_on: based_on == freezed
-          ? _value.based_on
-          : based_on as List<SearchReference>,
+      basedOn: basedOn == freezed
+          ? _value.basedOn
+          : basedOn as List<SearchReference>,
       category:
           category == freezed ? _value.category : category as List<SearchToken>,
-      instantiates_canonical: instantiates_canonical == freezed
-          ? _value.instantiates_canonical
-          : instantiates_canonical as List<SearchReference>,
-      instantiates_uri: instantiates_uri == freezed
-          ? _value.instantiates_uri
-          : instantiates_uri as List<SearchUri>,
+      instantiatesCanonical: instantiatesCanonical == freezed
+          ? _value.instantiatesCanonical
+          : instantiatesCanonical as List<SearchReference>,
+      instantiatesUri: instantiatesUri == freezed
+          ? _value.instantiatesUri
+          : instantiatesUri as List<SearchUri>,
       location: location == freezed
           ? _value.location
           : location as List<SearchReference>,
-      part_of: part_of == freezed
-          ? _value.part_of
-          : part_of as List<SearchReference>,
+      partOf:
+          partOf == freezed ? _value.partOf : partOf as List<SearchReference>,
       performer: performer == freezed
           ? _value.performer
           : performer as List<SearchReference>,
-      reason_code: reason_code == freezed
-          ? _value.reason_code
-          : reason_code as List<SearchToken>,
-      reason_reference: reason_reference == freezed
-          ? _value.reason_reference
-          : reason_reference as List<SearchReference>,
+      reasonCode: reasonCode == freezed
+          ? _value.reasonCode
+          : reasonCode as List<SearchToken>,
+      reasonReference: reasonReference == freezed
+          ? _value.reasonReference
+          : reasonReference as List<SearchReference>,
       status: status == freezed ? _value.status : status as List<SearchToken>,
       subject: subject == freezed
           ? _value.subject
@@ -2661,15 +2889,21 @@ abstract class _$ProcedureSearchCopyWith<$Res>
       List<SearchToken> identifier,
       List<SearchReference> patient,
       List<SearchReference> encounter,
-      List<SearchReference> based_on,
+      @JsonKey(name: 'based-on')
+          List<SearchReference> basedOn,
       List<SearchToken> category,
-      List<SearchReference> instantiates_canonical,
-      List<SearchUri> instantiates_uri,
+      @JsonKey(name: 'instantiates-canonical')
+          List<SearchReference> instantiatesCanonical,
+      @JsonKey(name: 'instantiates-uri')
+          List<SearchUri> instantiatesUri,
       List<SearchReference> location,
-      List<SearchReference> part_of,
+      @JsonKey(name: 'part-of')
+          List<SearchReference> partOf,
       List<SearchReference> performer,
-      List<SearchToken> reason_code,
-      List<SearchReference> reason_reference,
+      @JsonKey(name: 'reason-code')
+          List<SearchToken> reasonCode,
+      @JsonKey(name: 'reason-reference')
+          List<SearchReference> reasonReference,
       List<SearchToken> status,
       List<SearchReference> subject});
 }
@@ -2700,15 +2934,15 @@ class __$ProcedureSearchCopyWithImpl<$Res>
     Object identifier = freezed,
     Object patient = freezed,
     Object encounter = freezed,
-    Object based_on = freezed,
+    Object basedOn = freezed,
     Object category = freezed,
-    Object instantiates_canonical = freezed,
-    Object instantiates_uri = freezed,
+    Object instantiatesCanonical = freezed,
+    Object instantiatesUri = freezed,
     Object location = freezed,
-    Object part_of = freezed,
+    Object partOf = freezed,
     Object performer = freezed,
-    Object reason_code = freezed,
-    Object reason_reference = freezed,
+    Object reasonCode = freezed,
+    Object reasonReference = freezed,
     Object status = freezed,
     Object subject = freezed,
   }) {
@@ -2745,32 +2979,31 @@ class __$ProcedureSearchCopyWithImpl<$Res>
       encounter: encounter == freezed
           ? _value.encounter
           : encounter as List<SearchReference>,
-      based_on: based_on == freezed
-          ? _value.based_on
-          : based_on as List<SearchReference>,
+      basedOn: basedOn == freezed
+          ? _value.basedOn
+          : basedOn as List<SearchReference>,
       category:
           category == freezed ? _value.category : category as List<SearchToken>,
-      instantiates_canonical: instantiates_canonical == freezed
-          ? _value.instantiates_canonical
-          : instantiates_canonical as List<SearchReference>,
-      instantiates_uri: instantiates_uri == freezed
-          ? _value.instantiates_uri
-          : instantiates_uri as List<SearchUri>,
+      instantiatesCanonical: instantiatesCanonical == freezed
+          ? _value.instantiatesCanonical
+          : instantiatesCanonical as List<SearchReference>,
+      instantiatesUri: instantiatesUri == freezed
+          ? _value.instantiatesUri
+          : instantiatesUri as List<SearchUri>,
       location: location == freezed
           ? _value.location
           : location as List<SearchReference>,
-      part_of: part_of == freezed
-          ? _value.part_of
-          : part_of as List<SearchReference>,
+      partOf:
+          partOf == freezed ? _value.partOf : partOf as List<SearchReference>,
       performer: performer == freezed
           ? _value.performer
           : performer as List<SearchReference>,
-      reason_code: reason_code == freezed
-          ? _value.reason_code
-          : reason_code as List<SearchToken>,
-      reason_reference: reason_reference == freezed
-          ? _value.reason_reference
-          : reason_reference as List<SearchReference>,
+      reasonCode: reasonCode == freezed
+          ? _value.reasonCode
+          : reasonCode as List<SearchToken>,
+      reasonReference: reasonReference == freezed
+          ? _value.reasonReference
+          : reasonReference as List<SearchReference>,
       status: status == freezed ? _value.status : status as List<SearchToken>,
       subject: subject == freezed
           ? _value.subject
@@ -2778,6 +3011,8 @@ class __$ProcedureSearchCopyWithImpl<$Res>
     ));
   }
 }
+
+@JsonSerializable()
 
 /// @nodoc
 class _$_ProcedureSearch extends _ProcedureSearch {
@@ -2795,18 +3030,21 @@ class _$_ProcedureSearch extends _ProcedureSearch {
       this.identifier,
       this.patient,
       this.encounter,
-      this.based_on,
+      @JsonKey(name: 'based-on') this.basedOn,
       this.category,
-      this.instantiates_canonical,
-      this.instantiates_uri,
+      @JsonKey(name: 'instantiates-canonical') this.instantiatesCanonical,
+      @JsonKey(name: 'instantiates-uri') this.instantiatesUri,
       this.location,
-      this.part_of,
+      @JsonKey(name: 'part-of') this.partOf,
       this.performer,
-      this.reason_code,
-      this.reason_reference,
+      @JsonKey(name: 'reason-code') this.reasonCode,
+      @JsonKey(name: 'reason-reference') this.reasonReference,
       this.status,
       this.subject})
       : super._();
+
+  factory _$_ProcedureSearch.fromJson(Map<String, dynamic> json) =>
+      _$_$_ProcedureSearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -2836,23 +3074,29 @@ class _$_ProcedureSearch extends _ProcedureSearch {
   @override
   final List<SearchReference> encounter;
   @override
-  final List<SearchReference> based_on;
+  @JsonKey(name: 'based-on')
+  final List<SearchReference> basedOn;
   @override
   final List<SearchToken> category;
   @override
-  final List<SearchReference> instantiates_canonical;
+  @JsonKey(name: 'instantiates-canonical')
+  final List<SearchReference> instantiatesCanonical;
   @override
-  final List<SearchUri> instantiates_uri;
+  @JsonKey(name: 'instantiates-uri')
+  final List<SearchUri> instantiatesUri;
   @override
   final List<SearchReference> location;
   @override
-  final List<SearchReference> part_of;
+  @JsonKey(name: 'part-of')
+  final List<SearchReference> partOf;
   @override
   final List<SearchReference> performer;
   @override
-  final List<SearchToken> reason_code;
+  @JsonKey(name: 'reason-code')
+  final List<SearchToken> reasonCode;
   @override
-  final List<SearchReference> reason_reference;
+  @JsonKey(name: 'reason-reference')
+  final List<SearchReference> reasonReference;
   @override
   final List<SearchToken> status;
   @override
@@ -2860,7 +3104,7 @@ class _$_ProcedureSearch extends _ProcedureSearch {
 
   @override
   String toString() {
-    return 'ProcedureSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, code: $code, date: $date, identifier: $identifier, patient: $patient, encounter: $encounter, based_on: $based_on, category: $category, instantiates_canonical: $instantiates_canonical, instantiates_uri: $instantiates_uri, location: $location, part_of: $part_of, performer: $performer, reason_code: $reason_code, reason_reference: $reason_reference, status: $status, subject: $subject)';
+    return 'ProcedureSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, code: $code, date: $date, identifier: $identifier, patient: $patient, encounter: $encounter, basedOn: $basedOn, category: $category, instantiatesCanonical: $instantiatesCanonical, instantiatesUri: $instantiatesUri, location: $location, partOf: $partOf, performer: $performer, reasonCode: $reasonCode, reasonReference: $reasonReference, status: $status, subject: $subject)';
   }
 
   @override
@@ -2904,36 +3148,36 @@ class _$_ProcedureSearch extends _ProcedureSearch {
             (identical(other.encounter, encounter) ||
                 const DeepCollectionEquality()
                     .equals(other.encounter, encounter)) &&
-            (identical(other.based_on, based_on) ||
+            (identical(other.basedOn, basedOn) ||
                 const DeepCollectionEquality()
-                    .equals(other.based_on, based_on)) &&
+                    .equals(other.basedOn, basedOn)) &&
             (identical(other.category, category) ||
                 const DeepCollectionEquality()
                     .equals(other.category, category)) &&
-            (identical(other.instantiates_canonical, instantiates_canonical) ||
+            (identical(other.instantiatesCanonical, instantiatesCanonical) ||
                 const DeepCollectionEquality().equals(
-                    other.instantiates_canonical, instantiates_canonical)) &&
-            (identical(other.instantiates_uri, instantiates_uri) ||
+                    other.instantiatesCanonical, instantiatesCanonical)) &&
+            (identical(other.instantiatesUri, instantiatesUri) ||
                 const DeepCollectionEquality()
-                    .equals(other.instantiates_uri, instantiates_uri)) &&
+                    .equals(other.instantiatesUri, instantiatesUri)) &&
             (identical(other.location, location) ||
                 const DeepCollectionEquality()
                     .equals(other.location, location)) &&
-            (identical(other.part_of, part_of) ||
-                const DeepCollectionEquality()
-                    .equals(other.part_of, part_of)) &&
+            (identical(other.partOf, partOf) ||
+                const DeepCollectionEquality().equals(other.partOf, partOf)) &&
             (identical(other.performer, performer) ||
                 const DeepCollectionEquality()
                     .equals(other.performer, performer)) &&
-            (identical(other.reason_code, reason_code) ||
+            (identical(other.reasonCode, reasonCode) ||
                 const DeepCollectionEquality()
-                    .equals(other.reason_code, reason_code)) &&
-            (identical(other.reason_reference, reason_reference) ||
+                    .equals(other.reasonCode, reasonCode)) &&
+            (identical(other.reasonReference, reasonReference) ||
                 const DeepCollectionEquality()
-                    .equals(other.reason_reference, reason_reference)) &&
+                    .equals(other.reasonReference, reasonReference)) &&
             (identical(other.status, status) ||
                 const DeepCollectionEquality().equals(other.status, status)) &&
-            (identical(other.subject, subject) || const DeepCollectionEquality().equals(other.subject, subject)));
+            (identical(other.subject, subject) ||
+                const DeepCollectionEquality().equals(other.subject, subject)));
   }
 
   @override
@@ -2952,21 +3196,26 @@ class _$_ProcedureSearch extends _ProcedureSearch {
       const DeepCollectionEquality().hash(identifier) ^
       const DeepCollectionEquality().hash(patient) ^
       const DeepCollectionEquality().hash(encounter) ^
-      const DeepCollectionEquality().hash(based_on) ^
+      const DeepCollectionEquality().hash(basedOn) ^
       const DeepCollectionEquality().hash(category) ^
-      const DeepCollectionEquality().hash(instantiates_canonical) ^
-      const DeepCollectionEquality().hash(instantiates_uri) ^
+      const DeepCollectionEquality().hash(instantiatesCanonical) ^
+      const DeepCollectionEquality().hash(instantiatesUri) ^
       const DeepCollectionEquality().hash(location) ^
-      const DeepCollectionEquality().hash(part_of) ^
+      const DeepCollectionEquality().hash(partOf) ^
       const DeepCollectionEquality().hash(performer) ^
-      const DeepCollectionEquality().hash(reason_code) ^
-      const DeepCollectionEquality().hash(reason_reference) ^
+      const DeepCollectionEquality().hash(reasonCode) ^
+      const DeepCollectionEquality().hash(reasonReference) ^
       const DeepCollectionEquality().hash(status) ^
       const DeepCollectionEquality().hash(subject);
 
   @override
   _$ProcedureSearchCopyWith<_ProcedureSearch> get copyWith =>
       __$ProcedureSearchCopyWithImpl<_ProcedureSearch>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_ProcedureSearchToJson(this);
+  }
 }
 
 abstract class _ProcedureSearch extends ProcedureSearch {
@@ -2985,17 +3234,26 @@ abstract class _ProcedureSearch extends ProcedureSearch {
       List<SearchToken> identifier,
       List<SearchReference> patient,
       List<SearchReference> encounter,
-      List<SearchReference> based_on,
+      @JsonKey(name: 'based-on')
+          List<SearchReference> basedOn,
       List<SearchToken> category,
-      List<SearchReference> instantiates_canonical,
-      List<SearchUri> instantiates_uri,
+      @JsonKey(name: 'instantiates-canonical')
+          List<SearchReference> instantiatesCanonical,
+      @JsonKey(name: 'instantiates-uri')
+          List<SearchUri> instantiatesUri,
       List<SearchReference> location,
-      List<SearchReference> part_of,
+      @JsonKey(name: 'part-of')
+          List<SearchReference> partOf,
       List<SearchReference> performer,
-      List<SearchToken> reason_code,
-      List<SearchReference> reason_reference,
+      @JsonKey(name: 'reason-code')
+          List<SearchToken> reasonCode,
+      @JsonKey(name: 'reason-reference')
+          List<SearchReference> reasonReference,
       List<SearchToken> status,
       List<SearchReference> subject}) = _$_ProcedureSearch;
+
+  factory _ProcedureSearch.fromJson(Map<String, dynamic> json) =
+      _$_ProcedureSearch.fromJson;
 
   @override
   List<Id> get searchId;
@@ -3025,29 +3283,40 @@ abstract class _ProcedureSearch extends ProcedureSearch {
   @override
   List<SearchReference> get encounter;
   @override
-  List<SearchReference> get based_on;
+  @JsonKey(name: 'based-on')
+  List<SearchReference> get basedOn;
   @override
   List<SearchToken> get category;
   @override
-  List<SearchReference> get instantiates_canonical;
+  @JsonKey(name: 'instantiates-canonical')
+  List<SearchReference> get instantiatesCanonical;
   @override
-  List<SearchUri> get instantiates_uri;
+  @JsonKey(name: 'instantiates-uri')
+  List<SearchUri> get instantiatesUri;
   @override
   List<SearchReference> get location;
   @override
-  List<SearchReference> get part_of;
+  @JsonKey(name: 'part-of')
+  List<SearchReference> get partOf;
   @override
   List<SearchReference> get performer;
   @override
-  List<SearchToken> get reason_code;
+  @JsonKey(name: 'reason-code')
+  List<SearchToken> get reasonCode;
   @override
-  List<SearchReference> get reason_reference;
+  @JsonKey(name: 'reason-reference')
+  List<SearchReference> get reasonReference;
   @override
   List<SearchToken> get status;
   @override
   List<SearchReference> get subject;
   @override
   _$ProcedureSearchCopyWith<_ProcedureSearch> get copyWith;
+}
+
+ClinicalImpressionSearch _$ClinicalImpressionSearchFromJson(
+    Map<String, dynamic> json) {
+  return _ClinicalImpressionSearch.fromJson(json);
 }
 
 /// @nodoc
@@ -3068,15 +3337,15 @@ class _$ClinicalImpressionSearchTearOff {
       List<SearchReference> patient,
       List<SearchReference> assessor,
       List<SearchReference> encounter,
-      List<SearchToken> finding_code,
-      List<SearchReference> finding_ref,
+      @JsonKey(name: 'finding-code') List<SearchToken> findingCode,
+      @JsonKey(name: 'finding-ref') List<SearchReference> findingRef,
       List<SearchToken> identifier,
       List<SearchReference> investigation,
       List<SearchReference> previous,
       List<SearchReference> problem,
       List<SearchToken> status,
       List<SearchReference> subject,
-      List<SearchReference> supporting_info}) {
+      @JsonKey(name: 'supporting-info') List<SearchReference> supportingInfo}) {
     return _ClinicalImpressionSearch(
       searchId: searchId,
       searchLastUpdated: searchLastUpdated,
@@ -3090,16 +3359,21 @@ class _$ClinicalImpressionSearchTearOff {
       patient: patient,
       assessor: assessor,
       encounter: encounter,
-      finding_code: finding_code,
-      finding_ref: finding_ref,
+      findingCode: findingCode,
+      findingRef: findingRef,
       identifier: identifier,
       investigation: investigation,
       previous: previous,
       problem: problem,
       status: status,
       subject: subject,
-      supporting_info: supporting_info,
+      supportingInfo: supportingInfo,
     );
+  }
+
+// ignore: unused_element
+  ClinicalImpressionSearch fromJson(Map<String, Object> json) {
+    return ClinicalImpressionSearch.fromJson(json);
   }
 }
 
@@ -3122,16 +3396,20 @@ mixin _$ClinicalImpressionSearch {
   List<SearchReference> get patient;
   List<SearchReference> get assessor;
   List<SearchReference> get encounter;
-  List<SearchToken> get finding_code;
-  List<SearchReference> get finding_ref;
+  @JsonKey(name: 'finding-code')
+  List<SearchToken> get findingCode;
+  @JsonKey(name: 'finding-ref')
+  List<SearchReference> get findingRef;
   List<SearchToken> get identifier;
   List<SearchReference> get investigation;
   List<SearchReference> get previous;
   List<SearchReference> get problem;
   List<SearchToken> get status;
   List<SearchReference> get subject;
-  List<SearchReference> get supporting_info;
+  @JsonKey(name: 'supporting-info')
+  List<SearchReference> get supportingInfo;
 
+  Map<String, dynamic> toJson();
   $ClinicalImpressionSearchCopyWith<ClinicalImpressionSearch> get copyWith;
 }
 
@@ -3153,15 +3431,15 @@ abstract class $ClinicalImpressionSearchCopyWith<$Res> {
       List<SearchReference> patient,
       List<SearchReference> assessor,
       List<SearchReference> encounter,
-      List<SearchToken> finding_code,
-      List<SearchReference> finding_ref,
+      @JsonKey(name: 'finding-code') List<SearchToken> findingCode,
+      @JsonKey(name: 'finding-ref') List<SearchReference> findingRef,
       List<SearchToken> identifier,
       List<SearchReference> investigation,
       List<SearchReference> previous,
       List<SearchReference> problem,
       List<SearchToken> status,
       List<SearchReference> subject,
-      List<SearchReference> supporting_info});
+      @JsonKey(name: 'supporting-info') List<SearchReference> supportingInfo});
 }
 
 /// @nodoc
@@ -3187,15 +3465,15 @@ class _$ClinicalImpressionSearchCopyWithImpl<$Res>
     Object patient = freezed,
     Object assessor = freezed,
     Object encounter = freezed,
-    Object finding_code = freezed,
-    Object finding_ref = freezed,
+    Object findingCode = freezed,
+    Object findingRef = freezed,
     Object identifier = freezed,
     Object investigation = freezed,
     Object previous = freezed,
     Object problem = freezed,
     Object status = freezed,
     Object subject = freezed,
-    Object supporting_info = freezed,
+    Object supportingInfo = freezed,
   }) {
     return _then(_value.copyWith(
       searchId: searchId == freezed ? _value.searchId : searchId as List<Id>,
@@ -3229,12 +3507,12 @@ class _$ClinicalImpressionSearchCopyWithImpl<$Res>
       encounter: encounter == freezed
           ? _value.encounter
           : encounter as List<SearchReference>,
-      finding_code: finding_code == freezed
-          ? _value.finding_code
-          : finding_code as List<SearchToken>,
-      finding_ref: finding_ref == freezed
-          ? _value.finding_ref
-          : finding_ref as List<SearchReference>,
+      findingCode: findingCode == freezed
+          ? _value.findingCode
+          : findingCode as List<SearchToken>,
+      findingRef: findingRef == freezed
+          ? _value.findingRef
+          : findingRef as List<SearchReference>,
       identifier: identifier == freezed
           ? _value.identifier
           : identifier as List<SearchToken>,
@@ -3251,9 +3529,9 @@ class _$ClinicalImpressionSearchCopyWithImpl<$Res>
       subject: subject == freezed
           ? _value.subject
           : subject as List<SearchReference>,
-      supporting_info: supporting_info == freezed
-          ? _value.supporting_info
-          : supporting_info as List<SearchReference>,
+      supportingInfo: supportingInfo == freezed
+          ? _value.supportingInfo
+          : supportingInfo as List<SearchReference>,
     ));
   }
 }
@@ -3278,15 +3556,15 @@ abstract class _$ClinicalImpressionSearchCopyWith<$Res>
       List<SearchReference> patient,
       List<SearchReference> assessor,
       List<SearchReference> encounter,
-      List<SearchToken> finding_code,
-      List<SearchReference> finding_ref,
+      @JsonKey(name: 'finding-code') List<SearchToken> findingCode,
+      @JsonKey(name: 'finding-ref') List<SearchReference> findingRef,
       List<SearchToken> identifier,
       List<SearchReference> investigation,
       List<SearchReference> previous,
       List<SearchReference> problem,
       List<SearchToken> status,
       List<SearchReference> subject,
-      List<SearchReference> supporting_info});
+      @JsonKey(name: 'supporting-info') List<SearchReference> supportingInfo});
 }
 
 /// @nodoc
@@ -3315,15 +3593,15 @@ class __$ClinicalImpressionSearchCopyWithImpl<$Res>
     Object patient = freezed,
     Object assessor = freezed,
     Object encounter = freezed,
-    Object finding_code = freezed,
-    Object finding_ref = freezed,
+    Object findingCode = freezed,
+    Object findingRef = freezed,
     Object identifier = freezed,
     Object investigation = freezed,
     Object previous = freezed,
     Object problem = freezed,
     Object status = freezed,
     Object subject = freezed,
-    Object supporting_info = freezed,
+    Object supportingInfo = freezed,
   }) {
     return _then(_ClinicalImpressionSearch(
       searchId: searchId == freezed ? _value.searchId : searchId as List<Id>,
@@ -3357,12 +3635,12 @@ class __$ClinicalImpressionSearchCopyWithImpl<$Res>
       encounter: encounter == freezed
           ? _value.encounter
           : encounter as List<SearchReference>,
-      finding_code: finding_code == freezed
-          ? _value.finding_code
-          : finding_code as List<SearchToken>,
-      finding_ref: finding_ref == freezed
-          ? _value.finding_ref
-          : finding_ref as List<SearchReference>,
+      findingCode: findingCode == freezed
+          ? _value.findingCode
+          : findingCode as List<SearchToken>,
+      findingRef: findingRef == freezed
+          ? _value.findingRef
+          : findingRef as List<SearchReference>,
       identifier: identifier == freezed
           ? _value.identifier
           : identifier as List<SearchToken>,
@@ -3379,12 +3657,14 @@ class __$ClinicalImpressionSearchCopyWithImpl<$Res>
       subject: subject == freezed
           ? _value.subject
           : subject as List<SearchReference>,
-      supporting_info: supporting_info == freezed
-          ? _value.supporting_info
-          : supporting_info as List<SearchReference>,
+      supportingInfo: supportingInfo == freezed
+          ? _value.supportingInfo
+          : supportingInfo as List<SearchReference>,
     ));
   }
 }
+
+@JsonSerializable()
 
 /// @nodoc
 class _$_ClinicalImpressionSearch extends _ClinicalImpressionSearch {
@@ -3401,16 +3681,19 @@ class _$_ClinicalImpressionSearch extends _ClinicalImpressionSearch {
       this.patient,
       this.assessor,
       this.encounter,
-      this.finding_code,
-      this.finding_ref,
+      @JsonKey(name: 'finding-code') this.findingCode,
+      @JsonKey(name: 'finding-ref') this.findingRef,
       this.identifier,
       this.investigation,
       this.previous,
       this.problem,
       this.status,
       this.subject,
-      this.supporting_info})
+      @JsonKey(name: 'supporting-info') this.supportingInfo})
       : super._();
+
+  factory _$_ClinicalImpressionSearch.fromJson(Map<String, dynamic> json) =>
+      _$_$_ClinicalImpressionSearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -3438,9 +3721,11 @@ class _$_ClinicalImpressionSearch extends _ClinicalImpressionSearch {
   @override
   final List<SearchReference> encounter;
   @override
-  final List<SearchToken> finding_code;
+  @JsonKey(name: 'finding-code')
+  final List<SearchToken> findingCode;
   @override
-  final List<SearchReference> finding_ref;
+  @JsonKey(name: 'finding-ref')
+  final List<SearchReference> findingRef;
   @override
   final List<SearchToken> identifier;
   @override
@@ -3454,11 +3739,12 @@ class _$_ClinicalImpressionSearch extends _ClinicalImpressionSearch {
   @override
   final List<SearchReference> subject;
   @override
-  final List<SearchReference> supporting_info;
+  @JsonKey(name: 'supporting-info')
+  final List<SearchReference> supportingInfo;
 
   @override
   String toString() {
-    return 'ClinicalImpressionSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, date: $date, patient: $patient, assessor: $assessor, encounter: $encounter, finding_code: $finding_code, finding_ref: $finding_ref, identifier: $identifier, investigation: $investigation, previous: $previous, problem: $problem, status: $status, subject: $subject, supporting_info: $supporting_info)';
+    return 'ClinicalImpressionSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, date: $date, patient: $patient, assessor: $assessor, encounter: $encounter, findingCode: $findingCode, findingRef: $findingRef, identifier: $identifier, investigation: $investigation, previous: $previous, problem: $problem, status: $status, subject: $subject, supportingInfo: $supportingInfo)';
   }
 
   @override
@@ -3500,12 +3786,12 @@ class _$_ClinicalImpressionSearch extends _ClinicalImpressionSearch {
             (identical(other.encounter, encounter) ||
                 const DeepCollectionEquality()
                     .equals(other.encounter, encounter)) &&
-            (identical(other.finding_code, finding_code) ||
+            (identical(other.findingCode, findingCode) ||
                 const DeepCollectionEquality()
-                    .equals(other.finding_code, finding_code)) &&
-            (identical(other.finding_ref, finding_ref) ||
+                    .equals(other.findingCode, findingCode)) &&
+            (identical(other.findingRef, findingRef) ||
                 const DeepCollectionEquality()
-                    .equals(other.finding_ref, finding_ref)) &&
+                    .equals(other.findingRef, findingRef)) &&
             (identical(other.identifier, identifier) ||
                 const DeepCollectionEquality()
                     .equals(other.identifier, identifier)) &&
@@ -3523,9 +3809,9 @@ class _$_ClinicalImpressionSearch extends _ClinicalImpressionSearch {
             (identical(other.subject, subject) ||
                 const DeepCollectionEquality()
                     .equals(other.subject, subject)) &&
-            (identical(other.supporting_info, supporting_info) ||
+            (identical(other.supportingInfo, supportingInfo) ||
                 const DeepCollectionEquality()
-                    .equals(other.supporting_info, supporting_info)));
+                    .equals(other.supportingInfo, supportingInfo)));
   }
 
   @override
@@ -3543,20 +3829,25 @@ class _$_ClinicalImpressionSearch extends _ClinicalImpressionSearch {
       const DeepCollectionEquality().hash(patient) ^
       const DeepCollectionEquality().hash(assessor) ^
       const DeepCollectionEquality().hash(encounter) ^
-      const DeepCollectionEquality().hash(finding_code) ^
-      const DeepCollectionEquality().hash(finding_ref) ^
+      const DeepCollectionEquality().hash(findingCode) ^
+      const DeepCollectionEquality().hash(findingRef) ^
       const DeepCollectionEquality().hash(identifier) ^
       const DeepCollectionEquality().hash(investigation) ^
       const DeepCollectionEquality().hash(previous) ^
       const DeepCollectionEquality().hash(problem) ^
       const DeepCollectionEquality().hash(status) ^
       const DeepCollectionEquality().hash(subject) ^
-      const DeepCollectionEquality().hash(supporting_info);
+      const DeepCollectionEquality().hash(supportingInfo);
 
   @override
   _$ClinicalImpressionSearchCopyWith<_ClinicalImpressionSearch> get copyWith =>
       __$ClinicalImpressionSearchCopyWithImpl<_ClinicalImpressionSearch>(
           this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_ClinicalImpressionSearchToJson(this);
+  }
 }
 
 abstract class _ClinicalImpressionSearch extends ClinicalImpressionSearch {
@@ -3574,15 +3865,21 @@ abstract class _ClinicalImpressionSearch extends ClinicalImpressionSearch {
       List<SearchReference> patient,
       List<SearchReference> assessor,
       List<SearchReference> encounter,
-      List<SearchToken> finding_code,
-      List<SearchReference> finding_ref,
+      @JsonKey(name: 'finding-code')
+          List<SearchToken> findingCode,
+      @JsonKey(name: 'finding-ref')
+          List<SearchReference> findingRef,
       List<SearchToken> identifier,
       List<SearchReference> investigation,
       List<SearchReference> previous,
       List<SearchReference> problem,
       List<SearchToken> status,
       List<SearchReference> subject,
-      List<SearchReference> supporting_info}) = _$_ClinicalImpressionSearch;
+      @JsonKey(name: 'supporting-info')
+          List<SearchReference> supportingInfo}) = _$_ClinicalImpressionSearch;
+
+  factory _ClinicalImpressionSearch.fromJson(Map<String, dynamic> json) =
+      _$_ClinicalImpressionSearch.fromJson;
 
   @override
   List<Id> get searchId;
@@ -3610,9 +3907,11 @@ abstract class _ClinicalImpressionSearch extends ClinicalImpressionSearch {
   @override
   List<SearchReference> get encounter;
   @override
-  List<SearchToken> get finding_code;
+  @JsonKey(name: 'finding-code')
+  List<SearchToken> get findingCode;
   @override
-  List<SearchReference> get finding_ref;
+  @JsonKey(name: 'finding-ref')
+  List<SearchReference> get findingRef;
   @override
   List<SearchToken> get identifier;
   @override
@@ -3626,9 +3925,14 @@ abstract class _ClinicalImpressionSearch extends ClinicalImpressionSearch {
   @override
   List<SearchReference> get subject;
   @override
-  List<SearchReference> get supporting_info;
+  @JsonKey(name: 'supporting-info')
+  List<SearchReference> get supportingInfo;
   @override
   _$ClinicalImpressionSearchCopyWith<_ClinicalImpressionSearch> get copyWith;
+}
+
+DetectedIssueSearch _$DetectedIssueSearchFromJson(Map<String, dynamic> json) {
+  return _DetectedIssueSearch.fromJson(json);
 }
 
 /// @nodoc
@@ -3668,6 +3972,11 @@ class _$DetectedIssueSearchTearOff {
       implicated: implicated,
     );
   }
+
+// ignore: unused_element
+  DetectedIssueSearch fromJson(Map<String, Object> json) {
+    return DetectedIssueSearch.fromJson(json);
+  }
 }
 
 /// @nodoc
@@ -3692,6 +4001,7 @@ mixin _$DetectedIssueSearch {
   List<SearchDate> get identified;
   List<SearchReference> get implicated;
 
+  Map<String, dynamic> toJson();
   $DetectedIssueSearchCopyWith<DetectedIssueSearch> get copyWith;
 }
 
@@ -3877,6 +4187,8 @@ class __$DetectedIssueSearchCopyWithImpl<$Res>
   }
 }
 
+@JsonSerializable()
+
 /// @nodoc
 class _$_DetectedIssueSearch extends _DetectedIssueSearch {
   _$_DetectedIssueSearch(
@@ -3895,6 +4207,9 @@ class _$_DetectedIssueSearch extends _DetectedIssueSearch {
       this.identified,
       this.implicated})
       : super._();
+
+  factory _$_DetectedIssueSearch.fromJson(Map<String, dynamic> json) =>
+      _$_$_DetectedIssueSearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -3999,6 +4314,11 @@ class _$_DetectedIssueSearch extends _DetectedIssueSearch {
   _$DetectedIssueSearchCopyWith<_DetectedIssueSearch> get copyWith =>
       __$DetectedIssueSearchCopyWithImpl<_DetectedIssueSearch>(
           this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_DetectedIssueSearchToJson(this);
+  }
 }
 
 abstract class _DetectedIssueSearch extends DetectedIssueSearch {
@@ -4018,6 +4338,9 @@ abstract class _DetectedIssueSearch extends DetectedIssueSearch {
       List<SearchToken> code,
       List<SearchDate> identified,
       List<SearchReference> implicated}) = _$_DetectedIssueSearch;
+
+  factory _DetectedIssueSearch.fromJson(Map<String, dynamic> json) =
+      _$_DetectedIssueSearch.fromJson;
 
   @override
   List<Id> get searchId;

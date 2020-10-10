@@ -140,7 +140,8 @@ void main() async {
             "import 'package:fhir/primitive_types/primitive_types.dart';\n\n"
             "import '../../../search_parameter_types/search_parameter_types.dart';\n"
             "import '../../../search_parameters.dart';\n\n"
-            "part '$k.freezed.dart';\n\n");
+            "part '$k.freezed.dart';\n"
+            "part '$k.g.dart';\n\n");
       }
     }
   }
@@ -166,11 +167,22 @@ void main() async {
             '//List<SearchToken> searchType,\n';
 
         for (var i in j.value2) {
+          var location = i.value2.toString().indexOf('-');
+          if (location != -1) {
+            fileString += "@JsonKey(name: '${i.value2.toString()}') ";
+          }
           fileString += parameterTypeToString(i.value1.toString());
-          fileString += ' ' + i.value2.toString().replaceAll('-', '_') + ',\n';
+          var noHyphen = i.value2.toString().replaceAll('-', '');
+          if (location != -1) {
+            noHyphen = noHyphen.replaceRange(
+                location, location + 1, noHyphen[location].toUpperCase());
+          }
+          fileString += ' ' + noHyphen + ',\n';
         }
 
-        fileString += '}) = _${j.value1.toString()}Search;\n}\n\n';
+        fileString += '}) = _${j.value1.toString()}Search;\n\n'
+            'factory ${j.value1.toString()}Search.fromJson(Map<String, dynamic> json)'
+            ' => _\$${j.value1.toString()}SearchFromJson(json);}\n\n';
         await File(file).writeAsString(fileString);
       }
     }

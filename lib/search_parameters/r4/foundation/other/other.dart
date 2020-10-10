@@ -5,6 +5,7 @@ import '../../../search_parameter_types/search_parameter_types.dart';
 import '../../../search_parameters.dart';
 
 part 'other.freezed.dart';
+part 'other.g.dart';
 
 @freezed
 abstract class BasicSearch with R4SearchParameters implements _$BasicSearch {
@@ -27,7 +28,8 @@ List<SearchToken> identifier,
 List<SearchReference> patient,
 List<SearchReference> subject,
 }) = _BasicSearch;
-}
+
+factory BasicSearch.fromJson(Map<String, dynamic> json) => _$BasicSearchFromJson(json);}
 
 @freezed
 abstract class BundleSearch with R4SearchParameters implements _$BundleSearch {
@@ -49,7 +51,8 @@ List<SearchReference> message,
 List<SearchDate> timestamp,
 List<SearchToken> type,
 }) = _BundleSearch;
-}
+
+factory BundleSearch.fromJson(Map<String, dynamic> json) => _$BundleSearchFromJson(json);}
 
 @freezed
 abstract class LinkageSearch with R4SearchParameters implements _$LinkageSearch {
@@ -69,7 +72,8 @@ List<SearchReference> author,
 List<SearchReference> item,
 List<SearchReference> source,
 }) = _LinkageSearch;
-}
+
+factory LinkageSearch.fromJson(Map<String, dynamic> json) => _$LinkageSearchFromJson(json);}
 
 @freezed
 abstract class MessageHeaderSearch with R4SearchParameters implements _$MessageHeaderSearch {
@@ -88,19 +92,20 @@ List<Id> searchList,
 List<SearchReference> author,
 List<SearchToken> code,
 List<SearchString> destination,
-List<SearchUri> destination_uri,
+@JsonKey(name: 'destination-uri') List<SearchUri> destinationUri,
 List<SearchReference> enterer,
 List<SearchToken> event,
 List<SearchReference> focus,
 List<SearchReference> receiver,
-List<SearchToken> response_id,
+@JsonKey(name: 'response-id') List<SearchToken> responseId,
 List<SearchReference> responsible,
 List<SearchReference> sender,
 List<SearchString> source,
-List<SearchUri> source_uri,
+@JsonKey(name: 'source-uri') List<SearchUri> sourceUri,
 List<SearchReference> target,
 }) = _MessageHeaderSearch;
-}
+
+factory MessageHeaderSearch.fromJson(Map<String, dynamic> json) => _$MessageHeaderSearchFromJson(json);}
 
 @freezed
 abstract class SubscriptionSearch with R4SearchParameters implements _$SubscriptionSearch {
@@ -123,5 +128,6 @@ List<SearchToken> status,
 List<SearchToken> type,
 List<SearchUri> url,
 }) = _SubscriptionSearch;
-}
+
+factory SubscriptionSearch.fromJson(Map<String, dynamic> json) => _$SubscriptionSearchFromJson(json);}
 

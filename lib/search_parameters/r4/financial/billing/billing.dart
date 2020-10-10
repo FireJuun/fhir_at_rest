@@ -5,6 +5,7 @@ import '../../../search_parameter_types/search_parameter_types.dart';
 import '../../../search_parameters.dart';
 
 part 'billing.freezed.dart';
+part 'billing.g.dart';
 
 @freezed
 abstract class ClaimSearch with R4SearchParameters implements _$ClaimSearch {
@@ -20,25 +21,26 @@ List<SearchString> searchContent,
 List<Id> searchList,
 //List<SearchString> searchHas,
 //List<SearchToken> searchType,
-List<SearchReference> care_team,
+@JsonKey(name: 'care-team') List<SearchReference> careTeam,
 List<SearchDate> created,
-List<SearchReference> detail_udi,
+@JsonKey(name: 'detail-udi') List<SearchReference> detailUdi,
 List<SearchReference> encounter,
 List<SearchReference> enterer,
 List<SearchReference> facility,
 List<SearchToken> identifier,
 List<SearchReference> insurer,
-List<SearchReference> item_udi,
+@JsonKey(name: 'item-udi') List<SearchReference> itemUdi,
 List<SearchReference> patient,
 List<SearchReference> payee,
 List<SearchToken> priority,
-List<SearchReference> procedure_udi,
+@JsonKey(name: 'procedure-udi') List<SearchReference> procedureUdi,
 List<SearchReference> provider,
 List<SearchToken> status,
-List<SearchReference> subdetail_udi,
+@JsonKey(name: 'subdetail-udi') List<SearchReference> subdetailUdi,
 List<SearchToken> use,
 }) = _ClaimSearch;
-}
+
+factory ClaimSearch.fromJson(Map<String, dynamic> json) => _$ClaimSearchFromJson(json);}
 
 @freezed
 abstract class ClaimResponseSearch with R4SearchParameters implements _$ClaimResponseSearch {
@@ -60,13 +62,14 @@ List<SearchToken> identifier,
 List<SearchReference> insurer,
 List<SearchToken> outcome,
 List<SearchReference> patient,
-List<SearchDate> payment_date,
+@JsonKey(name: 'payment-date') List<SearchDate> paymentDate,
 List<SearchReference> request,
 List<SearchReference> requestor,
 List<SearchToken> status,
 List<SearchToken> use,
 }) = _ClaimResponseSearch;
-}
+
+factory ClaimResponseSearch.fromJson(Map<String, dynamic> json) => _$ClaimResponseSearchFromJson(json);}
 
 @freezed
 abstract class InvoiceSearch with R4SearchParameters implements _$InvoiceSearch {
@@ -87,7 +90,7 @@ List<SearchDate> date,
 List<SearchToken> identifier,
 List<SearchReference> issuer,
 List<SearchReference> participant,
-List<SearchToken> participant_role,
+@JsonKey(name: 'participant-role') List<SearchToken> participantRole,
 List<SearchReference> patient,
 List<SearchReference> recipient,
 List<SearchToken> status,
@@ -96,5 +99,6 @@ List<SearchQuantity> totalgross,
 List<SearchQuantity> totalnet,
 List<SearchToken> type,
 }) = _InvoiceSearch;
-}
+
+factory InvoiceSearch.fromJson(Map<String, dynamic> json) => _$InvoiceSearchFromJson(json);}
 

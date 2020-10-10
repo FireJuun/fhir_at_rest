@@ -190,22 +190,11 @@ Either<RestfulFailure, String> _parametersToString(dynamic search) {
   //     }
   //   }
   // }
-  InstanceMirror parameters = reflect(search);
-  ClassMirror par = parameters.type;
-  for (var v in par.declarations.values) {
-    if (v is VariableMirror) {
-      var m = parameters.getField(v.simpleName);
-      if (m.reflectee != null) {
-        for (var n in m.reflectee) {
-          if (!_commonParameters
-              .contains('${MirrorSystem.getName(v.simpleName)}')) {
-            parameterString += n.searchString().fold(
-                (l) => '',
-                (r) =>
-                    '&${simpleEnumToString(MirrorSystem.getName(v.simpleName)).replaceAll('_', '-')}$r');
-          }
-        }
-      }
+
+  final searchMap = search.toJson();
+  for (var k in searchMap.keys) {
+    if (!_commonParameters.contains(k) && searchMap[k] != null) {
+      parameterString += searchMap[k];
     }
   }
   return right(parameterString);

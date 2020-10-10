@@ -5,6 +5,7 @@ import '../../../search_parameter_types/search_parameter_types.dart';
 import '../../../search_parameters.dart';
 
 part 'care_provision.freezed.dart';
+part 'care_provision.g.dart';
 
 @freezed
 abstract class ServiceRequestSearch with R4SearchParameters implements _$ServiceRequestSearch {
@@ -25,15 +26,15 @@ List<SearchToken> identifier,
 List<SearchReference> patient,
 List<SearchReference> encounter,
 List<SearchDate> authored,
-List<SearchReference> based_on,
-List<SearchToken> body_site,
+@JsonKey(name: 'based-on') List<SearchReference> basedOn,
+@JsonKey(name: 'body-site') List<SearchToken> bodySite,
 List<SearchToken> category,
-List<SearchReference> instantiates_canonical,
-List<SearchUri> instantiates_uri,
+@JsonKey(name: 'instantiates-canonical') List<SearchReference> instantiatesCanonical,
+@JsonKey(name: 'instantiates-uri') List<SearchUri> instantiatesUri,
 List<SearchToken> intent,
 List<SearchDate> occurrence,
 List<SearchReference> performer,
-List<SearchToken> performer_type,
+@JsonKey(name: 'performer-type') List<SearchToken> performerType,
 List<SearchToken> priority,
 List<SearchReference> replaces,
 List<SearchReference> requester,
@@ -42,7 +43,8 @@ List<SearchReference> specimen,
 List<SearchToken> status,
 List<SearchReference> subject,
 }) = _ServiceRequestSearch;
-}
+
+factory ServiceRequestSearch.fromJson(Map<String, dynamic> json) => _$ServiceRequestSearchFromJson(json);}
 
 @freezed
 abstract class CarePlanSearch with R4SearchParameters implements _$CarePlanSearch {
@@ -61,25 +63,26 @@ List<Id> searchList,
 List<SearchDate> date,
 List<SearchToken> identifier,
 List<SearchReference> patient,
-List<SearchToken> activity_code,
-List<SearchDate> activity_date,
-List<SearchReference> activity_reference,
-List<SearchReference> based_on,
-List<SearchReference> care_team,
+@JsonKey(name: 'activity-code') List<SearchToken> activityCode,
+@JsonKey(name: 'activity-date') List<SearchDate> activityDate,
+@JsonKey(name: 'activity-reference') List<SearchReference> activityReference,
+@JsonKey(name: 'based-on') List<SearchReference> basedOn,
+@JsonKey(name: 'care-team') List<SearchReference> careTeam,
 List<SearchToken> category,
 List<SearchReference> condition,
 List<SearchReference> encounter,
 List<SearchReference> goal,
-List<SearchReference> instantiates_canonical,
-List<SearchUri> instantiates_uri,
+@JsonKey(name: 'instantiates-canonical') List<SearchReference> instantiatesCanonical,
+@JsonKey(name: 'instantiates-uri') List<SearchUri> instantiatesUri,
 List<SearchToken> intent,
-List<SearchReference> part_of,
+@JsonKey(name: 'part-of') List<SearchReference> partOf,
 List<SearchReference> performer,
 List<SearchReference> replaces,
 List<SearchToken> status,
 List<SearchReference> subject,
 }) = _CarePlanSearch;
-}
+
+factory CarePlanSearch.fromJson(Map<String, dynamic> json) => _$CarePlanSearchFromJson(json);}
 
 @freezed
 abstract class CareTeamSearch with R4SearchParameters implements _$CareTeamSearch {
@@ -104,7 +107,8 @@ List<SearchReference> participant,
 List<SearchToken> status,
 List<SearchReference> subject,
 }) = _CareTeamSearch;
-}
+
+factory CareTeamSearch.fromJson(Map<String, dynamic> json) => _$CareTeamSearchFromJson(json);}
 
 @freezed
 abstract class RiskAssessmentSearch with R4SearchParameters implements _$RiskAssessmentSearch {
@@ -131,7 +135,8 @@ List<SearchNumber> probability,
 List<SearchToken> risk,
 List<SearchReference> subject,
 }) = _RiskAssessmentSearch;
-}
+
+factory RiskAssessmentSearch.fromJson(Map<String, dynamic> json) => _$RiskAssessmentSearchFromJson(json);}
 
 @freezed
 abstract class GoalSearch with R4SearchParameters implements _$GoalSearch {
@@ -149,14 +154,15 @@ List<Id> searchList,
 //List<SearchToken> searchType,
 List<SearchToken> identifier,
 List<SearchReference> patient,
-List<SearchToken> achievement_status,
+@JsonKey(name: 'achievement-status') List<SearchToken> achievementStatus,
 List<SearchToken> category,
-List<SearchToken> lifecycle_status,
-List<SearchDate> start_date,
+@JsonKey(name: 'lifecycle-status') List<SearchToken> lifecycleStatus,
+@JsonKey(name: 'start-date') List<SearchDate> startDate,
 List<SearchReference> subject,
-List<SearchDate> target_date,
+@JsonKey(name: 'target-date') List<SearchDate> targetDate,
 }) = _GoalSearch;
-}
+
+factory GoalSearch.fromJson(Map<String, dynamic> json) => _$GoalSearchFromJson(json);}
 
 @freezed
 abstract class NutritionOrderSearch with R4SearchParameters implements _$NutritionOrderSearch {
@@ -178,14 +184,15 @@ List<SearchReference> encounter,
 List<SearchToken> additive,
 List<SearchDate> datetime,
 List<SearchToken> formula,
-List<SearchReference> instantiates_canonical,
-List<SearchUri> instantiates_uri,
+@JsonKey(name: 'instantiates-canonical') List<SearchReference> instantiatesCanonical,
+@JsonKey(name: 'instantiates-uri') List<SearchUri> instantiatesUri,
 List<SearchToken> oraldiet,
 List<SearchReference> provider,
 List<SearchToken> status,
 List<SearchToken> supplement,
 }) = _NutritionOrderSearch;
-}
+
+factory NutritionOrderSearch.fromJson(Map<String, dynamic> json) => _$NutritionOrderSearchFromJson(json);}
 
 @freezed
 abstract class VisionPrescriptionSearch with R4SearchParameters implements _$VisionPrescriptionSearch {
@@ -208,7 +215,8 @@ List<SearchDate> datewritten,
 List<SearchReference> prescriber,
 List<SearchToken> status,
 }) = _VisionPrescriptionSearch;
-}
+
+factory VisionPrescriptionSearch.fromJson(Map<String, dynamic> json) => _$VisionPrescriptionSearchFromJson(json);}
 
 @freezed
 abstract class RequestGroupSearch with R4SearchParameters implements _$RequestGroupSearch {
@@ -228,10 +236,10 @@ List<SearchReference> author,
 List<SearchDate> authored,
 List<SearchToken> code,
 List<SearchReference> encounter,
-List<SearchToken> group_identifier,
+@JsonKey(name: 'group-identifier') List<SearchToken> groupIdentifier,
 List<SearchToken> identifier,
-List<SearchReference> instantiates_canonical,
-List<SearchUri> instantiates_uri,
+@JsonKey(name: 'instantiates-canonical') List<SearchReference> instantiatesCanonical,
+@JsonKey(name: 'instantiates-uri') List<SearchUri> instantiatesUri,
 List<SearchToken> intent,
 List<SearchReference> participant,
 List<SearchReference> patient,
@@ -239,5 +247,6 @@ List<SearchToken> priority,
 List<SearchToken> status,
 List<SearchReference> subject,
 }) = _RequestGroupSearch;
-}
+
+factory RequestGroupSearch.fromJson(Map<String, dynamic> json) => _$RequestGroupSearchFromJson(json);}
 

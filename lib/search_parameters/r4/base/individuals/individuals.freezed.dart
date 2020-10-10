@@ -8,6 +8,9 @@ part of 'individuals.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
+GroupSearch _$GroupSearchFromJson(Map<String, dynamic> json) {
+  return _GroupSearch.fromJson(json);
+}
 
 /// @nodoc
 class _$GroupSearchTearOff {
@@ -28,11 +31,13 @@ class _$GroupSearchTearOff {
       List<SearchToken> code,
       List<SearchToken> exclude,
       List<SearchToken> identifier,
-      List<SearchReference> managing_entity,
+      @JsonKey(name: 'managing-entity')
+          List<SearchReference> managingEntity,
       List<SearchReference> member,
       List<SearchToken> type,
       List<SearchToken> value,
-      List<SearchComposite> characteristic_value}) {
+      @JsonKey(name: 'characteristic-value')
+          List<SearchComposite> characteristicValue}) {
     return _GroupSearch(
       searchId: searchId,
       searchLastUpdated: searchLastUpdated,
@@ -47,12 +52,17 @@ class _$GroupSearchTearOff {
       code: code,
       exclude: exclude,
       identifier: identifier,
-      managing_entity: managing_entity,
+      managingEntity: managingEntity,
       member: member,
       type: type,
       value: value,
-      characteristic_value: characteristic_value,
+      characteristicValue: characteristicValue,
     );
+  }
+
+// ignore: unused_element
+  GroupSearch fromJson(Map<String, Object> json) {
+    return GroupSearch.fromJson(json);
   }
 }
 
@@ -76,12 +86,15 @@ mixin _$GroupSearch {
   List<SearchToken> get code;
   List<SearchToken> get exclude;
   List<SearchToken> get identifier;
-  List<SearchReference> get managing_entity;
+  @JsonKey(name: 'managing-entity')
+  List<SearchReference> get managingEntity;
   List<SearchReference> get member;
   List<SearchToken> get type;
   List<SearchToken> get value;
-  List<SearchComposite> get characteristic_value;
+  @JsonKey(name: 'characteristic-value')
+  List<SearchComposite> get characteristicValue;
 
+  Map<String, dynamic> toJson();
   $GroupSearchCopyWith<GroupSearch> get copyWith;
 }
 
@@ -104,11 +117,13 @@ abstract class $GroupSearchCopyWith<$Res> {
       List<SearchToken> code,
       List<SearchToken> exclude,
       List<SearchToken> identifier,
-      List<SearchReference> managing_entity,
+      @JsonKey(name: 'managing-entity')
+          List<SearchReference> managingEntity,
       List<SearchReference> member,
       List<SearchToken> type,
       List<SearchToken> value,
-      List<SearchComposite> characteristic_value});
+      @JsonKey(name: 'characteristic-value')
+          List<SearchComposite> characteristicValue});
 }
 
 /// @nodoc
@@ -134,11 +149,11 @@ class _$GroupSearchCopyWithImpl<$Res> implements $GroupSearchCopyWith<$Res> {
     Object code = freezed,
     Object exclude = freezed,
     Object identifier = freezed,
-    Object managing_entity = freezed,
+    Object managingEntity = freezed,
     Object member = freezed,
     Object type = freezed,
     Object value = freezed,
-    Object characteristic_value = freezed,
+    Object characteristicValue = freezed,
   }) {
     return _then(_value.copyWith(
       searchId: searchId == freezed ? _value.searchId : searchId as List<Id>,
@@ -172,16 +187,16 @@ class _$GroupSearchCopyWithImpl<$Res> implements $GroupSearchCopyWith<$Res> {
       identifier: identifier == freezed
           ? _value.identifier
           : identifier as List<SearchToken>,
-      managing_entity: managing_entity == freezed
-          ? _value.managing_entity
-          : managing_entity as List<SearchReference>,
+      managingEntity: managingEntity == freezed
+          ? _value.managingEntity
+          : managingEntity as List<SearchReference>,
       member:
           member == freezed ? _value.member : member as List<SearchReference>,
       type: type == freezed ? _value.type : type as List<SearchToken>,
       value: value == freezed ? _value.value : value as List<SearchToken>,
-      characteristic_value: characteristic_value == freezed
-          ? _value.characteristic_value
-          : characteristic_value as List<SearchComposite>,
+      characteristicValue: characteristicValue == freezed
+          ? _value.characteristicValue
+          : characteristicValue as List<SearchComposite>,
     ));
   }
 }
@@ -207,11 +222,13 @@ abstract class _$GroupSearchCopyWith<$Res>
       List<SearchToken> code,
       List<SearchToken> exclude,
       List<SearchToken> identifier,
-      List<SearchReference> managing_entity,
+      @JsonKey(name: 'managing-entity')
+          List<SearchReference> managingEntity,
       List<SearchReference> member,
       List<SearchToken> type,
       List<SearchToken> value,
-      List<SearchComposite> characteristic_value});
+      @JsonKey(name: 'characteristic-value')
+          List<SearchComposite> characteristicValue});
 }
 
 /// @nodoc
@@ -239,11 +256,11 @@ class __$GroupSearchCopyWithImpl<$Res> extends _$GroupSearchCopyWithImpl<$Res>
     Object code = freezed,
     Object exclude = freezed,
     Object identifier = freezed,
-    Object managing_entity = freezed,
+    Object managingEntity = freezed,
     Object member = freezed,
     Object type = freezed,
     Object value = freezed,
-    Object characteristic_value = freezed,
+    Object characteristicValue = freezed,
   }) {
     return _then(_GroupSearch(
       searchId: searchId == freezed ? _value.searchId : searchId as List<Id>,
@@ -277,19 +294,21 @@ class __$GroupSearchCopyWithImpl<$Res> extends _$GroupSearchCopyWithImpl<$Res>
       identifier: identifier == freezed
           ? _value.identifier
           : identifier as List<SearchToken>,
-      managing_entity: managing_entity == freezed
-          ? _value.managing_entity
-          : managing_entity as List<SearchReference>,
+      managingEntity: managingEntity == freezed
+          ? _value.managingEntity
+          : managingEntity as List<SearchReference>,
       member:
           member == freezed ? _value.member : member as List<SearchReference>,
       type: type == freezed ? _value.type : type as List<SearchToken>,
       value: value == freezed ? _value.value : value as List<SearchToken>,
-      characteristic_value: characteristic_value == freezed
-          ? _value.characteristic_value
-          : characteristic_value as List<SearchComposite>,
+      characteristicValue: characteristicValue == freezed
+          ? _value.characteristicValue
+          : characteristicValue as List<SearchComposite>,
     ));
   }
 }
+
+@JsonSerializable()
 
 /// @nodoc
 class _$_GroupSearch extends _GroupSearch {
@@ -307,12 +326,15 @@ class _$_GroupSearch extends _GroupSearch {
       this.code,
       this.exclude,
       this.identifier,
-      this.managing_entity,
+      @JsonKey(name: 'managing-entity') this.managingEntity,
       this.member,
       this.type,
       this.value,
-      this.characteristic_value})
+      @JsonKey(name: 'characteristic-value') this.characteristicValue})
       : super._();
+
+  factory _$_GroupSearch.fromJson(Map<String, dynamic> json) =>
+      _$_$_GroupSearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -342,7 +364,8 @@ class _$_GroupSearch extends _GroupSearch {
   @override
   final List<SearchToken> identifier;
   @override
-  final List<SearchReference> managing_entity;
+  @JsonKey(name: 'managing-entity')
+  final List<SearchReference> managingEntity;
   @override
   final List<SearchReference> member;
   @override
@@ -350,11 +373,12 @@ class _$_GroupSearch extends _GroupSearch {
   @override
   final List<SearchToken> value;
   @override
-  final List<SearchComposite> characteristic_value;
+  @JsonKey(name: 'characteristic-value')
+  final List<SearchComposite> characteristicValue;
 
   @override
   String toString() {
-    return 'GroupSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, actual: $actual, characteristic: $characteristic, code: $code, exclude: $exclude, identifier: $identifier, managing_entity: $managing_entity, member: $member, type: $type, value: $value, characteristic_value: $characteristic_value)';
+    return 'GroupSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, actual: $actual, characteristic: $characteristic, code: $code, exclude: $exclude, identifier: $identifier, managingEntity: $managingEntity, member: $member, type: $type, value: $value, characteristicValue: $characteristicValue)';
   }
 
   @override
@@ -398,18 +422,18 @@ class _$_GroupSearch extends _GroupSearch {
             (identical(other.identifier, identifier) ||
                 const DeepCollectionEquality()
                     .equals(other.identifier, identifier)) &&
-            (identical(other.managing_entity, managing_entity) ||
+            (identical(other.managingEntity, managingEntity) ||
                 const DeepCollectionEquality()
-                    .equals(other.managing_entity, managing_entity)) &&
+                    .equals(other.managingEntity, managingEntity)) &&
             (identical(other.member, member) ||
                 const DeepCollectionEquality().equals(other.member, member)) &&
             (identical(other.type, type) ||
                 const DeepCollectionEquality().equals(other.type, type)) &&
             (identical(other.value, value) ||
                 const DeepCollectionEquality().equals(other.value, value)) &&
-            (identical(other.characteristic_value, characteristic_value) ||
+            (identical(other.characteristicValue, characteristicValue) ||
                 const DeepCollectionEquality()
-                    .equals(other.characteristic_value, characteristic_value)));
+                    .equals(other.characteristicValue, characteristicValue)));
   }
 
   @override
@@ -428,15 +452,20 @@ class _$_GroupSearch extends _GroupSearch {
       const DeepCollectionEquality().hash(code) ^
       const DeepCollectionEquality().hash(exclude) ^
       const DeepCollectionEquality().hash(identifier) ^
-      const DeepCollectionEquality().hash(managing_entity) ^
+      const DeepCollectionEquality().hash(managingEntity) ^
       const DeepCollectionEquality().hash(member) ^
       const DeepCollectionEquality().hash(type) ^
       const DeepCollectionEquality().hash(value) ^
-      const DeepCollectionEquality().hash(characteristic_value);
+      const DeepCollectionEquality().hash(characteristicValue);
 
   @override
   _$GroupSearchCopyWith<_GroupSearch> get copyWith =>
       __$GroupSearchCopyWithImpl<_GroupSearch>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_GroupSearchToJson(this);
+  }
 }
 
 abstract class _GroupSearch extends GroupSearch {
@@ -455,11 +484,16 @@ abstract class _GroupSearch extends GroupSearch {
       List<SearchToken> code,
       List<SearchToken> exclude,
       List<SearchToken> identifier,
-      List<SearchReference> managing_entity,
+      @JsonKey(name: 'managing-entity')
+          List<SearchReference> managingEntity,
       List<SearchReference> member,
       List<SearchToken> type,
       List<SearchToken> value,
-      List<SearchComposite> characteristic_value}) = _$_GroupSearch;
+      @JsonKey(name: 'characteristic-value')
+          List<SearchComposite> characteristicValue}) = _$_GroupSearch;
+
+  factory _GroupSearch.fromJson(Map<String, dynamic> json) =
+      _$_GroupSearch.fromJson;
 
   @override
   List<Id> get searchId;
@@ -489,7 +523,8 @@ abstract class _GroupSearch extends GroupSearch {
   @override
   List<SearchToken> get identifier;
   @override
-  List<SearchReference> get managing_entity;
+  @JsonKey(name: 'managing-entity')
+  List<SearchReference> get managingEntity;
   @override
   List<SearchReference> get member;
   @override
@@ -497,9 +532,14 @@ abstract class _GroupSearch extends GroupSearch {
   @override
   List<SearchToken> get value;
   @override
-  List<SearchComposite> get characteristic_value;
+  @JsonKey(name: 'characteristic-value')
+  List<SearchComposite> get characteristicValue;
   @override
   _$GroupSearchCopyWith<_GroupSearch> get copyWith;
+}
+
+PatientSearch _$PatientSearchFromJson(Map<String, dynamic> json) {
+  return _PatientSearch.fromJson(json);
 }
 
 /// @nodoc
@@ -518,18 +558,25 @@ class _$PatientSearchTearOff {
       List<Id> searchList,
       List<SearchToken> active,
       List<SearchString> address,
-      List<SearchString> address_city,
-      List<SearchString> address_country,
-      List<SearchString> address_postalcode,
-      List<SearchString> address_state,
-      List<SearchToken> address_use,
+      @JsonKey(name: 'address-city')
+          List<SearchString> addressCity,
+      @JsonKey(name: 'address-country')
+          List<SearchString> addressCountry,
+      @JsonKey(name: 'address-postalcode')
+          List<SearchString> addressPostalcode,
+      @JsonKey(name: 'address-state')
+          List<SearchString> addressState,
+      @JsonKey(name: 'address-use')
+          List<SearchToken> addressUse,
       List<SearchDate> birthdate,
-      List<SearchDate> death_date,
+      @JsonKey(name: 'death-date')
+          List<SearchDate> deathDate,
       List<SearchToken> deceased,
       List<SearchToken> email,
       List<SearchString> family,
       List<SearchToken> gender,
-      List<SearchReference> general_practitioner,
+      @JsonKey(name: 'general-practitioner')
+          List<SearchReference> generalPractitioner,
       List<SearchString> given,
       List<SearchToken> identifier,
       List<SearchToken> language,
@@ -550,18 +597,18 @@ class _$PatientSearchTearOff {
       searchList: searchList,
       active: active,
       address: address,
-      address_city: address_city,
-      address_country: address_country,
-      address_postalcode: address_postalcode,
-      address_state: address_state,
-      address_use: address_use,
+      addressCity: addressCity,
+      addressCountry: addressCountry,
+      addressPostalcode: addressPostalcode,
+      addressState: addressState,
+      addressUse: addressUse,
       birthdate: birthdate,
-      death_date: death_date,
+      deathDate: deathDate,
       deceased: deceased,
       email: email,
       family: family,
       gender: gender,
-      general_practitioner: general_practitioner,
+      generalPractitioner: generalPractitioner,
       given: given,
       identifier: identifier,
       language: language,
@@ -572,6 +619,11 @@ class _$PatientSearchTearOff {
       phonetic: phonetic,
       telecom: telecom,
     );
+  }
+
+// ignore: unused_element
+  PatientSearch fromJson(Map<String, Object> json) {
+    return PatientSearch.fromJson(json);
   }
 }
 
@@ -592,18 +644,25 @@ mixin _$PatientSearch {
 //List<SearchToken> searchType,
   List<SearchToken> get active;
   List<SearchString> get address;
-  List<SearchString> get address_city;
-  List<SearchString> get address_country;
-  List<SearchString> get address_postalcode;
-  List<SearchString> get address_state;
-  List<SearchToken> get address_use;
+  @JsonKey(name: 'address-city')
+  List<SearchString> get addressCity;
+  @JsonKey(name: 'address-country')
+  List<SearchString> get addressCountry;
+  @JsonKey(name: 'address-postalcode')
+  List<SearchString> get addressPostalcode;
+  @JsonKey(name: 'address-state')
+  List<SearchString> get addressState;
+  @JsonKey(name: 'address-use')
+  List<SearchToken> get addressUse;
   List<SearchDate> get birthdate;
-  List<SearchDate> get death_date;
+  @JsonKey(name: 'death-date')
+  List<SearchDate> get deathDate;
   List<SearchToken> get deceased;
   List<SearchToken> get email;
   List<SearchString> get family;
   List<SearchToken> get gender;
-  List<SearchReference> get general_practitioner;
+  @JsonKey(name: 'general-practitioner')
+  List<SearchReference> get generalPractitioner;
   List<SearchString> get given;
   List<SearchToken> get identifier;
   List<SearchToken> get language;
@@ -614,6 +673,7 @@ mixin _$PatientSearch {
   List<SearchString> get phonetic;
   List<SearchToken> get telecom;
 
+  Map<String, dynamic> toJson();
   $PatientSearchCopyWith<PatientSearch> get copyWith;
 }
 
@@ -633,18 +693,25 @@ abstract class $PatientSearchCopyWith<$Res> {
       List<Id> searchList,
       List<SearchToken> active,
       List<SearchString> address,
-      List<SearchString> address_city,
-      List<SearchString> address_country,
-      List<SearchString> address_postalcode,
-      List<SearchString> address_state,
-      List<SearchToken> address_use,
+      @JsonKey(name: 'address-city')
+          List<SearchString> addressCity,
+      @JsonKey(name: 'address-country')
+          List<SearchString> addressCountry,
+      @JsonKey(name: 'address-postalcode')
+          List<SearchString> addressPostalcode,
+      @JsonKey(name: 'address-state')
+          List<SearchString> addressState,
+      @JsonKey(name: 'address-use')
+          List<SearchToken> addressUse,
       List<SearchDate> birthdate,
-      List<SearchDate> death_date,
+      @JsonKey(name: 'death-date')
+          List<SearchDate> deathDate,
       List<SearchToken> deceased,
       List<SearchToken> email,
       List<SearchString> family,
       List<SearchToken> gender,
-      List<SearchReference> general_practitioner,
+      @JsonKey(name: 'general-practitioner')
+          List<SearchReference> generalPractitioner,
       List<SearchString> given,
       List<SearchToken> identifier,
       List<SearchToken> language,
@@ -677,18 +744,18 @@ class _$PatientSearchCopyWithImpl<$Res>
     Object searchList = freezed,
     Object active = freezed,
     Object address = freezed,
-    Object address_city = freezed,
-    Object address_country = freezed,
-    Object address_postalcode = freezed,
-    Object address_state = freezed,
-    Object address_use = freezed,
+    Object addressCity = freezed,
+    Object addressCountry = freezed,
+    Object addressPostalcode = freezed,
+    Object addressState = freezed,
+    Object addressUse = freezed,
     Object birthdate = freezed,
-    Object death_date = freezed,
+    Object deathDate = freezed,
     Object deceased = freezed,
     Object email = freezed,
     Object family = freezed,
     Object gender = freezed,
-    Object general_practitioner = freezed,
+    Object generalPractitioner = freezed,
     Object given = freezed,
     Object identifier = freezed,
     Object language = freezed,
@@ -724,35 +791,35 @@ class _$PatientSearchCopyWithImpl<$Res>
       active: active == freezed ? _value.active : active as List<SearchToken>,
       address:
           address == freezed ? _value.address : address as List<SearchString>,
-      address_city: address_city == freezed
-          ? _value.address_city
-          : address_city as List<SearchString>,
-      address_country: address_country == freezed
-          ? _value.address_country
-          : address_country as List<SearchString>,
-      address_postalcode: address_postalcode == freezed
-          ? _value.address_postalcode
-          : address_postalcode as List<SearchString>,
-      address_state: address_state == freezed
-          ? _value.address_state
-          : address_state as List<SearchString>,
-      address_use: address_use == freezed
-          ? _value.address_use
-          : address_use as List<SearchToken>,
+      addressCity: addressCity == freezed
+          ? _value.addressCity
+          : addressCity as List<SearchString>,
+      addressCountry: addressCountry == freezed
+          ? _value.addressCountry
+          : addressCountry as List<SearchString>,
+      addressPostalcode: addressPostalcode == freezed
+          ? _value.addressPostalcode
+          : addressPostalcode as List<SearchString>,
+      addressState: addressState == freezed
+          ? _value.addressState
+          : addressState as List<SearchString>,
+      addressUse: addressUse == freezed
+          ? _value.addressUse
+          : addressUse as List<SearchToken>,
       birthdate: birthdate == freezed
           ? _value.birthdate
           : birthdate as List<SearchDate>,
-      death_date: death_date == freezed
-          ? _value.death_date
-          : death_date as List<SearchDate>,
+      deathDate: deathDate == freezed
+          ? _value.deathDate
+          : deathDate as List<SearchDate>,
       deceased:
           deceased == freezed ? _value.deceased : deceased as List<SearchToken>,
       email: email == freezed ? _value.email : email as List<SearchToken>,
       family: family == freezed ? _value.family : family as List<SearchString>,
       gender: gender == freezed ? _value.gender : gender as List<SearchToken>,
-      general_practitioner: general_practitioner == freezed
-          ? _value.general_practitioner
-          : general_practitioner as List<SearchReference>,
+      generalPractitioner: generalPractitioner == freezed
+          ? _value.generalPractitioner
+          : generalPractitioner as List<SearchReference>,
       given: given == freezed ? _value.given : given as List<SearchString>,
       identifier: identifier == freezed
           ? _value.identifier
@@ -792,18 +859,25 @@ abstract class _$PatientSearchCopyWith<$Res>
       List<Id> searchList,
       List<SearchToken> active,
       List<SearchString> address,
-      List<SearchString> address_city,
-      List<SearchString> address_country,
-      List<SearchString> address_postalcode,
-      List<SearchString> address_state,
-      List<SearchToken> address_use,
+      @JsonKey(name: 'address-city')
+          List<SearchString> addressCity,
+      @JsonKey(name: 'address-country')
+          List<SearchString> addressCountry,
+      @JsonKey(name: 'address-postalcode')
+          List<SearchString> addressPostalcode,
+      @JsonKey(name: 'address-state')
+          List<SearchString> addressState,
+      @JsonKey(name: 'address-use')
+          List<SearchToken> addressUse,
       List<SearchDate> birthdate,
-      List<SearchDate> death_date,
+      @JsonKey(name: 'death-date')
+          List<SearchDate> deathDate,
       List<SearchToken> deceased,
       List<SearchToken> email,
       List<SearchString> family,
       List<SearchToken> gender,
-      List<SearchReference> general_practitioner,
+      @JsonKey(name: 'general-practitioner')
+          List<SearchReference> generalPractitioner,
       List<SearchString> given,
       List<SearchToken> identifier,
       List<SearchToken> language,
@@ -838,18 +912,18 @@ class __$PatientSearchCopyWithImpl<$Res>
     Object searchList = freezed,
     Object active = freezed,
     Object address = freezed,
-    Object address_city = freezed,
-    Object address_country = freezed,
-    Object address_postalcode = freezed,
-    Object address_state = freezed,
-    Object address_use = freezed,
+    Object addressCity = freezed,
+    Object addressCountry = freezed,
+    Object addressPostalcode = freezed,
+    Object addressState = freezed,
+    Object addressUse = freezed,
     Object birthdate = freezed,
-    Object death_date = freezed,
+    Object deathDate = freezed,
     Object deceased = freezed,
     Object email = freezed,
     Object family = freezed,
     Object gender = freezed,
-    Object general_practitioner = freezed,
+    Object generalPractitioner = freezed,
     Object given = freezed,
     Object identifier = freezed,
     Object language = freezed,
@@ -885,35 +959,35 @@ class __$PatientSearchCopyWithImpl<$Res>
       active: active == freezed ? _value.active : active as List<SearchToken>,
       address:
           address == freezed ? _value.address : address as List<SearchString>,
-      address_city: address_city == freezed
-          ? _value.address_city
-          : address_city as List<SearchString>,
-      address_country: address_country == freezed
-          ? _value.address_country
-          : address_country as List<SearchString>,
-      address_postalcode: address_postalcode == freezed
-          ? _value.address_postalcode
-          : address_postalcode as List<SearchString>,
-      address_state: address_state == freezed
-          ? _value.address_state
-          : address_state as List<SearchString>,
-      address_use: address_use == freezed
-          ? _value.address_use
-          : address_use as List<SearchToken>,
+      addressCity: addressCity == freezed
+          ? _value.addressCity
+          : addressCity as List<SearchString>,
+      addressCountry: addressCountry == freezed
+          ? _value.addressCountry
+          : addressCountry as List<SearchString>,
+      addressPostalcode: addressPostalcode == freezed
+          ? _value.addressPostalcode
+          : addressPostalcode as List<SearchString>,
+      addressState: addressState == freezed
+          ? _value.addressState
+          : addressState as List<SearchString>,
+      addressUse: addressUse == freezed
+          ? _value.addressUse
+          : addressUse as List<SearchToken>,
       birthdate: birthdate == freezed
           ? _value.birthdate
           : birthdate as List<SearchDate>,
-      death_date: death_date == freezed
-          ? _value.death_date
-          : death_date as List<SearchDate>,
+      deathDate: deathDate == freezed
+          ? _value.deathDate
+          : deathDate as List<SearchDate>,
       deceased:
           deceased == freezed ? _value.deceased : deceased as List<SearchToken>,
       email: email == freezed ? _value.email : email as List<SearchToken>,
       family: family == freezed ? _value.family : family as List<SearchString>,
       gender: gender == freezed ? _value.gender : gender as List<SearchToken>,
-      general_practitioner: general_practitioner == freezed
-          ? _value.general_practitioner
-          : general_practitioner as List<SearchReference>,
+      generalPractitioner: generalPractitioner == freezed
+          ? _value.generalPractitioner
+          : generalPractitioner as List<SearchReference>,
       given: given == freezed ? _value.given : given as List<SearchString>,
       identifier: identifier == freezed
           ? _value.identifier
@@ -935,6 +1009,8 @@ class __$PatientSearchCopyWithImpl<$Res>
   }
 }
 
+@JsonSerializable()
+
 /// @nodoc
 class _$_PatientSearch extends _PatientSearch {
   _$_PatientSearch(
@@ -948,18 +1024,18 @@ class _$_PatientSearch extends _PatientSearch {
       this.searchList,
       this.active,
       this.address,
-      this.address_city,
-      this.address_country,
-      this.address_postalcode,
-      this.address_state,
-      this.address_use,
+      @JsonKey(name: 'address-city') this.addressCity,
+      @JsonKey(name: 'address-country') this.addressCountry,
+      @JsonKey(name: 'address-postalcode') this.addressPostalcode,
+      @JsonKey(name: 'address-state') this.addressState,
+      @JsonKey(name: 'address-use') this.addressUse,
       this.birthdate,
-      this.death_date,
+      @JsonKey(name: 'death-date') this.deathDate,
       this.deceased,
       this.email,
       this.family,
       this.gender,
-      this.general_practitioner,
+      @JsonKey(name: 'general-practitioner') this.generalPractitioner,
       this.given,
       this.identifier,
       this.language,
@@ -970,6 +1046,9 @@ class _$_PatientSearch extends _PatientSearch {
       this.phonetic,
       this.telecom})
       : super._();
+
+  factory _$_PatientSearch.fromJson(Map<String, dynamic> json) =>
+      _$_$_PatientSearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -993,19 +1072,25 @@ class _$_PatientSearch extends _PatientSearch {
   @override
   final List<SearchString> address;
   @override
-  final List<SearchString> address_city;
+  @JsonKey(name: 'address-city')
+  final List<SearchString> addressCity;
   @override
-  final List<SearchString> address_country;
+  @JsonKey(name: 'address-country')
+  final List<SearchString> addressCountry;
   @override
-  final List<SearchString> address_postalcode;
+  @JsonKey(name: 'address-postalcode')
+  final List<SearchString> addressPostalcode;
   @override
-  final List<SearchString> address_state;
+  @JsonKey(name: 'address-state')
+  final List<SearchString> addressState;
   @override
-  final List<SearchToken> address_use;
+  @JsonKey(name: 'address-use')
+  final List<SearchToken> addressUse;
   @override
   final List<SearchDate> birthdate;
   @override
-  final List<SearchDate> death_date;
+  @JsonKey(name: 'death-date')
+  final List<SearchDate> deathDate;
   @override
   final List<SearchToken> deceased;
   @override
@@ -1015,7 +1100,8 @@ class _$_PatientSearch extends _PatientSearch {
   @override
   final List<SearchToken> gender;
   @override
-  final List<SearchReference> general_practitioner;
+  @JsonKey(name: 'general-practitioner')
+  final List<SearchReference> generalPractitioner;
   @override
   final List<SearchString> given;
   @override
@@ -1037,7 +1123,7 @@ class _$_PatientSearch extends _PatientSearch {
 
   @override
   String toString() {
-    return 'PatientSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, active: $active, address: $address, address_city: $address_city, address_country: $address_country, address_postalcode: $address_postalcode, address_state: $address_state, address_use: $address_use, birthdate: $birthdate, death_date: $death_date, deceased: $deceased, email: $email, family: $family, gender: $gender, general_practitioner: $general_practitioner, given: $given, identifier: $identifier, language: $language, link: $link, name: $name, organization: $organization, phone: $phone, phonetic: $phonetic, telecom: $telecom)';
+    return 'PatientSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, active: $active, address: $address, addressCity: $addressCity, addressCountry: $addressCountry, addressPostalcode: $addressPostalcode, addressState: $addressState, addressUse: $addressUse, birthdate: $birthdate, deathDate: $deathDate, deceased: $deceased, email: $email, family: $family, gender: $gender, generalPractitioner: $generalPractitioner, given: $given, identifier: $identifier, language: $language, link: $link, name: $name, organization: $organization, phone: $phone, phonetic: $phonetic, telecom: $telecom)';
   }
 
   @override
@@ -1073,27 +1159,27 @@ class _$_PatientSearch extends _PatientSearch {
             (identical(other.address, address) ||
                 const DeepCollectionEquality()
                     .equals(other.address, address)) &&
-            (identical(other.address_city, address_city) ||
+            (identical(other.addressCity, addressCity) ||
                 const DeepCollectionEquality()
-                    .equals(other.address_city, address_city)) &&
-            (identical(other.address_country, address_country) ||
+                    .equals(other.addressCity, addressCity)) &&
+            (identical(other.addressCountry, addressCountry) ||
                 const DeepCollectionEquality()
-                    .equals(other.address_country, address_country)) &&
-            (identical(other.address_postalcode, address_postalcode) ||
+                    .equals(other.addressCountry, addressCountry)) &&
+            (identical(other.addressPostalcode, addressPostalcode) ||
                 const DeepCollectionEquality()
-                    .equals(other.address_postalcode, address_postalcode)) &&
-            (identical(other.address_state, address_state) ||
+                    .equals(other.addressPostalcode, addressPostalcode)) &&
+            (identical(other.addressState, addressState) ||
                 const DeepCollectionEquality()
-                    .equals(other.address_state, address_state)) &&
-            (identical(other.address_use, address_use) ||
+                    .equals(other.addressState, addressState)) &&
+            (identical(other.addressUse, addressUse) ||
                 const DeepCollectionEquality()
-                    .equals(other.address_use, address_use)) &&
+                    .equals(other.addressUse, addressUse)) &&
             (identical(other.birthdate, birthdate) ||
                 const DeepCollectionEquality()
                     .equals(other.birthdate, birthdate)) &&
-            (identical(other.death_date, death_date) ||
+            (identical(other.deathDate, deathDate) ||
                 const DeepCollectionEquality()
-                    .equals(other.death_date, death_date)) &&
+                    .equals(other.deathDate, deathDate)) &&
             (identical(other.deceased, deceased) ||
                 const DeepCollectionEquality()
                     .equals(other.deceased, deceased)) &&
@@ -1103,9 +1189,9 @@ class _$_PatientSearch extends _PatientSearch {
                 const DeepCollectionEquality().equals(other.family, family)) &&
             (identical(other.gender, gender) ||
                 const DeepCollectionEquality().equals(other.gender, gender)) &&
-            (identical(other.general_practitioner, general_practitioner) ||
-                const DeepCollectionEquality().equals(
-                    other.general_practitioner, general_practitioner)) &&
+            (identical(other.generalPractitioner, generalPractitioner) ||
+                const DeepCollectionEquality()
+                    .equals(other.generalPractitioner, generalPractitioner)) &&
             (identical(other.given, given) ||
                 const DeepCollectionEquality().equals(other.given, given)) &&
             (identical(other.identifier, identifier) ||
@@ -1133,18 +1219,18 @@ class _$_PatientSearch extends _PatientSearch {
       const DeepCollectionEquality().hash(searchList) ^
       const DeepCollectionEquality().hash(active) ^
       const DeepCollectionEquality().hash(address) ^
-      const DeepCollectionEquality().hash(address_city) ^
-      const DeepCollectionEquality().hash(address_country) ^
-      const DeepCollectionEquality().hash(address_postalcode) ^
-      const DeepCollectionEquality().hash(address_state) ^
-      const DeepCollectionEquality().hash(address_use) ^
+      const DeepCollectionEquality().hash(addressCity) ^
+      const DeepCollectionEquality().hash(addressCountry) ^
+      const DeepCollectionEquality().hash(addressPostalcode) ^
+      const DeepCollectionEquality().hash(addressState) ^
+      const DeepCollectionEquality().hash(addressUse) ^
       const DeepCollectionEquality().hash(birthdate) ^
-      const DeepCollectionEquality().hash(death_date) ^
+      const DeepCollectionEquality().hash(deathDate) ^
       const DeepCollectionEquality().hash(deceased) ^
       const DeepCollectionEquality().hash(email) ^
       const DeepCollectionEquality().hash(family) ^
       const DeepCollectionEquality().hash(gender) ^
-      const DeepCollectionEquality().hash(general_practitioner) ^
+      const DeepCollectionEquality().hash(generalPractitioner) ^
       const DeepCollectionEquality().hash(given) ^
       const DeepCollectionEquality().hash(identifier) ^
       const DeepCollectionEquality().hash(language) ^
@@ -1158,6 +1244,11 @@ class _$_PatientSearch extends _PatientSearch {
   @override
   _$PatientSearchCopyWith<_PatientSearch> get copyWith =>
       __$PatientSearchCopyWithImpl<_PatientSearch>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_PatientSearchToJson(this);
+  }
 }
 
 abstract class _PatientSearch extends PatientSearch {
@@ -1173,18 +1264,25 @@ abstract class _PatientSearch extends PatientSearch {
       List<Id> searchList,
       List<SearchToken> active,
       List<SearchString> address,
-      List<SearchString> address_city,
-      List<SearchString> address_country,
-      List<SearchString> address_postalcode,
-      List<SearchString> address_state,
-      List<SearchToken> address_use,
+      @JsonKey(name: 'address-city')
+          List<SearchString> addressCity,
+      @JsonKey(name: 'address-country')
+          List<SearchString> addressCountry,
+      @JsonKey(name: 'address-postalcode')
+          List<SearchString> addressPostalcode,
+      @JsonKey(name: 'address-state')
+          List<SearchString> addressState,
+      @JsonKey(name: 'address-use')
+          List<SearchToken> addressUse,
       List<SearchDate> birthdate,
-      List<SearchDate> death_date,
+      @JsonKey(name: 'death-date')
+          List<SearchDate> deathDate,
       List<SearchToken> deceased,
       List<SearchToken> email,
       List<SearchString> family,
       List<SearchToken> gender,
-      List<SearchReference> general_practitioner,
+      @JsonKey(name: 'general-practitioner')
+          List<SearchReference> generalPractitioner,
       List<SearchString> given,
       List<SearchToken> identifier,
       List<SearchToken> language,
@@ -1194,6 +1292,9 @@ abstract class _PatientSearch extends PatientSearch {
       List<SearchToken> phone,
       List<SearchString> phonetic,
       List<SearchToken> telecom}) = _$_PatientSearch;
+
+  factory _PatientSearch.fromJson(Map<String, dynamic> json) =
+      _$_PatientSearch.fromJson;
 
   @override
   List<Id> get searchId;
@@ -1217,19 +1318,25 @@ abstract class _PatientSearch extends PatientSearch {
   @override
   List<SearchString> get address;
   @override
-  List<SearchString> get address_city;
+  @JsonKey(name: 'address-city')
+  List<SearchString> get addressCity;
   @override
-  List<SearchString> get address_country;
+  @JsonKey(name: 'address-country')
+  List<SearchString> get addressCountry;
   @override
-  List<SearchString> get address_postalcode;
+  @JsonKey(name: 'address-postalcode')
+  List<SearchString> get addressPostalcode;
   @override
-  List<SearchString> get address_state;
+  @JsonKey(name: 'address-state')
+  List<SearchString> get addressState;
   @override
-  List<SearchToken> get address_use;
+  @JsonKey(name: 'address-use')
+  List<SearchToken> get addressUse;
   @override
   List<SearchDate> get birthdate;
   @override
-  List<SearchDate> get death_date;
+  @JsonKey(name: 'death-date')
+  List<SearchDate> get deathDate;
   @override
   List<SearchToken> get deceased;
   @override
@@ -1239,7 +1346,8 @@ abstract class _PatientSearch extends PatientSearch {
   @override
   List<SearchToken> get gender;
   @override
-  List<SearchReference> get general_practitioner;
+  @JsonKey(name: 'general-practitioner')
+  List<SearchReference> get generalPractitioner;
   @override
   List<SearchString> get given;
   @override
@@ -1262,6 +1370,10 @@ abstract class _PatientSearch extends PatientSearch {
   _$PatientSearchCopyWith<_PatientSearch> get copyWith;
 }
 
+PersonSearch _$PersonSearchFromJson(Map<String, dynamic> json) {
+  return _PersonSearch.fromJson(json);
+}
+
 /// @nodoc
 class _$PersonSearchTearOff {
   const _$PersonSearchTearOff();
@@ -1277,11 +1389,11 @@ class _$PersonSearchTearOff {
       List<SearchString> searchContent,
       List<Id> searchList,
       List<SearchString> address,
-      List<SearchString> address_city,
-      List<SearchString> address_country,
-      List<SearchString> address_postalcode,
-      List<SearchString> address_state,
-      List<SearchToken> address_use,
+      @JsonKey(name: 'address-city') List<SearchString> addressCity,
+      @JsonKey(name: 'address-country') List<SearchString> addressCountry,
+      @JsonKey(name: 'address-postalcode') List<SearchString> addressPostalcode,
+      @JsonKey(name: 'address-state') List<SearchString> addressState,
+      @JsonKey(name: 'address-use') List<SearchToken> addressUse,
       List<SearchDate> birthdate,
       List<SearchToken> email,
       List<SearchToken> gender,
@@ -1305,11 +1417,11 @@ class _$PersonSearchTearOff {
       searchContent: searchContent,
       searchList: searchList,
       address: address,
-      address_city: address_city,
-      address_country: address_country,
-      address_postalcode: address_postalcode,
-      address_state: address_state,
-      address_use: address_use,
+      addressCity: addressCity,
+      addressCountry: addressCountry,
+      addressPostalcode: addressPostalcode,
+      addressState: addressState,
+      addressUse: addressUse,
       birthdate: birthdate,
       email: email,
       gender: gender,
@@ -1324,6 +1436,11 @@ class _$PersonSearchTearOff {
       practitioner: practitioner,
       relatedperson: relatedperson,
     );
+  }
+
+// ignore: unused_element
+  PersonSearch fromJson(Map<String, Object> json) {
+    return PersonSearch.fromJson(json);
   }
 }
 
@@ -1343,11 +1460,16 @@ mixin _$PersonSearch {
   List<Id> get searchList; //List<SearchString> searchHas,
 //List<SearchToken> searchType,
   List<SearchString> get address;
-  List<SearchString> get address_city;
-  List<SearchString> get address_country;
-  List<SearchString> get address_postalcode;
-  List<SearchString> get address_state;
-  List<SearchToken> get address_use;
+  @JsonKey(name: 'address-city')
+  List<SearchString> get addressCity;
+  @JsonKey(name: 'address-country')
+  List<SearchString> get addressCountry;
+  @JsonKey(name: 'address-postalcode')
+  List<SearchString> get addressPostalcode;
+  @JsonKey(name: 'address-state')
+  List<SearchString> get addressState;
+  @JsonKey(name: 'address-use')
+  List<SearchToken> get addressUse;
   List<SearchDate> get birthdate;
   List<SearchToken> get email;
   List<SearchToken> get gender;
@@ -1362,6 +1484,7 @@ mixin _$PersonSearch {
   List<SearchReference> get practitioner;
   List<SearchReference> get relatedperson;
 
+  Map<String, dynamic> toJson();
   $PersonSearchCopyWith<PersonSearch> get copyWith;
 }
 
@@ -1380,11 +1503,11 @@ abstract class $PersonSearchCopyWith<$Res> {
       List<SearchString> searchContent,
       List<Id> searchList,
       List<SearchString> address,
-      List<SearchString> address_city,
-      List<SearchString> address_country,
-      List<SearchString> address_postalcode,
-      List<SearchString> address_state,
-      List<SearchToken> address_use,
+      @JsonKey(name: 'address-city') List<SearchString> addressCity,
+      @JsonKey(name: 'address-country') List<SearchString> addressCountry,
+      @JsonKey(name: 'address-postalcode') List<SearchString> addressPostalcode,
+      @JsonKey(name: 'address-state') List<SearchString> addressState,
+      @JsonKey(name: 'address-use') List<SearchToken> addressUse,
       List<SearchDate> birthdate,
       List<SearchToken> email,
       List<SearchToken> gender,
@@ -1419,11 +1542,11 @@ class _$PersonSearchCopyWithImpl<$Res> implements $PersonSearchCopyWith<$Res> {
     Object searchContent = freezed,
     Object searchList = freezed,
     Object address = freezed,
-    Object address_city = freezed,
-    Object address_country = freezed,
-    Object address_postalcode = freezed,
-    Object address_state = freezed,
-    Object address_use = freezed,
+    Object addressCity = freezed,
+    Object addressCountry = freezed,
+    Object addressPostalcode = freezed,
+    Object addressState = freezed,
+    Object addressUse = freezed,
     Object birthdate = freezed,
     Object email = freezed,
     Object gender = freezed,
@@ -1462,21 +1585,21 @@ class _$PersonSearchCopyWithImpl<$Res> implements $PersonSearchCopyWith<$Res> {
           searchList == freezed ? _value.searchList : searchList as List<Id>,
       address:
           address == freezed ? _value.address : address as List<SearchString>,
-      address_city: address_city == freezed
-          ? _value.address_city
-          : address_city as List<SearchString>,
-      address_country: address_country == freezed
-          ? _value.address_country
-          : address_country as List<SearchString>,
-      address_postalcode: address_postalcode == freezed
-          ? _value.address_postalcode
-          : address_postalcode as List<SearchString>,
-      address_state: address_state == freezed
-          ? _value.address_state
-          : address_state as List<SearchString>,
-      address_use: address_use == freezed
-          ? _value.address_use
-          : address_use as List<SearchToken>,
+      addressCity: addressCity == freezed
+          ? _value.addressCity
+          : addressCity as List<SearchString>,
+      addressCountry: addressCountry == freezed
+          ? _value.addressCountry
+          : addressCountry as List<SearchString>,
+      addressPostalcode: addressPostalcode == freezed
+          ? _value.addressPostalcode
+          : addressPostalcode as List<SearchString>,
+      addressState: addressState == freezed
+          ? _value.addressState
+          : addressState as List<SearchString>,
+      addressUse: addressUse == freezed
+          ? _value.addressUse
+          : addressUse as List<SearchToken>,
       birthdate: birthdate == freezed
           ? _value.birthdate
           : birthdate as List<SearchDate>,
@@ -1526,11 +1649,11 @@ abstract class _$PersonSearchCopyWith<$Res>
       List<SearchString> searchContent,
       List<Id> searchList,
       List<SearchString> address,
-      List<SearchString> address_city,
-      List<SearchString> address_country,
-      List<SearchString> address_postalcode,
-      List<SearchString> address_state,
-      List<SearchToken> address_use,
+      @JsonKey(name: 'address-city') List<SearchString> addressCity,
+      @JsonKey(name: 'address-country') List<SearchString> addressCountry,
+      @JsonKey(name: 'address-postalcode') List<SearchString> addressPostalcode,
+      @JsonKey(name: 'address-state') List<SearchString> addressState,
+      @JsonKey(name: 'address-use') List<SearchToken> addressUse,
       List<SearchDate> birthdate,
       List<SearchToken> email,
       List<SearchToken> gender,
@@ -1567,11 +1690,11 @@ class __$PersonSearchCopyWithImpl<$Res> extends _$PersonSearchCopyWithImpl<$Res>
     Object searchContent = freezed,
     Object searchList = freezed,
     Object address = freezed,
-    Object address_city = freezed,
-    Object address_country = freezed,
-    Object address_postalcode = freezed,
-    Object address_state = freezed,
-    Object address_use = freezed,
+    Object addressCity = freezed,
+    Object addressCountry = freezed,
+    Object addressPostalcode = freezed,
+    Object addressState = freezed,
+    Object addressUse = freezed,
     Object birthdate = freezed,
     Object email = freezed,
     Object gender = freezed,
@@ -1610,21 +1733,21 @@ class __$PersonSearchCopyWithImpl<$Res> extends _$PersonSearchCopyWithImpl<$Res>
           searchList == freezed ? _value.searchList : searchList as List<Id>,
       address:
           address == freezed ? _value.address : address as List<SearchString>,
-      address_city: address_city == freezed
-          ? _value.address_city
-          : address_city as List<SearchString>,
-      address_country: address_country == freezed
-          ? _value.address_country
-          : address_country as List<SearchString>,
-      address_postalcode: address_postalcode == freezed
-          ? _value.address_postalcode
-          : address_postalcode as List<SearchString>,
-      address_state: address_state == freezed
-          ? _value.address_state
-          : address_state as List<SearchString>,
-      address_use: address_use == freezed
-          ? _value.address_use
-          : address_use as List<SearchToken>,
+      addressCity: addressCity == freezed
+          ? _value.addressCity
+          : addressCity as List<SearchString>,
+      addressCountry: addressCountry == freezed
+          ? _value.addressCountry
+          : addressCountry as List<SearchString>,
+      addressPostalcode: addressPostalcode == freezed
+          ? _value.addressPostalcode
+          : addressPostalcode as List<SearchString>,
+      addressState: addressState == freezed
+          ? _value.addressState
+          : addressState as List<SearchString>,
+      addressUse: addressUse == freezed
+          ? _value.addressUse
+          : addressUse as List<SearchToken>,
       birthdate: birthdate == freezed
           ? _value.birthdate
           : birthdate as List<SearchDate>,
@@ -1657,6 +1780,8 @@ class __$PersonSearchCopyWithImpl<$Res> extends _$PersonSearchCopyWithImpl<$Res>
   }
 }
 
+@JsonSerializable()
+
 /// @nodoc
 class _$_PersonSearch extends _PersonSearch {
   _$_PersonSearch(
@@ -1669,11 +1794,11 @@ class _$_PersonSearch extends _PersonSearch {
       this.searchContent,
       this.searchList,
       this.address,
-      this.address_city,
-      this.address_country,
-      this.address_postalcode,
-      this.address_state,
-      this.address_use,
+      @JsonKey(name: 'address-city') this.addressCity,
+      @JsonKey(name: 'address-country') this.addressCountry,
+      @JsonKey(name: 'address-postalcode') this.addressPostalcode,
+      @JsonKey(name: 'address-state') this.addressState,
+      @JsonKey(name: 'address-use') this.addressUse,
       this.birthdate,
       this.email,
       this.gender,
@@ -1688,6 +1813,9 @@ class _$_PersonSearch extends _PersonSearch {
       this.practitioner,
       this.relatedperson})
       : super._();
+
+  factory _$_PersonSearch.fromJson(Map<String, dynamic> json) =>
+      _$_$_PersonSearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -1709,15 +1837,20 @@ class _$_PersonSearch extends _PersonSearch {
 //List<SearchToken> searchType,
   final List<SearchString> address;
   @override
-  final List<SearchString> address_city;
+  @JsonKey(name: 'address-city')
+  final List<SearchString> addressCity;
   @override
-  final List<SearchString> address_country;
+  @JsonKey(name: 'address-country')
+  final List<SearchString> addressCountry;
   @override
-  final List<SearchString> address_postalcode;
+  @JsonKey(name: 'address-postalcode')
+  final List<SearchString> addressPostalcode;
   @override
-  final List<SearchString> address_state;
+  @JsonKey(name: 'address-state')
+  final List<SearchString> addressState;
   @override
-  final List<SearchToken> address_use;
+  @JsonKey(name: 'address-use')
+  final List<SearchToken> addressUse;
   @override
   final List<SearchDate> birthdate;
   @override
@@ -1747,7 +1880,7 @@ class _$_PersonSearch extends _PersonSearch {
 
   @override
   String toString() {
-    return 'PersonSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, address: $address, address_city: $address_city, address_country: $address_country, address_postalcode: $address_postalcode, address_state: $address_state, address_use: $address_use, birthdate: $birthdate, email: $email, gender: $gender, phone: $phone, phonetic: $phonetic, telecom: $telecom, identifier: $identifier, link: $link, name: $name, organization: $organization, patient: $patient, practitioner: $practitioner, relatedperson: $relatedperson)';
+    return 'PersonSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, address: $address, addressCity: $addressCity, addressCountry: $addressCountry, addressPostalcode: $addressPostalcode, addressState: $addressState, addressUse: $addressUse, birthdate: $birthdate, email: $email, gender: $gender, phone: $phone, phonetic: $phonetic, telecom: $telecom, identifier: $identifier, link: $link, name: $name, organization: $organization, patient: $patient, practitioner: $practitioner, relatedperson: $relatedperson)';
   }
 
   @override
@@ -1781,21 +1914,21 @@ class _$_PersonSearch extends _PersonSearch {
             (identical(other.address, address) ||
                 const DeepCollectionEquality()
                     .equals(other.address, address)) &&
-            (identical(other.address_city, address_city) ||
+            (identical(other.addressCity, addressCity) ||
                 const DeepCollectionEquality()
-                    .equals(other.address_city, address_city)) &&
-            (identical(other.address_country, address_country) ||
+                    .equals(other.addressCity, addressCity)) &&
+            (identical(other.addressCountry, addressCountry) ||
                 const DeepCollectionEquality()
-                    .equals(other.address_country, address_country)) &&
-            (identical(other.address_postalcode, address_postalcode) ||
+                    .equals(other.addressCountry, addressCountry)) &&
+            (identical(other.addressPostalcode, addressPostalcode) ||
                 const DeepCollectionEquality()
-                    .equals(other.address_postalcode, address_postalcode)) &&
-            (identical(other.address_state, address_state) ||
+                    .equals(other.addressPostalcode, addressPostalcode)) &&
+            (identical(other.addressState, addressState) ||
                 const DeepCollectionEquality()
-                    .equals(other.address_state, address_state)) &&
-            (identical(other.address_use, address_use) ||
+                    .equals(other.addressState, addressState)) &&
+            (identical(other.addressUse, addressUse) ||
                 const DeepCollectionEquality()
-                    .equals(other.address_use, address_use)) &&
+                    .equals(other.addressUse, addressUse)) &&
             (identical(other.birthdate, birthdate) ||
                 const DeepCollectionEquality()
                     .equals(other.birthdate, birthdate)) &&
@@ -1838,11 +1971,11 @@ class _$_PersonSearch extends _PersonSearch {
       const DeepCollectionEquality().hash(searchContent) ^
       const DeepCollectionEquality().hash(searchList) ^
       const DeepCollectionEquality().hash(address) ^
-      const DeepCollectionEquality().hash(address_city) ^
-      const DeepCollectionEquality().hash(address_country) ^
-      const DeepCollectionEquality().hash(address_postalcode) ^
-      const DeepCollectionEquality().hash(address_state) ^
-      const DeepCollectionEquality().hash(address_use) ^
+      const DeepCollectionEquality().hash(addressCity) ^
+      const DeepCollectionEquality().hash(addressCountry) ^
+      const DeepCollectionEquality().hash(addressPostalcode) ^
+      const DeepCollectionEquality().hash(addressState) ^
+      const DeepCollectionEquality().hash(addressUse) ^
       const DeepCollectionEquality().hash(birthdate) ^
       const DeepCollectionEquality().hash(email) ^
       const DeepCollectionEquality().hash(gender) ^
@@ -1860,6 +1993,11 @@ class _$_PersonSearch extends _PersonSearch {
   @override
   _$PersonSearchCopyWith<_PersonSearch> get copyWith =>
       __$PersonSearchCopyWithImpl<_PersonSearch>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_PersonSearchToJson(this);
+  }
 }
 
 abstract class _PersonSearch extends PersonSearch {
@@ -1874,11 +2012,11 @@ abstract class _PersonSearch extends PersonSearch {
       List<SearchString> searchContent,
       List<Id> searchList,
       List<SearchString> address,
-      List<SearchString> address_city,
-      List<SearchString> address_country,
-      List<SearchString> address_postalcode,
-      List<SearchString> address_state,
-      List<SearchToken> address_use,
+      @JsonKey(name: 'address-city') List<SearchString> addressCity,
+      @JsonKey(name: 'address-country') List<SearchString> addressCountry,
+      @JsonKey(name: 'address-postalcode') List<SearchString> addressPostalcode,
+      @JsonKey(name: 'address-state') List<SearchString> addressState,
+      @JsonKey(name: 'address-use') List<SearchToken> addressUse,
       List<SearchDate> birthdate,
       List<SearchToken> email,
       List<SearchToken> gender,
@@ -1892,6 +2030,9 @@ abstract class _PersonSearch extends PersonSearch {
       List<SearchReference> patient,
       List<SearchReference> practitioner,
       List<SearchReference> relatedperson}) = _$_PersonSearch;
+
+  factory _PersonSearch.fromJson(Map<String, dynamic> json) =
+      _$_PersonSearch.fromJson;
 
   @override
   List<Id> get searchId;
@@ -1913,15 +2054,20 @@ abstract class _PersonSearch extends PersonSearch {
 //List<SearchToken> searchType,
   List<SearchString> get address;
   @override
-  List<SearchString> get address_city;
+  @JsonKey(name: 'address-city')
+  List<SearchString> get addressCity;
   @override
-  List<SearchString> get address_country;
+  @JsonKey(name: 'address-country')
+  List<SearchString> get addressCountry;
   @override
-  List<SearchString> get address_postalcode;
+  @JsonKey(name: 'address-postalcode')
+  List<SearchString> get addressPostalcode;
   @override
-  List<SearchString> get address_state;
+  @JsonKey(name: 'address-state')
+  List<SearchString> get addressState;
   @override
-  List<SearchToken> get address_use;
+  @JsonKey(name: 'address-use')
+  List<SearchToken> get addressUse;
   @override
   List<SearchDate> get birthdate;
   @override
@@ -1952,6 +2098,10 @@ abstract class _PersonSearch extends PersonSearch {
   _$PersonSearchCopyWith<_PersonSearch> get copyWith;
 }
 
+PractitionerSearch _$PractitionerSearchFromJson(Map<String, dynamic> json) {
+  return _PractitionerSearch.fromJson(json);
+}
+
 /// @nodoc
 class _$PractitionerSearchTearOff {
   const _$PractitionerSearchTearOff();
@@ -1967,11 +2117,11 @@ class _$PractitionerSearchTearOff {
       List<SearchString> searchContent,
       List<Id> searchList,
       List<SearchString> address,
-      List<SearchString> address_city,
-      List<SearchString> address_country,
-      List<SearchString> address_postalcode,
-      List<SearchString> address_state,
-      List<SearchToken> address_use,
+      @JsonKey(name: 'address-city') List<SearchString> addressCity,
+      @JsonKey(name: 'address-country') List<SearchString> addressCountry,
+      @JsonKey(name: 'address-postalcode') List<SearchString> addressPostalcode,
+      @JsonKey(name: 'address-state') List<SearchString> addressState,
+      @JsonKey(name: 'address-use') List<SearchToken> addressUse,
       List<SearchToken> email,
       List<SearchString> family,
       List<SearchToken> gender,
@@ -1993,11 +2143,11 @@ class _$PractitionerSearchTearOff {
       searchContent: searchContent,
       searchList: searchList,
       address: address,
-      address_city: address_city,
-      address_country: address_country,
-      address_postalcode: address_postalcode,
-      address_state: address_state,
-      address_use: address_use,
+      addressCity: addressCity,
+      addressCountry: addressCountry,
+      addressPostalcode: addressPostalcode,
+      addressState: addressState,
+      addressUse: addressUse,
       email: email,
       family: family,
       gender: gender,
@@ -2010,6 +2160,11 @@ class _$PractitionerSearchTearOff {
       identifier: identifier,
       name: name,
     );
+  }
+
+// ignore: unused_element
+  PractitionerSearch fromJson(Map<String, Object> json) {
+    return PractitionerSearch.fromJson(json);
   }
 }
 
@@ -2029,11 +2184,16 @@ mixin _$PractitionerSearch {
   List<Id> get searchList; //List<SearchString> searchHas,
 //List<SearchToken> searchType,
   List<SearchString> get address;
-  List<SearchString> get address_city;
-  List<SearchString> get address_country;
-  List<SearchString> get address_postalcode;
-  List<SearchString> get address_state;
-  List<SearchToken> get address_use;
+  @JsonKey(name: 'address-city')
+  List<SearchString> get addressCity;
+  @JsonKey(name: 'address-country')
+  List<SearchString> get addressCountry;
+  @JsonKey(name: 'address-postalcode')
+  List<SearchString> get addressPostalcode;
+  @JsonKey(name: 'address-state')
+  List<SearchString> get addressState;
+  @JsonKey(name: 'address-use')
+  List<SearchToken> get addressUse;
   List<SearchToken> get email;
   List<SearchString> get family;
   List<SearchToken> get gender;
@@ -2046,6 +2206,7 @@ mixin _$PractitionerSearch {
   List<SearchToken> get identifier;
   List<SearchString> get name;
 
+  Map<String, dynamic> toJson();
   $PractitionerSearchCopyWith<PractitionerSearch> get copyWith;
 }
 
@@ -2064,11 +2225,11 @@ abstract class $PractitionerSearchCopyWith<$Res> {
       List<SearchString> searchContent,
       List<Id> searchList,
       List<SearchString> address,
-      List<SearchString> address_city,
-      List<SearchString> address_country,
-      List<SearchString> address_postalcode,
-      List<SearchString> address_state,
-      List<SearchToken> address_use,
+      @JsonKey(name: 'address-city') List<SearchString> addressCity,
+      @JsonKey(name: 'address-country') List<SearchString> addressCountry,
+      @JsonKey(name: 'address-postalcode') List<SearchString> addressPostalcode,
+      @JsonKey(name: 'address-state') List<SearchString> addressState,
+      @JsonKey(name: 'address-use') List<SearchToken> addressUse,
       List<SearchToken> email,
       List<SearchString> family,
       List<SearchToken> gender,
@@ -2102,11 +2263,11 @@ class _$PractitionerSearchCopyWithImpl<$Res>
     Object searchContent = freezed,
     Object searchList = freezed,
     Object address = freezed,
-    Object address_city = freezed,
-    Object address_country = freezed,
-    Object address_postalcode = freezed,
-    Object address_state = freezed,
-    Object address_use = freezed,
+    Object addressCity = freezed,
+    Object addressCountry = freezed,
+    Object addressPostalcode = freezed,
+    Object addressState = freezed,
+    Object addressUse = freezed,
     Object email = freezed,
     Object family = freezed,
     Object gender = freezed,
@@ -2143,21 +2304,21 @@ class _$PractitionerSearchCopyWithImpl<$Res>
           searchList == freezed ? _value.searchList : searchList as List<Id>,
       address:
           address == freezed ? _value.address : address as List<SearchString>,
-      address_city: address_city == freezed
-          ? _value.address_city
-          : address_city as List<SearchString>,
-      address_country: address_country == freezed
-          ? _value.address_country
-          : address_country as List<SearchString>,
-      address_postalcode: address_postalcode == freezed
-          ? _value.address_postalcode
-          : address_postalcode as List<SearchString>,
-      address_state: address_state == freezed
-          ? _value.address_state
-          : address_state as List<SearchString>,
-      address_use: address_use == freezed
-          ? _value.address_use
-          : address_use as List<SearchToken>,
+      addressCity: addressCity == freezed
+          ? _value.addressCity
+          : addressCity as List<SearchString>,
+      addressCountry: addressCountry == freezed
+          ? _value.addressCountry
+          : addressCountry as List<SearchString>,
+      addressPostalcode: addressPostalcode == freezed
+          ? _value.addressPostalcode
+          : addressPostalcode as List<SearchString>,
+      addressState: addressState == freezed
+          ? _value.addressState
+          : addressState as List<SearchString>,
+      addressUse: addressUse == freezed
+          ? _value.addressUse
+          : addressUse as List<SearchToken>,
       email: email == freezed ? _value.email : email as List<SearchToken>,
       family: family == freezed ? _value.family : family as List<SearchString>,
       gender: gender == freezed ? _value.gender : gender as List<SearchToken>,
@@ -2197,11 +2358,11 @@ abstract class _$PractitionerSearchCopyWith<$Res>
       List<SearchString> searchContent,
       List<Id> searchList,
       List<SearchString> address,
-      List<SearchString> address_city,
-      List<SearchString> address_country,
-      List<SearchString> address_postalcode,
-      List<SearchString> address_state,
-      List<SearchToken> address_use,
+      @JsonKey(name: 'address-city') List<SearchString> addressCity,
+      @JsonKey(name: 'address-country') List<SearchString> addressCountry,
+      @JsonKey(name: 'address-postalcode') List<SearchString> addressPostalcode,
+      @JsonKey(name: 'address-state') List<SearchString> addressState,
+      @JsonKey(name: 'address-use') List<SearchToken> addressUse,
       List<SearchToken> email,
       List<SearchString> family,
       List<SearchToken> gender,
@@ -2237,11 +2398,11 @@ class __$PractitionerSearchCopyWithImpl<$Res>
     Object searchContent = freezed,
     Object searchList = freezed,
     Object address = freezed,
-    Object address_city = freezed,
-    Object address_country = freezed,
-    Object address_postalcode = freezed,
-    Object address_state = freezed,
-    Object address_use = freezed,
+    Object addressCity = freezed,
+    Object addressCountry = freezed,
+    Object addressPostalcode = freezed,
+    Object addressState = freezed,
+    Object addressUse = freezed,
     Object email = freezed,
     Object family = freezed,
     Object gender = freezed,
@@ -2278,21 +2439,21 @@ class __$PractitionerSearchCopyWithImpl<$Res>
           searchList == freezed ? _value.searchList : searchList as List<Id>,
       address:
           address == freezed ? _value.address : address as List<SearchString>,
-      address_city: address_city == freezed
-          ? _value.address_city
-          : address_city as List<SearchString>,
-      address_country: address_country == freezed
-          ? _value.address_country
-          : address_country as List<SearchString>,
-      address_postalcode: address_postalcode == freezed
-          ? _value.address_postalcode
-          : address_postalcode as List<SearchString>,
-      address_state: address_state == freezed
-          ? _value.address_state
-          : address_state as List<SearchString>,
-      address_use: address_use == freezed
-          ? _value.address_use
-          : address_use as List<SearchToken>,
+      addressCity: addressCity == freezed
+          ? _value.addressCity
+          : addressCity as List<SearchString>,
+      addressCountry: addressCountry == freezed
+          ? _value.addressCountry
+          : addressCountry as List<SearchString>,
+      addressPostalcode: addressPostalcode == freezed
+          ? _value.addressPostalcode
+          : addressPostalcode as List<SearchString>,
+      addressState: addressState == freezed
+          ? _value.addressState
+          : addressState as List<SearchString>,
+      addressUse: addressUse == freezed
+          ? _value.addressUse
+          : addressUse as List<SearchToken>,
       email: email == freezed ? _value.email : email as List<SearchToken>,
       family: family == freezed ? _value.family : family as List<SearchString>,
       gender: gender == freezed ? _value.gender : gender as List<SearchToken>,
@@ -2315,6 +2476,8 @@ class __$PractitionerSearchCopyWithImpl<$Res>
   }
 }
 
+@JsonSerializable()
+
 /// @nodoc
 class _$_PractitionerSearch extends _PractitionerSearch {
   _$_PractitionerSearch(
@@ -2327,11 +2490,11 @@ class _$_PractitionerSearch extends _PractitionerSearch {
       this.searchContent,
       this.searchList,
       this.address,
-      this.address_city,
-      this.address_country,
-      this.address_postalcode,
-      this.address_state,
-      this.address_use,
+      @JsonKey(name: 'address-city') this.addressCity,
+      @JsonKey(name: 'address-country') this.addressCountry,
+      @JsonKey(name: 'address-postalcode') this.addressPostalcode,
+      @JsonKey(name: 'address-state') this.addressState,
+      @JsonKey(name: 'address-use') this.addressUse,
       this.email,
       this.family,
       this.gender,
@@ -2344,6 +2507,9 @@ class _$_PractitionerSearch extends _PractitionerSearch {
       this.identifier,
       this.name})
       : super._();
+
+  factory _$_PractitionerSearch.fromJson(Map<String, dynamic> json) =>
+      _$_$_PractitionerSearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -2365,15 +2531,20 @@ class _$_PractitionerSearch extends _PractitionerSearch {
 //List<SearchToken> searchType,
   final List<SearchString> address;
   @override
-  final List<SearchString> address_city;
+  @JsonKey(name: 'address-city')
+  final List<SearchString> addressCity;
   @override
-  final List<SearchString> address_country;
+  @JsonKey(name: 'address-country')
+  final List<SearchString> addressCountry;
   @override
-  final List<SearchString> address_postalcode;
+  @JsonKey(name: 'address-postalcode')
+  final List<SearchString> addressPostalcode;
   @override
-  final List<SearchString> address_state;
+  @JsonKey(name: 'address-state')
+  final List<SearchString> addressState;
   @override
-  final List<SearchToken> address_use;
+  @JsonKey(name: 'address-use')
+  final List<SearchToken> addressUse;
   @override
   final List<SearchToken> email;
   @override
@@ -2399,7 +2570,7 @@ class _$_PractitionerSearch extends _PractitionerSearch {
 
   @override
   String toString() {
-    return 'PractitionerSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, address: $address, address_city: $address_city, address_country: $address_country, address_postalcode: $address_postalcode, address_state: $address_state, address_use: $address_use, email: $email, family: $family, gender: $gender, given: $given, phone: $phone, phonetic: $phonetic, telecom: $telecom, active: $active, communication: $communication, identifier: $identifier, name: $name)';
+    return 'PractitionerSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, address: $address, addressCity: $addressCity, addressCountry: $addressCountry, addressPostalcode: $addressPostalcode, addressState: $addressState, addressUse: $addressUse, email: $email, family: $family, gender: $gender, given: $given, phone: $phone, phonetic: $phonetic, telecom: $telecom, active: $active, communication: $communication, identifier: $identifier, name: $name)';
   }
 
   @override
@@ -2433,21 +2604,21 @@ class _$_PractitionerSearch extends _PractitionerSearch {
             (identical(other.address, address) ||
                 const DeepCollectionEquality()
                     .equals(other.address, address)) &&
-            (identical(other.address_city, address_city) ||
+            (identical(other.addressCity, addressCity) ||
                 const DeepCollectionEquality()
-                    .equals(other.address_city, address_city)) &&
-            (identical(other.address_country, address_country) ||
+                    .equals(other.addressCity, addressCity)) &&
+            (identical(other.addressCountry, addressCountry) ||
                 const DeepCollectionEquality()
-                    .equals(other.address_country, address_country)) &&
-            (identical(other.address_postalcode, address_postalcode) ||
+                    .equals(other.addressCountry, addressCountry)) &&
+            (identical(other.addressPostalcode, addressPostalcode) ||
                 const DeepCollectionEquality()
-                    .equals(other.address_postalcode, address_postalcode)) &&
-            (identical(other.address_state, address_state) ||
+                    .equals(other.addressPostalcode, addressPostalcode)) &&
+            (identical(other.addressState, addressState) ||
                 const DeepCollectionEquality()
-                    .equals(other.address_state, address_state)) &&
-            (identical(other.address_use, address_use) ||
+                    .equals(other.addressState, addressState)) &&
+            (identical(other.addressUse, addressUse) ||
                 const DeepCollectionEquality()
-                    .equals(other.address_use, address_use)) &&
+                    .equals(other.addressUse, addressUse)) &&
             (identical(other.email, email) ||
                 const DeepCollectionEquality().equals(other.email, email)) &&
             (identical(other.family, family) ||
@@ -2488,11 +2659,11 @@ class _$_PractitionerSearch extends _PractitionerSearch {
       const DeepCollectionEquality().hash(searchContent) ^
       const DeepCollectionEquality().hash(searchList) ^
       const DeepCollectionEquality().hash(address) ^
-      const DeepCollectionEquality().hash(address_city) ^
-      const DeepCollectionEquality().hash(address_country) ^
-      const DeepCollectionEquality().hash(address_postalcode) ^
-      const DeepCollectionEquality().hash(address_state) ^
-      const DeepCollectionEquality().hash(address_use) ^
+      const DeepCollectionEquality().hash(addressCity) ^
+      const DeepCollectionEquality().hash(addressCountry) ^
+      const DeepCollectionEquality().hash(addressPostalcode) ^
+      const DeepCollectionEquality().hash(addressState) ^
+      const DeepCollectionEquality().hash(addressUse) ^
       const DeepCollectionEquality().hash(email) ^
       const DeepCollectionEquality().hash(family) ^
       const DeepCollectionEquality().hash(gender) ^
@@ -2508,6 +2679,11 @@ class _$_PractitionerSearch extends _PractitionerSearch {
   @override
   _$PractitionerSearchCopyWith<_PractitionerSearch> get copyWith =>
       __$PractitionerSearchCopyWithImpl<_PractitionerSearch>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_PractitionerSearchToJson(this);
+  }
 }
 
 abstract class _PractitionerSearch extends PractitionerSearch {
@@ -2522,11 +2698,11 @@ abstract class _PractitionerSearch extends PractitionerSearch {
       List<SearchString> searchContent,
       List<Id> searchList,
       List<SearchString> address,
-      List<SearchString> address_city,
-      List<SearchString> address_country,
-      List<SearchString> address_postalcode,
-      List<SearchString> address_state,
-      List<SearchToken> address_use,
+      @JsonKey(name: 'address-city') List<SearchString> addressCity,
+      @JsonKey(name: 'address-country') List<SearchString> addressCountry,
+      @JsonKey(name: 'address-postalcode') List<SearchString> addressPostalcode,
+      @JsonKey(name: 'address-state') List<SearchString> addressState,
+      @JsonKey(name: 'address-use') List<SearchToken> addressUse,
       List<SearchToken> email,
       List<SearchString> family,
       List<SearchToken> gender,
@@ -2538,6 +2714,9 @@ abstract class _PractitionerSearch extends PractitionerSearch {
       List<SearchToken> communication,
       List<SearchToken> identifier,
       List<SearchString> name}) = _$_PractitionerSearch;
+
+  factory _PractitionerSearch.fromJson(Map<String, dynamic> json) =
+      _$_PractitionerSearch.fromJson;
 
   @override
   List<Id> get searchId;
@@ -2559,15 +2738,20 @@ abstract class _PractitionerSearch extends PractitionerSearch {
 //List<SearchToken> searchType,
   List<SearchString> get address;
   @override
-  List<SearchString> get address_city;
+  @JsonKey(name: 'address-city')
+  List<SearchString> get addressCity;
   @override
-  List<SearchString> get address_country;
+  @JsonKey(name: 'address-country')
+  List<SearchString> get addressCountry;
   @override
-  List<SearchString> get address_postalcode;
+  @JsonKey(name: 'address-postalcode')
+  List<SearchString> get addressPostalcode;
   @override
-  List<SearchString> get address_state;
+  @JsonKey(name: 'address-state')
+  List<SearchString> get addressState;
   @override
-  List<SearchToken> get address_use;
+  @JsonKey(name: 'address-use')
+  List<SearchToken> get addressUse;
   @override
   List<SearchToken> get email;
   @override
@@ -2594,6 +2778,10 @@ abstract class _PractitionerSearch extends PractitionerSearch {
   _$PractitionerSearchCopyWith<_PractitionerSearch> get copyWith;
 }
 
+RelatedPersonSearch _$RelatedPersonSearchFromJson(Map<String, dynamic> json) {
+  return _RelatedPersonSearch.fromJson(json);
+}
+
 /// @nodoc
 class _$RelatedPersonSearchTearOff {
   const _$RelatedPersonSearchTearOff();
@@ -2609,11 +2797,11 @@ class _$RelatedPersonSearchTearOff {
       List<SearchString> searchContent,
       List<Id> searchList,
       List<SearchString> address,
-      List<SearchString> address_city,
-      List<SearchString> address_country,
-      List<SearchString> address_postalcode,
-      List<SearchString> address_state,
-      List<SearchToken> address_use,
+      @JsonKey(name: 'address-city') List<SearchString> addressCity,
+      @JsonKey(name: 'address-country') List<SearchString> addressCountry,
+      @JsonKey(name: 'address-postalcode') List<SearchString> addressPostalcode,
+      @JsonKey(name: 'address-state') List<SearchString> addressState,
+      @JsonKey(name: 'address-use') List<SearchToken> addressUse,
       List<SearchDate> birthdate,
       List<SearchToken> email,
       List<SearchToken> gender,
@@ -2635,11 +2823,11 @@ class _$RelatedPersonSearchTearOff {
       searchContent: searchContent,
       searchList: searchList,
       address: address,
-      address_city: address_city,
-      address_country: address_country,
-      address_postalcode: address_postalcode,
-      address_state: address_state,
-      address_use: address_use,
+      addressCity: addressCity,
+      addressCountry: addressCountry,
+      addressPostalcode: addressPostalcode,
+      addressState: addressState,
+      addressUse: addressUse,
       birthdate: birthdate,
       email: email,
       gender: gender,
@@ -2652,6 +2840,11 @@ class _$RelatedPersonSearchTearOff {
       patient: patient,
       relationship: relationship,
     );
+  }
+
+// ignore: unused_element
+  RelatedPersonSearch fromJson(Map<String, Object> json) {
+    return RelatedPersonSearch.fromJson(json);
   }
 }
 
@@ -2671,11 +2864,16 @@ mixin _$RelatedPersonSearch {
   List<Id> get searchList; //List<SearchString> searchHas,
 //List<SearchToken> searchType,
   List<SearchString> get address;
-  List<SearchString> get address_city;
-  List<SearchString> get address_country;
-  List<SearchString> get address_postalcode;
-  List<SearchString> get address_state;
-  List<SearchToken> get address_use;
+  @JsonKey(name: 'address-city')
+  List<SearchString> get addressCity;
+  @JsonKey(name: 'address-country')
+  List<SearchString> get addressCountry;
+  @JsonKey(name: 'address-postalcode')
+  List<SearchString> get addressPostalcode;
+  @JsonKey(name: 'address-state')
+  List<SearchString> get addressState;
+  @JsonKey(name: 'address-use')
+  List<SearchToken> get addressUse;
   List<SearchDate> get birthdate;
   List<SearchToken> get email;
   List<SearchToken> get gender;
@@ -2688,6 +2886,7 @@ mixin _$RelatedPersonSearch {
   List<SearchReference> get patient;
   List<SearchToken> get relationship;
 
+  Map<String, dynamic> toJson();
   $RelatedPersonSearchCopyWith<RelatedPersonSearch> get copyWith;
 }
 
@@ -2706,11 +2905,11 @@ abstract class $RelatedPersonSearchCopyWith<$Res> {
       List<SearchString> searchContent,
       List<Id> searchList,
       List<SearchString> address,
-      List<SearchString> address_city,
-      List<SearchString> address_country,
-      List<SearchString> address_postalcode,
-      List<SearchString> address_state,
-      List<SearchToken> address_use,
+      @JsonKey(name: 'address-city') List<SearchString> addressCity,
+      @JsonKey(name: 'address-country') List<SearchString> addressCountry,
+      @JsonKey(name: 'address-postalcode') List<SearchString> addressPostalcode,
+      @JsonKey(name: 'address-state') List<SearchString> addressState,
+      @JsonKey(name: 'address-use') List<SearchToken> addressUse,
       List<SearchDate> birthdate,
       List<SearchToken> email,
       List<SearchToken> gender,
@@ -2744,11 +2943,11 @@ class _$RelatedPersonSearchCopyWithImpl<$Res>
     Object searchContent = freezed,
     Object searchList = freezed,
     Object address = freezed,
-    Object address_city = freezed,
-    Object address_country = freezed,
-    Object address_postalcode = freezed,
-    Object address_state = freezed,
-    Object address_use = freezed,
+    Object addressCity = freezed,
+    Object addressCountry = freezed,
+    Object addressPostalcode = freezed,
+    Object addressState = freezed,
+    Object addressUse = freezed,
     Object birthdate = freezed,
     Object email = freezed,
     Object gender = freezed,
@@ -2785,21 +2984,21 @@ class _$RelatedPersonSearchCopyWithImpl<$Res>
           searchList == freezed ? _value.searchList : searchList as List<Id>,
       address:
           address == freezed ? _value.address : address as List<SearchString>,
-      address_city: address_city == freezed
-          ? _value.address_city
-          : address_city as List<SearchString>,
-      address_country: address_country == freezed
-          ? _value.address_country
-          : address_country as List<SearchString>,
-      address_postalcode: address_postalcode == freezed
-          ? _value.address_postalcode
-          : address_postalcode as List<SearchString>,
-      address_state: address_state == freezed
-          ? _value.address_state
-          : address_state as List<SearchString>,
-      address_use: address_use == freezed
-          ? _value.address_use
-          : address_use as List<SearchToken>,
+      addressCity: addressCity == freezed
+          ? _value.addressCity
+          : addressCity as List<SearchString>,
+      addressCountry: addressCountry == freezed
+          ? _value.addressCountry
+          : addressCountry as List<SearchString>,
+      addressPostalcode: addressPostalcode == freezed
+          ? _value.addressPostalcode
+          : addressPostalcode as List<SearchString>,
+      addressState: addressState == freezed
+          ? _value.addressState
+          : addressState as List<SearchString>,
+      addressUse: addressUse == freezed
+          ? _value.addressUse
+          : addressUse as List<SearchToken>,
       birthdate: birthdate == freezed
           ? _value.birthdate
           : birthdate as List<SearchDate>,
@@ -2843,11 +3042,11 @@ abstract class _$RelatedPersonSearchCopyWith<$Res>
       List<SearchString> searchContent,
       List<Id> searchList,
       List<SearchString> address,
-      List<SearchString> address_city,
-      List<SearchString> address_country,
-      List<SearchString> address_postalcode,
-      List<SearchString> address_state,
-      List<SearchToken> address_use,
+      @JsonKey(name: 'address-city') List<SearchString> addressCity,
+      @JsonKey(name: 'address-country') List<SearchString> addressCountry,
+      @JsonKey(name: 'address-postalcode') List<SearchString> addressPostalcode,
+      @JsonKey(name: 'address-state') List<SearchString> addressState,
+      @JsonKey(name: 'address-use') List<SearchToken> addressUse,
       List<SearchDate> birthdate,
       List<SearchToken> email,
       List<SearchToken> gender,
@@ -2883,11 +3082,11 @@ class __$RelatedPersonSearchCopyWithImpl<$Res>
     Object searchContent = freezed,
     Object searchList = freezed,
     Object address = freezed,
-    Object address_city = freezed,
-    Object address_country = freezed,
-    Object address_postalcode = freezed,
-    Object address_state = freezed,
-    Object address_use = freezed,
+    Object addressCity = freezed,
+    Object addressCountry = freezed,
+    Object addressPostalcode = freezed,
+    Object addressState = freezed,
+    Object addressUse = freezed,
     Object birthdate = freezed,
     Object email = freezed,
     Object gender = freezed,
@@ -2924,21 +3123,21 @@ class __$RelatedPersonSearchCopyWithImpl<$Res>
           searchList == freezed ? _value.searchList : searchList as List<Id>,
       address:
           address == freezed ? _value.address : address as List<SearchString>,
-      address_city: address_city == freezed
-          ? _value.address_city
-          : address_city as List<SearchString>,
-      address_country: address_country == freezed
-          ? _value.address_country
-          : address_country as List<SearchString>,
-      address_postalcode: address_postalcode == freezed
-          ? _value.address_postalcode
-          : address_postalcode as List<SearchString>,
-      address_state: address_state == freezed
-          ? _value.address_state
-          : address_state as List<SearchString>,
-      address_use: address_use == freezed
-          ? _value.address_use
-          : address_use as List<SearchToken>,
+      addressCity: addressCity == freezed
+          ? _value.addressCity
+          : addressCity as List<SearchString>,
+      addressCountry: addressCountry == freezed
+          ? _value.addressCountry
+          : addressCountry as List<SearchString>,
+      addressPostalcode: addressPostalcode == freezed
+          ? _value.addressPostalcode
+          : addressPostalcode as List<SearchString>,
+      addressState: addressState == freezed
+          ? _value.addressState
+          : addressState as List<SearchString>,
+      addressUse: addressUse == freezed
+          ? _value.addressUse
+          : addressUse as List<SearchToken>,
       birthdate: birthdate == freezed
           ? _value.birthdate
           : birthdate as List<SearchDate>,
@@ -2965,6 +3164,8 @@ class __$RelatedPersonSearchCopyWithImpl<$Res>
   }
 }
 
+@JsonSerializable()
+
 /// @nodoc
 class _$_RelatedPersonSearch extends _RelatedPersonSearch {
   _$_RelatedPersonSearch(
@@ -2977,11 +3178,11 @@ class _$_RelatedPersonSearch extends _RelatedPersonSearch {
       this.searchContent,
       this.searchList,
       this.address,
-      this.address_city,
-      this.address_country,
-      this.address_postalcode,
-      this.address_state,
-      this.address_use,
+      @JsonKey(name: 'address-city') this.addressCity,
+      @JsonKey(name: 'address-country') this.addressCountry,
+      @JsonKey(name: 'address-postalcode') this.addressPostalcode,
+      @JsonKey(name: 'address-state') this.addressState,
+      @JsonKey(name: 'address-use') this.addressUse,
       this.birthdate,
       this.email,
       this.gender,
@@ -2994,6 +3195,9 @@ class _$_RelatedPersonSearch extends _RelatedPersonSearch {
       this.patient,
       this.relationship})
       : super._();
+
+  factory _$_RelatedPersonSearch.fromJson(Map<String, dynamic> json) =>
+      _$_$_RelatedPersonSearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -3015,15 +3219,20 @@ class _$_RelatedPersonSearch extends _RelatedPersonSearch {
 //List<SearchToken> searchType,
   final List<SearchString> address;
   @override
-  final List<SearchString> address_city;
+  @JsonKey(name: 'address-city')
+  final List<SearchString> addressCity;
   @override
-  final List<SearchString> address_country;
+  @JsonKey(name: 'address-country')
+  final List<SearchString> addressCountry;
   @override
-  final List<SearchString> address_postalcode;
+  @JsonKey(name: 'address-postalcode')
+  final List<SearchString> addressPostalcode;
   @override
-  final List<SearchString> address_state;
+  @JsonKey(name: 'address-state')
+  final List<SearchString> addressState;
   @override
-  final List<SearchToken> address_use;
+  @JsonKey(name: 'address-use')
+  final List<SearchToken> addressUse;
   @override
   final List<SearchDate> birthdate;
   @override
@@ -3049,7 +3258,7 @@ class _$_RelatedPersonSearch extends _RelatedPersonSearch {
 
   @override
   String toString() {
-    return 'RelatedPersonSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, address: $address, address_city: $address_city, address_country: $address_country, address_postalcode: $address_postalcode, address_state: $address_state, address_use: $address_use, birthdate: $birthdate, email: $email, gender: $gender, phone: $phone, phonetic: $phonetic, telecom: $telecom, active: $active, identifier: $identifier, name: $name, patient: $patient, relationship: $relationship)';
+    return 'RelatedPersonSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, address: $address, addressCity: $addressCity, addressCountry: $addressCountry, addressPostalcode: $addressPostalcode, addressState: $addressState, addressUse: $addressUse, birthdate: $birthdate, email: $email, gender: $gender, phone: $phone, phonetic: $phonetic, telecom: $telecom, active: $active, identifier: $identifier, name: $name, patient: $patient, relationship: $relationship)';
   }
 
   @override
@@ -3083,21 +3292,21 @@ class _$_RelatedPersonSearch extends _RelatedPersonSearch {
             (identical(other.address, address) ||
                 const DeepCollectionEquality()
                     .equals(other.address, address)) &&
-            (identical(other.address_city, address_city) ||
+            (identical(other.addressCity, addressCity) ||
                 const DeepCollectionEquality()
-                    .equals(other.address_city, address_city)) &&
-            (identical(other.address_country, address_country) ||
+                    .equals(other.addressCity, addressCity)) &&
+            (identical(other.addressCountry, addressCountry) ||
                 const DeepCollectionEquality()
-                    .equals(other.address_country, address_country)) &&
-            (identical(other.address_postalcode, address_postalcode) ||
+                    .equals(other.addressCountry, addressCountry)) &&
+            (identical(other.addressPostalcode, addressPostalcode) ||
                 const DeepCollectionEquality()
-                    .equals(other.address_postalcode, address_postalcode)) &&
-            (identical(other.address_state, address_state) ||
+                    .equals(other.addressPostalcode, addressPostalcode)) &&
+            (identical(other.addressState, addressState) ||
                 const DeepCollectionEquality()
-                    .equals(other.address_state, address_state)) &&
-            (identical(other.address_use, address_use) ||
+                    .equals(other.addressState, addressState)) &&
+            (identical(other.addressUse, addressUse) ||
                 const DeepCollectionEquality()
-                    .equals(other.address_use, address_use)) &&
+                    .equals(other.addressUse, addressUse)) &&
             (identical(other.birthdate, birthdate) ||
                 const DeepCollectionEquality()
                     .equals(other.birthdate, birthdate)) &&
@@ -3138,11 +3347,11 @@ class _$_RelatedPersonSearch extends _RelatedPersonSearch {
       const DeepCollectionEquality().hash(searchContent) ^
       const DeepCollectionEquality().hash(searchList) ^
       const DeepCollectionEquality().hash(address) ^
-      const DeepCollectionEquality().hash(address_city) ^
-      const DeepCollectionEquality().hash(address_country) ^
-      const DeepCollectionEquality().hash(address_postalcode) ^
-      const DeepCollectionEquality().hash(address_state) ^
-      const DeepCollectionEquality().hash(address_use) ^
+      const DeepCollectionEquality().hash(addressCity) ^
+      const DeepCollectionEquality().hash(addressCountry) ^
+      const DeepCollectionEquality().hash(addressPostalcode) ^
+      const DeepCollectionEquality().hash(addressState) ^
+      const DeepCollectionEquality().hash(addressUse) ^
       const DeepCollectionEquality().hash(birthdate) ^
       const DeepCollectionEquality().hash(email) ^
       const DeepCollectionEquality().hash(gender) ^
@@ -3159,6 +3368,11 @@ class _$_RelatedPersonSearch extends _RelatedPersonSearch {
   _$RelatedPersonSearchCopyWith<_RelatedPersonSearch> get copyWith =>
       __$RelatedPersonSearchCopyWithImpl<_RelatedPersonSearch>(
           this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_RelatedPersonSearchToJson(this);
+  }
 }
 
 abstract class _RelatedPersonSearch extends RelatedPersonSearch {
@@ -3173,11 +3387,11 @@ abstract class _RelatedPersonSearch extends RelatedPersonSearch {
       List<SearchString> searchContent,
       List<Id> searchList,
       List<SearchString> address,
-      List<SearchString> address_city,
-      List<SearchString> address_country,
-      List<SearchString> address_postalcode,
-      List<SearchString> address_state,
-      List<SearchToken> address_use,
+      @JsonKey(name: 'address-city') List<SearchString> addressCity,
+      @JsonKey(name: 'address-country') List<SearchString> addressCountry,
+      @JsonKey(name: 'address-postalcode') List<SearchString> addressPostalcode,
+      @JsonKey(name: 'address-state') List<SearchString> addressState,
+      @JsonKey(name: 'address-use') List<SearchToken> addressUse,
       List<SearchDate> birthdate,
       List<SearchToken> email,
       List<SearchToken> gender,
@@ -3189,6 +3403,9 @@ abstract class _RelatedPersonSearch extends RelatedPersonSearch {
       List<SearchString> name,
       List<SearchReference> patient,
       List<SearchToken> relationship}) = _$_RelatedPersonSearch;
+
+  factory _RelatedPersonSearch.fromJson(Map<String, dynamic> json) =
+      _$_RelatedPersonSearch.fromJson;
 
   @override
   List<Id> get searchId;
@@ -3210,15 +3427,20 @@ abstract class _RelatedPersonSearch extends RelatedPersonSearch {
 //List<SearchToken> searchType,
   List<SearchString> get address;
   @override
-  List<SearchString> get address_city;
+  @JsonKey(name: 'address-city')
+  List<SearchString> get addressCity;
   @override
-  List<SearchString> get address_country;
+  @JsonKey(name: 'address-country')
+  List<SearchString> get addressCountry;
   @override
-  List<SearchString> get address_postalcode;
+  @JsonKey(name: 'address-postalcode')
+  List<SearchString> get addressPostalcode;
   @override
-  List<SearchString> get address_state;
+  @JsonKey(name: 'address-state')
+  List<SearchString> get addressState;
   @override
-  List<SearchToken> get address_use;
+  @JsonKey(name: 'address-use')
+  List<SearchToken> get addressUse;
   @override
   List<SearchDate> get birthdate;
   @override
@@ -3243,6 +3465,11 @@ abstract class _RelatedPersonSearch extends RelatedPersonSearch {
   List<SearchToken> get relationship;
   @override
   _$RelatedPersonSearchCopyWith<_RelatedPersonSearch> get copyWith;
+}
+
+PractitionerRoleSearch _$PractitionerRoleSearchFromJson(
+    Map<String, dynamic> json) {
+  return _PractitionerRoleSearch.fromJson(json);
 }
 
 /// @nodoc
@@ -3296,6 +3523,11 @@ class _$PractitionerRoleSearchTearOff {
       specialty: specialty,
     );
   }
+
+// ignore: unused_element
+  PractitionerRoleSearch fromJson(Map<String, Object> json) {
+    return PractitionerRoleSearch.fromJson(json);
+  }
 }
 
 /// @nodoc
@@ -3327,6 +3559,7 @@ mixin _$PractitionerRoleSearch {
   List<SearchReference> get service;
   List<SearchToken> get specialty;
 
+  Map<String, dynamic> toJson();
   $PractitionerRoleSearchCopyWith<PractitionerRoleSearch> get copyWith;
 }
 
@@ -3566,6 +3799,8 @@ class __$PractitionerRoleSearchCopyWithImpl<$Res>
   }
 }
 
+@JsonSerializable()
+
 /// @nodoc
 class _$_PractitionerRoleSearch extends _PractitionerRoleSearch {
   _$_PractitionerRoleSearch(
@@ -3591,6 +3826,9 @@ class _$_PractitionerRoleSearch extends _PractitionerRoleSearch {
       this.service,
       this.specialty})
       : super._();
+
+  factory _$_PractitionerRoleSearch.fromJson(Map<String, dynamic> json) =>
+      _$_$_PractitionerRoleSearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -3734,6 +3972,11 @@ class _$_PractitionerRoleSearch extends _PractitionerRoleSearch {
   _$PractitionerRoleSearchCopyWith<_PractitionerRoleSearch> get copyWith =>
       __$PractitionerRoleSearchCopyWithImpl<_PractitionerRoleSearch>(
           this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_PractitionerRoleSearchToJson(this);
+  }
 }
 
 abstract class _PractitionerRoleSearch extends PractitionerRoleSearch {
@@ -3760,6 +4003,9 @@ abstract class _PractitionerRoleSearch extends PractitionerRoleSearch {
       List<SearchToken> role,
       List<SearchReference> service,
       List<SearchToken> specialty}) = _$_PractitionerRoleSearch;
+
+  factory _PractitionerRoleSearch.fromJson(Map<String, dynamic> json) =
+      _$_PractitionerRoleSearch.fromJson;
 
   @override
   List<Id> get searchId;

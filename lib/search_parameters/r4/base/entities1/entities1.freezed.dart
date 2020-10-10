@@ -8,6 +8,9 @@ part of 'entities1.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
+EndpointSearch _$EndpointSearchFromJson(Map<String, dynamic> json) {
+  return _EndpointSearch.fromJson(json);
+}
 
 /// @nodoc
 class _$EndpointSearchTearOff {
@@ -23,11 +26,11 @@ class _$EndpointSearchTearOff {
       List<SearchString> searchText,
       List<SearchString> searchContent,
       List<Id> searchList,
-      List<SearchToken> connection_type,
+      @JsonKey(name: 'connection-type') List<SearchToken> connectionType,
       List<SearchToken> identifier,
       List<SearchString> name,
       List<SearchReference> organization,
-      List<SearchToken> payload_type,
+      @JsonKey(name: 'payload-type') List<SearchToken> payloadType,
       List<SearchToken> status}) {
     return _EndpointSearch(
       searchId: searchId,
@@ -38,13 +41,18 @@ class _$EndpointSearchTearOff {
       searchText: searchText,
       searchContent: searchContent,
       searchList: searchList,
-      connection_type: connection_type,
+      connectionType: connectionType,
       identifier: identifier,
       name: name,
       organization: organization,
-      payload_type: payload_type,
+      payloadType: payloadType,
       status: status,
     );
+  }
+
+// ignore: unused_element
+  EndpointSearch fromJson(Map<String, Object> json) {
+    return EndpointSearch.fromJson(json);
   }
 }
 
@@ -63,13 +71,16 @@ mixin _$EndpointSearch {
   List<SearchString> get searchContent;
   List<Id> get searchList; //List<SearchString> searchHas,
 //List<SearchToken> searchType,
-  List<SearchToken> get connection_type;
+  @JsonKey(name: 'connection-type')
+  List<SearchToken> get connectionType;
   List<SearchToken> get identifier;
   List<SearchString> get name;
   List<SearchReference> get organization;
-  List<SearchToken> get payload_type;
+  @JsonKey(name: 'payload-type')
+  List<SearchToken> get payloadType;
   List<SearchToken> get status;
 
+  Map<String, dynamic> toJson();
   $EndpointSearchCopyWith<EndpointSearch> get copyWith;
 }
 
@@ -87,11 +98,11 @@ abstract class $EndpointSearchCopyWith<$Res> {
       List<SearchString> searchText,
       List<SearchString> searchContent,
       List<Id> searchList,
-      List<SearchToken> connection_type,
+      @JsonKey(name: 'connection-type') List<SearchToken> connectionType,
       List<SearchToken> identifier,
       List<SearchString> name,
       List<SearchReference> organization,
-      List<SearchToken> payload_type,
+      @JsonKey(name: 'payload-type') List<SearchToken> payloadType,
       List<SearchToken> status});
 }
 
@@ -114,11 +125,11 @@ class _$EndpointSearchCopyWithImpl<$Res>
     Object searchText = freezed,
     Object searchContent = freezed,
     Object searchList = freezed,
-    Object connection_type = freezed,
+    Object connectionType = freezed,
     Object identifier = freezed,
     Object name = freezed,
     Object organization = freezed,
-    Object payload_type = freezed,
+    Object payloadType = freezed,
     Object status = freezed,
   }) {
     return _then(_value.copyWith(
@@ -143,9 +154,9 @@ class _$EndpointSearchCopyWithImpl<$Res>
           : searchContent as List<SearchString>,
       searchList:
           searchList == freezed ? _value.searchList : searchList as List<Id>,
-      connection_type: connection_type == freezed
-          ? _value.connection_type
-          : connection_type as List<SearchToken>,
+      connectionType: connectionType == freezed
+          ? _value.connectionType
+          : connectionType as List<SearchToken>,
       identifier: identifier == freezed
           ? _value.identifier
           : identifier as List<SearchToken>,
@@ -153,9 +164,9 @@ class _$EndpointSearchCopyWithImpl<$Res>
       organization: organization == freezed
           ? _value.organization
           : organization as List<SearchReference>,
-      payload_type: payload_type == freezed
-          ? _value.payload_type
-          : payload_type as List<SearchToken>,
+      payloadType: payloadType == freezed
+          ? _value.payloadType
+          : payloadType as List<SearchToken>,
       status: status == freezed ? _value.status : status as List<SearchToken>,
     ));
   }
@@ -177,11 +188,11 @@ abstract class _$EndpointSearchCopyWith<$Res>
       List<SearchString> searchText,
       List<SearchString> searchContent,
       List<Id> searchList,
-      List<SearchToken> connection_type,
+      @JsonKey(name: 'connection-type') List<SearchToken> connectionType,
       List<SearchToken> identifier,
       List<SearchString> name,
       List<SearchReference> organization,
-      List<SearchToken> payload_type,
+      @JsonKey(name: 'payload-type') List<SearchToken> payloadType,
       List<SearchToken> status});
 }
 
@@ -206,11 +217,11 @@ class __$EndpointSearchCopyWithImpl<$Res>
     Object searchText = freezed,
     Object searchContent = freezed,
     Object searchList = freezed,
-    Object connection_type = freezed,
+    Object connectionType = freezed,
     Object identifier = freezed,
     Object name = freezed,
     Object organization = freezed,
-    Object payload_type = freezed,
+    Object payloadType = freezed,
     Object status = freezed,
   }) {
     return _then(_EndpointSearch(
@@ -235,9 +246,9 @@ class __$EndpointSearchCopyWithImpl<$Res>
           : searchContent as List<SearchString>,
       searchList:
           searchList == freezed ? _value.searchList : searchList as List<Id>,
-      connection_type: connection_type == freezed
-          ? _value.connection_type
-          : connection_type as List<SearchToken>,
+      connectionType: connectionType == freezed
+          ? _value.connectionType
+          : connectionType as List<SearchToken>,
       identifier: identifier == freezed
           ? _value.identifier
           : identifier as List<SearchToken>,
@@ -245,13 +256,15 @@ class __$EndpointSearchCopyWithImpl<$Res>
       organization: organization == freezed
           ? _value.organization
           : organization as List<SearchReference>,
-      payload_type: payload_type == freezed
-          ? _value.payload_type
-          : payload_type as List<SearchToken>,
+      payloadType: payloadType == freezed
+          ? _value.payloadType
+          : payloadType as List<SearchToken>,
       status: status == freezed ? _value.status : status as List<SearchToken>,
     ));
   }
 }
+
+@JsonSerializable()
 
 /// @nodoc
 class _$_EndpointSearch extends _EndpointSearch {
@@ -264,13 +277,16 @@ class _$_EndpointSearch extends _EndpointSearch {
       this.searchText,
       this.searchContent,
       this.searchList,
-      this.connection_type,
+      @JsonKey(name: 'connection-type') this.connectionType,
       this.identifier,
       this.name,
       this.organization,
-      this.payload_type,
+      @JsonKey(name: 'payload-type') this.payloadType,
       this.status})
       : super._();
+
+  factory _$_EndpointSearch.fromJson(Map<String, dynamic> json) =>
+      _$_$_EndpointSearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -290,7 +306,8 @@ class _$_EndpointSearch extends _EndpointSearch {
   final List<Id> searchList;
   @override //List<SearchString> searchHas,
 //List<SearchToken> searchType,
-  final List<SearchToken> connection_type;
+  @JsonKey(name: 'connection-type')
+  final List<SearchToken> connectionType;
   @override
   final List<SearchToken> identifier;
   @override
@@ -298,13 +315,14 @@ class _$_EndpointSearch extends _EndpointSearch {
   @override
   final List<SearchReference> organization;
   @override
-  final List<SearchToken> payload_type;
+  @JsonKey(name: 'payload-type')
+  final List<SearchToken> payloadType;
   @override
   final List<SearchToken> status;
 
   @override
   String toString() {
-    return 'EndpointSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, connection_type: $connection_type, identifier: $identifier, name: $name, organization: $organization, payload_type: $payload_type, status: $status)';
+    return 'EndpointSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, connectionType: $connectionType, identifier: $identifier, name: $name, organization: $organization, payloadType: $payloadType, status: $status)';
   }
 
   @override
@@ -335,9 +353,9 @@ class _$_EndpointSearch extends _EndpointSearch {
             (identical(other.searchList, searchList) ||
                 const DeepCollectionEquality()
                     .equals(other.searchList, searchList)) &&
-            (identical(other.connection_type, connection_type) ||
+            (identical(other.connectionType, connectionType) ||
                 const DeepCollectionEquality()
-                    .equals(other.connection_type, connection_type)) &&
+                    .equals(other.connectionType, connectionType)) &&
             (identical(other.identifier, identifier) ||
                 const DeepCollectionEquality()
                     .equals(other.identifier, identifier)) &&
@@ -346,9 +364,9 @@ class _$_EndpointSearch extends _EndpointSearch {
             (identical(other.organization, organization) ||
                 const DeepCollectionEquality()
                     .equals(other.organization, organization)) &&
-            (identical(other.payload_type, payload_type) ||
+            (identical(other.payloadType, payloadType) ||
                 const DeepCollectionEquality()
-                    .equals(other.payload_type, payload_type)) &&
+                    .equals(other.payloadType, payloadType)) &&
             (identical(other.status, status) ||
                 const DeepCollectionEquality().equals(other.status, status)));
   }
@@ -364,16 +382,21 @@ class _$_EndpointSearch extends _EndpointSearch {
       const DeepCollectionEquality().hash(searchText) ^
       const DeepCollectionEquality().hash(searchContent) ^
       const DeepCollectionEquality().hash(searchList) ^
-      const DeepCollectionEquality().hash(connection_type) ^
+      const DeepCollectionEquality().hash(connectionType) ^
       const DeepCollectionEquality().hash(identifier) ^
       const DeepCollectionEquality().hash(name) ^
       const DeepCollectionEquality().hash(organization) ^
-      const DeepCollectionEquality().hash(payload_type) ^
+      const DeepCollectionEquality().hash(payloadType) ^
       const DeepCollectionEquality().hash(status);
 
   @override
   _$EndpointSearchCopyWith<_EndpointSearch> get copyWith =>
       __$EndpointSearchCopyWithImpl<_EndpointSearch>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_EndpointSearchToJson(this);
+  }
 }
 
 abstract class _EndpointSearch extends EndpointSearch {
@@ -387,12 +410,15 @@ abstract class _EndpointSearch extends EndpointSearch {
       List<SearchString> searchText,
       List<SearchString> searchContent,
       List<Id> searchList,
-      List<SearchToken> connection_type,
+      @JsonKey(name: 'connection-type') List<SearchToken> connectionType,
       List<SearchToken> identifier,
       List<SearchString> name,
       List<SearchReference> organization,
-      List<SearchToken> payload_type,
+      @JsonKey(name: 'payload-type') List<SearchToken> payloadType,
       List<SearchToken> status}) = _$_EndpointSearch;
+
+  factory _EndpointSearch.fromJson(Map<String, dynamic> json) =
+      _$_EndpointSearch.fromJson;
 
   @override
   List<Id> get searchId;
@@ -412,7 +438,8 @@ abstract class _EndpointSearch extends EndpointSearch {
   List<Id> get searchList;
   @override //List<SearchString> searchHas,
 //List<SearchToken> searchType,
-  List<SearchToken> get connection_type;
+  @JsonKey(name: 'connection-type')
+  List<SearchToken> get connectionType;
   @override
   List<SearchToken> get identifier;
   @override
@@ -420,11 +447,17 @@ abstract class _EndpointSearch extends EndpointSearch {
   @override
   List<SearchReference> get organization;
   @override
-  List<SearchToken> get payload_type;
+  @JsonKey(name: 'payload-type')
+  List<SearchToken> get payloadType;
   @override
   List<SearchToken> get status;
   @override
   _$EndpointSearchCopyWith<_EndpointSearch> get copyWith;
+}
+
+HealthcareServiceSearch _$HealthcareServiceSearchFromJson(
+    Map<String, dynamic> json) {
+  return _HealthcareServiceSearch.fromJson(json);
 }
 
 /// @nodoc
@@ -443,15 +476,15 @@ class _$HealthcareServiceSearchTearOff {
       List<Id> searchList,
       List<SearchToken> active,
       List<SearchToken> characteristic,
-      List<SearchReference> coverage_area,
+      @JsonKey(name: 'coverage-area') List<SearchReference> coverageArea,
       List<SearchReference> endpoint,
       List<SearchToken> identifier,
       List<SearchReference> location,
       List<SearchString> name,
       List<SearchReference> organization,
       List<SearchToken> program,
-      List<SearchToken> service_category,
-      List<SearchToken> service_type,
+      @JsonKey(name: 'service-category') List<SearchToken> serviceCategory,
+      @JsonKey(name: 'service-type') List<SearchToken> serviceType,
       List<SearchToken> specialty}) {
     return _HealthcareServiceSearch(
       searchId: searchId,
@@ -464,17 +497,22 @@ class _$HealthcareServiceSearchTearOff {
       searchList: searchList,
       active: active,
       characteristic: characteristic,
-      coverage_area: coverage_area,
+      coverageArea: coverageArea,
       endpoint: endpoint,
       identifier: identifier,
       location: location,
       name: name,
       organization: organization,
       program: program,
-      service_category: service_category,
-      service_type: service_type,
+      serviceCategory: serviceCategory,
+      serviceType: serviceType,
       specialty: specialty,
     );
+  }
+
+// ignore: unused_element
+  HealthcareServiceSearch fromJson(Map<String, Object> json) {
+    return HealthcareServiceSearch.fromJson(json);
   }
 }
 
@@ -495,17 +533,21 @@ mixin _$HealthcareServiceSearch {
 //List<SearchToken> searchType,
   List<SearchToken> get active;
   List<SearchToken> get characteristic;
-  List<SearchReference> get coverage_area;
+  @JsonKey(name: 'coverage-area')
+  List<SearchReference> get coverageArea;
   List<SearchReference> get endpoint;
   List<SearchToken> get identifier;
   List<SearchReference> get location;
   List<SearchString> get name;
   List<SearchReference> get organization;
   List<SearchToken> get program;
-  List<SearchToken> get service_category;
-  List<SearchToken> get service_type;
+  @JsonKey(name: 'service-category')
+  List<SearchToken> get serviceCategory;
+  @JsonKey(name: 'service-type')
+  List<SearchToken> get serviceType;
   List<SearchToken> get specialty;
 
+  Map<String, dynamic> toJson();
   $HealthcareServiceSearchCopyWith<HealthcareServiceSearch> get copyWith;
 }
 
@@ -525,15 +567,15 @@ abstract class $HealthcareServiceSearchCopyWith<$Res> {
       List<Id> searchList,
       List<SearchToken> active,
       List<SearchToken> characteristic,
-      List<SearchReference> coverage_area,
+      @JsonKey(name: 'coverage-area') List<SearchReference> coverageArea,
       List<SearchReference> endpoint,
       List<SearchToken> identifier,
       List<SearchReference> location,
       List<SearchString> name,
       List<SearchReference> organization,
       List<SearchToken> program,
-      List<SearchToken> service_category,
-      List<SearchToken> service_type,
+      @JsonKey(name: 'service-category') List<SearchToken> serviceCategory,
+      @JsonKey(name: 'service-type') List<SearchToken> serviceType,
       List<SearchToken> specialty});
 }
 
@@ -558,15 +600,15 @@ class _$HealthcareServiceSearchCopyWithImpl<$Res>
     Object searchList = freezed,
     Object active = freezed,
     Object characteristic = freezed,
-    Object coverage_area = freezed,
+    Object coverageArea = freezed,
     Object endpoint = freezed,
     Object identifier = freezed,
     Object location = freezed,
     Object name = freezed,
     Object organization = freezed,
     Object program = freezed,
-    Object service_category = freezed,
-    Object service_type = freezed,
+    Object serviceCategory = freezed,
+    Object serviceType = freezed,
     Object specialty = freezed,
   }) {
     return _then(_value.copyWith(
@@ -595,9 +637,9 @@ class _$HealthcareServiceSearchCopyWithImpl<$Res>
       characteristic: characteristic == freezed
           ? _value.characteristic
           : characteristic as List<SearchToken>,
-      coverage_area: coverage_area == freezed
-          ? _value.coverage_area
-          : coverage_area as List<SearchReference>,
+      coverageArea: coverageArea == freezed
+          ? _value.coverageArea
+          : coverageArea as List<SearchReference>,
       endpoint: endpoint == freezed
           ? _value.endpoint
           : endpoint as List<SearchReference>,
@@ -613,12 +655,12 @@ class _$HealthcareServiceSearchCopyWithImpl<$Res>
           : organization as List<SearchReference>,
       program:
           program == freezed ? _value.program : program as List<SearchToken>,
-      service_category: service_category == freezed
-          ? _value.service_category
-          : service_category as List<SearchToken>,
-      service_type: service_type == freezed
-          ? _value.service_type
-          : service_type as List<SearchToken>,
+      serviceCategory: serviceCategory == freezed
+          ? _value.serviceCategory
+          : serviceCategory as List<SearchToken>,
+      serviceType: serviceType == freezed
+          ? _value.serviceType
+          : serviceType as List<SearchToken>,
       specialty: specialty == freezed
           ? _value.specialty
           : specialty as List<SearchToken>,
@@ -644,15 +686,15 @@ abstract class _$HealthcareServiceSearchCopyWith<$Res>
       List<Id> searchList,
       List<SearchToken> active,
       List<SearchToken> characteristic,
-      List<SearchReference> coverage_area,
+      @JsonKey(name: 'coverage-area') List<SearchReference> coverageArea,
       List<SearchReference> endpoint,
       List<SearchToken> identifier,
       List<SearchReference> location,
       List<SearchString> name,
       List<SearchReference> organization,
       List<SearchToken> program,
-      List<SearchToken> service_category,
-      List<SearchToken> service_type,
+      @JsonKey(name: 'service-category') List<SearchToken> serviceCategory,
+      @JsonKey(name: 'service-type') List<SearchToken> serviceType,
       List<SearchToken> specialty});
 }
 
@@ -680,15 +722,15 @@ class __$HealthcareServiceSearchCopyWithImpl<$Res>
     Object searchList = freezed,
     Object active = freezed,
     Object characteristic = freezed,
-    Object coverage_area = freezed,
+    Object coverageArea = freezed,
     Object endpoint = freezed,
     Object identifier = freezed,
     Object location = freezed,
     Object name = freezed,
     Object organization = freezed,
     Object program = freezed,
-    Object service_category = freezed,
-    Object service_type = freezed,
+    Object serviceCategory = freezed,
+    Object serviceType = freezed,
     Object specialty = freezed,
   }) {
     return _then(_HealthcareServiceSearch(
@@ -717,9 +759,9 @@ class __$HealthcareServiceSearchCopyWithImpl<$Res>
       characteristic: characteristic == freezed
           ? _value.characteristic
           : characteristic as List<SearchToken>,
-      coverage_area: coverage_area == freezed
-          ? _value.coverage_area
-          : coverage_area as List<SearchReference>,
+      coverageArea: coverageArea == freezed
+          ? _value.coverageArea
+          : coverageArea as List<SearchReference>,
       endpoint: endpoint == freezed
           ? _value.endpoint
           : endpoint as List<SearchReference>,
@@ -735,18 +777,20 @@ class __$HealthcareServiceSearchCopyWithImpl<$Res>
           : organization as List<SearchReference>,
       program:
           program == freezed ? _value.program : program as List<SearchToken>,
-      service_category: service_category == freezed
-          ? _value.service_category
-          : service_category as List<SearchToken>,
-      service_type: service_type == freezed
-          ? _value.service_type
-          : service_type as List<SearchToken>,
+      serviceCategory: serviceCategory == freezed
+          ? _value.serviceCategory
+          : serviceCategory as List<SearchToken>,
+      serviceType: serviceType == freezed
+          ? _value.serviceType
+          : serviceType as List<SearchToken>,
       specialty: specialty == freezed
           ? _value.specialty
           : specialty as List<SearchToken>,
     ));
   }
 }
+
+@JsonSerializable()
 
 /// @nodoc
 class _$_HealthcareServiceSearch extends _HealthcareServiceSearch {
@@ -761,17 +805,20 @@ class _$_HealthcareServiceSearch extends _HealthcareServiceSearch {
       this.searchList,
       this.active,
       this.characteristic,
-      this.coverage_area,
+      @JsonKey(name: 'coverage-area') this.coverageArea,
       this.endpoint,
       this.identifier,
       this.location,
       this.name,
       this.organization,
       this.program,
-      this.service_category,
-      this.service_type,
+      @JsonKey(name: 'service-category') this.serviceCategory,
+      @JsonKey(name: 'service-type') this.serviceType,
       this.specialty})
       : super._();
+
+  factory _$_HealthcareServiceSearch.fromJson(Map<String, dynamic> json) =>
+      _$_$_HealthcareServiceSearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -795,7 +842,8 @@ class _$_HealthcareServiceSearch extends _HealthcareServiceSearch {
   @override
   final List<SearchToken> characteristic;
   @override
-  final List<SearchReference> coverage_area;
+  @JsonKey(name: 'coverage-area')
+  final List<SearchReference> coverageArea;
   @override
   final List<SearchReference> endpoint;
   @override
@@ -809,15 +857,17 @@ class _$_HealthcareServiceSearch extends _HealthcareServiceSearch {
   @override
   final List<SearchToken> program;
   @override
-  final List<SearchToken> service_category;
+  @JsonKey(name: 'service-category')
+  final List<SearchToken> serviceCategory;
   @override
-  final List<SearchToken> service_type;
+  @JsonKey(name: 'service-type')
+  final List<SearchToken> serviceType;
   @override
   final List<SearchToken> specialty;
 
   @override
   String toString() {
-    return 'HealthcareServiceSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, active: $active, characteristic: $characteristic, coverage_area: $coverage_area, endpoint: $endpoint, identifier: $identifier, location: $location, name: $name, organization: $organization, program: $program, service_category: $service_category, service_type: $service_type, specialty: $specialty)';
+    return 'HealthcareServiceSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, active: $active, characteristic: $characteristic, coverageArea: $coverageArea, endpoint: $endpoint, identifier: $identifier, location: $location, name: $name, organization: $organization, program: $program, serviceCategory: $serviceCategory, serviceType: $serviceType, specialty: $specialty)';
   }
 
   @override
@@ -853,9 +903,9 @@ class _$_HealthcareServiceSearch extends _HealthcareServiceSearch {
             (identical(other.characteristic, characteristic) ||
                 const DeepCollectionEquality()
                     .equals(other.characteristic, characteristic)) &&
-            (identical(other.coverage_area, coverage_area) ||
+            (identical(other.coverageArea, coverageArea) ||
                 const DeepCollectionEquality()
-                    .equals(other.coverage_area, coverage_area)) &&
+                    .equals(other.coverageArea, coverageArea)) &&
             (identical(other.endpoint, endpoint) ||
                 const DeepCollectionEquality()
                     .equals(other.endpoint, endpoint)) &&
@@ -873,12 +923,12 @@ class _$_HealthcareServiceSearch extends _HealthcareServiceSearch {
             (identical(other.program, program) ||
                 const DeepCollectionEquality()
                     .equals(other.program, program)) &&
-            (identical(other.service_category, service_category) ||
+            (identical(other.serviceCategory, serviceCategory) ||
                 const DeepCollectionEquality()
-                    .equals(other.service_category, service_category)) &&
-            (identical(other.service_type, service_type) ||
+                    .equals(other.serviceCategory, serviceCategory)) &&
+            (identical(other.serviceType, serviceType) ||
                 const DeepCollectionEquality()
-                    .equals(other.service_type, service_type)) &&
+                    .equals(other.serviceType, serviceType)) &&
             (identical(other.specialty, specialty) ||
                 const DeepCollectionEquality()
                     .equals(other.specialty, specialty)));
@@ -897,21 +947,26 @@ class _$_HealthcareServiceSearch extends _HealthcareServiceSearch {
       const DeepCollectionEquality().hash(searchList) ^
       const DeepCollectionEquality().hash(active) ^
       const DeepCollectionEquality().hash(characteristic) ^
-      const DeepCollectionEquality().hash(coverage_area) ^
+      const DeepCollectionEquality().hash(coverageArea) ^
       const DeepCollectionEquality().hash(endpoint) ^
       const DeepCollectionEquality().hash(identifier) ^
       const DeepCollectionEquality().hash(location) ^
       const DeepCollectionEquality().hash(name) ^
       const DeepCollectionEquality().hash(organization) ^
       const DeepCollectionEquality().hash(program) ^
-      const DeepCollectionEquality().hash(service_category) ^
-      const DeepCollectionEquality().hash(service_type) ^
+      const DeepCollectionEquality().hash(serviceCategory) ^
+      const DeepCollectionEquality().hash(serviceType) ^
       const DeepCollectionEquality().hash(specialty);
 
   @override
   _$HealthcareServiceSearchCopyWith<_HealthcareServiceSearch> get copyWith =>
       __$HealthcareServiceSearchCopyWithImpl<_HealthcareServiceSearch>(
           this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_HealthcareServiceSearchToJson(this);
+  }
 }
 
 abstract class _HealthcareServiceSearch extends HealthcareServiceSearch {
@@ -927,16 +982,19 @@ abstract class _HealthcareServiceSearch extends HealthcareServiceSearch {
       List<Id> searchList,
       List<SearchToken> active,
       List<SearchToken> characteristic,
-      List<SearchReference> coverage_area,
+      @JsonKey(name: 'coverage-area') List<SearchReference> coverageArea,
       List<SearchReference> endpoint,
       List<SearchToken> identifier,
       List<SearchReference> location,
       List<SearchString> name,
       List<SearchReference> organization,
       List<SearchToken> program,
-      List<SearchToken> service_category,
-      List<SearchToken> service_type,
+      @JsonKey(name: 'service-category') List<SearchToken> serviceCategory,
+      @JsonKey(name: 'service-type') List<SearchToken> serviceType,
       List<SearchToken> specialty}) = _$_HealthcareServiceSearch;
+
+  factory _HealthcareServiceSearch.fromJson(Map<String, dynamic> json) =
+      _$_HealthcareServiceSearch.fromJson;
 
   @override
   List<Id> get searchId;
@@ -960,7 +1018,8 @@ abstract class _HealthcareServiceSearch extends HealthcareServiceSearch {
   @override
   List<SearchToken> get characteristic;
   @override
-  List<SearchReference> get coverage_area;
+  @JsonKey(name: 'coverage-area')
+  List<SearchReference> get coverageArea;
   @override
   List<SearchReference> get endpoint;
   @override
@@ -974,13 +1033,19 @@ abstract class _HealthcareServiceSearch extends HealthcareServiceSearch {
   @override
   List<SearchToken> get program;
   @override
-  List<SearchToken> get service_category;
+  @JsonKey(name: 'service-category')
+  List<SearchToken> get serviceCategory;
   @override
-  List<SearchToken> get service_type;
+  @JsonKey(name: 'service-type')
+  List<SearchToken> get serviceType;
   @override
   List<SearchToken> get specialty;
   @override
   _$HealthcareServiceSearchCopyWith<_HealthcareServiceSearch> get copyWith;
+}
+
+LocationSearch _$LocationSearchFromJson(Map<String, dynamic> json) {
+  return _LocationSearch.fromJson(json);
 }
 
 /// @nodoc
@@ -998,16 +1063,16 @@ class _$LocationSearchTearOff {
       List<SearchString> searchContent,
       List<Id> searchList,
       List<SearchString> address,
-      List<SearchString> address_city,
-      List<SearchString> address_country,
-      List<SearchString> address_postalcode,
-      List<SearchString> address_state,
-      List<SearchToken> address_use,
+      @JsonKey(name: 'address-city') List<SearchString> addressCity,
+      @JsonKey(name: 'address-country') List<SearchString> addressCountry,
+      @JsonKey(name: 'address-postalcode') List<SearchString> addressPostalcode,
+      @JsonKey(name: 'address-state') List<SearchString> addressState,
+      @JsonKey(name: 'address-use') List<SearchToken> addressUse,
       List<SearchReference> endpoint,
       List<SearchToken> identifier,
       List<SearchString> name,
       List<SearchSpecial> near,
-      List<SearchToken> operational_status,
+      @JsonKey(name: 'operational-status') List<SearchToken> operationalStatus,
       List<SearchReference> organization,
       List<SearchReference> partof,
       List<SearchToken> status,
@@ -1022,21 +1087,26 @@ class _$LocationSearchTearOff {
       searchContent: searchContent,
       searchList: searchList,
       address: address,
-      address_city: address_city,
-      address_country: address_country,
-      address_postalcode: address_postalcode,
-      address_state: address_state,
-      address_use: address_use,
+      addressCity: addressCity,
+      addressCountry: addressCountry,
+      addressPostalcode: addressPostalcode,
+      addressState: addressState,
+      addressUse: addressUse,
       endpoint: endpoint,
       identifier: identifier,
       name: name,
       near: near,
-      operational_status: operational_status,
+      operationalStatus: operationalStatus,
       organization: organization,
       partof: partof,
       status: status,
       type: type,
     );
+  }
+
+// ignore: unused_element
+  LocationSearch fromJson(Map<String, Object> json) {
+    return LocationSearch.fromJson(json);
   }
 }
 
@@ -1056,21 +1126,28 @@ mixin _$LocationSearch {
   List<Id> get searchList; //List<SearchString> searchHas,
 //List<SearchToken> searchType,
   List<SearchString> get address;
-  List<SearchString> get address_city;
-  List<SearchString> get address_country;
-  List<SearchString> get address_postalcode;
-  List<SearchString> get address_state;
-  List<SearchToken> get address_use;
+  @JsonKey(name: 'address-city')
+  List<SearchString> get addressCity;
+  @JsonKey(name: 'address-country')
+  List<SearchString> get addressCountry;
+  @JsonKey(name: 'address-postalcode')
+  List<SearchString> get addressPostalcode;
+  @JsonKey(name: 'address-state')
+  List<SearchString> get addressState;
+  @JsonKey(name: 'address-use')
+  List<SearchToken> get addressUse;
   List<SearchReference> get endpoint;
   List<SearchToken> get identifier;
   List<SearchString> get name;
   List<SearchSpecial> get near;
-  List<SearchToken> get operational_status;
+  @JsonKey(name: 'operational-status')
+  List<SearchToken> get operationalStatus;
   List<SearchReference> get organization;
   List<SearchReference> get partof;
   List<SearchToken> get status;
   List<SearchToken> get type;
 
+  Map<String, dynamic> toJson();
   $LocationSearchCopyWith<LocationSearch> get copyWith;
 }
 
@@ -1089,16 +1166,16 @@ abstract class $LocationSearchCopyWith<$Res> {
       List<SearchString> searchContent,
       List<Id> searchList,
       List<SearchString> address,
-      List<SearchString> address_city,
-      List<SearchString> address_country,
-      List<SearchString> address_postalcode,
-      List<SearchString> address_state,
-      List<SearchToken> address_use,
+      @JsonKey(name: 'address-city') List<SearchString> addressCity,
+      @JsonKey(name: 'address-country') List<SearchString> addressCountry,
+      @JsonKey(name: 'address-postalcode') List<SearchString> addressPostalcode,
+      @JsonKey(name: 'address-state') List<SearchString> addressState,
+      @JsonKey(name: 'address-use') List<SearchToken> addressUse,
       List<SearchReference> endpoint,
       List<SearchToken> identifier,
       List<SearchString> name,
       List<SearchSpecial> near,
-      List<SearchToken> operational_status,
+      @JsonKey(name: 'operational-status') List<SearchToken> operationalStatus,
       List<SearchReference> organization,
       List<SearchReference> partof,
       List<SearchToken> status,
@@ -1125,16 +1202,16 @@ class _$LocationSearchCopyWithImpl<$Res>
     Object searchContent = freezed,
     Object searchList = freezed,
     Object address = freezed,
-    Object address_city = freezed,
-    Object address_country = freezed,
-    Object address_postalcode = freezed,
-    Object address_state = freezed,
-    Object address_use = freezed,
+    Object addressCity = freezed,
+    Object addressCountry = freezed,
+    Object addressPostalcode = freezed,
+    Object addressState = freezed,
+    Object addressUse = freezed,
     Object endpoint = freezed,
     Object identifier = freezed,
     Object name = freezed,
     Object near = freezed,
-    Object operational_status = freezed,
+    Object operationalStatus = freezed,
     Object organization = freezed,
     Object partof = freezed,
     Object status = freezed,
@@ -1164,21 +1241,21 @@ class _$LocationSearchCopyWithImpl<$Res>
           searchList == freezed ? _value.searchList : searchList as List<Id>,
       address:
           address == freezed ? _value.address : address as List<SearchString>,
-      address_city: address_city == freezed
-          ? _value.address_city
-          : address_city as List<SearchString>,
-      address_country: address_country == freezed
-          ? _value.address_country
-          : address_country as List<SearchString>,
-      address_postalcode: address_postalcode == freezed
-          ? _value.address_postalcode
-          : address_postalcode as List<SearchString>,
-      address_state: address_state == freezed
-          ? _value.address_state
-          : address_state as List<SearchString>,
-      address_use: address_use == freezed
-          ? _value.address_use
-          : address_use as List<SearchToken>,
+      addressCity: addressCity == freezed
+          ? _value.addressCity
+          : addressCity as List<SearchString>,
+      addressCountry: addressCountry == freezed
+          ? _value.addressCountry
+          : addressCountry as List<SearchString>,
+      addressPostalcode: addressPostalcode == freezed
+          ? _value.addressPostalcode
+          : addressPostalcode as List<SearchString>,
+      addressState: addressState == freezed
+          ? _value.addressState
+          : addressState as List<SearchString>,
+      addressUse: addressUse == freezed
+          ? _value.addressUse
+          : addressUse as List<SearchToken>,
       endpoint: endpoint == freezed
           ? _value.endpoint
           : endpoint as List<SearchReference>,
@@ -1187,9 +1264,9 @@ class _$LocationSearchCopyWithImpl<$Res>
           : identifier as List<SearchToken>,
       name: name == freezed ? _value.name : name as List<SearchString>,
       near: near == freezed ? _value.near : near as List<SearchSpecial>,
-      operational_status: operational_status == freezed
-          ? _value.operational_status
-          : operational_status as List<SearchToken>,
+      operationalStatus: operationalStatus == freezed
+          ? _value.operationalStatus
+          : operationalStatus as List<SearchToken>,
       organization: organization == freezed
           ? _value.organization
           : organization as List<SearchReference>,
@@ -1218,16 +1295,16 @@ abstract class _$LocationSearchCopyWith<$Res>
       List<SearchString> searchContent,
       List<Id> searchList,
       List<SearchString> address,
-      List<SearchString> address_city,
-      List<SearchString> address_country,
-      List<SearchString> address_postalcode,
-      List<SearchString> address_state,
-      List<SearchToken> address_use,
+      @JsonKey(name: 'address-city') List<SearchString> addressCity,
+      @JsonKey(name: 'address-country') List<SearchString> addressCountry,
+      @JsonKey(name: 'address-postalcode') List<SearchString> addressPostalcode,
+      @JsonKey(name: 'address-state') List<SearchString> addressState,
+      @JsonKey(name: 'address-use') List<SearchToken> addressUse,
       List<SearchReference> endpoint,
       List<SearchToken> identifier,
       List<SearchString> name,
       List<SearchSpecial> near,
-      List<SearchToken> operational_status,
+      @JsonKey(name: 'operational-status') List<SearchToken> operationalStatus,
       List<SearchReference> organization,
       List<SearchReference> partof,
       List<SearchToken> status,
@@ -1256,16 +1333,16 @@ class __$LocationSearchCopyWithImpl<$Res>
     Object searchContent = freezed,
     Object searchList = freezed,
     Object address = freezed,
-    Object address_city = freezed,
-    Object address_country = freezed,
-    Object address_postalcode = freezed,
-    Object address_state = freezed,
-    Object address_use = freezed,
+    Object addressCity = freezed,
+    Object addressCountry = freezed,
+    Object addressPostalcode = freezed,
+    Object addressState = freezed,
+    Object addressUse = freezed,
     Object endpoint = freezed,
     Object identifier = freezed,
     Object name = freezed,
     Object near = freezed,
-    Object operational_status = freezed,
+    Object operationalStatus = freezed,
     Object organization = freezed,
     Object partof = freezed,
     Object status = freezed,
@@ -1295,21 +1372,21 @@ class __$LocationSearchCopyWithImpl<$Res>
           searchList == freezed ? _value.searchList : searchList as List<Id>,
       address:
           address == freezed ? _value.address : address as List<SearchString>,
-      address_city: address_city == freezed
-          ? _value.address_city
-          : address_city as List<SearchString>,
-      address_country: address_country == freezed
-          ? _value.address_country
-          : address_country as List<SearchString>,
-      address_postalcode: address_postalcode == freezed
-          ? _value.address_postalcode
-          : address_postalcode as List<SearchString>,
-      address_state: address_state == freezed
-          ? _value.address_state
-          : address_state as List<SearchString>,
-      address_use: address_use == freezed
-          ? _value.address_use
-          : address_use as List<SearchToken>,
+      addressCity: addressCity == freezed
+          ? _value.addressCity
+          : addressCity as List<SearchString>,
+      addressCountry: addressCountry == freezed
+          ? _value.addressCountry
+          : addressCountry as List<SearchString>,
+      addressPostalcode: addressPostalcode == freezed
+          ? _value.addressPostalcode
+          : addressPostalcode as List<SearchString>,
+      addressState: addressState == freezed
+          ? _value.addressState
+          : addressState as List<SearchString>,
+      addressUse: addressUse == freezed
+          ? _value.addressUse
+          : addressUse as List<SearchToken>,
       endpoint: endpoint == freezed
           ? _value.endpoint
           : endpoint as List<SearchReference>,
@@ -1318,9 +1395,9 @@ class __$LocationSearchCopyWithImpl<$Res>
           : identifier as List<SearchToken>,
       name: name == freezed ? _value.name : name as List<SearchString>,
       near: near == freezed ? _value.near : near as List<SearchSpecial>,
-      operational_status: operational_status == freezed
-          ? _value.operational_status
-          : operational_status as List<SearchToken>,
+      operationalStatus: operationalStatus == freezed
+          ? _value.operationalStatus
+          : operationalStatus as List<SearchToken>,
       organization: organization == freezed
           ? _value.organization
           : organization as List<SearchReference>,
@@ -1331,6 +1408,8 @@ class __$LocationSearchCopyWithImpl<$Res>
     ));
   }
 }
+
+@JsonSerializable()
 
 /// @nodoc
 class _$_LocationSearch extends _LocationSearch {
@@ -1344,21 +1423,24 @@ class _$_LocationSearch extends _LocationSearch {
       this.searchContent,
       this.searchList,
       this.address,
-      this.address_city,
-      this.address_country,
-      this.address_postalcode,
-      this.address_state,
-      this.address_use,
+      @JsonKey(name: 'address-city') this.addressCity,
+      @JsonKey(name: 'address-country') this.addressCountry,
+      @JsonKey(name: 'address-postalcode') this.addressPostalcode,
+      @JsonKey(name: 'address-state') this.addressState,
+      @JsonKey(name: 'address-use') this.addressUse,
       this.endpoint,
       this.identifier,
       this.name,
       this.near,
-      this.operational_status,
+      @JsonKey(name: 'operational-status') this.operationalStatus,
       this.organization,
       this.partof,
       this.status,
       this.type})
       : super._();
+
+  factory _$_LocationSearch.fromJson(Map<String, dynamic> json) =>
+      _$_$_LocationSearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -1380,15 +1462,20 @@ class _$_LocationSearch extends _LocationSearch {
 //List<SearchToken> searchType,
   final List<SearchString> address;
   @override
-  final List<SearchString> address_city;
+  @JsonKey(name: 'address-city')
+  final List<SearchString> addressCity;
   @override
-  final List<SearchString> address_country;
+  @JsonKey(name: 'address-country')
+  final List<SearchString> addressCountry;
   @override
-  final List<SearchString> address_postalcode;
+  @JsonKey(name: 'address-postalcode')
+  final List<SearchString> addressPostalcode;
   @override
-  final List<SearchString> address_state;
+  @JsonKey(name: 'address-state')
+  final List<SearchString> addressState;
   @override
-  final List<SearchToken> address_use;
+  @JsonKey(name: 'address-use')
+  final List<SearchToken> addressUse;
   @override
   final List<SearchReference> endpoint;
   @override
@@ -1398,7 +1485,8 @@ class _$_LocationSearch extends _LocationSearch {
   @override
   final List<SearchSpecial> near;
   @override
-  final List<SearchToken> operational_status;
+  @JsonKey(name: 'operational-status')
+  final List<SearchToken> operationalStatus;
   @override
   final List<SearchReference> organization;
   @override
@@ -1410,7 +1498,7 @@ class _$_LocationSearch extends _LocationSearch {
 
   @override
   String toString() {
-    return 'LocationSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, address: $address, address_city: $address_city, address_country: $address_country, address_postalcode: $address_postalcode, address_state: $address_state, address_use: $address_use, endpoint: $endpoint, identifier: $identifier, name: $name, near: $near, operational_status: $operational_status, organization: $organization, partof: $partof, status: $status, type: $type)';
+    return 'LocationSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, address: $address, addressCity: $addressCity, addressCountry: $addressCountry, addressPostalcode: $addressPostalcode, addressState: $addressState, addressUse: $addressUse, endpoint: $endpoint, identifier: $identifier, name: $name, near: $near, operationalStatus: $operationalStatus, organization: $organization, partof: $partof, status: $status, type: $type)';
   }
 
   @override
@@ -1444,21 +1532,21 @@ class _$_LocationSearch extends _LocationSearch {
             (identical(other.address, address) ||
                 const DeepCollectionEquality()
                     .equals(other.address, address)) &&
-            (identical(other.address_city, address_city) ||
+            (identical(other.addressCity, addressCity) ||
                 const DeepCollectionEquality()
-                    .equals(other.address_city, address_city)) &&
-            (identical(other.address_country, address_country) ||
+                    .equals(other.addressCity, addressCity)) &&
+            (identical(other.addressCountry, addressCountry) ||
                 const DeepCollectionEquality()
-                    .equals(other.address_country, address_country)) &&
-            (identical(other.address_postalcode, address_postalcode) ||
+                    .equals(other.addressCountry, addressCountry)) &&
+            (identical(other.addressPostalcode, addressPostalcode) ||
                 const DeepCollectionEquality()
-                    .equals(other.address_postalcode, address_postalcode)) &&
-            (identical(other.address_state, address_state) ||
+                    .equals(other.addressPostalcode, addressPostalcode)) &&
+            (identical(other.addressState, addressState) ||
                 const DeepCollectionEquality()
-                    .equals(other.address_state, address_state)) &&
-            (identical(other.address_use, address_use) ||
+                    .equals(other.addressState, addressState)) &&
+            (identical(other.addressUse, addressUse) ||
                 const DeepCollectionEquality()
-                    .equals(other.address_use, address_use)) &&
+                    .equals(other.addressUse, addressUse)) &&
             (identical(other.endpoint, endpoint) ||
                 const DeepCollectionEquality()
                     .equals(other.endpoint, endpoint)) &&
@@ -1469,9 +1557,9 @@ class _$_LocationSearch extends _LocationSearch {
                 const DeepCollectionEquality().equals(other.name, name)) &&
             (identical(other.near, near) ||
                 const DeepCollectionEquality().equals(other.near, near)) &&
-            (identical(other.operational_status, operational_status) ||
+            (identical(other.operationalStatus, operationalStatus) ||
                 const DeepCollectionEquality()
-                    .equals(other.operational_status, operational_status)) &&
+                    .equals(other.operationalStatus, operationalStatus)) &&
             (identical(other.organization, organization) ||
                 const DeepCollectionEquality()
                     .equals(other.organization, organization)) &&
@@ -1495,16 +1583,16 @@ class _$_LocationSearch extends _LocationSearch {
       const DeepCollectionEquality().hash(searchContent) ^
       const DeepCollectionEquality().hash(searchList) ^
       const DeepCollectionEquality().hash(address) ^
-      const DeepCollectionEquality().hash(address_city) ^
-      const DeepCollectionEquality().hash(address_country) ^
-      const DeepCollectionEquality().hash(address_postalcode) ^
-      const DeepCollectionEquality().hash(address_state) ^
-      const DeepCollectionEquality().hash(address_use) ^
+      const DeepCollectionEquality().hash(addressCity) ^
+      const DeepCollectionEquality().hash(addressCountry) ^
+      const DeepCollectionEquality().hash(addressPostalcode) ^
+      const DeepCollectionEquality().hash(addressState) ^
+      const DeepCollectionEquality().hash(addressUse) ^
       const DeepCollectionEquality().hash(endpoint) ^
       const DeepCollectionEquality().hash(identifier) ^
       const DeepCollectionEquality().hash(name) ^
       const DeepCollectionEquality().hash(near) ^
-      const DeepCollectionEquality().hash(operational_status) ^
+      const DeepCollectionEquality().hash(operationalStatus) ^
       const DeepCollectionEquality().hash(organization) ^
       const DeepCollectionEquality().hash(partof) ^
       const DeepCollectionEquality().hash(status) ^
@@ -1513,6 +1601,11 @@ class _$_LocationSearch extends _LocationSearch {
   @override
   _$LocationSearchCopyWith<_LocationSearch> get copyWith =>
       __$LocationSearchCopyWithImpl<_LocationSearch>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_LocationSearchToJson(this);
+  }
 }
 
 abstract class _LocationSearch extends LocationSearch {
@@ -1527,20 +1620,23 @@ abstract class _LocationSearch extends LocationSearch {
       List<SearchString> searchContent,
       List<Id> searchList,
       List<SearchString> address,
-      List<SearchString> address_city,
-      List<SearchString> address_country,
-      List<SearchString> address_postalcode,
-      List<SearchString> address_state,
-      List<SearchToken> address_use,
+      @JsonKey(name: 'address-city') List<SearchString> addressCity,
+      @JsonKey(name: 'address-country') List<SearchString> addressCountry,
+      @JsonKey(name: 'address-postalcode') List<SearchString> addressPostalcode,
+      @JsonKey(name: 'address-state') List<SearchString> addressState,
+      @JsonKey(name: 'address-use') List<SearchToken> addressUse,
       List<SearchReference> endpoint,
       List<SearchToken> identifier,
       List<SearchString> name,
       List<SearchSpecial> near,
-      List<SearchToken> operational_status,
+      @JsonKey(name: 'operational-status') List<SearchToken> operationalStatus,
       List<SearchReference> organization,
       List<SearchReference> partof,
       List<SearchToken> status,
       List<SearchToken> type}) = _$_LocationSearch;
+
+  factory _LocationSearch.fromJson(Map<String, dynamic> json) =
+      _$_LocationSearch.fromJson;
 
   @override
   List<Id> get searchId;
@@ -1562,15 +1658,20 @@ abstract class _LocationSearch extends LocationSearch {
 //List<SearchToken> searchType,
   List<SearchString> get address;
   @override
-  List<SearchString> get address_city;
+  @JsonKey(name: 'address-city')
+  List<SearchString> get addressCity;
   @override
-  List<SearchString> get address_country;
+  @JsonKey(name: 'address-country')
+  List<SearchString> get addressCountry;
   @override
-  List<SearchString> get address_postalcode;
+  @JsonKey(name: 'address-postalcode')
+  List<SearchString> get addressPostalcode;
   @override
-  List<SearchString> get address_state;
+  @JsonKey(name: 'address-state')
+  List<SearchString> get addressState;
   @override
-  List<SearchToken> get address_use;
+  @JsonKey(name: 'address-use')
+  List<SearchToken> get addressUse;
   @override
   List<SearchReference> get endpoint;
   @override
@@ -1580,7 +1681,8 @@ abstract class _LocationSearch extends LocationSearch {
   @override
   List<SearchSpecial> get near;
   @override
-  List<SearchToken> get operational_status;
+  @JsonKey(name: 'operational-status')
+  List<SearchToken> get operationalStatus;
   @override
   List<SearchReference> get organization;
   @override
@@ -1591,6 +1693,10 @@ abstract class _LocationSearch extends LocationSearch {
   List<SearchToken> get type;
   @override
   _$LocationSearchCopyWith<_LocationSearch> get copyWith;
+}
+
+OrganizationSearch _$OrganizationSearchFromJson(Map<String, dynamic> json) {
+  return _OrganizationSearch.fromJson(json);
 }
 
 /// @nodoc
@@ -1609,11 +1715,11 @@ class _$OrganizationSearchTearOff {
       List<Id> searchList,
       List<SearchToken> active,
       List<SearchString> address,
-      List<SearchString> address_city,
-      List<SearchString> address_country,
-      List<SearchString> address_postalcode,
-      List<SearchString> address_state,
-      List<SearchToken> address_use,
+      @JsonKey(name: 'address-city') List<SearchString> addressCity,
+      @JsonKey(name: 'address-country') List<SearchString> addressCountry,
+      @JsonKey(name: 'address-postalcode') List<SearchString> addressPostalcode,
+      @JsonKey(name: 'address-state') List<SearchString> addressState,
+      @JsonKey(name: 'address-use') List<SearchToken> addressUse,
       List<SearchReference> endpoint,
       List<SearchToken> identifier,
       List<SearchString> name,
@@ -1631,11 +1737,11 @@ class _$OrganizationSearchTearOff {
       searchList: searchList,
       active: active,
       address: address,
-      address_city: address_city,
-      address_country: address_country,
-      address_postalcode: address_postalcode,
-      address_state: address_state,
-      address_use: address_use,
+      addressCity: addressCity,
+      addressCountry: addressCountry,
+      addressPostalcode: addressPostalcode,
+      addressState: addressState,
+      addressUse: addressUse,
       endpoint: endpoint,
       identifier: identifier,
       name: name,
@@ -1643,6 +1749,11 @@ class _$OrganizationSearchTearOff {
       phonetic: phonetic,
       type: type,
     );
+  }
+
+// ignore: unused_element
+  OrganizationSearch fromJson(Map<String, Object> json) {
+    return OrganizationSearch.fromJson(json);
   }
 }
 
@@ -1663,11 +1774,16 @@ mixin _$OrganizationSearch {
 //List<SearchToken> searchType,
   List<SearchToken> get active;
   List<SearchString> get address;
-  List<SearchString> get address_city;
-  List<SearchString> get address_country;
-  List<SearchString> get address_postalcode;
-  List<SearchString> get address_state;
-  List<SearchToken> get address_use;
+  @JsonKey(name: 'address-city')
+  List<SearchString> get addressCity;
+  @JsonKey(name: 'address-country')
+  List<SearchString> get addressCountry;
+  @JsonKey(name: 'address-postalcode')
+  List<SearchString> get addressPostalcode;
+  @JsonKey(name: 'address-state')
+  List<SearchString> get addressState;
+  @JsonKey(name: 'address-use')
+  List<SearchToken> get addressUse;
   List<SearchReference> get endpoint;
   List<SearchToken> get identifier;
   List<SearchString> get name;
@@ -1675,6 +1791,7 @@ mixin _$OrganizationSearch {
   List<SearchString> get phonetic;
   List<SearchToken> get type;
 
+  Map<String, dynamic> toJson();
   $OrganizationSearchCopyWith<OrganizationSearch> get copyWith;
 }
 
@@ -1694,11 +1811,11 @@ abstract class $OrganizationSearchCopyWith<$Res> {
       List<Id> searchList,
       List<SearchToken> active,
       List<SearchString> address,
-      List<SearchString> address_city,
-      List<SearchString> address_country,
-      List<SearchString> address_postalcode,
-      List<SearchString> address_state,
-      List<SearchToken> address_use,
+      @JsonKey(name: 'address-city') List<SearchString> addressCity,
+      @JsonKey(name: 'address-country') List<SearchString> addressCountry,
+      @JsonKey(name: 'address-postalcode') List<SearchString> addressPostalcode,
+      @JsonKey(name: 'address-state') List<SearchString> addressState,
+      @JsonKey(name: 'address-use') List<SearchToken> addressUse,
       List<SearchReference> endpoint,
       List<SearchToken> identifier,
       List<SearchString> name,
@@ -1728,11 +1845,11 @@ class _$OrganizationSearchCopyWithImpl<$Res>
     Object searchList = freezed,
     Object active = freezed,
     Object address = freezed,
-    Object address_city = freezed,
-    Object address_country = freezed,
-    Object address_postalcode = freezed,
-    Object address_state = freezed,
-    Object address_use = freezed,
+    Object addressCity = freezed,
+    Object addressCountry = freezed,
+    Object addressPostalcode = freezed,
+    Object addressState = freezed,
+    Object addressUse = freezed,
     Object endpoint = freezed,
     Object identifier = freezed,
     Object name = freezed,
@@ -1765,21 +1882,21 @@ class _$OrganizationSearchCopyWithImpl<$Res>
       active: active == freezed ? _value.active : active as List<SearchToken>,
       address:
           address == freezed ? _value.address : address as List<SearchString>,
-      address_city: address_city == freezed
-          ? _value.address_city
-          : address_city as List<SearchString>,
-      address_country: address_country == freezed
-          ? _value.address_country
-          : address_country as List<SearchString>,
-      address_postalcode: address_postalcode == freezed
-          ? _value.address_postalcode
-          : address_postalcode as List<SearchString>,
-      address_state: address_state == freezed
-          ? _value.address_state
-          : address_state as List<SearchString>,
-      address_use: address_use == freezed
-          ? _value.address_use
-          : address_use as List<SearchToken>,
+      addressCity: addressCity == freezed
+          ? _value.addressCity
+          : addressCity as List<SearchString>,
+      addressCountry: addressCountry == freezed
+          ? _value.addressCountry
+          : addressCountry as List<SearchString>,
+      addressPostalcode: addressPostalcode == freezed
+          ? _value.addressPostalcode
+          : addressPostalcode as List<SearchString>,
+      addressState: addressState == freezed
+          ? _value.addressState
+          : addressState as List<SearchString>,
+      addressUse: addressUse == freezed
+          ? _value.addressUse
+          : addressUse as List<SearchToken>,
       endpoint: endpoint == freezed
           ? _value.endpoint
           : endpoint as List<SearchReference>,
@@ -1815,11 +1932,11 @@ abstract class _$OrganizationSearchCopyWith<$Res>
       List<Id> searchList,
       List<SearchToken> active,
       List<SearchString> address,
-      List<SearchString> address_city,
-      List<SearchString> address_country,
-      List<SearchString> address_postalcode,
-      List<SearchString> address_state,
-      List<SearchToken> address_use,
+      @JsonKey(name: 'address-city') List<SearchString> addressCity,
+      @JsonKey(name: 'address-country') List<SearchString> addressCountry,
+      @JsonKey(name: 'address-postalcode') List<SearchString> addressPostalcode,
+      @JsonKey(name: 'address-state') List<SearchString> addressState,
+      @JsonKey(name: 'address-use') List<SearchToken> addressUse,
       List<SearchReference> endpoint,
       List<SearchToken> identifier,
       List<SearchString> name,
@@ -1851,11 +1968,11 @@ class __$OrganizationSearchCopyWithImpl<$Res>
     Object searchList = freezed,
     Object active = freezed,
     Object address = freezed,
-    Object address_city = freezed,
-    Object address_country = freezed,
-    Object address_postalcode = freezed,
-    Object address_state = freezed,
-    Object address_use = freezed,
+    Object addressCity = freezed,
+    Object addressCountry = freezed,
+    Object addressPostalcode = freezed,
+    Object addressState = freezed,
+    Object addressUse = freezed,
     Object endpoint = freezed,
     Object identifier = freezed,
     Object name = freezed,
@@ -1888,21 +2005,21 @@ class __$OrganizationSearchCopyWithImpl<$Res>
       active: active == freezed ? _value.active : active as List<SearchToken>,
       address:
           address == freezed ? _value.address : address as List<SearchString>,
-      address_city: address_city == freezed
-          ? _value.address_city
-          : address_city as List<SearchString>,
-      address_country: address_country == freezed
-          ? _value.address_country
-          : address_country as List<SearchString>,
-      address_postalcode: address_postalcode == freezed
-          ? _value.address_postalcode
-          : address_postalcode as List<SearchString>,
-      address_state: address_state == freezed
-          ? _value.address_state
-          : address_state as List<SearchString>,
-      address_use: address_use == freezed
-          ? _value.address_use
-          : address_use as List<SearchToken>,
+      addressCity: addressCity == freezed
+          ? _value.addressCity
+          : addressCity as List<SearchString>,
+      addressCountry: addressCountry == freezed
+          ? _value.addressCountry
+          : addressCountry as List<SearchString>,
+      addressPostalcode: addressPostalcode == freezed
+          ? _value.addressPostalcode
+          : addressPostalcode as List<SearchString>,
+      addressState: addressState == freezed
+          ? _value.addressState
+          : addressState as List<SearchString>,
+      addressUse: addressUse == freezed
+          ? _value.addressUse
+          : addressUse as List<SearchToken>,
       endpoint: endpoint == freezed
           ? _value.endpoint
           : endpoint as List<SearchReference>,
@@ -1920,6 +2037,8 @@ class __$OrganizationSearchCopyWithImpl<$Res>
   }
 }
 
+@JsonSerializable()
+
 /// @nodoc
 class _$_OrganizationSearch extends _OrganizationSearch {
   _$_OrganizationSearch(
@@ -1933,11 +2052,11 @@ class _$_OrganizationSearch extends _OrganizationSearch {
       this.searchList,
       this.active,
       this.address,
-      this.address_city,
-      this.address_country,
-      this.address_postalcode,
-      this.address_state,
-      this.address_use,
+      @JsonKey(name: 'address-city') this.addressCity,
+      @JsonKey(name: 'address-country') this.addressCountry,
+      @JsonKey(name: 'address-postalcode') this.addressPostalcode,
+      @JsonKey(name: 'address-state') this.addressState,
+      @JsonKey(name: 'address-use') this.addressUse,
       this.endpoint,
       this.identifier,
       this.name,
@@ -1945,6 +2064,9 @@ class _$_OrganizationSearch extends _OrganizationSearch {
       this.phonetic,
       this.type})
       : super._();
+
+  factory _$_OrganizationSearch.fromJson(Map<String, dynamic> json) =>
+      _$_$_OrganizationSearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -1968,15 +2090,20 @@ class _$_OrganizationSearch extends _OrganizationSearch {
   @override
   final List<SearchString> address;
   @override
-  final List<SearchString> address_city;
+  @JsonKey(name: 'address-city')
+  final List<SearchString> addressCity;
   @override
-  final List<SearchString> address_country;
+  @JsonKey(name: 'address-country')
+  final List<SearchString> addressCountry;
   @override
-  final List<SearchString> address_postalcode;
+  @JsonKey(name: 'address-postalcode')
+  final List<SearchString> addressPostalcode;
   @override
-  final List<SearchString> address_state;
+  @JsonKey(name: 'address-state')
+  final List<SearchString> addressState;
   @override
-  final List<SearchToken> address_use;
+  @JsonKey(name: 'address-use')
+  final List<SearchToken> addressUse;
   @override
   final List<SearchReference> endpoint;
   @override
@@ -1992,7 +2119,7 @@ class _$_OrganizationSearch extends _OrganizationSearch {
 
   @override
   String toString() {
-    return 'OrganizationSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, active: $active, address: $address, address_city: $address_city, address_country: $address_country, address_postalcode: $address_postalcode, address_state: $address_state, address_use: $address_use, endpoint: $endpoint, identifier: $identifier, name: $name, partof: $partof, phonetic: $phonetic, type: $type)';
+    return 'OrganizationSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, active: $active, address: $address, addressCity: $addressCity, addressCountry: $addressCountry, addressPostalcode: $addressPostalcode, addressState: $addressState, addressUse: $addressUse, endpoint: $endpoint, identifier: $identifier, name: $name, partof: $partof, phonetic: $phonetic, type: $type)';
   }
 
   @override
@@ -2028,21 +2155,21 @@ class _$_OrganizationSearch extends _OrganizationSearch {
             (identical(other.address, address) ||
                 const DeepCollectionEquality()
                     .equals(other.address, address)) &&
-            (identical(other.address_city, address_city) ||
+            (identical(other.addressCity, addressCity) ||
                 const DeepCollectionEquality()
-                    .equals(other.address_city, address_city)) &&
-            (identical(other.address_country, address_country) ||
+                    .equals(other.addressCity, addressCity)) &&
+            (identical(other.addressCountry, addressCountry) ||
                 const DeepCollectionEquality()
-                    .equals(other.address_country, address_country)) &&
-            (identical(other.address_postalcode, address_postalcode) ||
+                    .equals(other.addressCountry, addressCountry)) &&
+            (identical(other.addressPostalcode, addressPostalcode) ||
                 const DeepCollectionEquality()
-                    .equals(other.address_postalcode, address_postalcode)) &&
-            (identical(other.address_state, address_state) ||
+                    .equals(other.addressPostalcode, addressPostalcode)) &&
+            (identical(other.addressState, addressState) ||
                 const DeepCollectionEquality()
-                    .equals(other.address_state, address_state)) &&
-            (identical(other.address_use, address_use) ||
+                    .equals(other.addressState, addressState)) &&
+            (identical(other.addressUse, addressUse) ||
                 const DeepCollectionEquality()
-                    .equals(other.address_use, address_use)) &&
+                    .equals(other.addressUse, addressUse)) &&
             (identical(other.endpoint, endpoint) ||
                 const DeepCollectionEquality()
                     .equals(other.endpoint, endpoint)) &&
@@ -2073,11 +2200,11 @@ class _$_OrganizationSearch extends _OrganizationSearch {
       const DeepCollectionEquality().hash(searchList) ^
       const DeepCollectionEquality().hash(active) ^
       const DeepCollectionEquality().hash(address) ^
-      const DeepCollectionEquality().hash(address_city) ^
-      const DeepCollectionEquality().hash(address_country) ^
-      const DeepCollectionEquality().hash(address_postalcode) ^
-      const DeepCollectionEquality().hash(address_state) ^
-      const DeepCollectionEquality().hash(address_use) ^
+      const DeepCollectionEquality().hash(addressCity) ^
+      const DeepCollectionEquality().hash(addressCountry) ^
+      const DeepCollectionEquality().hash(addressPostalcode) ^
+      const DeepCollectionEquality().hash(addressState) ^
+      const DeepCollectionEquality().hash(addressUse) ^
       const DeepCollectionEquality().hash(endpoint) ^
       const DeepCollectionEquality().hash(identifier) ^
       const DeepCollectionEquality().hash(name) ^
@@ -2088,6 +2215,11 @@ class _$_OrganizationSearch extends _OrganizationSearch {
   @override
   _$OrganizationSearchCopyWith<_OrganizationSearch> get copyWith =>
       __$OrganizationSearchCopyWithImpl<_OrganizationSearch>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_OrganizationSearchToJson(this);
+  }
 }
 
 abstract class _OrganizationSearch extends OrganizationSearch {
@@ -2103,17 +2235,20 @@ abstract class _OrganizationSearch extends OrganizationSearch {
       List<Id> searchList,
       List<SearchToken> active,
       List<SearchString> address,
-      List<SearchString> address_city,
-      List<SearchString> address_country,
-      List<SearchString> address_postalcode,
-      List<SearchString> address_state,
-      List<SearchToken> address_use,
+      @JsonKey(name: 'address-city') List<SearchString> addressCity,
+      @JsonKey(name: 'address-country') List<SearchString> addressCountry,
+      @JsonKey(name: 'address-postalcode') List<SearchString> addressPostalcode,
+      @JsonKey(name: 'address-state') List<SearchString> addressState,
+      @JsonKey(name: 'address-use') List<SearchToken> addressUse,
       List<SearchReference> endpoint,
       List<SearchToken> identifier,
       List<SearchString> name,
       List<SearchReference> partof,
       List<SearchString> phonetic,
       List<SearchToken> type}) = _$_OrganizationSearch;
+
+  factory _OrganizationSearch.fromJson(Map<String, dynamic> json) =
+      _$_OrganizationSearch.fromJson;
 
   @override
   List<Id> get searchId;
@@ -2137,15 +2272,20 @@ abstract class _OrganizationSearch extends OrganizationSearch {
   @override
   List<SearchString> get address;
   @override
-  List<SearchString> get address_city;
+  @JsonKey(name: 'address-city')
+  List<SearchString> get addressCity;
   @override
-  List<SearchString> get address_country;
+  @JsonKey(name: 'address-country')
+  List<SearchString> get addressCountry;
   @override
-  List<SearchString> get address_postalcode;
+  @JsonKey(name: 'address-postalcode')
+  List<SearchString> get addressPostalcode;
   @override
-  List<SearchString> get address_state;
+  @JsonKey(name: 'address-state')
+  List<SearchString> get addressState;
   @override
-  List<SearchToken> get address_use;
+  @JsonKey(name: 'address-use')
+  List<SearchToken> get addressUse;
   @override
   List<SearchReference> get endpoint;
   @override
@@ -2160,6 +2300,11 @@ abstract class _OrganizationSearch extends OrganizationSearch {
   List<SearchToken> get type;
   @override
   _$OrganizationSearchCopyWith<_OrganizationSearch> get copyWith;
+}
+
+OrganizationAffiliationSearch _$OrganizationAffiliationSearchFromJson(
+    Map<String, dynamic> json) {
+  return _OrganizationAffiliationSearch.fromJson(json);
 }
 
 /// @nodoc
@@ -2183,9 +2328,11 @@ class _$OrganizationAffiliationSearchTearOff {
       List<SearchToken> identifier,
       List<SearchReference> location,
       List<SearchReference> network,
-      List<SearchReference> participating_organization,
+      @JsonKey(name: 'participating-organization')
+          List<SearchReference> participatingOrganization,
       List<SearchToken> phone,
-      List<SearchReference> primary_organization,
+      @JsonKey(name: 'primary-organization')
+          List<SearchReference> primaryOrganization,
       List<SearchToken> role,
       List<SearchReference> service,
       List<SearchToken> specialty,
@@ -2206,14 +2353,19 @@ class _$OrganizationAffiliationSearchTearOff {
       identifier: identifier,
       location: location,
       network: network,
-      participating_organization: participating_organization,
+      participatingOrganization: participatingOrganization,
       phone: phone,
-      primary_organization: primary_organization,
+      primaryOrganization: primaryOrganization,
       role: role,
       service: service,
       specialty: specialty,
       telecom: telecom,
     );
+  }
+
+// ignore: unused_element
+  OrganizationAffiliationSearch fromJson(Map<String, Object> json) {
+    return OrganizationAffiliationSearch.fromJson(json);
   }
 }
 
@@ -2239,14 +2391,17 @@ mixin _$OrganizationAffiliationSearch {
   List<SearchToken> get identifier;
   List<SearchReference> get location;
   List<SearchReference> get network;
-  List<SearchReference> get participating_organization;
+  @JsonKey(name: 'participating-organization')
+  List<SearchReference> get participatingOrganization;
   List<SearchToken> get phone;
-  List<SearchReference> get primary_organization;
+  @JsonKey(name: 'primary-organization')
+  List<SearchReference> get primaryOrganization;
   List<SearchToken> get role;
   List<SearchReference> get service;
   List<SearchToken> get specialty;
   List<SearchToken> get telecom;
 
+  Map<String, dynamic> toJson();
   $OrganizationAffiliationSearchCopyWith<OrganizationAffiliationSearch>
       get copyWith;
 }
@@ -2273,9 +2428,11 @@ abstract class $OrganizationAffiliationSearchCopyWith<$Res> {
       List<SearchToken> identifier,
       List<SearchReference> location,
       List<SearchReference> network,
-      List<SearchReference> participating_organization,
+      @JsonKey(name: 'participating-organization')
+          List<SearchReference> participatingOrganization,
       List<SearchToken> phone,
-      List<SearchReference> primary_organization,
+      @JsonKey(name: 'primary-organization')
+          List<SearchReference> primaryOrganization,
       List<SearchToken> role,
       List<SearchReference> service,
       List<SearchToken> specialty,
@@ -2308,9 +2465,9 @@ class _$OrganizationAffiliationSearchCopyWithImpl<$Res>
     Object identifier = freezed,
     Object location = freezed,
     Object network = freezed,
-    Object participating_organization = freezed,
+    Object participatingOrganization = freezed,
     Object phone = freezed,
-    Object primary_organization = freezed,
+    Object primaryOrganization = freezed,
     Object role = freezed,
     Object service = freezed,
     Object specialty = freezed,
@@ -2353,13 +2510,13 @@ class _$OrganizationAffiliationSearchCopyWithImpl<$Res>
       network: network == freezed
           ? _value.network
           : network as List<SearchReference>,
-      participating_organization: participating_organization == freezed
-          ? _value.participating_organization
-          : participating_organization as List<SearchReference>,
+      participatingOrganization: participatingOrganization == freezed
+          ? _value.participatingOrganization
+          : participatingOrganization as List<SearchReference>,
       phone: phone == freezed ? _value.phone : phone as List<SearchToken>,
-      primary_organization: primary_organization == freezed
-          ? _value.primary_organization
-          : primary_organization as List<SearchReference>,
+      primaryOrganization: primaryOrganization == freezed
+          ? _value.primaryOrganization
+          : primaryOrganization as List<SearchReference>,
       role: role == freezed ? _value.role : role as List<SearchToken>,
       service: service == freezed
           ? _value.service
@@ -2397,9 +2554,11 @@ abstract class _$OrganizationAffiliationSearchCopyWith<$Res>
       List<SearchToken> identifier,
       List<SearchReference> location,
       List<SearchReference> network,
-      List<SearchReference> participating_organization,
+      @JsonKey(name: 'participating-organization')
+          List<SearchReference> participatingOrganization,
       List<SearchToken> phone,
-      List<SearchReference> primary_organization,
+      @JsonKey(name: 'primary-organization')
+          List<SearchReference> primaryOrganization,
       List<SearchToken> role,
       List<SearchReference> service,
       List<SearchToken> specialty,
@@ -2436,9 +2595,9 @@ class __$OrganizationAffiliationSearchCopyWithImpl<$Res>
     Object identifier = freezed,
     Object location = freezed,
     Object network = freezed,
-    Object participating_organization = freezed,
+    Object participatingOrganization = freezed,
     Object phone = freezed,
-    Object primary_organization = freezed,
+    Object primaryOrganization = freezed,
     Object role = freezed,
     Object service = freezed,
     Object specialty = freezed,
@@ -2481,13 +2640,13 @@ class __$OrganizationAffiliationSearchCopyWithImpl<$Res>
       network: network == freezed
           ? _value.network
           : network as List<SearchReference>,
-      participating_organization: participating_organization == freezed
-          ? _value.participating_organization
-          : participating_organization as List<SearchReference>,
+      participatingOrganization: participatingOrganization == freezed
+          ? _value.participatingOrganization
+          : participatingOrganization as List<SearchReference>,
       phone: phone == freezed ? _value.phone : phone as List<SearchToken>,
-      primary_organization: primary_organization == freezed
-          ? _value.primary_organization
-          : primary_organization as List<SearchReference>,
+      primaryOrganization: primaryOrganization == freezed
+          ? _value.primaryOrganization
+          : primaryOrganization as List<SearchReference>,
       role: role == freezed ? _value.role : role as List<SearchToken>,
       service: service == freezed
           ? _value.service
@@ -2500,6 +2659,8 @@ class __$OrganizationAffiliationSearchCopyWithImpl<$Res>
     ));
   }
 }
+
+@JsonSerializable()
 
 /// @nodoc
 class _$_OrganizationAffiliationSearch extends _OrganizationAffiliationSearch {
@@ -2519,14 +2680,20 @@ class _$_OrganizationAffiliationSearch extends _OrganizationAffiliationSearch {
       this.identifier,
       this.location,
       this.network,
-      this.participating_organization,
+      @JsonKey(name: 'participating-organization')
+          this.participatingOrganization,
       this.phone,
-      this.primary_organization,
+      @JsonKey(name: 'primary-organization')
+          this.primaryOrganization,
       this.role,
       this.service,
       this.specialty,
       this.telecom})
       : super._();
+
+  factory _$_OrganizationAffiliationSearch.fromJson(
+          Map<String, dynamic> json) =>
+      _$_$_OrganizationAffiliationSearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -2560,11 +2727,13 @@ class _$_OrganizationAffiliationSearch extends _OrganizationAffiliationSearch {
   @override
   final List<SearchReference> network;
   @override
-  final List<SearchReference> participating_organization;
+  @JsonKey(name: 'participating-organization')
+  final List<SearchReference> participatingOrganization;
   @override
   final List<SearchToken> phone;
   @override
-  final List<SearchReference> primary_organization;
+  @JsonKey(name: 'primary-organization')
+  final List<SearchReference> primaryOrganization;
   @override
   final List<SearchToken> role;
   @override
@@ -2576,7 +2745,7 @@ class _$_OrganizationAffiliationSearch extends _OrganizationAffiliationSearch {
 
   @override
   String toString() {
-    return 'OrganizationAffiliationSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, active: $active, date: $date, email: $email, endpoint: $endpoint, identifier: $identifier, location: $location, network: $network, participating_organization: $participating_organization, phone: $phone, primary_organization: $primary_organization, role: $role, service: $service, specialty: $specialty, telecom: $telecom)';
+    return 'OrganizationAffiliationSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, active: $active, date: $date, email: $email, endpoint: $endpoint, identifier: $identifier, location: $location, network: $network, participatingOrganization: $participatingOrganization, phone: $phone, primaryOrganization: $primaryOrganization, role: $role, service: $service, specialty: $specialty, telecom: $telecom)';
   }
 
   @override
@@ -2625,16 +2794,16 @@ class _$_OrganizationAffiliationSearch extends _OrganizationAffiliationSearch {
             (identical(other.network, network) ||
                 const DeepCollectionEquality()
                     .equals(other.network, network)) &&
-            (identical(other.participating_organization,
-                    participating_organization) ||
+            (identical(other.participatingOrganization,
+                    participatingOrganization) ||
                 const DeepCollectionEquality().equals(
-                    other.participating_organization,
-                    participating_organization)) &&
+                    other.participatingOrganization,
+                    participatingOrganization)) &&
             (identical(other.phone, phone) ||
                 const DeepCollectionEquality().equals(other.phone, phone)) &&
-            (identical(other.primary_organization, primary_organization) ||
-                const DeepCollectionEquality().equals(
-                    other.primary_organization, primary_organization)) &&
+            (identical(other.primaryOrganization, primaryOrganization) ||
+                const DeepCollectionEquality()
+                    .equals(other.primaryOrganization, primaryOrganization)) &&
             (identical(other.role, role) ||
                 const DeepCollectionEquality().equals(other.role, role)) &&
             (identical(other.service, service) ||
@@ -2665,9 +2834,9 @@ class _$_OrganizationAffiliationSearch extends _OrganizationAffiliationSearch {
       const DeepCollectionEquality().hash(identifier) ^
       const DeepCollectionEquality().hash(location) ^
       const DeepCollectionEquality().hash(network) ^
-      const DeepCollectionEquality().hash(participating_organization) ^
+      const DeepCollectionEquality().hash(participatingOrganization) ^
       const DeepCollectionEquality().hash(phone) ^
-      const DeepCollectionEquality().hash(primary_organization) ^
+      const DeepCollectionEquality().hash(primaryOrganization) ^
       const DeepCollectionEquality().hash(role) ^
       const DeepCollectionEquality().hash(service) ^
       const DeepCollectionEquality().hash(specialty) ^
@@ -2677,6 +2846,11 @@ class _$_OrganizationAffiliationSearch extends _OrganizationAffiliationSearch {
   _$OrganizationAffiliationSearchCopyWith<_OrganizationAffiliationSearch>
       get copyWith => __$OrganizationAffiliationSearchCopyWithImpl<
           _OrganizationAffiliationSearch>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_OrganizationAffiliationSearchToJson(this);
+  }
 }
 
 abstract class _OrganizationAffiliationSearch
@@ -2698,13 +2872,18 @@ abstract class _OrganizationAffiliationSearch
       List<SearchToken> identifier,
       List<SearchReference> location,
       List<SearchReference> network,
-      List<SearchReference> participating_organization,
+      @JsonKey(name: 'participating-organization')
+          List<SearchReference> participatingOrganization,
       List<SearchToken> phone,
-      List<SearchReference> primary_organization,
+      @JsonKey(name: 'primary-organization')
+          List<SearchReference> primaryOrganization,
       List<SearchToken> role,
       List<SearchReference> service,
       List<SearchToken> specialty,
       List<SearchToken> telecom}) = _$_OrganizationAffiliationSearch;
+
+  factory _OrganizationAffiliationSearch.fromJson(Map<String, dynamic> json) =
+      _$_OrganizationAffiliationSearch.fromJson;
 
   @override
   List<Id> get searchId;
@@ -2738,11 +2917,13 @@ abstract class _OrganizationAffiliationSearch
   @override
   List<SearchReference> get network;
   @override
-  List<SearchReference> get participating_organization;
+  @JsonKey(name: 'participating-organization')
+  List<SearchReference> get participatingOrganization;
   @override
   List<SearchToken> get phone;
   @override
-  List<SearchReference> get primary_organization;
+  @JsonKey(name: 'primary-organization')
+  List<SearchReference> get primaryOrganization;
   @override
   List<SearchToken> get role;
   @override

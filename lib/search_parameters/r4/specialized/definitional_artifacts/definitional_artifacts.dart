@@ -5,6 +5,7 @@ import '../../../search_parameter_types/search_parameter_types.dart';
 import '../../../search_parameters.dart';
 
 part 'definitional_artifacts.freezed.dart';
+part 'definitional_artifacts.g.dart';
 
 @freezed
 abstract class ActivityDefinitionSearch with R4SearchParameters implements _$ActivityDefinitionSearch {
@@ -20,13 +21,13 @@ List<SearchString> searchContent,
 List<Id> searchList,
 //List<SearchString> searchHas,
 //List<SearchToken> searchType,
-List<SearchReference> composed_of,
+@JsonKey(name: 'composed-of') List<SearchReference> composedOf,
 List<SearchToken> context,
-List<SearchQuantity> context_quantity,
-List<SearchToken> context_type,
+@JsonKey(name: 'context-quantity') List<SearchQuantity> contextQuantity,
+@JsonKey(name: 'context-type') List<SearchToken> contextType,
 List<SearchDate> date,
-List<SearchReference> depends_on,
-List<SearchReference> derived_from,
+@JsonKey(name: 'depends-on') List<SearchReference> dependsOn,
+@JsonKey(name: 'derived-from') List<SearchReference> derivedFrom,
 List<SearchString> description,
 List<SearchDate> effective,
 List<SearchToken> identifier,
@@ -40,10 +41,11 @@ List<SearchString> title,
 List<SearchToken> topic,
 List<SearchUri> url,
 List<SearchToken> version,
-List<SearchComposite> context_type_quantity,
-List<SearchComposite> context_type_value,
+@JsonKey(name: 'context-type-quantity') List<SearchComposite> contextTypequantity,
+@JsonKey(name: 'context-type-value') List<SearchComposite> contextTypevalue,
 }) = _ActivityDefinitionSearch;
-}
+
+factory ActivityDefinitionSearch.fromJson(Map<String, dynamic> json) => _$ActivityDefinitionSearchFromJson(json);}
 
 @freezed
 abstract class DeviceDefinitionSearch with R4SearchParameters implements _$DeviceDefinitionSearch {
@@ -63,7 +65,8 @@ List<SearchToken> identifier,
 List<SearchReference> parent,
 List<SearchToken> type,
 }) = _DeviceDefinitionSearch;
-}
+
+factory DeviceDefinitionSearch.fromJson(Map<String, dynamic> json) => _$DeviceDefinitionSearchFromJson(json);}
 
 @freezed
 abstract class EventDefinitionSearch with R4SearchParameters implements _$EventDefinitionSearch {
@@ -79,13 +82,13 @@ List<SearchString> searchContent,
 List<Id> searchList,
 //List<SearchString> searchHas,
 //List<SearchToken> searchType,
-List<SearchReference> composed_of,
+@JsonKey(name: 'composed-of') List<SearchReference> composedOf,
 List<SearchToken> context,
-List<SearchQuantity> context_quantity,
-List<SearchToken> context_type,
+@JsonKey(name: 'context-quantity') List<SearchQuantity> contextQuantity,
+@JsonKey(name: 'context-type') List<SearchToken> contextType,
 List<SearchDate> date,
-List<SearchReference> depends_on,
-List<SearchReference> derived_from,
+@JsonKey(name: 'depends-on') List<SearchReference> dependsOn,
+@JsonKey(name: 'derived-from') List<SearchReference> derivedFrom,
 List<SearchString> description,
 List<SearchDate> effective,
 List<SearchToken> identifier,
@@ -99,10 +102,11 @@ List<SearchString> title,
 List<SearchToken> topic,
 List<SearchUri> url,
 List<SearchToken> version,
-List<SearchComposite> context_type_quantity,
-List<SearchComposite> context_type_value,
+@JsonKey(name: 'context-type-quantity') List<SearchComposite> contextTypequantity,
+@JsonKey(name: 'context-type-value') List<SearchComposite> contextTypevalue,
 }) = _EventDefinitionSearch;
-}
+
+factory EventDefinitionSearch.fromJson(Map<String, dynamic> json) => _$EventDefinitionSearchFromJson(json);}
 
 @freezed
 abstract class PlanDefinitionSearch with R4SearchParameters implements _$PlanDefinitionSearch {
@@ -118,14 +122,14 @@ List<SearchString> searchContent,
 List<Id> searchList,
 //List<SearchString> searchHas,
 //List<SearchToken> searchType,
-List<SearchReference> composed_of,
+@JsonKey(name: 'composed-of') List<SearchReference> composedOf,
 List<SearchToken> context,
-List<SearchQuantity> context_quantity,
-List<SearchToken> context_type,
+@JsonKey(name: 'context-quantity') List<SearchQuantity> contextQuantity,
+@JsonKey(name: 'context-type') List<SearchToken> contextType,
 List<SearchDate> date,
 List<SearchReference> definition,
-List<SearchReference> depends_on,
-List<SearchReference> derived_from,
+@JsonKey(name: 'depends-on') List<SearchReference> dependsOn,
+@JsonKey(name: 'derived-from') List<SearchReference> derivedFrom,
 List<SearchString> description,
 List<SearchDate> effective,
 List<SearchToken> identifier,
@@ -140,10 +144,11 @@ List<SearchToken> topic,
 List<SearchToken> type,
 List<SearchUri> url,
 List<SearchToken> version,
-List<SearchComposite> context_type_quantity,
-List<SearchComposite> context_type_value,
+@JsonKey(name: 'context-type-quantity') List<SearchComposite> contextTypequantity,
+@JsonKey(name: 'context-type-value') List<SearchComposite> contextTypevalue,
 }) = _PlanDefinitionSearch;
-}
+
+factory PlanDefinitionSearch.fromJson(Map<String, dynamic> json) => _$PlanDefinitionSearchFromJson(json);}
 
 @freezed
 abstract class QuestionnaireSearch with R4SearchParameters implements _$QuestionnaireSearch {
@@ -161,8 +166,8 @@ List<Id> searchList,
 //List<SearchToken> searchType,
 List<SearchToken> code,
 List<SearchToken> context,
-List<SearchQuantity> context_quantity,
-List<SearchToken> context_type,
+@JsonKey(name: 'context-quantity') List<SearchQuantity> contextQuantity,
+@JsonKey(name: 'context-type') List<SearchToken> contextType,
 List<SearchDate> date,
 List<SearchUri> definition,
 List<SearchString> description,
@@ -172,14 +177,15 @@ List<SearchToken> jurisdiction,
 List<SearchString> name,
 List<SearchString> publisher,
 List<SearchToken> status,
-List<SearchToken> subject_type,
+@JsonKey(name: 'subject-type') List<SearchToken> subjectType,
 List<SearchString> title,
 List<SearchUri> url,
 List<SearchToken> version,
-List<SearchComposite> context_type_quantity,
-List<SearchComposite> context_type_value,
+@JsonKey(name: 'context-type-quantity') List<SearchComposite> contextTypequantity,
+@JsonKey(name: 'context-type-value') List<SearchComposite> contextTypevalue,
 }) = _QuestionnaireSearch;
-}
+
+factory QuestionnaireSearch.fromJson(Map<String, dynamic> json) => _$QuestionnaireSearchFromJson(json);}
 
 @freezed
 abstract class SpecimenDefinitionSearch with R4SearchParameters implements _$SpecimenDefinitionSearch {
@@ -199,5 +205,6 @@ List<SearchToken> container,
 List<SearchToken> identifier,
 List<SearchToken> type,
 }) = _SpecimenDefinitionSearch;
-}
+
+factory SpecimenDefinitionSearch.fromJson(Map<String, dynamic> json) => _$SpecimenDefinitionSearchFromJson(json);}
 

@@ -8,6 +8,10 @@ part of 'evidence_based_medicine.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
+EffectEvidenceSynthesisSearch _$EffectEvidenceSynthesisSearchFromJson(
+    Map<String, dynamic> json) {
+  return _EffectEvidenceSynthesisSearch.fromJson(json);
+}
 
 /// @nodoc
 class _$EffectEvidenceSynthesisSearchTearOff {
@@ -24,8 +28,10 @@ class _$EffectEvidenceSynthesisSearchTearOff {
       List<SearchString> searchContent,
       List<Id> searchList,
       List<SearchToken> context,
-      List<SearchQuantity> context_quantity,
-      List<SearchToken> context_type,
+      @JsonKey(name: 'context-quantity')
+          List<SearchQuantity> contextQuantity,
+      @JsonKey(name: 'context-type')
+          List<SearchToken> contextType,
       List<SearchDate> date,
       List<SearchString> description,
       List<SearchDate> effective,
@@ -37,8 +43,10 @@ class _$EffectEvidenceSynthesisSearchTearOff {
       List<SearchString> title,
       List<SearchUri> url,
       List<SearchToken> version,
-      List<SearchComposite> context_type_quantity,
-      List<SearchComposite> context_type_value}) {
+      @JsonKey(name: 'context-type-quantity')
+          List<SearchComposite> contextTypequantity,
+      @JsonKey(name: 'context-type-value')
+          List<SearchComposite> contextTypevalue}) {
     return _EffectEvidenceSynthesisSearch(
       searchId: searchId,
       searchLastUpdated: searchLastUpdated,
@@ -49,8 +57,8 @@ class _$EffectEvidenceSynthesisSearchTearOff {
       searchContent: searchContent,
       searchList: searchList,
       context: context,
-      context_quantity: context_quantity,
-      context_type: context_type,
+      contextQuantity: contextQuantity,
+      contextType: contextType,
       date: date,
       description: description,
       effective: effective,
@@ -62,9 +70,14 @@ class _$EffectEvidenceSynthesisSearchTearOff {
       title: title,
       url: url,
       version: version,
-      context_type_quantity: context_type_quantity,
-      context_type_value: context_type_value,
+      contextTypequantity: contextTypequantity,
+      contextTypevalue: contextTypevalue,
     );
+  }
+
+// ignore: unused_element
+  EffectEvidenceSynthesisSearch fromJson(Map<String, Object> json) {
+    return EffectEvidenceSynthesisSearch.fromJson(json);
   }
 }
 
@@ -84,8 +97,10 @@ mixin _$EffectEvidenceSynthesisSearch {
   List<Id> get searchList; //List<SearchString> searchHas,
 //List<SearchToken> searchType,
   List<SearchToken> get context;
-  List<SearchQuantity> get context_quantity;
-  List<SearchToken> get context_type;
+  @JsonKey(name: 'context-quantity')
+  List<SearchQuantity> get contextQuantity;
+  @JsonKey(name: 'context-type')
+  List<SearchToken> get contextType;
   List<SearchDate> get date;
   List<SearchString> get description;
   List<SearchDate> get effective;
@@ -97,9 +112,12 @@ mixin _$EffectEvidenceSynthesisSearch {
   List<SearchString> get title;
   List<SearchUri> get url;
   List<SearchToken> get version;
-  List<SearchComposite> get context_type_quantity;
-  List<SearchComposite> get context_type_value;
+  @JsonKey(name: 'context-type-quantity')
+  List<SearchComposite> get contextTypequantity;
+  @JsonKey(name: 'context-type-value')
+  List<SearchComposite> get contextTypevalue;
 
+  Map<String, dynamic> toJson();
   $EffectEvidenceSynthesisSearchCopyWith<EffectEvidenceSynthesisSearch>
       get copyWith;
 }
@@ -120,8 +138,10 @@ abstract class $EffectEvidenceSynthesisSearchCopyWith<$Res> {
       List<SearchString> searchContent,
       List<Id> searchList,
       List<SearchToken> context,
-      List<SearchQuantity> context_quantity,
-      List<SearchToken> context_type,
+      @JsonKey(name: 'context-quantity')
+          List<SearchQuantity> contextQuantity,
+      @JsonKey(name: 'context-type')
+          List<SearchToken> contextType,
       List<SearchDate> date,
       List<SearchString> description,
       List<SearchDate> effective,
@@ -133,8 +153,10 @@ abstract class $EffectEvidenceSynthesisSearchCopyWith<$Res> {
       List<SearchString> title,
       List<SearchUri> url,
       List<SearchToken> version,
-      List<SearchComposite> context_type_quantity,
-      List<SearchComposite> context_type_value});
+      @JsonKey(name: 'context-type-quantity')
+          List<SearchComposite> contextTypequantity,
+      @JsonKey(name: 'context-type-value')
+          List<SearchComposite> contextTypevalue});
 }
 
 /// @nodoc
@@ -157,8 +179,8 @@ class _$EffectEvidenceSynthesisSearchCopyWithImpl<$Res>
     Object searchContent = freezed,
     Object searchList = freezed,
     Object context = freezed,
-    Object context_quantity = freezed,
-    Object context_type = freezed,
+    Object contextQuantity = freezed,
+    Object contextType = freezed,
     Object date = freezed,
     Object description = freezed,
     Object effective = freezed,
@@ -170,8 +192,8 @@ class _$EffectEvidenceSynthesisSearchCopyWithImpl<$Res>
     Object title = freezed,
     Object url = freezed,
     Object version = freezed,
-    Object context_type_quantity = freezed,
-    Object context_type_value = freezed,
+    Object contextTypequantity = freezed,
+    Object contextTypevalue = freezed,
   }) {
     return _then(_value.copyWith(
       searchId: searchId == freezed ? _value.searchId : searchId as List<Id>,
@@ -197,12 +219,12 @@ class _$EffectEvidenceSynthesisSearchCopyWithImpl<$Res>
           searchList == freezed ? _value.searchList : searchList as List<Id>,
       context:
           context == freezed ? _value.context : context as List<SearchToken>,
-      context_quantity: context_quantity == freezed
-          ? _value.context_quantity
-          : context_quantity as List<SearchQuantity>,
-      context_type: context_type == freezed
-          ? _value.context_type
-          : context_type as List<SearchToken>,
+      contextQuantity: contextQuantity == freezed
+          ? _value.contextQuantity
+          : contextQuantity as List<SearchQuantity>,
+      contextType: contextType == freezed
+          ? _value.contextType
+          : contextType as List<SearchToken>,
       date: date == freezed ? _value.date : date as List<SearchDate>,
       description: description == freezed
           ? _value.description
@@ -225,12 +247,12 @@ class _$EffectEvidenceSynthesisSearchCopyWithImpl<$Res>
       url: url == freezed ? _value.url : url as List<SearchUri>,
       version:
           version == freezed ? _value.version : version as List<SearchToken>,
-      context_type_quantity: context_type_quantity == freezed
-          ? _value.context_type_quantity
-          : context_type_quantity as List<SearchComposite>,
-      context_type_value: context_type_value == freezed
-          ? _value.context_type_value
-          : context_type_value as List<SearchComposite>,
+      contextTypequantity: contextTypequantity == freezed
+          ? _value.contextTypequantity
+          : contextTypequantity as List<SearchComposite>,
+      contextTypevalue: contextTypevalue == freezed
+          ? _value.contextTypevalue
+          : contextTypevalue as List<SearchComposite>,
     ));
   }
 }
@@ -253,8 +275,10 @@ abstract class _$EffectEvidenceSynthesisSearchCopyWith<$Res>
       List<SearchString> searchContent,
       List<Id> searchList,
       List<SearchToken> context,
-      List<SearchQuantity> context_quantity,
-      List<SearchToken> context_type,
+      @JsonKey(name: 'context-quantity')
+          List<SearchQuantity> contextQuantity,
+      @JsonKey(name: 'context-type')
+          List<SearchToken> contextType,
       List<SearchDate> date,
       List<SearchString> description,
       List<SearchDate> effective,
@@ -266,8 +290,10 @@ abstract class _$EffectEvidenceSynthesisSearchCopyWith<$Res>
       List<SearchString> title,
       List<SearchUri> url,
       List<SearchToken> version,
-      List<SearchComposite> context_type_quantity,
-      List<SearchComposite> context_type_value});
+      @JsonKey(name: 'context-type-quantity')
+          List<SearchComposite> contextTypequantity,
+      @JsonKey(name: 'context-type-value')
+          List<SearchComposite> contextTypevalue});
 }
 
 /// @nodoc
@@ -294,8 +320,8 @@ class __$EffectEvidenceSynthesisSearchCopyWithImpl<$Res>
     Object searchContent = freezed,
     Object searchList = freezed,
     Object context = freezed,
-    Object context_quantity = freezed,
-    Object context_type = freezed,
+    Object contextQuantity = freezed,
+    Object contextType = freezed,
     Object date = freezed,
     Object description = freezed,
     Object effective = freezed,
@@ -307,8 +333,8 @@ class __$EffectEvidenceSynthesisSearchCopyWithImpl<$Res>
     Object title = freezed,
     Object url = freezed,
     Object version = freezed,
-    Object context_type_quantity = freezed,
-    Object context_type_value = freezed,
+    Object contextTypequantity = freezed,
+    Object contextTypevalue = freezed,
   }) {
     return _then(_EffectEvidenceSynthesisSearch(
       searchId: searchId == freezed ? _value.searchId : searchId as List<Id>,
@@ -334,12 +360,12 @@ class __$EffectEvidenceSynthesisSearchCopyWithImpl<$Res>
           searchList == freezed ? _value.searchList : searchList as List<Id>,
       context:
           context == freezed ? _value.context : context as List<SearchToken>,
-      context_quantity: context_quantity == freezed
-          ? _value.context_quantity
-          : context_quantity as List<SearchQuantity>,
-      context_type: context_type == freezed
-          ? _value.context_type
-          : context_type as List<SearchToken>,
+      contextQuantity: contextQuantity == freezed
+          ? _value.contextQuantity
+          : contextQuantity as List<SearchQuantity>,
+      contextType: contextType == freezed
+          ? _value.contextType
+          : contextType as List<SearchToken>,
       date: date == freezed ? _value.date : date as List<SearchDate>,
       description: description == freezed
           ? _value.description
@@ -362,15 +388,17 @@ class __$EffectEvidenceSynthesisSearchCopyWithImpl<$Res>
       url: url == freezed ? _value.url : url as List<SearchUri>,
       version:
           version == freezed ? _value.version : version as List<SearchToken>,
-      context_type_quantity: context_type_quantity == freezed
-          ? _value.context_type_quantity
-          : context_type_quantity as List<SearchComposite>,
-      context_type_value: context_type_value == freezed
-          ? _value.context_type_value
-          : context_type_value as List<SearchComposite>,
+      contextTypequantity: contextTypequantity == freezed
+          ? _value.contextTypequantity
+          : contextTypequantity as List<SearchComposite>,
+      contextTypevalue: contextTypevalue == freezed
+          ? _value.contextTypevalue
+          : contextTypevalue as List<SearchComposite>,
     ));
   }
 }
+
+@JsonSerializable()
 
 /// @nodoc
 class _$_EffectEvidenceSynthesisSearch extends _EffectEvidenceSynthesisSearch {
@@ -384,8 +412,8 @@ class _$_EffectEvidenceSynthesisSearch extends _EffectEvidenceSynthesisSearch {
       this.searchContent,
       this.searchList,
       this.context,
-      this.context_quantity,
-      this.context_type,
+      @JsonKey(name: 'context-quantity') this.contextQuantity,
+      @JsonKey(name: 'context-type') this.contextType,
       this.date,
       this.description,
       this.effective,
@@ -397,9 +425,13 @@ class _$_EffectEvidenceSynthesisSearch extends _EffectEvidenceSynthesisSearch {
       this.title,
       this.url,
       this.version,
-      this.context_type_quantity,
-      this.context_type_value})
+      @JsonKey(name: 'context-type-quantity') this.contextTypequantity,
+      @JsonKey(name: 'context-type-value') this.contextTypevalue})
       : super._();
+
+  factory _$_EffectEvidenceSynthesisSearch.fromJson(
+          Map<String, dynamic> json) =>
+      _$_$_EffectEvidenceSynthesisSearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -421,9 +453,11 @@ class _$_EffectEvidenceSynthesisSearch extends _EffectEvidenceSynthesisSearch {
 //List<SearchToken> searchType,
   final List<SearchToken> context;
   @override
-  final List<SearchQuantity> context_quantity;
+  @JsonKey(name: 'context-quantity')
+  final List<SearchQuantity> contextQuantity;
   @override
-  final List<SearchToken> context_type;
+  @JsonKey(name: 'context-type')
+  final List<SearchToken> contextType;
   @override
   final List<SearchDate> date;
   @override
@@ -447,13 +481,15 @@ class _$_EffectEvidenceSynthesisSearch extends _EffectEvidenceSynthesisSearch {
   @override
   final List<SearchToken> version;
   @override
-  final List<SearchComposite> context_type_quantity;
+  @JsonKey(name: 'context-type-quantity')
+  final List<SearchComposite> contextTypequantity;
   @override
-  final List<SearchComposite> context_type_value;
+  @JsonKey(name: 'context-type-value')
+  final List<SearchComposite> contextTypevalue;
 
   @override
   String toString() {
-    return 'EffectEvidenceSynthesisSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, context: $context, context_quantity: $context_quantity, context_type: $context_type, date: $date, description: $description, effective: $effective, identifier: $identifier, jurisdiction: $jurisdiction, name: $name, publisher: $publisher, status: $status, title: $title, url: $url, version: $version, context_type_quantity: $context_type_quantity, context_type_value: $context_type_value)';
+    return 'EffectEvidenceSynthesisSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, context: $context, contextQuantity: $contextQuantity, contextType: $contextType, date: $date, description: $description, effective: $effective, identifier: $identifier, jurisdiction: $jurisdiction, name: $name, publisher: $publisher, status: $status, title: $title, url: $url, version: $version, contextTypequantity: $contextTypequantity, contextTypevalue: $contextTypevalue)';
   }
 
   @override
@@ -487,12 +523,12 @@ class _$_EffectEvidenceSynthesisSearch extends _EffectEvidenceSynthesisSearch {
             (identical(other.context, context) ||
                 const DeepCollectionEquality()
                     .equals(other.context, context)) &&
-            (identical(other.context_quantity, context_quantity) ||
+            (identical(other.contextQuantity, contextQuantity) ||
                 const DeepCollectionEquality()
-                    .equals(other.context_quantity, context_quantity)) &&
-            (identical(other.context_type, context_type) ||
+                    .equals(other.contextQuantity, contextQuantity)) &&
+            (identical(other.contextType, contextType) ||
                 const DeepCollectionEquality()
-                    .equals(other.context_type, context_type)) &&
+                    .equals(other.contextType, contextType)) &&
             (identical(other.date, date) ||
                 const DeepCollectionEquality().equals(other.date, date)) &&
             (identical(other.description, description) ||
@@ -521,12 +557,12 @@ class _$_EffectEvidenceSynthesisSearch extends _EffectEvidenceSynthesisSearch {
             (identical(other.version, version) ||
                 const DeepCollectionEquality()
                     .equals(other.version, version)) &&
-            (identical(other.context_type_quantity, context_type_quantity) ||
-                const DeepCollectionEquality().equals(
-                    other.context_type_quantity, context_type_quantity)) &&
-            (identical(other.context_type_value, context_type_value) ||
+            (identical(other.contextTypequantity, contextTypequantity) ||
                 const DeepCollectionEquality()
-                    .equals(other.context_type_value, context_type_value)));
+                    .equals(other.contextTypequantity, contextTypequantity)) &&
+            (identical(other.contextTypevalue, contextTypevalue) ||
+                const DeepCollectionEquality()
+                    .equals(other.contextTypevalue, contextTypevalue)));
   }
 
   @override
@@ -541,8 +577,8 @@ class _$_EffectEvidenceSynthesisSearch extends _EffectEvidenceSynthesisSearch {
       const DeepCollectionEquality().hash(searchContent) ^
       const DeepCollectionEquality().hash(searchList) ^
       const DeepCollectionEquality().hash(context) ^
-      const DeepCollectionEquality().hash(context_quantity) ^
-      const DeepCollectionEquality().hash(context_type) ^
+      const DeepCollectionEquality().hash(contextQuantity) ^
+      const DeepCollectionEquality().hash(contextType) ^
       const DeepCollectionEquality().hash(date) ^
       const DeepCollectionEquality().hash(description) ^
       const DeepCollectionEquality().hash(effective) ^
@@ -554,13 +590,18 @@ class _$_EffectEvidenceSynthesisSearch extends _EffectEvidenceSynthesisSearch {
       const DeepCollectionEquality().hash(title) ^
       const DeepCollectionEquality().hash(url) ^
       const DeepCollectionEquality().hash(version) ^
-      const DeepCollectionEquality().hash(context_type_quantity) ^
-      const DeepCollectionEquality().hash(context_type_value);
+      const DeepCollectionEquality().hash(contextTypequantity) ^
+      const DeepCollectionEquality().hash(contextTypevalue);
 
   @override
   _$EffectEvidenceSynthesisSearchCopyWith<_EffectEvidenceSynthesisSearch>
       get copyWith => __$EffectEvidenceSynthesisSearchCopyWithImpl<
           _EffectEvidenceSynthesisSearch>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_EffectEvidenceSynthesisSearchToJson(this);
+  }
 }
 
 abstract class _EffectEvidenceSynthesisSearch
@@ -576,8 +617,10 @@ abstract class _EffectEvidenceSynthesisSearch
           List<SearchString> searchContent,
           List<Id> searchList,
           List<SearchToken> context,
-          List<SearchQuantity> context_quantity,
-          List<SearchToken> context_type,
+          @JsonKey(name: 'context-quantity')
+              List<SearchQuantity> contextQuantity,
+          @JsonKey(name: 'context-type')
+              List<SearchToken> contextType,
           List<SearchDate> date,
           List<SearchString> description,
           List<SearchDate> effective,
@@ -589,9 +632,14 @@ abstract class _EffectEvidenceSynthesisSearch
           List<SearchString> title,
           List<SearchUri> url,
           List<SearchToken> version,
-          List<SearchComposite> context_type_quantity,
-          List<SearchComposite> context_type_value}) =
+          @JsonKey(name: 'context-type-quantity')
+              List<SearchComposite> contextTypequantity,
+          @JsonKey(name: 'context-type-value')
+              List<SearchComposite> contextTypevalue}) =
       _$_EffectEvidenceSynthesisSearch;
+
+  factory _EffectEvidenceSynthesisSearch.fromJson(Map<String, dynamic> json) =
+      _$_EffectEvidenceSynthesisSearch.fromJson;
 
   @override
   List<Id> get searchId;
@@ -613,9 +661,11 @@ abstract class _EffectEvidenceSynthesisSearch
 //List<SearchToken> searchType,
   List<SearchToken> get context;
   @override
-  List<SearchQuantity> get context_quantity;
+  @JsonKey(name: 'context-quantity')
+  List<SearchQuantity> get contextQuantity;
   @override
-  List<SearchToken> get context_type;
+  @JsonKey(name: 'context-type')
+  List<SearchToken> get contextType;
   @override
   List<SearchDate> get date;
   @override
@@ -639,12 +689,18 @@ abstract class _EffectEvidenceSynthesisSearch
   @override
   List<SearchToken> get version;
   @override
-  List<SearchComposite> get context_type_quantity;
+  @JsonKey(name: 'context-type-quantity')
+  List<SearchComposite> get contextTypequantity;
   @override
-  List<SearchComposite> get context_type_value;
+  @JsonKey(name: 'context-type-value')
+  List<SearchComposite> get contextTypevalue;
   @override
   _$EffectEvidenceSynthesisSearchCopyWith<_EffectEvidenceSynthesisSearch>
       get copyWith;
+}
+
+EvidenceSearch _$EvidenceSearchFromJson(Map<String, dynamic> json) {
+  return _EvidenceSearch.fromJson(json);
 }
 
 /// @nodoc
@@ -661,13 +717,18 @@ class _$EvidenceSearchTearOff {
       List<SearchString> searchText,
       List<SearchString> searchContent,
       List<Id> searchList,
-      List<SearchReference> composed_of,
+      @JsonKey(name: 'composed-of')
+          List<SearchReference> composedOf,
       List<SearchToken> context,
-      List<SearchQuantity> context_quantity,
-      List<SearchToken> context_type,
+      @JsonKey(name: 'context-quantity')
+          List<SearchQuantity> contextQuantity,
+      @JsonKey(name: 'context-type')
+          List<SearchToken> contextType,
       List<SearchDate> date,
-      List<SearchReference> depends_on,
-      List<SearchReference> derived_from,
+      @JsonKey(name: 'depends-on')
+          List<SearchReference> dependsOn,
+      @JsonKey(name: 'derived-from')
+          List<SearchReference> derivedFrom,
       List<SearchString> description,
       List<SearchDate> effective,
       List<SearchToken> identifier,
@@ -681,8 +742,10 @@ class _$EvidenceSearchTearOff {
       List<SearchToken> topic,
       List<SearchUri> url,
       List<SearchToken> version,
-      List<SearchComposite> context_type_quantity,
-      List<SearchComposite> context_type_value}) {
+      @JsonKey(name: 'context-type-quantity')
+          List<SearchComposite> contextTypequantity,
+      @JsonKey(name: 'context-type-value')
+          List<SearchComposite> contextTypevalue}) {
     return _EvidenceSearch(
       searchId: searchId,
       searchLastUpdated: searchLastUpdated,
@@ -692,13 +755,13 @@ class _$EvidenceSearchTearOff {
       searchText: searchText,
       searchContent: searchContent,
       searchList: searchList,
-      composed_of: composed_of,
+      composedOf: composedOf,
       context: context,
-      context_quantity: context_quantity,
-      context_type: context_type,
+      contextQuantity: contextQuantity,
+      contextType: contextType,
       date: date,
-      depends_on: depends_on,
-      derived_from: derived_from,
+      dependsOn: dependsOn,
+      derivedFrom: derivedFrom,
       description: description,
       effective: effective,
       identifier: identifier,
@@ -712,9 +775,14 @@ class _$EvidenceSearchTearOff {
       topic: topic,
       url: url,
       version: version,
-      context_type_quantity: context_type_quantity,
-      context_type_value: context_type_value,
+      contextTypequantity: contextTypequantity,
+      contextTypevalue: contextTypevalue,
     );
+  }
+
+// ignore: unused_element
+  EvidenceSearch fromJson(Map<String, Object> json) {
+    return EvidenceSearch.fromJson(json);
   }
 }
 
@@ -733,13 +801,18 @@ mixin _$EvidenceSearch {
   List<SearchString> get searchContent;
   List<Id> get searchList; //List<SearchString> searchHas,
 //List<SearchToken> searchType,
-  List<SearchReference> get composed_of;
+  @JsonKey(name: 'composed-of')
+  List<SearchReference> get composedOf;
   List<SearchToken> get context;
-  List<SearchQuantity> get context_quantity;
-  List<SearchToken> get context_type;
+  @JsonKey(name: 'context-quantity')
+  List<SearchQuantity> get contextQuantity;
+  @JsonKey(name: 'context-type')
+  List<SearchToken> get contextType;
   List<SearchDate> get date;
-  List<SearchReference> get depends_on;
-  List<SearchReference> get derived_from;
+  @JsonKey(name: 'depends-on')
+  List<SearchReference> get dependsOn;
+  @JsonKey(name: 'derived-from')
+  List<SearchReference> get derivedFrom;
   List<SearchString> get description;
   List<SearchDate> get effective;
   List<SearchToken> get identifier;
@@ -753,9 +826,12 @@ mixin _$EvidenceSearch {
   List<SearchToken> get topic;
   List<SearchUri> get url;
   List<SearchToken> get version;
-  List<SearchComposite> get context_type_quantity;
-  List<SearchComposite> get context_type_value;
+  @JsonKey(name: 'context-type-quantity')
+  List<SearchComposite> get contextTypequantity;
+  @JsonKey(name: 'context-type-value')
+  List<SearchComposite> get contextTypevalue;
 
+  Map<String, dynamic> toJson();
   $EvidenceSearchCopyWith<EvidenceSearch> get copyWith;
 }
 
@@ -773,13 +849,18 @@ abstract class $EvidenceSearchCopyWith<$Res> {
       List<SearchString> searchText,
       List<SearchString> searchContent,
       List<Id> searchList,
-      List<SearchReference> composed_of,
+      @JsonKey(name: 'composed-of')
+          List<SearchReference> composedOf,
       List<SearchToken> context,
-      List<SearchQuantity> context_quantity,
-      List<SearchToken> context_type,
+      @JsonKey(name: 'context-quantity')
+          List<SearchQuantity> contextQuantity,
+      @JsonKey(name: 'context-type')
+          List<SearchToken> contextType,
       List<SearchDate> date,
-      List<SearchReference> depends_on,
-      List<SearchReference> derived_from,
+      @JsonKey(name: 'depends-on')
+          List<SearchReference> dependsOn,
+      @JsonKey(name: 'derived-from')
+          List<SearchReference> derivedFrom,
       List<SearchString> description,
       List<SearchDate> effective,
       List<SearchToken> identifier,
@@ -793,8 +874,10 @@ abstract class $EvidenceSearchCopyWith<$Res> {
       List<SearchToken> topic,
       List<SearchUri> url,
       List<SearchToken> version,
-      List<SearchComposite> context_type_quantity,
-      List<SearchComposite> context_type_value});
+      @JsonKey(name: 'context-type-quantity')
+          List<SearchComposite> contextTypequantity,
+      @JsonKey(name: 'context-type-value')
+          List<SearchComposite> contextTypevalue});
 }
 
 /// @nodoc
@@ -816,13 +899,13 @@ class _$EvidenceSearchCopyWithImpl<$Res>
     Object searchText = freezed,
     Object searchContent = freezed,
     Object searchList = freezed,
-    Object composed_of = freezed,
+    Object composedOf = freezed,
     Object context = freezed,
-    Object context_quantity = freezed,
-    Object context_type = freezed,
+    Object contextQuantity = freezed,
+    Object contextType = freezed,
     Object date = freezed,
-    Object depends_on = freezed,
-    Object derived_from = freezed,
+    Object dependsOn = freezed,
+    Object derivedFrom = freezed,
     Object description = freezed,
     Object effective = freezed,
     Object identifier = freezed,
@@ -836,8 +919,8 @@ class _$EvidenceSearchCopyWithImpl<$Res>
     Object topic = freezed,
     Object url = freezed,
     Object version = freezed,
-    Object context_type_quantity = freezed,
-    Object context_type_value = freezed,
+    Object contextTypequantity = freezed,
+    Object contextTypevalue = freezed,
   }) {
     return _then(_value.copyWith(
       searchId: searchId == freezed ? _value.searchId : searchId as List<Id>,
@@ -861,24 +944,24 @@ class _$EvidenceSearchCopyWithImpl<$Res>
           : searchContent as List<SearchString>,
       searchList:
           searchList == freezed ? _value.searchList : searchList as List<Id>,
-      composed_of: composed_of == freezed
-          ? _value.composed_of
-          : composed_of as List<SearchReference>,
+      composedOf: composedOf == freezed
+          ? _value.composedOf
+          : composedOf as List<SearchReference>,
       context:
           context == freezed ? _value.context : context as List<SearchToken>,
-      context_quantity: context_quantity == freezed
-          ? _value.context_quantity
-          : context_quantity as List<SearchQuantity>,
-      context_type: context_type == freezed
-          ? _value.context_type
-          : context_type as List<SearchToken>,
+      contextQuantity: contextQuantity == freezed
+          ? _value.contextQuantity
+          : contextQuantity as List<SearchQuantity>,
+      contextType: contextType == freezed
+          ? _value.contextType
+          : contextType as List<SearchToken>,
       date: date == freezed ? _value.date : date as List<SearchDate>,
-      depends_on: depends_on == freezed
-          ? _value.depends_on
-          : depends_on as List<SearchReference>,
-      derived_from: derived_from == freezed
-          ? _value.derived_from
-          : derived_from as List<SearchReference>,
+      dependsOn: dependsOn == freezed
+          ? _value.dependsOn
+          : dependsOn as List<SearchReference>,
+      derivedFrom: derivedFrom == freezed
+          ? _value.derivedFrom
+          : derivedFrom as List<SearchReference>,
       description: description == freezed
           ? _value.description
           : description as List<SearchString>,
@@ -907,12 +990,12 @@ class _$EvidenceSearchCopyWithImpl<$Res>
       url: url == freezed ? _value.url : url as List<SearchUri>,
       version:
           version == freezed ? _value.version : version as List<SearchToken>,
-      context_type_quantity: context_type_quantity == freezed
-          ? _value.context_type_quantity
-          : context_type_quantity as List<SearchComposite>,
-      context_type_value: context_type_value == freezed
-          ? _value.context_type_value
-          : context_type_value as List<SearchComposite>,
+      contextTypequantity: contextTypequantity == freezed
+          ? _value.contextTypequantity
+          : contextTypequantity as List<SearchComposite>,
+      contextTypevalue: contextTypevalue == freezed
+          ? _value.contextTypevalue
+          : contextTypevalue as List<SearchComposite>,
     ));
   }
 }
@@ -933,13 +1016,18 @@ abstract class _$EvidenceSearchCopyWith<$Res>
       List<SearchString> searchText,
       List<SearchString> searchContent,
       List<Id> searchList,
-      List<SearchReference> composed_of,
+      @JsonKey(name: 'composed-of')
+          List<SearchReference> composedOf,
       List<SearchToken> context,
-      List<SearchQuantity> context_quantity,
-      List<SearchToken> context_type,
+      @JsonKey(name: 'context-quantity')
+          List<SearchQuantity> contextQuantity,
+      @JsonKey(name: 'context-type')
+          List<SearchToken> contextType,
       List<SearchDate> date,
-      List<SearchReference> depends_on,
-      List<SearchReference> derived_from,
+      @JsonKey(name: 'depends-on')
+          List<SearchReference> dependsOn,
+      @JsonKey(name: 'derived-from')
+          List<SearchReference> derivedFrom,
       List<SearchString> description,
       List<SearchDate> effective,
       List<SearchToken> identifier,
@@ -953,8 +1041,10 @@ abstract class _$EvidenceSearchCopyWith<$Res>
       List<SearchToken> topic,
       List<SearchUri> url,
       List<SearchToken> version,
-      List<SearchComposite> context_type_quantity,
-      List<SearchComposite> context_type_value});
+      @JsonKey(name: 'context-type-quantity')
+          List<SearchComposite> contextTypequantity,
+      @JsonKey(name: 'context-type-value')
+          List<SearchComposite> contextTypevalue});
 }
 
 /// @nodoc
@@ -978,13 +1068,13 @@ class __$EvidenceSearchCopyWithImpl<$Res>
     Object searchText = freezed,
     Object searchContent = freezed,
     Object searchList = freezed,
-    Object composed_of = freezed,
+    Object composedOf = freezed,
     Object context = freezed,
-    Object context_quantity = freezed,
-    Object context_type = freezed,
+    Object contextQuantity = freezed,
+    Object contextType = freezed,
     Object date = freezed,
-    Object depends_on = freezed,
-    Object derived_from = freezed,
+    Object dependsOn = freezed,
+    Object derivedFrom = freezed,
     Object description = freezed,
     Object effective = freezed,
     Object identifier = freezed,
@@ -998,8 +1088,8 @@ class __$EvidenceSearchCopyWithImpl<$Res>
     Object topic = freezed,
     Object url = freezed,
     Object version = freezed,
-    Object context_type_quantity = freezed,
-    Object context_type_value = freezed,
+    Object contextTypequantity = freezed,
+    Object contextTypevalue = freezed,
   }) {
     return _then(_EvidenceSearch(
       searchId: searchId == freezed ? _value.searchId : searchId as List<Id>,
@@ -1023,24 +1113,24 @@ class __$EvidenceSearchCopyWithImpl<$Res>
           : searchContent as List<SearchString>,
       searchList:
           searchList == freezed ? _value.searchList : searchList as List<Id>,
-      composed_of: composed_of == freezed
-          ? _value.composed_of
-          : composed_of as List<SearchReference>,
+      composedOf: composedOf == freezed
+          ? _value.composedOf
+          : composedOf as List<SearchReference>,
       context:
           context == freezed ? _value.context : context as List<SearchToken>,
-      context_quantity: context_quantity == freezed
-          ? _value.context_quantity
-          : context_quantity as List<SearchQuantity>,
-      context_type: context_type == freezed
-          ? _value.context_type
-          : context_type as List<SearchToken>,
+      contextQuantity: contextQuantity == freezed
+          ? _value.contextQuantity
+          : contextQuantity as List<SearchQuantity>,
+      contextType: contextType == freezed
+          ? _value.contextType
+          : contextType as List<SearchToken>,
       date: date == freezed ? _value.date : date as List<SearchDate>,
-      depends_on: depends_on == freezed
-          ? _value.depends_on
-          : depends_on as List<SearchReference>,
-      derived_from: derived_from == freezed
-          ? _value.derived_from
-          : derived_from as List<SearchReference>,
+      dependsOn: dependsOn == freezed
+          ? _value.dependsOn
+          : dependsOn as List<SearchReference>,
+      derivedFrom: derivedFrom == freezed
+          ? _value.derivedFrom
+          : derivedFrom as List<SearchReference>,
       description: description == freezed
           ? _value.description
           : description as List<SearchString>,
@@ -1069,15 +1159,17 @@ class __$EvidenceSearchCopyWithImpl<$Res>
       url: url == freezed ? _value.url : url as List<SearchUri>,
       version:
           version == freezed ? _value.version : version as List<SearchToken>,
-      context_type_quantity: context_type_quantity == freezed
-          ? _value.context_type_quantity
-          : context_type_quantity as List<SearchComposite>,
-      context_type_value: context_type_value == freezed
-          ? _value.context_type_value
-          : context_type_value as List<SearchComposite>,
+      contextTypequantity: contextTypequantity == freezed
+          ? _value.contextTypequantity
+          : contextTypequantity as List<SearchComposite>,
+      contextTypevalue: contextTypevalue == freezed
+          ? _value.contextTypevalue
+          : contextTypevalue as List<SearchComposite>,
     ));
   }
 }
+
+@JsonSerializable()
 
 /// @nodoc
 class _$_EvidenceSearch extends _EvidenceSearch {
@@ -1090,13 +1182,13 @@ class _$_EvidenceSearch extends _EvidenceSearch {
       this.searchText,
       this.searchContent,
       this.searchList,
-      this.composed_of,
+      @JsonKey(name: 'composed-of') this.composedOf,
       this.context,
-      this.context_quantity,
-      this.context_type,
+      @JsonKey(name: 'context-quantity') this.contextQuantity,
+      @JsonKey(name: 'context-type') this.contextType,
       this.date,
-      this.depends_on,
-      this.derived_from,
+      @JsonKey(name: 'depends-on') this.dependsOn,
+      @JsonKey(name: 'derived-from') this.derivedFrom,
       this.description,
       this.effective,
       this.identifier,
@@ -1110,9 +1202,12 @@ class _$_EvidenceSearch extends _EvidenceSearch {
       this.topic,
       this.url,
       this.version,
-      this.context_type_quantity,
-      this.context_type_value})
+      @JsonKey(name: 'context-type-quantity') this.contextTypequantity,
+      @JsonKey(name: 'context-type-value') this.contextTypevalue})
       : super._();
+
+  factory _$_EvidenceSearch.fromJson(Map<String, dynamic> json) =>
+      _$_$_EvidenceSearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -1132,19 +1227,24 @@ class _$_EvidenceSearch extends _EvidenceSearch {
   final List<Id> searchList;
   @override //List<SearchString> searchHas,
 //List<SearchToken> searchType,
-  final List<SearchReference> composed_of;
+  @JsonKey(name: 'composed-of')
+  final List<SearchReference> composedOf;
   @override
   final List<SearchToken> context;
   @override
-  final List<SearchQuantity> context_quantity;
+  @JsonKey(name: 'context-quantity')
+  final List<SearchQuantity> contextQuantity;
   @override
-  final List<SearchToken> context_type;
+  @JsonKey(name: 'context-type')
+  final List<SearchToken> contextType;
   @override
   final List<SearchDate> date;
   @override
-  final List<SearchReference> depends_on;
+  @JsonKey(name: 'depends-on')
+  final List<SearchReference> dependsOn;
   @override
-  final List<SearchReference> derived_from;
+  @JsonKey(name: 'derived-from')
+  final List<SearchReference> derivedFrom;
   @override
   final List<SearchString> description;
   @override
@@ -1172,13 +1272,15 @@ class _$_EvidenceSearch extends _EvidenceSearch {
   @override
   final List<SearchToken> version;
   @override
-  final List<SearchComposite> context_type_quantity;
+  @JsonKey(name: 'context-type-quantity')
+  final List<SearchComposite> contextTypequantity;
   @override
-  final List<SearchComposite> context_type_value;
+  @JsonKey(name: 'context-type-value')
+  final List<SearchComposite> contextTypevalue;
 
   @override
   String toString() {
-    return 'EvidenceSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, composed_of: $composed_of, context: $context, context_quantity: $context_quantity, context_type: $context_type, date: $date, depends_on: $depends_on, derived_from: $derived_from, description: $description, effective: $effective, identifier: $identifier, jurisdiction: $jurisdiction, name: $name, predecessor: $predecessor, publisher: $publisher, status: $status, successor: $successor, title: $title, topic: $topic, url: $url, version: $version, context_type_quantity: $context_type_quantity, context_type_value: $context_type_value)';
+    return 'EvidenceSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, composedOf: $composedOf, context: $context, contextQuantity: $contextQuantity, contextType: $contextType, date: $date, dependsOn: $dependsOn, derivedFrom: $derivedFrom, description: $description, effective: $effective, identifier: $identifier, jurisdiction: $jurisdiction, name: $name, predecessor: $predecessor, publisher: $publisher, status: $status, successor: $successor, title: $title, topic: $topic, url: $url, version: $version, contextTypequantity: $contextTypequantity, contextTypevalue: $contextTypevalue)';
   }
 
   @override
@@ -1209,26 +1311,26 @@ class _$_EvidenceSearch extends _EvidenceSearch {
             (identical(other.searchList, searchList) ||
                 const DeepCollectionEquality()
                     .equals(other.searchList, searchList)) &&
-            (identical(other.composed_of, composed_of) ||
+            (identical(other.composedOf, composedOf) ||
                 const DeepCollectionEquality()
-                    .equals(other.composed_of, composed_of)) &&
+                    .equals(other.composedOf, composedOf)) &&
             (identical(other.context, context) ||
                 const DeepCollectionEquality()
                     .equals(other.context, context)) &&
-            (identical(other.context_quantity, context_quantity) ||
+            (identical(other.contextQuantity, contextQuantity) ||
                 const DeepCollectionEquality()
-                    .equals(other.context_quantity, context_quantity)) &&
-            (identical(other.context_type, context_type) ||
+                    .equals(other.contextQuantity, contextQuantity)) &&
+            (identical(other.contextType, contextType) ||
                 const DeepCollectionEquality()
-                    .equals(other.context_type, context_type)) &&
+                    .equals(other.contextType, contextType)) &&
             (identical(other.date, date) ||
                 const DeepCollectionEquality().equals(other.date, date)) &&
-            (identical(other.depends_on, depends_on) ||
+            (identical(other.dependsOn, dependsOn) ||
                 const DeepCollectionEquality()
-                    .equals(other.depends_on, depends_on)) &&
-            (identical(other.derived_from, derived_from) ||
+                    .equals(other.dependsOn, dependsOn)) &&
+            (identical(other.derivedFrom, derivedFrom) ||
                 const DeepCollectionEquality()
-                    .equals(other.derived_from, derived_from)) &&
+                    .equals(other.derivedFrom, derivedFrom)) &&
             (identical(other.description, description) ||
                 const DeepCollectionEquality()
                     .equals(other.description, description)) &&
@@ -1256,8 +1358,8 @@ class _$_EvidenceSearch extends _EvidenceSearch {
             (identical(other.topic, topic) || const DeepCollectionEquality().equals(other.topic, topic)) &&
             (identical(other.url, url) || const DeepCollectionEquality().equals(other.url, url)) &&
             (identical(other.version, version) || const DeepCollectionEquality().equals(other.version, version)) &&
-            (identical(other.context_type_quantity, context_type_quantity) || const DeepCollectionEquality().equals(other.context_type_quantity, context_type_quantity)) &&
-            (identical(other.context_type_value, context_type_value) || const DeepCollectionEquality().equals(other.context_type_value, context_type_value)));
+            (identical(other.contextTypequantity, contextTypequantity) || const DeepCollectionEquality().equals(other.contextTypequantity, contextTypequantity)) &&
+            (identical(other.contextTypevalue, contextTypevalue) || const DeepCollectionEquality().equals(other.contextTypevalue, contextTypevalue)));
   }
 
   @override
@@ -1271,13 +1373,13 @@ class _$_EvidenceSearch extends _EvidenceSearch {
       const DeepCollectionEquality().hash(searchText) ^
       const DeepCollectionEquality().hash(searchContent) ^
       const DeepCollectionEquality().hash(searchList) ^
-      const DeepCollectionEquality().hash(composed_of) ^
+      const DeepCollectionEquality().hash(composedOf) ^
       const DeepCollectionEquality().hash(context) ^
-      const DeepCollectionEquality().hash(context_quantity) ^
-      const DeepCollectionEquality().hash(context_type) ^
+      const DeepCollectionEquality().hash(contextQuantity) ^
+      const DeepCollectionEquality().hash(contextType) ^
       const DeepCollectionEquality().hash(date) ^
-      const DeepCollectionEquality().hash(depends_on) ^
-      const DeepCollectionEquality().hash(derived_from) ^
+      const DeepCollectionEquality().hash(dependsOn) ^
+      const DeepCollectionEquality().hash(derivedFrom) ^
       const DeepCollectionEquality().hash(description) ^
       const DeepCollectionEquality().hash(effective) ^
       const DeepCollectionEquality().hash(identifier) ^
@@ -1291,12 +1393,17 @@ class _$_EvidenceSearch extends _EvidenceSearch {
       const DeepCollectionEquality().hash(topic) ^
       const DeepCollectionEquality().hash(url) ^
       const DeepCollectionEquality().hash(version) ^
-      const DeepCollectionEquality().hash(context_type_quantity) ^
-      const DeepCollectionEquality().hash(context_type_value);
+      const DeepCollectionEquality().hash(contextTypequantity) ^
+      const DeepCollectionEquality().hash(contextTypevalue);
 
   @override
   _$EvidenceSearchCopyWith<_EvidenceSearch> get copyWith =>
       __$EvidenceSearchCopyWithImpl<_EvidenceSearch>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_EvidenceSearchToJson(this);
+  }
 }
 
 abstract class _EvidenceSearch extends EvidenceSearch {
@@ -1310,13 +1417,18 @@ abstract class _EvidenceSearch extends EvidenceSearch {
       List<SearchString> searchText,
       List<SearchString> searchContent,
       List<Id> searchList,
-      List<SearchReference> composed_of,
+      @JsonKey(name: 'composed-of')
+          List<SearchReference> composedOf,
       List<SearchToken> context,
-      List<SearchQuantity> context_quantity,
-      List<SearchToken> context_type,
+      @JsonKey(name: 'context-quantity')
+          List<SearchQuantity> contextQuantity,
+      @JsonKey(name: 'context-type')
+          List<SearchToken> contextType,
       List<SearchDate> date,
-      List<SearchReference> depends_on,
-      List<SearchReference> derived_from,
+      @JsonKey(name: 'depends-on')
+          List<SearchReference> dependsOn,
+      @JsonKey(name: 'derived-from')
+          List<SearchReference> derivedFrom,
       List<SearchString> description,
       List<SearchDate> effective,
       List<SearchToken> identifier,
@@ -1330,8 +1442,13 @@ abstract class _EvidenceSearch extends EvidenceSearch {
       List<SearchToken> topic,
       List<SearchUri> url,
       List<SearchToken> version,
-      List<SearchComposite> context_type_quantity,
-      List<SearchComposite> context_type_value}) = _$_EvidenceSearch;
+      @JsonKey(name: 'context-type-quantity')
+          List<SearchComposite> contextTypequantity,
+      @JsonKey(name: 'context-type-value')
+          List<SearchComposite> contextTypevalue}) = _$_EvidenceSearch;
+
+  factory _EvidenceSearch.fromJson(Map<String, dynamic> json) =
+      _$_EvidenceSearch.fromJson;
 
   @override
   List<Id> get searchId;
@@ -1351,19 +1468,24 @@ abstract class _EvidenceSearch extends EvidenceSearch {
   List<Id> get searchList;
   @override //List<SearchString> searchHas,
 //List<SearchToken> searchType,
-  List<SearchReference> get composed_of;
+  @JsonKey(name: 'composed-of')
+  List<SearchReference> get composedOf;
   @override
   List<SearchToken> get context;
   @override
-  List<SearchQuantity> get context_quantity;
+  @JsonKey(name: 'context-quantity')
+  List<SearchQuantity> get contextQuantity;
   @override
-  List<SearchToken> get context_type;
+  @JsonKey(name: 'context-type')
+  List<SearchToken> get contextType;
   @override
   List<SearchDate> get date;
   @override
-  List<SearchReference> get depends_on;
+  @JsonKey(name: 'depends-on')
+  List<SearchReference> get dependsOn;
   @override
-  List<SearchReference> get derived_from;
+  @JsonKey(name: 'derived-from')
+  List<SearchReference> get derivedFrom;
   @override
   List<SearchString> get description;
   @override
@@ -1391,11 +1513,18 @@ abstract class _EvidenceSearch extends EvidenceSearch {
   @override
   List<SearchToken> get version;
   @override
-  List<SearchComposite> get context_type_quantity;
+  @JsonKey(name: 'context-type-quantity')
+  List<SearchComposite> get contextTypequantity;
   @override
-  List<SearchComposite> get context_type_value;
+  @JsonKey(name: 'context-type-value')
+  List<SearchComposite> get contextTypevalue;
   @override
   _$EvidenceSearchCopyWith<_EvidenceSearch> get copyWith;
+}
+
+EvidenceVariableSearch _$EvidenceVariableSearchFromJson(
+    Map<String, dynamic> json) {
+  return _EvidenceVariableSearch.fromJson(json);
 }
 
 /// @nodoc
@@ -1412,13 +1541,18 @@ class _$EvidenceVariableSearchTearOff {
       List<SearchString> searchText,
       List<SearchString> searchContent,
       List<Id> searchList,
-      List<SearchReference> composed_of,
+      @JsonKey(name: 'composed-of')
+          List<SearchReference> composedOf,
       List<SearchToken> context,
-      List<SearchQuantity> context_quantity,
-      List<SearchToken> context_type,
+      @JsonKey(name: 'context-quantity')
+          List<SearchQuantity> contextQuantity,
+      @JsonKey(name: 'context-type')
+          List<SearchToken> contextType,
       List<SearchDate> date,
-      List<SearchReference> depends_on,
-      List<SearchReference> derived_from,
+      @JsonKey(name: 'depends-on')
+          List<SearchReference> dependsOn,
+      @JsonKey(name: 'derived-from')
+          List<SearchReference> derivedFrom,
       List<SearchString> description,
       List<SearchDate> effective,
       List<SearchToken> identifier,
@@ -1432,8 +1566,10 @@ class _$EvidenceVariableSearchTearOff {
       List<SearchToken> topic,
       List<SearchUri> url,
       List<SearchToken> version,
-      List<SearchComposite> context_type_quantity,
-      List<SearchComposite> context_type_value}) {
+      @JsonKey(name: 'context-type-quantity')
+          List<SearchComposite> contextTypequantity,
+      @JsonKey(name: 'context-type-value')
+          List<SearchComposite> contextTypevalue}) {
     return _EvidenceVariableSearch(
       searchId: searchId,
       searchLastUpdated: searchLastUpdated,
@@ -1443,13 +1579,13 @@ class _$EvidenceVariableSearchTearOff {
       searchText: searchText,
       searchContent: searchContent,
       searchList: searchList,
-      composed_of: composed_of,
+      composedOf: composedOf,
       context: context,
-      context_quantity: context_quantity,
-      context_type: context_type,
+      contextQuantity: contextQuantity,
+      contextType: contextType,
       date: date,
-      depends_on: depends_on,
-      derived_from: derived_from,
+      dependsOn: dependsOn,
+      derivedFrom: derivedFrom,
       description: description,
       effective: effective,
       identifier: identifier,
@@ -1463,9 +1599,14 @@ class _$EvidenceVariableSearchTearOff {
       topic: topic,
       url: url,
       version: version,
-      context_type_quantity: context_type_quantity,
-      context_type_value: context_type_value,
+      contextTypequantity: contextTypequantity,
+      contextTypevalue: contextTypevalue,
     );
+  }
+
+// ignore: unused_element
+  EvidenceVariableSearch fromJson(Map<String, Object> json) {
+    return EvidenceVariableSearch.fromJson(json);
   }
 }
 
@@ -1484,13 +1625,18 @@ mixin _$EvidenceVariableSearch {
   List<SearchString> get searchContent;
   List<Id> get searchList; //List<SearchString> searchHas,
 //List<SearchToken> searchType,
-  List<SearchReference> get composed_of;
+  @JsonKey(name: 'composed-of')
+  List<SearchReference> get composedOf;
   List<SearchToken> get context;
-  List<SearchQuantity> get context_quantity;
-  List<SearchToken> get context_type;
+  @JsonKey(name: 'context-quantity')
+  List<SearchQuantity> get contextQuantity;
+  @JsonKey(name: 'context-type')
+  List<SearchToken> get contextType;
   List<SearchDate> get date;
-  List<SearchReference> get depends_on;
-  List<SearchReference> get derived_from;
+  @JsonKey(name: 'depends-on')
+  List<SearchReference> get dependsOn;
+  @JsonKey(name: 'derived-from')
+  List<SearchReference> get derivedFrom;
   List<SearchString> get description;
   List<SearchDate> get effective;
   List<SearchToken> get identifier;
@@ -1504,9 +1650,12 @@ mixin _$EvidenceVariableSearch {
   List<SearchToken> get topic;
   List<SearchUri> get url;
   List<SearchToken> get version;
-  List<SearchComposite> get context_type_quantity;
-  List<SearchComposite> get context_type_value;
+  @JsonKey(name: 'context-type-quantity')
+  List<SearchComposite> get contextTypequantity;
+  @JsonKey(name: 'context-type-value')
+  List<SearchComposite> get contextTypevalue;
 
+  Map<String, dynamic> toJson();
   $EvidenceVariableSearchCopyWith<EvidenceVariableSearch> get copyWith;
 }
 
@@ -1524,13 +1673,18 @@ abstract class $EvidenceVariableSearchCopyWith<$Res> {
       List<SearchString> searchText,
       List<SearchString> searchContent,
       List<Id> searchList,
-      List<SearchReference> composed_of,
+      @JsonKey(name: 'composed-of')
+          List<SearchReference> composedOf,
       List<SearchToken> context,
-      List<SearchQuantity> context_quantity,
-      List<SearchToken> context_type,
+      @JsonKey(name: 'context-quantity')
+          List<SearchQuantity> contextQuantity,
+      @JsonKey(name: 'context-type')
+          List<SearchToken> contextType,
       List<SearchDate> date,
-      List<SearchReference> depends_on,
-      List<SearchReference> derived_from,
+      @JsonKey(name: 'depends-on')
+          List<SearchReference> dependsOn,
+      @JsonKey(name: 'derived-from')
+          List<SearchReference> derivedFrom,
       List<SearchString> description,
       List<SearchDate> effective,
       List<SearchToken> identifier,
@@ -1544,8 +1698,10 @@ abstract class $EvidenceVariableSearchCopyWith<$Res> {
       List<SearchToken> topic,
       List<SearchUri> url,
       List<SearchToken> version,
-      List<SearchComposite> context_type_quantity,
-      List<SearchComposite> context_type_value});
+      @JsonKey(name: 'context-type-quantity')
+          List<SearchComposite> contextTypequantity,
+      @JsonKey(name: 'context-type-value')
+          List<SearchComposite> contextTypevalue});
 }
 
 /// @nodoc
@@ -1567,13 +1723,13 @@ class _$EvidenceVariableSearchCopyWithImpl<$Res>
     Object searchText = freezed,
     Object searchContent = freezed,
     Object searchList = freezed,
-    Object composed_of = freezed,
+    Object composedOf = freezed,
     Object context = freezed,
-    Object context_quantity = freezed,
-    Object context_type = freezed,
+    Object contextQuantity = freezed,
+    Object contextType = freezed,
     Object date = freezed,
-    Object depends_on = freezed,
-    Object derived_from = freezed,
+    Object dependsOn = freezed,
+    Object derivedFrom = freezed,
     Object description = freezed,
     Object effective = freezed,
     Object identifier = freezed,
@@ -1587,8 +1743,8 @@ class _$EvidenceVariableSearchCopyWithImpl<$Res>
     Object topic = freezed,
     Object url = freezed,
     Object version = freezed,
-    Object context_type_quantity = freezed,
-    Object context_type_value = freezed,
+    Object contextTypequantity = freezed,
+    Object contextTypevalue = freezed,
   }) {
     return _then(_value.copyWith(
       searchId: searchId == freezed ? _value.searchId : searchId as List<Id>,
@@ -1612,24 +1768,24 @@ class _$EvidenceVariableSearchCopyWithImpl<$Res>
           : searchContent as List<SearchString>,
       searchList:
           searchList == freezed ? _value.searchList : searchList as List<Id>,
-      composed_of: composed_of == freezed
-          ? _value.composed_of
-          : composed_of as List<SearchReference>,
+      composedOf: composedOf == freezed
+          ? _value.composedOf
+          : composedOf as List<SearchReference>,
       context:
           context == freezed ? _value.context : context as List<SearchToken>,
-      context_quantity: context_quantity == freezed
-          ? _value.context_quantity
-          : context_quantity as List<SearchQuantity>,
-      context_type: context_type == freezed
-          ? _value.context_type
-          : context_type as List<SearchToken>,
+      contextQuantity: contextQuantity == freezed
+          ? _value.contextQuantity
+          : contextQuantity as List<SearchQuantity>,
+      contextType: contextType == freezed
+          ? _value.contextType
+          : contextType as List<SearchToken>,
       date: date == freezed ? _value.date : date as List<SearchDate>,
-      depends_on: depends_on == freezed
-          ? _value.depends_on
-          : depends_on as List<SearchReference>,
-      derived_from: derived_from == freezed
-          ? _value.derived_from
-          : derived_from as List<SearchReference>,
+      dependsOn: dependsOn == freezed
+          ? _value.dependsOn
+          : dependsOn as List<SearchReference>,
+      derivedFrom: derivedFrom == freezed
+          ? _value.derivedFrom
+          : derivedFrom as List<SearchReference>,
       description: description == freezed
           ? _value.description
           : description as List<SearchString>,
@@ -1658,12 +1814,12 @@ class _$EvidenceVariableSearchCopyWithImpl<$Res>
       url: url == freezed ? _value.url : url as List<SearchUri>,
       version:
           version == freezed ? _value.version : version as List<SearchToken>,
-      context_type_quantity: context_type_quantity == freezed
-          ? _value.context_type_quantity
-          : context_type_quantity as List<SearchComposite>,
-      context_type_value: context_type_value == freezed
-          ? _value.context_type_value
-          : context_type_value as List<SearchComposite>,
+      contextTypequantity: contextTypequantity == freezed
+          ? _value.contextTypequantity
+          : contextTypequantity as List<SearchComposite>,
+      contextTypevalue: contextTypevalue == freezed
+          ? _value.contextTypevalue
+          : contextTypevalue as List<SearchComposite>,
     ));
   }
 }
@@ -1684,13 +1840,18 @@ abstract class _$EvidenceVariableSearchCopyWith<$Res>
       List<SearchString> searchText,
       List<SearchString> searchContent,
       List<Id> searchList,
-      List<SearchReference> composed_of,
+      @JsonKey(name: 'composed-of')
+          List<SearchReference> composedOf,
       List<SearchToken> context,
-      List<SearchQuantity> context_quantity,
-      List<SearchToken> context_type,
+      @JsonKey(name: 'context-quantity')
+          List<SearchQuantity> contextQuantity,
+      @JsonKey(name: 'context-type')
+          List<SearchToken> contextType,
       List<SearchDate> date,
-      List<SearchReference> depends_on,
-      List<SearchReference> derived_from,
+      @JsonKey(name: 'depends-on')
+          List<SearchReference> dependsOn,
+      @JsonKey(name: 'derived-from')
+          List<SearchReference> derivedFrom,
       List<SearchString> description,
       List<SearchDate> effective,
       List<SearchToken> identifier,
@@ -1704,8 +1865,10 @@ abstract class _$EvidenceVariableSearchCopyWith<$Res>
       List<SearchToken> topic,
       List<SearchUri> url,
       List<SearchToken> version,
-      List<SearchComposite> context_type_quantity,
-      List<SearchComposite> context_type_value});
+      @JsonKey(name: 'context-type-quantity')
+          List<SearchComposite> contextTypequantity,
+      @JsonKey(name: 'context-type-value')
+          List<SearchComposite> contextTypevalue});
 }
 
 /// @nodoc
@@ -1729,13 +1892,13 @@ class __$EvidenceVariableSearchCopyWithImpl<$Res>
     Object searchText = freezed,
     Object searchContent = freezed,
     Object searchList = freezed,
-    Object composed_of = freezed,
+    Object composedOf = freezed,
     Object context = freezed,
-    Object context_quantity = freezed,
-    Object context_type = freezed,
+    Object contextQuantity = freezed,
+    Object contextType = freezed,
     Object date = freezed,
-    Object depends_on = freezed,
-    Object derived_from = freezed,
+    Object dependsOn = freezed,
+    Object derivedFrom = freezed,
     Object description = freezed,
     Object effective = freezed,
     Object identifier = freezed,
@@ -1749,8 +1912,8 @@ class __$EvidenceVariableSearchCopyWithImpl<$Res>
     Object topic = freezed,
     Object url = freezed,
     Object version = freezed,
-    Object context_type_quantity = freezed,
-    Object context_type_value = freezed,
+    Object contextTypequantity = freezed,
+    Object contextTypevalue = freezed,
   }) {
     return _then(_EvidenceVariableSearch(
       searchId: searchId == freezed ? _value.searchId : searchId as List<Id>,
@@ -1774,24 +1937,24 @@ class __$EvidenceVariableSearchCopyWithImpl<$Res>
           : searchContent as List<SearchString>,
       searchList:
           searchList == freezed ? _value.searchList : searchList as List<Id>,
-      composed_of: composed_of == freezed
-          ? _value.composed_of
-          : composed_of as List<SearchReference>,
+      composedOf: composedOf == freezed
+          ? _value.composedOf
+          : composedOf as List<SearchReference>,
       context:
           context == freezed ? _value.context : context as List<SearchToken>,
-      context_quantity: context_quantity == freezed
-          ? _value.context_quantity
-          : context_quantity as List<SearchQuantity>,
-      context_type: context_type == freezed
-          ? _value.context_type
-          : context_type as List<SearchToken>,
+      contextQuantity: contextQuantity == freezed
+          ? _value.contextQuantity
+          : contextQuantity as List<SearchQuantity>,
+      contextType: contextType == freezed
+          ? _value.contextType
+          : contextType as List<SearchToken>,
       date: date == freezed ? _value.date : date as List<SearchDate>,
-      depends_on: depends_on == freezed
-          ? _value.depends_on
-          : depends_on as List<SearchReference>,
-      derived_from: derived_from == freezed
-          ? _value.derived_from
-          : derived_from as List<SearchReference>,
+      dependsOn: dependsOn == freezed
+          ? _value.dependsOn
+          : dependsOn as List<SearchReference>,
+      derivedFrom: derivedFrom == freezed
+          ? _value.derivedFrom
+          : derivedFrom as List<SearchReference>,
       description: description == freezed
           ? _value.description
           : description as List<SearchString>,
@@ -1820,15 +1983,17 @@ class __$EvidenceVariableSearchCopyWithImpl<$Res>
       url: url == freezed ? _value.url : url as List<SearchUri>,
       version:
           version == freezed ? _value.version : version as List<SearchToken>,
-      context_type_quantity: context_type_quantity == freezed
-          ? _value.context_type_quantity
-          : context_type_quantity as List<SearchComposite>,
-      context_type_value: context_type_value == freezed
-          ? _value.context_type_value
-          : context_type_value as List<SearchComposite>,
+      contextTypequantity: contextTypequantity == freezed
+          ? _value.contextTypequantity
+          : contextTypequantity as List<SearchComposite>,
+      contextTypevalue: contextTypevalue == freezed
+          ? _value.contextTypevalue
+          : contextTypevalue as List<SearchComposite>,
     ));
   }
 }
+
+@JsonSerializable()
 
 /// @nodoc
 class _$_EvidenceVariableSearch extends _EvidenceVariableSearch {
@@ -1841,13 +2006,13 @@ class _$_EvidenceVariableSearch extends _EvidenceVariableSearch {
       this.searchText,
       this.searchContent,
       this.searchList,
-      this.composed_of,
+      @JsonKey(name: 'composed-of') this.composedOf,
       this.context,
-      this.context_quantity,
-      this.context_type,
+      @JsonKey(name: 'context-quantity') this.contextQuantity,
+      @JsonKey(name: 'context-type') this.contextType,
       this.date,
-      this.depends_on,
-      this.derived_from,
+      @JsonKey(name: 'depends-on') this.dependsOn,
+      @JsonKey(name: 'derived-from') this.derivedFrom,
       this.description,
       this.effective,
       this.identifier,
@@ -1861,9 +2026,12 @@ class _$_EvidenceVariableSearch extends _EvidenceVariableSearch {
       this.topic,
       this.url,
       this.version,
-      this.context_type_quantity,
-      this.context_type_value})
+      @JsonKey(name: 'context-type-quantity') this.contextTypequantity,
+      @JsonKey(name: 'context-type-value') this.contextTypevalue})
       : super._();
+
+  factory _$_EvidenceVariableSearch.fromJson(Map<String, dynamic> json) =>
+      _$_$_EvidenceVariableSearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -1883,19 +2051,24 @@ class _$_EvidenceVariableSearch extends _EvidenceVariableSearch {
   final List<Id> searchList;
   @override //List<SearchString> searchHas,
 //List<SearchToken> searchType,
-  final List<SearchReference> composed_of;
+  @JsonKey(name: 'composed-of')
+  final List<SearchReference> composedOf;
   @override
   final List<SearchToken> context;
   @override
-  final List<SearchQuantity> context_quantity;
+  @JsonKey(name: 'context-quantity')
+  final List<SearchQuantity> contextQuantity;
   @override
-  final List<SearchToken> context_type;
+  @JsonKey(name: 'context-type')
+  final List<SearchToken> contextType;
   @override
   final List<SearchDate> date;
   @override
-  final List<SearchReference> depends_on;
+  @JsonKey(name: 'depends-on')
+  final List<SearchReference> dependsOn;
   @override
-  final List<SearchReference> derived_from;
+  @JsonKey(name: 'derived-from')
+  final List<SearchReference> derivedFrom;
   @override
   final List<SearchString> description;
   @override
@@ -1923,13 +2096,15 @@ class _$_EvidenceVariableSearch extends _EvidenceVariableSearch {
   @override
   final List<SearchToken> version;
   @override
-  final List<SearchComposite> context_type_quantity;
+  @JsonKey(name: 'context-type-quantity')
+  final List<SearchComposite> contextTypequantity;
   @override
-  final List<SearchComposite> context_type_value;
+  @JsonKey(name: 'context-type-value')
+  final List<SearchComposite> contextTypevalue;
 
   @override
   String toString() {
-    return 'EvidenceVariableSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, composed_of: $composed_of, context: $context, context_quantity: $context_quantity, context_type: $context_type, date: $date, depends_on: $depends_on, derived_from: $derived_from, description: $description, effective: $effective, identifier: $identifier, jurisdiction: $jurisdiction, name: $name, predecessor: $predecessor, publisher: $publisher, status: $status, successor: $successor, title: $title, topic: $topic, url: $url, version: $version, context_type_quantity: $context_type_quantity, context_type_value: $context_type_value)';
+    return 'EvidenceVariableSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, composedOf: $composedOf, context: $context, contextQuantity: $contextQuantity, contextType: $contextType, date: $date, dependsOn: $dependsOn, derivedFrom: $derivedFrom, description: $description, effective: $effective, identifier: $identifier, jurisdiction: $jurisdiction, name: $name, predecessor: $predecessor, publisher: $publisher, status: $status, successor: $successor, title: $title, topic: $topic, url: $url, version: $version, contextTypequantity: $contextTypequantity, contextTypevalue: $contextTypevalue)';
   }
 
   @override
@@ -1960,26 +2135,26 @@ class _$_EvidenceVariableSearch extends _EvidenceVariableSearch {
             (identical(other.searchList, searchList) ||
                 const DeepCollectionEquality()
                     .equals(other.searchList, searchList)) &&
-            (identical(other.composed_of, composed_of) ||
+            (identical(other.composedOf, composedOf) ||
                 const DeepCollectionEquality()
-                    .equals(other.composed_of, composed_of)) &&
+                    .equals(other.composedOf, composedOf)) &&
             (identical(other.context, context) ||
                 const DeepCollectionEquality()
                     .equals(other.context, context)) &&
-            (identical(other.context_quantity, context_quantity) ||
+            (identical(other.contextQuantity, contextQuantity) ||
                 const DeepCollectionEquality()
-                    .equals(other.context_quantity, context_quantity)) &&
-            (identical(other.context_type, context_type) ||
+                    .equals(other.contextQuantity, contextQuantity)) &&
+            (identical(other.contextType, contextType) ||
                 const DeepCollectionEquality()
-                    .equals(other.context_type, context_type)) &&
+                    .equals(other.contextType, contextType)) &&
             (identical(other.date, date) ||
                 const DeepCollectionEquality().equals(other.date, date)) &&
-            (identical(other.depends_on, depends_on) ||
+            (identical(other.dependsOn, dependsOn) ||
                 const DeepCollectionEquality()
-                    .equals(other.depends_on, depends_on)) &&
-            (identical(other.derived_from, derived_from) ||
+                    .equals(other.dependsOn, dependsOn)) &&
+            (identical(other.derivedFrom, derivedFrom) ||
                 const DeepCollectionEquality()
-                    .equals(other.derived_from, derived_from)) &&
+                    .equals(other.derivedFrom, derivedFrom)) &&
             (identical(other.description, description) ||
                 const DeepCollectionEquality()
                     .equals(other.description, description)) &&
@@ -2007,8 +2182,8 @@ class _$_EvidenceVariableSearch extends _EvidenceVariableSearch {
             (identical(other.topic, topic) || const DeepCollectionEquality().equals(other.topic, topic)) &&
             (identical(other.url, url) || const DeepCollectionEquality().equals(other.url, url)) &&
             (identical(other.version, version) || const DeepCollectionEquality().equals(other.version, version)) &&
-            (identical(other.context_type_quantity, context_type_quantity) || const DeepCollectionEquality().equals(other.context_type_quantity, context_type_quantity)) &&
-            (identical(other.context_type_value, context_type_value) || const DeepCollectionEquality().equals(other.context_type_value, context_type_value)));
+            (identical(other.contextTypequantity, contextTypequantity) || const DeepCollectionEquality().equals(other.contextTypequantity, contextTypequantity)) &&
+            (identical(other.contextTypevalue, contextTypevalue) || const DeepCollectionEquality().equals(other.contextTypevalue, contextTypevalue)));
   }
 
   @override
@@ -2022,13 +2197,13 @@ class _$_EvidenceVariableSearch extends _EvidenceVariableSearch {
       const DeepCollectionEquality().hash(searchText) ^
       const DeepCollectionEquality().hash(searchContent) ^
       const DeepCollectionEquality().hash(searchList) ^
-      const DeepCollectionEquality().hash(composed_of) ^
+      const DeepCollectionEquality().hash(composedOf) ^
       const DeepCollectionEquality().hash(context) ^
-      const DeepCollectionEquality().hash(context_quantity) ^
-      const DeepCollectionEquality().hash(context_type) ^
+      const DeepCollectionEquality().hash(contextQuantity) ^
+      const DeepCollectionEquality().hash(contextType) ^
       const DeepCollectionEquality().hash(date) ^
-      const DeepCollectionEquality().hash(depends_on) ^
-      const DeepCollectionEquality().hash(derived_from) ^
+      const DeepCollectionEquality().hash(dependsOn) ^
+      const DeepCollectionEquality().hash(derivedFrom) ^
       const DeepCollectionEquality().hash(description) ^
       const DeepCollectionEquality().hash(effective) ^
       const DeepCollectionEquality().hash(identifier) ^
@@ -2042,13 +2217,18 @@ class _$_EvidenceVariableSearch extends _EvidenceVariableSearch {
       const DeepCollectionEquality().hash(topic) ^
       const DeepCollectionEquality().hash(url) ^
       const DeepCollectionEquality().hash(version) ^
-      const DeepCollectionEquality().hash(context_type_quantity) ^
-      const DeepCollectionEquality().hash(context_type_value);
+      const DeepCollectionEquality().hash(contextTypequantity) ^
+      const DeepCollectionEquality().hash(contextTypevalue);
 
   @override
   _$EvidenceVariableSearchCopyWith<_EvidenceVariableSearch> get copyWith =>
       __$EvidenceVariableSearchCopyWithImpl<_EvidenceVariableSearch>(
           this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_EvidenceVariableSearchToJson(this);
+  }
 }
 
 abstract class _EvidenceVariableSearch extends EvidenceVariableSearch {
@@ -2062,13 +2242,18 @@ abstract class _EvidenceVariableSearch extends EvidenceVariableSearch {
       List<SearchString> searchText,
       List<SearchString> searchContent,
       List<Id> searchList,
-      List<SearchReference> composed_of,
+      @JsonKey(name: 'composed-of')
+          List<SearchReference> composedOf,
       List<SearchToken> context,
-      List<SearchQuantity> context_quantity,
-      List<SearchToken> context_type,
+      @JsonKey(name: 'context-quantity')
+          List<SearchQuantity> contextQuantity,
+      @JsonKey(name: 'context-type')
+          List<SearchToken> contextType,
       List<SearchDate> date,
-      List<SearchReference> depends_on,
-      List<SearchReference> derived_from,
+      @JsonKey(name: 'depends-on')
+          List<SearchReference> dependsOn,
+      @JsonKey(name: 'derived-from')
+          List<SearchReference> derivedFrom,
       List<SearchString> description,
       List<SearchDate> effective,
       List<SearchToken> identifier,
@@ -2082,8 +2267,13 @@ abstract class _EvidenceVariableSearch extends EvidenceVariableSearch {
       List<SearchToken> topic,
       List<SearchUri> url,
       List<SearchToken> version,
-      List<SearchComposite> context_type_quantity,
-      List<SearchComposite> context_type_value}) = _$_EvidenceVariableSearch;
+      @JsonKey(name: 'context-type-quantity')
+          List<SearchComposite> contextTypequantity,
+      @JsonKey(name: 'context-type-value')
+          List<SearchComposite> contextTypevalue}) = _$_EvidenceVariableSearch;
+
+  factory _EvidenceVariableSearch.fromJson(Map<String, dynamic> json) =
+      _$_EvidenceVariableSearch.fromJson;
 
   @override
   List<Id> get searchId;
@@ -2103,19 +2293,24 @@ abstract class _EvidenceVariableSearch extends EvidenceVariableSearch {
   List<Id> get searchList;
   @override //List<SearchString> searchHas,
 //List<SearchToken> searchType,
-  List<SearchReference> get composed_of;
+  @JsonKey(name: 'composed-of')
+  List<SearchReference> get composedOf;
   @override
   List<SearchToken> get context;
   @override
-  List<SearchQuantity> get context_quantity;
+  @JsonKey(name: 'context-quantity')
+  List<SearchQuantity> get contextQuantity;
   @override
-  List<SearchToken> get context_type;
+  @JsonKey(name: 'context-type')
+  List<SearchToken> get contextType;
   @override
   List<SearchDate> get date;
   @override
-  List<SearchReference> get depends_on;
+  @JsonKey(name: 'depends-on')
+  List<SearchReference> get dependsOn;
   @override
-  List<SearchReference> get derived_from;
+  @JsonKey(name: 'derived-from')
+  List<SearchReference> get derivedFrom;
   @override
   List<SearchString> get description;
   @override
@@ -2143,11 +2338,18 @@ abstract class _EvidenceVariableSearch extends EvidenceVariableSearch {
   @override
   List<SearchToken> get version;
   @override
-  List<SearchComposite> get context_type_quantity;
+  @JsonKey(name: 'context-type-quantity')
+  List<SearchComposite> get contextTypequantity;
   @override
-  List<SearchComposite> get context_type_value;
+  @JsonKey(name: 'context-type-value')
+  List<SearchComposite> get contextTypevalue;
   @override
   _$EvidenceVariableSearchCopyWith<_EvidenceVariableSearch> get copyWith;
+}
+
+ResearchDefinitionSearch _$ResearchDefinitionSearchFromJson(
+    Map<String, dynamic> json) {
+  return _ResearchDefinitionSearch.fromJson(json);
 }
 
 /// @nodoc
@@ -2164,13 +2366,18 @@ class _$ResearchDefinitionSearchTearOff {
       List<SearchString> searchText,
       List<SearchString> searchContent,
       List<Id> searchList,
-      List<SearchReference> composed_of,
+      @JsonKey(name: 'composed-of')
+          List<SearchReference> composedOf,
       List<SearchToken> context,
-      List<SearchQuantity> context_quantity,
-      List<SearchToken> context_type,
+      @JsonKey(name: 'context-quantity')
+          List<SearchQuantity> contextQuantity,
+      @JsonKey(name: 'context-type')
+          List<SearchToken> contextType,
       List<SearchDate> date,
-      List<SearchReference> depends_on,
-      List<SearchReference> derived_from,
+      @JsonKey(name: 'depends-on')
+          List<SearchReference> dependsOn,
+      @JsonKey(name: 'derived-from')
+          List<SearchReference> derivedFrom,
       List<SearchString> description,
       List<SearchDate> effective,
       List<SearchToken> identifier,
@@ -2184,8 +2391,10 @@ class _$ResearchDefinitionSearchTearOff {
       List<SearchToken> topic,
       List<SearchUri> url,
       List<SearchToken> version,
-      List<SearchComposite> context_type_quantity,
-      List<SearchComposite> context_type_value}) {
+      @JsonKey(name: 'context-type-quantity')
+          List<SearchComposite> contextTypequantity,
+      @JsonKey(name: 'context-type-value')
+          List<SearchComposite> contextTypevalue}) {
     return _ResearchDefinitionSearch(
       searchId: searchId,
       searchLastUpdated: searchLastUpdated,
@@ -2195,13 +2404,13 @@ class _$ResearchDefinitionSearchTearOff {
       searchText: searchText,
       searchContent: searchContent,
       searchList: searchList,
-      composed_of: composed_of,
+      composedOf: composedOf,
       context: context,
-      context_quantity: context_quantity,
-      context_type: context_type,
+      contextQuantity: contextQuantity,
+      contextType: contextType,
       date: date,
-      depends_on: depends_on,
-      derived_from: derived_from,
+      dependsOn: dependsOn,
+      derivedFrom: derivedFrom,
       description: description,
       effective: effective,
       identifier: identifier,
@@ -2215,9 +2424,14 @@ class _$ResearchDefinitionSearchTearOff {
       topic: topic,
       url: url,
       version: version,
-      context_type_quantity: context_type_quantity,
-      context_type_value: context_type_value,
+      contextTypequantity: contextTypequantity,
+      contextTypevalue: contextTypevalue,
     );
+  }
+
+// ignore: unused_element
+  ResearchDefinitionSearch fromJson(Map<String, Object> json) {
+    return ResearchDefinitionSearch.fromJson(json);
   }
 }
 
@@ -2236,13 +2450,18 @@ mixin _$ResearchDefinitionSearch {
   List<SearchString> get searchContent;
   List<Id> get searchList; //List<SearchString> searchHas,
 //List<SearchToken> searchType,
-  List<SearchReference> get composed_of;
+  @JsonKey(name: 'composed-of')
+  List<SearchReference> get composedOf;
   List<SearchToken> get context;
-  List<SearchQuantity> get context_quantity;
-  List<SearchToken> get context_type;
+  @JsonKey(name: 'context-quantity')
+  List<SearchQuantity> get contextQuantity;
+  @JsonKey(name: 'context-type')
+  List<SearchToken> get contextType;
   List<SearchDate> get date;
-  List<SearchReference> get depends_on;
-  List<SearchReference> get derived_from;
+  @JsonKey(name: 'depends-on')
+  List<SearchReference> get dependsOn;
+  @JsonKey(name: 'derived-from')
+  List<SearchReference> get derivedFrom;
   List<SearchString> get description;
   List<SearchDate> get effective;
   List<SearchToken> get identifier;
@@ -2256,9 +2475,12 @@ mixin _$ResearchDefinitionSearch {
   List<SearchToken> get topic;
   List<SearchUri> get url;
   List<SearchToken> get version;
-  List<SearchComposite> get context_type_quantity;
-  List<SearchComposite> get context_type_value;
+  @JsonKey(name: 'context-type-quantity')
+  List<SearchComposite> get contextTypequantity;
+  @JsonKey(name: 'context-type-value')
+  List<SearchComposite> get contextTypevalue;
 
+  Map<String, dynamic> toJson();
   $ResearchDefinitionSearchCopyWith<ResearchDefinitionSearch> get copyWith;
 }
 
@@ -2276,13 +2498,18 @@ abstract class $ResearchDefinitionSearchCopyWith<$Res> {
       List<SearchString> searchText,
       List<SearchString> searchContent,
       List<Id> searchList,
-      List<SearchReference> composed_of,
+      @JsonKey(name: 'composed-of')
+          List<SearchReference> composedOf,
       List<SearchToken> context,
-      List<SearchQuantity> context_quantity,
-      List<SearchToken> context_type,
+      @JsonKey(name: 'context-quantity')
+          List<SearchQuantity> contextQuantity,
+      @JsonKey(name: 'context-type')
+          List<SearchToken> contextType,
       List<SearchDate> date,
-      List<SearchReference> depends_on,
-      List<SearchReference> derived_from,
+      @JsonKey(name: 'depends-on')
+          List<SearchReference> dependsOn,
+      @JsonKey(name: 'derived-from')
+          List<SearchReference> derivedFrom,
       List<SearchString> description,
       List<SearchDate> effective,
       List<SearchToken> identifier,
@@ -2296,8 +2523,10 @@ abstract class $ResearchDefinitionSearchCopyWith<$Res> {
       List<SearchToken> topic,
       List<SearchUri> url,
       List<SearchToken> version,
-      List<SearchComposite> context_type_quantity,
-      List<SearchComposite> context_type_value});
+      @JsonKey(name: 'context-type-quantity')
+          List<SearchComposite> contextTypequantity,
+      @JsonKey(name: 'context-type-value')
+          List<SearchComposite> contextTypevalue});
 }
 
 /// @nodoc
@@ -2319,13 +2548,13 @@ class _$ResearchDefinitionSearchCopyWithImpl<$Res>
     Object searchText = freezed,
     Object searchContent = freezed,
     Object searchList = freezed,
-    Object composed_of = freezed,
+    Object composedOf = freezed,
     Object context = freezed,
-    Object context_quantity = freezed,
-    Object context_type = freezed,
+    Object contextQuantity = freezed,
+    Object contextType = freezed,
     Object date = freezed,
-    Object depends_on = freezed,
-    Object derived_from = freezed,
+    Object dependsOn = freezed,
+    Object derivedFrom = freezed,
     Object description = freezed,
     Object effective = freezed,
     Object identifier = freezed,
@@ -2339,8 +2568,8 @@ class _$ResearchDefinitionSearchCopyWithImpl<$Res>
     Object topic = freezed,
     Object url = freezed,
     Object version = freezed,
-    Object context_type_quantity = freezed,
-    Object context_type_value = freezed,
+    Object contextTypequantity = freezed,
+    Object contextTypevalue = freezed,
   }) {
     return _then(_value.copyWith(
       searchId: searchId == freezed ? _value.searchId : searchId as List<Id>,
@@ -2364,24 +2593,24 @@ class _$ResearchDefinitionSearchCopyWithImpl<$Res>
           : searchContent as List<SearchString>,
       searchList:
           searchList == freezed ? _value.searchList : searchList as List<Id>,
-      composed_of: composed_of == freezed
-          ? _value.composed_of
-          : composed_of as List<SearchReference>,
+      composedOf: composedOf == freezed
+          ? _value.composedOf
+          : composedOf as List<SearchReference>,
       context:
           context == freezed ? _value.context : context as List<SearchToken>,
-      context_quantity: context_quantity == freezed
-          ? _value.context_quantity
-          : context_quantity as List<SearchQuantity>,
-      context_type: context_type == freezed
-          ? _value.context_type
-          : context_type as List<SearchToken>,
+      contextQuantity: contextQuantity == freezed
+          ? _value.contextQuantity
+          : contextQuantity as List<SearchQuantity>,
+      contextType: contextType == freezed
+          ? _value.contextType
+          : contextType as List<SearchToken>,
       date: date == freezed ? _value.date : date as List<SearchDate>,
-      depends_on: depends_on == freezed
-          ? _value.depends_on
-          : depends_on as List<SearchReference>,
-      derived_from: derived_from == freezed
-          ? _value.derived_from
-          : derived_from as List<SearchReference>,
+      dependsOn: dependsOn == freezed
+          ? _value.dependsOn
+          : dependsOn as List<SearchReference>,
+      derivedFrom: derivedFrom == freezed
+          ? _value.derivedFrom
+          : derivedFrom as List<SearchReference>,
       description: description == freezed
           ? _value.description
           : description as List<SearchString>,
@@ -2410,12 +2639,12 @@ class _$ResearchDefinitionSearchCopyWithImpl<$Res>
       url: url == freezed ? _value.url : url as List<SearchUri>,
       version:
           version == freezed ? _value.version : version as List<SearchToken>,
-      context_type_quantity: context_type_quantity == freezed
-          ? _value.context_type_quantity
-          : context_type_quantity as List<SearchComposite>,
-      context_type_value: context_type_value == freezed
-          ? _value.context_type_value
-          : context_type_value as List<SearchComposite>,
+      contextTypequantity: contextTypequantity == freezed
+          ? _value.contextTypequantity
+          : contextTypequantity as List<SearchComposite>,
+      contextTypevalue: contextTypevalue == freezed
+          ? _value.contextTypevalue
+          : contextTypevalue as List<SearchComposite>,
     ));
   }
 }
@@ -2436,13 +2665,18 @@ abstract class _$ResearchDefinitionSearchCopyWith<$Res>
       List<SearchString> searchText,
       List<SearchString> searchContent,
       List<Id> searchList,
-      List<SearchReference> composed_of,
+      @JsonKey(name: 'composed-of')
+          List<SearchReference> composedOf,
       List<SearchToken> context,
-      List<SearchQuantity> context_quantity,
-      List<SearchToken> context_type,
+      @JsonKey(name: 'context-quantity')
+          List<SearchQuantity> contextQuantity,
+      @JsonKey(name: 'context-type')
+          List<SearchToken> contextType,
       List<SearchDate> date,
-      List<SearchReference> depends_on,
-      List<SearchReference> derived_from,
+      @JsonKey(name: 'depends-on')
+          List<SearchReference> dependsOn,
+      @JsonKey(name: 'derived-from')
+          List<SearchReference> derivedFrom,
       List<SearchString> description,
       List<SearchDate> effective,
       List<SearchToken> identifier,
@@ -2456,8 +2690,10 @@ abstract class _$ResearchDefinitionSearchCopyWith<$Res>
       List<SearchToken> topic,
       List<SearchUri> url,
       List<SearchToken> version,
-      List<SearchComposite> context_type_quantity,
-      List<SearchComposite> context_type_value});
+      @JsonKey(name: 'context-type-quantity')
+          List<SearchComposite> contextTypequantity,
+      @JsonKey(name: 'context-type-value')
+          List<SearchComposite> contextTypevalue});
 }
 
 /// @nodoc
@@ -2482,13 +2718,13 @@ class __$ResearchDefinitionSearchCopyWithImpl<$Res>
     Object searchText = freezed,
     Object searchContent = freezed,
     Object searchList = freezed,
-    Object composed_of = freezed,
+    Object composedOf = freezed,
     Object context = freezed,
-    Object context_quantity = freezed,
-    Object context_type = freezed,
+    Object contextQuantity = freezed,
+    Object contextType = freezed,
     Object date = freezed,
-    Object depends_on = freezed,
-    Object derived_from = freezed,
+    Object dependsOn = freezed,
+    Object derivedFrom = freezed,
     Object description = freezed,
     Object effective = freezed,
     Object identifier = freezed,
@@ -2502,8 +2738,8 @@ class __$ResearchDefinitionSearchCopyWithImpl<$Res>
     Object topic = freezed,
     Object url = freezed,
     Object version = freezed,
-    Object context_type_quantity = freezed,
-    Object context_type_value = freezed,
+    Object contextTypequantity = freezed,
+    Object contextTypevalue = freezed,
   }) {
     return _then(_ResearchDefinitionSearch(
       searchId: searchId == freezed ? _value.searchId : searchId as List<Id>,
@@ -2527,24 +2763,24 @@ class __$ResearchDefinitionSearchCopyWithImpl<$Res>
           : searchContent as List<SearchString>,
       searchList:
           searchList == freezed ? _value.searchList : searchList as List<Id>,
-      composed_of: composed_of == freezed
-          ? _value.composed_of
-          : composed_of as List<SearchReference>,
+      composedOf: composedOf == freezed
+          ? _value.composedOf
+          : composedOf as List<SearchReference>,
       context:
           context == freezed ? _value.context : context as List<SearchToken>,
-      context_quantity: context_quantity == freezed
-          ? _value.context_quantity
-          : context_quantity as List<SearchQuantity>,
-      context_type: context_type == freezed
-          ? _value.context_type
-          : context_type as List<SearchToken>,
+      contextQuantity: contextQuantity == freezed
+          ? _value.contextQuantity
+          : contextQuantity as List<SearchQuantity>,
+      contextType: contextType == freezed
+          ? _value.contextType
+          : contextType as List<SearchToken>,
       date: date == freezed ? _value.date : date as List<SearchDate>,
-      depends_on: depends_on == freezed
-          ? _value.depends_on
-          : depends_on as List<SearchReference>,
-      derived_from: derived_from == freezed
-          ? _value.derived_from
-          : derived_from as List<SearchReference>,
+      dependsOn: dependsOn == freezed
+          ? _value.dependsOn
+          : dependsOn as List<SearchReference>,
+      derivedFrom: derivedFrom == freezed
+          ? _value.derivedFrom
+          : derivedFrom as List<SearchReference>,
       description: description == freezed
           ? _value.description
           : description as List<SearchString>,
@@ -2573,15 +2809,17 @@ class __$ResearchDefinitionSearchCopyWithImpl<$Res>
       url: url == freezed ? _value.url : url as List<SearchUri>,
       version:
           version == freezed ? _value.version : version as List<SearchToken>,
-      context_type_quantity: context_type_quantity == freezed
-          ? _value.context_type_quantity
-          : context_type_quantity as List<SearchComposite>,
-      context_type_value: context_type_value == freezed
-          ? _value.context_type_value
-          : context_type_value as List<SearchComposite>,
+      contextTypequantity: contextTypequantity == freezed
+          ? _value.contextTypequantity
+          : contextTypequantity as List<SearchComposite>,
+      contextTypevalue: contextTypevalue == freezed
+          ? _value.contextTypevalue
+          : contextTypevalue as List<SearchComposite>,
     ));
   }
 }
+
+@JsonSerializable()
 
 /// @nodoc
 class _$_ResearchDefinitionSearch extends _ResearchDefinitionSearch {
@@ -2594,13 +2832,13 @@ class _$_ResearchDefinitionSearch extends _ResearchDefinitionSearch {
       this.searchText,
       this.searchContent,
       this.searchList,
-      this.composed_of,
+      @JsonKey(name: 'composed-of') this.composedOf,
       this.context,
-      this.context_quantity,
-      this.context_type,
+      @JsonKey(name: 'context-quantity') this.contextQuantity,
+      @JsonKey(name: 'context-type') this.contextType,
       this.date,
-      this.depends_on,
-      this.derived_from,
+      @JsonKey(name: 'depends-on') this.dependsOn,
+      @JsonKey(name: 'derived-from') this.derivedFrom,
       this.description,
       this.effective,
       this.identifier,
@@ -2614,9 +2852,12 @@ class _$_ResearchDefinitionSearch extends _ResearchDefinitionSearch {
       this.topic,
       this.url,
       this.version,
-      this.context_type_quantity,
-      this.context_type_value})
+      @JsonKey(name: 'context-type-quantity') this.contextTypequantity,
+      @JsonKey(name: 'context-type-value') this.contextTypevalue})
       : super._();
+
+  factory _$_ResearchDefinitionSearch.fromJson(Map<String, dynamic> json) =>
+      _$_$_ResearchDefinitionSearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -2636,19 +2877,24 @@ class _$_ResearchDefinitionSearch extends _ResearchDefinitionSearch {
   final List<Id> searchList;
   @override //List<SearchString> searchHas,
 //List<SearchToken> searchType,
-  final List<SearchReference> composed_of;
+  @JsonKey(name: 'composed-of')
+  final List<SearchReference> composedOf;
   @override
   final List<SearchToken> context;
   @override
-  final List<SearchQuantity> context_quantity;
+  @JsonKey(name: 'context-quantity')
+  final List<SearchQuantity> contextQuantity;
   @override
-  final List<SearchToken> context_type;
+  @JsonKey(name: 'context-type')
+  final List<SearchToken> contextType;
   @override
   final List<SearchDate> date;
   @override
-  final List<SearchReference> depends_on;
+  @JsonKey(name: 'depends-on')
+  final List<SearchReference> dependsOn;
   @override
-  final List<SearchReference> derived_from;
+  @JsonKey(name: 'derived-from')
+  final List<SearchReference> derivedFrom;
   @override
   final List<SearchString> description;
   @override
@@ -2676,13 +2922,15 @@ class _$_ResearchDefinitionSearch extends _ResearchDefinitionSearch {
   @override
   final List<SearchToken> version;
   @override
-  final List<SearchComposite> context_type_quantity;
+  @JsonKey(name: 'context-type-quantity')
+  final List<SearchComposite> contextTypequantity;
   @override
-  final List<SearchComposite> context_type_value;
+  @JsonKey(name: 'context-type-value')
+  final List<SearchComposite> contextTypevalue;
 
   @override
   String toString() {
-    return 'ResearchDefinitionSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, composed_of: $composed_of, context: $context, context_quantity: $context_quantity, context_type: $context_type, date: $date, depends_on: $depends_on, derived_from: $derived_from, description: $description, effective: $effective, identifier: $identifier, jurisdiction: $jurisdiction, name: $name, predecessor: $predecessor, publisher: $publisher, status: $status, successor: $successor, title: $title, topic: $topic, url: $url, version: $version, context_type_quantity: $context_type_quantity, context_type_value: $context_type_value)';
+    return 'ResearchDefinitionSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, composedOf: $composedOf, context: $context, contextQuantity: $contextQuantity, contextType: $contextType, date: $date, dependsOn: $dependsOn, derivedFrom: $derivedFrom, description: $description, effective: $effective, identifier: $identifier, jurisdiction: $jurisdiction, name: $name, predecessor: $predecessor, publisher: $publisher, status: $status, successor: $successor, title: $title, topic: $topic, url: $url, version: $version, contextTypequantity: $contextTypequantity, contextTypevalue: $contextTypevalue)';
   }
 
   @override
@@ -2713,26 +2961,26 @@ class _$_ResearchDefinitionSearch extends _ResearchDefinitionSearch {
             (identical(other.searchList, searchList) ||
                 const DeepCollectionEquality()
                     .equals(other.searchList, searchList)) &&
-            (identical(other.composed_of, composed_of) ||
+            (identical(other.composedOf, composedOf) ||
                 const DeepCollectionEquality()
-                    .equals(other.composed_of, composed_of)) &&
+                    .equals(other.composedOf, composedOf)) &&
             (identical(other.context, context) ||
                 const DeepCollectionEquality()
                     .equals(other.context, context)) &&
-            (identical(other.context_quantity, context_quantity) ||
+            (identical(other.contextQuantity, contextQuantity) ||
                 const DeepCollectionEquality()
-                    .equals(other.context_quantity, context_quantity)) &&
-            (identical(other.context_type, context_type) ||
+                    .equals(other.contextQuantity, contextQuantity)) &&
+            (identical(other.contextType, contextType) ||
                 const DeepCollectionEquality()
-                    .equals(other.context_type, context_type)) &&
+                    .equals(other.contextType, contextType)) &&
             (identical(other.date, date) ||
                 const DeepCollectionEquality().equals(other.date, date)) &&
-            (identical(other.depends_on, depends_on) ||
+            (identical(other.dependsOn, dependsOn) ||
                 const DeepCollectionEquality()
-                    .equals(other.depends_on, depends_on)) &&
-            (identical(other.derived_from, derived_from) ||
+                    .equals(other.dependsOn, dependsOn)) &&
+            (identical(other.derivedFrom, derivedFrom) ||
                 const DeepCollectionEquality()
-                    .equals(other.derived_from, derived_from)) &&
+                    .equals(other.derivedFrom, derivedFrom)) &&
             (identical(other.description, description) ||
                 const DeepCollectionEquality()
                     .equals(other.description, description)) &&
@@ -2760,8 +3008,8 @@ class _$_ResearchDefinitionSearch extends _ResearchDefinitionSearch {
             (identical(other.topic, topic) || const DeepCollectionEquality().equals(other.topic, topic)) &&
             (identical(other.url, url) || const DeepCollectionEquality().equals(other.url, url)) &&
             (identical(other.version, version) || const DeepCollectionEquality().equals(other.version, version)) &&
-            (identical(other.context_type_quantity, context_type_quantity) || const DeepCollectionEquality().equals(other.context_type_quantity, context_type_quantity)) &&
-            (identical(other.context_type_value, context_type_value) || const DeepCollectionEquality().equals(other.context_type_value, context_type_value)));
+            (identical(other.contextTypequantity, contextTypequantity) || const DeepCollectionEquality().equals(other.contextTypequantity, contextTypequantity)) &&
+            (identical(other.contextTypevalue, contextTypevalue) || const DeepCollectionEquality().equals(other.contextTypevalue, contextTypevalue)));
   }
 
   @override
@@ -2775,13 +3023,13 @@ class _$_ResearchDefinitionSearch extends _ResearchDefinitionSearch {
       const DeepCollectionEquality().hash(searchText) ^
       const DeepCollectionEquality().hash(searchContent) ^
       const DeepCollectionEquality().hash(searchList) ^
-      const DeepCollectionEquality().hash(composed_of) ^
+      const DeepCollectionEquality().hash(composedOf) ^
       const DeepCollectionEquality().hash(context) ^
-      const DeepCollectionEquality().hash(context_quantity) ^
-      const DeepCollectionEquality().hash(context_type) ^
+      const DeepCollectionEquality().hash(contextQuantity) ^
+      const DeepCollectionEquality().hash(contextType) ^
       const DeepCollectionEquality().hash(date) ^
-      const DeepCollectionEquality().hash(depends_on) ^
-      const DeepCollectionEquality().hash(derived_from) ^
+      const DeepCollectionEquality().hash(dependsOn) ^
+      const DeepCollectionEquality().hash(derivedFrom) ^
       const DeepCollectionEquality().hash(description) ^
       const DeepCollectionEquality().hash(effective) ^
       const DeepCollectionEquality().hash(identifier) ^
@@ -2795,48 +3043,64 @@ class _$_ResearchDefinitionSearch extends _ResearchDefinitionSearch {
       const DeepCollectionEquality().hash(topic) ^
       const DeepCollectionEquality().hash(url) ^
       const DeepCollectionEquality().hash(version) ^
-      const DeepCollectionEquality().hash(context_type_quantity) ^
-      const DeepCollectionEquality().hash(context_type_value);
+      const DeepCollectionEquality().hash(contextTypequantity) ^
+      const DeepCollectionEquality().hash(contextTypevalue);
 
   @override
   _$ResearchDefinitionSearchCopyWith<_ResearchDefinitionSearch> get copyWith =>
       __$ResearchDefinitionSearchCopyWithImpl<_ResearchDefinitionSearch>(
           this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_ResearchDefinitionSearchToJson(this);
+  }
 }
 
 abstract class _ResearchDefinitionSearch extends ResearchDefinitionSearch {
   _ResearchDefinitionSearch._() : super._();
   factory _ResearchDefinitionSearch(
-      {List<Id> searchId,
-      List<SearchDate> searchLastUpdated,
-      List<SearchToken> searchTag,
-      List<SearchUri> searchProfile,
-      List<SearchToken> searchSecurity,
-      List<SearchString> searchText,
-      List<SearchString> searchContent,
-      List<Id> searchList,
-      List<SearchReference> composed_of,
-      List<SearchToken> context,
-      List<SearchQuantity> context_quantity,
-      List<SearchToken> context_type,
-      List<SearchDate> date,
-      List<SearchReference> depends_on,
-      List<SearchReference> derived_from,
-      List<SearchString> description,
-      List<SearchDate> effective,
-      List<SearchToken> identifier,
-      List<SearchToken> jurisdiction,
-      List<SearchString> name,
-      List<SearchReference> predecessor,
-      List<SearchString> publisher,
-      List<SearchToken> status,
-      List<SearchReference> successor,
-      List<SearchString> title,
-      List<SearchToken> topic,
-      List<SearchUri> url,
-      List<SearchToken> version,
-      List<SearchComposite> context_type_quantity,
-      List<SearchComposite> context_type_value}) = _$_ResearchDefinitionSearch;
+          {List<Id> searchId,
+          List<SearchDate> searchLastUpdated,
+          List<SearchToken> searchTag,
+          List<SearchUri> searchProfile,
+          List<SearchToken> searchSecurity,
+          List<SearchString> searchText,
+          List<SearchString> searchContent,
+          List<Id> searchList,
+          @JsonKey(name: 'composed-of')
+              List<SearchReference> composedOf,
+          List<SearchToken> context,
+          @JsonKey(name: 'context-quantity')
+              List<SearchQuantity> contextQuantity,
+          @JsonKey(name: 'context-type')
+              List<SearchToken> contextType,
+          List<SearchDate> date,
+          @JsonKey(name: 'depends-on')
+              List<SearchReference> dependsOn,
+          @JsonKey(name: 'derived-from')
+              List<SearchReference> derivedFrom,
+          List<SearchString> description,
+          List<SearchDate> effective,
+          List<SearchToken> identifier,
+          List<SearchToken> jurisdiction,
+          List<SearchString> name,
+          List<SearchReference> predecessor,
+          List<SearchString> publisher,
+          List<SearchToken> status,
+          List<SearchReference> successor,
+          List<SearchString> title,
+          List<SearchToken> topic,
+          List<SearchUri> url,
+          List<SearchToken> version,
+          @JsonKey(name: 'context-type-quantity')
+              List<SearchComposite> contextTypequantity,
+          @JsonKey(name: 'context-type-value')
+              List<SearchComposite> contextTypevalue}) =
+      _$_ResearchDefinitionSearch;
+
+  factory _ResearchDefinitionSearch.fromJson(Map<String, dynamic> json) =
+      _$_ResearchDefinitionSearch.fromJson;
 
   @override
   List<Id> get searchId;
@@ -2856,19 +3120,24 @@ abstract class _ResearchDefinitionSearch extends ResearchDefinitionSearch {
   List<Id> get searchList;
   @override //List<SearchString> searchHas,
 //List<SearchToken> searchType,
-  List<SearchReference> get composed_of;
+  @JsonKey(name: 'composed-of')
+  List<SearchReference> get composedOf;
   @override
   List<SearchToken> get context;
   @override
-  List<SearchQuantity> get context_quantity;
+  @JsonKey(name: 'context-quantity')
+  List<SearchQuantity> get contextQuantity;
   @override
-  List<SearchToken> get context_type;
+  @JsonKey(name: 'context-type')
+  List<SearchToken> get contextType;
   @override
   List<SearchDate> get date;
   @override
-  List<SearchReference> get depends_on;
+  @JsonKey(name: 'depends-on')
+  List<SearchReference> get dependsOn;
   @override
-  List<SearchReference> get derived_from;
+  @JsonKey(name: 'derived-from')
+  List<SearchReference> get derivedFrom;
   @override
   List<SearchString> get description;
   @override
@@ -2896,11 +3165,18 @@ abstract class _ResearchDefinitionSearch extends ResearchDefinitionSearch {
   @override
   List<SearchToken> get version;
   @override
-  List<SearchComposite> get context_type_quantity;
+  @JsonKey(name: 'context-type-quantity')
+  List<SearchComposite> get contextTypequantity;
   @override
-  List<SearchComposite> get context_type_value;
+  @JsonKey(name: 'context-type-value')
+  List<SearchComposite> get contextTypevalue;
   @override
   _$ResearchDefinitionSearchCopyWith<_ResearchDefinitionSearch> get copyWith;
+}
+
+ResearchElementDefinitionSearch _$ResearchElementDefinitionSearchFromJson(
+    Map<String, dynamic> json) {
+  return _ResearchElementDefinitionSearch.fromJson(json);
 }
 
 /// @nodoc
@@ -2917,13 +3193,18 @@ class _$ResearchElementDefinitionSearchTearOff {
       List<SearchString> searchText,
       List<SearchString> searchContent,
       List<Id> searchList,
-      List<SearchReference> composed_of,
+      @JsonKey(name: 'composed-of')
+          List<SearchReference> composedOf,
       List<SearchToken> context,
-      List<SearchQuantity> context_quantity,
-      List<SearchToken> context_type,
+      @JsonKey(name: 'context-quantity')
+          List<SearchQuantity> contextQuantity,
+      @JsonKey(name: 'context-type')
+          List<SearchToken> contextType,
       List<SearchDate> date,
-      List<SearchReference> depends_on,
-      List<SearchReference> derived_from,
+      @JsonKey(name: 'depends-on')
+          List<SearchReference> dependsOn,
+      @JsonKey(name: 'derived-from')
+          List<SearchReference> derivedFrom,
       List<SearchString> description,
       List<SearchDate> effective,
       List<SearchToken> identifier,
@@ -2937,8 +3218,10 @@ class _$ResearchElementDefinitionSearchTearOff {
       List<SearchToken> topic,
       List<SearchUri> url,
       List<SearchToken> version,
-      List<SearchComposite> context_type_quantity,
-      List<SearchComposite> context_type_value}) {
+      @JsonKey(name: 'context-type-quantity')
+          List<SearchComposite> contextTypequantity,
+      @JsonKey(name: 'context-type-value')
+          List<SearchComposite> contextTypevalue}) {
     return _ResearchElementDefinitionSearch(
       searchId: searchId,
       searchLastUpdated: searchLastUpdated,
@@ -2948,13 +3231,13 @@ class _$ResearchElementDefinitionSearchTearOff {
       searchText: searchText,
       searchContent: searchContent,
       searchList: searchList,
-      composed_of: composed_of,
+      composedOf: composedOf,
       context: context,
-      context_quantity: context_quantity,
-      context_type: context_type,
+      contextQuantity: contextQuantity,
+      contextType: contextType,
       date: date,
-      depends_on: depends_on,
-      derived_from: derived_from,
+      dependsOn: dependsOn,
+      derivedFrom: derivedFrom,
       description: description,
       effective: effective,
       identifier: identifier,
@@ -2968,9 +3251,14 @@ class _$ResearchElementDefinitionSearchTearOff {
       topic: topic,
       url: url,
       version: version,
-      context_type_quantity: context_type_quantity,
-      context_type_value: context_type_value,
+      contextTypequantity: contextTypequantity,
+      contextTypevalue: contextTypevalue,
     );
+  }
+
+// ignore: unused_element
+  ResearchElementDefinitionSearch fromJson(Map<String, Object> json) {
+    return ResearchElementDefinitionSearch.fromJson(json);
   }
 }
 
@@ -2990,13 +3278,18 @@ mixin _$ResearchElementDefinitionSearch {
   List<SearchString> get searchContent;
   List<Id> get searchList; //List<SearchString> searchHas,
 //List<SearchToken> searchType,
-  List<SearchReference> get composed_of;
+  @JsonKey(name: 'composed-of')
+  List<SearchReference> get composedOf;
   List<SearchToken> get context;
-  List<SearchQuantity> get context_quantity;
-  List<SearchToken> get context_type;
+  @JsonKey(name: 'context-quantity')
+  List<SearchQuantity> get contextQuantity;
+  @JsonKey(name: 'context-type')
+  List<SearchToken> get contextType;
   List<SearchDate> get date;
-  List<SearchReference> get depends_on;
-  List<SearchReference> get derived_from;
+  @JsonKey(name: 'depends-on')
+  List<SearchReference> get dependsOn;
+  @JsonKey(name: 'derived-from')
+  List<SearchReference> get derivedFrom;
   List<SearchString> get description;
   List<SearchDate> get effective;
   List<SearchToken> get identifier;
@@ -3010,9 +3303,12 @@ mixin _$ResearchElementDefinitionSearch {
   List<SearchToken> get topic;
   List<SearchUri> get url;
   List<SearchToken> get version;
-  List<SearchComposite> get context_type_quantity;
-  List<SearchComposite> get context_type_value;
+  @JsonKey(name: 'context-type-quantity')
+  List<SearchComposite> get contextTypequantity;
+  @JsonKey(name: 'context-type-value')
+  List<SearchComposite> get contextTypevalue;
 
+  Map<String, dynamic> toJson();
   $ResearchElementDefinitionSearchCopyWith<ResearchElementDefinitionSearch>
       get copyWith;
 }
@@ -3032,13 +3328,18 @@ abstract class $ResearchElementDefinitionSearchCopyWith<$Res> {
       List<SearchString> searchText,
       List<SearchString> searchContent,
       List<Id> searchList,
-      List<SearchReference> composed_of,
+      @JsonKey(name: 'composed-of')
+          List<SearchReference> composedOf,
       List<SearchToken> context,
-      List<SearchQuantity> context_quantity,
-      List<SearchToken> context_type,
+      @JsonKey(name: 'context-quantity')
+          List<SearchQuantity> contextQuantity,
+      @JsonKey(name: 'context-type')
+          List<SearchToken> contextType,
       List<SearchDate> date,
-      List<SearchReference> depends_on,
-      List<SearchReference> derived_from,
+      @JsonKey(name: 'depends-on')
+          List<SearchReference> dependsOn,
+      @JsonKey(name: 'derived-from')
+          List<SearchReference> derivedFrom,
       List<SearchString> description,
       List<SearchDate> effective,
       List<SearchToken> identifier,
@@ -3052,8 +3353,10 @@ abstract class $ResearchElementDefinitionSearchCopyWith<$Res> {
       List<SearchToken> topic,
       List<SearchUri> url,
       List<SearchToken> version,
-      List<SearchComposite> context_type_quantity,
-      List<SearchComposite> context_type_value});
+      @JsonKey(name: 'context-type-quantity')
+          List<SearchComposite> contextTypequantity,
+      @JsonKey(name: 'context-type-value')
+          List<SearchComposite> contextTypevalue});
 }
 
 /// @nodoc
@@ -3075,13 +3378,13 @@ class _$ResearchElementDefinitionSearchCopyWithImpl<$Res>
     Object searchText = freezed,
     Object searchContent = freezed,
     Object searchList = freezed,
-    Object composed_of = freezed,
+    Object composedOf = freezed,
     Object context = freezed,
-    Object context_quantity = freezed,
-    Object context_type = freezed,
+    Object contextQuantity = freezed,
+    Object contextType = freezed,
     Object date = freezed,
-    Object depends_on = freezed,
-    Object derived_from = freezed,
+    Object dependsOn = freezed,
+    Object derivedFrom = freezed,
     Object description = freezed,
     Object effective = freezed,
     Object identifier = freezed,
@@ -3095,8 +3398,8 @@ class _$ResearchElementDefinitionSearchCopyWithImpl<$Res>
     Object topic = freezed,
     Object url = freezed,
     Object version = freezed,
-    Object context_type_quantity = freezed,
-    Object context_type_value = freezed,
+    Object contextTypequantity = freezed,
+    Object contextTypevalue = freezed,
   }) {
     return _then(_value.copyWith(
       searchId: searchId == freezed ? _value.searchId : searchId as List<Id>,
@@ -3120,24 +3423,24 @@ class _$ResearchElementDefinitionSearchCopyWithImpl<$Res>
           : searchContent as List<SearchString>,
       searchList:
           searchList == freezed ? _value.searchList : searchList as List<Id>,
-      composed_of: composed_of == freezed
-          ? _value.composed_of
-          : composed_of as List<SearchReference>,
+      composedOf: composedOf == freezed
+          ? _value.composedOf
+          : composedOf as List<SearchReference>,
       context:
           context == freezed ? _value.context : context as List<SearchToken>,
-      context_quantity: context_quantity == freezed
-          ? _value.context_quantity
-          : context_quantity as List<SearchQuantity>,
-      context_type: context_type == freezed
-          ? _value.context_type
-          : context_type as List<SearchToken>,
+      contextQuantity: contextQuantity == freezed
+          ? _value.contextQuantity
+          : contextQuantity as List<SearchQuantity>,
+      contextType: contextType == freezed
+          ? _value.contextType
+          : contextType as List<SearchToken>,
       date: date == freezed ? _value.date : date as List<SearchDate>,
-      depends_on: depends_on == freezed
-          ? _value.depends_on
-          : depends_on as List<SearchReference>,
-      derived_from: derived_from == freezed
-          ? _value.derived_from
-          : derived_from as List<SearchReference>,
+      dependsOn: dependsOn == freezed
+          ? _value.dependsOn
+          : dependsOn as List<SearchReference>,
+      derivedFrom: derivedFrom == freezed
+          ? _value.derivedFrom
+          : derivedFrom as List<SearchReference>,
       description: description == freezed
           ? _value.description
           : description as List<SearchString>,
@@ -3166,12 +3469,12 @@ class _$ResearchElementDefinitionSearchCopyWithImpl<$Res>
       url: url == freezed ? _value.url : url as List<SearchUri>,
       version:
           version == freezed ? _value.version : version as List<SearchToken>,
-      context_type_quantity: context_type_quantity == freezed
-          ? _value.context_type_quantity
-          : context_type_quantity as List<SearchComposite>,
-      context_type_value: context_type_value == freezed
-          ? _value.context_type_value
-          : context_type_value as List<SearchComposite>,
+      contextTypequantity: contextTypequantity == freezed
+          ? _value.contextTypequantity
+          : contextTypequantity as List<SearchComposite>,
+      contextTypevalue: contextTypevalue == freezed
+          ? _value.contextTypevalue
+          : contextTypevalue as List<SearchComposite>,
     ));
   }
 }
@@ -3193,13 +3496,18 @@ abstract class _$ResearchElementDefinitionSearchCopyWith<$Res>
       List<SearchString> searchText,
       List<SearchString> searchContent,
       List<Id> searchList,
-      List<SearchReference> composed_of,
+      @JsonKey(name: 'composed-of')
+          List<SearchReference> composedOf,
       List<SearchToken> context,
-      List<SearchQuantity> context_quantity,
-      List<SearchToken> context_type,
+      @JsonKey(name: 'context-quantity')
+          List<SearchQuantity> contextQuantity,
+      @JsonKey(name: 'context-type')
+          List<SearchToken> contextType,
       List<SearchDate> date,
-      List<SearchReference> depends_on,
-      List<SearchReference> derived_from,
+      @JsonKey(name: 'depends-on')
+          List<SearchReference> dependsOn,
+      @JsonKey(name: 'derived-from')
+          List<SearchReference> derivedFrom,
       List<SearchString> description,
       List<SearchDate> effective,
       List<SearchToken> identifier,
@@ -3213,8 +3521,10 @@ abstract class _$ResearchElementDefinitionSearchCopyWith<$Res>
       List<SearchToken> topic,
       List<SearchUri> url,
       List<SearchToken> version,
-      List<SearchComposite> context_type_quantity,
-      List<SearchComposite> context_type_value});
+      @JsonKey(name: 'context-type-quantity')
+          List<SearchComposite> contextTypequantity,
+      @JsonKey(name: 'context-type-value')
+          List<SearchComposite> contextTypevalue});
 }
 
 /// @nodoc
@@ -3240,13 +3550,13 @@ class __$ResearchElementDefinitionSearchCopyWithImpl<$Res>
     Object searchText = freezed,
     Object searchContent = freezed,
     Object searchList = freezed,
-    Object composed_of = freezed,
+    Object composedOf = freezed,
     Object context = freezed,
-    Object context_quantity = freezed,
-    Object context_type = freezed,
+    Object contextQuantity = freezed,
+    Object contextType = freezed,
     Object date = freezed,
-    Object depends_on = freezed,
-    Object derived_from = freezed,
+    Object dependsOn = freezed,
+    Object derivedFrom = freezed,
     Object description = freezed,
     Object effective = freezed,
     Object identifier = freezed,
@@ -3260,8 +3570,8 @@ class __$ResearchElementDefinitionSearchCopyWithImpl<$Res>
     Object topic = freezed,
     Object url = freezed,
     Object version = freezed,
-    Object context_type_quantity = freezed,
-    Object context_type_value = freezed,
+    Object contextTypequantity = freezed,
+    Object contextTypevalue = freezed,
   }) {
     return _then(_ResearchElementDefinitionSearch(
       searchId: searchId == freezed ? _value.searchId : searchId as List<Id>,
@@ -3285,24 +3595,24 @@ class __$ResearchElementDefinitionSearchCopyWithImpl<$Res>
           : searchContent as List<SearchString>,
       searchList:
           searchList == freezed ? _value.searchList : searchList as List<Id>,
-      composed_of: composed_of == freezed
-          ? _value.composed_of
-          : composed_of as List<SearchReference>,
+      composedOf: composedOf == freezed
+          ? _value.composedOf
+          : composedOf as List<SearchReference>,
       context:
           context == freezed ? _value.context : context as List<SearchToken>,
-      context_quantity: context_quantity == freezed
-          ? _value.context_quantity
-          : context_quantity as List<SearchQuantity>,
-      context_type: context_type == freezed
-          ? _value.context_type
-          : context_type as List<SearchToken>,
+      contextQuantity: contextQuantity == freezed
+          ? _value.contextQuantity
+          : contextQuantity as List<SearchQuantity>,
+      contextType: contextType == freezed
+          ? _value.contextType
+          : contextType as List<SearchToken>,
       date: date == freezed ? _value.date : date as List<SearchDate>,
-      depends_on: depends_on == freezed
-          ? _value.depends_on
-          : depends_on as List<SearchReference>,
-      derived_from: derived_from == freezed
-          ? _value.derived_from
-          : derived_from as List<SearchReference>,
+      dependsOn: dependsOn == freezed
+          ? _value.dependsOn
+          : dependsOn as List<SearchReference>,
+      derivedFrom: derivedFrom == freezed
+          ? _value.derivedFrom
+          : derivedFrom as List<SearchReference>,
       description: description == freezed
           ? _value.description
           : description as List<SearchString>,
@@ -3331,15 +3641,17 @@ class __$ResearchElementDefinitionSearchCopyWithImpl<$Res>
       url: url == freezed ? _value.url : url as List<SearchUri>,
       version:
           version == freezed ? _value.version : version as List<SearchToken>,
-      context_type_quantity: context_type_quantity == freezed
-          ? _value.context_type_quantity
-          : context_type_quantity as List<SearchComposite>,
-      context_type_value: context_type_value == freezed
-          ? _value.context_type_value
-          : context_type_value as List<SearchComposite>,
+      contextTypequantity: contextTypequantity == freezed
+          ? _value.contextTypequantity
+          : contextTypequantity as List<SearchComposite>,
+      contextTypevalue: contextTypevalue == freezed
+          ? _value.contextTypevalue
+          : contextTypevalue as List<SearchComposite>,
     ));
   }
 }
+
+@JsonSerializable()
 
 /// @nodoc
 class _$_ResearchElementDefinitionSearch
@@ -3353,13 +3665,13 @@ class _$_ResearchElementDefinitionSearch
       this.searchText,
       this.searchContent,
       this.searchList,
-      this.composed_of,
+      @JsonKey(name: 'composed-of') this.composedOf,
       this.context,
-      this.context_quantity,
-      this.context_type,
+      @JsonKey(name: 'context-quantity') this.contextQuantity,
+      @JsonKey(name: 'context-type') this.contextType,
       this.date,
-      this.depends_on,
-      this.derived_from,
+      @JsonKey(name: 'depends-on') this.dependsOn,
+      @JsonKey(name: 'derived-from') this.derivedFrom,
       this.description,
       this.effective,
       this.identifier,
@@ -3373,9 +3685,13 @@ class _$_ResearchElementDefinitionSearch
       this.topic,
       this.url,
       this.version,
-      this.context_type_quantity,
-      this.context_type_value})
+      @JsonKey(name: 'context-type-quantity') this.contextTypequantity,
+      @JsonKey(name: 'context-type-value') this.contextTypevalue})
       : super._();
+
+  factory _$_ResearchElementDefinitionSearch.fromJson(
+          Map<String, dynamic> json) =>
+      _$_$_ResearchElementDefinitionSearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -3395,19 +3711,24 @@ class _$_ResearchElementDefinitionSearch
   final List<Id> searchList;
   @override //List<SearchString> searchHas,
 //List<SearchToken> searchType,
-  final List<SearchReference> composed_of;
+  @JsonKey(name: 'composed-of')
+  final List<SearchReference> composedOf;
   @override
   final List<SearchToken> context;
   @override
-  final List<SearchQuantity> context_quantity;
+  @JsonKey(name: 'context-quantity')
+  final List<SearchQuantity> contextQuantity;
   @override
-  final List<SearchToken> context_type;
+  @JsonKey(name: 'context-type')
+  final List<SearchToken> contextType;
   @override
   final List<SearchDate> date;
   @override
-  final List<SearchReference> depends_on;
+  @JsonKey(name: 'depends-on')
+  final List<SearchReference> dependsOn;
   @override
-  final List<SearchReference> derived_from;
+  @JsonKey(name: 'derived-from')
+  final List<SearchReference> derivedFrom;
   @override
   final List<SearchString> description;
   @override
@@ -3435,13 +3756,15 @@ class _$_ResearchElementDefinitionSearch
   @override
   final List<SearchToken> version;
   @override
-  final List<SearchComposite> context_type_quantity;
+  @JsonKey(name: 'context-type-quantity')
+  final List<SearchComposite> contextTypequantity;
   @override
-  final List<SearchComposite> context_type_value;
+  @JsonKey(name: 'context-type-value')
+  final List<SearchComposite> contextTypevalue;
 
   @override
   String toString() {
-    return 'ResearchElementDefinitionSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, composed_of: $composed_of, context: $context, context_quantity: $context_quantity, context_type: $context_type, date: $date, depends_on: $depends_on, derived_from: $derived_from, description: $description, effective: $effective, identifier: $identifier, jurisdiction: $jurisdiction, name: $name, predecessor: $predecessor, publisher: $publisher, status: $status, successor: $successor, title: $title, topic: $topic, url: $url, version: $version, context_type_quantity: $context_type_quantity, context_type_value: $context_type_value)';
+    return 'ResearchElementDefinitionSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, composedOf: $composedOf, context: $context, contextQuantity: $contextQuantity, contextType: $contextType, date: $date, dependsOn: $dependsOn, derivedFrom: $derivedFrom, description: $description, effective: $effective, identifier: $identifier, jurisdiction: $jurisdiction, name: $name, predecessor: $predecessor, publisher: $publisher, status: $status, successor: $successor, title: $title, topic: $topic, url: $url, version: $version, contextTypequantity: $contextTypequantity, contextTypevalue: $contextTypevalue)';
   }
 
   @override
@@ -3472,26 +3795,26 @@ class _$_ResearchElementDefinitionSearch
             (identical(other.searchList, searchList) ||
                 const DeepCollectionEquality()
                     .equals(other.searchList, searchList)) &&
-            (identical(other.composed_of, composed_of) ||
+            (identical(other.composedOf, composedOf) ||
                 const DeepCollectionEquality()
-                    .equals(other.composed_of, composed_of)) &&
+                    .equals(other.composedOf, composedOf)) &&
             (identical(other.context, context) ||
                 const DeepCollectionEquality()
                     .equals(other.context, context)) &&
-            (identical(other.context_quantity, context_quantity) ||
+            (identical(other.contextQuantity, contextQuantity) ||
                 const DeepCollectionEquality()
-                    .equals(other.context_quantity, context_quantity)) &&
-            (identical(other.context_type, context_type) ||
+                    .equals(other.contextQuantity, contextQuantity)) &&
+            (identical(other.contextType, contextType) ||
                 const DeepCollectionEquality()
-                    .equals(other.context_type, context_type)) &&
+                    .equals(other.contextType, contextType)) &&
             (identical(other.date, date) ||
                 const DeepCollectionEquality().equals(other.date, date)) &&
-            (identical(other.depends_on, depends_on) ||
+            (identical(other.dependsOn, dependsOn) ||
                 const DeepCollectionEquality()
-                    .equals(other.depends_on, depends_on)) &&
-            (identical(other.derived_from, derived_from) ||
+                    .equals(other.dependsOn, dependsOn)) &&
+            (identical(other.derivedFrom, derivedFrom) ||
                 const DeepCollectionEquality()
-                    .equals(other.derived_from, derived_from)) &&
+                    .equals(other.derivedFrom, derivedFrom)) &&
             (identical(other.description, description) ||
                 const DeepCollectionEquality()
                     .equals(other.description, description)) &&
@@ -3519,8 +3842,8 @@ class _$_ResearchElementDefinitionSearch
             (identical(other.topic, topic) || const DeepCollectionEquality().equals(other.topic, topic)) &&
             (identical(other.url, url) || const DeepCollectionEquality().equals(other.url, url)) &&
             (identical(other.version, version) || const DeepCollectionEquality().equals(other.version, version)) &&
-            (identical(other.context_type_quantity, context_type_quantity) || const DeepCollectionEquality().equals(other.context_type_quantity, context_type_quantity)) &&
-            (identical(other.context_type_value, context_type_value) || const DeepCollectionEquality().equals(other.context_type_value, context_type_value)));
+            (identical(other.contextTypequantity, contextTypequantity) || const DeepCollectionEquality().equals(other.contextTypequantity, contextTypequantity)) &&
+            (identical(other.contextTypevalue, contextTypevalue) || const DeepCollectionEquality().equals(other.contextTypevalue, contextTypevalue)));
   }
 
   @override
@@ -3534,13 +3857,13 @@ class _$_ResearchElementDefinitionSearch
       const DeepCollectionEquality().hash(searchText) ^
       const DeepCollectionEquality().hash(searchContent) ^
       const DeepCollectionEquality().hash(searchList) ^
-      const DeepCollectionEquality().hash(composed_of) ^
+      const DeepCollectionEquality().hash(composedOf) ^
       const DeepCollectionEquality().hash(context) ^
-      const DeepCollectionEquality().hash(context_quantity) ^
-      const DeepCollectionEquality().hash(context_type) ^
+      const DeepCollectionEquality().hash(contextQuantity) ^
+      const DeepCollectionEquality().hash(contextType) ^
       const DeepCollectionEquality().hash(date) ^
-      const DeepCollectionEquality().hash(depends_on) ^
-      const DeepCollectionEquality().hash(derived_from) ^
+      const DeepCollectionEquality().hash(dependsOn) ^
+      const DeepCollectionEquality().hash(derivedFrom) ^
       const DeepCollectionEquality().hash(description) ^
       const DeepCollectionEquality().hash(effective) ^
       const DeepCollectionEquality().hash(identifier) ^
@@ -3554,13 +3877,18 @@ class _$_ResearchElementDefinitionSearch
       const DeepCollectionEquality().hash(topic) ^
       const DeepCollectionEquality().hash(url) ^
       const DeepCollectionEquality().hash(version) ^
-      const DeepCollectionEquality().hash(context_type_quantity) ^
-      const DeepCollectionEquality().hash(context_type_value);
+      const DeepCollectionEquality().hash(contextTypequantity) ^
+      const DeepCollectionEquality().hash(contextTypevalue);
 
   @override
   _$ResearchElementDefinitionSearchCopyWith<_ResearchElementDefinitionSearch>
       get copyWith => __$ResearchElementDefinitionSearchCopyWithImpl<
           _ResearchElementDefinitionSearch>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_ResearchElementDefinitionSearchToJson(this);
+  }
 }
 
 abstract class _ResearchElementDefinitionSearch
@@ -3575,13 +3903,18 @@ abstract class _ResearchElementDefinitionSearch
           List<SearchString> searchText,
           List<SearchString> searchContent,
           List<Id> searchList,
-          List<SearchReference> composed_of,
+          @JsonKey(name: 'composed-of')
+              List<SearchReference> composedOf,
           List<SearchToken> context,
-          List<SearchQuantity> context_quantity,
-          List<SearchToken> context_type,
+          @JsonKey(name: 'context-quantity')
+              List<SearchQuantity> contextQuantity,
+          @JsonKey(name: 'context-type')
+              List<SearchToken> contextType,
           List<SearchDate> date,
-          List<SearchReference> depends_on,
-          List<SearchReference> derived_from,
+          @JsonKey(name: 'depends-on')
+              List<SearchReference> dependsOn,
+          @JsonKey(name: 'derived-from')
+              List<SearchReference> derivedFrom,
           List<SearchString> description,
           List<SearchDate> effective,
           List<SearchToken> identifier,
@@ -3595,9 +3928,14 @@ abstract class _ResearchElementDefinitionSearch
           List<SearchToken> topic,
           List<SearchUri> url,
           List<SearchToken> version,
-          List<SearchComposite> context_type_quantity,
-          List<SearchComposite> context_type_value}) =
+          @JsonKey(name: 'context-type-quantity')
+              List<SearchComposite> contextTypequantity,
+          @JsonKey(name: 'context-type-value')
+              List<SearchComposite> contextTypevalue}) =
       _$_ResearchElementDefinitionSearch;
+
+  factory _ResearchElementDefinitionSearch.fromJson(Map<String, dynamic> json) =
+      _$_ResearchElementDefinitionSearch.fromJson;
 
   @override
   List<Id> get searchId;
@@ -3617,19 +3955,24 @@ abstract class _ResearchElementDefinitionSearch
   List<Id> get searchList;
   @override //List<SearchString> searchHas,
 //List<SearchToken> searchType,
-  List<SearchReference> get composed_of;
+  @JsonKey(name: 'composed-of')
+  List<SearchReference> get composedOf;
   @override
   List<SearchToken> get context;
   @override
-  List<SearchQuantity> get context_quantity;
+  @JsonKey(name: 'context-quantity')
+  List<SearchQuantity> get contextQuantity;
   @override
-  List<SearchToken> get context_type;
+  @JsonKey(name: 'context-type')
+  List<SearchToken> get contextType;
   @override
   List<SearchDate> get date;
   @override
-  List<SearchReference> get depends_on;
+  @JsonKey(name: 'depends-on')
+  List<SearchReference> get dependsOn;
   @override
-  List<SearchReference> get derived_from;
+  @JsonKey(name: 'derived-from')
+  List<SearchReference> get derivedFrom;
   @override
   List<SearchString> get description;
   @override
@@ -3657,12 +4000,19 @@ abstract class _ResearchElementDefinitionSearch
   @override
   List<SearchToken> get version;
   @override
-  List<SearchComposite> get context_type_quantity;
+  @JsonKey(name: 'context-type-quantity')
+  List<SearchComposite> get contextTypequantity;
   @override
-  List<SearchComposite> get context_type_value;
+  @JsonKey(name: 'context-type-value')
+  List<SearchComposite> get contextTypevalue;
   @override
   _$ResearchElementDefinitionSearchCopyWith<_ResearchElementDefinitionSearch>
       get copyWith;
+}
+
+RiskEvidenceSynthesisSearch _$RiskEvidenceSynthesisSearchFromJson(
+    Map<String, dynamic> json) {
+  return _RiskEvidenceSynthesisSearch.fromJson(json);
 }
 
 /// @nodoc
@@ -3680,8 +4030,10 @@ class _$RiskEvidenceSynthesisSearchTearOff {
       List<SearchString> searchContent,
       List<Id> searchList,
       List<SearchToken> context,
-      List<SearchQuantity> context_quantity,
-      List<SearchToken> context_type,
+      @JsonKey(name: 'context-quantity')
+          List<SearchQuantity> contextQuantity,
+      @JsonKey(name: 'context-type')
+          List<SearchToken> contextType,
       List<SearchDate> date,
       List<SearchString> description,
       List<SearchDate> effective,
@@ -3693,8 +4045,10 @@ class _$RiskEvidenceSynthesisSearchTearOff {
       List<SearchString> title,
       List<SearchUri> url,
       List<SearchToken> version,
-      List<SearchComposite> context_type_quantity,
-      List<SearchComposite> context_type_value}) {
+      @JsonKey(name: 'context-type-quantity')
+          List<SearchComposite> contextTypequantity,
+      @JsonKey(name: 'context-type-value')
+          List<SearchComposite> contextTypevalue}) {
     return _RiskEvidenceSynthesisSearch(
       searchId: searchId,
       searchLastUpdated: searchLastUpdated,
@@ -3705,8 +4059,8 @@ class _$RiskEvidenceSynthesisSearchTearOff {
       searchContent: searchContent,
       searchList: searchList,
       context: context,
-      context_quantity: context_quantity,
-      context_type: context_type,
+      contextQuantity: contextQuantity,
+      contextType: contextType,
       date: date,
       description: description,
       effective: effective,
@@ -3718,9 +4072,14 @@ class _$RiskEvidenceSynthesisSearchTearOff {
       title: title,
       url: url,
       version: version,
-      context_type_quantity: context_type_quantity,
-      context_type_value: context_type_value,
+      contextTypequantity: contextTypequantity,
+      contextTypevalue: contextTypevalue,
     );
+  }
+
+// ignore: unused_element
+  RiskEvidenceSynthesisSearch fromJson(Map<String, Object> json) {
+    return RiskEvidenceSynthesisSearch.fromJson(json);
   }
 }
 
@@ -3740,8 +4099,10 @@ mixin _$RiskEvidenceSynthesisSearch {
   List<Id> get searchList; //List<SearchString> searchHas,
 //List<SearchToken> searchType,
   List<SearchToken> get context;
-  List<SearchQuantity> get context_quantity;
-  List<SearchToken> get context_type;
+  @JsonKey(name: 'context-quantity')
+  List<SearchQuantity> get contextQuantity;
+  @JsonKey(name: 'context-type')
+  List<SearchToken> get contextType;
   List<SearchDate> get date;
   List<SearchString> get description;
   List<SearchDate> get effective;
@@ -3753,9 +4114,12 @@ mixin _$RiskEvidenceSynthesisSearch {
   List<SearchString> get title;
   List<SearchUri> get url;
   List<SearchToken> get version;
-  List<SearchComposite> get context_type_quantity;
-  List<SearchComposite> get context_type_value;
+  @JsonKey(name: 'context-type-quantity')
+  List<SearchComposite> get contextTypequantity;
+  @JsonKey(name: 'context-type-value')
+  List<SearchComposite> get contextTypevalue;
 
+  Map<String, dynamic> toJson();
   $RiskEvidenceSynthesisSearchCopyWith<RiskEvidenceSynthesisSearch>
       get copyWith;
 }
@@ -3776,8 +4140,10 @@ abstract class $RiskEvidenceSynthesisSearchCopyWith<$Res> {
       List<SearchString> searchContent,
       List<Id> searchList,
       List<SearchToken> context,
-      List<SearchQuantity> context_quantity,
-      List<SearchToken> context_type,
+      @JsonKey(name: 'context-quantity')
+          List<SearchQuantity> contextQuantity,
+      @JsonKey(name: 'context-type')
+          List<SearchToken> contextType,
       List<SearchDate> date,
       List<SearchString> description,
       List<SearchDate> effective,
@@ -3789,8 +4155,10 @@ abstract class $RiskEvidenceSynthesisSearchCopyWith<$Res> {
       List<SearchString> title,
       List<SearchUri> url,
       List<SearchToken> version,
-      List<SearchComposite> context_type_quantity,
-      List<SearchComposite> context_type_value});
+      @JsonKey(name: 'context-type-quantity')
+          List<SearchComposite> contextTypequantity,
+      @JsonKey(name: 'context-type-value')
+          List<SearchComposite> contextTypevalue});
 }
 
 /// @nodoc
@@ -3813,8 +4181,8 @@ class _$RiskEvidenceSynthesisSearchCopyWithImpl<$Res>
     Object searchContent = freezed,
     Object searchList = freezed,
     Object context = freezed,
-    Object context_quantity = freezed,
-    Object context_type = freezed,
+    Object contextQuantity = freezed,
+    Object contextType = freezed,
     Object date = freezed,
     Object description = freezed,
     Object effective = freezed,
@@ -3826,8 +4194,8 @@ class _$RiskEvidenceSynthesisSearchCopyWithImpl<$Res>
     Object title = freezed,
     Object url = freezed,
     Object version = freezed,
-    Object context_type_quantity = freezed,
-    Object context_type_value = freezed,
+    Object contextTypequantity = freezed,
+    Object contextTypevalue = freezed,
   }) {
     return _then(_value.copyWith(
       searchId: searchId == freezed ? _value.searchId : searchId as List<Id>,
@@ -3853,12 +4221,12 @@ class _$RiskEvidenceSynthesisSearchCopyWithImpl<$Res>
           searchList == freezed ? _value.searchList : searchList as List<Id>,
       context:
           context == freezed ? _value.context : context as List<SearchToken>,
-      context_quantity: context_quantity == freezed
-          ? _value.context_quantity
-          : context_quantity as List<SearchQuantity>,
-      context_type: context_type == freezed
-          ? _value.context_type
-          : context_type as List<SearchToken>,
+      contextQuantity: contextQuantity == freezed
+          ? _value.contextQuantity
+          : contextQuantity as List<SearchQuantity>,
+      contextType: contextType == freezed
+          ? _value.contextType
+          : contextType as List<SearchToken>,
       date: date == freezed ? _value.date : date as List<SearchDate>,
       description: description == freezed
           ? _value.description
@@ -3881,12 +4249,12 @@ class _$RiskEvidenceSynthesisSearchCopyWithImpl<$Res>
       url: url == freezed ? _value.url : url as List<SearchUri>,
       version:
           version == freezed ? _value.version : version as List<SearchToken>,
-      context_type_quantity: context_type_quantity == freezed
-          ? _value.context_type_quantity
-          : context_type_quantity as List<SearchComposite>,
-      context_type_value: context_type_value == freezed
-          ? _value.context_type_value
-          : context_type_value as List<SearchComposite>,
+      contextTypequantity: contextTypequantity == freezed
+          ? _value.contextTypequantity
+          : contextTypequantity as List<SearchComposite>,
+      contextTypevalue: contextTypevalue == freezed
+          ? _value.contextTypevalue
+          : contextTypevalue as List<SearchComposite>,
     ));
   }
 }
@@ -3909,8 +4277,10 @@ abstract class _$RiskEvidenceSynthesisSearchCopyWith<$Res>
       List<SearchString> searchContent,
       List<Id> searchList,
       List<SearchToken> context,
-      List<SearchQuantity> context_quantity,
-      List<SearchToken> context_type,
+      @JsonKey(name: 'context-quantity')
+          List<SearchQuantity> contextQuantity,
+      @JsonKey(name: 'context-type')
+          List<SearchToken> contextType,
       List<SearchDate> date,
       List<SearchString> description,
       List<SearchDate> effective,
@@ -3922,8 +4292,10 @@ abstract class _$RiskEvidenceSynthesisSearchCopyWith<$Res>
       List<SearchString> title,
       List<SearchUri> url,
       List<SearchToken> version,
-      List<SearchComposite> context_type_quantity,
-      List<SearchComposite> context_type_value});
+      @JsonKey(name: 'context-type-quantity')
+          List<SearchComposite> contextTypequantity,
+      @JsonKey(name: 'context-type-value')
+          List<SearchComposite> contextTypevalue});
 }
 
 /// @nodoc
@@ -3950,8 +4322,8 @@ class __$RiskEvidenceSynthesisSearchCopyWithImpl<$Res>
     Object searchContent = freezed,
     Object searchList = freezed,
     Object context = freezed,
-    Object context_quantity = freezed,
-    Object context_type = freezed,
+    Object contextQuantity = freezed,
+    Object contextType = freezed,
     Object date = freezed,
     Object description = freezed,
     Object effective = freezed,
@@ -3963,8 +4335,8 @@ class __$RiskEvidenceSynthesisSearchCopyWithImpl<$Res>
     Object title = freezed,
     Object url = freezed,
     Object version = freezed,
-    Object context_type_quantity = freezed,
-    Object context_type_value = freezed,
+    Object contextTypequantity = freezed,
+    Object contextTypevalue = freezed,
   }) {
     return _then(_RiskEvidenceSynthesisSearch(
       searchId: searchId == freezed ? _value.searchId : searchId as List<Id>,
@@ -3990,12 +4362,12 @@ class __$RiskEvidenceSynthesisSearchCopyWithImpl<$Res>
           searchList == freezed ? _value.searchList : searchList as List<Id>,
       context:
           context == freezed ? _value.context : context as List<SearchToken>,
-      context_quantity: context_quantity == freezed
-          ? _value.context_quantity
-          : context_quantity as List<SearchQuantity>,
-      context_type: context_type == freezed
-          ? _value.context_type
-          : context_type as List<SearchToken>,
+      contextQuantity: contextQuantity == freezed
+          ? _value.contextQuantity
+          : contextQuantity as List<SearchQuantity>,
+      contextType: contextType == freezed
+          ? _value.contextType
+          : contextType as List<SearchToken>,
       date: date == freezed ? _value.date : date as List<SearchDate>,
       description: description == freezed
           ? _value.description
@@ -4018,15 +4390,17 @@ class __$RiskEvidenceSynthesisSearchCopyWithImpl<$Res>
       url: url == freezed ? _value.url : url as List<SearchUri>,
       version:
           version == freezed ? _value.version : version as List<SearchToken>,
-      context_type_quantity: context_type_quantity == freezed
-          ? _value.context_type_quantity
-          : context_type_quantity as List<SearchComposite>,
-      context_type_value: context_type_value == freezed
-          ? _value.context_type_value
-          : context_type_value as List<SearchComposite>,
+      contextTypequantity: contextTypequantity == freezed
+          ? _value.contextTypequantity
+          : contextTypequantity as List<SearchComposite>,
+      contextTypevalue: contextTypevalue == freezed
+          ? _value.contextTypevalue
+          : contextTypevalue as List<SearchComposite>,
     ));
   }
 }
+
+@JsonSerializable()
 
 /// @nodoc
 class _$_RiskEvidenceSynthesisSearch extends _RiskEvidenceSynthesisSearch {
@@ -4040,8 +4414,8 @@ class _$_RiskEvidenceSynthesisSearch extends _RiskEvidenceSynthesisSearch {
       this.searchContent,
       this.searchList,
       this.context,
-      this.context_quantity,
-      this.context_type,
+      @JsonKey(name: 'context-quantity') this.contextQuantity,
+      @JsonKey(name: 'context-type') this.contextType,
       this.date,
       this.description,
       this.effective,
@@ -4053,9 +4427,12 @@ class _$_RiskEvidenceSynthesisSearch extends _RiskEvidenceSynthesisSearch {
       this.title,
       this.url,
       this.version,
-      this.context_type_quantity,
-      this.context_type_value})
+      @JsonKey(name: 'context-type-quantity') this.contextTypequantity,
+      @JsonKey(name: 'context-type-value') this.contextTypevalue})
       : super._();
+
+  factory _$_RiskEvidenceSynthesisSearch.fromJson(Map<String, dynamic> json) =>
+      _$_$_RiskEvidenceSynthesisSearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -4077,9 +4454,11 @@ class _$_RiskEvidenceSynthesisSearch extends _RiskEvidenceSynthesisSearch {
 //List<SearchToken> searchType,
   final List<SearchToken> context;
   @override
-  final List<SearchQuantity> context_quantity;
+  @JsonKey(name: 'context-quantity')
+  final List<SearchQuantity> contextQuantity;
   @override
-  final List<SearchToken> context_type;
+  @JsonKey(name: 'context-type')
+  final List<SearchToken> contextType;
   @override
   final List<SearchDate> date;
   @override
@@ -4103,13 +4482,15 @@ class _$_RiskEvidenceSynthesisSearch extends _RiskEvidenceSynthesisSearch {
   @override
   final List<SearchToken> version;
   @override
-  final List<SearchComposite> context_type_quantity;
+  @JsonKey(name: 'context-type-quantity')
+  final List<SearchComposite> contextTypequantity;
   @override
-  final List<SearchComposite> context_type_value;
+  @JsonKey(name: 'context-type-value')
+  final List<SearchComposite> contextTypevalue;
 
   @override
   String toString() {
-    return 'RiskEvidenceSynthesisSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, context: $context, context_quantity: $context_quantity, context_type: $context_type, date: $date, description: $description, effective: $effective, identifier: $identifier, jurisdiction: $jurisdiction, name: $name, publisher: $publisher, status: $status, title: $title, url: $url, version: $version, context_type_quantity: $context_type_quantity, context_type_value: $context_type_value)';
+    return 'RiskEvidenceSynthesisSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, context: $context, contextQuantity: $contextQuantity, contextType: $contextType, date: $date, description: $description, effective: $effective, identifier: $identifier, jurisdiction: $jurisdiction, name: $name, publisher: $publisher, status: $status, title: $title, url: $url, version: $version, contextTypequantity: $contextTypequantity, contextTypevalue: $contextTypevalue)';
   }
 
   @override
@@ -4143,12 +4524,12 @@ class _$_RiskEvidenceSynthesisSearch extends _RiskEvidenceSynthesisSearch {
             (identical(other.context, context) ||
                 const DeepCollectionEquality()
                     .equals(other.context, context)) &&
-            (identical(other.context_quantity, context_quantity) ||
+            (identical(other.contextQuantity, contextQuantity) ||
                 const DeepCollectionEquality()
-                    .equals(other.context_quantity, context_quantity)) &&
-            (identical(other.context_type, context_type) ||
+                    .equals(other.contextQuantity, contextQuantity)) &&
+            (identical(other.contextType, contextType) ||
                 const DeepCollectionEquality()
-                    .equals(other.context_type, context_type)) &&
+                    .equals(other.contextType, contextType)) &&
             (identical(other.date, date) ||
                 const DeepCollectionEquality().equals(other.date, date)) &&
             (identical(other.description, description) ||
@@ -4177,12 +4558,12 @@ class _$_RiskEvidenceSynthesisSearch extends _RiskEvidenceSynthesisSearch {
             (identical(other.version, version) ||
                 const DeepCollectionEquality()
                     .equals(other.version, version)) &&
-            (identical(other.context_type_quantity, context_type_quantity) ||
-                const DeepCollectionEquality().equals(
-                    other.context_type_quantity, context_type_quantity)) &&
-            (identical(other.context_type_value, context_type_value) ||
+            (identical(other.contextTypequantity, contextTypequantity) ||
                 const DeepCollectionEquality()
-                    .equals(other.context_type_value, context_type_value)));
+                    .equals(other.contextTypequantity, contextTypequantity)) &&
+            (identical(other.contextTypevalue, contextTypevalue) ||
+                const DeepCollectionEquality()
+                    .equals(other.contextTypevalue, contextTypevalue)));
   }
 
   @override
@@ -4197,8 +4578,8 @@ class _$_RiskEvidenceSynthesisSearch extends _RiskEvidenceSynthesisSearch {
       const DeepCollectionEquality().hash(searchContent) ^
       const DeepCollectionEquality().hash(searchList) ^
       const DeepCollectionEquality().hash(context) ^
-      const DeepCollectionEquality().hash(context_quantity) ^
-      const DeepCollectionEquality().hash(context_type) ^
+      const DeepCollectionEquality().hash(contextQuantity) ^
+      const DeepCollectionEquality().hash(contextType) ^
       const DeepCollectionEquality().hash(date) ^
       const DeepCollectionEquality().hash(description) ^
       const DeepCollectionEquality().hash(effective) ^
@@ -4210,13 +4591,18 @@ class _$_RiskEvidenceSynthesisSearch extends _RiskEvidenceSynthesisSearch {
       const DeepCollectionEquality().hash(title) ^
       const DeepCollectionEquality().hash(url) ^
       const DeepCollectionEquality().hash(version) ^
-      const DeepCollectionEquality().hash(context_type_quantity) ^
-      const DeepCollectionEquality().hash(context_type_value);
+      const DeepCollectionEquality().hash(contextTypequantity) ^
+      const DeepCollectionEquality().hash(contextTypevalue);
 
   @override
   _$RiskEvidenceSynthesisSearchCopyWith<_RiskEvidenceSynthesisSearch>
       get copyWith => __$RiskEvidenceSynthesisSearchCopyWithImpl<
           _RiskEvidenceSynthesisSearch>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_RiskEvidenceSynthesisSearchToJson(this);
+  }
 }
 
 abstract class _RiskEvidenceSynthesisSearch
@@ -4232,8 +4618,10 @@ abstract class _RiskEvidenceSynthesisSearch
           List<SearchString> searchContent,
           List<Id> searchList,
           List<SearchToken> context,
-          List<SearchQuantity> context_quantity,
-          List<SearchToken> context_type,
+          @JsonKey(name: 'context-quantity')
+              List<SearchQuantity> contextQuantity,
+          @JsonKey(name: 'context-type')
+              List<SearchToken> contextType,
           List<SearchDate> date,
           List<SearchString> description,
           List<SearchDate> effective,
@@ -4245,9 +4633,14 @@ abstract class _RiskEvidenceSynthesisSearch
           List<SearchString> title,
           List<SearchUri> url,
           List<SearchToken> version,
-          List<SearchComposite> context_type_quantity,
-          List<SearchComposite> context_type_value}) =
+          @JsonKey(name: 'context-type-quantity')
+              List<SearchComposite> contextTypequantity,
+          @JsonKey(name: 'context-type-value')
+              List<SearchComposite> contextTypevalue}) =
       _$_RiskEvidenceSynthesisSearch;
+
+  factory _RiskEvidenceSynthesisSearch.fromJson(Map<String, dynamic> json) =
+      _$_RiskEvidenceSynthesisSearch.fromJson;
 
   @override
   List<Id> get searchId;
@@ -4269,9 +4662,11 @@ abstract class _RiskEvidenceSynthesisSearch
 //List<SearchToken> searchType,
   List<SearchToken> get context;
   @override
-  List<SearchQuantity> get context_quantity;
+  @JsonKey(name: 'context-quantity')
+  List<SearchQuantity> get contextQuantity;
   @override
-  List<SearchToken> get context_type;
+  @JsonKey(name: 'context-type')
+  List<SearchToken> get contextType;
   @override
   List<SearchDate> get date;
   @override
@@ -4295,9 +4690,11 @@ abstract class _RiskEvidenceSynthesisSearch
   @override
   List<SearchToken> get version;
   @override
-  List<SearchComposite> get context_type_quantity;
+  @JsonKey(name: 'context-type-quantity')
+  List<SearchComposite> get contextTypequantity;
   @override
-  List<SearchComposite> get context_type_value;
+  @JsonKey(name: 'context-type-value')
+  List<SearchComposite> get contextTypevalue;
   @override
   _$RiskEvidenceSynthesisSearchCopyWith<_RiskEvidenceSynthesisSearch>
       get copyWith;

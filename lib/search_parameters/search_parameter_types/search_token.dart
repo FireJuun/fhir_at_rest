@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+
 import 'package:fhir/primitive_types/primitive_types.dart';
 
 import '../../failures/restful_failure.dart';
@@ -34,6 +35,16 @@ class SearchToken extends SearchObject<String> {
     this.missing,
     this.modifier,
   });
+
+  factory SearchToken.fromJson(Map<String, dynamic> json) => SearchToken(
+      system: json['system'],
+      code: json['code'],
+      value: json['value'],
+      missing: json['missing'],
+      modifier: json['modifier']);
+
+  Map<String, dynamic> toJson() => searchString()
+      .fold((l) => {'failure': l.errorMessage()}, (r) => {'value': r});
 
   Either<RestfulFailure, String> searchString() {
     var returnString = '';

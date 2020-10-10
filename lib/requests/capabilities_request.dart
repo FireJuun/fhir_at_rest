@@ -46,7 +46,7 @@ abstract class CapabilitiesRequest with _$CapabilitiesRequest {
   }) = _CapabilitiesRequestR5;
 
   Future<Either<RestfulFailure, dynamic>> request() async {
-    final thisRequest = '${base}/metadata?mode=${enumToString(mode)}'
+    final thisRequest = '$base/metadata?mode=${enumToString(mode)}'
         '&_format=application/fhir+json'
         '${pretty ? "&_pretty=$pretty" : ""}'
         '${summary != Summary.none ? "&_summary=${enumToString(summary)}" : ""}';

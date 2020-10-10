@@ -510,7 +510,7 @@ void main() {
         base: Uri.parse('http://hapi.fhir.org/baseR4'),
         type: R4Types.observation,
         parameters: ObservationSearch(
-          value_quantity: [
+          valueQuantity: [
             SearchQuantity(
               number: 5.4,
               system: FhirUri('http://unitsofmeasure.org'),
@@ -532,7 +532,7 @@ void main() {
         base: Uri.parse('http://hapi.fhir.org/baseR4'),
         type: R4Types.observation,
         parameters: ObservationSearch(
-          value_quantity: [
+          valueQuantity: [
             SearchQuantity(
               number: 5.4,
               system: FhirUri('http://unitsofmeasure.org'),
@@ -553,7 +553,7 @@ void main() {
         base: Uri.parse('http://hapi.fhir.org/baseR4'),
         type: R4Types.observation,
         parameters: ObservationSearch(
-          value_quantity: [
+          valueQuantity: [
             SearchQuantity(
               number: '5.4e-3',
               system: FhirUri('http://unitsofmeasure.org'),

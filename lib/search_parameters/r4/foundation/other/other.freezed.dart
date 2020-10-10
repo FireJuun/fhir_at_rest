@@ -8,6 +8,9 @@ part of 'other.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
+BasicSearch _$BasicSearchFromJson(Map<String, dynamic> json) {
+  return _BasicSearch.fromJson(json);
+}
 
 /// @nodoc
 class _$BasicSearchTearOff {
@@ -46,6 +49,11 @@ class _$BasicSearchTearOff {
       subject: subject,
     );
   }
+
+// ignore: unused_element
+  BasicSearch fromJson(Map<String, Object> json) {
+    return BasicSearch.fromJson(json);
+  }
 }
 
 /// @nodoc
@@ -70,6 +78,7 @@ mixin _$BasicSearch {
   List<SearchReference> get patient;
   List<SearchReference> get subject;
 
+  Map<String, dynamic> toJson();
   $BasicSearchCopyWith<BasicSearch> get copyWith;
 }
 
@@ -251,6 +260,8 @@ class __$BasicSearchCopyWithImpl<$Res> extends _$BasicSearchCopyWithImpl<$Res>
   }
 }
 
+@JsonSerializable()
+
 /// @nodoc
 class _$_BasicSearch extends _BasicSearch {
   _$_BasicSearch(
@@ -269,6 +280,9 @@ class _$_BasicSearch extends _BasicSearch {
       this.patient,
       this.subject})
       : super._();
+
+  factory _$_BasicSearch.fromJson(Map<String, dynamic> json) =>
+      _$_$_BasicSearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -371,6 +385,11 @@ class _$_BasicSearch extends _BasicSearch {
   @override
   _$BasicSearchCopyWith<_BasicSearch> get copyWith =>
       __$BasicSearchCopyWithImpl<_BasicSearch>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_BasicSearchToJson(this);
+  }
 }
 
 abstract class _BasicSearch extends BasicSearch {
@@ -390,6 +409,9 @@ abstract class _BasicSearch extends BasicSearch {
       List<SearchToken> identifier,
       List<SearchReference> patient,
       List<SearchReference> subject}) = _$_BasicSearch;
+
+  factory _BasicSearch.fromJson(Map<String, dynamic> json) =
+      _$_BasicSearch.fromJson;
 
   @override
   List<Id> get searchId;
@@ -422,6 +444,10 @@ abstract class _BasicSearch extends BasicSearch {
   List<SearchReference> get subject;
   @override
   _$BasicSearchCopyWith<_BasicSearch> get copyWith;
+}
+
+BundleSearch _$BundleSearchFromJson(Map<String, dynamic> json) {
+  return _BundleSearch.fromJson(json);
 }
 
 /// @nodoc
@@ -459,6 +485,11 @@ class _$BundleSearchTearOff {
       type: type,
     );
   }
+
+// ignore: unused_element
+  BundleSearch fromJson(Map<String, Object> json) {
+    return BundleSearch.fromJson(json);
+  }
 }
 
 /// @nodoc
@@ -482,6 +513,7 @@ mixin _$BundleSearch {
   List<SearchDate> get timestamp;
   List<SearchToken> get type;
 
+  Map<String, dynamic> toJson();
   $BundleSearchCopyWith<BundleSearch> get copyWith;
 }
 
@@ -657,6 +689,8 @@ class __$BundleSearchCopyWithImpl<$Res> extends _$BundleSearchCopyWithImpl<$Res>
   }
 }
 
+@JsonSerializable()
+
 /// @nodoc
 class _$_BundleSearch extends _BundleSearch {
   _$_BundleSearch(
@@ -674,6 +708,9 @@ class _$_BundleSearch extends _BundleSearch {
       this.timestamp,
       this.type})
       : super._();
+
+  factory _$_BundleSearch.fromJson(Map<String, dynamic> json) =>
+      _$_$_BundleSearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -772,6 +809,11 @@ class _$_BundleSearch extends _BundleSearch {
   @override
   _$BundleSearchCopyWith<_BundleSearch> get copyWith =>
       __$BundleSearchCopyWithImpl<_BundleSearch>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_BundleSearchToJson(this);
+  }
 }
 
 abstract class _BundleSearch extends BundleSearch {
@@ -790,6 +832,9 @@ abstract class _BundleSearch extends BundleSearch {
       List<SearchReference> message,
       List<SearchDate> timestamp,
       List<SearchToken> type}) = _$_BundleSearch;
+
+  factory _BundleSearch.fromJson(Map<String, dynamic> json) =
+      _$_BundleSearch.fromJson;
 
   @override
   List<Id> get searchId;
@@ -820,6 +865,10 @@ abstract class _BundleSearch extends BundleSearch {
   List<SearchToken> get type;
   @override
   _$BundleSearchCopyWith<_BundleSearch> get copyWith;
+}
+
+LinkageSearch _$LinkageSearchFromJson(Map<String, dynamic> json) {
+  return _LinkageSearch.fromJson(json);
 }
 
 /// @nodoc
@@ -853,6 +902,11 @@ class _$LinkageSearchTearOff {
       source: source,
     );
   }
+
+// ignore: unused_element
+  LinkageSearch fromJson(Map<String, Object> json) {
+    return LinkageSearch.fromJson(json);
+  }
 }
 
 /// @nodoc
@@ -874,6 +928,7 @@ mixin _$LinkageSearch {
   List<SearchReference> get item;
   List<SearchReference> get source;
 
+  Map<String, dynamic> toJson();
   $LinkageSearchCopyWith<LinkageSearch> get copyWith;
 }
 
@@ -1027,6 +1082,8 @@ class __$LinkageSearchCopyWithImpl<$Res>
   }
 }
 
+@JsonSerializable()
+
 /// @nodoc
 class _$_LinkageSearch extends _LinkageSearch {
   _$_LinkageSearch(
@@ -1042,6 +1099,9 @@ class _$_LinkageSearch extends _LinkageSearch {
       this.item,
       this.source})
       : super._();
+
+  factory _$_LinkageSearch.fromJson(Map<String, dynamic> json) =>
+      _$_$_LinkageSearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -1126,6 +1186,11 @@ class _$_LinkageSearch extends _LinkageSearch {
   @override
   _$LinkageSearchCopyWith<_LinkageSearch> get copyWith =>
       __$LinkageSearchCopyWithImpl<_LinkageSearch>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_LinkageSearchToJson(this);
+  }
 }
 
 abstract class _LinkageSearch extends LinkageSearch {
@@ -1142,6 +1207,9 @@ abstract class _LinkageSearch extends LinkageSearch {
       List<SearchReference> author,
       List<SearchReference> item,
       List<SearchReference> source}) = _$_LinkageSearch;
+
+  factory _LinkageSearch.fromJson(Map<String, dynamic> json) =
+      _$_LinkageSearch.fromJson;
 
   @override
   List<Id> get searchId;
@@ -1170,6 +1238,10 @@ abstract class _LinkageSearch extends LinkageSearch {
   _$LinkageSearchCopyWith<_LinkageSearch> get copyWith;
 }
 
+MessageHeaderSearch _$MessageHeaderSearchFromJson(Map<String, dynamic> json) {
+  return _MessageHeaderSearch.fromJson(json);
+}
+
 /// @nodoc
 class _$MessageHeaderSearchTearOff {
   const _$MessageHeaderSearchTearOff();
@@ -1187,16 +1259,16 @@ class _$MessageHeaderSearchTearOff {
       List<SearchReference> author,
       List<SearchToken> code,
       List<SearchString> destination,
-      List<SearchUri> destination_uri,
+      @JsonKey(name: 'destination-uri') List<SearchUri> destinationUri,
       List<SearchReference> enterer,
       List<SearchToken> event,
       List<SearchReference> focus,
       List<SearchReference> receiver,
-      List<SearchToken> response_id,
+      @JsonKey(name: 'response-id') List<SearchToken> responseId,
       List<SearchReference> responsible,
       List<SearchReference> sender,
       List<SearchString> source,
-      List<SearchUri> source_uri,
+      @JsonKey(name: 'source-uri') List<SearchUri> sourceUri,
       List<SearchReference> target}) {
     return _MessageHeaderSearch(
       searchId: searchId,
@@ -1210,18 +1282,23 @@ class _$MessageHeaderSearchTearOff {
       author: author,
       code: code,
       destination: destination,
-      destination_uri: destination_uri,
+      destinationUri: destinationUri,
       enterer: enterer,
       event: event,
       focus: focus,
       receiver: receiver,
-      response_id: response_id,
+      responseId: responseId,
       responsible: responsible,
       sender: sender,
       source: source,
-      source_uri: source_uri,
+      sourceUri: sourceUri,
       target: target,
     );
+  }
+
+// ignore: unused_element
+  MessageHeaderSearch fromJson(Map<String, Object> json) {
+    return MessageHeaderSearch.fromJson(json);
   }
 }
 
@@ -1243,18 +1320,22 @@ mixin _$MessageHeaderSearch {
   List<SearchReference> get author;
   List<SearchToken> get code;
   List<SearchString> get destination;
-  List<SearchUri> get destination_uri;
+  @JsonKey(name: 'destination-uri')
+  List<SearchUri> get destinationUri;
   List<SearchReference> get enterer;
   List<SearchToken> get event;
   List<SearchReference> get focus;
   List<SearchReference> get receiver;
-  List<SearchToken> get response_id;
+  @JsonKey(name: 'response-id')
+  List<SearchToken> get responseId;
   List<SearchReference> get responsible;
   List<SearchReference> get sender;
   List<SearchString> get source;
-  List<SearchUri> get source_uri;
+  @JsonKey(name: 'source-uri')
+  List<SearchUri> get sourceUri;
   List<SearchReference> get target;
 
+  Map<String, dynamic> toJson();
   $MessageHeaderSearchCopyWith<MessageHeaderSearch> get copyWith;
 }
 
@@ -1275,16 +1356,16 @@ abstract class $MessageHeaderSearchCopyWith<$Res> {
       List<SearchReference> author,
       List<SearchToken> code,
       List<SearchString> destination,
-      List<SearchUri> destination_uri,
+      @JsonKey(name: 'destination-uri') List<SearchUri> destinationUri,
       List<SearchReference> enterer,
       List<SearchToken> event,
       List<SearchReference> focus,
       List<SearchReference> receiver,
-      List<SearchToken> response_id,
+      @JsonKey(name: 'response-id') List<SearchToken> responseId,
       List<SearchReference> responsible,
       List<SearchReference> sender,
       List<SearchString> source,
-      List<SearchUri> source_uri,
+      @JsonKey(name: 'source-uri') List<SearchUri> sourceUri,
       List<SearchReference> target});
 }
 
@@ -1310,16 +1391,16 @@ class _$MessageHeaderSearchCopyWithImpl<$Res>
     Object author = freezed,
     Object code = freezed,
     Object destination = freezed,
-    Object destination_uri = freezed,
+    Object destinationUri = freezed,
     Object enterer = freezed,
     Object event = freezed,
     Object focus = freezed,
     Object receiver = freezed,
-    Object response_id = freezed,
+    Object responseId = freezed,
     Object responsible = freezed,
     Object sender = freezed,
     Object source = freezed,
-    Object source_uri = freezed,
+    Object sourceUri = freezed,
     Object target = freezed,
   }) {
     return _then(_value.copyWith(
@@ -1350,9 +1431,9 @@ class _$MessageHeaderSearchCopyWithImpl<$Res>
       destination: destination == freezed
           ? _value.destination
           : destination as List<SearchString>,
-      destination_uri: destination_uri == freezed
-          ? _value.destination_uri
-          : destination_uri as List<SearchUri>,
+      destinationUri: destinationUri == freezed
+          ? _value.destinationUri
+          : destinationUri as List<SearchUri>,
       enterer: enterer == freezed
           ? _value.enterer
           : enterer as List<SearchReference>,
@@ -1361,18 +1442,18 @@ class _$MessageHeaderSearchCopyWithImpl<$Res>
       receiver: receiver == freezed
           ? _value.receiver
           : receiver as List<SearchReference>,
-      response_id: response_id == freezed
-          ? _value.response_id
-          : response_id as List<SearchToken>,
+      responseId: responseId == freezed
+          ? _value.responseId
+          : responseId as List<SearchToken>,
       responsible: responsible == freezed
           ? _value.responsible
           : responsible as List<SearchReference>,
       sender:
           sender == freezed ? _value.sender : sender as List<SearchReference>,
       source: source == freezed ? _value.source : source as List<SearchString>,
-      source_uri: source_uri == freezed
-          ? _value.source_uri
-          : source_uri as List<SearchUri>,
+      sourceUri: sourceUri == freezed
+          ? _value.sourceUri
+          : sourceUri as List<SearchUri>,
       target:
           target == freezed ? _value.target : target as List<SearchReference>,
     ));
@@ -1398,16 +1479,16 @@ abstract class _$MessageHeaderSearchCopyWith<$Res>
       List<SearchReference> author,
       List<SearchToken> code,
       List<SearchString> destination,
-      List<SearchUri> destination_uri,
+      @JsonKey(name: 'destination-uri') List<SearchUri> destinationUri,
       List<SearchReference> enterer,
       List<SearchToken> event,
       List<SearchReference> focus,
       List<SearchReference> receiver,
-      List<SearchToken> response_id,
+      @JsonKey(name: 'response-id') List<SearchToken> responseId,
       List<SearchReference> responsible,
       List<SearchReference> sender,
       List<SearchString> source,
-      List<SearchUri> source_uri,
+      @JsonKey(name: 'source-uri') List<SearchUri> sourceUri,
       List<SearchReference> target});
 }
 
@@ -1435,16 +1516,16 @@ class __$MessageHeaderSearchCopyWithImpl<$Res>
     Object author = freezed,
     Object code = freezed,
     Object destination = freezed,
-    Object destination_uri = freezed,
+    Object destinationUri = freezed,
     Object enterer = freezed,
     Object event = freezed,
     Object focus = freezed,
     Object receiver = freezed,
-    Object response_id = freezed,
+    Object responseId = freezed,
     Object responsible = freezed,
     Object sender = freezed,
     Object source = freezed,
-    Object source_uri = freezed,
+    Object sourceUri = freezed,
     Object target = freezed,
   }) {
     return _then(_MessageHeaderSearch(
@@ -1475,9 +1556,9 @@ class __$MessageHeaderSearchCopyWithImpl<$Res>
       destination: destination == freezed
           ? _value.destination
           : destination as List<SearchString>,
-      destination_uri: destination_uri == freezed
-          ? _value.destination_uri
-          : destination_uri as List<SearchUri>,
+      destinationUri: destinationUri == freezed
+          ? _value.destinationUri
+          : destinationUri as List<SearchUri>,
       enterer: enterer == freezed
           ? _value.enterer
           : enterer as List<SearchReference>,
@@ -1486,23 +1567,25 @@ class __$MessageHeaderSearchCopyWithImpl<$Res>
       receiver: receiver == freezed
           ? _value.receiver
           : receiver as List<SearchReference>,
-      response_id: response_id == freezed
-          ? _value.response_id
-          : response_id as List<SearchToken>,
+      responseId: responseId == freezed
+          ? _value.responseId
+          : responseId as List<SearchToken>,
       responsible: responsible == freezed
           ? _value.responsible
           : responsible as List<SearchReference>,
       sender:
           sender == freezed ? _value.sender : sender as List<SearchReference>,
       source: source == freezed ? _value.source : source as List<SearchString>,
-      source_uri: source_uri == freezed
-          ? _value.source_uri
-          : source_uri as List<SearchUri>,
+      sourceUri: sourceUri == freezed
+          ? _value.sourceUri
+          : sourceUri as List<SearchUri>,
       target:
           target == freezed ? _value.target : target as List<SearchReference>,
     ));
   }
 }
+
+@JsonSerializable()
 
 /// @nodoc
 class _$_MessageHeaderSearch extends _MessageHeaderSearch {
@@ -1518,18 +1601,21 @@ class _$_MessageHeaderSearch extends _MessageHeaderSearch {
       this.author,
       this.code,
       this.destination,
-      this.destination_uri,
+      @JsonKey(name: 'destination-uri') this.destinationUri,
       this.enterer,
       this.event,
       this.focus,
       this.receiver,
-      this.response_id,
+      @JsonKey(name: 'response-id') this.responseId,
       this.responsible,
       this.sender,
       this.source,
-      this.source_uri,
+      @JsonKey(name: 'source-uri') this.sourceUri,
       this.target})
       : super._();
+
+  factory _$_MessageHeaderSearch.fromJson(Map<String, dynamic> json) =>
+      _$_$_MessageHeaderSearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -1555,7 +1641,8 @@ class _$_MessageHeaderSearch extends _MessageHeaderSearch {
   @override
   final List<SearchString> destination;
   @override
-  final List<SearchUri> destination_uri;
+  @JsonKey(name: 'destination-uri')
+  final List<SearchUri> destinationUri;
   @override
   final List<SearchReference> enterer;
   @override
@@ -1565,7 +1652,8 @@ class _$_MessageHeaderSearch extends _MessageHeaderSearch {
   @override
   final List<SearchReference> receiver;
   @override
-  final List<SearchToken> response_id;
+  @JsonKey(name: 'response-id')
+  final List<SearchToken> responseId;
   @override
   final List<SearchReference> responsible;
   @override
@@ -1573,13 +1661,14 @@ class _$_MessageHeaderSearch extends _MessageHeaderSearch {
   @override
   final List<SearchString> source;
   @override
-  final List<SearchUri> source_uri;
+  @JsonKey(name: 'source-uri')
+  final List<SearchUri> sourceUri;
   @override
   final List<SearchReference> target;
 
   @override
   String toString() {
-    return 'MessageHeaderSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, author: $author, code: $code, destination: $destination, destination_uri: $destination_uri, enterer: $enterer, event: $event, focus: $focus, receiver: $receiver, response_id: $response_id, responsible: $responsible, sender: $sender, source: $source, source_uri: $source_uri, target: $target)';
+    return 'MessageHeaderSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, author: $author, code: $code, destination: $destination, destinationUri: $destinationUri, enterer: $enterer, event: $event, focus: $focus, receiver: $receiver, responseId: $responseId, responsible: $responsible, sender: $sender, source: $source, sourceUri: $sourceUri, target: $target)';
   }
 
   @override
@@ -1617,9 +1706,9 @@ class _$_MessageHeaderSearch extends _MessageHeaderSearch {
             (identical(other.destination, destination) ||
                 const DeepCollectionEquality()
                     .equals(other.destination, destination)) &&
-            (identical(other.destination_uri, destination_uri) ||
+            (identical(other.destinationUri, destinationUri) ||
                 const DeepCollectionEquality()
-                    .equals(other.destination_uri, destination_uri)) &&
+                    .equals(other.destinationUri, destinationUri)) &&
             (identical(other.enterer, enterer) ||
                 const DeepCollectionEquality()
                     .equals(other.enterer, enterer)) &&
@@ -1630,9 +1719,9 @@ class _$_MessageHeaderSearch extends _MessageHeaderSearch {
             (identical(other.receiver, receiver) ||
                 const DeepCollectionEquality()
                     .equals(other.receiver, receiver)) &&
-            (identical(other.response_id, response_id) ||
+            (identical(other.responseId, responseId) ||
                 const DeepCollectionEquality()
-                    .equals(other.response_id, response_id)) &&
+                    .equals(other.responseId, responseId)) &&
             (identical(other.responsible, responsible) ||
                 const DeepCollectionEquality()
                     .equals(other.responsible, responsible)) &&
@@ -1640,9 +1729,9 @@ class _$_MessageHeaderSearch extends _MessageHeaderSearch {
                 const DeepCollectionEquality().equals(other.sender, sender)) &&
             (identical(other.source, source) ||
                 const DeepCollectionEquality().equals(other.source, source)) &&
-            (identical(other.source_uri, source_uri) ||
+            (identical(other.sourceUri, sourceUri) ||
                 const DeepCollectionEquality()
-                    .equals(other.source_uri, source_uri)) &&
+                    .equals(other.sourceUri, sourceUri)) &&
             (identical(other.target, target) ||
                 const DeepCollectionEquality().equals(other.target, target)));
   }
@@ -1661,22 +1750,27 @@ class _$_MessageHeaderSearch extends _MessageHeaderSearch {
       const DeepCollectionEquality().hash(author) ^
       const DeepCollectionEquality().hash(code) ^
       const DeepCollectionEquality().hash(destination) ^
-      const DeepCollectionEquality().hash(destination_uri) ^
+      const DeepCollectionEquality().hash(destinationUri) ^
       const DeepCollectionEquality().hash(enterer) ^
       const DeepCollectionEquality().hash(event) ^
       const DeepCollectionEquality().hash(focus) ^
       const DeepCollectionEquality().hash(receiver) ^
-      const DeepCollectionEquality().hash(response_id) ^
+      const DeepCollectionEquality().hash(responseId) ^
       const DeepCollectionEquality().hash(responsible) ^
       const DeepCollectionEquality().hash(sender) ^
       const DeepCollectionEquality().hash(source) ^
-      const DeepCollectionEquality().hash(source_uri) ^
+      const DeepCollectionEquality().hash(sourceUri) ^
       const DeepCollectionEquality().hash(target);
 
   @override
   _$MessageHeaderSearchCopyWith<_MessageHeaderSearch> get copyWith =>
       __$MessageHeaderSearchCopyWithImpl<_MessageHeaderSearch>(
           this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_MessageHeaderSearchToJson(this);
+  }
 }
 
 abstract class _MessageHeaderSearch extends MessageHeaderSearch {
@@ -1693,17 +1787,20 @@ abstract class _MessageHeaderSearch extends MessageHeaderSearch {
       List<SearchReference> author,
       List<SearchToken> code,
       List<SearchString> destination,
-      List<SearchUri> destination_uri,
+      @JsonKey(name: 'destination-uri') List<SearchUri> destinationUri,
       List<SearchReference> enterer,
       List<SearchToken> event,
       List<SearchReference> focus,
       List<SearchReference> receiver,
-      List<SearchToken> response_id,
+      @JsonKey(name: 'response-id') List<SearchToken> responseId,
       List<SearchReference> responsible,
       List<SearchReference> sender,
       List<SearchString> source,
-      List<SearchUri> source_uri,
+      @JsonKey(name: 'source-uri') List<SearchUri> sourceUri,
       List<SearchReference> target}) = _$_MessageHeaderSearch;
+
+  factory _MessageHeaderSearch.fromJson(Map<String, dynamic> json) =
+      _$_MessageHeaderSearch.fromJson;
 
   @override
   List<Id> get searchId;
@@ -1729,7 +1826,8 @@ abstract class _MessageHeaderSearch extends MessageHeaderSearch {
   @override
   List<SearchString> get destination;
   @override
-  List<SearchUri> get destination_uri;
+  @JsonKey(name: 'destination-uri')
+  List<SearchUri> get destinationUri;
   @override
   List<SearchReference> get enterer;
   @override
@@ -1739,7 +1837,8 @@ abstract class _MessageHeaderSearch extends MessageHeaderSearch {
   @override
   List<SearchReference> get receiver;
   @override
-  List<SearchToken> get response_id;
+  @JsonKey(name: 'response-id')
+  List<SearchToken> get responseId;
   @override
   List<SearchReference> get responsible;
   @override
@@ -1747,11 +1846,16 @@ abstract class _MessageHeaderSearch extends MessageHeaderSearch {
   @override
   List<SearchString> get source;
   @override
-  List<SearchUri> get source_uri;
+  @JsonKey(name: 'source-uri')
+  List<SearchUri> get sourceUri;
   @override
   List<SearchReference> get target;
   @override
   _$MessageHeaderSearchCopyWith<_MessageHeaderSearch> get copyWith;
+}
+
+SubscriptionSearch _$SubscriptionSearchFromJson(Map<String, dynamic> json) {
+  return _SubscriptionSearch.fromJson(json);
 }
 
 /// @nodoc
@@ -1791,6 +1895,11 @@ class _$SubscriptionSearchTearOff {
       url: url,
     );
   }
+
+// ignore: unused_element
+  SubscriptionSearch fromJson(Map<String, Object> json) {
+    return SubscriptionSearch.fromJson(json);
+  }
 }
 
 /// @nodoc
@@ -1815,6 +1924,7 @@ mixin _$SubscriptionSearch {
   List<SearchToken> get type;
   List<SearchUri> get url;
 
+  Map<String, dynamic> toJson();
   $SubscriptionSearchCopyWith<SubscriptionSearch> get copyWith;
 }
 
@@ -1990,6 +2100,8 @@ class __$SubscriptionSearchCopyWithImpl<$Res>
   }
 }
 
+@JsonSerializable()
+
 /// @nodoc
 class _$_SubscriptionSearch extends _SubscriptionSearch {
   _$_SubscriptionSearch(
@@ -2008,6 +2120,9 @@ class _$_SubscriptionSearch extends _SubscriptionSearch {
       this.type,
       this.url})
       : super._();
+
+  factory _$_SubscriptionSearch.fromJson(Map<String, dynamic> json) =>
+      _$_$_SubscriptionSearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -2110,6 +2225,11 @@ class _$_SubscriptionSearch extends _SubscriptionSearch {
   @override
   _$SubscriptionSearchCopyWith<_SubscriptionSearch> get copyWith =>
       __$SubscriptionSearchCopyWithImpl<_SubscriptionSearch>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_SubscriptionSearchToJson(this);
+  }
 }
 
 abstract class _SubscriptionSearch extends SubscriptionSearch {
@@ -2129,6 +2249,9 @@ abstract class _SubscriptionSearch extends SubscriptionSearch {
       List<SearchToken> status,
       List<SearchToken> type,
       List<SearchUri> url}) = _$_SubscriptionSearch;
+
+  factory _SubscriptionSearch.fromJson(Map<String, dynamic> json) =
+      _$_SubscriptionSearch.fromJson;
 
   @override
   List<Id> get searchId;

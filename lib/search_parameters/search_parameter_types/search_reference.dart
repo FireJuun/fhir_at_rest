@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+
 import 'package:fhir/primitive_types/primitive_types.dart';
 
 import '../../enums/enums.dart';
@@ -6,6 +7,7 @@ import '../../failures/restful_failure.dart';
 import 'search_objects.dart';
 
 // ToDo: identifier
+
 class SearchReference extends SearchObject<String> {
   final Id id;
   final Either<RestfulFailure, String> type;
@@ -22,6 +24,16 @@ class SearchReference extends SearchObject<String> {
   }
 
   const SearchReference._({this.id, this.type, this.url, this.missing});
+
+  factory SearchReference.fromJson(Map<String, dynamic> json) =>
+      SearchReference(
+          id: json['id'],
+          type: json['type'],
+          url: json['url'],
+          missing: json['missing']);
+
+  Map<String, dynamic> toJson() => searchString()
+      .fold((l) => {'failure': l.errorMessage()}, (r) => {'value': r});
 
   Either<RestfulFailure, String> searchString() {
     if (missing != null) {

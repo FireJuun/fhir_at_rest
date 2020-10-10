@@ -5,6 +5,7 @@ import '../../../search_parameter_types/search_parameter_types.dart';
 import '../../../search_parameters.dart';
 
 part 'payment.freezed.dart';
+part 'payment.g.dart';
 
 @freezed
 abstract class PaymentNoticeSearch with R4SearchParameters implements _$PaymentNoticeSearch {
@@ -22,13 +23,14 @@ List<Id> searchList,
 //List<SearchToken> searchType,
 List<SearchDate> created,
 List<SearchToken> identifier,
-List<SearchToken> payment_status,
+@JsonKey(name: 'payment-status') List<SearchToken> paymentStatus,
 List<SearchReference> provider,
 List<SearchReference> request,
 List<SearchReference> response,
 List<SearchToken> status,
 }) = _PaymentNoticeSearch;
-}
+
+factory PaymentNoticeSearch.fromJson(Map<String, dynamic> json) => _$PaymentNoticeSearchFromJson(json);}
 
 @freezed
 abstract class PaymentReconciliationSearch with R4SearchParameters implements _$PaymentReconciliationSearch {
@@ -48,10 +50,11 @@ List<SearchDate> created,
 List<SearchString> disposition,
 List<SearchToken> identifier,
 List<SearchToken> outcome,
-List<SearchReference> payment_issuer,
+@JsonKey(name: 'payment-issuer') List<SearchReference> paymentIssuer,
 List<SearchReference> request,
 List<SearchReference> requestor,
 List<SearchToken> status,
 }) = _PaymentReconciliationSearch;
-}
+
+factory PaymentReconciliationSearch.fromJson(Map<String, dynamic> json) => _$PaymentReconciliationSearchFromJson(json);}
 

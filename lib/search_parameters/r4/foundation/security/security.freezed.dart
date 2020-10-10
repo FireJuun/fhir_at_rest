@@ -8,6 +8,9 @@ part of 'security.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
+ConsentSearch _$ConsentSearchFromJson(Map<String, dynamic> json) {
+  return _ConsentSearch.fromJson(json);
+}
 
 /// @nodoc
 class _$ConsentSearchTearOff {
@@ -35,8 +38,8 @@ class _$ConsentSearchTearOff {
       List<SearchDate> period,
       List<SearchToken> purpose,
       List<SearchToken> scope,
-      List<SearchToken> security_label,
-      List<SearchReference> source_reference,
+      @JsonKey(name: 'security-label') List<SearchToken> securityLabel,
+      @JsonKey(name: 'source-reference') List<SearchReference> sourceReference,
       List<SearchToken> status}) {
     return _ConsentSearch(
       searchId: searchId,
@@ -59,10 +62,15 @@ class _$ConsentSearchTearOff {
       period: period,
       purpose: purpose,
       scope: scope,
-      security_label: security_label,
-      source_reference: source_reference,
+      securityLabel: securityLabel,
+      sourceReference: sourceReference,
       status: status,
     );
+  }
+
+// ignore: unused_element
+  ConsentSearch fromJson(Map<String, Object> json) {
+    return ConsentSearch.fromJson(json);
   }
 }
 
@@ -93,10 +101,13 @@ mixin _$ConsentSearch {
   List<SearchDate> get period;
   List<SearchToken> get purpose;
   List<SearchToken> get scope;
-  List<SearchToken> get security_label;
-  List<SearchReference> get source_reference;
+  @JsonKey(name: 'security-label')
+  List<SearchToken> get securityLabel;
+  @JsonKey(name: 'source-reference')
+  List<SearchReference> get sourceReference;
   List<SearchToken> get status;
 
+  Map<String, dynamic> toJson();
   $ConsentSearchCopyWith<ConsentSearch> get copyWith;
 }
 
@@ -126,8 +137,8 @@ abstract class $ConsentSearchCopyWith<$Res> {
       List<SearchDate> period,
       List<SearchToken> purpose,
       List<SearchToken> scope,
-      List<SearchToken> security_label,
-      List<SearchReference> source_reference,
+      @JsonKey(name: 'security-label') List<SearchToken> securityLabel,
+      @JsonKey(name: 'source-reference') List<SearchReference> sourceReference,
       List<SearchToken> status});
 }
 
@@ -162,8 +173,8 @@ class _$ConsentSearchCopyWithImpl<$Res>
     Object period = freezed,
     Object purpose = freezed,
     Object scope = freezed,
-    Object security_label = freezed,
-    Object source_reference = freezed,
+    Object securityLabel = freezed,
+    Object sourceReference = freezed,
     Object status = freezed,
   }) {
     return _then(_value.copyWith(
@@ -210,12 +221,12 @@ class _$ConsentSearchCopyWithImpl<$Res>
       purpose:
           purpose == freezed ? _value.purpose : purpose as List<SearchToken>,
       scope: scope == freezed ? _value.scope : scope as List<SearchToken>,
-      security_label: security_label == freezed
-          ? _value.security_label
-          : security_label as List<SearchToken>,
-      source_reference: source_reference == freezed
-          ? _value.source_reference
-          : source_reference as List<SearchReference>,
+      securityLabel: securityLabel == freezed
+          ? _value.securityLabel
+          : securityLabel as List<SearchToken>,
+      sourceReference: sourceReference == freezed
+          ? _value.sourceReference
+          : sourceReference as List<SearchReference>,
       status: status == freezed ? _value.status : status as List<SearchToken>,
     ));
   }
@@ -249,8 +260,8 @@ abstract class _$ConsentSearchCopyWith<$Res>
       List<SearchDate> period,
       List<SearchToken> purpose,
       List<SearchToken> scope,
-      List<SearchToken> security_label,
-      List<SearchReference> source_reference,
+      @JsonKey(name: 'security-label') List<SearchToken> securityLabel,
+      @JsonKey(name: 'source-reference') List<SearchReference> sourceReference,
       List<SearchToken> status});
 }
 
@@ -287,8 +298,8 @@ class __$ConsentSearchCopyWithImpl<$Res>
     Object period = freezed,
     Object purpose = freezed,
     Object scope = freezed,
-    Object security_label = freezed,
-    Object source_reference = freezed,
+    Object securityLabel = freezed,
+    Object sourceReference = freezed,
     Object status = freezed,
   }) {
     return _then(_ConsentSearch(
@@ -335,16 +346,18 @@ class __$ConsentSearchCopyWithImpl<$Res>
       purpose:
           purpose == freezed ? _value.purpose : purpose as List<SearchToken>,
       scope: scope == freezed ? _value.scope : scope as List<SearchToken>,
-      security_label: security_label == freezed
-          ? _value.security_label
-          : security_label as List<SearchToken>,
-      source_reference: source_reference == freezed
-          ? _value.source_reference
-          : source_reference as List<SearchReference>,
+      securityLabel: securityLabel == freezed
+          ? _value.securityLabel
+          : securityLabel as List<SearchToken>,
+      sourceReference: sourceReference == freezed
+          ? _value.sourceReference
+          : sourceReference as List<SearchReference>,
       status: status == freezed ? _value.status : status as List<SearchToken>,
     ));
   }
 }
+
+@JsonSerializable()
 
 /// @nodoc
 class _$_ConsentSearch extends _ConsentSearch {
@@ -369,10 +382,13 @@ class _$_ConsentSearch extends _ConsentSearch {
       this.period,
       this.purpose,
       this.scope,
-      this.security_label,
-      this.source_reference,
+      @JsonKey(name: 'security-label') this.securityLabel,
+      @JsonKey(name: 'source-reference') this.sourceReference,
       this.status})
       : super._();
+
+  factory _$_ConsentSearch.fromJson(Map<String, dynamic> json) =>
+      _$_$_ConsentSearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -416,15 +432,17 @@ class _$_ConsentSearch extends _ConsentSearch {
   @override
   final List<SearchToken> scope;
   @override
-  final List<SearchToken> security_label;
+  @JsonKey(name: 'security-label')
+  final List<SearchToken> securityLabel;
   @override
-  final List<SearchReference> source_reference;
+  @JsonKey(name: 'source-reference')
+  final List<SearchReference> sourceReference;
   @override
   final List<SearchToken> status;
 
   @override
   String toString() {
-    return 'ConsentSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, date: $date, identifier: $identifier, patient: $patient, action: $action, actor: $actor, category: $category, consentor: $consentor, data: $data, organization: $organization, period: $period, purpose: $purpose, scope: $scope, security_label: $security_label, source_reference: $source_reference, status: $status)';
+    return 'ConsentSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, date: $date, identifier: $identifier, patient: $patient, action: $action, actor: $actor, category: $category, consentor: $consentor, data: $data, organization: $organization, period: $period, purpose: $purpose, scope: $scope, securityLabel: $securityLabel, sourceReference: $sourceReference, status: $status)';
   }
 
   @override
@@ -485,12 +503,12 @@ class _$_ConsentSearch extends _ConsentSearch {
                     .equals(other.purpose, purpose)) &&
             (identical(other.scope, scope) ||
                 const DeepCollectionEquality().equals(other.scope, scope)) &&
-            (identical(other.security_label, security_label) ||
+            (identical(other.securityLabel, securityLabel) ||
                 const DeepCollectionEquality()
-                    .equals(other.security_label, security_label)) &&
-            (identical(other.source_reference, source_reference) ||
+                    .equals(other.securityLabel, securityLabel)) &&
+            (identical(other.sourceReference, sourceReference) ||
                 const DeepCollectionEquality()
-                    .equals(other.source_reference, source_reference)) &&
+                    .equals(other.sourceReference, sourceReference)) &&
             (identical(other.status, status) ||
                 const DeepCollectionEquality().equals(other.status, status)));
   }
@@ -518,13 +536,18 @@ class _$_ConsentSearch extends _ConsentSearch {
       const DeepCollectionEquality().hash(period) ^
       const DeepCollectionEquality().hash(purpose) ^
       const DeepCollectionEquality().hash(scope) ^
-      const DeepCollectionEquality().hash(security_label) ^
-      const DeepCollectionEquality().hash(source_reference) ^
+      const DeepCollectionEquality().hash(securityLabel) ^
+      const DeepCollectionEquality().hash(sourceReference) ^
       const DeepCollectionEquality().hash(status);
 
   @override
   _$ConsentSearchCopyWith<_ConsentSearch> get copyWith =>
       __$ConsentSearchCopyWithImpl<_ConsentSearch>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_ConsentSearchToJson(this);
+  }
 }
 
 abstract class _ConsentSearch extends ConsentSearch {
@@ -550,9 +573,12 @@ abstract class _ConsentSearch extends ConsentSearch {
       List<SearchDate> period,
       List<SearchToken> purpose,
       List<SearchToken> scope,
-      List<SearchToken> security_label,
-      List<SearchReference> source_reference,
+      @JsonKey(name: 'security-label') List<SearchToken> securityLabel,
+      @JsonKey(name: 'source-reference') List<SearchReference> sourceReference,
       List<SearchToken> status}) = _$_ConsentSearch;
+
+  factory _ConsentSearch.fromJson(Map<String, dynamic> json) =
+      _$_ConsentSearch.fromJson;
 
   @override
   List<Id> get searchId;
@@ -596,13 +622,19 @@ abstract class _ConsentSearch extends ConsentSearch {
   @override
   List<SearchToken> get scope;
   @override
-  List<SearchToken> get security_label;
+  @JsonKey(name: 'security-label')
+  List<SearchToken> get securityLabel;
   @override
-  List<SearchReference> get source_reference;
+  @JsonKey(name: 'source-reference')
+  List<SearchReference> get sourceReference;
   @override
   List<SearchToken> get status;
   @override
   _$ConsentSearchCopyWith<_ConsentSearch> get copyWith;
+}
+
+AuditEventSearch _$AuditEventSearchFromJson(Map<String, dynamic> json) {
+  return _AuditEventSearch.fromJson(json);
 }
 
 /// @nodoc
@@ -622,14 +654,14 @@ class _$AuditEventSearchTearOff {
       List<SearchToken> action,
       List<SearchString> address,
       List<SearchReference> agent,
-      List<SearchString> agent_name,
-      List<SearchToken> agent_role,
+      @JsonKey(name: 'agent-name') List<SearchString> agentName,
+      @JsonKey(name: 'agent-role') List<SearchToken> agentRole,
       List<SearchToken> altid,
       List<SearchDate> date,
       List<SearchReference> entity,
-      List<SearchString> entity_name,
-      List<SearchToken> entity_role,
-      List<SearchToken> entity_type,
+      @JsonKey(name: 'entity-name') List<SearchString> entityName,
+      @JsonKey(name: 'entity-role') List<SearchToken> entityRole,
+      @JsonKey(name: 'entity-type') List<SearchToken> entityType,
       List<SearchToken> outcome,
       List<SearchReference> patient,
       List<SearchUri> policy,
@@ -649,14 +681,14 @@ class _$AuditEventSearchTearOff {
       action: action,
       address: address,
       agent: agent,
-      agent_name: agent_name,
-      agent_role: agent_role,
+      agentName: agentName,
+      agentRole: agentRole,
       altid: altid,
       date: date,
       entity: entity,
-      entity_name: entity_name,
-      entity_role: entity_role,
-      entity_type: entity_type,
+      entityName: entityName,
+      entityRole: entityRole,
+      entityType: entityType,
       outcome: outcome,
       patient: patient,
       policy: policy,
@@ -665,6 +697,11 @@ class _$AuditEventSearchTearOff {
       subtype: subtype,
       type: type,
     );
+  }
+
+// ignore: unused_element
+  AuditEventSearch fromJson(Map<String, Object> json) {
+    return AuditEventSearch.fromJson(json);
   }
 }
 
@@ -686,14 +723,19 @@ mixin _$AuditEventSearch {
   List<SearchToken> get action;
   List<SearchString> get address;
   List<SearchReference> get agent;
-  List<SearchString> get agent_name;
-  List<SearchToken> get agent_role;
+  @JsonKey(name: 'agent-name')
+  List<SearchString> get agentName;
+  @JsonKey(name: 'agent-role')
+  List<SearchToken> get agentRole;
   List<SearchToken> get altid;
   List<SearchDate> get date;
   List<SearchReference> get entity;
-  List<SearchString> get entity_name;
-  List<SearchToken> get entity_role;
-  List<SearchToken> get entity_type;
+  @JsonKey(name: 'entity-name')
+  List<SearchString> get entityName;
+  @JsonKey(name: 'entity-role')
+  List<SearchToken> get entityRole;
+  @JsonKey(name: 'entity-type')
+  List<SearchToken> get entityType;
   List<SearchToken> get outcome;
   List<SearchReference> get patient;
   List<SearchUri> get policy;
@@ -702,6 +744,7 @@ mixin _$AuditEventSearch {
   List<SearchToken> get subtype;
   List<SearchToken> get type;
 
+  Map<String, dynamic> toJson();
   $AuditEventSearchCopyWith<AuditEventSearch> get copyWith;
 }
 
@@ -722,14 +765,14 @@ abstract class $AuditEventSearchCopyWith<$Res> {
       List<SearchToken> action,
       List<SearchString> address,
       List<SearchReference> agent,
-      List<SearchString> agent_name,
-      List<SearchToken> agent_role,
+      @JsonKey(name: 'agent-name') List<SearchString> agentName,
+      @JsonKey(name: 'agent-role') List<SearchToken> agentRole,
       List<SearchToken> altid,
       List<SearchDate> date,
       List<SearchReference> entity,
-      List<SearchString> entity_name,
-      List<SearchToken> entity_role,
-      List<SearchToken> entity_type,
+      @JsonKey(name: 'entity-name') List<SearchString> entityName,
+      @JsonKey(name: 'entity-role') List<SearchToken> entityRole,
+      @JsonKey(name: 'entity-type') List<SearchToken> entityType,
       List<SearchToken> outcome,
       List<SearchReference> patient,
       List<SearchUri> policy,
@@ -761,14 +804,14 @@ class _$AuditEventSearchCopyWithImpl<$Res>
     Object action = freezed,
     Object address = freezed,
     Object agent = freezed,
-    Object agent_name = freezed,
-    Object agent_role = freezed,
+    Object agentName = freezed,
+    Object agentRole = freezed,
     Object altid = freezed,
     Object date = freezed,
     Object entity = freezed,
-    Object entity_name = freezed,
-    Object entity_role = freezed,
-    Object entity_type = freezed,
+    Object entityName = freezed,
+    Object entityRole = freezed,
+    Object entityType = freezed,
     Object outcome = freezed,
     Object patient = freezed,
     Object policy = freezed,
@@ -803,25 +846,25 @@ class _$AuditEventSearchCopyWithImpl<$Res>
       address:
           address == freezed ? _value.address : address as List<SearchString>,
       agent: agent == freezed ? _value.agent : agent as List<SearchReference>,
-      agent_name: agent_name == freezed
-          ? _value.agent_name
-          : agent_name as List<SearchString>,
-      agent_role: agent_role == freezed
-          ? _value.agent_role
-          : agent_role as List<SearchToken>,
+      agentName: agentName == freezed
+          ? _value.agentName
+          : agentName as List<SearchString>,
+      agentRole: agentRole == freezed
+          ? _value.agentRole
+          : agentRole as List<SearchToken>,
       altid: altid == freezed ? _value.altid : altid as List<SearchToken>,
       date: date == freezed ? _value.date : date as List<SearchDate>,
       entity:
           entity == freezed ? _value.entity : entity as List<SearchReference>,
-      entity_name: entity_name == freezed
-          ? _value.entity_name
-          : entity_name as List<SearchString>,
-      entity_role: entity_role == freezed
-          ? _value.entity_role
-          : entity_role as List<SearchToken>,
-      entity_type: entity_type == freezed
-          ? _value.entity_type
-          : entity_type as List<SearchToken>,
+      entityName: entityName == freezed
+          ? _value.entityName
+          : entityName as List<SearchString>,
+      entityRole: entityRole == freezed
+          ? _value.entityRole
+          : entityRole as List<SearchToken>,
+      entityType: entityType == freezed
+          ? _value.entityType
+          : entityType as List<SearchToken>,
       outcome:
           outcome == freezed ? _value.outcome : outcome as List<SearchToken>,
       patient: patient == freezed
@@ -857,14 +900,14 @@ abstract class _$AuditEventSearchCopyWith<$Res>
       List<SearchToken> action,
       List<SearchString> address,
       List<SearchReference> agent,
-      List<SearchString> agent_name,
-      List<SearchToken> agent_role,
+      @JsonKey(name: 'agent-name') List<SearchString> agentName,
+      @JsonKey(name: 'agent-role') List<SearchToken> agentRole,
       List<SearchToken> altid,
       List<SearchDate> date,
       List<SearchReference> entity,
-      List<SearchString> entity_name,
-      List<SearchToken> entity_role,
-      List<SearchToken> entity_type,
+      @JsonKey(name: 'entity-name') List<SearchString> entityName,
+      @JsonKey(name: 'entity-role') List<SearchToken> entityRole,
+      @JsonKey(name: 'entity-type') List<SearchToken> entityType,
       List<SearchToken> outcome,
       List<SearchReference> patient,
       List<SearchUri> policy,
@@ -898,14 +941,14 @@ class __$AuditEventSearchCopyWithImpl<$Res>
     Object action = freezed,
     Object address = freezed,
     Object agent = freezed,
-    Object agent_name = freezed,
-    Object agent_role = freezed,
+    Object agentName = freezed,
+    Object agentRole = freezed,
     Object altid = freezed,
     Object date = freezed,
     Object entity = freezed,
-    Object entity_name = freezed,
-    Object entity_role = freezed,
-    Object entity_type = freezed,
+    Object entityName = freezed,
+    Object entityRole = freezed,
+    Object entityType = freezed,
     Object outcome = freezed,
     Object patient = freezed,
     Object policy = freezed,
@@ -940,25 +983,25 @@ class __$AuditEventSearchCopyWithImpl<$Res>
       address:
           address == freezed ? _value.address : address as List<SearchString>,
       agent: agent == freezed ? _value.agent : agent as List<SearchReference>,
-      agent_name: agent_name == freezed
-          ? _value.agent_name
-          : agent_name as List<SearchString>,
-      agent_role: agent_role == freezed
-          ? _value.agent_role
-          : agent_role as List<SearchToken>,
+      agentName: agentName == freezed
+          ? _value.agentName
+          : agentName as List<SearchString>,
+      agentRole: agentRole == freezed
+          ? _value.agentRole
+          : agentRole as List<SearchToken>,
       altid: altid == freezed ? _value.altid : altid as List<SearchToken>,
       date: date == freezed ? _value.date : date as List<SearchDate>,
       entity:
           entity == freezed ? _value.entity : entity as List<SearchReference>,
-      entity_name: entity_name == freezed
-          ? _value.entity_name
-          : entity_name as List<SearchString>,
-      entity_role: entity_role == freezed
-          ? _value.entity_role
-          : entity_role as List<SearchToken>,
-      entity_type: entity_type == freezed
-          ? _value.entity_type
-          : entity_type as List<SearchToken>,
+      entityName: entityName == freezed
+          ? _value.entityName
+          : entityName as List<SearchString>,
+      entityRole: entityRole == freezed
+          ? _value.entityRole
+          : entityRole as List<SearchToken>,
+      entityType: entityType == freezed
+          ? _value.entityType
+          : entityType as List<SearchToken>,
       outcome:
           outcome == freezed ? _value.outcome : outcome as List<SearchToken>,
       patient: patient == freezed
@@ -975,6 +1018,8 @@ class __$AuditEventSearchCopyWithImpl<$Res>
   }
 }
 
+@JsonSerializable()
+
 /// @nodoc
 class _$_AuditEventSearch extends _AuditEventSearch {
   _$_AuditEventSearch(
@@ -989,14 +1034,14 @@ class _$_AuditEventSearch extends _AuditEventSearch {
       this.action,
       this.address,
       this.agent,
-      this.agent_name,
-      this.agent_role,
+      @JsonKey(name: 'agent-name') this.agentName,
+      @JsonKey(name: 'agent-role') this.agentRole,
       this.altid,
       this.date,
       this.entity,
-      this.entity_name,
-      this.entity_role,
-      this.entity_type,
+      @JsonKey(name: 'entity-name') this.entityName,
+      @JsonKey(name: 'entity-role') this.entityRole,
+      @JsonKey(name: 'entity-type') this.entityType,
       this.outcome,
       this.patient,
       this.policy,
@@ -1005,6 +1050,9 @@ class _$_AuditEventSearch extends _AuditEventSearch {
       this.subtype,
       this.type})
       : super._();
+
+  factory _$_AuditEventSearch.fromJson(Map<String, dynamic> json) =>
+      _$_$_AuditEventSearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -1030,9 +1078,11 @@ class _$_AuditEventSearch extends _AuditEventSearch {
   @override
   final List<SearchReference> agent;
   @override
-  final List<SearchString> agent_name;
+  @JsonKey(name: 'agent-name')
+  final List<SearchString> agentName;
   @override
-  final List<SearchToken> agent_role;
+  @JsonKey(name: 'agent-role')
+  final List<SearchToken> agentRole;
   @override
   final List<SearchToken> altid;
   @override
@@ -1040,11 +1090,14 @@ class _$_AuditEventSearch extends _AuditEventSearch {
   @override
   final List<SearchReference> entity;
   @override
-  final List<SearchString> entity_name;
+  @JsonKey(name: 'entity-name')
+  final List<SearchString> entityName;
   @override
-  final List<SearchToken> entity_role;
+  @JsonKey(name: 'entity-role')
+  final List<SearchToken> entityRole;
   @override
-  final List<SearchToken> entity_type;
+  @JsonKey(name: 'entity-type')
+  final List<SearchToken> entityType;
   @override
   final List<SearchToken> outcome;
   @override
@@ -1062,7 +1115,7 @@ class _$_AuditEventSearch extends _AuditEventSearch {
 
   @override
   String toString() {
-    return 'AuditEventSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, action: $action, address: $address, agent: $agent, agent_name: $agent_name, agent_role: $agent_role, altid: $altid, date: $date, entity: $entity, entity_name: $entity_name, entity_role: $entity_role, entity_type: $entity_type, outcome: $outcome, patient: $patient, policy: $policy, site: $site, source: $source, subtype: $subtype, type: $type)';
+    return 'AuditEventSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, action: $action, address: $address, agent: $agent, agentName: $agentName, agentRole: $agentRole, altid: $altid, date: $date, entity: $entity, entityName: $entityName, entityRole: $entityRole, entityType: $entityType, outcome: $outcome, patient: $patient, policy: $policy, site: $site, source: $source, subtype: $subtype, type: $type)';
   }
 
   @override
@@ -1100,27 +1153,27 @@ class _$_AuditEventSearch extends _AuditEventSearch {
                     .equals(other.address, address)) &&
             (identical(other.agent, agent) ||
                 const DeepCollectionEquality().equals(other.agent, agent)) &&
-            (identical(other.agent_name, agent_name) ||
+            (identical(other.agentName, agentName) ||
                 const DeepCollectionEquality()
-                    .equals(other.agent_name, agent_name)) &&
-            (identical(other.agent_role, agent_role) ||
+                    .equals(other.agentName, agentName)) &&
+            (identical(other.agentRole, agentRole) ||
                 const DeepCollectionEquality()
-                    .equals(other.agent_role, agent_role)) &&
+                    .equals(other.agentRole, agentRole)) &&
             (identical(other.altid, altid) ||
                 const DeepCollectionEquality().equals(other.altid, altid)) &&
             (identical(other.date, date) ||
                 const DeepCollectionEquality().equals(other.date, date)) &&
             (identical(other.entity, entity) ||
                 const DeepCollectionEquality().equals(other.entity, entity)) &&
-            (identical(other.entity_name, entity_name) ||
+            (identical(other.entityName, entityName) ||
                 const DeepCollectionEquality()
-                    .equals(other.entity_name, entity_name)) &&
-            (identical(other.entity_role, entity_role) ||
+                    .equals(other.entityName, entityName)) &&
+            (identical(other.entityRole, entityRole) ||
                 const DeepCollectionEquality()
-                    .equals(other.entity_role, entity_role)) &&
-            (identical(other.entity_type, entity_type) ||
+                    .equals(other.entityRole, entityRole)) &&
+            (identical(other.entityType, entityType) ||
                 const DeepCollectionEquality()
-                    .equals(other.entity_type, entity_type)) &&
+                    .equals(other.entityType, entityType)) &&
             (identical(other.outcome, outcome) ||
                 const DeepCollectionEquality()
                     .equals(other.outcome, outcome)) &&
@@ -1154,14 +1207,14 @@ class _$_AuditEventSearch extends _AuditEventSearch {
       const DeepCollectionEquality().hash(action) ^
       const DeepCollectionEquality().hash(address) ^
       const DeepCollectionEquality().hash(agent) ^
-      const DeepCollectionEquality().hash(agent_name) ^
-      const DeepCollectionEquality().hash(agent_role) ^
+      const DeepCollectionEquality().hash(agentName) ^
+      const DeepCollectionEquality().hash(agentRole) ^
       const DeepCollectionEquality().hash(altid) ^
       const DeepCollectionEquality().hash(date) ^
       const DeepCollectionEquality().hash(entity) ^
-      const DeepCollectionEquality().hash(entity_name) ^
-      const DeepCollectionEquality().hash(entity_role) ^
-      const DeepCollectionEquality().hash(entity_type) ^
+      const DeepCollectionEquality().hash(entityName) ^
+      const DeepCollectionEquality().hash(entityRole) ^
+      const DeepCollectionEquality().hash(entityType) ^
       const DeepCollectionEquality().hash(outcome) ^
       const DeepCollectionEquality().hash(patient) ^
       const DeepCollectionEquality().hash(policy) ^
@@ -1173,6 +1226,11 @@ class _$_AuditEventSearch extends _AuditEventSearch {
   @override
   _$AuditEventSearchCopyWith<_AuditEventSearch> get copyWith =>
       __$AuditEventSearchCopyWithImpl<_AuditEventSearch>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_AuditEventSearchToJson(this);
+  }
 }
 
 abstract class _AuditEventSearch extends AuditEventSearch {
@@ -1189,14 +1247,14 @@ abstract class _AuditEventSearch extends AuditEventSearch {
       List<SearchToken> action,
       List<SearchString> address,
       List<SearchReference> agent,
-      List<SearchString> agent_name,
-      List<SearchToken> agent_role,
+      @JsonKey(name: 'agent-name') List<SearchString> agentName,
+      @JsonKey(name: 'agent-role') List<SearchToken> agentRole,
       List<SearchToken> altid,
       List<SearchDate> date,
       List<SearchReference> entity,
-      List<SearchString> entity_name,
-      List<SearchToken> entity_role,
-      List<SearchToken> entity_type,
+      @JsonKey(name: 'entity-name') List<SearchString> entityName,
+      @JsonKey(name: 'entity-role') List<SearchToken> entityRole,
+      @JsonKey(name: 'entity-type') List<SearchToken> entityType,
       List<SearchToken> outcome,
       List<SearchReference> patient,
       List<SearchUri> policy,
@@ -1204,6 +1262,9 @@ abstract class _AuditEventSearch extends AuditEventSearch {
       List<SearchReference> source,
       List<SearchToken> subtype,
       List<SearchToken> type}) = _$_AuditEventSearch;
+
+  factory _AuditEventSearch.fromJson(Map<String, dynamic> json) =
+      _$_AuditEventSearch.fromJson;
 
   @override
   List<Id> get searchId;
@@ -1229,9 +1290,11 @@ abstract class _AuditEventSearch extends AuditEventSearch {
   @override
   List<SearchReference> get agent;
   @override
-  List<SearchString> get agent_name;
+  @JsonKey(name: 'agent-name')
+  List<SearchString> get agentName;
   @override
-  List<SearchToken> get agent_role;
+  @JsonKey(name: 'agent-role')
+  List<SearchToken> get agentRole;
   @override
   List<SearchToken> get altid;
   @override
@@ -1239,11 +1302,14 @@ abstract class _AuditEventSearch extends AuditEventSearch {
   @override
   List<SearchReference> get entity;
   @override
-  List<SearchString> get entity_name;
+  @JsonKey(name: 'entity-name')
+  List<SearchString> get entityName;
   @override
-  List<SearchToken> get entity_role;
+  @JsonKey(name: 'entity-role')
+  List<SearchToken> get entityRole;
   @override
-  List<SearchToken> get entity_type;
+  @JsonKey(name: 'entity-type')
+  List<SearchToken> get entityType;
   @override
   List<SearchToken> get outcome;
   @override
@@ -1262,6 +1328,10 @@ abstract class _AuditEventSearch extends AuditEventSearch {
   _$AuditEventSearchCopyWith<_AuditEventSearch> get copyWith;
 }
 
+ProvenanceSearch _$ProvenanceSearchFromJson(Map<String, dynamic> json) {
+  return _ProvenanceSearch.fromJson(json);
+}
+
 /// @nodoc
 class _$ProvenanceSearchTearOff {
   const _$ProvenanceSearchTearOff();
@@ -1277,13 +1347,13 @@ class _$ProvenanceSearchTearOff {
       List<SearchString> searchContent,
       List<Id> searchList,
       List<SearchReference> agent,
-      List<SearchToken> agent_role,
-      List<SearchToken> agent_type,
+      @JsonKey(name: 'agent-role') List<SearchToken> agentRole,
+      @JsonKey(name: 'agent-type') List<SearchToken> agentType,
       List<SearchReference> entity,
       List<SearchReference> location,
       List<SearchReference> patient,
       List<SearchDate> recorded,
-      List<SearchToken> signature_type,
+      @JsonKey(name: 'signature-type') List<SearchToken> signatureType,
       List<SearchReference> target,
       List<SearchDate> when}) {
     return _ProvenanceSearch(
@@ -1296,16 +1366,21 @@ class _$ProvenanceSearchTearOff {
       searchContent: searchContent,
       searchList: searchList,
       agent: agent,
-      agent_role: agent_role,
-      agent_type: agent_type,
+      agentRole: agentRole,
+      agentType: agentType,
       entity: entity,
       location: location,
       patient: patient,
       recorded: recorded,
-      signature_type: signature_type,
+      signatureType: signatureType,
       target: target,
       when: when,
     );
+  }
+
+// ignore: unused_element
+  ProvenanceSearch fromJson(Map<String, Object> json) {
+    return ProvenanceSearch.fromJson(json);
   }
 }
 
@@ -1325,16 +1400,20 @@ mixin _$ProvenanceSearch {
   List<Id> get searchList; //List<SearchString> searchHas,
 //List<SearchToken> searchType,
   List<SearchReference> get agent;
-  List<SearchToken> get agent_role;
-  List<SearchToken> get agent_type;
+  @JsonKey(name: 'agent-role')
+  List<SearchToken> get agentRole;
+  @JsonKey(name: 'agent-type')
+  List<SearchToken> get agentType;
   List<SearchReference> get entity;
   List<SearchReference> get location;
   List<SearchReference> get patient;
   List<SearchDate> get recorded;
-  List<SearchToken> get signature_type;
+  @JsonKey(name: 'signature-type')
+  List<SearchToken> get signatureType;
   List<SearchReference> get target;
   List<SearchDate> get when;
 
+  Map<String, dynamic> toJson();
   $ProvenanceSearchCopyWith<ProvenanceSearch> get copyWith;
 }
 
@@ -1353,13 +1432,13 @@ abstract class $ProvenanceSearchCopyWith<$Res> {
       List<SearchString> searchContent,
       List<Id> searchList,
       List<SearchReference> agent,
-      List<SearchToken> agent_role,
-      List<SearchToken> agent_type,
+      @JsonKey(name: 'agent-role') List<SearchToken> agentRole,
+      @JsonKey(name: 'agent-type') List<SearchToken> agentType,
       List<SearchReference> entity,
       List<SearchReference> location,
       List<SearchReference> patient,
       List<SearchDate> recorded,
-      List<SearchToken> signature_type,
+      @JsonKey(name: 'signature-type') List<SearchToken> signatureType,
       List<SearchReference> target,
       List<SearchDate> when});
 }
@@ -1384,13 +1463,13 @@ class _$ProvenanceSearchCopyWithImpl<$Res>
     Object searchContent = freezed,
     Object searchList = freezed,
     Object agent = freezed,
-    Object agent_role = freezed,
-    Object agent_type = freezed,
+    Object agentRole = freezed,
+    Object agentType = freezed,
     Object entity = freezed,
     Object location = freezed,
     Object patient = freezed,
     Object recorded = freezed,
-    Object signature_type = freezed,
+    Object signatureType = freezed,
     Object target = freezed,
     Object when = freezed,
   }) {
@@ -1417,12 +1496,12 @@ class _$ProvenanceSearchCopyWithImpl<$Res>
       searchList:
           searchList == freezed ? _value.searchList : searchList as List<Id>,
       agent: agent == freezed ? _value.agent : agent as List<SearchReference>,
-      agent_role: agent_role == freezed
-          ? _value.agent_role
-          : agent_role as List<SearchToken>,
-      agent_type: agent_type == freezed
-          ? _value.agent_type
-          : agent_type as List<SearchToken>,
+      agentRole: agentRole == freezed
+          ? _value.agentRole
+          : agentRole as List<SearchToken>,
+      agentType: agentType == freezed
+          ? _value.agentType
+          : agentType as List<SearchToken>,
       entity:
           entity == freezed ? _value.entity : entity as List<SearchReference>,
       location: location == freezed
@@ -1433,9 +1512,9 @@ class _$ProvenanceSearchCopyWithImpl<$Res>
           : patient as List<SearchReference>,
       recorded:
           recorded == freezed ? _value.recorded : recorded as List<SearchDate>,
-      signature_type: signature_type == freezed
-          ? _value.signature_type
-          : signature_type as List<SearchToken>,
+      signatureType: signatureType == freezed
+          ? _value.signatureType
+          : signatureType as List<SearchToken>,
       target:
           target == freezed ? _value.target : target as List<SearchReference>,
       when: when == freezed ? _value.when : when as List<SearchDate>,
@@ -1460,13 +1539,13 @@ abstract class _$ProvenanceSearchCopyWith<$Res>
       List<SearchString> searchContent,
       List<Id> searchList,
       List<SearchReference> agent,
-      List<SearchToken> agent_role,
-      List<SearchToken> agent_type,
+      @JsonKey(name: 'agent-role') List<SearchToken> agentRole,
+      @JsonKey(name: 'agent-type') List<SearchToken> agentType,
       List<SearchReference> entity,
       List<SearchReference> location,
       List<SearchReference> patient,
       List<SearchDate> recorded,
-      List<SearchToken> signature_type,
+      @JsonKey(name: 'signature-type') List<SearchToken> signatureType,
       List<SearchReference> target,
       List<SearchDate> when});
 }
@@ -1493,13 +1572,13 @@ class __$ProvenanceSearchCopyWithImpl<$Res>
     Object searchContent = freezed,
     Object searchList = freezed,
     Object agent = freezed,
-    Object agent_role = freezed,
-    Object agent_type = freezed,
+    Object agentRole = freezed,
+    Object agentType = freezed,
     Object entity = freezed,
     Object location = freezed,
     Object patient = freezed,
     Object recorded = freezed,
-    Object signature_type = freezed,
+    Object signatureType = freezed,
     Object target = freezed,
     Object when = freezed,
   }) {
@@ -1526,12 +1605,12 @@ class __$ProvenanceSearchCopyWithImpl<$Res>
       searchList:
           searchList == freezed ? _value.searchList : searchList as List<Id>,
       agent: agent == freezed ? _value.agent : agent as List<SearchReference>,
-      agent_role: agent_role == freezed
-          ? _value.agent_role
-          : agent_role as List<SearchToken>,
-      agent_type: agent_type == freezed
-          ? _value.agent_type
-          : agent_type as List<SearchToken>,
+      agentRole: agentRole == freezed
+          ? _value.agentRole
+          : agentRole as List<SearchToken>,
+      agentType: agentType == freezed
+          ? _value.agentType
+          : agentType as List<SearchToken>,
       entity:
           entity == freezed ? _value.entity : entity as List<SearchReference>,
       location: location == freezed
@@ -1542,15 +1621,17 @@ class __$ProvenanceSearchCopyWithImpl<$Res>
           : patient as List<SearchReference>,
       recorded:
           recorded == freezed ? _value.recorded : recorded as List<SearchDate>,
-      signature_type: signature_type == freezed
-          ? _value.signature_type
-          : signature_type as List<SearchToken>,
+      signatureType: signatureType == freezed
+          ? _value.signatureType
+          : signatureType as List<SearchToken>,
       target:
           target == freezed ? _value.target : target as List<SearchReference>,
       when: when == freezed ? _value.when : when as List<SearchDate>,
     ));
   }
 }
+
+@JsonSerializable()
 
 /// @nodoc
 class _$_ProvenanceSearch extends _ProvenanceSearch {
@@ -1564,16 +1645,19 @@ class _$_ProvenanceSearch extends _ProvenanceSearch {
       this.searchContent,
       this.searchList,
       this.agent,
-      this.agent_role,
-      this.agent_type,
+      @JsonKey(name: 'agent-role') this.agentRole,
+      @JsonKey(name: 'agent-type') this.agentType,
       this.entity,
       this.location,
       this.patient,
       this.recorded,
-      this.signature_type,
+      @JsonKey(name: 'signature-type') this.signatureType,
       this.target,
       this.when})
       : super._();
+
+  factory _$_ProvenanceSearch.fromJson(Map<String, dynamic> json) =>
+      _$_$_ProvenanceSearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -1595,9 +1679,11 @@ class _$_ProvenanceSearch extends _ProvenanceSearch {
 //List<SearchToken> searchType,
   final List<SearchReference> agent;
   @override
-  final List<SearchToken> agent_role;
+  @JsonKey(name: 'agent-role')
+  final List<SearchToken> agentRole;
   @override
-  final List<SearchToken> agent_type;
+  @JsonKey(name: 'agent-type')
+  final List<SearchToken> agentType;
   @override
   final List<SearchReference> entity;
   @override
@@ -1607,7 +1693,8 @@ class _$_ProvenanceSearch extends _ProvenanceSearch {
   @override
   final List<SearchDate> recorded;
   @override
-  final List<SearchToken> signature_type;
+  @JsonKey(name: 'signature-type')
+  final List<SearchToken> signatureType;
   @override
   final List<SearchReference> target;
   @override
@@ -1615,7 +1702,7 @@ class _$_ProvenanceSearch extends _ProvenanceSearch {
 
   @override
   String toString() {
-    return 'ProvenanceSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, agent: $agent, agent_role: $agent_role, agent_type: $agent_type, entity: $entity, location: $location, patient: $patient, recorded: $recorded, signature_type: $signature_type, target: $target, when: $when)';
+    return 'ProvenanceSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, agent: $agent, agentRole: $agentRole, agentType: $agentType, entity: $entity, location: $location, patient: $patient, recorded: $recorded, signatureType: $signatureType, target: $target, when: $when)';
   }
 
   @override
@@ -1648,12 +1735,12 @@ class _$_ProvenanceSearch extends _ProvenanceSearch {
                     .equals(other.searchList, searchList)) &&
             (identical(other.agent, agent) ||
                 const DeepCollectionEquality().equals(other.agent, agent)) &&
-            (identical(other.agent_role, agent_role) ||
+            (identical(other.agentRole, agentRole) ||
                 const DeepCollectionEquality()
-                    .equals(other.agent_role, agent_role)) &&
-            (identical(other.agent_type, agent_type) ||
+                    .equals(other.agentRole, agentRole)) &&
+            (identical(other.agentType, agentType) ||
                 const DeepCollectionEquality()
-                    .equals(other.agent_type, agent_type)) &&
+                    .equals(other.agentType, agentType)) &&
             (identical(other.entity, entity) ||
                 const DeepCollectionEquality().equals(other.entity, entity)) &&
             (identical(other.location, location) ||
@@ -1665,9 +1752,9 @@ class _$_ProvenanceSearch extends _ProvenanceSearch {
             (identical(other.recorded, recorded) ||
                 const DeepCollectionEquality()
                     .equals(other.recorded, recorded)) &&
-            (identical(other.signature_type, signature_type) ||
+            (identical(other.signatureType, signatureType) ||
                 const DeepCollectionEquality()
-                    .equals(other.signature_type, signature_type)) &&
+                    .equals(other.signatureType, signatureType)) &&
             (identical(other.target, target) ||
                 const DeepCollectionEquality().equals(other.target, target)) &&
             (identical(other.when, when) ||
@@ -1686,19 +1773,24 @@ class _$_ProvenanceSearch extends _ProvenanceSearch {
       const DeepCollectionEquality().hash(searchContent) ^
       const DeepCollectionEquality().hash(searchList) ^
       const DeepCollectionEquality().hash(agent) ^
-      const DeepCollectionEquality().hash(agent_role) ^
-      const DeepCollectionEquality().hash(agent_type) ^
+      const DeepCollectionEquality().hash(agentRole) ^
+      const DeepCollectionEquality().hash(agentType) ^
       const DeepCollectionEquality().hash(entity) ^
       const DeepCollectionEquality().hash(location) ^
       const DeepCollectionEquality().hash(patient) ^
       const DeepCollectionEquality().hash(recorded) ^
-      const DeepCollectionEquality().hash(signature_type) ^
+      const DeepCollectionEquality().hash(signatureType) ^
       const DeepCollectionEquality().hash(target) ^
       const DeepCollectionEquality().hash(when);
 
   @override
   _$ProvenanceSearchCopyWith<_ProvenanceSearch> get copyWith =>
       __$ProvenanceSearchCopyWithImpl<_ProvenanceSearch>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_ProvenanceSearchToJson(this);
+  }
 }
 
 abstract class _ProvenanceSearch extends ProvenanceSearch {
@@ -1713,15 +1805,18 @@ abstract class _ProvenanceSearch extends ProvenanceSearch {
       List<SearchString> searchContent,
       List<Id> searchList,
       List<SearchReference> agent,
-      List<SearchToken> agent_role,
-      List<SearchToken> agent_type,
+      @JsonKey(name: 'agent-role') List<SearchToken> agentRole,
+      @JsonKey(name: 'agent-type') List<SearchToken> agentType,
       List<SearchReference> entity,
       List<SearchReference> location,
       List<SearchReference> patient,
       List<SearchDate> recorded,
-      List<SearchToken> signature_type,
+      @JsonKey(name: 'signature-type') List<SearchToken> signatureType,
       List<SearchReference> target,
       List<SearchDate> when}) = _$_ProvenanceSearch;
+
+  factory _ProvenanceSearch.fromJson(Map<String, dynamic> json) =
+      _$_ProvenanceSearch.fromJson;
 
   @override
   List<Id> get searchId;
@@ -1743,9 +1838,11 @@ abstract class _ProvenanceSearch extends ProvenanceSearch {
 //List<SearchToken> searchType,
   List<SearchReference> get agent;
   @override
-  List<SearchToken> get agent_role;
+  @JsonKey(name: 'agent-role')
+  List<SearchToken> get agentRole;
   @override
-  List<SearchToken> get agent_type;
+  @JsonKey(name: 'agent-type')
+  List<SearchToken> get agentType;
   @override
   List<SearchReference> get entity;
   @override
@@ -1755,7 +1852,8 @@ abstract class _ProvenanceSearch extends ProvenanceSearch {
   @override
   List<SearchDate> get recorded;
   @override
-  List<SearchToken> get signature_type;
+  @JsonKey(name: 'signature-type')
+  List<SearchToken> get signatureType;
   @override
   List<SearchReference> get target;
   @override

@@ -5,6 +5,7 @@ import '../../../search_parameter_types/search_parameter_types.dart';
 import '../../../search_parameters.dart';
 
 part 'workflow.freezed.dart';
+part 'workflow.g.dart';
 
 @freezed
 abstract class AppointmentSearch with R4SearchParameters implements _$AppointmentSearch {
@@ -21,24 +22,25 @@ List<Id> searchList,
 //List<SearchString> searchHas,
 //List<SearchToken> searchType,
 List<SearchReference> actor,
-List<SearchToken> appointment_type,
-List<SearchReference> based_on,
+@JsonKey(name: 'appointment-type') List<SearchToken> appointmentType,
+@JsonKey(name: 'based-on') List<SearchReference> basedOn,
 List<SearchDate> date,
 List<SearchToken> identifier,
 List<SearchReference> location,
-List<SearchToken> part_status,
+@JsonKey(name: 'part-status') List<SearchToken> partStatus,
 List<SearchReference> patient,
 List<SearchReference> practitioner,
-List<SearchToken> reason_code,
-List<SearchReference> reason_reference,
-List<SearchToken> service_category,
-List<SearchToken> service_type,
+@JsonKey(name: 'reason-code') List<SearchToken> reasonCode,
+@JsonKey(name: 'reason-reference') List<SearchReference> reasonReference,
+@JsonKey(name: 'service-category') List<SearchToken> serviceCategory,
+@JsonKey(name: 'service-type') List<SearchToken> serviceType,
 List<SearchReference> slot,
 List<SearchToken> specialty,
 List<SearchToken> status,
-List<SearchReference> supporting_info,
+@JsonKey(name: 'supporting-info') List<SearchReference> supportingInfo,
 }) = _AppointmentSearch;
-}
+
+factory AppointmentSearch.fromJson(Map<String, dynamic> json) => _$AppointmentSearchFromJson(json);}
 
 @freezed
 abstract class AppointmentResponseSearch with R4SearchParameters implements _$AppointmentResponseSearch {
@@ -58,11 +60,12 @@ List<SearchReference> actor,
 List<SearchReference> appointment,
 List<SearchToken> identifier,
 List<SearchReference> location,
-List<SearchToken> part_status,
+@JsonKey(name: 'part-status') List<SearchToken> partStatus,
 List<SearchReference> patient,
 List<SearchReference> practitioner,
 }) = _AppointmentResponseSearch;
-}
+
+factory AppointmentResponseSearch.fromJson(Map<String, dynamic> json) => _$AppointmentResponseSearchFromJson(json);}
 
 @freezed
 abstract class ScheduleSearch with R4SearchParameters implements _$ScheduleSearch {
@@ -82,11 +85,12 @@ List<SearchToken> active,
 List<SearchReference> actor,
 List<SearchDate> date,
 List<SearchToken> identifier,
-List<SearchToken> service_category,
-List<SearchToken> service_type,
+@JsonKey(name: 'service-category') List<SearchToken> serviceCategory,
+@JsonKey(name: 'service-type') List<SearchToken> serviceType,
 List<SearchToken> specialty,
 }) = _ScheduleSearch;
-}
+
+factory ScheduleSearch.fromJson(Map<String, dynamic> json) => _$ScheduleSearchFromJson(json);}
 
 @freezed
 abstract class SlotSearch with R4SearchParameters implements _$SlotSearch {
@@ -102,16 +106,17 @@ List<SearchString> searchContent,
 List<Id> searchList,
 //List<SearchString> searchHas,
 //List<SearchToken> searchType,
-List<SearchToken> appointment_type,
+@JsonKey(name: 'appointment-type') List<SearchToken> appointmentType,
 List<SearchToken> identifier,
 List<SearchReference> schedule,
-List<SearchToken> service_category,
-List<SearchToken> service_type,
+@JsonKey(name: 'service-category') List<SearchToken> serviceCategory,
+@JsonKey(name: 'service-type') List<SearchToken> serviceType,
 List<SearchToken> specialty,
 List<SearchDate> start,
 List<SearchToken> status,
 }) = _SlotSearch;
-}
+
+factory SlotSearch.fromJson(Map<String, dynamic> json) => _$SlotSearchFromJson(json);}
 
 @freezed
 abstract class TaskSearch with R4SearchParameters implements _$TaskSearch {
@@ -127,18 +132,18 @@ List<SearchString> searchContent,
 List<Id> searchList,
 //List<SearchString> searchHas,
 //List<SearchToken> searchType,
-List<SearchDate> authored_on,
-List<SearchReference> based_on,
-List<SearchToken> business_status,
+@JsonKey(name: 'authored-on') List<SearchDate> authoredOn,
+@JsonKey(name: 'based-on') List<SearchReference> basedOn,
+@JsonKey(name: 'business-status') List<SearchToken> businessStatus,
 List<SearchToken> code,
 List<SearchReference> encounter,
 List<SearchReference> focus,
-List<SearchToken> group_identifier,
+@JsonKey(name: 'group-identifier') List<SearchToken> groupIdentifier,
 List<SearchToken> identifier,
 List<SearchToken> intent,
 List<SearchDate> modified,
 List<SearchReference> owner,
-List<SearchReference> part_of,
+@JsonKey(name: 'part-of') List<SearchReference> partOf,
 List<SearchReference> patient,
 List<SearchToken> performer,
 List<SearchDate> period,
@@ -147,7 +152,8 @@ List<SearchReference> requester,
 List<SearchToken> status,
 List<SearchReference> subject,
 }) = _TaskSearch;
-}
+
+factory TaskSearch.fromJson(Map<String, dynamic> json) => _$TaskSearchFromJson(json);}
 
 @freezed
 abstract class VerificationResultSearch with R4SearchParameters implements _$VerificationResultSearch {
@@ -165,5 +171,6 @@ List<Id> searchList,
 //List<SearchToken> searchType,
 List<SearchReference> target,
 }) = _VerificationResultSearch;
-}
+
+factory VerificationResultSearch.fromJson(Map<String, dynamic> json) => _$VerificationResultSearchFromJson(json);}
 

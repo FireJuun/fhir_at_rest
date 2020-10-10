@@ -8,6 +8,9 @@ part of 'request_and_response.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
+DeviceRequestSearch _$DeviceRequestSearchFromJson(Map<String, dynamic> json) {
+  return _DeviceRequestSearch.fromJson(json);
+}
 
 /// @nodoc
 class _$DeviceRequestSearchTearOff {
@@ -27,17 +30,24 @@ class _$DeviceRequestSearchTearOff {
       List<SearchToken> identifier,
       List<SearchReference> patient,
       List<SearchReference> encounter,
-      List<SearchDate> authored_on,
-      List<SearchReference> based_on,
+      @JsonKey(name: 'authored-on')
+          List<SearchDate> authoredOn,
+      @JsonKey(name: 'based-on')
+          List<SearchReference> basedOn,
       List<SearchReference> device,
-      List<SearchDate> event_date,
-      List<SearchToken> group_identifier,
-      List<SearchReference> instantiates_canonical,
-      List<SearchUri> instantiates_uri,
+      @JsonKey(name: 'event-date')
+          List<SearchDate> eventDate,
+      @JsonKey(name: 'group-identifier')
+          List<SearchToken> groupIdentifier,
+      @JsonKey(name: 'instantiates-canonical')
+          List<SearchReference> instantiatesCanonical,
+      @JsonKey(name: 'instantiates-uri')
+          List<SearchUri> instantiatesUri,
       List<SearchReference> insurance,
       List<SearchToken> intent,
       List<SearchReference> performer,
-      List<SearchReference> prior_request,
+      @JsonKey(name: 'prior-request')
+          List<SearchReference> priorRequest,
       List<SearchReference> requester,
       List<SearchToken> status,
       List<SearchReference> subject}) {
@@ -54,21 +64,26 @@ class _$DeviceRequestSearchTearOff {
       identifier: identifier,
       patient: patient,
       encounter: encounter,
-      authored_on: authored_on,
-      based_on: based_on,
+      authoredOn: authoredOn,
+      basedOn: basedOn,
       device: device,
-      event_date: event_date,
-      group_identifier: group_identifier,
-      instantiates_canonical: instantiates_canonical,
-      instantiates_uri: instantiates_uri,
+      eventDate: eventDate,
+      groupIdentifier: groupIdentifier,
+      instantiatesCanonical: instantiatesCanonical,
+      instantiatesUri: instantiatesUri,
       insurance: insurance,
       intent: intent,
       performer: performer,
-      prior_request: prior_request,
+      priorRequest: priorRequest,
       requester: requester,
       status: status,
       subject: subject,
     );
+  }
+
+// ignore: unused_element
+  DeviceRequestSearch fromJson(Map<String, Object> json) {
+    return DeviceRequestSearch.fromJson(json);
   }
 }
 
@@ -91,21 +106,29 @@ mixin _$DeviceRequestSearch {
   List<SearchToken> get identifier;
   List<SearchReference> get patient;
   List<SearchReference> get encounter;
-  List<SearchDate> get authored_on;
-  List<SearchReference> get based_on;
+  @JsonKey(name: 'authored-on')
+  List<SearchDate> get authoredOn;
+  @JsonKey(name: 'based-on')
+  List<SearchReference> get basedOn;
   List<SearchReference> get device;
-  List<SearchDate> get event_date;
-  List<SearchToken> get group_identifier;
-  List<SearchReference> get instantiates_canonical;
-  List<SearchUri> get instantiates_uri;
+  @JsonKey(name: 'event-date')
+  List<SearchDate> get eventDate;
+  @JsonKey(name: 'group-identifier')
+  List<SearchToken> get groupIdentifier;
+  @JsonKey(name: 'instantiates-canonical')
+  List<SearchReference> get instantiatesCanonical;
+  @JsonKey(name: 'instantiates-uri')
+  List<SearchUri> get instantiatesUri;
   List<SearchReference> get insurance;
   List<SearchToken> get intent;
   List<SearchReference> get performer;
-  List<SearchReference> get prior_request;
+  @JsonKey(name: 'prior-request')
+  List<SearchReference> get priorRequest;
   List<SearchReference> get requester;
   List<SearchToken> get status;
   List<SearchReference> get subject;
 
+  Map<String, dynamic> toJson();
   $DeviceRequestSearchCopyWith<DeviceRequestSearch> get copyWith;
 }
 
@@ -127,17 +150,24 @@ abstract class $DeviceRequestSearchCopyWith<$Res> {
       List<SearchToken> identifier,
       List<SearchReference> patient,
       List<SearchReference> encounter,
-      List<SearchDate> authored_on,
-      List<SearchReference> based_on,
+      @JsonKey(name: 'authored-on')
+          List<SearchDate> authoredOn,
+      @JsonKey(name: 'based-on')
+          List<SearchReference> basedOn,
       List<SearchReference> device,
-      List<SearchDate> event_date,
-      List<SearchToken> group_identifier,
-      List<SearchReference> instantiates_canonical,
-      List<SearchUri> instantiates_uri,
+      @JsonKey(name: 'event-date')
+          List<SearchDate> eventDate,
+      @JsonKey(name: 'group-identifier')
+          List<SearchToken> groupIdentifier,
+      @JsonKey(name: 'instantiates-canonical')
+          List<SearchReference> instantiatesCanonical,
+      @JsonKey(name: 'instantiates-uri')
+          List<SearchUri> instantiatesUri,
       List<SearchReference> insurance,
       List<SearchToken> intent,
       List<SearchReference> performer,
-      List<SearchReference> prior_request,
+      @JsonKey(name: 'prior-request')
+          List<SearchReference> priorRequest,
       List<SearchReference> requester,
       List<SearchToken> status,
       List<SearchReference> subject});
@@ -166,17 +196,17 @@ class _$DeviceRequestSearchCopyWithImpl<$Res>
     Object identifier = freezed,
     Object patient = freezed,
     Object encounter = freezed,
-    Object authored_on = freezed,
-    Object based_on = freezed,
+    Object authoredOn = freezed,
+    Object basedOn = freezed,
     Object device = freezed,
-    Object event_date = freezed,
-    Object group_identifier = freezed,
-    Object instantiates_canonical = freezed,
-    Object instantiates_uri = freezed,
+    Object eventDate = freezed,
+    Object groupIdentifier = freezed,
+    Object instantiatesCanonical = freezed,
+    Object instantiatesUri = freezed,
     Object insurance = freezed,
     Object intent = freezed,
     Object performer = freezed,
-    Object prior_request = freezed,
+    Object priorRequest = freezed,
     Object requester = freezed,
     Object status = freezed,
     Object subject = freezed,
@@ -213,26 +243,26 @@ class _$DeviceRequestSearchCopyWithImpl<$Res>
       encounter: encounter == freezed
           ? _value.encounter
           : encounter as List<SearchReference>,
-      authored_on: authored_on == freezed
-          ? _value.authored_on
-          : authored_on as List<SearchDate>,
-      based_on: based_on == freezed
-          ? _value.based_on
-          : based_on as List<SearchReference>,
+      authoredOn: authoredOn == freezed
+          ? _value.authoredOn
+          : authoredOn as List<SearchDate>,
+      basedOn: basedOn == freezed
+          ? _value.basedOn
+          : basedOn as List<SearchReference>,
       device:
           device == freezed ? _value.device : device as List<SearchReference>,
-      event_date: event_date == freezed
-          ? _value.event_date
-          : event_date as List<SearchDate>,
-      group_identifier: group_identifier == freezed
-          ? _value.group_identifier
-          : group_identifier as List<SearchToken>,
-      instantiates_canonical: instantiates_canonical == freezed
-          ? _value.instantiates_canonical
-          : instantiates_canonical as List<SearchReference>,
-      instantiates_uri: instantiates_uri == freezed
-          ? _value.instantiates_uri
-          : instantiates_uri as List<SearchUri>,
+      eventDate: eventDate == freezed
+          ? _value.eventDate
+          : eventDate as List<SearchDate>,
+      groupIdentifier: groupIdentifier == freezed
+          ? _value.groupIdentifier
+          : groupIdentifier as List<SearchToken>,
+      instantiatesCanonical: instantiatesCanonical == freezed
+          ? _value.instantiatesCanonical
+          : instantiatesCanonical as List<SearchReference>,
+      instantiatesUri: instantiatesUri == freezed
+          ? _value.instantiatesUri
+          : instantiatesUri as List<SearchUri>,
       insurance: insurance == freezed
           ? _value.insurance
           : insurance as List<SearchReference>,
@@ -240,9 +270,9 @@ class _$DeviceRequestSearchCopyWithImpl<$Res>
       performer: performer == freezed
           ? _value.performer
           : performer as List<SearchReference>,
-      prior_request: prior_request == freezed
-          ? _value.prior_request
-          : prior_request as List<SearchReference>,
+      priorRequest: priorRequest == freezed
+          ? _value.priorRequest
+          : priorRequest as List<SearchReference>,
       requester: requester == freezed
           ? _value.requester
           : requester as List<SearchReference>,
@@ -274,17 +304,24 @@ abstract class _$DeviceRequestSearchCopyWith<$Res>
       List<SearchToken> identifier,
       List<SearchReference> patient,
       List<SearchReference> encounter,
-      List<SearchDate> authored_on,
-      List<SearchReference> based_on,
+      @JsonKey(name: 'authored-on')
+          List<SearchDate> authoredOn,
+      @JsonKey(name: 'based-on')
+          List<SearchReference> basedOn,
       List<SearchReference> device,
-      List<SearchDate> event_date,
-      List<SearchToken> group_identifier,
-      List<SearchReference> instantiates_canonical,
-      List<SearchUri> instantiates_uri,
+      @JsonKey(name: 'event-date')
+          List<SearchDate> eventDate,
+      @JsonKey(name: 'group-identifier')
+          List<SearchToken> groupIdentifier,
+      @JsonKey(name: 'instantiates-canonical')
+          List<SearchReference> instantiatesCanonical,
+      @JsonKey(name: 'instantiates-uri')
+          List<SearchUri> instantiatesUri,
       List<SearchReference> insurance,
       List<SearchToken> intent,
       List<SearchReference> performer,
-      List<SearchReference> prior_request,
+      @JsonKey(name: 'prior-request')
+          List<SearchReference> priorRequest,
       List<SearchReference> requester,
       List<SearchToken> status,
       List<SearchReference> subject});
@@ -315,17 +352,17 @@ class __$DeviceRequestSearchCopyWithImpl<$Res>
     Object identifier = freezed,
     Object patient = freezed,
     Object encounter = freezed,
-    Object authored_on = freezed,
-    Object based_on = freezed,
+    Object authoredOn = freezed,
+    Object basedOn = freezed,
     Object device = freezed,
-    Object event_date = freezed,
-    Object group_identifier = freezed,
-    Object instantiates_canonical = freezed,
-    Object instantiates_uri = freezed,
+    Object eventDate = freezed,
+    Object groupIdentifier = freezed,
+    Object instantiatesCanonical = freezed,
+    Object instantiatesUri = freezed,
     Object insurance = freezed,
     Object intent = freezed,
     Object performer = freezed,
-    Object prior_request = freezed,
+    Object priorRequest = freezed,
     Object requester = freezed,
     Object status = freezed,
     Object subject = freezed,
@@ -362,26 +399,26 @@ class __$DeviceRequestSearchCopyWithImpl<$Res>
       encounter: encounter == freezed
           ? _value.encounter
           : encounter as List<SearchReference>,
-      authored_on: authored_on == freezed
-          ? _value.authored_on
-          : authored_on as List<SearchDate>,
-      based_on: based_on == freezed
-          ? _value.based_on
-          : based_on as List<SearchReference>,
+      authoredOn: authoredOn == freezed
+          ? _value.authoredOn
+          : authoredOn as List<SearchDate>,
+      basedOn: basedOn == freezed
+          ? _value.basedOn
+          : basedOn as List<SearchReference>,
       device:
           device == freezed ? _value.device : device as List<SearchReference>,
-      event_date: event_date == freezed
-          ? _value.event_date
-          : event_date as List<SearchDate>,
-      group_identifier: group_identifier == freezed
-          ? _value.group_identifier
-          : group_identifier as List<SearchToken>,
-      instantiates_canonical: instantiates_canonical == freezed
-          ? _value.instantiates_canonical
-          : instantiates_canonical as List<SearchReference>,
-      instantiates_uri: instantiates_uri == freezed
-          ? _value.instantiates_uri
-          : instantiates_uri as List<SearchUri>,
+      eventDate: eventDate == freezed
+          ? _value.eventDate
+          : eventDate as List<SearchDate>,
+      groupIdentifier: groupIdentifier == freezed
+          ? _value.groupIdentifier
+          : groupIdentifier as List<SearchToken>,
+      instantiatesCanonical: instantiatesCanonical == freezed
+          ? _value.instantiatesCanonical
+          : instantiatesCanonical as List<SearchReference>,
+      instantiatesUri: instantiatesUri == freezed
+          ? _value.instantiatesUri
+          : instantiatesUri as List<SearchUri>,
       insurance: insurance == freezed
           ? _value.insurance
           : insurance as List<SearchReference>,
@@ -389,9 +426,9 @@ class __$DeviceRequestSearchCopyWithImpl<$Res>
       performer: performer == freezed
           ? _value.performer
           : performer as List<SearchReference>,
-      prior_request: prior_request == freezed
-          ? _value.prior_request
-          : prior_request as List<SearchReference>,
+      priorRequest: priorRequest == freezed
+          ? _value.priorRequest
+          : priorRequest as List<SearchReference>,
       requester: requester == freezed
           ? _value.requester
           : requester as List<SearchReference>,
@@ -402,6 +439,8 @@ class __$DeviceRequestSearchCopyWithImpl<$Res>
     ));
   }
 }
+
+@JsonSerializable()
 
 /// @nodoc
 class _$_DeviceRequestSearch extends _DeviceRequestSearch {
@@ -418,21 +457,24 @@ class _$_DeviceRequestSearch extends _DeviceRequestSearch {
       this.identifier,
       this.patient,
       this.encounter,
-      this.authored_on,
-      this.based_on,
+      @JsonKey(name: 'authored-on') this.authoredOn,
+      @JsonKey(name: 'based-on') this.basedOn,
       this.device,
-      this.event_date,
-      this.group_identifier,
-      this.instantiates_canonical,
-      this.instantiates_uri,
+      @JsonKey(name: 'event-date') this.eventDate,
+      @JsonKey(name: 'group-identifier') this.groupIdentifier,
+      @JsonKey(name: 'instantiates-canonical') this.instantiatesCanonical,
+      @JsonKey(name: 'instantiates-uri') this.instantiatesUri,
       this.insurance,
       this.intent,
       this.performer,
-      this.prior_request,
+      @JsonKey(name: 'prior-request') this.priorRequest,
       this.requester,
       this.status,
       this.subject})
       : super._();
+
+  factory _$_DeviceRequestSearch.fromJson(Map<String, dynamic> json) =>
+      _$_$_DeviceRequestSearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -460,19 +502,25 @@ class _$_DeviceRequestSearch extends _DeviceRequestSearch {
   @override
   final List<SearchReference> encounter;
   @override
-  final List<SearchDate> authored_on;
+  @JsonKey(name: 'authored-on')
+  final List<SearchDate> authoredOn;
   @override
-  final List<SearchReference> based_on;
+  @JsonKey(name: 'based-on')
+  final List<SearchReference> basedOn;
   @override
   final List<SearchReference> device;
   @override
-  final List<SearchDate> event_date;
+  @JsonKey(name: 'event-date')
+  final List<SearchDate> eventDate;
   @override
-  final List<SearchToken> group_identifier;
+  @JsonKey(name: 'group-identifier')
+  final List<SearchToken> groupIdentifier;
   @override
-  final List<SearchReference> instantiates_canonical;
+  @JsonKey(name: 'instantiates-canonical')
+  final List<SearchReference> instantiatesCanonical;
   @override
-  final List<SearchUri> instantiates_uri;
+  @JsonKey(name: 'instantiates-uri')
+  final List<SearchUri> instantiatesUri;
   @override
   final List<SearchReference> insurance;
   @override
@@ -480,7 +528,8 @@ class _$_DeviceRequestSearch extends _DeviceRequestSearch {
   @override
   final List<SearchReference> performer;
   @override
-  final List<SearchReference> prior_request;
+  @JsonKey(name: 'prior-request')
+  final List<SearchReference> priorRequest;
   @override
   final List<SearchReference> requester;
   @override
@@ -490,7 +539,7 @@ class _$_DeviceRequestSearch extends _DeviceRequestSearch {
 
   @override
   String toString() {
-    return 'DeviceRequestSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, code: $code, identifier: $identifier, patient: $patient, encounter: $encounter, authored_on: $authored_on, based_on: $based_on, device: $device, event_date: $event_date, group_identifier: $group_identifier, instantiates_canonical: $instantiates_canonical, instantiates_uri: $instantiates_uri, insurance: $insurance, intent: $intent, performer: $performer, prior_request: $prior_request, requester: $requester, status: $status, subject: $subject)';
+    return 'DeviceRequestSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, code: $code, identifier: $identifier, patient: $patient, encounter: $encounter, authoredOn: $authoredOn, basedOn: $basedOn, device: $device, eventDate: $eventDate, groupIdentifier: $groupIdentifier, instantiatesCanonical: $instantiatesCanonical, instantiatesUri: $instantiatesUri, insurance: $insurance, intent: $intent, performer: $performer, priorRequest: $priorRequest, requester: $requester, status: $status, subject: $subject)';
   }
 
   @override
@@ -532,26 +581,26 @@ class _$_DeviceRequestSearch extends _DeviceRequestSearch {
             (identical(other.encounter, encounter) ||
                 const DeepCollectionEquality()
                     .equals(other.encounter, encounter)) &&
-            (identical(other.authored_on, authored_on) ||
+            (identical(other.authoredOn, authoredOn) ||
                 const DeepCollectionEquality()
-                    .equals(other.authored_on, authored_on)) &&
-            (identical(other.based_on, based_on) ||
+                    .equals(other.authoredOn, authoredOn)) &&
+            (identical(other.basedOn, basedOn) ||
                 const DeepCollectionEquality()
-                    .equals(other.based_on, based_on)) &&
+                    .equals(other.basedOn, basedOn)) &&
             (identical(other.device, device) ||
                 const DeepCollectionEquality().equals(other.device, device)) &&
-            (identical(other.event_date, event_date) ||
+            (identical(other.eventDate, eventDate) ||
                 const DeepCollectionEquality()
-                    .equals(other.event_date, event_date)) &&
-            (identical(other.group_identifier, group_identifier) ||
+                    .equals(other.eventDate, eventDate)) &&
+            (identical(other.groupIdentifier, groupIdentifier) ||
                 const DeepCollectionEquality()
-                    .equals(other.group_identifier, group_identifier)) &&
-            (identical(other.instantiates_canonical, instantiates_canonical) ||
+                    .equals(other.groupIdentifier, groupIdentifier)) &&
+            (identical(other.instantiatesCanonical, instantiatesCanonical) ||
                 const DeepCollectionEquality().equals(
-                    other.instantiates_canonical, instantiates_canonical)) &&
-            (identical(other.instantiates_uri, instantiates_uri) ||
+                    other.instantiatesCanonical, instantiatesCanonical)) &&
+            (identical(other.instantiatesUri, instantiatesUri) ||
                 const DeepCollectionEquality()
-                    .equals(other.instantiates_uri, instantiates_uri)) &&
+                    .equals(other.instantiatesUri, instantiatesUri)) &&
             (identical(other.insurance, insurance) ||
                 const DeepCollectionEquality()
                     .equals(other.insurance, insurance)) &&
@@ -560,9 +609,9 @@ class _$_DeviceRequestSearch extends _DeviceRequestSearch {
             (identical(other.performer, performer) ||
                 const DeepCollectionEquality()
                     .equals(other.performer, performer)) &&
-            (identical(other.prior_request, prior_request) ||
+            (identical(other.priorRequest, priorRequest) ||
                 const DeepCollectionEquality()
-                    .equals(other.prior_request, prior_request)) &&
+                    .equals(other.priorRequest, priorRequest)) &&
             (identical(other.requester, requester) || const DeepCollectionEquality().equals(other.requester, requester)) &&
             (identical(other.status, status) || const DeepCollectionEquality().equals(other.status, status)) &&
             (identical(other.subject, subject) || const DeepCollectionEquality().equals(other.subject, subject)));
@@ -583,17 +632,17 @@ class _$_DeviceRequestSearch extends _DeviceRequestSearch {
       const DeepCollectionEquality().hash(identifier) ^
       const DeepCollectionEquality().hash(patient) ^
       const DeepCollectionEquality().hash(encounter) ^
-      const DeepCollectionEquality().hash(authored_on) ^
-      const DeepCollectionEquality().hash(based_on) ^
+      const DeepCollectionEquality().hash(authoredOn) ^
+      const DeepCollectionEquality().hash(basedOn) ^
       const DeepCollectionEquality().hash(device) ^
-      const DeepCollectionEquality().hash(event_date) ^
-      const DeepCollectionEquality().hash(group_identifier) ^
-      const DeepCollectionEquality().hash(instantiates_canonical) ^
-      const DeepCollectionEquality().hash(instantiates_uri) ^
+      const DeepCollectionEquality().hash(eventDate) ^
+      const DeepCollectionEquality().hash(groupIdentifier) ^
+      const DeepCollectionEquality().hash(instantiatesCanonical) ^
+      const DeepCollectionEquality().hash(instantiatesUri) ^
       const DeepCollectionEquality().hash(insurance) ^
       const DeepCollectionEquality().hash(intent) ^
       const DeepCollectionEquality().hash(performer) ^
-      const DeepCollectionEquality().hash(prior_request) ^
+      const DeepCollectionEquality().hash(priorRequest) ^
       const DeepCollectionEquality().hash(requester) ^
       const DeepCollectionEquality().hash(status) ^
       const DeepCollectionEquality().hash(subject);
@@ -602,6 +651,11 @@ class _$_DeviceRequestSearch extends _DeviceRequestSearch {
   _$DeviceRequestSearchCopyWith<_DeviceRequestSearch> get copyWith =>
       __$DeviceRequestSearchCopyWithImpl<_DeviceRequestSearch>(
           this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_DeviceRequestSearchToJson(this);
+  }
 }
 
 abstract class _DeviceRequestSearch extends DeviceRequestSearch {
@@ -619,20 +673,30 @@ abstract class _DeviceRequestSearch extends DeviceRequestSearch {
       List<SearchToken> identifier,
       List<SearchReference> patient,
       List<SearchReference> encounter,
-      List<SearchDate> authored_on,
-      List<SearchReference> based_on,
+      @JsonKey(name: 'authored-on')
+          List<SearchDate> authoredOn,
+      @JsonKey(name: 'based-on')
+          List<SearchReference> basedOn,
       List<SearchReference> device,
-      List<SearchDate> event_date,
-      List<SearchToken> group_identifier,
-      List<SearchReference> instantiates_canonical,
-      List<SearchUri> instantiates_uri,
+      @JsonKey(name: 'event-date')
+          List<SearchDate> eventDate,
+      @JsonKey(name: 'group-identifier')
+          List<SearchToken> groupIdentifier,
+      @JsonKey(name: 'instantiates-canonical')
+          List<SearchReference> instantiatesCanonical,
+      @JsonKey(name: 'instantiates-uri')
+          List<SearchUri> instantiatesUri,
       List<SearchReference> insurance,
       List<SearchToken> intent,
       List<SearchReference> performer,
-      List<SearchReference> prior_request,
+      @JsonKey(name: 'prior-request')
+          List<SearchReference> priorRequest,
       List<SearchReference> requester,
       List<SearchToken> status,
       List<SearchReference> subject}) = _$_DeviceRequestSearch;
+
+  factory _DeviceRequestSearch.fromJson(Map<String, dynamic> json) =
+      _$_DeviceRequestSearch.fromJson;
 
   @override
   List<Id> get searchId;
@@ -660,19 +724,25 @@ abstract class _DeviceRequestSearch extends DeviceRequestSearch {
   @override
   List<SearchReference> get encounter;
   @override
-  List<SearchDate> get authored_on;
+  @JsonKey(name: 'authored-on')
+  List<SearchDate> get authoredOn;
   @override
-  List<SearchReference> get based_on;
+  @JsonKey(name: 'based-on')
+  List<SearchReference> get basedOn;
   @override
   List<SearchReference> get device;
   @override
-  List<SearchDate> get event_date;
+  @JsonKey(name: 'event-date')
+  List<SearchDate> get eventDate;
   @override
-  List<SearchToken> get group_identifier;
+  @JsonKey(name: 'group-identifier')
+  List<SearchToken> get groupIdentifier;
   @override
-  List<SearchReference> get instantiates_canonical;
+  @JsonKey(name: 'instantiates-canonical')
+  List<SearchReference> get instantiatesCanonical;
   @override
-  List<SearchUri> get instantiates_uri;
+  @JsonKey(name: 'instantiates-uri')
+  List<SearchUri> get instantiatesUri;
   @override
   List<SearchReference> get insurance;
   @override
@@ -680,7 +750,8 @@ abstract class _DeviceRequestSearch extends DeviceRequestSearch {
   @override
   List<SearchReference> get performer;
   @override
-  List<SearchReference> get prior_request;
+  @JsonKey(name: 'prior-request')
+  List<SearchReference> get priorRequest;
   @override
   List<SearchReference> get requester;
   @override
@@ -689,6 +760,10 @@ abstract class _DeviceRequestSearch extends DeviceRequestSearch {
   List<SearchReference> get subject;
   @override
   _$DeviceRequestSearchCopyWith<_DeviceRequestSearch> get copyWith;
+}
+
+SupplyRequestSearch _$SupplyRequestSearchFromJson(Map<String, dynamic> json) {
+  return _SupplyRequestSearch.fromJson(json);
 }
 
 /// @nodoc
@@ -730,6 +805,11 @@ class _$SupplyRequestSearchTearOff {
       supplier: supplier,
     );
   }
+
+// ignore: unused_element
+  SupplyRequestSearch fromJson(Map<String, Object> json) {
+    return SupplyRequestSearch.fromJson(json);
+  }
 }
 
 /// @nodoc
@@ -755,6 +835,7 @@ mixin _$SupplyRequestSearch {
   List<SearchReference> get subject;
   List<SearchReference> get supplier;
 
+  Map<String, dynamic> toJson();
   $SupplyRequestSearchCopyWith<SupplyRequestSearch> get copyWith;
 }
 
@@ -946,6 +1027,8 @@ class __$SupplyRequestSearchCopyWithImpl<$Res>
   }
 }
 
+@JsonSerializable()
+
 /// @nodoc
 class _$_SupplyRequestSearch extends _SupplyRequestSearch {
   _$_SupplyRequestSearch(
@@ -965,6 +1048,9 @@ class _$_SupplyRequestSearch extends _SupplyRequestSearch {
       this.subject,
       this.supplier})
       : super._();
+
+  factory _$_SupplyRequestSearch.fromJson(Map<String, dynamic> json) =>
+      _$_$_SupplyRequestSearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -1075,6 +1161,11 @@ class _$_SupplyRequestSearch extends _SupplyRequestSearch {
   _$SupplyRequestSearchCopyWith<_SupplyRequestSearch> get copyWith =>
       __$SupplyRequestSearchCopyWithImpl<_SupplyRequestSearch>(
           this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_SupplyRequestSearchToJson(this);
+  }
 }
 
 abstract class _SupplyRequestSearch extends SupplyRequestSearch {
@@ -1095,6 +1186,9 @@ abstract class _SupplyRequestSearch extends SupplyRequestSearch {
       List<SearchToken> status,
       List<SearchReference> subject,
       List<SearchReference> supplier}) = _$_SupplyRequestSearch;
+
+  factory _SupplyRequestSearch.fromJson(Map<String, dynamic> json) =
+      _$_SupplyRequestSearch.fromJson;
 
   @override
   List<Id> get searchId;
@@ -1129,6 +1223,10 @@ abstract class _SupplyRequestSearch extends SupplyRequestSearch {
   List<SearchReference> get supplier;
   @override
   _$SupplyRequestSearchCopyWith<_SupplyRequestSearch> get copyWith;
+}
+
+SupplyDeliverySearch _$SupplyDeliverySearchFromJson(Map<String, dynamic> json) {
+  return _SupplyDeliverySearch.fromJson(json);
 }
 
 /// @nodoc
@@ -1166,6 +1264,11 @@ class _$SupplyDeliverySearchTearOff {
       supplier: supplier,
     );
   }
+
+// ignore: unused_element
+  SupplyDeliverySearch fromJson(Map<String, Object> json) {
+    return SupplyDeliverySearch.fromJson(json);
+  }
 }
 
 /// @nodoc
@@ -1189,6 +1292,7 @@ mixin _$SupplyDeliverySearch {
   List<SearchToken> get status;
   List<SearchReference> get supplier;
 
+  Map<String, dynamic> toJson();
   $SupplyDeliverySearchCopyWith<SupplyDeliverySearch> get copyWith;
 }
 
@@ -1366,6 +1470,8 @@ class __$SupplyDeliverySearchCopyWithImpl<$Res>
   }
 }
 
+@JsonSerializable()
+
 /// @nodoc
 class _$_SupplyDeliverySearch extends _SupplyDeliverySearch {
   _$_SupplyDeliverySearch(
@@ -1383,6 +1489,9 @@ class _$_SupplyDeliverySearch extends _SupplyDeliverySearch {
       this.status,
       this.supplier})
       : super._();
+
+  factory _$_SupplyDeliverySearch.fromJson(Map<String, dynamic> json) =>
+      _$_$_SupplyDeliverySearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -1482,6 +1591,11 @@ class _$_SupplyDeliverySearch extends _SupplyDeliverySearch {
   _$SupplyDeliverySearchCopyWith<_SupplyDeliverySearch> get copyWith =>
       __$SupplyDeliverySearchCopyWithImpl<_SupplyDeliverySearch>(
           this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_SupplyDeliverySearchToJson(this);
+  }
 }
 
 abstract class _SupplyDeliverySearch extends SupplyDeliverySearch {
@@ -1500,6 +1614,9 @@ abstract class _SupplyDeliverySearch extends SupplyDeliverySearch {
       List<SearchReference> receiver,
       List<SearchToken> status,
       List<SearchReference> supplier}) = _$_SupplyDeliverySearch;
+
+  factory _SupplyDeliverySearch.fromJson(Map<String, dynamic> json) =
+      _$_SupplyDeliverySearch.fromJson;
 
   @override
   List<Id> get searchId;
@@ -1530,6 +1647,11 @@ abstract class _SupplyDeliverySearch extends SupplyDeliverySearch {
   List<SearchReference> get supplier;
   @override
   _$SupplyDeliverySearchCopyWith<_SupplyDeliverySearch> get copyWith;
+}
+
+DeviceUseStatementSearch _$DeviceUseStatementSearchFromJson(
+    Map<String, dynamic> json) {
+  return _DeviceUseStatementSearch.fromJson(json);
 }
 
 /// @nodoc
@@ -1565,6 +1687,11 @@ class _$DeviceUseStatementSearchTearOff {
       subject: subject,
     );
   }
+
+// ignore: unused_element
+  DeviceUseStatementSearch fromJson(Map<String, Object> json) {
+    return DeviceUseStatementSearch.fromJson(json);
+  }
 }
 
 /// @nodoc
@@ -1587,6 +1714,7 @@ mixin _$DeviceUseStatementSearch {
   List<SearchToken> get identifier;
   List<SearchReference> get subject;
 
+  Map<String, dynamic> toJson();
   $DeviceUseStatementSearchCopyWith<DeviceUseStatementSearch> get copyWith;
 }
 
@@ -1757,6 +1885,8 @@ class __$DeviceUseStatementSearchCopyWithImpl<$Res>
   }
 }
 
+@JsonSerializable()
+
 /// @nodoc
 class _$_DeviceUseStatementSearch extends _DeviceUseStatementSearch {
   _$_DeviceUseStatementSearch(
@@ -1773,6 +1903,9 @@ class _$_DeviceUseStatementSearch extends _DeviceUseStatementSearch {
       this.identifier,
       this.subject})
       : super._();
+
+  factory _$_DeviceUseStatementSearch.fromJson(Map<String, dynamic> json) =>
+      _$_$_DeviceUseStatementSearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -1865,6 +1998,11 @@ class _$_DeviceUseStatementSearch extends _DeviceUseStatementSearch {
   _$DeviceUseStatementSearchCopyWith<_DeviceUseStatementSearch> get copyWith =>
       __$DeviceUseStatementSearchCopyWithImpl<_DeviceUseStatementSearch>(
           this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_DeviceUseStatementSearchToJson(this);
+  }
 }
 
 abstract class _DeviceUseStatementSearch extends DeviceUseStatementSearch {
@@ -1882,6 +2020,9 @@ abstract class _DeviceUseStatementSearch extends DeviceUseStatementSearch {
       List<SearchReference> device,
       List<SearchToken> identifier,
       List<SearchReference> subject}) = _$_DeviceUseStatementSearch;
+
+  factory _DeviceUseStatementSearch.fromJson(Map<String, dynamic> json) =
+      _$_DeviceUseStatementSearch.fromJson;
 
   @override
   List<Id> get searchId;
@@ -1912,6 +2053,10 @@ abstract class _DeviceUseStatementSearch extends DeviceUseStatementSearch {
   _$DeviceUseStatementSearchCopyWith<_DeviceUseStatementSearch> get copyWith;
 }
 
+CommunicationSearch _$CommunicationSearchFromJson(Map<String, dynamic> json) {
+  return _CommunicationSearch.fromJson(json);
+}
+
 /// @nodoc
 class _$CommunicationSearchTearOff {
   const _$CommunicationSearchTearOff();
@@ -1926,14 +2071,18 @@ class _$CommunicationSearchTearOff {
       List<SearchString> searchText,
       List<SearchString> searchContent,
       List<Id> searchList,
-      List<SearchReference> based_on,
+      @JsonKey(name: 'based-on')
+          List<SearchReference> basedOn,
       List<SearchToken> category,
       List<SearchReference> encounter,
       List<SearchToken> identifier,
-      List<SearchReference> instantiates_canonical,
-      List<SearchUri> instantiates_uri,
+      @JsonKey(name: 'instantiates-canonical')
+          List<SearchReference> instantiatesCanonical,
+      @JsonKey(name: 'instantiates-uri')
+          List<SearchUri> instantiatesUri,
       List<SearchToken> medium,
-      List<SearchReference> part_of,
+      @JsonKey(name: 'part-of')
+          List<SearchReference> partOf,
       List<SearchReference> patient,
       List<SearchDate> received,
       List<SearchReference> recipient,
@@ -1950,14 +2099,14 @@ class _$CommunicationSearchTearOff {
       searchText: searchText,
       searchContent: searchContent,
       searchList: searchList,
-      based_on: based_on,
+      basedOn: basedOn,
       category: category,
       encounter: encounter,
       identifier: identifier,
-      instantiates_canonical: instantiates_canonical,
-      instantiates_uri: instantiates_uri,
+      instantiatesCanonical: instantiatesCanonical,
+      instantiatesUri: instantiatesUri,
       medium: medium,
-      part_of: part_of,
+      partOf: partOf,
       patient: patient,
       received: received,
       recipient: recipient,
@@ -1966,6 +2115,11 @@ class _$CommunicationSearchTearOff {
       status: status,
       subject: subject,
     );
+  }
+
+// ignore: unused_element
+  CommunicationSearch fromJson(Map<String, Object> json) {
+    return CommunicationSearch.fromJson(json);
   }
 }
 
@@ -1984,14 +2138,18 @@ mixin _$CommunicationSearch {
   List<SearchString> get searchContent;
   List<Id> get searchList; //List<SearchString> searchHas,
 //List<SearchToken> searchType,
-  List<SearchReference> get based_on;
+  @JsonKey(name: 'based-on')
+  List<SearchReference> get basedOn;
   List<SearchToken> get category;
   List<SearchReference> get encounter;
   List<SearchToken> get identifier;
-  List<SearchReference> get instantiates_canonical;
-  List<SearchUri> get instantiates_uri;
+  @JsonKey(name: 'instantiates-canonical')
+  List<SearchReference> get instantiatesCanonical;
+  @JsonKey(name: 'instantiates-uri')
+  List<SearchUri> get instantiatesUri;
   List<SearchToken> get medium;
-  List<SearchReference> get part_of;
+  @JsonKey(name: 'part-of')
+  List<SearchReference> get partOf;
   List<SearchReference> get patient;
   List<SearchDate> get received;
   List<SearchReference> get recipient;
@@ -2000,6 +2158,7 @@ mixin _$CommunicationSearch {
   List<SearchToken> get status;
   List<SearchReference> get subject;
 
+  Map<String, dynamic> toJson();
   $CommunicationSearchCopyWith<CommunicationSearch> get copyWith;
 }
 
@@ -2017,14 +2176,18 @@ abstract class $CommunicationSearchCopyWith<$Res> {
       List<SearchString> searchText,
       List<SearchString> searchContent,
       List<Id> searchList,
-      List<SearchReference> based_on,
+      @JsonKey(name: 'based-on')
+          List<SearchReference> basedOn,
       List<SearchToken> category,
       List<SearchReference> encounter,
       List<SearchToken> identifier,
-      List<SearchReference> instantiates_canonical,
-      List<SearchUri> instantiates_uri,
+      @JsonKey(name: 'instantiates-canonical')
+          List<SearchReference> instantiatesCanonical,
+      @JsonKey(name: 'instantiates-uri')
+          List<SearchUri> instantiatesUri,
       List<SearchToken> medium,
-      List<SearchReference> part_of,
+      @JsonKey(name: 'part-of')
+          List<SearchReference> partOf,
       List<SearchReference> patient,
       List<SearchDate> received,
       List<SearchReference> recipient,
@@ -2053,14 +2216,14 @@ class _$CommunicationSearchCopyWithImpl<$Res>
     Object searchText = freezed,
     Object searchContent = freezed,
     Object searchList = freezed,
-    Object based_on = freezed,
+    Object basedOn = freezed,
     Object category = freezed,
     Object encounter = freezed,
     Object identifier = freezed,
-    Object instantiates_canonical = freezed,
-    Object instantiates_uri = freezed,
+    Object instantiatesCanonical = freezed,
+    Object instantiatesUri = freezed,
     Object medium = freezed,
-    Object part_of = freezed,
+    Object partOf = freezed,
     Object patient = freezed,
     Object received = freezed,
     Object recipient = freezed,
@@ -2091,9 +2254,9 @@ class _$CommunicationSearchCopyWithImpl<$Res>
           : searchContent as List<SearchString>,
       searchList:
           searchList == freezed ? _value.searchList : searchList as List<Id>,
-      based_on: based_on == freezed
-          ? _value.based_on
-          : based_on as List<SearchReference>,
+      basedOn: basedOn == freezed
+          ? _value.basedOn
+          : basedOn as List<SearchReference>,
       category:
           category == freezed ? _value.category : category as List<SearchToken>,
       encounter: encounter == freezed
@@ -2102,16 +2265,15 @@ class _$CommunicationSearchCopyWithImpl<$Res>
       identifier: identifier == freezed
           ? _value.identifier
           : identifier as List<SearchToken>,
-      instantiates_canonical: instantiates_canonical == freezed
-          ? _value.instantiates_canonical
-          : instantiates_canonical as List<SearchReference>,
-      instantiates_uri: instantiates_uri == freezed
-          ? _value.instantiates_uri
-          : instantiates_uri as List<SearchUri>,
+      instantiatesCanonical: instantiatesCanonical == freezed
+          ? _value.instantiatesCanonical
+          : instantiatesCanonical as List<SearchReference>,
+      instantiatesUri: instantiatesUri == freezed
+          ? _value.instantiatesUri
+          : instantiatesUri as List<SearchUri>,
       medium: medium == freezed ? _value.medium : medium as List<SearchToken>,
-      part_of: part_of == freezed
-          ? _value.part_of
-          : part_of as List<SearchReference>,
+      partOf:
+          partOf == freezed ? _value.partOf : partOf as List<SearchReference>,
       patient: patient == freezed
           ? _value.patient
           : patient as List<SearchReference>,
@@ -2147,14 +2309,18 @@ abstract class _$CommunicationSearchCopyWith<$Res>
       List<SearchString> searchText,
       List<SearchString> searchContent,
       List<Id> searchList,
-      List<SearchReference> based_on,
+      @JsonKey(name: 'based-on')
+          List<SearchReference> basedOn,
       List<SearchToken> category,
       List<SearchReference> encounter,
       List<SearchToken> identifier,
-      List<SearchReference> instantiates_canonical,
-      List<SearchUri> instantiates_uri,
+      @JsonKey(name: 'instantiates-canonical')
+          List<SearchReference> instantiatesCanonical,
+      @JsonKey(name: 'instantiates-uri')
+          List<SearchUri> instantiatesUri,
       List<SearchToken> medium,
-      List<SearchReference> part_of,
+      @JsonKey(name: 'part-of')
+          List<SearchReference> partOf,
       List<SearchReference> patient,
       List<SearchDate> received,
       List<SearchReference> recipient,
@@ -2185,14 +2351,14 @@ class __$CommunicationSearchCopyWithImpl<$Res>
     Object searchText = freezed,
     Object searchContent = freezed,
     Object searchList = freezed,
-    Object based_on = freezed,
+    Object basedOn = freezed,
     Object category = freezed,
     Object encounter = freezed,
     Object identifier = freezed,
-    Object instantiates_canonical = freezed,
-    Object instantiates_uri = freezed,
+    Object instantiatesCanonical = freezed,
+    Object instantiatesUri = freezed,
     Object medium = freezed,
-    Object part_of = freezed,
+    Object partOf = freezed,
     Object patient = freezed,
     Object received = freezed,
     Object recipient = freezed,
@@ -2223,9 +2389,9 @@ class __$CommunicationSearchCopyWithImpl<$Res>
           : searchContent as List<SearchString>,
       searchList:
           searchList == freezed ? _value.searchList : searchList as List<Id>,
-      based_on: based_on == freezed
-          ? _value.based_on
-          : based_on as List<SearchReference>,
+      basedOn: basedOn == freezed
+          ? _value.basedOn
+          : basedOn as List<SearchReference>,
       category:
           category == freezed ? _value.category : category as List<SearchToken>,
       encounter: encounter == freezed
@@ -2234,16 +2400,15 @@ class __$CommunicationSearchCopyWithImpl<$Res>
       identifier: identifier == freezed
           ? _value.identifier
           : identifier as List<SearchToken>,
-      instantiates_canonical: instantiates_canonical == freezed
-          ? _value.instantiates_canonical
-          : instantiates_canonical as List<SearchReference>,
-      instantiates_uri: instantiates_uri == freezed
-          ? _value.instantiates_uri
-          : instantiates_uri as List<SearchUri>,
+      instantiatesCanonical: instantiatesCanonical == freezed
+          ? _value.instantiatesCanonical
+          : instantiatesCanonical as List<SearchReference>,
+      instantiatesUri: instantiatesUri == freezed
+          ? _value.instantiatesUri
+          : instantiatesUri as List<SearchUri>,
       medium: medium == freezed ? _value.medium : medium as List<SearchToken>,
-      part_of: part_of == freezed
-          ? _value.part_of
-          : part_of as List<SearchReference>,
+      partOf:
+          partOf == freezed ? _value.partOf : partOf as List<SearchReference>,
       patient: patient == freezed
           ? _value.patient
           : patient as List<SearchReference>,
@@ -2263,6 +2428,8 @@ class __$CommunicationSearchCopyWithImpl<$Res>
   }
 }
 
+@JsonSerializable()
+
 /// @nodoc
 class _$_CommunicationSearch extends _CommunicationSearch {
   _$_CommunicationSearch(
@@ -2274,14 +2441,14 @@ class _$_CommunicationSearch extends _CommunicationSearch {
       this.searchText,
       this.searchContent,
       this.searchList,
-      this.based_on,
+      @JsonKey(name: 'based-on') this.basedOn,
       this.category,
       this.encounter,
       this.identifier,
-      this.instantiates_canonical,
-      this.instantiates_uri,
+      @JsonKey(name: 'instantiates-canonical') this.instantiatesCanonical,
+      @JsonKey(name: 'instantiates-uri') this.instantiatesUri,
       this.medium,
-      this.part_of,
+      @JsonKey(name: 'part-of') this.partOf,
       this.patient,
       this.received,
       this.recipient,
@@ -2290,6 +2457,9 @@ class _$_CommunicationSearch extends _CommunicationSearch {
       this.status,
       this.subject})
       : super._();
+
+  factory _$_CommunicationSearch.fromJson(Map<String, dynamic> json) =>
+      _$_$_CommunicationSearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -2309,7 +2479,8 @@ class _$_CommunicationSearch extends _CommunicationSearch {
   final List<Id> searchList;
   @override //List<SearchString> searchHas,
 //List<SearchToken> searchType,
-  final List<SearchReference> based_on;
+  @JsonKey(name: 'based-on')
+  final List<SearchReference> basedOn;
   @override
   final List<SearchToken> category;
   @override
@@ -2317,13 +2488,16 @@ class _$_CommunicationSearch extends _CommunicationSearch {
   @override
   final List<SearchToken> identifier;
   @override
-  final List<SearchReference> instantiates_canonical;
+  @JsonKey(name: 'instantiates-canonical')
+  final List<SearchReference> instantiatesCanonical;
   @override
-  final List<SearchUri> instantiates_uri;
+  @JsonKey(name: 'instantiates-uri')
+  final List<SearchUri> instantiatesUri;
   @override
   final List<SearchToken> medium;
   @override
-  final List<SearchReference> part_of;
+  @JsonKey(name: 'part-of')
+  final List<SearchReference> partOf;
   @override
   final List<SearchReference> patient;
   @override
@@ -2341,7 +2515,7 @@ class _$_CommunicationSearch extends _CommunicationSearch {
 
   @override
   String toString() {
-    return 'CommunicationSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, based_on: $based_on, category: $category, encounter: $encounter, identifier: $identifier, instantiates_canonical: $instantiates_canonical, instantiates_uri: $instantiates_uri, medium: $medium, part_of: $part_of, patient: $patient, received: $received, recipient: $recipient, sender: $sender, sent: $sent, status: $status, subject: $subject)';
+    return 'CommunicationSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, basedOn: $basedOn, category: $category, encounter: $encounter, identifier: $identifier, instantiatesCanonical: $instantiatesCanonical, instantiatesUri: $instantiatesUri, medium: $medium, partOf: $partOf, patient: $patient, received: $received, recipient: $recipient, sender: $sender, sent: $sent, status: $status, subject: $subject)';
   }
 
   @override
@@ -2372,9 +2546,9 @@ class _$_CommunicationSearch extends _CommunicationSearch {
             (identical(other.searchList, searchList) ||
                 const DeepCollectionEquality()
                     .equals(other.searchList, searchList)) &&
-            (identical(other.based_on, based_on) ||
+            (identical(other.basedOn, basedOn) ||
                 const DeepCollectionEquality()
-                    .equals(other.based_on, based_on)) &&
+                    .equals(other.basedOn, basedOn)) &&
             (identical(other.category, category) ||
                 const DeepCollectionEquality()
                     .equals(other.category, category)) &&
@@ -2384,17 +2558,16 @@ class _$_CommunicationSearch extends _CommunicationSearch {
             (identical(other.identifier, identifier) ||
                 const DeepCollectionEquality()
                     .equals(other.identifier, identifier)) &&
-            (identical(other.instantiates_canonical, instantiates_canonical) ||
+            (identical(other.instantiatesCanonical, instantiatesCanonical) ||
                 const DeepCollectionEquality().equals(
-                    other.instantiates_canonical, instantiates_canonical)) &&
-            (identical(other.instantiates_uri, instantiates_uri) ||
+                    other.instantiatesCanonical, instantiatesCanonical)) &&
+            (identical(other.instantiatesUri, instantiatesUri) ||
                 const DeepCollectionEquality()
-                    .equals(other.instantiates_uri, instantiates_uri)) &&
+                    .equals(other.instantiatesUri, instantiatesUri)) &&
             (identical(other.medium, medium) ||
                 const DeepCollectionEquality().equals(other.medium, medium)) &&
-            (identical(other.part_of, part_of) ||
-                const DeepCollectionEquality()
-                    .equals(other.part_of, part_of)) &&
+            (identical(other.partOf, partOf) ||
+                const DeepCollectionEquality().equals(other.partOf, partOf)) &&
             (identical(other.patient, patient) ||
                 const DeepCollectionEquality()
                     .equals(other.patient, patient)) &&
@@ -2425,14 +2598,14 @@ class _$_CommunicationSearch extends _CommunicationSearch {
       const DeepCollectionEquality().hash(searchText) ^
       const DeepCollectionEquality().hash(searchContent) ^
       const DeepCollectionEquality().hash(searchList) ^
-      const DeepCollectionEquality().hash(based_on) ^
+      const DeepCollectionEquality().hash(basedOn) ^
       const DeepCollectionEquality().hash(category) ^
       const DeepCollectionEquality().hash(encounter) ^
       const DeepCollectionEquality().hash(identifier) ^
-      const DeepCollectionEquality().hash(instantiates_canonical) ^
-      const DeepCollectionEquality().hash(instantiates_uri) ^
+      const DeepCollectionEquality().hash(instantiatesCanonical) ^
+      const DeepCollectionEquality().hash(instantiatesUri) ^
       const DeepCollectionEquality().hash(medium) ^
-      const DeepCollectionEquality().hash(part_of) ^
+      const DeepCollectionEquality().hash(partOf) ^
       const DeepCollectionEquality().hash(patient) ^
       const DeepCollectionEquality().hash(received) ^
       const DeepCollectionEquality().hash(recipient) ^
@@ -2445,6 +2618,11 @@ class _$_CommunicationSearch extends _CommunicationSearch {
   _$CommunicationSearchCopyWith<_CommunicationSearch> get copyWith =>
       __$CommunicationSearchCopyWithImpl<_CommunicationSearch>(
           this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_CommunicationSearchToJson(this);
+  }
 }
 
 abstract class _CommunicationSearch extends CommunicationSearch {
@@ -2458,14 +2636,18 @@ abstract class _CommunicationSearch extends CommunicationSearch {
       List<SearchString> searchText,
       List<SearchString> searchContent,
       List<Id> searchList,
-      List<SearchReference> based_on,
+      @JsonKey(name: 'based-on')
+          List<SearchReference> basedOn,
       List<SearchToken> category,
       List<SearchReference> encounter,
       List<SearchToken> identifier,
-      List<SearchReference> instantiates_canonical,
-      List<SearchUri> instantiates_uri,
+      @JsonKey(name: 'instantiates-canonical')
+          List<SearchReference> instantiatesCanonical,
+      @JsonKey(name: 'instantiates-uri')
+          List<SearchUri> instantiatesUri,
       List<SearchToken> medium,
-      List<SearchReference> part_of,
+      @JsonKey(name: 'part-of')
+          List<SearchReference> partOf,
       List<SearchReference> patient,
       List<SearchDate> received,
       List<SearchReference> recipient,
@@ -2473,6 +2655,9 @@ abstract class _CommunicationSearch extends CommunicationSearch {
       List<SearchDate> sent,
       List<SearchToken> status,
       List<SearchReference> subject}) = _$_CommunicationSearch;
+
+  factory _CommunicationSearch.fromJson(Map<String, dynamic> json) =
+      _$_CommunicationSearch.fromJson;
 
   @override
   List<Id> get searchId;
@@ -2492,7 +2677,8 @@ abstract class _CommunicationSearch extends CommunicationSearch {
   List<Id> get searchList;
   @override //List<SearchString> searchHas,
 //List<SearchToken> searchType,
-  List<SearchReference> get based_on;
+  @JsonKey(name: 'based-on')
+  List<SearchReference> get basedOn;
   @override
   List<SearchToken> get category;
   @override
@@ -2500,13 +2686,16 @@ abstract class _CommunicationSearch extends CommunicationSearch {
   @override
   List<SearchToken> get identifier;
   @override
-  List<SearchReference> get instantiates_canonical;
+  @JsonKey(name: 'instantiates-canonical')
+  List<SearchReference> get instantiatesCanonical;
   @override
-  List<SearchUri> get instantiates_uri;
+  @JsonKey(name: 'instantiates-uri')
+  List<SearchUri> get instantiatesUri;
   @override
   List<SearchToken> get medium;
   @override
-  List<SearchReference> get part_of;
+  @JsonKey(name: 'part-of')
+  List<SearchReference> get partOf;
   @override
   List<SearchReference> get patient;
   @override
@@ -2525,6 +2714,11 @@ abstract class _CommunicationSearch extends CommunicationSearch {
   _$CommunicationSearchCopyWith<_CommunicationSearch> get copyWith;
 }
 
+CommunicationRequestSearch _$CommunicationRequestSearchFromJson(
+    Map<String, dynamic> json) {
+  return _CommunicationRequestSearch.fromJson(json);
+}
+
 /// @nodoc
 class _$CommunicationRequestSearchTearOff {
   const _$CommunicationRequestSearchTearOff();
@@ -2540,10 +2734,10 @@ class _$CommunicationRequestSearchTearOff {
       List<SearchString> searchContent,
       List<Id> searchList,
       List<SearchDate> authored,
-      List<SearchReference> based_on,
+      @JsonKey(name: 'based-on') List<SearchReference> basedOn,
       List<SearchToken> category,
       List<SearchReference> encounter,
-      List<SearchToken> group_identifier,
+      @JsonKey(name: 'group-identifier') List<SearchToken> groupIdentifier,
       List<SearchToken> identifier,
       List<SearchToken> medium,
       List<SearchDate> occurrence,
@@ -2565,10 +2759,10 @@ class _$CommunicationRequestSearchTearOff {
       searchContent: searchContent,
       searchList: searchList,
       authored: authored,
-      based_on: based_on,
+      basedOn: basedOn,
       category: category,
       encounter: encounter,
-      group_identifier: group_identifier,
+      groupIdentifier: groupIdentifier,
       identifier: identifier,
       medium: medium,
       occurrence: occurrence,
@@ -2581,6 +2775,11 @@ class _$CommunicationRequestSearchTearOff {
       status: status,
       subject: subject,
     );
+  }
+
+// ignore: unused_element
+  CommunicationRequestSearch fromJson(Map<String, Object> json) {
+    return CommunicationRequestSearch.fromJson(json);
   }
 }
 
@@ -2600,10 +2799,12 @@ mixin _$CommunicationRequestSearch {
   List<Id> get searchList; //List<SearchString> searchHas,
 //List<SearchToken> searchType,
   List<SearchDate> get authored;
-  List<SearchReference> get based_on;
+  @JsonKey(name: 'based-on')
+  List<SearchReference> get basedOn;
   List<SearchToken> get category;
   List<SearchReference> get encounter;
-  List<SearchToken> get group_identifier;
+  @JsonKey(name: 'group-identifier')
+  List<SearchToken> get groupIdentifier;
   List<SearchToken> get identifier;
   List<SearchToken> get medium;
   List<SearchDate> get occurrence;
@@ -2616,6 +2817,7 @@ mixin _$CommunicationRequestSearch {
   List<SearchToken> get status;
   List<SearchReference> get subject;
 
+  Map<String, dynamic> toJson();
   $CommunicationRequestSearchCopyWith<CommunicationRequestSearch> get copyWith;
 }
 
@@ -2634,10 +2836,10 @@ abstract class $CommunicationRequestSearchCopyWith<$Res> {
       List<SearchString> searchContent,
       List<Id> searchList,
       List<SearchDate> authored,
-      List<SearchReference> based_on,
+      @JsonKey(name: 'based-on') List<SearchReference> basedOn,
       List<SearchToken> category,
       List<SearchReference> encounter,
-      List<SearchToken> group_identifier,
+      @JsonKey(name: 'group-identifier') List<SearchToken> groupIdentifier,
       List<SearchToken> identifier,
       List<SearchToken> medium,
       List<SearchDate> occurrence,
@@ -2671,10 +2873,10 @@ class _$CommunicationRequestSearchCopyWithImpl<$Res>
     Object searchContent = freezed,
     Object searchList = freezed,
     Object authored = freezed,
-    Object based_on = freezed,
+    Object basedOn = freezed,
     Object category = freezed,
     Object encounter = freezed,
-    Object group_identifier = freezed,
+    Object groupIdentifier = freezed,
     Object identifier = freezed,
     Object medium = freezed,
     Object occurrence = freezed,
@@ -2711,17 +2913,17 @@ class _$CommunicationRequestSearchCopyWithImpl<$Res>
           searchList == freezed ? _value.searchList : searchList as List<Id>,
       authored:
           authored == freezed ? _value.authored : authored as List<SearchDate>,
-      based_on: based_on == freezed
-          ? _value.based_on
-          : based_on as List<SearchReference>,
+      basedOn: basedOn == freezed
+          ? _value.basedOn
+          : basedOn as List<SearchReference>,
       category:
           category == freezed ? _value.category : category as List<SearchToken>,
       encounter: encounter == freezed
           ? _value.encounter
           : encounter as List<SearchReference>,
-      group_identifier: group_identifier == freezed
-          ? _value.group_identifier
-          : group_identifier as List<SearchToken>,
+      groupIdentifier: groupIdentifier == freezed
+          ? _value.groupIdentifier
+          : groupIdentifier as List<SearchToken>,
       identifier: identifier == freezed
           ? _value.identifier
           : identifier as List<SearchToken>,
@@ -2771,10 +2973,10 @@ abstract class _$CommunicationRequestSearchCopyWith<$Res>
       List<SearchString> searchContent,
       List<Id> searchList,
       List<SearchDate> authored,
-      List<SearchReference> based_on,
+      @JsonKey(name: 'based-on') List<SearchReference> basedOn,
       List<SearchToken> category,
       List<SearchReference> encounter,
-      List<SearchToken> group_identifier,
+      @JsonKey(name: 'group-identifier') List<SearchToken> groupIdentifier,
       List<SearchToken> identifier,
       List<SearchToken> medium,
       List<SearchDate> occurrence,
@@ -2811,10 +3013,10 @@ class __$CommunicationRequestSearchCopyWithImpl<$Res>
     Object searchContent = freezed,
     Object searchList = freezed,
     Object authored = freezed,
-    Object based_on = freezed,
+    Object basedOn = freezed,
     Object category = freezed,
     Object encounter = freezed,
-    Object group_identifier = freezed,
+    Object groupIdentifier = freezed,
     Object identifier = freezed,
     Object medium = freezed,
     Object occurrence = freezed,
@@ -2851,17 +3053,17 @@ class __$CommunicationRequestSearchCopyWithImpl<$Res>
           searchList == freezed ? _value.searchList : searchList as List<Id>,
       authored:
           authored == freezed ? _value.authored : authored as List<SearchDate>,
-      based_on: based_on == freezed
-          ? _value.based_on
-          : based_on as List<SearchReference>,
+      basedOn: basedOn == freezed
+          ? _value.basedOn
+          : basedOn as List<SearchReference>,
       category:
           category == freezed ? _value.category : category as List<SearchToken>,
       encounter: encounter == freezed
           ? _value.encounter
           : encounter as List<SearchReference>,
-      group_identifier: group_identifier == freezed
-          ? _value.group_identifier
-          : group_identifier as List<SearchToken>,
+      groupIdentifier: groupIdentifier == freezed
+          ? _value.groupIdentifier
+          : groupIdentifier as List<SearchToken>,
       identifier: identifier == freezed
           ? _value.identifier
           : identifier as List<SearchToken>,
@@ -2893,6 +3095,8 @@ class __$CommunicationRequestSearchCopyWithImpl<$Res>
   }
 }
 
+@JsonSerializable()
+
 /// @nodoc
 class _$_CommunicationRequestSearch extends _CommunicationRequestSearch {
   _$_CommunicationRequestSearch(
@@ -2905,10 +3109,10 @@ class _$_CommunicationRequestSearch extends _CommunicationRequestSearch {
       this.searchContent,
       this.searchList,
       this.authored,
-      this.based_on,
+      @JsonKey(name: 'based-on') this.basedOn,
       this.category,
       this.encounter,
-      this.group_identifier,
+      @JsonKey(name: 'group-identifier') this.groupIdentifier,
       this.identifier,
       this.medium,
       this.occurrence,
@@ -2921,6 +3125,9 @@ class _$_CommunicationRequestSearch extends _CommunicationRequestSearch {
       this.status,
       this.subject})
       : super._();
+
+  factory _$_CommunicationRequestSearch.fromJson(Map<String, dynamic> json) =>
+      _$_$_CommunicationRequestSearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -2942,13 +3149,15 @@ class _$_CommunicationRequestSearch extends _CommunicationRequestSearch {
 //List<SearchToken> searchType,
   final List<SearchDate> authored;
   @override
-  final List<SearchReference> based_on;
+  @JsonKey(name: 'based-on')
+  final List<SearchReference> basedOn;
   @override
   final List<SearchToken> category;
   @override
   final List<SearchReference> encounter;
   @override
-  final List<SearchToken> group_identifier;
+  @JsonKey(name: 'group-identifier')
+  final List<SearchToken> groupIdentifier;
   @override
   final List<SearchToken> identifier;
   @override
@@ -2974,7 +3183,7 @@ class _$_CommunicationRequestSearch extends _CommunicationRequestSearch {
 
   @override
   String toString() {
-    return 'CommunicationRequestSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, authored: $authored, based_on: $based_on, category: $category, encounter: $encounter, group_identifier: $group_identifier, identifier: $identifier, medium: $medium, occurrence: $occurrence, patient: $patient, priority: $priority, recipient: $recipient, replaces: $replaces, requester: $requester, sender: $sender, status: $status, subject: $subject)';
+    return 'CommunicationRequestSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, authored: $authored, basedOn: $basedOn, category: $category, encounter: $encounter, groupIdentifier: $groupIdentifier, identifier: $identifier, medium: $medium, occurrence: $occurrence, patient: $patient, priority: $priority, recipient: $recipient, replaces: $replaces, requester: $requester, sender: $sender, status: $status, subject: $subject)';
   }
 
   @override
@@ -3008,18 +3217,18 @@ class _$_CommunicationRequestSearch extends _CommunicationRequestSearch {
             (identical(other.authored, authored) ||
                 const DeepCollectionEquality()
                     .equals(other.authored, authored)) &&
-            (identical(other.based_on, based_on) ||
+            (identical(other.basedOn, basedOn) ||
                 const DeepCollectionEquality()
-                    .equals(other.based_on, based_on)) &&
+                    .equals(other.basedOn, basedOn)) &&
             (identical(other.category, category) ||
                 const DeepCollectionEquality()
                     .equals(other.category, category)) &&
             (identical(other.encounter, encounter) ||
                 const DeepCollectionEquality()
                     .equals(other.encounter, encounter)) &&
-            (identical(other.group_identifier, group_identifier) ||
+            (identical(other.groupIdentifier, groupIdentifier) ||
                 const DeepCollectionEquality()
-                    .equals(other.group_identifier, group_identifier)) &&
+                    .equals(other.groupIdentifier, groupIdentifier)) &&
             (identical(other.identifier, identifier) ||
                 const DeepCollectionEquality()
                     .equals(other.identifier, identifier)) &&
@@ -3062,10 +3271,10 @@ class _$_CommunicationRequestSearch extends _CommunicationRequestSearch {
       const DeepCollectionEquality().hash(searchContent) ^
       const DeepCollectionEquality().hash(searchList) ^
       const DeepCollectionEquality().hash(authored) ^
-      const DeepCollectionEquality().hash(based_on) ^
+      const DeepCollectionEquality().hash(basedOn) ^
       const DeepCollectionEquality().hash(category) ^
       const DeepCollectionEquality().hash(encounter) ^
-      const DeepCollectionEquality().hash(group_identifier) ^
+      const DeepCollectionEquality().hash(groupIdentifier) ^
       const DeepCollectionEquality().hash(identifier) ^
       const DeepCollectionEquality().hash(medium) ^
       const DeepCollectionEquality().hash(occurrence) ^
@@ -3082,6 +3291,11 @@ class _$_CommunicationRequestSearch extends _CommunicationRequestSearch {
   _$CommunicationRequestSearchCopyWith<_CommunicationRequestSearch>
       get copyWith => __$CommunicationRequestSearchCopyWithImpl<
           _CommunicationRequestSearch>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_CommunicationRequestSearchToJson(this);
+  }
 }
 
 abstract class _CommunicationRequestSearch extends CommunicationRequestSearch {
@@ -3096,10 +3310,10 @@ abstract class _CommunicationRequestSearch extends CommunicationRequestSearch {
       List<SearchString> searchContent,
       List<Id> searchList,
       List<SearchDate> authored,
-      List<SearchReference> based_on,
+      @JsonKey(name: 'based-on') List<SearchReference> basedOn,
       List<SearchToken> category,
       List<SearchReference> encounter,
-      List<SearchToken> group_identifier,
+      @JsonKey(name: 'group-identifier') List<SearchToken> groupIdentifier,
       List<SearchToken> identifier,
       List<SearchToken> medium,
       List<SearchDate> occurrence,
@@ -3111,6 +3325,9 @@ abstract class _CommunicationRequestSearch extends CommunicationRequestSearch {
       List<SearchReference> sender,
       List<SearchToken> status,
       List<SearchReference> subject}) = _$_CommunicationRequestSearch;
+
+  factory _CommunicationRequestSearch.fromJson(Map<String, dynamic> json) =
+      _$_CommunicationRequestSearch.fromJson;
 
   @override
   List<Id> get searchId;
@@ -3132,13 +3349,15 @@ abstract class _CommunicationRequestSearch extends CommunicationRequestSearch {
 //List<SearchToken> searchType,
   List<SearchDate> get authored;
   @override
-  List<SearchReference> get based_on;
+  @JsonKey(name: 'based-on')
+  List<SearchReference> get basedOn;
   @override
   List<SearchToken> get category;
   @override
   List<SearchReference> get encounter;
   @override
-  List<SearchToken> get group_identifier;
+  @JsonKey(name: 'group-identifier')
+  List<SearchToken> get groupIdentifier;
   @override
   List<SearchToken> get identifier;
   @override
@@ -3164,6 +3383,11 @@ abstract class _CommunicationRequestSearch extends CommunicationRequestSearch {
   @override
   _$CommunicationRequestSearchCopyWith<_CommunicationRequestSearch>
       get copyWith;
+}
+
+GuidanceResponseSearch _$GuidanceResponseSearchFromJson(
+    Map<String, dynamic> json) {
+  return _GuidanceResponseSearch.fromJson(json);
 }
 
 /// @nodoc
@@ -3199,6 +3423,11 @@ class _$GuidanceResponseSearchTearOff {
       subject: subject,
     );
   }
+
+// ignore: unused_element
+  GuidanceResponseSearch fromJson(Map<String, Object> json) {
+    return GuidanceResponseSearch.fromJson(json);
+  }
 }
 
 /// @nodoc
@@ -3221,6 +3450,7 @@ mixin _$GuidanceResponseSearch {
   List<SearchToken> get request;
   List<SearchReference> get subject;
 
+  Map<String, dynamic> toJson();
   $GuidanceResponseSearchCopyWith<GuidanceResponseSearch> get copyWith;
 }
 
@@ -3390,6 +3620,8 @@ class __$GuidanceResponseSearchCopyWithImpl<$Res>
   }
 }
 
+@JsonSerializable()
+
 /// @nodoc
 class _$_GuidanceResponseSearch extends _GuidanceResponseSearch {
   _$_GuidanceResponseSearch(
@@ -3406,6 +3638,9 @@ class _$_GuidanceResponseSearch extends _GuidanceResponseSearch {
       this.request,
       this.subject})
       : super._();
+
+  factory _$_GuidanceResponseSearch.fromJson(Map<String, dynamic> json) =>
+      _$_$_GuidanceResponseSearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -3499,6 +3734,11 @@ class _$_GuidanceResponseSearch extends _GuidanceResponseSearch {
   _$GuidanceResponseSearchCopyWith<_GuidanceResponseSearch> get copyWith =>
       __$GuidanceResponseSearchCopyWithImpl<_GuidanceResponseSearch>(
           this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_GuidanceResponseSearchToJson(this);
+  }
 }
 
 abstract class _GuidanceResponseSearch extends GuidanceResponseSearch {
@@ -3516,6 +3756,9 @@ abstract class _GuidanceResponseSearch extends GuidanceResponseSearch {
       List<SearchReference> patient,
       List<SearchToken> request,
       List<SearchReference> subject}) = _$_GuidanceResponseSearch;
+
+  factory _GuidanceResponseSearch.fromJson(Map<String, dynamic> json) =
+      _$_GuidanceResponseSearch.fromJson;
 
   @override
   List<Id> get searchId;

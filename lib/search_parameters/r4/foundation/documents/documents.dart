@@ -5,6 +5,7 @@ import '../../../search_parameter_types/search_parameter_types.dart';
 import '../../../search_parameters.dart';
 
 part 'documents.freezed.dart';
+part 'documents.g.dart';
 
 @freezed
 abstract class CompositionSearch with R4SearchParameters implements _$CompositionSearch {
@@ -32,14 +33,15 @@ List<SearchToken> context,
 List<SearchReference> encounter,
 List<SearchReference> entry,
 List<SearchDate> period,
-List<SearchToken> related_id,
-List<SearchReference> related_ref,
+@JsonKey(name: 'related-id') List<SearchToken> relatedId,
+@JsonKey(name: 'related-ref') List<SearchReference> relatedRef,
 List<SearchToken> section,
 List<SearchToken> status,
 List<SearchReference> subject,
 List<SearchString> title,
 }) = _CompositionSearch;
-}
+
+factory CompositionSearch.fromJson(Map<String, dynamic> json) => _$CompositionSearchFromJson(json);}
 
 @freezed
 abstract class DocumentManifestSearch with R4SearchParameters implements _$DocumentManifestSearch {
@@ -63,13 +65,14 @@ List<SearchDate> created,
 List<SearchString> description,
 List<SearchReference> item,
 List<SearchReference> recipient,
-List<SearchToken> related_id,
-List<SearchReference> related_ref,
+@JsonKey(name: 'related-id') List<SearchToken> relatedId,
+@JsonKey(name: 'related-ref') List<SearchReference> relatedRef,
 List<SearchUri> source,
 List<SearchToken> status,
 List<SearchReference> subject,
 }) = _DocumentManifestSearch;
-}
+
+factory DocumentManifestSearch.fromJson(Map<String, dynamic> json) => _$DocumentManifestSearchFromJson(json);}
 
 @freezed
 abstract class DocumentReferenceSearch with R4SearchParameters implements _$DocumentReferenceSearch {
@@ -105,11 +108,12 @@ List<SearchDate> period,
 List<SearchReference> related,
 List<SearchReference> relatesto,
 List<SearchToken> relation,
-List<SearchToken> security_label,
+@JsonKey(name: 'security-label') List<SearchToken> securityLabel,
 List<SearchToken> setting,
 List<SearchToken> status,
 List<SearchReference> subject,
 List<SearchComposite> relationship,
 }) = _DocumentReferenceSearch;
-}
+
+factory DocumentReferenceSearch.fromJson(Map<String, dynamic> json) => _$DocumentReferenceSearchFromJson(json);}
 

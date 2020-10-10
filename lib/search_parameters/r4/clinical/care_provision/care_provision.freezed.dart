@@ -8,6 +8,9 @@ part of 'care_provision.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
+ServiceRequestSearch _$ServiceRequestSearchFromJson(Map<String, dynamic> json) {
+  return _ServiceRequestSearch.fromJson(json);
+}
 
 /// @nodoc
 class _$ServiceRequestSearchTearOff {
@@ -28,15 +31,20 @@ class _$ServiceRequestSearchTearOff {
       List<SearchReference> patient,
       List<SearchReference> encounter,
       List<SearchDate> authored,
-      List<SearchReference> based_on,
-      List<SearchToken> body_site,
+      @JsonKey(name: 'based-on')
+          List<SearchReference> basedOn,
+      @JsonKey(name: 'body-site')
+          List<SearchToken> bodySite,
       List<SearchToken> category,
-      List<SearchReference> instantiates_canonical,
-      List<SearchUri> instantiates_uri,
+      @JsonKey(name: 'instantiates-canonical')
+          List<SearchReference> instantiatesCanonical,
+      @JsonKey(name: 'instantiates-uri')
+          List<SearchUri> instantiatesUri,
       List<SearchToken> intent,
       List<SearchDate> occurrence,
       List<SearchReference> performer,
-      List<SearchToken> performer_type,
+      @JsonKey(name: 'performer-type')
+          List<SearchToken> performerType,
       List<SearchToken> priority,
       List<SearchReference> replaces,
       List<SearchReference> requester,
@@ -58,15 +66,15 @@ class _$ServiceRequestSearchTearOff {
       patient: patient,
       encounter: encounter,
       authored: authored,
-      based_on: based_on,
-      body_site: body_site,
+      basedOn: basedOn,
+      bodySite: bodySite,
       category: category,
-      instantiates_canonical: instantiates_canonical,
-      instantiates_uri: instantiates_uri,
+      instantiatesCanonical: instantiatesCanonical,
+      instantiatesUri: instantiatesUri,
       intent: intent,
       occurrence: occurrence,
       performer: performer,
-      performer_type: performer_type,
+      performerType: performerType,
       priority: priority,
       replaces: replaces,
       requester: requester,
@@ -75,6 +83,11 @@ class _$ServiceRequestSearchTearOff {
       status: status,
       subject: subject,
     );
+  }
+
+// ignore: unused_element
+  ServiceRequestSearch fromJson(Map<String, Object> json) {
+    return ServiceRequestSearch.fromJson(json);
   }
 }
 
@@ -98,15 +111,20 @@ mixin _$ServiceRequestSearch {
   List<SearchReference> get patient;
   List<SearchReference> get encounter;
   List<SearchDate> get authored;
-  List<SearchReference> get based_on;
-  List<SearchToken> get body_site;
+  @JsonKey(name: 'based-on')
+  List<SearchReference> get basedOn;
+  @JsonKey(name: 'body-site')
+  List<SearchToken> get bodySite;
   List<SearchToken> get category;
-  List<SearchReference> get instantiates_canonical;
-  List<SearchUri> get instantiates_uri;
+  @JsonKey(name: 'instantiates-canonical')
+  List<SearchReference> get instantiatesCanonical;
+  @JsonKey(name: 'instantiates-uri')
+  List<SearchUri> get instantiatesUri;
   List<SearchToken> get intent;
   List<SearchDate> get occurrence;
   List<SearchReference> get performer;
-  List<SearchToken> get performer_type;
+  @JsonKey(name: 'performer-type')
+  List<SearchToken> get performerType;
   List<SearchToken> get priority;
   List<SearchReference> get replaces;
   List<SearchReference> get requester;
@@ -115,6 +133,7 @@ mixin _$ServiceRequestSearch {
   List<SearchToken> get status;
   List<SearchReference> get subject;
 
+  Map<String, dynamic> toJson();
   $ServiceRequestSearchCopyWith<ServiceRequestSearch> get copyWith;
 }
 
@@ -137,15 +156,20 @@ abstract class $ServiceRequestSearchCopyWith<$Res> {
       List<SearchReference> patient,
       List<SearchReference> encounter,
       List<SearchDate> authored,
-      List<SearchReference> based_on,
-      List<SearchToken> body_site,
+      @JsonKey(name: 'based-on')
+          List<SearchReference> basedOn,
+      @JsonKey(name: 'body-site')
+          List<SearchToken> bodySite,
       List<SearchToken> category,
-      List<SearchReference> instantiates_canonical,
-      List<SearchUri> instantiates_uri,
+      @JsonKey(name: 'instantiates-canonical')
+          List<SearchReference> instantiatesCanonical,
+      @JsonKey(name: 'instantiates-uri')
+          List<SearchUri> instantiatesUri,
       List<SearchToken> intent,
       List<SearchDate> occurrence,
       List<SearchReference> performer,
-      List<SearchToken> performer_type,
+      @JsonKey(name: 'performer-type')
+          List<SearchToken> performerType,
       List<SearchToken> priority,
       List<SearchReference> replaces,
       List<SearchReference> requester,
@@ -179,15 +203,15 @@ class _$ServiceRequestSearchCopyWithImpl<$Res>
     Object patient = freezed,
     Object encounter = freezed,
     Object authored = freezed,
-    Object based_on = freezed,
-    Object body_site = freezed,
+    Object basedOn = freezed,
+    Object bodySite = freezed,
     Object category = freezed,
-    Object instantiates_canonical = freezed,
-    Object instantiates_uri = freezed,
+    Object instantiatesCanonical = freezed,
+    Object instantiatesUri = freezed,
     Object intent = freezed,
     Object occurrence = freezed,
     Object performer = freezed,
-    Object performer_type = freezed,
+    Object performerType = freezed,
     Object priority = freezed,
     Object replaces = freezed,
     Object requester = freezed,
@@ -230,20 +254,19 @@ class _$ServiceRequestSearchCopyWithImpl<$Res>
           : encounter as List<SearchReference>,
       authored:
           authored == freezed ? _value.authored : authored as List<SearchDate>,
-      based_on: based_on == freezed
-          ? _value.based_on
-          : based_on as List<SearchReference>,
-      body_site: body_site == freezed
-          ? _value.body_site
-          : body_site as List<SearchToken>,
+      basedOn: basedOn == freezed
+          ? _value.basedOn
+          : basedOn as List<SearchReference>,
+      bodySite:
+          bodySite == freezed ? _value.bodySite : bodySite as List<SearchToken>,
       category:
           category == freezed ? _value.category : category as List<SearchToken>,
-      instantiates_canonical: instantiates_canonical == freezed
-          ? _value.instantiates_canonical
-          : instantiates_canonical as List<SearchReference>,
-      instantiates_uri: instantiates_uri == freezed
-          ? _value.instantiates_uri
-          : instantiates_uri as List<SearchUri>,
+      instantiatesCanonical: instantiatesCanonical == freezed
+          ? _value.instantiatesCanonical
+          : instantiatesCanonical as List<SearchReference>,
+      instantiatesUri: instantiatesUri == freezed
+          ? _value.instantiatesUri
+          : instantiatesUri as List<SearchUri>,
       intent: intent == freezed ? _value.intent : intent as List<SearchToken>,
       occurrence: occurrence == freezed
           ? _value.occurrence
@@ -251,9 +274,9 @@ class _$ServiceRequestSearchCopyWithImpl<$Res>
       performer: performer == freezed
           ? _value.performer
           : performer as List<SearchReference>,
-      performer_type: performer_type == freezed
-          ? _value.performer_type
-          : performer_type as List<SearchToken>,
+      performerType: performerType == freezed
+          ? _value.performerType
+          : performerType as List<SearchToken>,
       priority:
           priority == freezed ? _value.priority : priority as List<SearchToken>,
       replaces: replaces == freezed
@@ -297,15 +320,20 @@ abstract class _$ServiceRequestSearchCopyWith<$Res>
       List<SearchReference> patient,
       List<SearchReference> encounter,
       List<SearchDate> authored,
-      List<SearchReference> based_on,
-      List<SearchToken> body_site,
+      @JsonKey(name: 'based-on')
+          List<SearchReference> basedOn,
+      @JsonKey(name: 'body-site')
+          List<SearchToken> bodySite,
       List<SearchToken> category,
-      List<SearchReference> instantiates_canonical,
-      List<SearchUri> instantiates_uri,
+      @JsonKey(name: 'instantiates-canonical')
+          List<SearchReference> instantiatesCanonical,
+      @JsonKey(name: 'instantiates-uri')
+          List<SearchUri> instantiatesUri,
       List<SearchToken> intent,
       List<SearchDate> occurrence,
       List<SearchReference> performer,
-      List<SearchToken> performer_type,
+      @JsonKey(name: 'performer-type')
+          List<SearchToken> performerType,
       List<SearchToken> priority,
       List<SearchReference> replaces,
       List<SearchReference> requester,
@@ -341,15 +369,15 @@ class __$ServiceRequestSearchCopyWithImpl<$Res>
     Object patient = freezed,
     Object encounter = freezed,
     Object authored = freezed,
-    Object based_on = freezed,
-    Object body_site = freezed,
+    Object basedOn = freezed,
+    Object bodySite = freezed,
     Object category = freezed,
-    Object instantiates_canonical = freezed,
-    Object instantiates_uri = freezed,
+    Object instantiatesCanonical = freezed,
+    Object instantiatesUri = freezed,
     Object intent = freezed,
     Object occurrence = freezed,
     Object performer = freezed,
-    Object performer_type = freezed,
+    Object performerType = freezed,
     Object priority = freezed,
     Object replaces = freezed,
     Object requester = freezed,
@@ -392,20 +420,19 @@ class __$ServiceRequestSearchCopyWithImpl<$Res>
           : encounter as List<SearchReference>,
       authored:
           authored == freezed ? _value.authored : authored as List<SearchDate>,
-      based_on: based_on == freezed
-          ? _value.based_on
-          : based_on as List<SearchReference>,
-      body_site: body_site == freezed
-          ? _value.body_site
-          : body_site as List<SearchToken>,
+      basedOn: basedOn == freezed
+          ? _value.basedOn
+          : basedOn as List<SearchReference>,
+      bodySite:
+          bodySite == freezed ? _value.bodySite : bodySite as List<SearchToken>,
       category:
           category == freezed ? _value.category : category as List<SearchToken>,
-      instantiates_canonical: instantiates_canonical == freezed
-          ? _value.instantiates_canonical
-          : instantiates_canonical as List<SearchReference>,
-      instantiates_uri: instantiates_uri == freezed
-          ? _value.instantiates_uri
-          : instantiates_uri as List<SearchUri>,
+      instantiatesCanonical: instantiatesCanonical == freezed
+          ? _value.instantiatesCanonical
+          : instantiatesCanonical as List<SearchReference>,
+      instantiatesUri: instantiatesUri == freezed
+          ? _value.instantiatesUri
+          : instantiatesUri as List<SearchUri>,
       intent: intent == freezed ? _value.intent : intent as List<SearchToken>,
       occurrence: occurrence == freezed
           ? _value.occurrence
@@ -413,9 +440,9 @@ class __$ServiceRequestSearchCopyWithImpl<$Res>
       performer: performer == freezed
           ? _value.performer
           : performer as List<SearchReference>,
-      performer_type: performer_type == freezed
-          ? _value.performer_type
-          : performer_type as List<SearchToken>,
+      performerType: performerType == freezed
+          ? _value.performerType
+          : performerType as List<SearchToken>,
       priority:
           priority == freezed ? _value.priority : priority as List<SearchToken>,
       replaces: replaces == freezed
@@ -438,6 +465,8 @@ class __$ServiceRequestSearchCopyWithImpl<$Res>
   }
 }
 
+@JsonSerializable()
+
 /// @nodoc
 class _$_ServiceRequestSearch extends _ServiceRequestSearch {
   _$_ServiceRequestSearch(
@@ -454,15 +483,15 @@ class _$_ServiceRequestSearch extends _ServiceRequestSearch {
       this.patient,
       this.encounter,
       this.authored,
-      this.based_on,
-      this.body_site,
+      @JsonKey(name: 'based-on') this.basedOn,
+      @JsonKey(name: 'body-site') this.bodySite,
       this.category,
-      this.instantiates_canonical,
-      this.instantiates_uri,
+      @JsonKey(name: 'instantiates-canonical') this.instantiatesCanonical,
+      @JsonKey(name: 'instantiates-uri') this.instantiatesUri,
       this.intent,
       this.occurrence,
       this.performer,
-      this.performer_type,
+      @JsonKey(name: 'performer-type') this.performerType,
       this.priority,
       this.replaces,
       this.requester,
@@ -471,6 +500,9 @@ class _$_ServiceRequestSearch extends _ServiceRequestSearch {
       this.status,
       this.subject})
       : super._();
+
+  factory _$_ServiceRequestSearch.fromJson(Map<String, dynamic> json) =>
+      _$_$_ServiceRequestSearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -500,15 +532,19 @@ class _$_ServiceRequestSearch extends _ServiceRequestSearch {
   @override
   final List<SearchDate> authored;
   @override
-  final List<SearchReference> based_on;
+  @JsonKey(name: 'based-on')
+  final List<SearchReference> basedOn;
   @override
-  final List<SearchToken> body_site;
+  @JsonKey(name: 'body-site')
+  final List<SearchToken> bodySite;
   @override
   final List<SearchToken> category;
   @override
-  final List<SearchReference> instantiates_canonical;
+  @JsonKey(name: 'instantiates-canonical')
+  final List<SearchReference> instantiatesCanonical;
   @override
-  final List<SearchUri> instantiates_uri;
+  @JsonKey(name: 'instantiates-uri')
+  final List<SearchUri> instantiatesUri;
   @override
   final List<SearchToken> intent;
   @override
@@ -516,7 +552,8 @@ class _$_ServiceRequestSearch extends _ServiceRequestSearch {
   @override
   final List<SearchReference> performer;
   @override
-  final List<SearchToken> performer_type;
+  @JsonKey(name: 'performer-type')
+  final List<SearchToken> performerType;
   @override
   final List<SearchToken> priority;
   @override
@@ -534,7 +571,7 @@ class _$_ServiceRequestSearch extends _ServiceRequestSearch {
 
   @override
   String toString() {
-    return 'ServiceRequestSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, code: $code, identifier: $identifier, patient: $patient, encounter: $encounter, authored: $authored, based_on: $based_on, body_site: $body_site, category: $category, instantiates_canonical: $instantiates_canonical, instantiates_uri: $instantiates_uri, intent: $intent, occurrence: $occurrence, performer: $performer, performer_type: $performer_type, priority: $priority, replaces: $replaces, requester: $requester, requisition: $requisition, specimen: $specimen, status: $status, subject: $subject)';
+    return 'ServiceRequestSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, code: $code, identifier: $identifier, patient: $patient, encounter: $encounter, authored: $authored, basedOn: $basedOn, bodySite: $bodySite, category: $category, instantiatesCanonical: $instantiatesCanonical, instantiatesUri: $instantiatesUri, intent: $intent, occurrence: $occurrence, performer: $performer, performerType: $performerType, priority: $priority, replaces: $replaces, requester: $requester, requisition: $requisition, specimen: $specimen, status: $status, subject: $subject)';
   }
 
   @override
@@ -579,21 +616,21 @@ class _$_ServiceRequestSearch extends _ServiceRequestSearch {
             (identical(other.authored, authored) ||
                 const DeepCollectionEquality()
                     .equals(other.authored, authored)) &&
-            (identical(other.based_on, based_on) ||
+            (identical(other.basedOn, basedOn) ||
                 const DeepCollectionEquality()
-                    .equals(other.based_on, based_on)) &&
-            (identical(other.body_site, body_site) ||
+                    .equals(other.basedOn, basedOn)) &&
+            (identical(other.bodySite, bodySite) ||
                 const DeepCollectionEquality()
-                    .equals(other.body_site, body_site)) &&
+                    .equals(other.bodySite, bodySite)) &&
             (identical(other.category, category) ||
                 const DeepCollectionEquality()
                     .equals(other.category, category)) &&
-            (identical(other.instantiates_canonical, instantiates_canonical) ||
+            (identical(other.instantiatesCanonical, instantiatesCanonical) ||
                 const DeepCollectionEquality().equals(
-                    other.instantiates_canonical, instantiates_canonical)) &&
-            (identical(other.instantiates_uri, instantiates_uri) ||
+                    other.instantiatesCanonical, instantiatesCanonical)) &&
+            (identical(other.instantiatesUri, instantiatesUri) ||
                 const DeepCollectionEquality()
-                    .equals(other.instantiates_uri, instantiates_uri)) &&
+                    .equals(other.instantiatesUri, instantiatesUri)) &&
             (identical(other.intent, intent) ||
                 const DeepCollectionEquality().equals(other.intent, intent)) &&
             (identical(other.occurrence, occurrence) ||
@@ -602,9 +639,9 @@ class _$_ServiceRequestSearch extends _ServiceRequestSearch {
             (identical(other.performer, performer) ||
                 const DeepCollectionEquality()
                     .equals(other.performer, performer)) &&
-            (identical(other.performer_type, performer_type) ||
+            (identical(other.performerType, performerType) ||
                 const DeepCollectionEquality()
-                    .equals(other.performer_type, performer_type)) &&
+                    .equals(other.performerType, performerType)) &&
             (identical(other.priority, priority) ||
                 const DeepCollectionEquality().equals(other.priority, priority)) &&
             (identical(other.replaces, replaces) || const DeepCollectionEquality().equals(other.replaces, replaces)) &&
@@ -631,15 +668,15 @@ class _$_ServiceRequestSearch extends _ServiceRequestSearch {
       const DeepCollectionEquality().hash(patient) ^
       const DeepCollectionEquality().hash(encounter) ^
       const DeepCollectionEquality().hash(authored) ^
-      const DeepCollectionEquality().hash(based_on) ^
-      const DeepCollectionEquality().hash(body_site) ^
+      const DeepCollectionEquality().hash(basedOn) ^
+      const DeepCollectionEquality().hash(bodySite) ^
       const DeepCollectionEquality().hash(category) ^
-      const DeepCollectionEquality().hash(instantiates_canonical) ^
-      const DeepCollectionEquality().hash(instantiates_uri) ^
+      const DeepCollectionEquality().hash(instantiatesCanonical) ^
+      const DeepCollectionEquality().hash(instantiatesUri) ^
       const DeepCollectionEquality().hash(intent) ^
       const DeepCollectionEquality().hash(occurrence) ^
       const DeepCollectionEquality().hash(performer) ^
-      const DeepCollectionEquality().hash(performer_type) ^
+      const DeepCollectionEquality().hash(performerType) ^
       const DeepCollectionEquality().hash(priority) ^
       const DeepCollectionEquality().hash(replaces) ^
       const DeepCollectionEquality().hash(requester) ^
@@ -652,6 +689,11 @@ class _$_ServiceRequestSearch extends _ServiceRequestSearch {
   _$ServiceRequestSearchCopyWith<_ServiceRequestSearch> get copyWith =>
       __$ServiceRequestSearchCopyWithImpl<_ServiceRequestSearch>(
           this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_ServiceRequestSearchToJson(this);
+  }
 }
 
 abstract class _ServiceRequestSearch extends ServiceRequestSearch {
@@ -670,15 +712,20 @@ abstract class _ServiceRequestSearch extends ServiceRequestSearch {
       List<SearchReference> patient,
       List<SearchReference> encounter,
       List<SearchDate> authored,
-      List<SearchReference> based_on,
-      List<SearchToken> body_site,
+      @JsonKey(name: 'based-on')
+          List<SearchReference> basedOn,
+      @JsonKey(name: 'body-site')
+          List<SearchToken> bodySite,
       List<SearchToken> category,
-      List<SearchReference> instantiates_canonical,
-      List<SearchUri> instantiates_uri,
+      @JsonKey(name: 'instantiates-canonical')
+          List<SearchReference> instantiatesCanonical,
+      @JsonKey(name: 'instantiates-uri')
+          List<SearchUri> instantiatesUri,
       List<SearchToken> intent,
       List<SearchDate> occurrence,
       List<SearchReference> performer,
-      List<SearchToken> performer_type,
+      @JsonKey(name: 'performer-type')
+          List<SearchToken> performerType,
       List<SearchToken> priority,
       List<SearchReference> replaces,
       List<SearchReference> requester,
@@ -686,6 +733,9 @@ abstract class _ServiceRequestSearch extends ServiceRequestSearch {
       List<SearchReference> specimen,
       List<SearchToken> status,
       List<SearchReference> subject}) = _$_ServiceRequestSearch;
+
+  factory _ServiceRequestSearch.fromJson(Map<String, dynamic> json) =
+      _$_ServiceRequestSearch.fromJson;
 
   @override
   List<Id> get searchId;
@@ -715,15 +765,19 @@ abstract class _ServiceRequestSearch extends ServiceRequestSearch {
   @override
   List<SearchDate> get authored;
   @override
-  List<SearchReference> get based_on;
+  @JsonKey(name: 'based-on')
+  List<SearchReference> get basedOn;
   @override
-  List<SearchToken> get body_site;
+  @JsonKey(name: 'body-site')
+  List<SearchToken> get bodySite;
   @override
   List<SearchToken> get category;
   @override
-  List<SearchReference> get instantiates_canonical;
+  @JsonKey(name: 'instantiates-canonical')
+  List<SearchReference> get instantiatesCanonical;
   @override
-  List<SearchUri> get instantiates_uri;
+  @JsonKey(name: 'instantiates-uri')
+  List<SearchUri> get instantiatesUri;
   @override
   List<SearchToken> get intent;
   @override
@@ -731,7 +785,8 @@ abstract class _ServiceRequestSearch extends ServiceRequestSearch {
   @override
   List<SearchReference> get performer;
   @override
-  List<SearchToken> get performer_type;
+  @JsonKey(name: 'performer-type')
+  List<SearchToken> get performerType;
   @override
   List<SearchToken> get priority;
   @override
@@ -748,6 +803,10 @@ abstract class _ServiceRequestSearch extends ServiceRequestSearch {
   List<SearchReference> get subject;
   @override
   _$ServiceRequestSearchCopyWith<_ServiceRequestSearch> get copyWith;
+}
+
+CarePlanSearch _$CarePlanSearchFromJson(Map<String, dynamic> json) {
+  return _CarePlanSearch.fromJson(json);
 }
 
 /// @nodoc
@@ -767,19 +826,27 @@ class _$CarePlanSearchTearOff {
       List<SearchDate> date,
       List<SearchToken> identifier,
       List<SearchReference> patient,
-      List<SearchToken> activity_code,
-      List<SearchDate> activity_date,
-      List<SearchReference> activity_reference,
-      List<SearchReference> based_on,
-      List<SearchReference> care_team,
+      @JsonKey(name: 'activity-code')
+          List<SearchToken> activityCode,
+      @JsonKey(name: 'activity-date')
+          List<SearchDate> activityDate,
+      @JsonKey(name: 'activity-reference')
+          List<SearchReference> activityReference,
+      @JsonKey(name: 'based-on')
+          List<SearchReference> basedOn,
+      @JsonKey(name: 'care-team')
+          List<SearchReference> careTeam,
       List<SearchToken> category,
       List<SearchReference> condition,
       List<SearchReference> encounter,
       List<SearchReference> goal,
-      List<SearchReference> instantiates_canonical,
-      List<SearchUri> instantiates_uri,
+      @JsonKey(name: 'instantiates-canonical')
+          List<SearchReference> instantiatesCanonical,
+      @JsonKey(name: 'instantiates-uri')
+          List<SearchUri> instantiatesUri,
       List<SearchToken> intent,
-      List<SearchReference> part_of,
+      @JsonKey(name: 'part-of')
+          List<SearchReference> partOf,
       List<SearchReference> performer,
       List<SearchReference> replaces,
       List<SearchToken> status,
@@ -796,24 +863,29 @@ class _$CarePlanSearchTearOff {
       date: date,
       identifier: identifier,
       patient: patient,
-      activity_code: activity_code,
-      activity_date: activity_date,
-      activity_reference: activity_reference,
-      based_on: based_on,
-      care_team: care_team,
+      activityCode: activityCode,
+      activityDate: activityDate,
+      activityReference: activityReference,
+      basedOn: basedOn,
+      careTeam: careTeam,
       category: category,
       condition: condition,
       encounter: encounter,
       goal: goal,
-      instantiates_canonical: instantiates_canonical,
-      instantiates_uri: instantiates_uri,
+      instantiatesCanonical: instantiatesCanonical,
+      instantiatesUri: instantiatesUri,
       intent: intent,
-      part_of: part_of,
+      partOf: partOf,
       performer: performer,
       replaces: replaces,
       status: status,
       subject: subject,
     );
+  }
+
+// ignore: unused_element
+  CarePlanSearch fromJson(Map<String, Object> json) {
+    return CarePlanSearch.fromJson(json);
   }
 }
 
@@ -835,24 +907,33 @@ mixin _$CarePlanSearch {
   List<SearchDate> get date;
   List<SearchToken> get identifier;
   List<SearchReference> get patient;
-  List<SearchToken> get activity_code;
-  List<SearchDate> get activity_date;
-  List<SearchReference> get activity_reference;
-  List<SearchReference> get based_on;
-  List<SearchReference> get care_team;
+  @JsonKey(name: 'activity-code')
+  List<SearchToken> get activityCode;
+  @JsonKey(name: 'activity-date')
+  List<SearchDate> get activityDate;
+  @JsonKey(name: 'activity-reference')
+  List<SearchReference> get activityReference;
+  @JsonKey(name: 'based-on')
+  List<SearchReference> get basedOn;
+  @JsonKey(name: 'care-team')
+  List<SearchReference> get careTeam;
   List<SearchToken> get category;
   List<SearchReference> get condition;
   List<SearchReference> get encounter;
   List<SearchReference> get goal;
-  List<SearchReference> get instantiates_canonical;
-  List<SearchUri> get instantiates_uri;
+  @JsonKey(name: 'instantiates-canonical')
+  List<SearchReference> get instantiatesCanonical;
+  @JsonKey(name: 'instantiates-uri')
+  List<SearchUri> get instantiatesUri;
   List<SearchToken> get intent;
-  List<SearchReference> get part_of;
+  @JsonKey(name: 'part-of')
+  List<SearchReference> get partOf;
   List<SearchReference> get performer;
   List<SearchReference> get replaces;
   List<SearchToken> get status;
   List<SearchReference> get subject;
 
+  Map<String, dynamic> toJson();
   $CarePlanSearchCopyWith<CarePlanSearch> get copyWith;
 }
 
@@ -873,19 +954,27 @@ abstract class $CarePlanSearchCopyWith<$Res> {
       List<SearchDate> date,
       List<SearchToken> identifier,
       List<SearchReference> patient,
-      List<SearchToken> activity_code,
-      List<SearchDate> activity_date,
-      List<SearchReference> activity_reference,
-      List<SearchReference> based_on,
-      List<SearchReference> care_team,
+      @JsonKey(name: 'activity-code')
+          List<SearchToken> activityCode,
+      @JsonKey(name: 'activity-date')
+          List<SearchDate> activityDate,
+      @JsonKey(name: 'activity-reference')
+          List<SearchReference> activityReference,
+      @JsonKey(name: 'based-on')
+          List<SearchReference> basedOn,
+      @JsonKey(name: 'care-team')
+          List<SearchReference> careTeam,
       List<SearchToken> category,
       List<SearchReference> condition,
       List<SearchReference> encounter,
       List<SearchReference> goal,
-      List<SearchReference> instantiates_canonical,
-      List<SearchUri> instantiates_uri,
+      @JsonKey(name: 'instantiates-canonical')
+          List<SearchReference> instantiatesCanonical,
+      @JsonKey(name: 'instantiates-uri')
+          List<SearchUri> instantiatesUri,
       List<SearchToken> intent,
-      List<SearchReference> part_of,
+      @JsonKey(name: 'part-of')
+          List<SearchReference> partOf,
       List<SearchReference> performer,
       List<SearchReference> replaces,
       List<SearchToken> status,
@@ -914,19 +1003,19 @@ class _$CarePlanSearchCopyWithImpl<$Res>
     Object date = freezed,
     Object identifier = freezed,
     Object patient = freezed,
-    Object activity_code = freezed,
-    Object activity_date = freezed,
-    Object activity_reference = freezed,
-    Object based_on = freezed,
-    Object care_team = freezed,
+    Object activityCode = freezed,
+    Object activityDate = freezed,
+    Object activityReference = freezed,
+    Object basedOn = freezed,
+    Object careTeam = freezed,
     Object category = freezed,
     Object condition = freezed,
     Object encounter = freezed,
     Object goal = freezed,
-    Object instantiates_canonical = freezed,
-    Object instantiates_uri = freezed,
+    Object instantiatesCanonical = freezed,
+    Object instantiatesUri = freezed,
     Object intent = freezed,
-    Object part_of = freezed,
+    Object partOf = freezed,
     Object performer = freezed,
     Object replaces = freezed,
     Object status = freezed,
@@ -961,21 +1050,21 @@ class _$CarePlanSearchCopyWithImpl<$Res>
       patient: patient == freezed
           ? _value.patient
           : patient as List<SearchReference>,
-      activity_code: activity_code == freezed
-          ? _value.activity_code
-          : activity_code as List<SearchToken>,
-      activity_date: activity_date == freezed
-          ? _value.activity_date
-          : activity_date as List<SearchDate>,
-      activity_reference: activity_reference == freezed
-          ? _value.activity_reference
-          : activity_reference as List<SearchReference>,
-      based_on: based_on == freezed
-          ? _value.based_on
-          : based_on as List<SearchReference>,
-      care_team: care_team == freezed
-          ? _value.care_team
-          : care_team as List<SearchReference>,
+      activityCode: activityCode == freezed
+          ? _value.activityCode
+          : activityCode as List<SearchToken>,
+      activityDate: activityDate == freezed
+          ? _value.activityDate
+          : activityDate as List<SearchDate>,
+      activityReference: activityReference == freezed
+          ? _value.activityReference
+          : activityReference as List<SearchReference>,
+      basedOn: basedOn == freezed
+          ? _value.basedOn
+          : basedOn as List<SearchReference>,
+      careTeam: careTeam == freezed
+          ? _value.careTeam
+          : careTeam as List<SearchReference>,
       category:
           category == freezed ? _value.category : category as List<SearchToken>,
       condition: condition == freezed
@@ -985,16 +1074,15 @@ class _$CarePlanSearchCopyWithImpl<$Res>
           ? _value.encounter
           : encounter as List<SearchReference>,
       goal: goal == freezed ? _value.goal : goal as List<SearchReference>,
-      instantiates_canonical: instantiates_canonical == freezed
-          ? _value.instantiates_canonical
-          : instantiates_canonical as List<SearchReference>,
-      instantiates_uri: instantiates_uri == freezed
-          ? _value.instantiates_uri
-          : instantiates_uri as List<SearchUri>,
+      instantiatesCanonical: instantiatesCanonical == freezed
+          ? _value.instantiatesCanonical
+          : instantiatesCanonical as List<SearchReference>,
+      instantiatesUri: instantiatesUri == freezed
+          ? _value.instantiatesUri
+          : instantiatesUri as List<SearchUri>,
       intent: intent == freezed ? _value.intent : intent as List<SearchToken>,
-      part_of: part_of == freezed
-          ? _value.part_of
-          : part_of as List<SearchReference>,
+      partOf:
+          partOf == freezed ? _value.partOf : partOf as List<SearchReference>,
       performer: performer == freezed
           ? _value.performer
           : performer as List<SearchReference>,
@@ -1028,19 +1116,27 @@ abstract class _$CarePlanSearchCopyWith<$Res>
       List<SearchDate> date,
       List<SearchToken> identifier,
       List<SearchReference> patient,
-      List<SearchToken> activity_code,
-      List<SearchDate> activity_date,
-      List<SearchReference> activity_reference,
-      List<SearchReference> based_on,
-      List<SearchReference> care_team,
+      @JsonKey(name: 'activity-code')
+          List<SearchToken> activityCode,
+      @JsonKey(name: 'activity-date')
+          List<SearchDate> activityDate,
+      @JsonKey(name: 'activity-reference')
+          List<SearchReference> activityReference,
+      @JsonKey(name: 'based-on')
+          List<SearchReference> basedOn,
+      @JsonKey(name: 'care-team')
+          List<SearchReference> careTeam,
       List<SearchToken> category,
       List<SearchReference> condition,
       List<SearchReference> encounter,
       List<SearchReference> goal,
-      List<SearchReference> instantiates_canonical,
-      List<SearchUri> instantiates_uri,
+      @JsonKey(name: 'instantiates-canonical')
+          List<SearchReference> instantiatesCanonical,
+      @JsonKey(name: 'instantiates-uri')
+          List<SearchUri> instantiatesUri,
       List<SearchToken> intent,
-      List<SearchReference> part_of,
+      @JsonKey(name: 'part-of')
+          List<SearchReference> partOf,
       List<SearchReference> performer,
       List<SearchReference> replaces,
       List<SearchToken> status,
@@ -1071,19 +1167,19 @@ class __$CarePlanSearchCopyWithImpl<$Res>
     Object date = freezed,
     Object identifier = freezed,
     Object patient = freezed,
-    Object activity_code = freezed,
-    Object activity_date = freezed,
-    Object activity_reference = freezed,
-    Object based_on = freezed,
-    Object care_team = freezed,
+    Object activityCode = freezed,
+    Object activityDate = freezed,
+    Object activityReference = freezed,
+    Object basedOn = freezed,
+    Object careTeam = freezed,
     Object category = freezed,
     Object condition = freezed,
     Object encounter = freezed,
     Object goal = freezed,
-    Object instantiates_canonical = freezed,
-    Object instantiates_uri = freezed,
+    Object instantiatesCanonical = freezed,
+    Object instantiatesUri = freezed,
     Object intent = freezed,
-    Object part_of = freezed,
+    Object partOf = freezed,
     Object performer = freezed,
     Object replaces = freezed,
     Object status = freezed,
@@ -1118,21 +1214,21 @@ class __$CarePlanSearchCopyWithImpl<$Res>
       patient: patient == freezed
           ? _value.patient
           : patient as List<SearchReference>,
-      activity_code: activity_code == freezed
-          ? _value.activity_code
-          : activity_code as List<SearchToken>,
-      activity_date: activity_date == freezed
-          ? _value.activity_date
-          : activity_date as List<SearchDate>,
-      activity_reference: activity_reference == freezed
-          ? _value.activity_reference
-          : activity_reference as List<SearchReference>,
-      based_on: based_on == freezed
-          ? _value.based_on
-          : based_on as List<SearchReference>,
-      care_team: care_team == freezed
-          ? _value.care_team
-          : care_team as List<SearchReference>,
+      activityCode: activityCode == freezed
+          ? _value.activityCode
+          : activityCode as List<SearchToken>,
+      activityDate: activityDate == freezed
+          ? _value.activityDate
+          : activityDate as List<SearchDate>,
+      activityReference: activityReference == freezed
+          ? _value.activityReference
+          : activityReference as List<SearchReference>,
+      basedOn: basedOn == freezed
+          ? _value.basedOn
+          : basedOn as List<SearchReference>,
+      careTeam: careTeam == freezed
+          ? _value.careTeam
+          : careTeam as List<SearchReference>,
       category:
           category == freezed ? _value.category : category as List<SearchToken>,
       condition: condition == freezed
@@ -1142,16 +1238,15 @@ class __$CarePlanSearchCopyWithImpl<$Res>
           ? _value.encounter
           : encounter as List<SearchReference>,
       goal: goal == freezed ? _value.goal : goal as List<SearchReference>,
-      instantiates_canonical: instantiates_canonical == freezed
-          ? _value.instantiates_canonical
-          : instantiates_canonical as List<SearchReference>,
-      instantiates_uri: instantiates_uri == freezed
-          ? _value.instantiates_uri
-          : instantiates_uri as List<SearchUri>,
+      instantiatesCanonical: instantiatesCanonical == freezed
+          ? _value.instantiatesCanonical
+          : instantiatesCanonical as List<SearchReference>,
+      instantiatesUri: instantiatesUri == freezed
+          ? _value.instantiatesUri
+          : instantiatesUri as List<SearchUri>,
       intent: intent == freezed ? _value.intent : intent as List<SearchToken>,
-      part_of: part_of == freezed
-          ? _value.part_of
-          : part_of as List<SearchReference>,
+      partOf:
+          partOf == freezed ? _value.partOf : partOf as List<SearchReference>,
       performer: performer == freezed
           ? _value.performer
           : performer as List<SearchReference>,
@@ -1165,6 +1260,8 @@ class __$CarePlanSearchCopyWithImpl<$Res>
     ));
   }
 }
+
+@JsonSerializable()
 
 /// @nodoc
 class _$_CarePlanSearch extends _CarePlanSearch {
@@ -1180,24 +1277,27 @@ class _$_CarePlanSearch extends _CarePlanSearch {
       this.date,
       this.identifier,
       this.patient,
-      this.activity_code,
-      this.activity_date,
-      this.activity_reference,
-      this.based_on,
-      this.care_team,
+      @JsonKey(name: 'activity-code') this.activityCode,
+      @JsonKey(name: 'activity-date') this.activityDate,
+      @JsonKey(name: 'activity-reference') this.activityReference,
+      @JsonKey(name: 'based-on') this.basedOn,
+      @JsonKey(name: 'care-team') this.careTeam,
       this.category,
       this.condition,
       this.encounter,
       this.goal,
-      this.instantiates_canonical,
-      this.instantiates_uri,
+      @JsonKey(name: 'instantiates-canonical') this.instantiatesCanonical,
+      @JsonKey(name: 'instantiates-uri') this.instantiatesUri,
       this.intent,
-      this.part_of,
+      @JsonKey(name: 'part-of') this.partOf,
       this.performer,
       this.replaces,
       this.status,
       this.subject})
       : super._();
+
+  factory _$_CarePlanSearch.fromJson(Map<String, dynamic> json) =>
+      _$_$_CarePlanSearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -1223,15 +1323,20 @@ class _$_CarePlanSearch extends _CarePlanSearch {
   @override
   final List<SearchReference> patient;
   @override
-  final List<SearchToken> activity_code;
+  @JsonKey(name: 'activity-code')
+  final List<SearchToken> activityCode;
   @override
-  final List<SearchDate> activity_date;
+  @JsonKey(name: 'activity-date')
+  final List<SearchDate> activityDate;
   @override
-  final List<SearchReference> activity_reference;
+  @JsonKey(name: 'activity-reference')
+  final List<SearchReference> activityReference;
   @override
-  final List<SearchReference> based_on;
+  @JsonKey(name: 'based-on')
+  final List<SearchReference> basedOn;
   @override
-  final List<SearchReference> care_team;
+  @JsonKey(name: 'care-team')
+  final List<SearchReference> careTeam;
   @override
   final List<SearchToken> category;
   @override
@@ -1241,13 +1346,16 @@ class _$_CarePlanSearch extends _CarePlanSearch {
   @override
   final List<SearchReference> goal;
   @override
-  final List<SearchReference> instantiates_canonical;
+  @JsonKey(name: 'instantiates-canonical')
+  final List<SearchReference> instantiatesCanonical;
   @override
-  final List<SearchUri> instantiates_uri;
+  @JsonKey(name: 'instantiates-uri')
+  final List<SearchUri> instantiatesUri;
   @override
   final List<SearchToken> intent;
   @override
-  final List<SearchReference> part_of;
+  @JsonKey(name: 'part-of')
+  final List<SearchReference> partOf;
   @override
   final List<SearchReference> performer;
   @override
@@ -1259,7 +1367,7 @@ class _$_CarePlanSearch extends _CarePlanSearch {
 
   @override
   String toString() {
-    return 'CarePlanSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, date: $date, identifier: $identifier, patient: $patient, activity_code: $activity_code, activity_date: $activity_date, activity_reference: $activity_reference, based_on: $based_on, care_team: $care_team, category: $category, condition: $condition, encounter: $encounter, goal: $goal, instantiates_canonical: $instantiates_canonical, instantiates_uri: $instantiates_uri, intent: $intent, part_of: $part_of, performer: $performer, replaces: $replaces, status: $status, subject: $subject)';
+    return 'CarePlanSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, date: $date, identifier: $identifier, patient: $patient, activityCode: $activityCode, activityDate: $activityDate, activityReference: $activityReference, basedOn: $basedOn, careTeam: $careTeam, category: $category, condition: $condition, encounter: $encounter, goal: $goal, instantiatesCanonical: $instantiatesCanonical, instantiatesUri: $instantiatesUri, intent: $intent, partOf: $partOf, performer: $performer, replaces: $replaces, status: $status, subject: $subject)';
   }
 
   @override
@@ -1298,21 +1406,21 @@ class _$_CarePlanSearch extends _CarePlanSearch {
             (identical(other.patient, patient) ||
                 const DeepCollectionEquality()
                     .equals(other.patient, patient)) &&
-            (identical(other.activity_code, activity_code) ||
+            (identical(other.activityCode, activityCode) ||
                 const DeepCollectionEquality()
-                    .equals(other.activity_code, activity_code)) &&
-            (identical(other.activity_date, activity_date) ||
+                    .equals(other.activityCode, activityCode)) &&
+            (identical(other.activityDate, activityDate) ||
                 const DeepCollectionEquality()
-                    .equals(other.activity_date, activity_date)) &&
-            (identical(other.activity_reference, activity_reference) ||
+                    .equals(other.activityDate, activityDate)) &&
+            (identical(other.activityReference, activityReference) ||
                 const DeepCollectionEquality()
-                    .equals(other.activity_reference, activity_reference)) &&
-            (identical(other.based_on, based_on) ||
+                    .equals(other.activityReference, activityReference)) &&
+            (identical(other.basedOn, basedOn) ||
                 const DeepCollectionEquality()
-                    .equals(other.based_on, based_on)) &&
-            (identical(other.care_team, care_team) ||
+                    .equals(other.basedOn, basedOn)) &&
+            (identical(other.careTeam, careTeam) ||
                 const DeepCollectionEquality()
-                    .equals(other.care_team, care_team)) &&
+                    .equals(other.careTeam, careTeam)) &&
             (identical(other.category, category) ||
                 const DeepCollectionEquality()
                     .equals(other.category, category)) &&
@@ -1324,15 +1432,15 @@ class _$_CarePlanSearch extends _CarePlanSearch {
                     .equals(other.encounter, encounter)) &&
             (identical(other.goal, goal) ||
                 const DeepCollectionEquality().equals(other.goal, goal)) &&
-            (identical(other.instantiates_canonical, instantiates_canonical) ||
+            (identical(other.instantiatesCanonical, instantiatesCanonical) ||
                 const DeepCollectionEquality().equals(
-                    other.instantiates_canonical, instantiates_canonical)) &&
-            (identical(other.instantiates_uri, instantiates_uri) ||
+                    other.instantiatesCanonical, instantiatesCanonical)) &&
+            (identical(other.instantiatesUri, instantiatesUri) ||
                 const DeepCollectionEquality()
-                    .equals(other.instantiates_uri, instantiates_uri)) &&
+                    .equals(other.instantiatesUri, instantiatesUri)) &&
             (identical(other.intent, intent) ||
                 const DeepCollectionEquality().equals(other.intent, intent)) &&
-            (identical(other.part_of, part_of) || const DeepCollectionEquality().equals(other.part_of, part_of)) &&
+            (identical(other.partOf, partOf) || const DeepCollectionEquality().equals(other.partOf, partOf)) &&
             (identical(other.performer, performer) || const DeepCollectionEquality().equals(other.performer, performer)) &&
             (identical(other.replaces, replaces) || const DeepCollectionEquality().equals(other.replaces, replaces)) &&
             (identical(other.status, status) || const DeepCollectionEquality().equals(other.status, status)) &&
@@ -1353,19 +1461,19 @@ class _$_CarePlanSearch extends _CarePlanSearch {
       const DeepCollectionEquality().hash(date) ^
       const DeepCollectionEquality().hash(identifier) ^
       const DeepCollectionEquality().hash(patient) ^
-      const DeepCollectionEquality().hash(activity_code) ^
-      const DeepCollectionEquality().hash(activity_date) ^
-      const DeepCollectionEquality().hash(activity_reference) ^
-      const DeepCollectionEquality().hash(based_on) ^
-      const DeepCollectionEquality().hash(care_team) ^
+      const DeepCollectionEquality().hash(activityCode) ^
+      const DeepCollectionEquality().hash(activityDate) ^
+      const DeepCollectionEquality().hash(activityReference) ^
+      const DeepCollectionEquality().hash(basedOn) ^
+      const DeepCollectionEquality().hash(careTeam) ^
       const DeepCollectionEquality().hash(category) ^
       const DeepCollectionEquality().hash(condition) ^
       const DeepCollectionEquality().hash(encounter) ^
       const DeepCollectionEquality().hash(goal) ^
-      const DeepCollectionEquality().hash(instantiates_canonical) ^
-      const DeepCollectionEquality().hash(instantiates_uri) ^
+      const DeepCollectionEquality().hash(instantiatesCanonical) ^
+      const DeepCollectionEquality().hash(instantiatesUri) ^
       const DeepCollectionEquality().hash(intent) ^
-      const DeepCollectionEquality().hash(part_of) ^
+      const DeepCollectionEquality().hash(partOf) ^
       const DeepCollectionEquality().hash(performer) ^
       const DeepCollectionEquality().hash(replaces) ^
       const DeepCollectionEquality().hash(status) ^
@@ -1374,6 +1482,11 @@ class _$_CarePlanSearch extends _CarePlanSearch {
   @override
   _$CarePlanSearchCopyWith<_CarePlanSearch> get copyWith =>
       __$CarePlanSearchCopyWithImpl<_CarePlanSearch>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_CarePlanSearchToJson(this);
+  }
 }
 
 abstract class _CarePlanSearch extends CarePlanSearch {
@@ -1390,23 +1503,34 @@ abstract class _CarePlanSearch extends CarePlanSearch {
       List<SearchDate> date,
       List<SearchToken> identifier,
       List<SearchReference> patient,
-      List<SearchToken> activity_code,
-      List<SearchDate> activity_date,
-      List<SearchReference> activity_reference,
-      List<SearchReference> based_on,
-      List<SearchReference> care_team,
+      @JsonKey(name: 'activity-code')
+          List<SearchToken> activityCode,
+      @JsonKey(name: 'activity-date')
+          List<SearchDate> activityDate,
+      @JsonKey(name: 'activity-reference')
+          List<SearchReference> activityReference,
+      @JsonKey(name: 'based-on')
+          List<SearchReference> basedOn,
+      @JsonKey(name: 'care-team')
+          List<SearchReference> careTeam,
       List<SearchToken> category,
       List<SearchReference> condition,
       List<SearchReference> encounter,
       List<SearchReference> goal,
-      List<SearchReference> instantiates_canonical,
-      List<SearchUri> instantiates_uri,
+      @JsonKey(name: 'instantiates-canonical')
+          List<SearchReference> instantiatesCanonical,
+      @JsonKey(name: 'instantiates-uri')
+          List<SearchUri> instantiatesUri,
       List<SearchToken> intent,
-      List<SearchReference> part_of,
+      @JsonKey(name: 'part-of')
+          List<SearchReference> partOf,
       List<SearchReference> performer,
       List<SearchReference> replaces,
       List<SearchToken> status,
       List<SearchReference> subject}) = _$_CarePlanSearch;
+
+  factory _CarePlanSearch.fromJson(Map<String, dynamic> json) =
+      _$_CarePlanSearch.fromJson;
 
   @override
   List<Id> get searchId;
@@ -1432,15 +1556,20 @@ abstract class _CarePlanSearch extends CarePlanSearch {
   @override
   List<SearchReference> get patient;
   @override
-  List<SearchToken> get activity_code;
+  @JsonKey(name: 'activity-code')
+  List<SearchToken> get activityCode;
   @override
-  List<SearchDate> get activity_date;
+  @JsonKey(name: 'activity-date')
+  List<SearchDate> get activityDate;
   @override
-  List<SearchReference> get activity_reference;
+  @JsonKey(name: 'activity-reference')
+  List<SearchReference> get activityReference;
   @override
-  List<SearchReference> get based_on;
+  @JsonKey(name: 'based-on')
+  List<SearchReference> get basedOn;
   @override
-  List<SearchReference> get care_team;
+  @JsonKey(name: 'care-team')
+  List<SearchReference> get careTeam;
   @override
   List<SearchToken> get category;
   @override
@@ -1450,13 +1579,16 @@ abstract class _CarePlanSearch extends CarePlanSearch {
   @override
   List<SearchReference> get goal;
   @override
-  List<SearchReference> get instantiates_canonical;
+  @JsonKey(name: 'instantiates-canonical')
+  List<SearchReference> get instantiatesCanonical;
   @override
-  List<SearchUri> get instantiates_uri;
+  @JsonKey(name: 'instantiates-uri')
+  List<SearchUri> get instantiatesUri;
   @override
   List<SearchToken> get intent;
   @override
-  List<SearchReference> get part_of;
+  @JsonKey(name: 'part-of')
+  List<SearchReference> get partOf;
   @override
   List<SearchReference> get performer;
   @override
@@ -1467,6 +1599,10 @@ abstract class _CarePlanSearch extends CarePlanSearch {
   List<SearchReference> get subject;
   @override
   _$CarePlanSearchCopyWith<_CarePlanSearch> get copyWith;
+}
+
+CareTeamSearch _$CareTeamSearchFromJson(Map<String, dynamic> json) {
+  return _CareTeamSearch.fromJson(json);
 }
 
 /// @nodoc
@@ -1510,6 +1646,11 @@ class _$CareTeamSearchTearOff {
       subject: subject,
     );
   }
+
+// ignore: unused_element
+  CareTeamSearch fromJson(Map<String, Object> json) {
+    return CareTeamSearch.fromJson(json);
+  }
 }
 
 /// @nodoc
@@ -1536,6 +1677,7 @@ mixin _$CareTeamSearch {
   List<SearchToken> get status;
   List<SearchReference> get subject;
 
+  Map<String, dynamic> toJson();
   $CareTeamSearchCopyWith<CareTeamSearch> get copyWith;
 }
 
@@ -1737,6 +1879,8 @@ class __$CareTeamSearchCopyWithImpl<$Res>
   }
 }
 
+@JsonSerializable()
+
 /// @nodoc
 class _$_CareTeamSearch extends _CareTeamSearch {
   _$_CareTeamSearch(
@@ -1757,6 +1901,9 @@ class _$_CareTeamSearch extends _CareTeamSearch {
       this.status,
       this.subject})
       : super._();
+
+  factory _$_CareTeamSearch.fromJson(Map<String, dynamic> json) =>
+      _$_$_CareTeamSearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -1871,6 +2018,11 @@ class _$_CareTeamSearch extends _CareTeamSearch {
   @override
   _$CareTeamSearchCopyWith<_CareTeamSearch> get copyWith =>
       __$CareTeamSearchCopyWithImpl<_CareTeamSearch>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_CareTeamSearchToJson(this);
+  }
 }
 
 abstract class _CareTeamSearch extends CareTeamSearch {
@@ -1892,6 +2044,9 @@ abstract class _CareTeamSearch extends CareTeamSearch {
       List<SearchReference> participant,
       List<SearchToken> status,
       List<SearchReference> subject}) = _$_CareTeamSearch;
+
+  factory _CareTeamSearch.fromJson(Map<String, dynamic> json) =
+      _$_CareTeamSearch.fromJson;
 
   @override
   List<Id> get searchId;
@@ -1928,6 +2083,10 @@ abstract class _CareTeamSearch extends CareTeamSearch {
   List<SearchReference> get subject;
   @override
   _$CareTeamSearchCopyWith<_CareTeamSearch> get copyWith;
+}
+
+RiskAssessmentSearch _$RiskAssessmentSearchFromJson(Map<String, dynamic> json) {
+  return _RiskAssessmentSearch.fromJson(json);
 }
 
 /// @nodoc
@@ -1975,6 +2134,11 @@ class _$RiskAssessmentSearchTearOff {
       subject: subject,
     );
   }
+
+// ignore: unused_element
+  RiskAssessmentSearch fromJson(Map<String, Object> json) {
+    return RiskAssessmentSearch.fromJson(json);
+  }
 }
 
 /// @nodoc
@@ -2003,6 +2167,7 @@ mixin _$RiskAssessmentSearch {
   List<SearchToken> get risk;
   List<SearchReference> get subject;
 
+  Map<String, dynamic> toJson();
   $RiskAssessmentSearchCopyWith<RiskAssessmentSearch> get copyWith;
 }
 
@@ -2222,6 +2387,8 @@ class __$RiskAssessmentSearchCopyWithImpl<$Res>
   }
 }
 
+@JsonSerializable()
+
 /// @nodoc
 class _$_RiskAssessmentSearch extends _RiskAssessmentSearch {
   _$_RiskAssessmentSearch(
@@ -2244,6 +2411,9 @@ class _$_RiskAssessmentSearch extends _RiskAssessmentSearch {
       this.risk,
       this.subject})
       : super._();
+
+  factory _$_RiskAssessmentSearch.fromJson(Map<String, dynamic> json) =>
+      _$_$_RiskAssessmentSearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -2370,6 +2540,11 @@ class _$_RiskAssessmentSearch extends _RiskAssessmentSearch {
   _$RiskAssessmentSearchCopyWith<_RiskAssessmentSearch> get copyWith =>
       __$RiskAssessmentSearchCopyWithImpl<_RiskAssessmentSearch>(
           this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_RiskAssessmentSearchToJson(this);
+  }
 }
 
 abstract class _RiskAssessmentSearch extends RiskAssessmentSearch {
@@ -2393,6 +2568,9 @@ abstract class _RiskAssessmentSearch extends RiskAssessmentSearch {
       List<SearchNumber> probability,
       List<SearchToken> risk,
       List<SearchReference> subject}) = _$_RiskAssessmentSearch;
+
+  factory _RiskAssessmentSearch.fromJson(Map<String, dynamic> json) =
+      _$_RiskAssessmentSearch.fromJson;
 
   @override
   List<Id> get searchId;
@@ -2435,6 +2613,10 @@ abstract class _RiskAssessmentSearch extends RiskAssessmentSearch {
   _$RiskAssessmentSearchCopyWith<_RiskAssessmentSearch> get copyWith;
 }
 
+GoalSearch _$GoalSearchFromJson(Map<String, dynamic> json) {
+  return _GoalSearch.fromJson(json);
+}
+
 /// @nodoc
 class _$GoalSearchTearOff {
   const _$GoalSearchTearOff();
@@ -2451,12 +2633,12 @@ class _$GoalSearchTearOff {
       List<Id> searchList,
       List<SearchToken> identifier,
       List<SearchReference> patient,
-      List<SearchToken> achievement_status,
+      @JsonKey(name: 'achievement-status') List<SearchToken> achievementStatus,
       List<SearchToken> category,
-      List<SearchToken> lifecycle_status,
-      List<SearchDate> start_date,
+      @JsonKey(name: 'lifecycle-status') List<SearchToken> lifecycleStatus,
+      @JsonKey(name: 'start-date') List<SearchDate> startDate,
       List<SearchReference> subject,
-      List<SearchDate> target_date}) {
+      @JsonKey(name: 'target-date') List<SearchDate> targetDate}) {
     return _GoalSearch(
       searchId: searchId,
       searchLastUpdated: searchLastUpdated,
@@ -2468,13 +2650,18 @@ class _$GoalSearchTearOff {
       searchList: searchList,
       identifier: identifier,
       patient: patient,
-      achievement_status: achievement_status,
+      achievementStatus: achievementStatus,
       category: category,
-      lifecycle_status: lifecycle_status,
-      start_date: start_date,
+      lifecycleStatus: lifecycleStatus,
+      startDate: startDate,
       subject: subject,
-      target_date: target_date,
+      targetDate: targetDate,
     );
+  }
+
+// ignore: unused_element
+  GoalSearch fromJson(Map<String, Object> json) {
+    return GoalSearch.fromJson(json);
   }
 }
 
@@ -2495,13 +2682,18 @@ mixin _$GoalSearch {
 //List<SearchToken> searchType,
   List<SearchToken> get identifier;
   List<SearchReference> get patient;
-  List<SearchToken> get achievement_status;
+  @JsonKey(name: 'achievement-status')
+  List<SearchToken> get achievementStatus;
   List<SearchToken> get category;
-  List<SearchToken> get lifecycle_status;
-  List<SearchDate> get start_date;
+  @JsonKey(name: 'lifecycle-status')
+  List<SearchToken> get lifecycleStatus;
+  @JsonKey(name: 'start-date')
+  List<SearchDate> get startDate;
   List<SearchReference> get subject;
-  List<SearchDate> get target_date;
+  @JsonKey(name: 'target-date')
+  List<SearchDate> get targetDate;
 
+  Map<String, dynamic> toJson();
   $GoalSearchCopyWith<GoalSearch> get copyWith;
 }
 
@@ -2521,12 +2713,12 @@ abstract class $GoalSearchCopyWith<$Res> {
       List<Id> searchList,
       List<SearchToken> identifier,
       List<SearchReference> patient,
-      List<SearchToken> achievement_status,
+      @JsonKey(name: 'achievement-status') List<SearchToken> achievementStatus,
       List<SearchToken> category,
-      List<SearchToken> lifecycle_status,
-      List<SearchDate> start_date,
+      @JsonKey(name: 'lifecycle-status') List<SearchToken> lifecycleStatus,
+      @JsonKey(name: 'start-date') List<SearchDate> startDate,
       List<SearchReference> subject,
-      List<SearchDate> target_date});
+      @JsonKey(name: 'target-date') List<SearchDate> targetDate});
 }
 
 /// @nodoc
@@ -2549,12 +2741,12 @@ class _$GoalSearchCopyWithImpl<$Res> implements $GoalSearchCopyWith<$Res> {
     Object searchList = freezed,
     Object identifier = freezed,
     Object patient = freezed,
-    Object achievement_status = freezed,
+    Object achievementStatus = freezed,
     Object category = freezed,
-    Object lifecycle_status = freezed,
-    Object start_date = freezed,
+    Object lifecycleStatus = freezed,
+    Object startDate = freezed,
     Object subject = freezed,
-    Object target_date = freezed,
+    Object targetDate = freezed,
   }) {
     return _then(_value.copyWith(
       searchId: searchId == freezed ? _value.searchId : searchId as List<Id>,
@@ -2584,23 +2776,23 @@ class _$GoalSearchCopyWithImpl<$Res> implements $GoalSearchCopyWith<$Res> {
       patient: patient == freezed
           ? _value.patient
           : patient as List<SearchReference>,
-      achievement_status: achievement_status == freezed
-          ? _value.achievement_status
-          : achievement_status as List<SearchToken>,
+      achievementStatus: achievementStatus == freezed
+          ? _value.achievementStatus
+          : achievementStatus as List<SearchToken>,
       category:
           category == freezed ? _value.category : category as List<SearchToken>,
-      lifecycle_status: lifecycle_status == freezed
-          ? _value.lifecycle_status
-          : lifecycle_status as List<SearchToken>,
-      start_date: start_date == freezed
-          ? _value.start_date
-          : start_date as List<SearchDate>,
+      lifecycleStatus: lifecycleStatus == freezed
+          ? _value.lifecycleStatus
+          : lifecycleStatus as List<SearchToken>,
+      startDate: startDate == freezed
+          ? _value.startDate
+          : startDate as List<SearchDate>,
       subject: subject == freezed
           ? _value.subject
           : subject as List<SearchReference>,
-      target_date: target_date == freezed
-          ? _value.target_date
-          : target_date as List<SearchDate>,
+      targetDate: targetDate == freezed
+          ? _value.targetDate
+          : targetDate as List<SearchDate>,
     ));
   }
 }
@@ -2622,12 +2814,12 @@ abstract class _$GoalSearchCopyWith<$Res> implements $GoalSearchCopyWith<$Res> {
       List<Id> searchList,
       List<SearchToken> identifier,
       List<SearchReference> patient,
-      List<SearchToken> achievement_status,
+      @JsonKey(name: 'achievement-status') List<SearchToken> achievementStatus,
       List<SearchToken> category,
-      List<SearchToken> lifecycle_status,
-      List<SearchDate> start_date,
+      @JsonKey(name: 'lifecycle-status') List<SearchToken> lifecycleStatus,
+      @JsonKey(name: 'start-date') List<SearchDate> startDate,
       List<SearchReference> subject,
-      List<SearchDate> target_date});
+      @JsonKey(name: 'target-date') List<SearchDate> targetDate});
 }
 
 /// @nodoc
@@ -2652,12 +2844,12 @@ class __$GoalSearchCopyWithImpl<$Res> extends _$GoalSearchCopyWithImpl<$Res>
     Object searchList = freezed,
     Object identifier = freezed,
     Object patient = freezed,
-    Object achievement_status = freezed,
+    Object achievementStatus = freezed,
     Object category = freezed,
-    Object lifecycle_status = freezed,
-    Object start_date = freezed,
+    Object lifecycleStatus = freezed,
+    Object startDate = freezed,
     Object subject = freezed,
-    Object target_date = freezed,
+    Object targetDate = freezed,
   }) {
     return _then(_GoalSearch(
       searchId: searchId == freezed ? _value.searchId : searchId as List<Id>,
@@ -2687,26 +2879,28 @@ class __$GoalSearchCopyWithImpl<$Res> extends _$GoalSearchCopyWithImpl<$Res>
       patient: patient == freezed
           ? _value.patient
           : patient as List<SearchReference>,
-      achievement_status: achievement_status == freezed
-          ? _value.achievement_status
-          : achievement_status as List<SearchToken>,
+      achievementStatus: achievementStatus == freezed
+          ? _value.achievementStatus
+          : achievementStatus as List<SearchToken>,
       category:
           category == freezed ? _value.category : category as List<SearchToken>,
-      lifecycle_status: lifecycle_status == freezed
-          ? _value.lifecycle_status
-          : lifecycle_status as List<SearchToken>,
-      start_date: start_date == freezed
-          ? _value.start_date
-          : start_date as List<SearchDate>,
+      lifecycleStatus: lifecycleStatus == freezed
+          ? _value.lifecycleStatus
+          : lifecycleStatus as List<SearchToken>,
+      startDate: startDate == freezed
+          ? _value.startDate
+          : startDate as List<SearchDate>,
       subject: subject == freezed
           ? _value.subject
           : subject as List<SearchReference>,
-      target_date: target_date == freezed
-          ? _value.target_date
-          : target_date as List<SearchDate>,
+      targetDate: targetDate == freezed
+          ? _value.targetDate
+          : targetDate as List<SearchDate>,
     ));
   }
 }
+
+@JsonSerializable()
 
 /// @nodoc
 class _$_GoalSearch extends _GoalSearch {
@@ -2721,13 +2915,16 @@ class _$_GoalSearch extends _GoalSearch {
       this.searchList,
       this.identifier,
       this.patient,
-      this.achievement_status,
+      @JsonKey(name: 'achievement-status') this.achievementStatus,
       this.category,
-      this.lifecycle_status,
-      this.start_date,
+      @JsonKey(name: 'lifecycle-status') this.lifecycleStatus,
+      @JsonKey(name: 'start-date') this.startDate,
       this.subject,
-      this.target_date})
+      @JsonKey(name: 'target-date') this.targetDate})
       : super._();
+
+  factory _$_GoalSearch.fromJson(Map<String, dynamic> json) =>
+      _$_$_GoalSearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -2751,21 +2948,25 @@ class _$_GoalSearch extends _GoalSearch {
   @override
   final List<SearchReference> patient;
   @override
-  final List<SearchToken> achievement_status;
+  @JsonKey(name: 'achievement-status')
+  final List<SearchToken> achievementStatus;
   @override
   final List<SearchToken> category;
   @override
-  final List<SearchToken> lifecycle_status;
+  @JsonKey(name: 'lifecycle-status')
+  final List<SearchToken> lifecycleStatus;
   @override
-  final List<SearchDate> start_date;
+  @JsonKey(name: 'start-date')
+  final List<SearchDate> startDate;
   @override
   final List<SearchReference> subject;
   @override
-  final List<SearchDate> target_date;
+  @JsonKey(name: 'target-date')
+  final List<SearchDate> targetDate;
 
   @override
   String toString() {
-    return 'GoalSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, identifier: $identifier, patient: $patient, achievement_status: $achievement_status, category: $category, lifecycle_status: $lifecycle_status, start_date: $start_date, subject: $subject, target_date: $target_date)';
+    return 'GoalSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, identifier: $identifier, patient: $patient, achievementStatus: $achievementStatus, category: $category, lifecycleStatus: $lifecycleStatus, startDate: $startDate, subject: $subject, targetDate: $targetDate)';
   }
 
   @override
@@ -2802,24 +3003,24 @@ class _$_GoalSearch extends _GoalSearch {
             (identical(other.patient, patient) ||
                 const DeepCollectionEquality()
                     .equals(other.patient, patient)) &&
-            (identical(other.achievement_status, achievement_status) ||
+            (identical(other.achievementStatus, achievementStatus) ||
                 const DeepCollectionEquality()
-                    .equals(other.achievement_status, achievement_status)) &&
+                    .equals(other.achievementStatus, achievementStatus)) &&
             (identical(other.category, category) ||
                 const DeepCollectionEquality()
                     .equals(other.category, category)) &&
-            (identical(other.lifecycle_status, lifecycle_status) ||
+            (identical(other.lifecycleStatus, lifecycleStatus) ||
                 const DeepCollectionEquality()
-                    .equals(other.lifecycle_status, lifecycle_status)) &&
-            (identical(other.start_date, start_date) ||
+                    .equals(other.lifecycleStatus, lifecycleStatus)) &&
+            (identical(other.startDate, startDate) ||
                 const DeepCollectionEquality()
-                    .equals(other.start_date, start_date)) &&
+                    .equals(other.startDate, startDate)) &&
             (identical(other.subject, subject) ||
                 const DeepCollectionEquality()
                     .equals(other.subject, subject)) &&
-            (identical(other.target_date, target_date) ||
+            (identical(other.targetDate, targetDate) ||
                 const DeepCollectionEquality()
-                    .equals(other.target_date, target_date)));
+                    .equals(other.targetDate, targetDate)));
   }
 
   @override
@@ -2835,16 +3036,21 @@ class _$_GoalSearch extends _GoalSearch {
       const DeepCollectionEquality().hash(searchList) ^
       const DeepCollectionEquality().hash(identifier) ^
       const DeepCollectionEquality().hash(patient) ^
-      const DeepCollectionEquality().hash(achievement_status) ^
+      const DeepCollectionEquality().hash(achievementStatus) ^
       const DeepCollectionEquality().hash(category) ^
-      const DeepCollectionEquality().hash(lifecycle_status) ^
-      const DeepCollectionEquality().hash(start_date) ^
+      const DeepCollectionEquality().hash(lifecycleStatus) ^
+      const DeepCollectionEquality().hash(startDate) ^
       const DeepCollectionEquality().hash(subject) ^
-      const DeepCollectionEquality().hash(target_date);
+      const DeepCollectionEquality().hash(targetDate);
 
   @override
   _$GoalSearchCopyWith<_GoalSearch> get copyWith =>
       __$GoalSearchCopyWithImpl<_GoalSearch>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_GoalSearchToJson(this);
+  }
 }
 
 abstract class _GoalSearch extends GoalSearch {
@@ -2860,12 +3066,19 @@ abstract class _GoalSearch extends GoalSearch {
       List<Id> searchList,
       List<SearchToken> identifier,
       List<SearchReference> patient,
-      List<SearchToken> achievement_status,
+      @JsonKey(name: 'achievement-status')
+          List<SearchToken> achievementStatus,
       List<SearchToken> category,
-      List<SearchToken> lifecycle_status,
-      List<SearchDate> start_date,
+      @JsonKey(name: 'lifecycle-status')
+          List<SearchToken> lifecycleStatus,
+      @JsonKey(name: 'start-date')
+          List<SearchDate> startDate,
       List<SearchReference> subject,
-      List<SearchDate> target_date}) = _$_GoalSearch;
+      @JsonKey(name: 'target-date')
+          List<SearchDate> targetDate}) = _$_GoalSearch;
+
+  factory _GoalSearch.fromJson(Map<String, dynamic> json) =
+      _$_GoalSearch.fromJson;
 
   @override
   List<Id> get searchId;
@@ -2889,19 +3102,27 @@ abstract class _GoalSearch extends GoalSearch {
   @override
   List<SearchReference> get patient;
   @override
-  List<SearchToken> get achievement_status;
+  @JsonKey(name: 'achievement-status')
+  List<SearchToken> get achievementStatus;
   @override
   List<SearchToken> get category;
   @override
-  List<SearchToken> get lifecycle_status;
+  @JsonKey(name: 'lifecycle-status')
+  List<SearchToken> get lifecycleStatus;
   @override
-  List<SearchDate> get start_date;
+  @JsonKey(name: 'start-date')
+  List<SearchDate> get startDate;
   @override
   List<SearchReference> get subject;
   @override
-  List<SearchDate> get target_date;
+  @JsonKey(name: 'target-date')
+  List<SearchDate> get targetDate;
   @override
   _$GoalSearchCopyWith<_GoalSearch> get copyWith;
+}
+
+NutritionOrderSearch _$NutritionOrderSearchFromJson(Map<String, dynamic> json) {
+  return _NutritionOrderSearch.fromJson(json);
 }
 
 /// @nodoc
@@ -2924,8 +3145,10 @@ class _$NutritionOrderSearchTearOff {
       List<SearchToken> additive,
       List<SearchDate> datetime,
       List<SearchToken> formula,
-      List<SearchReference> instantiates_canonical,
-      List<SearchUri> instantiates_uri,
+      @JsonKey(name: 'instantiates-canonical')
+          List<SearchReference> instantiatesCanonical,
+      @JsonKey(name: 'instantiates-uri')
+          List<SearchUri> instantiatesUri,
       List<SearchToken> oraldiet,
       List<SearchReference> provider,
       List<SearchToken> status,
@@ -2945,13 +3168,18 @@ class _$NutritionOrderSearchTearOff {
       additive: additive,
       datetime: datetime,
       formula: formula,
-      instantiates_canonical: instantiates_canonical,
-      instantiates_uri: instantiates_uri,
+      instantiatesCanonical: instantiatesCanonical,
+      instantiatesUri: instantiatesUri,
       oraldiet: oraldiet,
       provider: provider,
       status: status,
       supplement: supplement,
     );
+  }
+
+// ignore: unused_element
+  NutritionOrderSearch fromJson(Map<String, Object> json) {
+    return NutritionOrderSearch.fromJson(json);
   }
 }
 
@@ -2976,13 +3204,16 @@ mixin _$NutritionOrderSearch {
   List<SearchToken> get additive;
   List<SearchDate> get datetime;
   List<SearchToken> get formula;
-  List<SearchReference> get instantiates_canonical;
-  List<SearchUri> get instantiates_uri;
+  @JsonKey(name: 'instantiates-canonical')
+  List<SearchReference> get instantiatesCanonical;
+  @JsonKey(name: 'instantiates-uri')
+  List<SearchUri> get instantiatesUri;
   List<SearchToken> get oraldiet;
   List<SearchReference> get provider;
   List<SearchToken> get status;
   List<SearchToken> get supplement;
 
+  Map<String, dynamic> toJson();
   $NutritionOrderSearchCopyWith<NutritionOrderSearch> get copyWith;
 }
 
@@ -3006,8 +3237,10 @@ abstract class $NutritionOrderSearchCopyWith<$Res> {
       List<SearchToken> additive,
       List<SearchDate> datetime,
       List<SearchToken> formula,
-      List<SearchReference> instantiates_canonical,
-      List<SearchUri> instantiates_uri,
+      @JsonKey(name: 'instantiates-canonical')
+          List<SearchReference> instantiatesCanonical,
+      @JsonKey(name: 'instantiates-uri')
+          List<SearchUri> instantiatesUri,
       List<SearchToken> oraldiet,
       List<SearchReference> provider,
       List<SearchToken> status,
@@ -3039,8 +3272,8 @@ class _$NutritionOrderSearchCopyWithImpl<$Res>
     Object additive = freezed,
     Object datetime = freezed,
     Object formula = freezed,
-    Object instantiates_canonical = freezed,
-    Object instantiates_uri = freezed,
+    Object instantiatesCanonical = freezed,
+    Object instantiatesUri = freezed,
     Object oraldiet = freezed,
     Object provider = freezed,
     Object status = freezed,
@@ -3083,12 +3316,12 @@ class _$NutritionOrderSearchCopyWithImpl<$Res>
           datetime == freezed ? _value.datetime : datetime as List<SearchDate>,
       formula:
           formula == freezed ? _value.formula : formula as List<SearchToken>,
-      instantiates_canonical: instantiates_canonical == freezed
-          ? _value.instantiates_canonical
-          : instantiates_canonical as List<SearchReference>,
-      instantiates_uri: instantiates_uri == freezed
-          ? _value.instantiates_uri
-          : instantiates_uri as List<SearchUri>,
+      instantiatesCanonical: instantiatesCanonical == freezed
+          ? _value.instantiatesCanonical
+          : instantiatesCanonical as List<SearchReference>,
+      instantiatesUri: instantiatesUri == freezed
+          ? _value.instantiatesUri
+          : instantiatesUri as List<SearchUri>,
       oraldiet:
           oraldiet == freezed ? _value.oraldiet : oraldiet as List<SearchToken>,
       provider: provider == freezed
@@ -3124,8 +3357,10 @@ abstract class _$NutritionOrderSearchCopyWith<$Res>
       List<SearchToken> additive,
       List<SearchDate> datetime,
       List<SearchToken> formula,
-      List<SearchReference> instantiates_canonical,
-      List<SearchUri> instantiates_uri,
+      @JsonKey(name: 'instantiates-canonical')
+          List<SearchReference> instantiatesCanonical,
+      @JsonKey(name: 'instantiates-uri')
+          List<SearchUri> instantiatesUri,
       List<SearchToken> oraldiet,
       List<SearchReference> provider,
       List<SearchToken> status,
@@ -3159,8 +3394,8 @@ class __$NutritionOrderSearchCopyWithImpl<$Res>
     Object additive = freezed,
     Object datetime = freezed,
     Object formula = freezed,
-    Object instantiates_canonical = freezed,
-    Object instantiates_uri = freezed,
+    Object instantiatesCanonical = freezed,
+    Object instantiatesUri = freezed,
     Object oraldiet = freezed,
     Object provider = freezed,
     Object status = freezed,
@@ -3203,12 +3438,12 @@ class __$NutritionOrderSearchCopyWithImpl<$Res>
           datetime == freezed ? _value.datetime : datetime as List<SearchDate>,
       formula:
           formula == freezed ? _value.formula : formula as List<SearchToken>,
-      instantiates_canonical: instantiates_canonical == freezed
-          ? _value.instantiates_canonical
-          : instantiates_canonical as List<SearchReference>,
-      instantiates_uri: instantiates_uri == freezed
-          ? _value.instantiates_uri
-          : instantiates_uri as List<SearchUri>,
+      instantiatesCanonical: instantiatesCanonical == freezed
+          ? _value.instantiatesCanonical
+          : instantiatesCanonical as List<SearchReference>,
+      instantiatesUri: instantiatesUri == freezed
+          ? _value.instantiatesUri
+          : instantiatesUri as List<SearchUri>,
       oraldiet:
           oraldiet == freezed ? _value.oraldiet : oraldiet as List<SearchToken>,
       provider: provider == freezed
@@ -3221,6 +3456,8 @@ class __$NutritionOrderSearchCopyWithImpl<$Res>
     ));
   }
 }
+
+@JsonSerializable()
 
 /// @nodoc
 class _$_NutritionOrderSearch extends _NutritionOrderSearch {
@@ -3239,13 +3476,16 @@ class _$_NutritionOrderSearch extends _NutritionOrderSearch {
       this.additive,
       this.datetime,
       this.formula,
-      this.instantiates_canonical,
-      this.instantiates_uri,
+      @JsonKey(name: 'instantiates-canonical') this.instantiatesCanonical,
+      @JsonKey(name: 'instantiates-uri') this.instantiatesUri,
       this.oraldiet,
       this.provider,
       this.status,
       this.supplement})
       : super._();
+
+  factory _$_NutritionOrderSearch.fromJson(Map<String, dynamic> json) =>
+      _$_$_NutritionOrderSearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -3277,9 +3517,11 @@ class _$_NutritionOrderSearch extends _NutritionOrderSearch {
   @override
   final List<SearchToken> formula;
   @override
-  final List<SearchReference> instantiates_canonical;
+  @JsonKey(name: 'instantiates-canonical')
+  final List<SearchReference> instantiatesCanonical;
   @override
-  final List<SearchUri> instantiates_uri;
+  @JsonKey(name: 'instantiates-uri')
+  final List<SearchUri> instantiatesUri;
   @override
   final List<SearchToken> oraldiet;
   @override
@@ -3291,7 +3533,7 @@ class _$_NutritionOrderSearch extends _NutritionOrderSearch {
 
   @override
   String toString() {
-    return 'NutritionOrderSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, identifier: $identifier, patient: $patient, encounter: $encounter, additive: $additive, datetime: $datetime, formula: $formula, instantiates_canonical: $instantiates_canonical, instantiates_uri: $instantiates_uri, oraldiet: $oraldiet, provider: $provider, status: $status, supplement: $supplement)';
+    return 'NutritionOrderSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, identifier: $identifier, patient: $patient, encounter: $encounter, additive: $additive, datetime: $datetime, formula: $formula, instantiatesCanonical: $instantiatesCanonical, instantiatesUri: $instantiatesUri, oraldiet: $oraldiet, provider: $provider, status: $status, supplement: $supplement)';
   }
 
   @override
@@ -3340,12 +3582,12 @@ class _$_NutritionOrderSearch extends _NutritionOrderSearch {
             (identical(other.formula, formula) ||
                 const DeepCollectionEquality()
                     .equals(other.formula, formula)) &&
-            (identical(other.instantiates_canonical, instantiates_canonical) ||
+            (identical(other.instantiatesCanonical, instantiatesCanonical) ||
                 const DeepCollectionEquality().equals(
-                    other.instantiates_canonical, instantiates_canonical)) &&
-            (identical(other.instantiates_uri, instantiates_uri) ||
+                    other.instantiatesCanonical, instantiatesCanonical)) &&
+            (identical(other.instantiatesUri, instantiatesUri) ||
                 const DeepCollectionEquality()
-                    .equals(other.instantiates_uri, instantiates_uri)) &&
+                    .equals(other.instantiatesUri, instantiatesUri)) &&
             (identical(other.oraldiet, oraldiet) ||
                 const DeepCollectionEquality()
                     .equals(other.oraldiet, oraldiet)) &&
@@ -3376,8 +3618,8 @@ class _$_NutritionOrderSearch extends _NutritionOrderSearch {
       const DeepCollectionEquality().hash(additive) ^
       const DeepCollectionEquality().hash(datetime) ^
       const DeepCollectionEquality().hash(formula) ^
-      const DeepCollectionEquality().hash(instantiates_canonical) ^
-      const DeepCollectionEquality().hash(instantiates_uri) ^
+      const DeepCollectionEquality().hash(instantiatesCanonical) ^
+      const DeepCollectionEquality().hash(instantiatesUri) ^
       const DeepCollectionEquality().hash(oraldiet) ^
       const DeepCollectionEquality().hash(provider) ^
       const DeepCollectionEquality().hash(status) ^
@@ -3387,6 +3629,11 @@ class _$_NutritionOrderSearch extends _NutritionOrderSearch {
   _$NutritionOrderSearchCopyWith<_NutritionOrderSearch> get copyWith =>
       __$NutritionOrderSearchCopyWithImpl<_NutritionOrderSearch>(
           this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_NutritionOrderSearchToJson(this);
+  }
 }
 
 abstract class _NutritionOrderSearch extends NutritionOrderSearch {
@@ -3406,12 +3653,17 @@ abstract class _NutritionOrderSearch extends NutritionOrderSearch {
       List<SearchToken> additive,
       List<SearchDate> datetime,
       List<SearchToken> formula,
-      List<SearchReference> instantiates_canonical,
-      List<SearchUri> instantiates_uri,
+      @JsonKey(name: 'instantiates-canonical')
+          List<SearchReference> instantiatesCanonical,
+      @JsonKey(name: 'instantiates-uri')
+          List<SearchUri> instantiatesUri,
       List<SearchToken> oraldiet,
       List<SearchReference> provider,
       List<SearchToken> status,
       List<SearchToken> supplement}) = _$_NutritionOrderSearch;
+
+  factory _NutritionOrderSearch.fromJson(Map<String, dynamic> json) =
+      _$_NutritionOrderSearch.fromJson;
 
   @override
   List<Id> get searchId;
@@ -3443,9 +3695,11 @@ abstract class _NutritionOrderSearch extends NutritionOrderSearch {
   @override
   List<SearchToken> get formula;
   @override
-  List<SearchReference> get instantiates_canonical;
+  @JsonKey(name: 'instantiates-canonical')
+  List<SearchReference> get instantiatesCanonical;
   @override
-  List<SearchUri> get instantiates_uri;
+  @JsonKey(name: 'instantiates-uri')
+  List<SearchUri> get instantiatesUri;
   @override
   List<SearchToken> get oraldiet;
   @override
@@ -3456,6 +3710,11 @@ abstract class _NutritionOrderSearch extends NutritionOrderSearch {
   List<SearchToken> get supplement;
   @override
   _$NutritionOrderSearchCopyWith<_NutritionOrderSearch> get copyWith;
+}
+
+VisionPrescriptionSearch _$VisionPrescriptionSearchFromJson(
+    Map<String, dynamic> json) {
+  return _VisionPrescriptionSearch.fromJson(json);
 }
 
 /// @nodoc
@@ -3495,6 +3754,11 @@ class _$VisionPrescriptionSearchTearOff {
       status: status,
     );
   }
+
+// ignore: unused_element
+  VisionPrescriptionSearch fromJson(Map<String, Object> json) {
+    return VisionPrescriptionSearch.fromJson(json);
+  }
 }
 
 /// @nodoc
@@ -3519,6 +3783,7 @@ mixin _$VisionPrescriptionSearch {
   List<SearchReference> get prescriber;
   List<SearchToken> get status;
 
+  Map<String, dynamic> toJson();
   $VisionPrescriptionSearchCopyWith<VisionPrescriptionSearch> get copyWith;
 }
 
@@ -3707,6 +3972,8 @@ class __$VisionPrescriptionSearchCopyWithImpl<$Res>
   }
 }
 
+@JsonSerializable()
+
 /// @nodoc
 class _$_VisionPrescriptionSearch extends _VisionPrescriptionSearch {
   _$_VisionPrescriptionSearch(
@@ -3725,6 +3992,9 @@ class _$_VisionPrescriptionSearch extends _VisionPrescriptionSearch {
       this.prescriber,
       this.status})
       : super._();
+
+  factory _$_VisionPrescriptionSearch.fromJson(Map<String, dynamic> json) =>
+      _$_$_VisionPrescriptionSearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -3830,6 +4100,11 @@ class _$_VisionPrescriptionSearch extends _VisionPrescriptionSearch {
   _$VisionPrescriptionSearchCopyWith<_VisionPrescriptionSearch> get copyWith =>
       __$VisionPrescriptionSearchCopyWithImpl<_VisionPrescriptionSearch>(
           this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_VisionPrescriptionSearchToJson(this);
+  }
 }
 
 abstract class _VisionPrescriptionSearch extends VisionPrescriptionSearch {
@@ -3849,6 +4124,9 @@ abstract class _VisionPrescriptionSearch extends VisionPrescriptionSearch {
       List<SearchDate> datewritten,
       List<SearchReference> prescriber,
       List<SearchToken> status}) = _$_VisionPrescriptionSearch;
+
+  factory _VisionPrescriptionSearch.fromJson(Map<String, dynamic> json) =
+      _$_VisionPrescriptionSearch.fromJson;
 
   @override
   List<Id> get searchId;
@@ -3883,6 +4161,10 @@ abstract class _VisionPrescriptionSearch extends VisionPrescriptionSearch {
   _$VisionPrescriptionSearchCopyWith<_VisionPrescriptionSearch> get copyWith;
 }
 
+RequestGroupSearch _$RequestGroupSearchFromJson(Map<String, dynamic> json) {
+  return _RequestGroupSearch.fromJson(json);
+}
+
 /// @nodoc
 class _$RequestGroupSearchTearOff {
   const _$RequestGroupSearchTearOff();
@@ -3901,10 +4183,13 @@ class _$RequestGroupSearchTearOff {
       List<SearchDate> authored,
       List<SearchToken> code,
       List<SearchReference> encounter,
-      List<SearchToken> group_identifier,
+      @JsonKey(name: 'group-identifier')
+          List<SearchToken> groupIdentifier,
       List<SearchToken> identifier,
-      List<SearchReference> instantiates_canonical,
-      List<SearchUri> instantiates_uri,
+      @JsonKey(name: 'instantiates-canonical')
+          List<SearchReference> instantiatesCanonical,
+      @JsonKey(name: 'instantiates-uri')
+          List<SearchUri> instantiatesUri,
       List<SearchToken> intent,
       List<SearchReference> participant,
       List<SearchReference> patient,
@@ -3924,10 +4209,10 @@ class _$RequestGroupSearchTearOff {
       authored: authored,
       code: code,
       encounter: encounter,
-      group_identifier: group_identifier,
+      groupIdentifier: groupIdentifier,
       identifier: identifier,
-      instantiates_canonical: instantiates_canonical,
-      instantiates_uri: instantiates_uri,
+      instantiatesCanonical: instantiatesCanonical,
+      instantiatesUri: instantiatesUri,
       intent: intent,
       participant: participant,
       patient: patient,
@@ -3935,6 +4220,11 @@ class _$RequestGroupSearchTearOff {
       status: status,
       subject: subject,
     );
+  }
+
+// ignore: unused_element
+  RequestGroupSearch fromJson(Map<String, Object> json) {
+    return RequestGroupSearch.fromJson(json);
   }
 }
 
@@ -3957,10 +4247,13 @@ mixin _$RequestGroupSearch {
   List<SearchDate> get authored;
   List<SearchToken> get code;
   List<SearchReference> get encounter;
-  List<SearchToken> get group_identifier;
+  @JsonKey(name: 'group-identifier')
+  List<SearchToken> get groupIdentifier;
   List<SearchToken> get identifier;
-  List<SearchReference> get instantiates_canonical;
-  List<SearchUri> get instantiates_uri;
+  @JsonKey(name: 'instantiates-canonical')
+  List<SearchReference> get instantiatesCanonical;
+  @JsonKey(name: 'instantiates-uri')
+  List<SearchUri> get instantiatesUri;
   List<SearchToken> get intent;
   List<SearchReference> get participant;
   List<SearchReference> get patient;
@@ -3968,6 +4261,7 @@ mixin _$RequestGroupSearch {
   List<SearchToken> get status;
   List<SearchReference> get subject;
 
+  Map<String, dynamic> toJson();
   $RequestGroupSearchCopyWith<RequestGroupSearch> get copyWith;
 }
 
@@ -3989,10 +4283,13 @@ abstract class $RequestGroupSearchCopyWith<$Res> {
       List<SearchDate> authored,
       List<SearchToken> code,
       List<SearchReference> encounter,
-      List<SearchToken> group_identifier,
+      @JsonKey(name: 'group-identifier')
+          List<SearchToken> groupIdentifier,
       List<SearchToken> identifier,
-      List<SearchReference> instantiates_canonical,
-      List<SearchUri> instantiates_uri,
+      @JsonKey(name: 'instantiates-canonical')
+          List<SearchReference> instantiatesCanonical,
+      @JsonKey(name: 'instantiates-uri')
+          List<SearchUri> instantiatesUri,
       List<SearchToken> intent,
       List<SearchReference> participant,
       List<SearchReference> patient,
@@ -4024,10 +4321,10 @@ class _$RequestGroupSearchCopyWithImpl<$Res>
     Object authored = freezed,
     Object code = freezed,
     Object encounter = freezed,
-    Object group_identifier = freezed,
+    Object groupIdentifier = freezed,
     Object identifier = freezed,
-    Object instantiates_canonical = freezed,
-    Object instantiates_uri = freezed,
+    Object instantiatesCanonical = freezed,
+    Object instantiatesUri = freezed,
     Object intent = freezed,
     Object participant = freezed,
     Object patient = freezed,
@@ -4065,18 +4362,18 @@ class _$RequestGroupSearchCopyWithImpl<$Res>
       encounter: encounter == freezed
           ? _value.encounter
           : encounter as List<SearchReference>,
-      group_identifier: group_identifier == freezed
-          ? _value.group_identifier
-          : group_identifier as List<SearchToken>,
+      groupIdentifier: groupIdentifier == freezed
+          ? _value.groupIdentifier
+          : groupIdentifier as List<SearchToken>,
       identifier: identifier == freezed
           ? _value.identifier
           : identifier as List<SearchToken>,
-      instantiates_canonical: instantiates_canonical == freezed
-          ? _value.instantiates_canonical
-          : instantiates_canonical as List<SearchReference>,
-      instantiates_uri: instantiates_uri == freezed
-          ? _value.instantiates_uri
-          : instantiates_uri as List<SearchUri>,
+      instantiatesCanonical: instantiatesCanonical == freezed
+          ? _value.instantiatesCanonical
+          : instantiatesCanonical as List<SearchReference>,
+      instantiatesUri: instantiatesUri == freezed
+          ? _value.instantiatesUri
+          : instantiatesUri as List<SearchUri>,
       intent: intent == freezed ? _value.intent : intent as List<SearchToken>,
       participant: participant == freezed
           ? _value.participant
@@ -4114,10 +4411,13 @@ abstract class _$RequestGroupSearchCopyWith<$Res>
       List<SearchDate> authored,
       List<SearchToken> code,
       List<SearchReference> encounter,
-      List<SearchToken> group_identifier,
+      @JsonKey(name: 'group-identifier')
+          List<SearchToken> groupIdentifier,
       List<SearchToken> identifier,
-      List<SearchReference> instantiates_canonical,
-      List<SearchUri> instantiates_uri,
+      @JsonKey(name: 'instantiates-canonical')
+          List<SearchReference> instantiatesCanonical,
+      @JsonKey(name: 'instantiates-uri')
+          List<SearchUri> instantiatesUri,
       List<SearchToken> intent,
       List<SearchReference> participant,
       List<SearchReference> patient,
@@ -4151,10 +4451,10 @@ class __$RequestGroupSearchCopyWithImpl<$Res>
     Object authored = freezed,
     Object code = freezed,
     Object encounter = freezed,
-    Object group_identifier = freezed,
+    Object groupIdentifier = freezed,
     Object identifier = freezed,
-    Object instantiates_canonical = freezed,
-    Object instantiates_uri = freezed,
+    Object instantiatesCanonical = freezed,
+    Object instantiatesUri = freezed,
     Object intent = freezed,
     Object participant = freezed,
     Object patient = freezed,
@@ -4192,18 +4492,18 @@ class __$RequestGroupSearchCopyWithImpl<$Res>
       encounter: encounter == freezed
           ? _value.encounter
           : encounter as List<SearchReference>,
-      group_identifier: group_identifier == freezed
-          ? _value.group_identifier
-          : group_identifier as List<SearchToken>,
+      groupIdentifier: groupIdentifier == freezed
+          ? _value.groupIdentifier
+          : groupIdentifier as List<SearchToken>,
       identifier: identifier == freezed
           ? _value.identifier
           : identifier as List<SearchToken>,
-      instantiates_canonical: instantiates_canonical == freezed
-          ? _value.instantiates_canonical
-          : instantiates_canonical as List<SearchReference>,
-      instantiates_uri: instantiates_uri == freezed
-          ? _value.instantiates_uri
-          : instantiates_uri as List<SearchUri>,
+      instantiatesCanonical: instantiatesCanonical == freezed
+          ? _value.instantiatesCanonical
+          : instantiatesCanonical as List<SearchReference>,
+      instantiatesUri: instantiatesUri == freezed
+          ? _value.instantiatesUri
+          : instantiatesUri as List<SearchUri>,
       intent: intent == freezed ? _value.intent : intent as List<SearchToken>,
       participant: participant == freezed
           ? _value.participant
@@ -4221,6 +4521,8 @@ class __$RequestGroupSearchCopyWithImpl<$Res>
   }
 }
 
+@JsonSerializable()
+
 /// @nodoc
 class _$_RequestGroupSearch extends _RequestGroupSearch {
   _$_RequestGroupSearch(
@@ -4236,10 +4538,10 @@ class _$_RequestGroupSearch extends _RequestGroupSearch {
       this.authored,
       this.code,
       this.encounter,
-      this.group_identifier,
+      @JsonKey(name: 'group-identifier') this.groupIdentifier,
       this.identifier,
-      this.instantiates_canonical,
-      this.instantiates_uri,
+      @JsonKey(name: 'instantiates-canonical') this.instantiatesCanonical,
+      @JsonKey(name: 'instantiates-uri') this.instantiatesUri,
       this.intent,
       this.participant,
       this.patient,
@@ -4247,6 +4549,9 @@ class _$_RequestGroupSearch extends _RequestGroupSearch {
       this.status,
       this.subject})
       : super._();
+
+  factory _$_RequestGroupSearch.fromJson(Map<String, dynamic> json) =>
+      _$_$_RequestGroupSearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -4274,13 +4579,16 @@ class _$_RequestGroupSearch extends _RequestGroupSearch {
   @override
   final List<SearchReference> encounter;
   @override
-  final List<SearchToken> group_identifier;
+  @JsonKey(name: 'group-identifier')
+  final List<SearchToken> groupIdentifier;
   @override
   final List<SearchToken> identifier;
   @override
-  final List<SearchReference> instantiates_canonical;
+  @JsonKey(name: 'instantiates-canonical')
+  final List<SearchReference> instantiatesCanonical;
   @override
-  final List<SearchUri> instantiates_uri;
+  @JsonKey(name: 'instantiates-uri')
+  final List<SearchUri> instantiatesUri;
   @override
   final List<SearchToken> intent;
   @override
@@ -4296,7 +4604,7 @@ class _$_RequestGroupSearch extends _RequestGroupSearch {
 
   @override
   String toString() {
-    return 'RequestGroupSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, author: $author, authored: $authored, code: $code, encounter: $encounter, group_identifier: $group_identifier, identifier: $identifier, instantiates_canonical: $instantiates_canonical, instantiates_uri: $instantiates_uri, intent: $intent, participant: $participant, patient: $patient, priority: $priority, status: $status, subject: $subject)';
+    return 'RequestGroupSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, author: $author, authored: $authored, code: $code, encounter: $encounter, groupIdentifier: $groupIdentifier, identifier: $identifier, instantiatesCanonical: $instantiatesCanonical, instantiatesUri: $instantiatesUri, intent: $intent, participant: $participant, patient: $patient, priority: $priority, status: $status, subject: $subject)';
   }
 
   @override
@@ -4337,18 +4645,18 @@ class _$_RequestGroupSearch extends _RequestGroupSearch {
             (identical(other.encounter, encounter) ||
                 const DeepCollectionEquality()
                     .equals(other.encounter, encounter)) &&
-            (identical(other.group_identifier, group_identifier) ||
+            (identical(other.groupIdentifier, groupIdentifier) ||
                 const DeepCollectionEquality()
-                    .equals(other.group_identifier, group_identifier)) &&
+                    .equals(other.groupIdentifier, groupIdentifier)) &&
             (identical(other.identifier, identifier) ||
                 const DeepCollectionEquality()
                     .equals(other.identifier, identifier)) &&
-            (identical(other.instantiates_canonical, instantiates_canonical) ||
+            (identical(other.instantiatesCanonical, instantiatesCanonical) ||
                 const DeepCollectionEquality().equals(
-                    other.instantiates_canonical, instantiates_canonical)) &&
-            (identical(other.instantiates_uri, instantiates_uri) ||
+                    other.instantiatesCanonical, instantiatesCanonical)) &&
+            (identical(other.instantiatesUri, instantiatesUri) ||
                 const DeepCollectionEquality()
-                    .equals(other.instantiates_uri, instantiates_uri)) &&
+                    .equals(other.instantiatesUri, instantiatesUri)) &&
             (identical(other.intent, intent) ||
                 const DeepCollectionEquality().equals(other.intent, intent)) &&
             (identical(other.participant, participant) ||
@@ -4381,10 +4689,10 @@ class _$_RequestGroupSearch extends _RequestGroupSearch {
       const DeepCollectionEquality().hash(authored) ^
       const DeepCollectionEquality().hash(code) ^
       const DeepCollectionEquality().hash(encounter) ^
-      const DeepCollectionEquality().hash(group_identifier) ^
+      const DeepCollectionEquality().hash(groupIdentifier) ^
       const DeepCollectionEquality().hash(identifier) ^
-      const DeepCollectionEquality().hash(instantiates_canonical) ^
-      const DeepCollectionEquality().hash(instantiates_uri) ^
+      const DeepCollectionEquality().hash(instantiatesCanonical) ^
+      const DeepCollectionEquality().hash(instantiatesUri) ^
       const DeepCollectionEquality().hash(intent) ^
       const DeepCollectionEquality().hash(participant) ^
       const DeepCollectionEquality().hash(patient) ^
@@ -4395,6 +4703,11 @@ class _$_RequestGroupSearch extends _RequestGroupSearch {
   @override
   _$RequestGroupSearchCopyWith<_RequestGroupSearch> get copyWith =>
       __$RequestGroupSearchCopyWithImpl<_RequestGroupSearch>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_RequestGroupSearchToJson(this);
+  }
 }
 
 abstract class _RequestGroupSearch extends RequestGroupSearch {
@@ -4412,16 +4725,22 @@ abstract class _RequestGroupSearch extends RequestGroupSearch {
       List<SearchDate> authored,
       List<SearchToken> code,
       List<SearchReference> encounter,
-      List<SearchToken> group_identifier,
+      @JsonKey(name: 'group-identifier')
+          List<SearchToken> groupIdentifier,
       List<SearchToken> identifier,
-      List<SearchReference> instantiates_canonical,
-      List<SearchUri> instantiates_uri,
+      @JsonKey(name: 'instantiates-canonical')
+          List<SearchReference> instantiatesCanonical,
+      @JsonKey(name: 'instantiates-uri')
+          List<SearchUri> instantiatesUri,
       List<SearchToken> intent,
       List<SearchReference> participant,
       List<SearchReference> patient,
       List<SearchToken> priority,
       List<SearchToken> status,
       List<SearchReference> subject}) = _$_RequestGroupSearch;
+
+  factory _RequestGroupSearch.fromJson(Map<String, dynamic> json) =
+      _$_RequestGroupSearch.fromJson;
 
   @override
   List<Id> get searchId;
@@ -4449,13 +4768,16 @@ abstract class _RequestGroupSearch extends RequestGroupSearch {
   @override
   List<SearchReference> get encounter;
   @override
-  List<SearchToken> get group_identifier;
+  @JsonKey(name: 'group-identifier')
+  List<SearchToken> get groupIdentifier;
   @override
   List<SearchToken> get identifier;
   @override
-  List<SearchReference> get instantiates_canonical;
+  @JsonKey(name: 'instantiates-canonical')
+  List<SearchReference> get instantiatesCanonical;
   @override
-  List<SearchUri> get instantiates_uri;
+  @JsonKey(name: 'instantiates-uri')
+  List<SearchUri> get instantiatesUri;
   @override
   List<SearchToken> get intent;
   @override

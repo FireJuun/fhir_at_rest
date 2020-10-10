@@ -8,6 +8,10 @@ part of 'medication_definition.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
+MedicinalProductSearch _$MedicinalProductSearchFromJson(
+    Map<String, dynamic> json) {
+  return _MedicinalProductSearch.fromJson(json);
+}
 
 /// @nodoc
 class _$MedicinalProductSearchTearOff {
@@ -25,7 +29,7 @@ class _$MedicinalProductSearchTearOff {
       List<Id> searchList,
       List<SearchToken> identifier,
       List<SearchString> name,
-      List<SearchToken> name_language}) {
+      @JsonKey(name: 'name-language') List<SearchToken> nameLanguage}) {
     return _MedicinalProductSearch(
       searchId: searchId,
       searchLastUpdated: searchLastUpdated,
@@ -37,8 +41,13 @@ class _$MedicinalProductSearchTearOff {
       searchList: searchList,
       identifier: identifier,
       name: name,
-      name_language: name_language,
+      nameLanguage: nameLanguage,
     );
+  }
+
+// ignore: unused_element
+  MedicinalProductSearch fromJson(Map<String, Object> json) {
+    return MedicinalProductSearch.fromJson(json);
   }
 }
 
@@ -59,8 +68,10 @@ mixin _$MedicinalProductSearch {
 //List<SearchToken> searchType,
   List<SearchToken> get identifier;
   List<SearchString> get name;
-  List<SearchToken> get name_language;
+  @JsonKey(name: 'name-language')
+  List<SearchToken> get nameLanguage;
 
+  Map<String, dynamic> toJson();
   $MedicinalProductSearchCopyWith<MedicinalProductSearch> get copyWith;
 }
 
@@ -80,7 +91,7 @@ abstract class $MedicinalProductSearchCopyWith<$Res> {
       List<Id> searchList,
       List<SearchToken> identifier,
       List<SearchString> name,
-      List<SearchToken> name_language});
+      @JsonKey(name: 'name-language') List<SearchToken> nameLanguage});
 }
 
 /// @nodoc
@@ -104,7 +115,7 @@ class _$MedicinalProductSearchCopyWithImpl<$Res>
     Object searchList = freezed,
     Object identifier = freezed,
     Object name = freezed,
-    Object name_language = freezed,
+    Object nameLanguage = freezed,
   }) {
     return _then(_value.copyWith(
       searchId: searchId == freezed ? _value.searchId : searchId as List<Id>,
@@ -132,9 +143,9 @@ class _$MedicinalProductSearchCopyWithImpl<$Res>
           ? _value.identifier
           : identifier as List<SearchToken>,
       name: name == freezed ? _value.name : name as List<SearchString>,
-      name_language: name_language == freezed
-          ? _value.name_language
-          : name_language as List<SearchToken>,
+      nameLanguage: nameLanguage == freezed
+          ? _value.nameLanguage
+          : nameLanguage as List<SearchToken>,
     ));
   }
 }
@@ -157,7 +168,7 @@ abstract class _$MedicinalProductSearchCopyWith<$Res>
       List<Id> searchList,
       List<SearchToken> identifier,
       List<SearchString> name,
-      List<SearchToken> name_language});
+      @JsonKey(name: 'name-language') List<SearchToken> nameLanguage});
 }
 
 /// @nodoc
@@ -183,7 +194,7 @@ class __$MedicinalProductSearchCopyWithImpl<$Res>
     Object searchList = freezed,
     Object identifier = freezed,
     Object name = freezed,
-    Object name_language = freezed,
+    Object nameLanguage = freezed,
   }) {
     return _then(_MedicinalProductSearch(
       searchId: searchId == freezed ? _value.searchId : searchId as List<Id>,
@@ -211,12 +222,14 @@ class __$MedicinalProductSearchCopyWithImpl<$Res>
           ? _value.identifier
           : identifier as List<SearchToken>,
       name: name == freezed ? _value.name : name as List<SearchString>,
-      name_language: name_language == freezed
-          ? _value.name_language
-          : name_language as List<SearchToken>,
+      nameLanguage: nameLanguage == freezed
+          ? _value.nameLanguage
+          : nameLanguage as List<SearchToken>,
     ));
   }
 }
+
+@JsonSerializable()
 
 /// @nodoc
 class _$_MedicinalProductSearch extends _MedicinalProductSearch {
@@ -231,8 +244,11 @@ class _$_MedicinalProductSearch extends _MedicinalProductSearch {
       this.searchList,
       this.identifier,
       this.name,
-      this.name_language})
+      @JsonKey(name: 'name-language') this.nameLanguage})
       : super._();
+
+  factory _$_MedicinalProductSearch.fromJson(Map<String, dynamic> json) =>
+      _$_$_MedicinalProductSearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -256,11 +272,12 @@ class _$_MedicinalProductSearch extends _MedicinalProductSearch {
   @override
   final List<SearchString> name;
   @override
-  final List<SearchToken> name_language;
+  @JsonKey(name: 'name-language')
+  final List<SearchToken> nameLanguage;
 
   @override
   String toString() {
-    return 'MedicinalProductSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, identifier: $identifier, name: $name, name_language: $name_language)';
+    return 'MedicinalProductSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, identifier: $identifier, name: $name, nameLanguage: $nameLanguage)';
   }
 
   @override
@@ -296,9 +313,9 @@ class _$_MedicinalProductSearch extends _MedicinalProductSearch {
                     .equals(other.identifier, identifier)) &&
             (identical(other.name, name) ||
                 const DeepCollectionEquality().equals(other.name, name)) &&
-            (identical(other.name_language, name_language) ||
+            (identical(other.nameLanguage, nameLanguage) ||
                 const DeepCollectionEquality()
-                    .equals(other.name_language, name_language)));
+                    .equals(other.nameLanguage, nameLanguage)));
   }
 
   @override
@@ -314,28 +331,37 @@ class _$_MedicinalProductSearch extends _MedicinalProductSearch {
       const DeepCollectionEquality().hash(searchList) ^
       const DeepCollectionEquality().hash(identifier) ^
       const DeepCollectionEquality().hash(name) ^
-      const DeepCollectionEquality().hash(name_language);
+      const DeepCollectionEquality().hash(nameLanguage);
 
   @override
   _$MedicinalProductSearchCopyWith<_MedicinalProductSearch> get copyWith =>
       __$MedicinalProductSearchCopyWithImpl<_MedicinalProductSearch>(
           this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_MedicinalProductSearchToJson(this);
+  }
 }
 
 abstract class _MedicinalProductSearch extends MedicinalProductSearch {
   _MedicinalProductSearch._() : super._();
   factory _MedicinalProductSearch(
-      {List<Id> searchId,
-      List<SearchDate> searchLastUpdated,
-      List<SearchToken> searchTag,
-      List<SearchUri> searchProfile,
-      List<SearchToken> searchSecurity,
-      List<SearchString> searchText,
-      List<SearchString> searchContent,
-      List<Id> searchList,
-      List<SearchToken> identifier,
-      List<SearchString> name,
-      List<SearchToken> name_language}) = _$_MedicinalProductSearch;
+          {List<Id> searchId,
+          List<SearchDate> searchLastUpdated,
+          List<SearchToken> searchTag,
+          List<SearchUri> searchProfile,
+          List<SearchToken> searchSecurity,
+          List<SearchString> searchText,
+          List<SearchString> searchContent,
+          List<Id> searchList,
+          List<SearchToken> identifier,
+          List<SearchString> name,
+          @JsonKey(name: 'name-language') List<SearchToken> nameLanguage}) =
+      _$_MedicinalProductSearch;
+
+  factory _MedicinalProductSearch.fromJson(Map<String, dynamic> json) =
+      _$_MedicinalProductSearch.fromJson;
 
   @override
   List<Id> get searchId;
@@ -359,9 +385,15 @@ abstract class _MedicinalProductSearch extends MedicinalProductSearch {
   @override
   List<SearchString> get name;
   @override
-  List<SearchToken> get name_language;
+  @JsonKey(name: 'name-language')
+  List<SearchToken> get nameLanguage;
   @override
   _$MedicinalProductSearchCopyWith<_MedicinalProductSearch> get copyWith;
+}
+
+MedicinalProductAuthorizationSearch
+    _$MedicinalProductAuthorizationSearchFromJson(Map<String, dynamic> json) {
+  return _MedicinalProductAuthorizationSearch.fromJson(json);
 }
 
 /// @nodoc
@@ -399,6 +431,11 @@ class _$MedicinalProductAuthorizationSearchTearOff {
       subject: subject,
     );
   }
+
+// ignore: unused_element
+  MedicinalProductAuthorizationSearch fromJson(Map<String, Object> json) {
+    return MedicinalProductAuthorizationSearch.fromJson(json);
+  }
 }
 
 /// @nodoc
@@ -423,6 +460,7 @@ mixin _$MedicinalProductAuthorizationSearch {
   List<SearchToken> get status;
   List<SearchReference> get subject;
 
+  Map<String, dynamic> toJson();
   $MedicinalProductAuthorizationSearchCopyWith<
       MedicinalProductAuthorizationSearch> get copyWith;
 }
@@ -601,6 +639,8 @@ class __$MedicinalProductAuthorizationSearchCopyWithImpl<$Res>
   }
 }
 
+@JsonSerializable()
+
 /// @nodoc
 class _$_MedicinalProductAuthorizationSearch
     extends _MedicinalProductAuthorizationSearch {
@@ -619,6 +659,10 @@ class _$_MedicinalProductAuthorizationSearch
       this.status,
       this.subject})
       : super._();
+
+  factory _$_MedicinalProductAuthorizationSearch.fromJson(
+          Map<String, dynamic> json) =>
+      _$_$_MedicinalProductAuthorizationSearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -717,6 +761,11 @@ class _$_MedicinalProductAuthorizationSearch
           _MedicinalProductAuthorizationSearch>
       get copyWith => __$MedicinalProductAuthorizationSearchCopyWithImpl<
           _MedicinalProductAuthorizationSearch>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_MedicinalProductAuthorizationSearchToJson(this);
+  }
 }
 
 abstract class _MedicinalProductAuthorizationSearch
@@ -736,6 +785,10 @@ abstract class _MedicinalProductAuthorizationSearch
       List<SearchToken> identifier,
       List<SearchToken> status,
       List<SearchReference> subject}) = _$_MedicinalProductAuthorizationSearch;
+
+  factory _MedicinalProductAuthorizationSearch.fromJson(
+          Map<String, dynamic> json) =
+      _$_MedicinalProductAuthorizationSearch.fromJson;
 
   @override
   List<Id> get searchId;
@@ -769,6 +822,12 @@ abstract class _MedicinalProductAuthorizationSearch
       _MedicinalProductAuthorizationSearch> get copyWith;
 }
 
+MedicinalProductContraindicationSearch
+    _$MedicinalProductContraindicationSearchFromJson(
+        Map<String, dynamic> json) {
+  return _MedicinalProductContraindicationSearch.fromJson(json);
+}
+
 /// @nodoc
 class _$MedicinalProductContraindicationSearchTearOff {
   const _$MedicinalProductContraindicationSearchTearOff();
@@ -796,6 +855,11 @@ class _$MedicinalProductContraindicationSearchTearOff {
       subject: subject,
     );
   }
+
+// ignore: unused_element
+  MedicinalProductContraindicationSearch fromJson(Map<String, Object> json) {
+    return MedicinalProductContraindicationSearch.fromJson(json);
+  }
 }
 
 /// @nodoc
@@ -816,6 +880,7 @@ mixin _$MedicinalProductContraindicationSearch {
 //List<SearchToken> searchType,
   List<SearchReference> get subject;
 
+  Map<String, dynamic> toJson();
   $MedicinalProductContraindicationSearchCopyWith<
       MedicinalProductContraindicationSearch> get copyWith;
 }
@@ -963,6 +1028,8 @@ class __$MedicinalProductContraindicationSearchCopyWithImpl<$Res>
   }
 }
 
+@JsonSerializable()
+
 /// @nodoc
 class _$_MedicinalProductContraindicationSearch
     extends _MedicinalProductContraindicationSearch {
@@ -977,6 +1044,10 @@ class _$_MedicinalProductContraindicationSearch
       this.searchList,
       this.subject})
       : super._();
+
+  factory _$_MedicinalProductContraindicationSearch.fromJson(
+          Map<String, dynamic> json) =>
+      _$_$_MedicinalProductContraindicationSearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -1053,6 +1124,11 @@ class _$_MedicinalProductContraindicationSearch
           _MedicinalProductContraindicationSearch>
       get copyWith => __$MedicinalProductContraindicationSearchCopyWithImpl<
           _MedicinalProductContraindicationSearch>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_MedicinalProductContraindicationSearchToJson(this);
+  }
 }
 
 abstract class _MedicinalProductContraindicationSearch
@@ -1069,6 +1145,10 @@ abstract class _MedicinalProductContraindicationSearch
           List<Id> searchList,
           List<SearchReference> subject}) =
       _$_MedicinalProductContraindicationSearch;
+
+  factory _MedicinalProductContraindicationSearch.fromJson(
+          Map<String, dynamic> json) =
+      _$_MedicinalProductContraindicationSearch.fromJson;
 
   @override
   List<Id> get searchId;
@@ -1092,6 +1172,11 @@ abstract class _MedicinalProductContraindicationSearch
   @override
   _$MedicinalProductContraindicationSearchCopyWith<
       _MedicinalProductContraindicationSearch> get copyWith;
+}
+
+MedicinalProductIndicationSearch _$MedicinalProductIndicationSearchFromJson(
+    Map<String, dynamic> json) {
+  return _MedicinalProductIndicationSearch.fromJson(json);
 }
 
 /// @nodoc
@@ -1121,6 +1206,11 @@ class _$MedicinalProductIndicationSearchTearOff {
       subject: subject,
     );
   }
+
+// ignore: unused_element
+  MedicinalProductIndicationSearch fromJson(Map<String, Object> json) {
+    return MedicinalProductIndicationSearch.fromJson(json);
+  }
 }
 
 /// @nodoc
@@ -1141,6 +1231,7 @@ mixin _$MedicinalProductIndicationSearch {
 //List<SearchToken> searchType,
   List<SearchReference> get subject;
 
+  Map<String, dynamic> toJson();
   $MedicinalProductIndicationSearchCopyWith<MedicinalProductIndicationSearch>
       get copyWith;
 }
@@ -1287,6 +1378,8 @@ class __$MedicinalProductIndicationSearchCopyWithImpl<$Res>
   }
 }
 
+@JsonSerializable()
+
 /// @nodoc
 class _$_MedicinalProductIndicationSearch
     extends _MedicinalProductIndicationSearch {
@@ -1301,6 +1394,10 @@ class _$_MedicinalProductIndicationSearch
       this.searchList,
       this.subject})
       : super._();
+
+  factory _$_MedicinalProductIndicationSearch.fromJson(
+          Map<String, dynamic> json) =>
+      _$_$_MedicinalProductIndicationSearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -1376,6 +1473,11 @@ class _$_MedicinalProductIndicationSearch
   _$MedicinalProductIndicationSearchCopyWith<_MedicinalProductIndicationSearch>
       get copyWith => __$MedicinalProductIndicationSearchCopyWithImpl<
           _MedicinalProductIndicationSearch>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_MedicinalProductIndicationSearchToJson(this);
+  }
 }
 
 abstract class _MedicinalProductIndicationSearch
@@ -1391,6 +1493,9 @@ abstract class _MedicinalProductIndicationSearch
       List<SearchString> searchContent,
       List<Id> searchList,
       List<SearchReference> subject}) = _$_MedicinalProductIndicationSearch;
+
+  factory _MedicinalProductIndicationSearch.fromJson(
+      Map<String, dynamic> json) = _$_MedicinalProductIndicationSearch.fromJson;
 
   @override
   List<Id> get searchId;
@@ -1414,6 +1519,11 @@ abstract class _MedicinalProductIndicationSearch
   @override
   _$MedicinalProductIndicationSearchCopyWith<_MedicinalProductIndicationSearch>
       get copyWith;
+}
+
+MedicinalProductInteractionSearch _$MedicinalProductInteractionSearchFromJson(
+    Map<String, dynamic> json) {
+  return _MedicinalProductInteractionSearch.fromJson(json);
 }
 
 /// @nodoc
@@ -1443,6 +1553,11 @@ class _$MedicinalProductInteractionSearchTearOff {
       subject: subject,
     );
   }
+
+// ignore: unused_element
+  MedicinalProductInteractionSearch fromJson(Map<String, Object> json) {
+    return MedicinalProductInteractionSearch.fromJson(json);
+  }
 }
 
 /// @nodoc
@@ -1463,6 +1578,7 @@ mixin _$MedicinalProductInteractionSearch {
 //List<SearchToken> searchType,
   List<SearchReference> get subject;
 
+  Map<String, dynamic> toJson();
   $MedicinalProductInteractionSearchCopyWith<MedicinalProductInteractionSearch>
       get copyWith;
 }
@@ -1609,6 +1725,8 @@ class __$MedicinalProductInteractionSearchCopyWithImpl<$Res>
   }
 }
 
+@JsonSerializable()
+
 /// @nodoc
 class _$_MedicinalProductInteractionSearch
     extends _MedicinalProductInteractionSearch {
@@ -1623,6 +1741,10 @@ class _$_MedicinalProductInteractionSearch
       this.searchList,
       this.subject})
       : super._();
+
+  factory _$_MedicinalProductInteractionSearch.fromJson(
+          Map<String, dynamic> json) =>
+      _$_$_MedicinalProductInteractionSearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -1699,6 +1821,11 @@ class _$_MedicinalProductInteractionSearch
           _MedicinalProductInteractionSearch>
       get copyWith => __$MedicinalProductInteractionSearchCopyWithImpl<
           _MedicinalProductInteractionSearch>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_MedicinalProductInteractionSearchToJson(this);
+  }
 }
 
 abstract class _MedicinalProductInteractionSearch
@@ -1714,6 +1841,10 @@ abstract class _MedicinalProductInteractionSearch
       List<SearchString> searchContent,
       List<Id> searchList,
       List<SearchReference> subject}) = _$_MedicinalProductInteractionSearch;
+
+  factory _MedicinalProductInteractionSearch.fromJson(
+          Map<String, dynamic> json) =
+      _$_MedicinalProductInteractionSearch.fromJson;
 
   @override
   List<Id> get searchId;
@@ -1737,6 +1868,11 @@ abstract class _MedicinalProductInteractionSearch
   @override
   _$MedicinalProductInteractionSearchCopyWith<
       _MedicinalProductInteractionSearch> get copyWith;
+}
+
+MedicinalProductPackagedSearch _$MedicinalProductPackagedSearchFromJson(
+    Map<String, dynamic> json) {
+  return _MedicinalProductPackagedSearch.fromJson(json);
 }
 
 /// @nodoc
@@ -1768,6 +1904,11 @@ class _$MedicinalProductPackagedSearchTearOff {
       subject: subject,
     );
   }
+
+// ignore: unused_element
+  MedicinalProductPackagedSearch fromJson(Map<String, Object> json) {
+    return MedicinalProductPackagedSearch.fromJson(json);
+  }
 }
 
 /// @nodoc
@@ -1789,6 +1930,7 @@ mixin _$MedicinalProductPackagedSearch {
   List<SearchToken> get identifier;
   List<SearchReference> get subject;
 
+  Map<String, dynamic> toJson();
   $MedicinalProductPackagedSearchCopyWith<MedicinalProductPackagedSearch>
       get copyWith;
 }
@@ -1945,6 +2087,8 @@ class __$MedicinalProductPackagedSearchCopyWithImpl<$Res>
   }
 }
 
+@JsonSerializable()
+
 /// @nodoc
 class _$_MedicinalProductPackagedSearch
     extends _MedicinalProductPackagedSearch {
@@ -1960,6 +2104,10 @@ class _$_MedicinalProductPackagedSearch
       this.identifier,
       this.subject})
       : super._();
+
+  factory _$_MedicinalProductPackagedSearch.fromJson(
+          Map<String, dynamic> json) =>
+      _$_$_MedicinalProductPackagedSearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -2041,6 +2189,11 @@ class _$_MedicinalProductPackagedSearch
   _$MedicinalProductPackagedSearchCopyWith<_MedicinalProductPackagedSearch>
       get copyWith => __$MedicinalProductPackagedSearchCopyWithImpl<
           _MedicinalProductPackagedSearch>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_MedicinalProductPackagedSearchToJson(this);
+  }
 }
 
 abstract class _MedicinalProductPackagedSearch
@@ -2057,6 +2210,9 @@ abstract class _MedicinalProductPackagedSearch
       List<Id> searchList,
       List<SearchToken> identifier,
       List<SearchReference> subject}) = _$_MedicinalProductPackagedSearch;
+
+  factory _MedicinalProductPackagedSearch.fromJson(Map<String, dynamic> json) =
+      _$_MedicinalProductPackagedSearch.fromJson;
 
   @override
   List<Id> get searchId;
@@ -2084,6 +2240,11 @@ abstract class _MedicinalProductPackagedSearch
       get copyWith;
 }
 
+MedicinalProductPharmaceuticalSearch
+    _$MedicinalProductPharmaceuticalSearchFromJson(Map<String, dynamic> json) {
+  return _MedicinalProductPharmaceuticalSearch.fromJson(json);
+}
+
 /// @nodoc
 class _$MedicinalProductPharmaceuticalSearchTearOff {
   const _$MedicinalProductPharmaceuticalSearchTearOff();
@@ -2100,7 +2261,7 @@ class _$MedicinalProductPharmaceuticalSearchTearOff {
       List<Id> searchList,
       List<SearchToken> identifier,
       List<SearchToken> route,
-      List<SearchToken> target_species}) {
+      @JsonKey(name: 'target-species') List<SearchToken> targetSpecies}) {
     return _MedicinalProductPharmaceuticalSearch(
       searchId: searchId,
       searchLastUpdated: searchLastUpdated,
@@ -2112,8 +2273,13 @@ class _$MedicinalProductPharmaceuticalSearchTearOff {
       searchList: searchList,
       identifier: identifier,
       route: route,
-      target_species: target_species,
+      targetSpecies: targetSpecies,
     );
+  }
+
+// ignore: unused_element
+  MedicinalProductPharmaceuticalSearch fromJson(Map<String, Object> json) {
+    return MedicinalProductPharmaceuticalSearch.fromJson(json);
   }
 }
 
@@ -2135,8 +2301,10 @@ mixin _$MedicinalProductPharmaceuticalSearch {
 //List<SearchToken> searchType,
   List<SearchToken> get identifier;
   List<SearchToken> get route;
-  List<SearchToken> get target_species;
+  @JsonKey(name: 'target-species')
+  List<SearchToken> get targetSpecies;
 
+  Map<String, dynamic> toJson();
   $MedicinalProductPharmaceuticalSearchCopyWith<
       MedicinalProductPharmaceuticalSearch> get copyWith;
 }
@@ -2158,7 +2326,7 @@ abstract class $MedicinalProductPharmaceuticalSearchCopyWith<$Res> {
       List<Id> searchList,
       List<SearchToken> identifier,
       List<SearchToken> route,
-      List<SearchToken> target_species});
+      @JsonKey(name: 'target-species') List<SearchToken> targetSpecies});
 }
 
 /// @nodoc
@@ -2182,7 +2350,7 @@ class _$MedicinalProductPharmaceuticalSearchCopyWithImpl<$Res>
     Object searchList = freezed,
     Object identifier = freezed,
     Object route = freezed,
-    Object target_species = freezed,
+    Object targetSpecies = freezed,
   }) {
     return _then(_value.copyWith(
       searchId: searchId == freezed ? _value.searchId : searchId as List<Id>,
@@ -2210,9 +2378,9 @@ class _$MedicinalProductPharmaceuticalSearchCopyWithImpl<$Res>
           ? _value.identifier
           : identifier as List<SearchToken>,
       route: route == freezed ? _value.route : route as List<SearchToken>,
-      target_species: target_species == freezed
-          ? _value.target_species
-          : target_species as List<SearchToken>,
+      targetSpecies: targetSpecies == freezed
+          ? _value.targetSpecies
+          : targetSpecies as List<SearchToken>,
     ));
   }
 }
@@ -2236,7 +2404,7 @@ abstract class _$MedicinalProductPharmaceuticalSearchCopyWith<$Res>
       List<Id> searchList,
       List<SearchToken> identifier,
       List<SearchToken> route,
-      List<SearchToken> target_species});
+      @JsonKey(name: 'target-species') List<SearchToken> targetSpecies});
 }
 
 /// @nodoc
@@ -2264,7 +2432,7 @@ class __$MedicinalProductPharmaceuticalSearchCopyWithImpl<$Res>
     Object searchList = freezed,
     Object identifier = freezed,
     Object route = freezed,
-    Object target_species = freezed,
+    Object targetSpecies = freezed,
   }) {
     return _then(_MedicinalProductPharmaceuticalSearch(
       searchId: searchId == freezed ? _value.searchId : searchId as List<Id>,
@@ -2292,12 +2460,14 @@ class __$MedicinalProductPharmaceuticalSearchCopyWithImpl<$Res>
           ? _value.identifier
           : identifier as List<SearchToken>,
       route: route == freezed ? _value.route : route as List<SearchToken>,
-      target_species: target_species == freezed
-          ? _value.target_species
-          : target_species as List<SearchToken>,
+      targetSpecies: targetSpecies == freezed
+          ? _value.targetSpecies
+          : targetSpecies as List<SearchToken>,
     ));
   }
 }
+
+@JsonSerializable()
 
 /// @nodoc
 class _$_MedicinalProductPharmaceuticalSearch
@@ -2313,8 +2483,12 @@ class _$_MedicinalProductPharmaceuticalSearch
       this.searchList,
       this.identifier,
       this.route,
-      this.target_species})
+      @JsonKey(name: 'target-species') this.targetSpecies})
       : super._();
+
+  factory _$_MedicinalProductPharmaceuticalSearch.fromJson(
+          Map<String, dynamic> json) =>
+      _$_$_MedicinalProductPharmaceuticalSearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -2338,11 +2512,12 @@ class _$_MedicinalProductPharmaceuticalSearch
   @override
   final List<SearchToken> route;
   @override
-  final List<SearchToken> target_species;
+  @JsonKey(name: 'target-species')
+  final List<SearchToken> targetSpecies;
 
   @override
   String toString() {
-    return 'MedicinalProductPharmaceuticalSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, identifier: $identifier, route: $route, target_species: $target_species)';
+    return 'MedicinalProductPharmaceuticalSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, identifier: $identifier, route: $route, targetSpecies: $targetSpecies)';
   }
 
   @override
@@ -2378,9 +2553,9 @@ class _$_MedicinalProductPharmaceuticalSearch
                     .equals(other.identifier, identifier)) &&
             (identical(other.route, route) ||
                 const DeepCollectionEquality().equals(other.route, route)) &&
-            (identical(other.target_species, target_species) ||
+            (identical(other.targetSpecies, targetSpecies) ||
                 const DeepCollectionEquality()
-                    .equals(other.target_species, target_species)));
+                    .equals(other.targetSpecies, targetSpecies)));
   }
 
   @override
@@ -2396,13 +2571,18 @@ class _$_MedicinalProductPharmaceuticalSearch
       const DeepCollectionEquality().hash(searchList) ^
       const DeepCollectionEquality().hash(identifier) ^
       const DeepCollectionEquality().hash(route) ^
-      const DeepCollectionEquality().hash(target_species);
+      const DeepCollectionEquality().hash(targetSpecies);
 
   @override
   _$MedicinalProductPharmaceuticalSearchCopyWith<
           _MedicinalProductPharmaceuticalSearch>
       get copyWith => __$MedicinalProductPharmaceuticalSearchCopyWithImpl<
           _MedicinalProductPharmaceuticalSearch>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_MedicinalProductPharmaceuticalSearchToJson(this);
+  }
 }
 
 abstract class _MedicinalProductPharmaceuticalSearch
@@ -2419,8 +2599,12 @@ abstract class _MedicinalProductPharmaceuticalSearch
           List<Id> searchList,
           List<SearchToken> identifier,
           List<SearchToken> route,
-          List<SearchToken> target_species}) =
+          @JsonKey(name: 'target-species') List<SearchToken> targetSpecies}) =
       _$_MedicinalProductPharmaceuticalSearch;
+
+  factory _MedicinalProductPharmaceuticalSearch.fromJson(
+          Map<String, dynamic> json) =
+      _$_MedicinalProductPharmaceuticalSearch.fromJson;
 
   @override
   List<Id> get searchId;
@@ -2444,10 +2628,17 @@ abstract class _MedicinalProductPharmaceuticalSearch
   @override
   List<SearchToken> get route;
   @override
-  List<SearchToken> get target_species;
+  @JsonKey(name: 'target-species')
+  List<SearchToken> get targetSpecies;
   @override
   _$MedicinalProductPharmaceuticalSearchCopyWith<
       _MedicinalProductPharmaceuticalSearch> get copyWith;
+}
+
+MedicinalProductUndesirableEffectSearch
+    _$MedicinalProductUndesirableEffectSearchFromJson(
+        Map<String, dynamic> json) {
+  return _MedicinalProductUndesirableEffectSearch.fromJson(json);
 }
 
 /// @nodoc
@@ -2477,6 +2668,11 @@ class _$MedicinalProductUndesirableEffectSearchTearOff {
       subject: subject,
     );
   }
+
+// ignore: unused_element
+  MedicinalProductUndesirableEffectSearch fromJson(Map<String, Object> json) {
+    return MedicinalProductUndesirableEffectSearch.fromJson(json);
+  }
 }
 
 /// @nodoc
@@ -2497,6 +2693,7 @@ mixin _$MedicinalProductUndesirableEffectSearch {
 //List<SearchToken> searchType,
   List<SearchReference> get subject;
 
+  Map<String, dynamic> toJson();
   $MedicinalProductUndesirableEffectSearchCopyWith<
       MedicinalProductUndesirableEffectSearch> get copyWith;
 }
@@ -2645,6 +2842,8 @@ class __$MedicinalProductUndesirableEffectSearchCopyWithImpl<$Res>
   }
 }
 
+@JsonSerializable()
+
 /// @nodoc
 class _$_MedicinalProductUndesirableEffectSearch
     extends _MedicinalProductUndesirableEffectSearch {
@@ -2659,6 +2858,10 @@ class _$_MedicinalProductUndesirableEffectSearch
       this.searchList,
       this.subject})
       : super._();
+
+  factory _$_MedicinalProductUndesirableEffectSearch.fromJson(
+          Map<String, dynamic> json) =>
+      _$_$_MedicinalProductUndesirableEffectSearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -2735,6 +2938,11 @@ class _$_MedicinalProductUndesirableEffectSearch
           _MedicinalProductUndesirableEffectSearch>
       get copyWith => __$MedicinalProductUndesirableEffectSearchCopyWithImpl<
           _MedicinalProductUndesirableEffectSearch>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_MedicinalProductUndesirableEffectSearchToJson(this);
+  }
 }
 
 abstract class _MedicinalProductUndesirableEffectSearch
@@ -2751,6 +2959,10 @@ abstract class _MedicinalProductUndesirableEffectSearch
           List<Id> searchList,
           List<SearchReference> subject}) =
       _$_MedicinalProductUndesirableEffectSearch;
+
+  factory _MedicinalProductUndesirableEffectSearch.fromJson(
+          Map<String, dynamic> json) =
+      _$_MedicinalProductUndesirableEffectSearch.fromJson;
 
   @override
   List<Id> get searchId;
@@ -2774,6 +2986,11 @@ abstract class _MedicinalProductUndesirableEffectSearch
   @override
   _$MedicinalProductUndesirableEffectSearchCopyWith<
       _MedicinalProductUndesirableEffectSearch> get copyWith;
+}
+
+SubstanceSpecificationSearch _$SubstanceSpecificationSearchFromJson(
+    Map<String, dynamic> json) {
+  return _SubstanceSpecificationSearch.fromJson(json);
 }
 
 /// @nodoc
@@ -2803,6 +3020,11 @@ class _$SubstanceSpecificationSearchTearOff {
       code: code,
     );
   }
+
+// ignore: unused_element
+  SubstanceSpecificationSearch fromJson(Map<String, Object> json) {
+    return SubstanceSpecificationSearch.fromJson(json);
+  }
 }
 
 /// @nodoc
@@ -2822,6 +3044,7 @@ mixin _$SubstanceSpecificationSearch {
 //List<SearchToken> searchType,
   List<SearchToken> get code;
 
+  Map<String, dynamic> toJson();
   $SubstanceSpecificationSearchCopyWith<SubstanceSpecificationSearch>
       get copyWith;
 }
@@ -2964,6 +3187,8 @@ class __$SubstanceSpecificationSearchCopyWithImpl<$Res>
   }
 }
 
+@JsonSerializable()
+
 /// @nodoc
 class _$_SubstanceSpecificationSearch extends _SubstanceSpecificationSearch {
   _$_SubstanceSpecificationSearch(
@@ -2977,6 +3202,9 @@ class _$_SubstanceSpecificationSearch extends _SubstanceSpecificationSearch {
       this.searchList,
       this.code})
       : super._();
+
+  factory _$_SubstanceSpecificationSearch.fromJson(Map<String, dynamic> json) =>
+      _$_$_SubstanceSpecificationSearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -3052,6 +3280,11 @@ class _$_SubstanceSpecificationSearch extends _SubstanceSpecificationSearch {
   _$SubstanceSpecificationSearchCopyWith<_SubstanceSpecificationSearch>
       get copyWith => __$SubstanceSpecificationSearchCopyWithImpl<
           _SubstanceSpecificationSearch>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_SubstanceSpecificationSearchToJson(this);
+  }
 }
 
 abstract class _SubstanceSpecificationSearch
@@ -3067,6 +3300,9 @@ abstract class _SubstanceSpecificationSearch
       List<SearchString> searchContent,
       List<Id> searchList,
       List<SearchToken> code}) = _$_SubstanceSpecificationSearch;
+
+  factory _SubstanceSpecificationSearch.fromJson(Map<String, dynamic> json) =
+      _$_SubstanceSpecificationSearch.fromJson;
 
   @override
   List<Id> get searchId;

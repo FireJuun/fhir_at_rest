@@ -8,6 +8,9 @@ part of 'support.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
+CoverageSearch _$CoverageSearchFromJson(Map<String, dynamic> json) {
+  return _CoverageSearch.fromJson(json);
+}
 
 /// @nodoc
 class _$CoverageSearchTearOff {
@@ -24,13 +27,13 @@ class _$CoverageSearchTearOff {
       List<SearchString> searchContent,
       List<Id> searchList,
       List<SearchReference> beneficiary,
-      List<SearchToken> class_type,
-      List<SearchString> class_value,
+      @JsonKey(name: 'class-type') List<SearchToken> classType,
+      @JsonKey(name: 'class-value') List<SearchString> classValue,
       List<SearchString> dependent,
       List<SearchToken> identifier,
       List<SearchReference> patient,
       List<SearchReference> payor,
-      List<SearchReference> policy_holder,
+      @JsonKey(name: 'policy-holder') List<SearchReference> policyHolder,
       List<SearchToken> status,
       List<SearchReference> subscriber,
       List<SearchToken> type}) {
@@ -44,17 +47,22 @@ class _$CoverageSearchTearOff {
       searchContent: searchContent,
       searchList: searchList,
       beneficiary: beneficiary,
-      class_type: class_type,
-      class_value: class_value,
+      classType: classType,
+      classValue: classValue,
       dependent: dependent,
       identifier: identifier,
       patient: patient,
       payor: payor,
-      policy_holder: policy_holder,
+      policyHolder: policyHolder,
       status: status,
       subscriber: subscriber,
       type: type,
     );
+  }
+
+// ignore: unused_element
+  CoverageSearch fromJson(Map<String, Object> json) {
+    return CoverageSearch.fromJson(json);
   }
 }
 
@@ -74,17 +82,21 @@ mixin _$CoverageSearch {
   List<Id> get searchList; //List<SearchString> searchHas,
 //List<SearchToken> searchType,
   List<SearchReference> get beneficiary;
-  List<SearchToken> get class_type;
-  List<SearchString> get class_value;
+  @JsonKey(name: 'class-type')
+  List<SearchToken> get classType;
+  @JsonKey(name: 'class-value')
+  List<SearchString> get classValue;
   List<SearchString> get dependent;
   List<SearchToken> get identifier;
   List<SearchReference> get patient;
   List<SearchReference> get payor;
-  List<SearchReference> get policy_holder;
+  @JsonKey(name: 'policy-holder')
+  List<SearchReference> get policyHolder;
   List<SearchToken> get status;
   List<SearchReference> get subscriber;
   List<SearchToken> get type;
 
+  Map<String, dynamic> toJson();
   $CoverageSearchCopyWith<CoverageSearch> get copyWith;
 }
 
@@ -103,13 +115,13 @@ abstract class $CoverageSearchCopyWith<$Res> {
       List<SearchString> searchContent,
       List<Id> searchList,
       List<SearchReference> beneficiary,
-      List<SearchToken> class_type,
-      List<SearchString> class_value,
+      @JsonKey(name: 'class-type') List<SearchToken> classType,
+      @JsonKey(name: 'class-value') List<SearchString> classValue,
       List<SearchString> dependent,
       List<SearchToken> identifier,
       List<SearchReference> patient,
       List<SearchReference> payor,
-      List<SearchReference> policy_holder,
+      @JsonKey(name: 'policy-holder') List<SearchReference> policyHolder,
       List<SearchToken> status,
       List<SearchReference> subscriber,
       List<SearchToken> type});
@@ -135,13 +147,13 @@ class _$CoverageSearchCopyWithImpl<$Res>
     Object searchContent = freezed,
     Object searchList = freezed,
     Object beneficiary = freezed,
-    Object class_type = freezed,
-    Object class_value = freezed,
+    Object classType = freezed,
+    Object classValue = freezed,
     Object dependent = freezed,
     Object identifier = freezed,
     Object patient = freezed,
     Object payor = freezed,
-    Object policy_holder = freezed,
+    Object policyHolder = freezed,
     Object status = freezed,
     Object subscriber = freezed,
     Object type = freezed,
@@ -171,12 +183,12 @@ class _$CoverageSearchCopyWithImpl<$Res>
       beneficiary: beneficiary == freezed
           ? _value.beneficiary
           : beneficiary as List<SearchReference>,
-      class_type: class_type == freezed
-          ? _value.class_type
-          : class_type as List<SearchToken>,
-      class_value: class_value == freezed
-          ? _value.class_value
-          : class_value as List<SearchString>,
+      classType: classType == freezed
+          ? _value.classType
+          : classType as List<SearchToken>,
+      classValue: classValue == freezed
+          ? _value.classValue
+          : classValue as List<SearchString>,
       dependent: dependent == freezed
           ? _value.dependent
           : dependent as List<SearchString>,
@@ -187,9 +199,9 @@ class _$CoverageSearchCopyWithImpl<$Res>
           ? _value.patient
           : patient as List<SearchReference>,
       payor: payor == freezed ? _value.payor : payor as List<SearchReference>,
-      policy_holder: policy_holder == freezed
-          ? _value.policy_holder
-          : policy_holder as List<SearchReference>,
+      policyHolder: policyHolder == freezed
+          ? _value.policyHolder
+          : policyHolder as List<SearchReference>,
       status: status == freezed ? _value.status : status as List<SearchToken>,
       subscriber: subscriber == freezed
           ? _value.subscriber
@@ -216,13 +228,13 @@ abstract class _$CoverageSearchCopyWith<$Res>
       List<SearchString> searchContent,
       List<Id> searchList,
       List<SearchReference> beneficiary,
-      List<SearchToken> class_type,
-      List<SearchString> class_value,
+      @JsonKey(name: 'class-type') List<SearchToken> classType,
+      @JsonKey(name: 'class-value') List<SearchString> classValue,
       List<SearchString> dependent,
       List<SearchToken> identifier,
       List<SearchReference> patient,
       List<SearchReference> payor,
-      List<SearchReference> policy_holder,
+      @JsonKey(name: 'policy-holder') List<SearchReference> policyHolder,
       List<SearchToken> status,
       List<SearchReference> subscriber,
       List<SearchToken> type});
@@ -250,13 +262,13 @@ class __$CoverageSearchCopyWithImpl<$Res>
     Object searchContent = freezed,
     Object searchList = freezed,
     Object beneficiary = freezed,
-    Object class_type = freezed,
-    Object class_value = freezed,
+    Object classType = freezed,
+    Object classValue = freezed,
     Object dependent = freezed,
     Object identifier = freezed,
     Object patient = freezed,
     Object payor = freezed,
-    Object policy_holder = freezed,
+    Object policyHolder = freezed,
     Object status = freezed,
     Object subscriber = freezed,
     Object type = freezed,
@@ -286,12 +298,12 @@ class __$CoverageSearchCopyWithImpl<$Res>
       beneficiary: beneficiary == freezed
           ? _value.beneficiary
           : beneficiary as List<SearchReference>,
-      class_type: class_type == freezed
-          ? _value.class_type
-          : class_type as List<SearchToken>,
-      class_value: class_value == freezed
-          ? _value.class_value
-          : class_value as List<SearchString>,
+      classType: classType == freezed
+          ? _value.classType
+          : classType as List<SearchToken>,
+      classValue: classValue == freezed
+          ? _value.classValue
+          : classValue as List<SearchString>,
       dependent: dependent == freezed
           ? _value.dependent
           : dependent as List<SearchString>,
@@ -302,9 +314,9 @@ class __$CoverageSearchCopyWithImpl<$Res>
           ? _value.patient
           : patient as List<SearchReference>,
       payor: payor == freezed ? _value.payor : payor as List<SearchReference>,
-      policy_holder: policy_holder == freezed
-          ? _value.policy_holder
-          : policy_holder as List<SearchReference>,
+      policyHolder: policyHolder == freezed
+          ? _value.policyHolder
+          : policyHolder as List<SearchReference>,
       status: status == freezed ? _value.status : status as List<SearchToken>,
       subscriber: subscriber == freezed
           ? _value.subscriber
@@ -313,6 +325,8 @@ class __$CoverageSearchCopyWithImpl<$Res>
     ));
   }
 }
+
+@JsonSerializable()
 
 /// @nodoc
 class _$_CoverageSearch extends _CoverageSearch {
@@ -326,17 +340,20 @@ class _$_CoverageSearch extends _CoverageSearch {
       this.searchContent,
       this.searchList,
       this.beneficiary,
-      this.class_type,
-      this.class_value,
+      @JsonKey(name: 'class-type') this.classType,
+      @JsonKey(name: 'class-value') this.classValue,
       this.dependent,
       this.identifier,
       this.patient,
       this.payor,
-      this.policy_holder,
+      @JsonKey(name: 'policy-holder') this.policyHolder,
       this.status,
       this.subscriber,
       this.type})
       : super._();
+
+  factory _$_CoverageSearch.fromJson(Map<String, dynamic> json) =>
+      _$_$_CoverageSearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -358,9 +375,11 @@ class _$_CoverageSearch extends _CoverageSearch {
 //List<SearchToken> searchType,
   final List<SearchReference> beneficiary;
   @override
-  final List<SearchToken> class_type;
+  @JsonKey(name: 'class-type')
+  final List<SearchToken> classType;
   @override
-  final List<SearchString> class_value;
+  @JsonKey(name: 'class-value')
+  final List<SearchString> classValue;
   @override
   final List<SearchString> dependent;
   @override
@@ -370,7 +389,8 @@ class _$_CoverageSearch extends _CoverageSearch {
   @override
   final List<SearchReference> payor;
   @override
-  final List<SearchReference> policy_holder;
+  @JsonKey(name: 'policy-holder')
+  final List<SearchReference> policyHolder;
   @override
   final List<SearchToken> status;
   @override
@@ -380,7 +400,7 @@ class _$_CoverageSearch extends _CoverageSearch {
 
   @override
   String toString() {
-    return 'CoverageSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, beneficiary: $beneficiary, class_type: $class_type, class_value: $class_value, dependent: $dependent, identifier: $identifier, patient: $patient, payor: $payor, policy_holder: $policy_holder, status: $status, subscriber: $subscriber, type: $type)';
+    return 'CoverageSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, beneficiary: $beneficiary, classType: $classType, classValue: $classValue, dependent: $dependent, identifier: $identifier, patient: $patient, payor: $payor, policyHolder: $policyHolder, status: $status, subscriber: $subscriber, type: $type)';
   }
 
   @override
@@ -414,12 +434,12 @@ class _$_CoverageSearch extends _CoverageSearch {
             (identical(other.beneficiary, beneficiary) ||
                 const DeepCollectionEquality()
                     .equals(other.beneficiary, beneficiary)) &&
-            (identical(other.class_type, class_type) ||
+            (identical(other.classType, classType) ||
                 const DeepCollectionEquality()
-                    .equals(other.class_type, class_type)) &&
-            (identical(other.class_value, class_value) ||
+                    .equals(other.classType, classType)) &&
+            (identical(other.classValue, classValue) ||
                 const DeepCollectionEquality()
-                    .equals(other.class_value, class_value)) &&
+                    .equals(other.classValue, classValue)) &&
             (identical(other.dependent, dependent) ||
                 const DeepCollectionEquality()
                     .equals(other.dependent, dependent)) &&
@@ -431,9 +451,9 @@ class _$_CoverageSearch extends _CoverageSearch {
                     .equals(other.patient, patient)) &&
             (identical(other.payor, payor) ||
                 const DeepCollectionEquality().equals(other.payor, payor)) &&
-            (identical(other.policy_holder, policy_holder) ||
+            (identical(other.policyHolder, policyHolder) ||
                 const DeepCollectionEquality()
-                    .equals(other.policy_holder, policy_holder)) &&
+                    .equals(other.policyHolder, policyHolder)) &&
             (identical(other.status, status) ||
                 const DeepCollectionEquality().equals(other.status, status)) &&
             (identical(other.subscriber, subscriber) ||
@@ -455,13 +475,13 @@ class _$_CoverageSearch extends _CoverageSearch {
       const DeepCollectionEquality().hash(searchContent) ^
       const DeepCollectionEquality().hash(searchList) ^
       const DeepCollectionEquality().hash(beneficiary) ^
-      const DeepCollectionEquality().hash(class_type) ^
-      const DeepCollectionEquality().hash(class_value) ^
+      const DeepCollectionEquality().hash(classType) ^
+      const DeepCollectionEquality().hash(classValue) ^
       const DeepCollectionEquality().hash(dependent) ^
       const DeepCollectionEquality().hash(identifier) ^
       const DeepCollectionEquality().hash(patient) ^
       const DeepCollectionEquality().hash(payor) ^
-      const DeepCollectionEquality().hash(policy_holder) ^
+      const DeepCollectionEquality().hash(policyHolder) ^
       const DeepCollectionEquality().hash(status) ^
       const DeepCollectionEquality().hash(subscriber) ^
       const DeepCollectionEquality().hash(type);
@@ -469,6 +489,11 @@ class _$_CoverageSearch extends _CoverageSearch {
   @override
   _$CoverageSearchCopyWith<_CoverageSearch> get copyWith =>
       __$CoverageSearchCopyWithImpl<_CoverageSearch>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_CoverageSearchToJson(this);
+  }
 }
 
 abstract class _CoverageSearch extends CoverageSearch {
@@ -483,16 +508,19 @@ abstract class _CoverageSearch extends CoverageSearch {
       List<SearchString> searchContent,
       List<Id> searchList,
       List<SearchReference> beneficiary,
-      List<SearchToken> class_type,
-      List<SearchString> class_value,
+      @JsonKey(name: 'class-type') List<SearchToken> classType,
+      @JsonKey(name: 'class-value') List<SearchString> classValue,
       List<SearchString> dependent,
       List<SearchToken> identifier,
       List<SearchReference> patient,
       List<SearchReference> payor,
-      List<SearchReference> policy_holder,
+      @JsonKey(name: 'policy-holder') List<SearchReference> policyHolder,
       List<SearchToken> status,
       List<SearchReference> subscriber,
       List<SearchToken> type}) = _$_CoverageSearch;
+
+  factory _CoverageSearch.fromJson(Map<String, dynamic> json) =
+      _$_CoverageSearch.fromJson;
 
   @override
   List<Id> get searchId;
@@ -514,9 +542,11 @@ abstract class _CoverageSearch extends CoverageSearch {
 //List<SearchToken> searchType,
   List<SearchReference> get beneficiary;
   @override
-  List<SearchToken> get class_type;
+  @JsonKey(name: 'class-type')
+  List<SearchToken> get classType;
   @override
-  List<SearchString> get class_value;
+  @JsonKey(name: 'class-value')
+  List<SearchString> get classValue;
   @override
   List<SearchString> get dependent;
   @override
@@ -526,7 +556,8 @@ abstract class _CoverageSearch extends CoverageSearch {
   @override
   List<SearchReference> get payor;
   @override
-  List<SearchReference> get policy_holder;
+  @JsonKey(name: 'policy-holder')
+  List<SearchReference> get policyHolder;
   @override
   List<SearchToken> get status;
   @override
@@ -535,6 +566,11 @@ abstract class _CoverageSearch extends CoverageSearch {
   List<SearchToken> get type;
   @override
   _$CoverageSearchCopyWith<_CoverageSearch> get copyWith;
+}
+
+CoverageEligibilityRequestSearch _$CoverageEligibilityRequestSearchFromJson(
+    Map<String, dynamic> json) {
+  return _CoverageEligibilityRequestSearch.fromJson(json);
 }
 
 /// @nodoc
@@ -576,6 +612,11 @@ class _$CoverageEligibilityRequestSearchTearOff {
       status: status,
     );
   }
+
+// ignore: unused_element
+  CoverageEligibilityRequestSearch fromJson(Map<String, Object> json) {
+    return CoverageEligibilityRequestSearch.fromJson(json);
+  }
 }
 
 /// @nodoc
@@ -602,6 +643,7 @@ mixin _$CoverageEligibilityRequestSearch {
   List<SearchReference> get provider;
   List<SearchToken> get status;
 
+  Map<String, dynamic> toJson();
   $CoverageEligibilityRequestSearchCopyWith<CoverageEligibilityRequestSearch>
       get copyWith;
 }
@@ -802,6 +844,8 @@ class __$CoverageEligibilityRequestSearchCopyWithImpl<$Res>
   }
 }
 
+@JsonSerializable()
+
 /// @nodoc
 class _$_CoverageEligibilityRequestSearch
     extends _CoverageEligibilityRequestSearch {
@@ -822,6 +866,10 @@ class _$_CoverageEligibilityRequestSearch
       this.provider,
       this.status})
       : super._();
+
+  factory _$_CoverageEligibilityRequestSearch.fromJson(
+          Map<String, dynamic> json) =>
+      _$_$_CoverageEligibilityRequestSearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -933,6 +981,11 @@ class _$_CoverageEligibilityRequestSearch
   _$CoverageEligibilityRequestSearchCopyWith<_CoverageEligibilityRequestSearch>
       get copyWith => __$CoverageEligibilityRequestSearchCopyWithImpl<
           _CoverageEligibilityRequestSearch>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_CoverageEligibilityRequestSearchToJson(this);
+  }
 }
 
 abstract class _CoverageEligibilityRequestSearch
@@ -954,6 +1007,9 @@ abstract class _CoverageEligibilityRequestSearch
       List<SearchReference> patient,
       List<SearchReference> provider,
       List<SearchToken> status}) = _$_CoverageEligibilityRequestSearch;
+
+  factory _CoverageEligibilityRequestSearch.fromJson(
+      Map<String, dynamic> json) = _$_CoverageEligibilityRequestSearch.fromJson;
 
   @override
   List<Id> get searchId;
@@ -989,6 +1045,11 @@ abstract class _CoverageEligibilityRequestSearch
   @override
   _$CoverageEligibilityRequestSearchCopyWith<_CoverageEligibilityRequestSearch>
       get copyWith;
+}
+
+CoverageEligibilityResponseSearch _$CoverageEligibilityResponseSearchFromJson(
+    Map<String, dynamic> json) {
+  return _CoverageEligibilityResponseSearch.fromJson(json);
 }
 
 /// @nodoc
@@ -1034,6 +1095,11 @@ class _$CoverageEligibilityResponseSearchTearOff {
       status: status,
     );
   }
+
+// ignore: unused_element
+  CoverageEligibilityResponseSearch fromJson(Map<String, Object> json) {
+    return CoverageEligibilityResponseSearch.fromJson(json);
+  }
 }
 
 /// @nodoc
@@ -1062,6 +1128,7 @@ mixin _$CoverageEligibilityResponseSearch {
   List<SearchReference> get requestor;
   List<SearchToken> get status;
 
+  Map<String, dynamic> toJson();
   $CoverageEligibilityResponseSearchCopyWith<CoverageEligibilityResponseSearch>
       get copyWith;
 }
@@ -1280,6 +1347,8 @@ class __$CoverageEligibilityResponseSearchCopyWithImpl<$Res>
   }
 }
 
+@JsonSerializable()
+
 /// @nodoc
 class _$_CoverageEligibilityResponseSearch
     extends _CoverageEligibilityResponseSearch {
@@ -1302,6 +1371,10 @@ class _$_CoverageEligibilityResponseSearch
       this.requestor,
       this.status})
       : super._();
+
+  factory _$_CoverageEligibilityResponseSearch.fromJson(
+          Map<String, dynamic> json) =>
+      _$_$_CoverageEligibilityResponseSearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -1426,6 +1499,11 @@ class _$_CoverageEligibilityResponseSearch
           _CoverageEligibilityResponseSearch>
       get copyWith => __$CoverageEligibilityResponseSearchCopyWithImpl<
           _CoverageEligibilityResponseSearch>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_CoverageEligibilityResponseSearchToJson(this);
+  }
 }
 
 abstract class _CoverageEligibilityResponseSearch
@@ -1449,6 +1527,10 @@ abstract class _CoverageEligibilityResponseSearch
       List<SearchReference> request,
       List<SearchReference> requestor,
       List<SearchToken> status}) = _$_CoverageEligibilityResponseSearch;
+
+  factory _CoverageEligibilityResponseSearch.fromJson(
+          Map<String, dynamic> json) =
+      _$_CoverageEligibilityResponseSearch.fromJson;
 
   @override
   List<Id> get searchId;
@@ -1490,6 +1572,11 @@ abstract class _CoverageEligibilityResponseSearch
       _CoverageEligibilityResponseSearch> get copyWith;
 }
 
+EnrollmentRequestSearch _$EnrollmentRequestSearchFromJson(
+    Map<String, dynamic> json) {
+  return _EnrollmentRequestSearch.fromJson(json);
+}
+
 /// @nodoc
 class _$EnrollmentRequestSearchTearOff {
   const _$EnrollmentRequestSearchTearOff();
@@ -1523,6 +1610,11 @@ class _$EnrollmentRequestSearchTearOff {
       subject: subject,
     );
   }
+
+// ignore: unused_element
+  EnrollmentRequestSearch fromJson(Map<String, Object> json) {
+    return EnrollmentRequestSearch.fromJson(json);
+  }
 }
 
 /// @nodoc
@@ -1545,6 +1637,7 @@ mixin _$EnrollmentRequestSearch {
   List<SearchToken> get status;
   List<SearchReference> get subject;
 
+  Map<String, dynamic> toJson();
   $EnrollmentRequestSearchCopyWith<EnrollmentRequestSearch> get copyWith;
 }
 
@@ -1713,6 +1806,8 @@ class __$EnrollmentRequestSearchCopyWithImpl<$Res>
   }
 }
 
+@JsonSerializable()
+
 /// @nodoc
 class _$_EnrollmentRequestSearch extends _EnrollmentRequestSearch {
   _$_EnrollmentRequestSearch(
@@ -1729,6 +1824,9 @@ class _$_EnrollmentRequestSearch extends _EnrollmentRequestSearch {
       this.status,
       this.subject})
       : super._();
+
+  factory _$_EnrollmentRequestSearch.fromJson(Map<String, dynamic> json) =>
+      _$_$_EnrollmentRequestSearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -1821,6 +1919,11 @@ class _$_EnrollmentRequestSearch extends _EnrollmentRequestSearch {
   _$EnrollmentRequestSearchCopyWith<_EnrollmentRequestSearch> get copyWith =>
       __$EnrollmentRequestSearchCopyWithImpl<_EnrollmentRequestSearch>(
           this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_EnrollmentRequestSearchToJson(this);
+  }
 }
 
 abstract class _EnrollmentRequestSearch extends EnrollmentRequestSearch {
@@ -1838,6 +1941,9 @@ abstract class _EnrollmentRequestSearch extends EnrollmentRequestSearch {
       List<SearchReference> patient,
       List<SearchToken> status,
       List<SearchReference> subject}) = _$_EnrollmentRequestSearch;
+
+  factory _EnrollmentRequestSearch.fromJson(Map<String, dynamic> json) =
+      _$_EnrollmentRequestSearch.fromJson;
 
   @override
   List<Id> get searchId;
@@ -1866,6 +1972,11 @@ abstract class _EnrollmentRequestSearch extends EnrollmentRequestSearch {
   List<SearchReference> get subject;
   @override
   _$EnrollmentRequestSearchCopyWith<_EnrollmentRequestSearch> get copyWith;
+}
+
+EnrollmentResponseSearch _$EnrollmentResponseSearchFromJson(
+    Map<String, dynamic> json) {
+  return _EnrollmentResponseSearch.fromJson(json);
 }
 
 /// @nodoc
@@ -1899,6 +2010,11 @@ class _$EnrollmentResponseSearchTearOff {
       status: status,
     );
   }
+
+// ignore: unused_element
+  EnrollmentResponseSearch fromJson(Map<String, Object> json) {
+    return EnrollmentResponseSearch.fromJson(json);
+  }
 }
 
 /// @nodoc
@@ -1920,6 +2036,7 @@ mixin _$EnrollmentResponseSearch {
   List<SearchReference> get request;
   List<SearchToken> get status;
 
+  Map<String, dynamic> toJson();
   $EnrollmentResponseSearchCopyWith<EnrollmentResponseSearch> get copyWith;
 }
 
@@ -2078,6 +2195,8 @@ class __$EnrollmentResponseSearchCopyWithImpl<$Res>
   }
 }
 
+@JsonSerializable()
+
 /// @nodoc
 class _$_EnrollmentResponseSearch extends _EnrollmentResponseSearch {
   _$_EnrollmentResponseSearch(
@@ -2093,6 +2212,9 @@ class _$_EnrollmentResponseSearch extends _EnrollmentResponseSearch {
       this.request,
       this.status})
       : super._();
+
+  factory _$_EnrollmentResponseSearch.fromJson(Map<String, dynamic> json) =>
+      _$_$_EnrollmentResponseSearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -2180,6 +2302,11 @@ class _$_EnrollmentResponseSearch extends _EnrollmentResponseSearch {
   _$EnrollmentResponseSearchCopyWith<_EnrollmentResponseSearch> get copyWith =>
       __$EnrollmentResponseSearchCopyWithImpl<_EnrollmentResponseSearch>(
           this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_EnrollmentResponseSearchToJson(this);
+  }
 }
 
 abstract class _EnrollmentResponseSearch extends EnrollmentResponseSearch {
@@ -2196,6 +2323,9 @@ abstract class _EnrollmentResponseSearch extends EnrollmentResponseSearch {
       List<SearchToken> identifier,
       List<SearchReference> request,
       List<SearchToken> status}) = _$_EnrollmentResponseSearch;
+
+  factory _EnrollmentResponseSearch.fromJson(Map<String, dynamic> json) =
+      _$_EnrollmentResponseSearch.fromJson;
 
   @override
   List<Id> get searchId;

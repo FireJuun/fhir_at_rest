@@ -8,6 +8,9 @@ part of 'documents.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
+CompositionSearch _$CompositionSearchFromJson(Map<String, dynamic> json) {
+  return _CompositionSearch.fromJson(json);
+}
 
 /// @nodoc
 class _$CompositionSearchTearOff {
@@ -35,8 +38,8 @@ class _$CompositionSearchTearOff {
       List<SearchReference> encounter,
       List<SearchReference> entry,
       List<SearchDate> period,
-      List<SearchToken> related_id,
-      List<SearchReference> related_ref,
+      @JsonKey(name: 'related-id') List<SearchToken> relatedId,
+      @JsonKey(name: 'related-ref') List<SearchReference> relatedRef,
       List<SearchToken> section,
       List<SearchToken> status,
       List<SearchReference> subject,
@@ -62,13 +65,18 @@ class _$CompositionSearchTearOff {
       encounter: encounter,
       entry: entry,
       period: period,
-      related_id: related_id,
-      related_ref: related_ref,
+      relatedId: relatedId,
+      relatedRef: relatedRef,
       section: section,
       status: status,
       subject: subject,
       title: title,
     );
+  }
+
+// ignore: unused_element
+  CompositionSearch fromJson(Map<String, Object> json) {
+    return CompositionSearch.fromJson(json);
   }
 }
 
@@ -99,13 +107,16 @@ mixin _$CompositionSearch {
   List<SearchReference> get encounter;
   List<SearchReference> get entry;
   List<SearchDate> get period;
-  List<SearchToken> get related_id;
-  List<SearchReference> get related_ref;
+  @JsonKey(name: 'related-id')
+  List<SearchToken> get relatedId;
+  @JsonKey(name: 'related-ref')
+  List<SearchReference> get relatedRef;
   List<SearchToken> get section;
   List<SearchToken> get status;
   List<SearchReference> get subject;
   List<SearchString> get title;
 
+  Map<String, dynamic> toJson();
   $CompositionSearchCopyWith<CompositionSearch> get copyWith;
 }
 
@@ -135,8 +146,8 @@ abstract class $CompositionSearchCopyWith<$Res> {
       List<SearchReference> encounter,
       List<SearchReference> entry,
       List<SearchDate> period,
-      List<SearchToken> related_id,
-      List<SearchReference> related_ref,
+      @JsonKey(name: 'related-id') List<SearchToken> relatedId,
+      @JsonKey(name: 'related-ref') List<SearchReference> relatedRef,
       List<SearchToken> section,
       List<SearchToken> status,
       List<SearchReference> subject,
@@ -174,8 +185,8 @@ class _$CompositionSearchCopyWithImpl<$Res>
     Object encounter = freezed,
     Object entry = freezed,
     Object period = freezed,
-    Object related_id = freezed,
-    Object related_ref = freezed,
+    Object relatedId = freezed,
+    Object relatedRef = freezed,
     Object section = freezed,
     Object status = freezed,
     Object subject = freezed,
@@ -228,12 +239,12 @@ class _$CompositionSearchCopyWithImpl<$Res>
           : encounter as List<SearchReference>,
       entry: entry == freezed ? _value.entry : entry as List<SearchReference>,
       period: period == freezed ? _value.period : period as List<SearchDate>,
-      related_id: related_id == freezed
-          ? _value.related_id
-          : related_id as List<SearchToken>,
-      related_ref: related_ref == freezed
-          ? _value.related_ref
-          : related_ref as List<SearchReference>,
+      relatedId: relatedId == freezed
+          ? _value.relatedId
+          : relatedId as List<SearchToken>,
+      relatedRef: relatedRef == freezed
+          ? _value.relatedRef
+          : relatedRef as List<SearchReference>,
       section:
           section == freezed ? _value.section : section as List<SearchToken>,
       status: status == freezed ? _value.status : status as List<SearchToken>,
@@ -273,8 +284,8 @@ abstract class _$CompositionSearchCopyWith<$Res>
       List<SearchReference> encounter,
       List<SearchReference> entry,
       List<SearchDate> period,
-      List<SearchToken> related_id,
-      List<SearchReference> related_ref,
+      @JsonKey(name: 'related-id') List<SearchToken> relatedId,
+      @JsonKey(name: 'related-ref') List<SearchReference> relatedRef,
       List<SearchToken> section,
       List<SearchToken> status,
       List<SearchReference> subject,
@@ -314,8 +325,8 @@ class __$CompositionSearchCopyWithImpl<$Res>
     Object encounter = freezed,
     Object entry = freezed,
     Object period = freezed,
-    Object related_id = freezed,
-    Object related_ref = freezed,
+    Object relatedId = freezed,
+    Object relatedRef = freezed,
     Object section = freezed,
     Object status = freezed,
     Object subject = freezed,
@@ -368,12 +379,12 @@ class __$CompositionSearchCopyWithImpl<$Res>
           : encounter as List<SearchReference>,
       entry: entry == freezed ? _value.entry : entry as List<SearchReference>,
       period: period == freezed ? _value.period : period as List<SearchDate>,
-      related_id: related_id == freezed
-          ? _value.related_id
-          : related_id as List<SearchToken>,
-      related_ref: related_ref == freezed
-          ? _value.related_ref
-          : related_ref as List<SearchReference>,
+      relatedId: relatedId == freezed
+          ? _value.relatedId
+          : relatedId as List<SearchToken>,
+      relatedRef: relatedRef == freezed
+          ? _value.relatedRef
+          : relatedRef as List<SearchReference>,
       section:
           section == freezed ? _value.section : section as List<SearchToken>,
       status: status == freezed ? _value.status : status as List<SearchToken>,
@@ -384,6 +395,8 @@ class __$CompositionSearchCopyWithImpl<$Res>
     ));
   }
 }
+
+@JsonSerializable()
 
 /// @nodoc
 class _$_CompositionSearch extends _CompositionSearch {
@@ -408,13 +421,16 @@ class _$_CompositionSearch extends _CompositionSearch {
       this.encounter,
       this.entry,
       this.period,
-      this.related_id,
-      this.related_ref,
+      @JsonKey(name: 'related-id') this.relatedId,
+      @JsonKey(name: 'related-ref') this.relatedRef,
       this.section,
       this.status,
       this.subject,
       this.title})
       : super._();
+
+  factory _$_CompositionSearch.fromJson(Map<String, dynamic> json) =>
+      _$_$_CompositionSearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -458,9 +474,11 @@ class _$_CompositionSearch extends _CompositionSearch {
   @override
   final List<SearchDate> period;
   @override
-  final List<SearchToken> related_id;
+  @JsonKey(name: 'related-id')
+  final List<SearchToken> relatedId;
   @override
-  final List<SearchReference> related_ref;
+  @JsonKey(name: 'related-ref')
+  final List<SearchReference> relatedRef;
   @override
   final List<SearchToken> section;
   @override
@@ -472,7 +490,7 @@ class _$_CompositionSearch extends _CompositionSearch {
 
   @override
   String toString() {
-    return 'CompositionSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, date: $date, identifier: $identifier, patient: $patient, type: $type, attester: $attester, author: $author, category: $category, confidentiality: $confidentiality, context: $context, encounter: $encounter, entry: $entry, period: $period, related_id: $related_id, related_ref: $related_ref, section: $section, status: $status, subject: $subject, title: $title)';
+    return 'CompositionSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, date: $date, identifier: $identifier, patient: $patient, type: $type, attester: $attester, author: $author, category: $category, confidentiality: $confidentiality, context: $context, encounter: $encounter, entry: $entry, period: $period, relatedId: $relatedId, relatedRef: $relatedRef, section: $section, status: $status, subject: $subject, title: $title)';
   }
 
   @override
@@ -534,12 +552,12 @@ class _$_CompositionSearch extends _CompositionSearch {
                 const DeepCollectionEquality().equals(other.entry, entry)) &&
             (identical(other.period, period) ||
                 const DeepCollectionEquality().equals(other.period, period)) &&
-            (identical(other.related_id, related_id) ||
+            (identical(other.relatedId, relatedId) ||
                 const DeepCollectionEquality()
-                    .equals(other.related_id, related_id)) &&
-            (identical(other.related_ref, related_ref) ||
+                    .equals(other.relatedId, relatedId)) &&
+            (identical(other.relatedRef, relatedRef) ||
                 const DeepCollectionEquality()
-                    .equals(other.related_ref, related_ref)) &&
+                    .equals(other.relatedRef, relatedRef)) &&
             (identical(other.section, section) ||
                 const DeepCollectionEquality()
                     .equals(other.section, section)) &&
@@ -573,8 +591,8 @@ class _$_CompositionSearch extends _CompositionSearch {
       const DeepCollectionEquality().hash(encounter) ^
       const DeepCollectionEquality().hash(entry) ^
       const DeepCollectionEquality().hash(period) ^
-      const DeepCollectionEquality().hash(related_id) ^
-      const DeepCollectionEquality().hash(related_ref) ^
+      const DeepCollectionEquality().hash(relatedId) ^
+      const DeepCollectionEquality().hash(relatedRef) ^
       const DeepCollectionEquality().hash(section) ^
       const DeepCollectionEquality().hash(status) ^
       const DeepCollectionEquality().hash(subject) ^
@@ -583,6 +601,11 @@ class _$_CompositionSearch extends _CompositionSearch {
   @override
   _$CompositionSearchCopyWith<_CompositionSearch> get copyWith =>
       __$CompositionSearchCopyWithImpl<_CompositionSearch>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_CompositionSearchToJson(this);
+  }
 }
 
 abstract class _CompositionSearch extends CompositionSearch {
@@ -608,12 +631,15 @@ abstract class _CompositionSearch extends CompositionSearch {
       List<SearchReference> encounter,
       List<SearchReference> entry,
       List<SearchDate> period,
-      List<SearchToken> related_id,
-      List<SearchReference> related_ref,
+      @JsonKey(name: 'related-id') List<SearchToken> relatedId,
+      @JsonKey(name: 'related-ref') List<SearchReference> relatedRef,
       List<SearchToken> section,
       List<SearchToken> status,
       List<SearchReference> subject,
       List<SearchString> title}) = _$_CompositionSearch;
+
+  factory _CompositionSearch.fromJson(Map<String, dynamic> json) =
+      _$_CompositionSearch.fromJson;
 
   @override
   List<Id> get searchId;
@@ -657,9 +683,11 @@ abstract class _CompositionSearch extends CompositionSearch {
   @override
   List<SearchDate> get period;
   @override
-  List<SearchToken> get related_id;
+  @JsonKey(name: 'related-id')
+  List<SearchToken> get relatedId;
   @override
-  List<SearchReference> get related_ref;
+  @JsonKey(name: 'related-ref')
+  List<SearchReference> get relatedRef;
   @override
   List<SearchToken> get section;
   @override
@@ -670,6 +698,11 @@ abstract class _CompositionSearch extends CompositionSearch {
   List<SearchString> get title;
   @override
   _$CompositionSearchCopyWith<_CompositionSearch> get copyWith;
+}
+
+DocumentManifestSearch _$DocumentManifestSearchFromJson(
+    Map<String, dynamic> json) {
+  return _DocumentManifestSearch.fromJson(json);
 }
 
 /// @nodoc
@@ -694,8 +727,8 @@ class _$DocumentManifestSearchTearOff {
       List<SearchString> description,
       List<SearchReference> item,
       List<SearchReference> recipient,
-      List<SearchToken> related_id,
-      List<SearchReference> related_ref,
+      @JsonKey(name: 'related-id') List<SearchToken> relatedId,
+      @JsonKey(name: 'related-ref') List<SearchReference> relatedRef,
       List<SearchUri> source,
       List<SearchToken> status,
       List<SearchReference> subject}) {
@@ -716,12 +749,17 @@ class _$DocumentManifestSearchTearOff {
       description: description,
       item: item,
       recipient: recipient,
-      related_id: related_id,
-      related_ref: related_ref,
+      relatedId: relatedId,
+      relatedRef: relatedRef,
       source: source,
       status: status,
       subject: subject,
     );
+  }
+
+// ignore: unused_element
+  DocumentManifestSearch fromJson(Map<String, Object> json) {
+    return DocumentManifestSearch.fromJson(json);
   }
 }
 
@@ -748,12 +786,15 @@ mixin _$DocumentManifestSearch {
   List<SearchString> get description;
   List<SearchReference> get item;
   List<SearchReference> get recipient;
-  List<SearchToken> get related_id;
-  List<SearchReference> get related_ref;
+  @JsonKey(name: 'related-id')
+  List<SearchToken> get relatedId;
+  @JsonKey(name: 'related-ref')
+  List<SearchReference> get relatedRef;
   List<SearchUri> get source;
   List<SearchToken> get status;
   List<SearchReference> get subject;
 
+  Map<String, dynamic> toJson();
   $DocumentManifestSearchCopyWith<DocumentManifestSearch> get copyWith;
 }
 
@@ -779,8 +820,8 @@ abstract class $DocumentManifestSearchCopyWith<$Res> {
       List<SearchString> description,
       List<SearchReference> item,
       List<SearchReference> recipient,
-      List<SearchToken> related_id,
-      List<SearchReference> related_ref,
+      @JsonKey(name: 'related-id') List<SearchToken> relatedId,
+      @JsonKey(name: 'related-ref') List<SearchReference> relatedRef,
       List<SearchUri> source,
       List<SearchToken> status,
       List<SearchReference> subject});
@@ -813,8 +854,8 @@ class _$DocumentManifestSearchCopyWithImpl<$Res>
     Object description = freezed,
     Object item = freezed,
     Object recipient = freezed,
-    Object related_id = freezed,
-    Object related_ref = freezed,
+    Object relatedId = freezed,
+    Object relatedRef = freezed,
     Object source = freezed,
     Object status = freezed,
     Object subject = freezed,
@@ -859,12 +900,12 @@ class _$DocumentManifestSearchCopyWithImpl<$Res>
       recipient: recipient == freezed
           ? _value.recipient
           : recipient as List<SearchReference>,
-      related_id: related_id == freezed
-          ? _value.related_id
-          : related_id as List<SearchToken>,
-      related_ref: related_ref == freezed
-          ? _value.related_ref
-          : related_ref as List<SearchReference>,
+      relatedId: relatedId == freezed
+          ? _value.relatedId
+          : relatedId as List<SearchToken>,
+      relatedRef: relatedRef == freezed
+          ? _value.relatedRef
+          : relatedRef as List<SearchReference>,
       source: source == freezed ? _value.source : source as List<SearchUri>,
       status: status == freezed ? _value.status : status as List<SearchToken>,
       subject: subject == freezed
@@ -898,8 +939,8 @@ abstract class _$DocumentManifestSearchCopyWith<$Res>
       List<SearchString> description,
       List<SearchReference> item,
       List<SearchReference> recipient,
-      List<SearchToken> related_id,
-      List<SearchReference> related_ref,
+      @JsonKey(name: 'related-id') List<SearchToken> relatedId,
+      @JsonKey(name: 'related-ref') List<SearchReference> relatedRef,
       List<SearchUri> source,
       List<SearchToken> status,
       List<SearchReference> subject});
@@ -934,8 +975,8 @@ class __$DocumentManifestSearchCopyWithImpl<$Res>
     Object description = freezed,
     Object item = freezed,
     Object recipient = freezed,
-    Object related_id = freezed,
-    Object related_ref = freezed,
+    Object relatedId = freezed,
+    Object relatedRef = freezed,
     Object source = freezed,
     Object status = freezed,
     Object subject = freezed,
@@ -980,12 +1021,12 @@ class __$DocumentManifestSearchCopyWithImpl<$Res>
       recipient: recipient == freezed
           ? _value.recipient
           : recipient as List<SearchReference>,
-      related_id: related_id == freezed
-          ? _value.related_id
-          : related_id as List<SearchToken>,
-      related_ref: related_ref == freezed
-          ? _value.related_ref
-          : related_ref as List<SearchReference>,
+      relatedId: relatedId == freezed
+          ? _value.relatedId
+          : relatedId as List<SearchToken>,
+      relatedRef: relatedRef == freezed
+          ? _value.relatedRef
+          : relatedRef as List<SearchReference>,
       source: source == freezed ? _value.source : source as List<SearchUri>,
       status: status == freezed ? _value.status : status as List<SearchToken>,
       subject: subject == freezed
@@ -994,6 +1035,8 @@ class __$DocumentManifestSearchCopyWithImpl<$Res>
     ));
   }
 }
+
+@JsonSerializable()
 
 /// @nodoc
 class _$_DocumentManifestSearch extends _DocumentManifestSearch {
@@ -1014,12 +1057,15 @@ class _$_DocumentManifestSearch extends _DocumentManifestSearch {
       this.description,
       this.item,
       this.recipient,
-      this.related_id,
-      this.related_ref,
+      @JsonKey(name: 'related-id') this.relatedId,
+      @JsonKey(name: 'related-ref') this.relatedRef,
       this.source,
       this.status,
       this.subject})
       : super._();
+
+  factory _$_DocumentManifestSearch.fromJson(Map<String, dynamic> json) =>
+      _$_$_DocumentManifestSearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -1055,9 +1101,11 @@ class _$_DocumentManifestSearch extends _DocumentManifestSearch {
   @override
   final List<SearchReference> recipient;
   @override
-  final List<SearchToken> related_id;
+  @JsonKey(name: 'related-id')
+  final List<SearchToken> relatedId;
   @override
-  final List<SearchReference> related_ref;
+  @JsonKey(name: 'related-ref')
+  final List<SearchReference> relatedRef;
   @override
   final List<SearchUri> source;
   @override
@@ -1067,7 +1115,7 @@ class _$_DocumentManifestSearch extends _DocumentManifestSearch {
 
   @override
   String toString() {
-    return 'DocumentManifestSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, identifier: $identifier, patient: $patient, type: $type, author: $author, created: $created, description: $description, item: $item, recipient: $recipient, related_id: $related_id, related_ref: $related_ref, source: $source, status: $status, subject: $subject)';
+    return 'DocumentManifestSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, identifier: $identifier, patient: $patient, type: $type, author: $author, created: $created, description: $description, item: $item, recipient: $recipient, relatedId: $relatedId, relatedRef: $relatedRef, source: $source, status: $status, subject: $subject)';
   }
 
   @override
@@ -1119,12 +1167,12 @@ class _$_DocumentManifestSearch extends _DocumentManifestSearch {
             (identical(other.recipient, recipient) ||
                 const DeepCollectionEquality()
                     .equals(other.recipient, recipient)) &&
-            (identical(other.related_id, related_id) ||
+            (identical(other.relatedId, relatedId) ||
                 const DeepCollectionEquality()
-                    .equals(other.related_id, related_id)) &&
-            (identical(other.related_ref, related_ref) ||
+                    .equals(other.relatedId, relatedId)) &&
+            (identical(other.relatedRef, relatedRef) ||
                 const DeepCollectionEquality()
-                    .equals(other.related_ref, related_ref)) &&
+                    .equals(other.relatedRef, relatedRef)) &&
             (identical(other.source, source) ||
                 const DeepCollectionEquality().equals(other.source, source)) &&
             (identical(other.status, status) ||
@@ -1152,8 +1200,8 @@ class _$_DocumentManifestSearch extends _DocumentManifestSearch {
       const DeepCollectionEquality().hash(description) ^
       const DeepCollectionEquality().hash(item) ^
       const DeepCollectionEquality().hash(recipient) ^
-      const DeepCollectionEquality().hash(related_id) ^
-      const DeepCollectionEquality().hash(related_ref) ^
+      const DeepCollectionEquality().hash(relatedId) ^
+      const DeepCollectionEquality().hash(relatedRef) ^
       const DeepCollectionEquality().hash(source) ^
       const DeepCollectionEquality().hash(status) ^
       const DeepCollectionEquality().hash(subject);
@@ -1162,6 +1210,11 @@ class _$_DocumentManifestSearch extends _DocumentManifestSearch {
   _$DocumentManifestSearchCopyWith<_DocumentManifestSearch> get copyWith =>
       __$DocumentManifestSearchCopyWithImpl<_DocumentManifestSearch>(
           this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_DocumentManifestSearchToJson(this);
+  }
 }
 
 abstract class _DocumentManifestSearch extends DocumentManifestSearch {
@@ -1183,11 +1236,14 @@ abstract class _DocumentManifestSearch extends DocumentManifestSearch {
       List<SearchString> description,
       List<SearchReference> item,
       List<SearchReference> recipient,
-      List<SearchToken> related_id,
-      List<SearchReference> related_ref,
+      @JsonKey(name: 'related-id') List<SearchToken> relatedId,
+      @JsonKey(name: 'related-ref') List<SearchReference> relatedRef,
       List<SearchUri> source,
       List<SearchToken> status,
       List<SearchReference> subject}) = _$_DocumentManifestSearch;
+
+  factory _DocumentManifestSearch.fromJson(Map<String, dynamic> json) =
+      _$_DocumentManifestSearch.fromJson;
 
   @override
   List<Id> get searchId;
@@ -1223,9 +1279,11 @@ abstract class _DocumentManifestSearch extends DocumentManifestSearch {
   @override
   List<SearchReference> get recipient;
   @override
-  List<SearchToken> get related_id;
+  @JsonKey(name: 'related-id')
+  List<SearchToken> get relatedId;
   @override
-  List<SearchReference> get related_ref;
+  @JsonKey(name: 'related-ref')
+  List<SearchReference> get relatedRef;
   @override
   List<SearchUri> get source;
   @override
@@ -1234,6 +1292,11 @@ abstract class _DocumentManifestSearch extends DocumentManifestSearch {
   List<SearchReference> get subject;
   @override
   _$DocumentManifestSearchCopyWith<_DocumentManifestSearch> get copyWith;
+}
+
+DocumentReferenceSearch _$DocumentReferenceSearchFromJson(
+    Map<String, dynamic> json) {
+  return _DocumentReferenceSearch.fromJson(json);
 }
 
 /// @nodoc
@@ -1270,7 +1333,7 @@ class _$DocumentReferenceSearchTearOff {
       List<SearchReference> related,
       List<SearchReference> relatesto,
       List<SearchToken> relation,
-      List<SearchToken> security_label,
+      @JsonKey(name: 'security-label') List<SearchToken> securityLabel,
       List<SearchToken> setting,
       List<SearchToken> status,
       List<SearchReference> subject,
@@ -1304,12 +1367,17 @@ class _$DocumentReferenceSearchTearOff {
       related: related,
       relatesto: relatesto,
       relation: relation,
-      security_label: security_label,
+      securityLabel: securityLabel,
       setting: setting,
       status: status,
       subject: subject,
       relationship: relationship,
     );
+  }
+
+// ignore: unused_element
+  DocumentReferenceSearch fromJson(Map<String, Object> json) {
+    return DocumentReferenceSearch.fromJson(json);
   }
 }
 
@@ -1348,12 +1416,14 @@ mixin _$DocumentReferenceSearch {
   List<SearchReference> get related;
   List<SearchReference> get relatesto;
   List<SearchToken> get relation;
-  List<SearchToken> get security_label;
+  @JsonKey(name: 'security-label')
+  List<SearchToken> get securityLabel;
   List<SearchToken> get setting;
   List<SearchToken> get status;
   List<SearchReference> get subject;
   List<SearchComposite> get relationship;
 
+  Map<String, dynamic> toJson();
   $DocumentReferenceSearchCopyWith<DocumentReferenceSearch> get copyWith;
 }
 
@@ -1391,7 +1461,7 @@ abstract class $DocumentReferenceSearchCopyWith<$Res> {
       List<SearchReference> related,
       List<SearchReference> relatesto,
       List<SearchToken> relation,
-      List<SearchToken> security_label,
+      @JsonKey(name: 'security-label') List<SearchToken> securityLabel,
       List<SearchToken> setting,
       List<SearchToken> status,
       List<SearchReference> subject,
@@ -1437,7 +1507,7 @@ class _$DocumentReferenceSearchCopyWithImpl<$Res>
     Object related = freezed,
     Object relatesto = freezed,
     Object relation = freezed,
-    Object security_label = freezed,
+    Object securityLabel = freezed,
     Object setting = freezed,
     Object status = freezed,
     Object subject = freezed,
@@ -1509,9 +1579,9 @@ class _$DocumentReferenceSearchCopyWithImpl<$Res>
           : relatesto as List<SearchReference>,
       relation:
           relation == freezed ? _value.relation : relation as List<SearchToken>,
-      security_label: security_label == freezed
-          ? _value.security_label
-          : security_label as List<SearchToken>,
+      securityLabel: securityLabel == freezed
+          ? _value.securityLabel
+          : securityLabel as List<SearchToken>,
       setting:
           setting == freezed ? _value.setting : setting as List<SearchToken>,
       status: status == freezed ? _value.status : status as List<SearchToken>,
@@ -1561,7 +1631,7 @@ abstract class _$DocumentReferenceSearchCopyWith<$Res>
       List<SearchReference> related,
       List<SearchReference> relatesto,
       List<SearchToken> relation,
-      List<SearchToken> security_label,
+      @JsonKey(name: 'security-label') List<SearchToken> securityLabel,
       List<SearchToken> setting,
       List<SearchToken> status,
       List<SearchReference> subject,
@@ -1610,7 +1680,7 @@ class __$DocumentReferenceSearchCopyWithImpl<$Res>
     Object related = freezed,
     Object relatesto = freezed,
     Object relation = freezed,
-    Object security_label = freezed,
+    Object securityLabel = freezed,
     Object setting = freezed,
     Object status = freezed,
     Object subject = freezed,
@@ -1682,9 +1752,9 @@ class __$DocumentReferenceSearchCopyWithImpl<$Res>
           : relatesto as List<SearchReference>,
       relation:
           relation == freezed ? _value.relation : relation as List<SearchToken>,
-      security_label: security_label == freezed
-          ? _value.security_label
-          : security_label as List<SearchToken>,
+      securityLabel: securityLabel == freezed
+          ? _value.securityLabel
+          : securityLabel as List<SearchToken>,
       setting:
           setting == freezed ? _value.setting : setting as List<SearchToken>,
       status: status == freezed ? _value.status : status as List<SearchToken>,
@@ -1697,6 +1767,8 @@ class __$DocumentReferenceSearchCopyWithImpl<$Res>
     ));
   }
 }
+
+@JsonSerializable()
 
 /// @nodoc
 class _$_DocumentReferenceSearch extends _DocumentReferenceSearch {
@@ -1729,12 +1801,15 @@ class _$_DocumentReferenceSearch extends _DocumentReferenceSearch {
       this.related,
       this.relatesto,
       this.relation,
-      this.security_label,
+      @JsonKey(name: 'security-label') this.securityLabel,
       this.setting,
       this.status,
       this.subject,
       this.relationship})
       : super._();
+
+  factory _$_DocumentReferenceSearch.fromJson(Map<String, dynamic> json) =>
+      _$_$_DocumentReferenceSearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -1794,7 +1869,8 @@ class _$_DocumentReferenceSearch extends _DocumentReferenceSearch {
   @override
   final List<SearchToken> relation;
   @override
-  final List<SearchToken> security_label;
+  @JsonKey(name: 'security-label')
+  final List<SearchToken> securityLabel;
   @override
   final List<SearchToken> setting;
   @override
@@ -1806,7 +1882,7 @@ class _$_DocumentReferenceSearch extends _DocumentReferenceSearch {
 
   @override
   String toString() {
-    return 'DocumentReferenceSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, identifier: $identifier, patient: $patient, type: $type, encounter: $encounter, authenticator: $authenticator, author: $author, category: $category, contenttype: $contenttype, custodian: $custodian, date: $date, description: $description, event: $event, facility: $facility, format: $format, language: $language, location: $location, period: $period, related: $related, relatesto: $relatesto, relation: $relation, security_label: $security_label, setting: $setting, status: $status, subject: $subject, relationship: $relationship)';
+    return 'DocumentReferenceSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, identifier: $identifier, patient: $patient, type: $type, encounter: $encounter, authenticator: $authenticator, author: $author, category: $category, contenttype: $contenttype, custodian: $custodian, date: $date, description: $description, event: $event, facility: $facility, format: $format, language: $language, location: $location, period: $period, related: $related, relatesto: $relatesto, relation: $relation, securityLabel: $securityLabel, setting: $setting, status: $status, subject: $subject, relationship: $relationship)';
   }
 
   @override
@@ -1884,7 +1960,7 @@ class _$_DocumentReferenceSearch extends _DocumentReferenceSearch {
             (identical(other.related, related) || const DeepCollectionEquality().equals(other.related, related)) &&
             (identical(other.relatesto, relatesto) || const DeepCollectionEquality().equals(other.relatesto, relatesto)) &&
             (identical(other.relation, relation) || const DeepCollectionEquality().equals(other.relation, relation)) &&
-            (identical(other.security_label, security_label) || const DeepCollectionEquality().equals(other.security_label, security_label)) &&
+            (identical(other.securityLabel, securityLabel) || const DeepCollectionEquality().equals(other.securityLabel, securityLabel)) &&
             (identical(other.setting, setting) || const DeepCollectionEquality().equals(other.setting, setting)) &&
             (identical(other.status, status) || const DeepCollectionEquality().equals(other.status, status)) &&
             (identical(other.subject, subject) || const DeepCollectionEquality().equals(other.subject, subject)) &&
@@ -1922,7 +1998,7 @@ class _$_DocumentReferenceSearch extends _DocumentReferenceSearch {
       const DeepCollectionEquality().hash(related) ^
       const DeepCollectionEquality().hash(relatesto) ^
       const DeepCollectionEquality().hash(relation) ^
-      const DeepCollectionEquality().hash(security_label) ^
+      const DeepCollectionEquality().hash(securityLabel) ^
       const DeepCollectionEquality().hash(setting) ^
       const DeepCollectionEquality().hash(status) ^
       const DeepCollectionEquality().hash(subject) ^
@@ -1932,6 +2008,11 @@ class _$_DocumentReferenceSearch extends _DocumentReferenceSearch {
   _$DocumentReferenceSearchCopyWith<_DocumentReferenceSearch> get copyWith =>
       __$DocumentReferenceSearchCopyWithImpl<_DocumentReferenceSearch>(
           this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_DocumentReferenceSearchToJson(this);
+  }
 }
 
 abstract class _DocumentReferenceSearch extends DocumentReferenceSearch {
@@ -1965,11 +2046,14 @@ abstract class _DocumentReferenceSearch extends DocumentReferenceSearch {
       List<SearchReference> related,
       List<SearchReference> relatesto,
       List<SearchToken> relation,
-      List<SearchToken> security_label,
+      @JsonKey(name: 'security-label') List<SearchToken> securityLabel,
       List<SearchToken> setting,
       List<SearchToken> status,
       List<SearchReference> subject,
       List<SearchComposite> relationship}) = _$_DocumentReferenceSearch;
+
+  factory _DocumentReferenceSearch.fromJson(Map<String, dynamic> json) =
+      _$_DocumentReferenceSearch.fromJson;
 
   @override
   List<Id> get searchId;
@@ -2029,7 +2113,8 @@ abstract class _DocumentReferenceSearch extends DocumentReferenceSearch {
   @override
   List<SearchToken> get relation;
   @override
-  List<SearchToken> get security_label;
+  @JsonKey(name: 'security-label')
+  List<SearchToken> get securityLabel;
   @override
   List<SearchToken> get setting;
   @override

@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+
 import 'package:fhir/primitive_types/primitive_types.dart';
 
 import '../../failures/restful_failure.dart';
@@ -18,6 +19,12 @@ class SearchDate extends SearchObject<String> {
   }
 
   const SearchDate._({this.date, this.missing, this.prefix});
+
+  factory SearchDate.fromJson(Map<String, dynamic> json) => SearchDate(
+      date: json['date'], missing: json['missing'], prefix: json['prefix']);
+
+  Map<String, dynamic> toJson() => searchString()
+      .fold((l) => {'failure': l.errorMessage()}, (r) => {'value': r});
 
   Either<RestfulFailure, String> searchString() => missing != null
       ? right(':missing=$missing')

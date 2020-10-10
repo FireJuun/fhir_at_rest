@@ -5,6 +5,7 @@ import '../../../search_parameter_types/search_parameter_types.dart';
 import '../../../search_parameters.dart';
 
 part 'conformance.freezed.dart';
+part 'conformance.g.dart';
 
 @freezed
 abstract class CapabilityStatementSearch with R4SearchParameters implements _$CapabilityStatementSearch {
@@ -21,8 +22,8 @@ List<Id> searchList,
 //List<SearchString> searchHas,
 //List<SearchToken> searchType,
 List<SearchToken> context,
-List<SearchQuantity> context_quantity,
-List<SearchToken> context_type,
+@JsonKey(name: 'context-quantity') List<SearchQuantity> contextQuantity,
+@JsonKey(name: 'context-type') List<SearchToken> contextType,
 List<SearchDate> date,
 List<SearchString> description,
 List<SearchToken> fhirversion,
@@ -33,18 +34,19 @@ List<SearchToken> mode,
 List<SearchString> name,
 List<SearchString> publisher,
 List<SearchToken> resource,
-List<SearchReference> resource_profile,
-List<SearchToken> security_service,
+@JsonKey(name: 'resource-profile') List<SearchReference> resourceProfile,
+@JsonKey(name: 'security-service') List<SearchToken> securityService,
 List<SearchString> software,
 List<SearchToken> status,
-List<SearchReference> supported_profile,
+@JsonKey(name: 'supported-profile') List<SearchReference> supportedProfile,
 List<SearchString> title,
 List<SearchUri> url,
 List<SearchToken> version,
-List<SearchComposite> context_type_quantity,
-List<SearchComposite> context_type_value,
+@JsonKey(name: 'context-type-quantity') List<SearchComposite> contextTypequantity,
+@JsonKey(name: 'context-type-value') List<SearchComposite> contextTypevalue,
 }) = _CapabilityStatementSearch;
-}
+
+factory CapabilityStatementSearch.fromJson(Map<String, dynamic> json) => _$CapabilityStatementSearchFromJson(json);}
 
 @freezed
 abstract class CompartmentDefinitionSearch with R4SearchParameters implements _$CompartmentDefinitionSearch {
@@ -61,8 +63,8 @@ List<Id> searchList,
 //List<SearchString> searchHas,
 //List<SearchToken> searchType,
 List<SearchToken> context,
-List<SearchQuantity> context_quantity,
-List<SearchToken> context_type,
+@JsonKey(name: 'context-quantity') List<SearchQuantity> contextQuantity,
+@JsonKey(name: 'context-type') List<SearchToken> contextType,
 List<SearchDate> date,
 List<SearchString> description,
 List<SearchString> name,
@@ -70,12 +72,13 @@ List<SearchString> publisher,
 List<SearchToken> status,
 List<SearchUri> url,
 List<SearchToken> version,
-List<SearchComposite> context_type_quantity,
-List<SearchComposite> context_type_value,
+@JsonKey(name: 'context-type-quantity') List<SearchComposite> contextTypequantity,
+@JsonKey(name: 'context-type-value') List<SearchComposite> contextTypevalue,
 List<SearchToken> code,
 List<SearchToken> resource,
 }) = _CompartmentDefinitionSearch;
-}
+
+factory CompartmentDefinitionSearch.fromJson(Map<String, dynamic> json) => _$CompartmentDefinitionSearchFromJson(json);}
 
 @freezed
 abstract class GraphDefinitionSearch with R4SearchParameters implements _$GraphDefinitionSearch {
@@ -92,8 +95,8 @@ List<Id> searchList,
 //List<SearchString> searchHas,
 //List<SearchToken> searchType,
 List<SearchToken> context,
-List<SearchQuantity> context_quantity,
-List<SearchToken> context_type,
+@JsonKey(name: 'context-quantity') List<SearchQuantity> contextQuantity,
+@JsonKey(name: 'context-type') List<SearchToken> contextType,
 List<SearchDate> date,
 List<SearchString> description,
 List<SearchToken> jurisdiction,
@@ -102,11 +105,12 @@ List<SearchString> publisher,
 List<SearchToken> status,
 List<SearchUri> url,
 List<SearchToken> version,
-List<SearchComposite> context_type_quantity,
-List<SearchComposite> context_type_value,
+@JsonKey(name: 'context-type-quantity') List<SearchComposite> contextTypequantity,
+@JsonKey(name: 'context-type-value') List<SearchComposite> contextTypevalue,
 List<SearchToken> start,
 }) = _GraphDefinitionSearch;
-}
+
+factory GraphDefinitionSearch.fromJson(Map<String, dynamic> json) => _$GraphDefinitionSearchFromJson(json);}
 
 @freezed
 abstract class ImplementationGuideSearch with R4SearchParameters implements _$ImplementationGuideSearch {
@@ -123,8 +127,8 @@ List<Id> searchList,
 //List<SearchString> searchHas,
 //List<SearchToken> searchType,
 List<SearchToken> context,
-List<SearchQuantity> context_quantity,
-List<SearchToken> context_type,
+@JsonKey(name: 'context-quantity') List<SearchQuantity> contextQuantity,
+@JsonKey(name: 'context-type') List<SearchToken> contextType,
 List<SearchDate> date,
 List<SearchString> description,
 List<SearchToken> jurisdiction,
@@ -134,14 +138,15 @@ List<SearchToken> status,
 List<SearchString> title,
 List<SearchUri> url,
 List<SearchToken> version,
-List<SearchComposite> context_type_quantity,
-List<SearchComposite> context_type_value,
-List<SearchReference> depends_on,
+@JsonKey(name: 'context-type-quantity') List<SearchComposite> contextTypequantity,
+@JsonKey(name: 'context-type-value') List<SearchComposite> contextTypevalue,
+@JsonKey(name: 'depends-on') List<SearchReference> dependsOn,
 List<SearchToken> experimental,
 List<SearchReference> global,
 List<SearchReference> resource,
 }) = _ImplementationGuideSearch;
-}
+
+factory ImplementationGuideSearch.fromJson(Map<String, dynamic> json) => _$ImplementationGuideSearchFromJson(json);}
 
 @freezed
 abstract class MessageDefinitionSearch with R4SearchParameters implements _$MessageDefinitionSearch {
@@ -158,8 +163,8 @@ List<Id> searchList,
 //List<SearchString> searchHas,
 //List<SearchToken> searchType,
 List<SearchToken> context,
-List<SearchQuantity> context_quantity,
-List<SearchToken> context_type,
+@JsonKey(name: 'context-quantity') List<SearchQuantity> contextQuantity,
+@JsonKey(name: 'context-type') List<SearchToken> contextType,
 List<SearchDate> date,
 List<SearchString> description,
 List<SearchToken> jurisdiction,
@@ -169,15 +174,16 @@ List<SearchToken> status,
 List<SearchString> title,
 List<SearchUri> url,
 List<SearchToken> version,
-List<SearchComposite> context_type_quantity,
-List<SearchComposite> context_type_value,
+@JsonKey(name: 'context-type-quantity') List<SearchComposite> contextTypequantity,
+@JsonKey(name: 'context-type-value') List<SearchComposite> contextTypevalue,
 List<SearchToken> identifier,
 List<SearchToken> category,
 List<SearchToken> event,
 List<SearchToken> focus,
 List<SearchReference> parent,
 }) = _MessageDefinitionSearch;
-}
+
+factory MessageDefinitionSearch.fromJson(Map<String, dynamic> json) => _$MessageDefinitionSearchFromJson(json);}
 
 @freezed
 abstract class OperationDefinitionSearch with R4SearchParameters implements _$OperationDefinitionSearch {
@@ -194,8 +200,8 @@ List<Id> searchList,
 //List<SearchString> searchHas,
 //List<SearchToken> searchType,
 List<SearchToken> context,
-List<SearchQuantity> context_quantity,
-List<SearchToken> context_type,
+@JsonKey(name: 'context-quantity') List<SearchQuantity> contextQuantity,
+@JsonKey(name: 'context-type') List<SearchToken> contextType,
 List<SearchDate> date,
 List<SearchString> description,
 List<SearchToken> jurisdiction,
@@ -205,18 +211,19 @@ List<SearchToken> status,
 List<SearchString> title,
 List<SearchUri> url,
 List<SearchToken> version,
-List<SearchComposite> context_type_quantity,
-List<SearchComposite> context_type_value,
+@JsonKey(name: 'context-type-quantity') List<SearchComposite> contextTypequantity,
+@JsonKey(name: 'context-type-value') List<SearchComposite> contextTypevalue,
 List<SearchReference> base,
 List<SearchToken> code,
-List<SearchReference> input_profile,
+@JsonKey(name: 'input-profile') List<SearchReference> inputProfile,
 List<SearchToken> instance,
 List<SearchToken> kind,
-List<SearchReference> output_profile,
+@JsonKey(name: 'output-profile') List<SearchReference> outputProfile,
 List<SearchToken> system,
 List<SearchToken> type,
 }) = _OperationDefinitionSearch;
-}
+
+factory OperationDefinitionSearch.fromJson(Map<String, dynamic> json) => _$OperationDefinitionSearchFromJson(json);}
 
 @freezed
 abstract class SearchParameterSearch with R4SearchParameters implements _$SearchParameterSearch {
@@ -233,8 +240,8 @@ List<Id> searchList,
 //List<SearchString> searchHas,
 //List<SearchToken> searchType,
 List<SearchToken> context,
-List<SearchQuantity> context_quantity,
-List<SearchToken> context_type,
+@JsonKey(name: 'context-quantity') List<SearchQuantity> contextQuantity,
+@JsonKey(name: 'context-type') List<SearchToken> contextType,
 List<SearchDate> date,
 List<SearchString> description,
 List<SearchToken> jurisdiction,
@@ -243,16 +250,17 @@ List<SearchString> publisher,
 List<SearchToken> status,
 List<SearchUri> url,
 List<SearchToken> version,
-List<SearchComposite> context_type_quantity,
-List<SearchComposite> context_type_value,
+@JsonKey(name: 'context-type-quantity') List<SearchComposite> contextTypequantity,
+@JsonKey(name: 'context-type-value') List<SearchComposite> contextTypevalue,
 List<SearchToken> base,
 List<SearchToken> code,
 List<SearchReference> component,
-List<SearchReference> derived_from,
+@JsonKey(name: 'derived-from') List<SearchReference> derivedFrom,
 List<SearchToken> target,
 List<SearchToken> type,
 }) = _SearchParameterSearch;
-}
+
+factory SearchParameterSearch.fromJson(Map<String, dynamic> json) => _$SearchParameterSearchFromJson(json);}
 
 @freezed
 abstract class StructureDefinitionSearch with R4SearchParameters implements _$StructureDefinitionSearch {
@@ -269,8 +277,8 @@ List<Id> searchList,
 //List<SearchString> searchHas,
 //List<SearchToken> searchType,
 List<SearchToken> context,
-List<SearchQuantity> context_quantity,
-List<SearchToken> context_type,
+@JsonKey(name: 'context-quantity') List<SearchQuantity> contextQuantity,
+@JsonKey(name: 'context-type') List<SearchToken> contextType,
 List<SearchDate> date,
 List<SearchString> description,
 List<SearchToken> jurisdiction,
@@ -280,22 +288,23 @@ List<SearchToken> status,
 List<SearchString> title,
 List<SearchUri> url,
 List<SearchToken> version,
-List<SearchComposite> context_type_quantity,
-List<SearchComposite> context_type_value,
+@JsonKey(name: 'context-type-quantity') List<SearchComposite> contextTypequantity,
+@JsonKey(name: 'context-type-value') List<SearchComposite> contextTypevalue,
 List<SearchToken> identifier,
 List<SearchToken> abstract,
 List<SearchReference> base,
-List<SearchToken> base_path,
+@JsonKey(name: 'base-path') List<SearchToken> basePath,
 List<SearchToken> derivation,
 List<SearchToken> experimental,
-List<SearchToken> ext_context,
+@JsonKey(name: 'ext-context') List<SearchToken> extContext,
 List<SearchToken> keyword,
 List<SearchToken> kind,
 List<SearchToken> path,
 List<SearchUri> type,
 List<SearchReference> valueset,
 }) = _StructureDefinitionSearch;
-}
+
+factory StructureDefinitionSearch.fromJson(Map<String, dynamic> json) => _$StructureDefinitionSearchFromJson(json);}
 
 @freezed
 abstract class StructureMapSearch with R4SearchParameters implements _$StructureMapSearch {
@@ -312,8 +321,8 @@ List<Id> searchList,
 //List<SearchString> searchHas,
 //List<SearchToken> searchType,
 List<SearchToken> context,
-List<SearchQuantity> context_quantity,
-List<SearchToken> context_type,
+@JsonKey(name: 'context-quantity') List<SearchQuantity> contextQuantity,
+@JsonKey(name: 'context-type') List<SearchToken> contextType,
 List<SearchDate> date,
 List<SearchString> description,
 List<SearchToken> jurisdiction,
@@ -323,11 +332,12 @@ List<SearchToken> status,
 List<SearchString> title,
 List<SearchUri> url,
 List<SearchToken> version,
-List<SearchComposite> context_type_quantity,
-List<SearchComposite> context_type_value,
+@JsonKey(name: 'context-type-quantity') List<SearchComposite> contextTypequantity,
+@JsonKey(name: 'context-type-value') List<SearchComposite> contextTypevalue,
 List<SearchToken> identifier,
 }) = _StructureMapSearch;
-}
+
+factory StructureMapSearch.fromJson(Map<String, dynamic> json) => _$StructureMapSearchFromJson(json);}
 
 @freezed
 abstract class ExampleScenarioSearch with R4SearchParameters implements _$ExampleScenarioSearch {
@@ -344,8 +354,8 @@ List<Id> searchList,
 //List<SearchString> searchHas,
 //List<SearchToken> searchType,
 List<SearchToken> context,
-List<SearchQuantity> context_quantity,
-List<SearchToken> context_type,
+@JsonKey(name: 'context-quantity') List<SearchQuantity> contextQuantity,
+@JsonKey(name: 'context-type') List<SearchToken> contextType,
 List<SearchDate> date,
 List<SearchToken> identifier,
 List<SearchToken> jurisdiction,
@@ -354,8 +364,9 @@ List<SearchString> publisher,
 List<SearchToken> status,
 List<SearchUri> url,
 List<SearchToken> version,
-List<SearchComposite> context_type_quantity,
-List<SearchComposite> context_type_value,
+@JsonKey(name: 'context-type-quantity') List<SearchComposite> contextTypequantity,
+@JsonKey(name: 'context-type-value') List<SearchComposite> contextTypevalue,
 }) = _ExampleScenarioSearch;
-}
+
+factory ExampleScenarioSearch.fromJson(Map<String, dynamic> json) => _$ExampleScenarioSearchFromJson(json);}
 

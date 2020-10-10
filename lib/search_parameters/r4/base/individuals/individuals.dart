@@ -5,6 +5,7 @@ import '../../../search_parameter_types/search_parameter_types.dart';
 import '../../../search_parameters.dart';
 
 part 'individuals.freezed.dart';
+part 'individuals.g.dart';
 
 @freezed
 abstract class GroupSearch with R4SearchParameters implements _$GroupSearch {
@@ -25,13 +26,14 @@ List<SearchToken> characteristic,
 List<SearchToken> code,
 List<SearchToken> exclude,
 List<SearchToken> identifier,
-List<SearchReference> managing_entity,
+@JsonKey(name: 'managing-entity') List<SearchReference> managingEntity,
 List<SearchReference> member,
 List<SearchToken> type,
 List<SearchToken> value,
-List<SearchComposite> characteristic_value,
+@JsonKey(name: 'characteristic-value') List<SearchComposite> characteristicValue,
 }) = _GroupSearch;
-}
+
+factory GroupSearch.fromJson(Map<String, dynamic> json) => _$GroupSearchFromJson(json);}
 
 @freezed
 abstract class PatientSearch with R4SearchParameters implements _$PatientSearch {
@@ -49,18 +51,18 @@ List<Id> searchList,
 //List<SearchToken> searchType,
 List<SearchToken> active,
 List<SearchString> address,
-List<SearchString> address_city,
-List<SearchString> address_country,
-List<SearchString> address_postalcode,
-List<SearchString> address_state,
-List<SearchToken> address_use,
+@JsonKey(name: 'address-city') List<SearchString> addressCity,
+@JsonKey(name: 'address-country') List<SearchString> addressCountry,
+@JsonKey(name: 'address-postalcode') List<SearchString> addressPostalcode,
+@JsonKey(name: 'address-state') List<SearchString> addressState,
+@JsonKey(name: 'address-use') List<SearchToken> addressUse,
 List<SearchDate> birthdate,
-List<SearchDate> death_date,
+@JsonKey(name: 'death-date') List<SearchDate> deathDate,
 List<SearchToken> deceased,
 List<SearchToken> email,
 List<SearchString> family,
 List<SearchToken> gender,
-List<SearchReference> general_practitioner,
+@JsonKey(name: 'general-practitioner') List<SearchReference> generalPractitioner,
 List<SearchString> given,
 List<SearchToken> identifier,
 List<SearchToken> language,
@@ -71,7 +73,8 @@ List<SearchToken> phone,
 List<SearchString> phonetic,
 List<SearchToken> telecom,
 }) = _PatientSearch;
-}
+
+factory PatientSearch.fromJson(Map<String, dynamic> json) => _$PatientSearchFromJson(json);}
 
 @freezed
 abstract class PersonSearch with R4SearchParameters implements _$PersonSearch {
@@ -88,11 +91,11 @@ List<Id> searchList,
 //List<SearchString> searchHas,
 //List<SearchToken> searchType,
 List<SearchString> address,
-List<SearchString> address_city,
-List<SearchString> address_country,
-List<SearchString> address_postalcode,
-List<SearchString> address_state,
-List<SearchToken> address_use,
+@JsonKey(name: 'address-city') List<SearchString> addressCity,
+@JsonKey(name: 'address-country') List<SearchString> addressCountry,
+@JsonKey(name: 'address-postalcode') List<SearchString> addressPostalcode,
+@JsonKey(name: 'address-state') List<SearchString> addressState,
+@JsonKey(name: 'address-use') List<SearchToken> addressUse,
 List<SearchDate> birthdate,
 List<SearchToken> email,
 List<SearchToken> gender,
@@ -107,7 +110,8 @@ List<SearchReference> patient,
 List<SearchReference> practitioner,
 List<SearchReference> relatedperson,
 }) = _PersonSearch;
-}
+
+factory PersonSearch.fromJson(Map<String, dynamic> json) => _$PersonSearchFromJson(json);}
 
 @freezed
 abstract class PractitionerSearch with R4SearchParameters implements _$PractitionerSearch {
@@ -124,11 +128,11 @@ List<Id> searchList,
 //List<SearchString> searchHas,
 //List<SearchToken> searchType,
 List<SearchString> address,
-List<SearchString> address_city,
-List<SearchString> address_country,
-List<SearchString> address_postalcode,
-List<SearchString> address_state,
-List<SearchToken> address_use,
+@JsonKey(name: 'address-city') List<SearchString> addressCity,
+@JsonKey(name: 'address-country') List<SearchString> addressCountry,
+@JsonKey(name: 'address-postalcode') List<SearchString> addressPostalcode,
+@JsonKey(name: 'address-state') List<SearchString> addressState,
+@JsonKey(name: 'address-use') List<SearchToken> addressUse,
 List<SearchToken> email,
 List<SearchString> family,
 List<SearchToken> gender,
@@ -141,7 +145,8 @@ List<SearchToken> communication,
 List<SearchToken> identifier,
 List<SearchString> name,
 }) = _PractitionerSearch;
-}
+
+factory PractitionerSearch.fromJson(Map<String, dynamic> json) => _$PractitionerSearchFromJson(json);}
 
 @freezed
 abstract class RelatedPersonSearch with R4SearchParameters implements _$RelatedPersonSearch {
@@ -158,11 +163,11 @@ List<Id> searchList,
 //List<SearchString> searchHas,
 //List<SearchToken> searchType,
 List<SearchString> address,
-List<SearchString> address_city,
-List<SearchString> address_country,
-List<SearchString> address_postalcode,
-List<SearchString> address_state,
-List<SearchToken> address_use,
+@JsonKey(name: 'address-city') List<SearchString> addressCity,
+@JsonKey(name: 'address-country') List<SearchString> addressCountry,
+@JsonKey(name: 'address-postalcode') List<SearchString> addressPostalcode,
+@JsonKey(name: 'address-state') List<SearchString> addressState,
+@JsonKey(name: 'address-use') List<SearchToken> addressUse,
 List<SearchDate> birthdate,
 List<SearchToken> email,
 List<SearchToken> gender,
@@ -175,7 +180,8 @@ List<SearchString> name,
 List<SearchReference> patient,
 List<SearchToken> relationship,
 }) = _RelatedPersonSearch;
-}
+
+factory RelatedPersonSearch.fromJson(Map<String, dynamic> json) => _$RelatedPersonSearchFromJson(json);}
 
 @freezed
 abstract class PractitionerRoleSearch with R4SearchParameters implements _$PractitionerRoleSearch {
@@ -205,5 +211,6 @@ List<SearchToken> role,
 List<SearchReference> service,
 List<SearchToken> specialty,
 }) = _PractitionerRoleSearch;
-}
+
+factory PractitionerRoleSearch.fromJson(Map<String, dynamic> json) => _$PractitionerRoleSearchFromJson(json);}
 

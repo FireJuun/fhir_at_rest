@@ -5,6 +5,7 @@ import '../../../search_parameter_types/search_parameter_types.dart';
 import '../../../search_parameters.dart';
 
 part 'public_health_and_research.freezed.dart';
+part 'public_health_and_research.g.dart';
 
 @freezed
 abstract class ResearchStudySearch with R4SearchParameters implements _$ResearchStudySearch {
@@ -34,7 +35,8 @@ List<SearchReference> sponsor,
 List<SearchToken> status,
 List<SearchString> title,
 }) = _ResearchStudySearch;
-}
+
+factory ResearchStudySearch.fromJson(Map<String, dynamic> json) => _$ResearchStudySearchFromJson(json);}
 
 @freezed
 abstract class ResearchSubjectSearch with R4SearchParameters implements _$ResearchSubjectSearch {
@@ -57,5 +59,6 @@ List<SearchReference> patient,
 List<SearchToken> status,
 List<SearchReference> study,
 }) = _ResearchSubjectSearch;
-}
+
+factory ResearchSubjectSearch.fromJson(Map<String, dynamic> json) => _$ResearchSubjectSearchFromJson(json);}
 

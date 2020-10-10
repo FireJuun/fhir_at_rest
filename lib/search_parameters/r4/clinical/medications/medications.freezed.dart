@@ -8,6 +8,9 @@ part of 'medications.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
+MedicationSearch _$MedicationSearchFromJson(Map<String, dynamic> json) {
+  return _MedicationSearch.fromJson(json);
+}
 
 /// @nodoc
 class _$MedicationSearchTearOff {
@@ -24,12 +27,12 @@ class _$MedicationSearchTearOff {
       List<SearchString> searchContent,
       List<Id> searchList,
       List<SearchToken> code,
-      List<SearchDate> expiration_date,
+      @JsonKey(name: 'expiration-date') List<SearchDate> expirationDate,
       List<SearchToken> form,
       List<SearchToken> identifier,
       List<SearchReference> ingredient,
-      List<SearchToken> ingredient_code,
-      List<SearchToken> lot_number,
+      @JsonKey(name: 'ingredient-code') List<SearchToken> ingredientCode,
+      @JsonKey(name: 'lot-number') List<SearchToken> lotNumber,
       List<SearchReference> manufacturer,
       List<SearchToken> status}) {
     return _MedicationSearch(
@@ -42,15 +45,20 @@ class _$MedicationSearchTearOff {
       searchContent: searchContent,
       searchList: searchList,
       code: code,
-      expiration_date: expiration_date,
+      expirationDate: expirationDate,
       form: form,
       identifier: identifier,
       ingredient: ingredient,
-      ingredient_code: ingredient_code,
-      lot_number: lot_number,
+      ingredientCode: ingredientCode,
+      lotNumber: lotNumber,
       manufacturer: manufacturer,
       status: status,
     );
+  }
+
+// ignore: unused_element
+  MedicationSearch fromJson(Map<String, Object> json) {
+    return MedicationSearch.fromJson(json);
   }
 }
 
@@ -70,15 +78,19 @@ mixin _$MedicationSearch {
   List<Id> get searchList; //List<SearchString> searchHas,
 //List<SearchToken> searchType,
   List<SearchToken> get code;
-  List<SearchDate> get expiration_date;
+  @JsonKey(name: 'expiration-date')
+  List<SearchDate> get expirationDate;
   List<SearchToken> get form;
   List<SearchToken> get identifier;
   List<SearchReference> get ingredient;
-  List<SearchToken> get ingredient_code;
-  List<SearchToken> get lot_number;
+  @JsonKey(name: 'ingredient-code')
+  List<SearchToken> get ingredientCode;
+  @JsonKey(name: 'lot-number')
+  List<SearchToken> get lotNumber;
   List<SearchReference> get manufacturer;
   List<SearchToken> get status;
 
+  Map<String, dynamic> toJson();
   $MedicationSearchCopyWith<MedicationSearch> get copyWith;
 }
 
@@ -97,12 +109,12 @@ abstract class $MedicationSearchCopyWith<$Res> {
       List<SearchString> searchContent,
       List<Id> searchList,
       List<SearchToken> code,
-      List<SearchDate> expiration_date,
+      @JsonKey(name: 'expiration-date') List<SearchDate> expirationDate,
       List<SearchToken> form,
       List<SearchToken> identifier,
       List<SearchReference> ingredient,
-      List<SearchToken> ingredient_code,
-      List<SearchToken> lot_number,
+      @JsonKey(name: 'ingredient-code') List<SearchToken> ingredientCode,
+      @JsonKey(name: 'lot-number') List<SearchToken> lotNumber,
       List<SearchReference> manufacturer,
       List<SearchToken> status});
 }
@@ -127,12 +139,12 @@ class _$MedicationSearchCopyWithImpl<$Res>
     Object searchContent = freezed,
     Object searchList = freezed,
     Object code = freezed,
-    Object expiration_date = freezed,
+    Object expirationDate = freezed,
     Object form = freezed,
     Object identifier = freezed,
     Object ingredient = freezed,
-    Object ingredient_code = freezed,
-    Object lot_number = freezed,
+    Object ingredientCode = freezed,
+    Object lotNumber = freezed,
     Object manufacturer = freezed,
     Object status = freezed,
   }) {
@@ -159,9 +171,9 @@ class _$MedicationSearchCopyWithImpl<$Res>
       searchList:
           searchList == freezed ? _value.searchList : searchList as List<Id>,
       code: code == freezed ? _value.code : code as List<SearchToken>,
-      expiration_date: expiration_date == freezed
-          ? _value.expiration_date
-          : expiration_date as List<SearchDate>,
+      expirationDate: expirationDate == freezed
+          ? _value.expirationDate
+          : expirationDate as List<SearchDate>,
       form: form == freezed ? _value.form : form as List<SearchToken>,
       identifier: identifier == freezed
           ? _value.identifier
@@ -169,12 +181,12 @@ class _$MedicationSearchCopyWithImpl<$Res>
       ingredient: ingredient == freezed
           ? _value.ingredient
           : ingredient as List<SearchReference>,
-      ingredient_code: ingredient_code == freezed
-          ? _value.ingredient_code
-          : ingredient_code as List<SearchToken>,
-      lot_number: lot_number == freezed
-          ? _value.lot_number
-          : lot_number as List<SearchToken>,
+      ingredientCode: ingredientCode == freezed
+          ? _value.ingredientCode
+          : ingredientCode as List<SearchToken>,
+      lotNumber: lotNumber == freezed
+          ? _value.lotNumber
+          : lotNumber as List<SearchToken>,
       manufacturer: manufacturer == freezed
           ? _value.manufacturer
           : manufacturer as List<SearchReference>,
@@ -200,12 +212,12 @@ abstract class _$MedicationSearchCopyWith<$Res>
       List<SearchString> searchContent,
       List<Id> searchList,
       List<SearchToken> code,
-      List<SearchDate> expiration_date,
+      @JsonKey(name: 'expiration-date') List<SearchDate> expirationDate,
       List<SearchToken> form,
       List<SearchToken> identifier,
       List<SearchReference> ingredient,
-      List<SearchToken> ingredient_code,
-      List<SearchToken> lot_number,
+      @JsonKey(name: 'ingredient-code') List<SearchToken> ingredientCode,
+      @JsonKey(name: 'lot-number') List<SearchToken> lotNumber,
       List<SearchReference> manufacturer,
       List<SearchToken> status});
 }
@@ -232,12 +244,12 @@ class __$MedicationSearchCopyWithImpl<$Res>
     Object searchContent = freezed,
     Object searchList = freezed,
     Object code = freezed,
-    Object expiration_date = freezed,
+    Object expirationDate = freezed,
     Object form = freezed,
     Object identifier = freezed,
     Object ingredient = freezed,
-    Object ingredient_code = freezed,
-    Object lot_number = freezed,
+    Object ingredientCode = freezed,
+    Object lotNumber = freezed,
     Object manufacturer = freezed,
     Object status = freezed,
   }) {
@@ -264,9 +276,9 @@ class __$MedicationSearchCopyWithImpl<$Res>
       searchList:
           searchList == freezed ? _value.searchList : searchList as List<Id>,
       code: code == freezed ? _value.code : code as List<SearchToken>,
-      expiration_date: expiration_date == freezed
-          ? _value.expiration_date
-          : expiration_date as List<SearchDate>,
+      expirationDate: expirationDate == freezed
+          ? _value.expirationDate
+          : expirationDate as List<SearchDate>,
       form: form == freezed ? _value.form : form as List<SearchToken>,
       identifier: identifier == freezed
           ? _value.identifier
@@ -274,12 +286,12 @@ class __$MedicationSearchCopyWithImpl<$Res>
       ingredient: ingredient == freezed
           ? _value.ingredient
           : ingredient as List<SearchReference>,
-      ingredient_code: ingredient_code == freezed
-          ? _value.ingredient_code
-          : ingredient_code as List<SearchToken>,
-      lot_number: lot_number == freezed
-          ? _value.lot_number
-          : lot_number as List<SearchToken>,
+      ingredientCode: ingredientCode == freezed
+          ? _value.ingredientCode
+          : ingredientCode as List<SearchToken>,
+      lotNumber: lotNumber == freezed
+          ? _value.lotNumber
+          : lotNumber as List<SearchToken>,
       manufacturer: manufacturer == freezed
           ? _value.manufacturer
           : manufacturer as List<SearchReference>,
@@ -287,6 +299,8 @@ class __$MedicationSearchCopyWithImpl<$Res>
     ));
   }
 }
+
+@JsonSerializable()
 
 /// @nodoc
 class _$_MedicationSearch extends _MedicationSearch {
@@ -300,15 +314,18 @@ class _$_MedicationSearch extends _MedicationSearch {
       this.searchContent,
       this.searchList,
       this.code,
-      this.expiration_date,
+      @JsonKey(name: 'expiration-date') this.expirationDate,
       this.form,
       this.identifier,
       this.ingredient,
-      this.ingredient_code,
-      this.lot_number,
+      @JsonKey(name: 'ingredient-code') this.ingredientCode,
+      @JsonKey(name: 'lot-number') this.lotNumber,
       this.manufacturer,
       this.status})
       : super._();
+
+  factory _$_MedicationSearch.fromJson(Map<String, dynamic> json) =>
+      _$_$_MedicationSearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -330,7 +347,8 @@ class _$_MedicationSearch extends _MedicationSearch {
 //List<SearchToken> searchType,
   final List<SearchToken> code;
   @override
-  final List<SearchDate> expiration_date;
+  @JsonKey(name: 'expiration-date')
+  final List<SearchDate> expirationDate;
   @override
   final List<SearchToken> form;
   @override
@@ -338,9 +356,11 @@ class _$_MedicationSearch extends _MedicationSearch {
   @override
   final List<SearchReference> ingredient;
   @override
-  final List<SearchToken> ingredient_code;
+  @JsonKey(name: 'ingredient-code')
+  final List<SearchToken> ingredientCode;
   @override
-  final List<SearchToken> lot_number;
+  @JsonKey(name: 'lot-number')
+  final List<SearchToken> lotNumber;
   @override
   final List<SearchReference> manufacturer;
   @override
@@ -348,7 +368,7 @@ class _$_MedicationSearch extends _MedicationSearch {
 
   @override
   String toString() {
-    return 'MedicationSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, code: $code, expiration_date: $expiration_date, form: $form, identifier: $identifier, ingredient: $ingredient, ingredient_code: $ingredient_code, lot_number: $lot_number, manufacturer: $manufacturer, status: $status)';
+    return 'MedicationSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, code: $code, expirationDate: $expirationDate, form: $form, identifier: $identifier, ingredient: $ingredient, ingredientCode: $ingredientCode, lotNumber: $lotNumber, manufacturer: $manufacturer, status: $status)';
   }
 
   @override
@@ -381,9 +401,9 @@ class _$_MedicationSearch extends _MedicationSearch {
                     .equals(other.searchList, searchList)) &&
             (identical(other.code, code) ||
                 const DeepCollectionEquality().equals(other.code, code)) &&
-            (identical(other.expiration_date, expiration_date) ||
+            (identical(other.expirationDate, expirationDate) ||
                 const DeepCollectionEquality()
-                    .equals(other.expiration_date, expiration_date)) &&
+                    .equals(other.expirationDate, expirationDate)) &&
             (identical(other.form, form) ||
                 const DeepCollectionEquality().equals(other.form, form)) &&
             (identical(other.identifier, identifier) ||
@@ -392,12 +412,12 @@ class _$_MedicationSearch extends _MedicationSearch {
             (identical(other.ingredient, ingredient) ||
                 const DeepCollectionEquality()
                     .equals(other.ingredient, ingredient)) &&
-            (identical(other.ingredient_code, ingredient_code) ||
+            (identical(other.ingredientCode, ingredientCode) ||
                 const DeepCollectionEquality()
-                    .equals(other.ingredient_code, ingredient_code)) &&
-            (identical(other.lot_number, lot_number) ||
+                    .equals(other.ingredientCode, ingredientCode)) &&
+            (identical(other.lotNumber, lotNumber) ||
                 const DeepCollectionEquality()
-                    .equals(other.lot_number, lot_number)) &&
+                    .equals(other.lotNumber, lotNumber)) &&
             (identical(other.manufacturer, manufacturer) ||
                 const DeepCollectionEquality()
                     .equals(other.manufacturer, manufacturer)) &&
@@ -417,18 +437,23 @@ class _$_MedicationSearch extends _MedicationSearch {
       const DeepCollectionEquality().hash(searchContent) ^
       const DeepCollectionEquality().hash(searchList) ^
       const DeepCollectionEquality().hash(code) ^
-      const DeepCollectionEquality().hash(expiration_date) ^
+      const DeepCollectionEquality().hash(expirationDate) ^
       const DeepCollectionEquality().hash(form) ^
       const DeepCollectionEquality().hash(identifier) ^
       const DeepCollectionEquality().hash(ingredient) ^
-      const DeepCollectionEquality().hash(ingredient_code) ^
-      const DeepCollectionEquality().hash(lot_number) ^
+      const DeepCollectionEquality().hash(ingredientCode) ^
+      const DeepCollectionEquality().hash(lotNumber) ^
       const DeepCollectionEquality().hash(manufacturer) ^
       const DeepCollectionEquality().hash(status);
 
   @override
   _$MedicationSearchCopyWith<_MedicationSearch> get copyWith =>
       __$MedicationSearchCopyWithImpl<_MedicationSearch>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_MedicationSearchToJson(this);
+  }
 }
 
 abstract class _MedicationSearch extends MedicationSearch {
@@ -443,14 +468,17 @@ abstract class _MedicationSearch extends MedicationSearch {
       List<SearchString> searchContent,
       List<Id> searchList,
       List<SearchToken> code,
-      List<SearchDate> expiration_date,
+      @JsonKey(name: 'expiration-date') List<SearchDate> expirationDate,
       List<SearchToken> form,
       List<SearchToken> identifier,
       List<SearchReference> ingredient,
-      List<SearchToken> ingredient_code,
-      List<SearchToken> lot_number,
+      @JsonKey(name: 'ingredient-code') List<SearchToken> ingredientCode,
+      @JsonKey(name: 'lot-number') List<SearchToken> lotNumber,
       List<SearchReference> manufacturer,
       List<SearchToken> status}) = _$_MedicationSearch;
+
+  factory _MedicationSearch.fromJson(Map<String, dynamic> json) =
+      _$_MedicationSearch.fromJson;
 
   @override
   List<Id> get searchId;
@@ -472,7 +500,8 @@ abstract class _MedicationSearch extends MedicationSearch {
 //List<SearchToken> searchType,
   List<SearchToken> get code;
   @override
-  List<SearchDate> get expiration_date;
+  @JsonKey(name: 'expiration-date')
+  List<SearchDate> get expirationDate;
   @override
   List<SearchToken> get form;
   @override
@@ -480,15 +509,22 @@ abstract class _MedicationSearch extends MedicationSearch {
   @override
   List<SearchReference> get ingredient;
   @override
-  List<SearchToken> get ingredient_code;
+  @JsonKey(name: 'ingredient-code')
+  List<SearchToken> get ingredientCode;
   @override
-  List<SearchToken> get lot_number;
+  @JsonKey(name: 'lot-number')
+  List<SearchToken> get lotNumber;
   @override
   List<SearchReference> get manufacturer;
   @override
   List<SearchToken> get status;
   @override
   _$MedicationSearchCopyWith<_MedicationSearch> get copyWith;
+}
+
+MedicationAdministrationSearch _$MedicationAdministrationSearchFromJson(
+    Map<String, dynamic> json) {
+  return _MedicationAdministrationSearch.fromJson(json);
 }
 
 /// @nodoc
@@ -510,11 +546,11 @@ class _$MedicationAdministrationSearchTearOff {
       List<SearchReference> patient,
       List<SearchReference> context,
       List<SearchReference> device,
-      List<SearchDate> effective_time,
+      @JsonKey(name: 'effective-time') List<SearchDate> effectiveTime,
       List<SearchReference> medication,
       List<SearchReference> performer,
-      List<SearchToken> reason_given,
-      List<SearchToken> reason_not_given,
+      @JsonKey(name: 'reason-given') List<SearchToken> reasonGiven,
+      @JsonKey(name: 'reason-not-given') List<SearchToken> reasonNotgiven,
       List<SearchReference> request,
       List<SearchToken> status,
       List<SearchReference> subject}) {
@@ -532,15 +568,20 @@ class _$MedicationAdministrationSearchTearOff {
       patient: patient,
       context: context,
       device: device,
-      effective_time: effective_time,
+      effectiveTime: effectiveTime,
       medication: medication,
       performer: performer,
-      reason_given: reason_given,
-      reason_not_given: reason_not_given,
+      reasonGiven: reasonGiven,
+      reasonNotgiven: reasonNotgiven,
       request: request,
       status: status,
       subject: subject,
     );
+  }
+
+// ignore: unused_element
+  MedicationAdministrationSearch fromJson(Map<String, Object> json) {
+    return MedicationAdministrationSearch.fromJson(json);
   }
 }
 
@@ -565,15 +606,19 @@ mixin _$MedicationAdministrationSearch {
   List<SearchReference> get patient;
   List<SearchReference> get context;
   List<SearchReference> get device;
-  List<SearchDate> get effective_time;
+  @JsonKey(name: 'effective-time')
+  List<SearchDate> get effectiveTime;
   List<SearchReference> get medication;
   List<SearchReference> get performer;
-  List<SearchToken> get reason_given;
-  List<SearchToken> get reason_not_given;
+  @JsonKey(name: 'reason-given')
+  List<SearchToken> get reasonGiven;
+  @JsonKey(name: 'reason-not-given')
+  List<SearchToken> get reasonNotgiven;
   List<SearchReference> get request;
   List<SearchToken> get status;
   List<SearchReference> get subject;
 
+  Map<String, dynamic> toJson();
   $MedicationAdministrationSearchCopyWith<MedicationAdministrationSearch>
       get copyWith;
 }
@@ -598,11 +643,11 @@ abstract class $MedicationAdministrationSearchCopyWith<$Res> {
       List<SearchReference> patient,
       List<SearchReference> context,
       List<SearchReference> device,
-      List<SearchDate> effective_time,
+      @JsonKey(name: 'effective-time') List<SearchDate> effectiveTime,
       List<SearchReference> medication,
       List<SearchReference> performer,
-      List<SearchToken> reason_given,
-      List<SearchToken> reason_not_given,
+      @JsonKey(name: 'reason-given') List<SearchToken> reasonGiven,
+      @JsonKey(name: 'reason-not-given') List<SearchToken> reasonNotgiven,
       List<SearchReference> request,
       List<SearchToken> status,
       List<SearchReference> subject});
@@ -632,11 +677,11 @@ class _$MedicationAdministrationSearchCopyWithImpl<$Res>
     Object patient = freezed,
     Object context = freezed,
     Object device = freezed,
-    Object effective_time = freezed,
+    Object effectiveTime = freezed,
     Object medication = freezed,
     Object performer = freezed,
-    Object reason_given = freezed,
-    Object reason_not_given = freezed,
+    Object reasonGiven = freezed,
+    Object reasonNotgiven = freezed,
     Object request = freezed,
     Object status = freezed,
     Object subject = freezed,
@@ -675,21 +720,21 @@ class _$MedicationAdministrationSearchCopyWithImpl<$Res>
           : context as List<SearchReference>,
       device:
           device == freezed ? _value.device : device as List<SearchReference>,
-      effective_time: effective_time == freezed
-          ? _value.effective_time
-          : effective_time as List<SearchDate>,
+      effectiveTime: effectiveTime == freezed
+          ? _value.effectiveTime
+          : effectiveTime as List<SearchDate>,
       medication: medication == freezed
           ? _value.medication
           : medication as List<SearchReference>,
       performer: performer == freezed
           ? _value.performer
           : performer as List<SearchReference>,
-      reason_given: reason_given == freezed
-          ? _value.reason_given
-          : reason_given as List<SearchToken>,
-      reason_not_given: reason_not_given == freezed
-          ? _value.reason_not_given
-          : reason_not_given as List<SearchToken>,
+      reasonGiven: reasonGiven == freezed
+          ? _value.reasonGiven
+          : reasonGiven as List<SearchToken>,
+      reasonNotgiven: reasonNotgiven == freezed
+          ? _value.reasonNotgiven
+          : reasonNotgiven as List<SearchToken>,
       request: request == freezed
           ? _value.request
           : request as List<SearchReference>,
@@ -723,11 +768,11 @@ abstract class _$MedicationAdministrationSearchCopyWith<$Res>
       List<SearchReference> patient,
       List<SearchReference> context,
       List<SearchReference> device,
-      List<SearchDate> effective_time,
+      @JsonKey(name: 'effective-time') List<SearchDate> effectiveTime,
       List<SearchReference> medication,
       List<SearchReference> performer,
-      List<SearchToken> reason_given,
-      List<SearchToken> reason_not_given,
+      @JsonKey(name: 'reason-given') List<SearchToken> reasonGiven,
+      @JsonKey(name: 'reason-not-given') List<SearchToken> reasonNotgiven,
       List<SearchReference> request,
       List<SearchToken> status,
       List<SearchReference> subject});
@@ -761,11 +806,11 @@ class __$MedicationAdministrationSearchCopyWithImpl<$Res>
     Object patient = freezed,
     Object context = freezed,
     Object device = freezed,
-    Object effective_time = freezed,
+    Object effectiveTime = freezed,
     Object medication = freezed,
     Object performer = freezed,
-    Object reason_given = freezed,
-    Object reason_not_given = freezed,
+    Object reasonGiven = freezed,
+    Object reasonNotgiven = freezed,
     Object request = freezed,
     Object status = freezed,
     Object subject = freezed,
@@ -804,21 +849,21 @@ class __$MedicationAdministrationSearchCopyWithImpl<$Res>
           : context as List<SearchReference>,
       device:
           device == freezed ? _value.device : device as List<SearchReference>,
-      effective_time: effective_time == freezed
-          ? _value.effective_time
-          : effective_time as List<SearchDate>,
+      effectiveTime: effectiveTime == freezed
+          ? _value.effectiveTime
+          : effectiveTime as List<SearchDate>,
       medication: medication == freezed
           ? _value.medication
           : medication as List<SearchReference>,
       performer: performer == freezed
           ? _value.performer
           : performer as List<SearchReference>,
-      reason_given: reason_given == freezed
-          ? _value.reason_given
-          : reason_given as List<SearchToken>,
-      reason_not_given: reason_not_given == freezed
-          ? _value.reason_not_given
-          : reason_not_given as List<SearchToken>,
+      reasonGiven: reasonGiven == freezed
+          ? _value.reasonGiven
+          : reasonGiven as List<SearchToken>,
+      reasonNotgiven: reasonNotgiven == freezed
+          ? _value.reasonNotgiven
+          : reasonNotgiven as List<SearchToken>,
       request: request == freezed
           ? _value.request
           : request as List<SearchReference>,
@@ -829,6 +874,8 @@ class __$MedicationAdministrationSearchCopyWithImpl<$Res>
     ));
   }
 }
+
+@JsonSerializable()
 
 /// @nodoc
 class _$_MedicationAdministrationSearch
@@ -847,15 +894,19 @@ class _$_MedicationAdministrationSearch
       this.patient,
       this.context,
       this.device,
-      this.effective_time,
+      @JsonKey(name: 'effective-time') this.effectiveTime,
       this.medication,
       this.performer,
-      this.reason_given,
-      this.reason_not_given,
+      @JsonKey(name: 'reason-given') this.reasonGiven,
+      @JsonKey(name: 'reason-not-given') this.reasonNotgiven,
       this.request,
       this.status,
       this.subject})
       : super._();
+
+  factory _$_MedicationAdministrationSearch.fromJson(
+          Map<String, dynamic> json) =>
+      _$_$_MedicationAdministrationSearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -885,15 +936,18 @@ class _$_MedicationAdministrationSearch
   @override
   final List<SearchReference> device;
   @override
-  final List<SearchDate> effective_time;
+  @JsonKey(name: 'effective-time')
+  final List<SearchDate> effectiveTime;
   @override
   final List<SearchReference> medication;
   @override
   final List<SearchReference> performer;
   @override
-  final List<SearchToken> reason_given;
+  @JsonKey(name: 'reason-given')
+  final List<SearchToken> reasonGiven;
   @override
-  final List<SearchToken> reason_not_given;
+  @JsonKey(name: 'reason-not-given')
+  final List<SearchToken> reasonNotgiven;
   @override
   final List<SearchReference> request;
   @override
@@ -903,7 +957,7 @@ class _$_MedicationAdministrationSearch
 
   @override
   String toString() {
-    return 'MedicationAdministrationSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, code: $code, identifier: $identifier, patient: $patient, context: $context, device: $device, effective_time: $effective_time, medication: $medication, performer: $performer, reason_given: $reason_given, reason_not_given: $reason_not_given, request: $request, status: $status, subject: $subject)';
+    return 'MedicationAdministrationSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, code: $code, identifier: $identifier, patient: $patient, context: $context, device: $device, effectiveTime: $effectiveTime, medication: $medication, performer: $performer, reasonGiven: $reasonGiven, reasonNotgiven: $reasonNotgiven, request: $request, status: $status, subject: $subject)';
   }
 
   @override
@@ -947,21 +1001,21 @@ class _$_MedicationAdministrationSearch
                     .equals(other.context, context)) &&
             (identical(other.device, device) ||
                 const DeepCollectionEquality().equals(other.device, device)) &&
-            (identical(other.effective_time, effective_time) ||
+            (identical(other.effectiveTime, effectiveTime) ||
                 const DeepCollectionEquality()
-                    .equals(other.effective_time, effective_time)) &&
+                    .equals(other.effectiveTime, effectiveTime)) &&
             (identical(other.medication, medication) ||
                 const DeepCollectionEquality()
                     .equals(other.medication, medication)) &&
             (identical(other.performer, performer) ||
                 const DeepCollectionEquality()
                     .equals(other.performer, performer)) &&
-            (identical(other.reason_given, reason_given) ||
+            (identical(other.reasonGiven, reasonGiven) ||
                 const DeepCollectionEquality()
-                    .equals(other.reason_given, reason_given)) &&
-            (identical(other.reason_not_given, reason_not_given) ||
+                    .equals(other.reasonGiven, reasonGiven)) &&
+            (identical(other.reasonNotgiven, reasonNotgiven) ||
                 const DeepCollectionEquality()
-                    .equals(other.reason_not_given, reason_not_given)) &&
+                    .equals(other.reasonNotgiven, reasonNotgiven)) &&
             (identical(other.request, request) ||
                 const DeepCollectionEquality()
                     .equals(other.request, request)) &&
@@ -987,11 +1041,11 @@ class _$_MedicationAdministrationSearch
       const DeepCollectionEquality().hash(patient) ^
       const DeepCollectionEquality().hash(context) ^
       const DeepCollectionEquality().hash(device) ^
-      const DeepCollectionEquality().hash(effective_time) ^
+      const DeepCollectionEquality().hash(effectiveTime) ^
       const DeepCollectionEquality().hash(medication) ^
       const DeepCollectionEquality().hash(performer) ^
-      const DeepCollectionEquality().hash(reason_given) ^
-      const DeepCollectionEquality().hash(reason_not_given) ^
+      const DeepCollectionEquality().hash(reasonGiven) ^
+      const DeepCollectionEquality().hash(reasonNotgiven) ^
       const DeepCollectionEquality().hash(request) ^
       const DeepCollectionEquality().hash(status) ^
       const DeepCollectionEquality().hash(subject);
@@ -1000,6 +1054,11 @@ class _$_MedicationAdministrationSearch
   _$MedicationAdministrationSearchCopyWith<_MedicationAdministrationSearch>
       get copyWith => __$MedicationAdministrationSearchCopyWithImpl<
           _MedicationAdministrationSearch>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_MedicationAdministrationSearchToJson(this);
+  }
 }
 
 abstract class _MedicationAdministrationSearch
@@ -1019,14 +1078,17 @@ abstract class _MedicationAdministrationSearch
       List<SearchReference> patient,
       List<SearchReference> context,
       List<SearchReference> device,
-      List<SearchDate> effective_time,
+      @JsonKey(name: 'effective-time') List<SearchDate> effectiveTime,
       List<SearchReference> medication,
       List<SearchReference> performer,
-      List<SearchToken> reason_given,
-      List<SearchToken> reason_not_given,
+      @JsonKey(name: 'reason-given') List<SearchToken> reasonGiven,
+      @JsonKey(name: 'reason-not-given') List<SearchToken> reasonNotgiven,
       List<SearchReference> request,
       List<SearchToken> status,
       List<SearchReference> subject}) = _$_MedicationAdministrationSearch;
+
+  factory _MedicationAdministrationSearch.fromJson(Map<String, dynamic> json) =
+      _$_MedicationAdministrationSearch.fromJson;
 
   @override
   List<Id> get searchId;
@@ -1056,15 +1118,18 @@ abstract class _MedicationAdministrationSearch
   @override
   List<SearchReference> get device;
   @override
-  List<SearchDate> get effective_time;
+  @JsonKey(name: 'effective-time')
+  List<SearchDate> get effectiveTime;
   @override
   List<SearchReference> get medication;
   @override
   List<SearchReference> get performer;
   @override
-  List<SearchToken> get reason_given;
+  @JsonKey(name: 'reason-given')
+  List<SearchToken> get reasonGiven;
   @override
-  List<SearchToken> get reason_not_given;
+  @JsonKey(name: 'reason-not-given')
+  List<SearchToken> get reasonNotgiven;
   @override
   List<SearchReference> get request;
   @override
@@ -1074,6 +1139,11 @@ abstract class _MedicationAdministrationSearch
   @override
   _$MedicationAdministrationSearchCopyWith<_MedicationAdministrationSearch>
       get copyWith;
+}
+
+MedicationDispenseSearch _$MedicationDispenseSearchFromJson(
+    Map<String, dynamic> json) {
+  return _MedicationDispenseSearch.fromJson(json);
 }
 
 /// @nodoc
@@ -1131,6 +1201,11 @@ class _$MedicationDispenseSearchTearOff {
       whenprepared: whenprepared,
     );
   }
+
+// ignore: unused_element
+  MedicationDispenseSearch fromJson(Map<String, Object> json) {
+    return MedicationDispenseSearch.fromJson(json);
+  }
 }
 
 /// @nodoc
@@ -1164,6 +1239,7 @@ mixin _$MedicationDispenseSearch {
   List<SearchDate> get whenhandedover;
   List<SearchDate> get whenprepared;
 
+  Map<String, dynamic> toJson();
   $MedicationDispenseSearchCopyWith<MedicationDispenseSearch> get copyWith;
 }
 
@@ -1434,6 +1510,8 @@ class __$MedicationDispenseSearchCopyWithImpl<$Res>
   }
 }
 
+@JsonSerializable()
+
 /// @nodoc
 class _$_MedicationDispenseSearch extends _MedicationDispenseSearch {
   _$_MedicationDispenseSearch(
@@ -1461,6 +1539,9 @@ class _$_MedicationDispenseSearch extends _MedicationDispenseSearch {
       this.whenhandedover,
       this.whenprepared})
       : super._();
+
+  factory _$_MedicationDispenseSearch.fromJson(Map<String, dynamic> json) =>
+      _$_$_MedicationDispenseSearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -1618,6 +1699,11 @@ class _$_MedicationDispenseSearch extends _MedicationDispenseSearch {
   _$MedicationDispenseSearchCopyWith<_MedicationDispenseSearch> get copyWith =>
       __$MedicationDispenseSearchCopyWithImpl<_MedicationDispenseSearch>(
           this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_MedicationDispenseSearchToJson(this);
+  }
 }
 
 abstract class _MedicationDispenseSearch extends MedicationDispenseSearch {
@@ -1646,6 +1732,9 @@ abstract class _MedicationDispenseSearch extends MedicationDispenseSearch {
       List<SearchToken> type,
       List<SearchDate> whenhandedover,
       List<SearchDate> whenprepared}) = _$_MedicationDispenseSearch;
+
+  factory _MedicationDispenseSearch.fromJson(Map<String, dynamic> json) =
+      _$_MedicationDispenseSearch.fromJson;
 
   @override
   List<Id> get searchId;
@@ -1698,6 +1787,11 @@ abstract class _MedicationDispenseSearch extends MedicationDispenseSearch {
   _$MedicationDispenseSearchCopyWith<_MedicationDispenseSearch> get copyWith;
 }
 
+MedicationRequestSearch _$MedicationRequestSearchFromJson(
+    Map<String, dynamic> json) {
+  return _MedicationRequestSearch.fromJson(json);
+}
+
 /// @nodoc
 class _$MedicationRequestSearchTearOff {
   const _$MedicationRequestSearchTearOff();
@@ -1721,9 +1815,12 @@ class _$MedicationRequestSearchTearOff {
       List<SearchToken> category,
       List<SearchDate> date,
       List<SearchReference> encounter,
-      List<SearchReference> intended_dispenser,
-      List<SearchReference> intended_performer,
-      List<SearchToken> intended_performertype,
+      @JsonKey(name: 'intended-dispenser')
+          List<SearchReference> intendedDispenser,
+      @JsonKey(name: 'intended-performer')
+          List<SearchReference> intendedPerformer,
+      @JsonKey(name: 'intended-performertype')
+          List<SearchToken> intendedPerformertype,
       List<SearchToken> intent,
       List<SearchToken> priority,
       List<SearchReference> requester,
@@ -1746,14 +1843,19 @@ class _$MedicationRequestSearchTearOff {
       category: category,
       date: date,
       encounter: encounter,
-      intended_dispenser: intended_dispenser,
-      intended_performer: intended_performer,
-      intended_performertype: intended_performertype,
+      intendedDispenser: intendedDispenser,
+      intendedPerformer: intendedPerformer,
+      intendedPerformertype: intendedPerformertype,
       intent: intent,
       priority: priority,
       requester: requester,
       subject: subject,
     );
+  }
+
+// ignore: unused_element
+  MedicationRequestSearch fromJson(Map<String, Object> json) {
+    return MedicationRequestSearch.fromJson(json);
   }
 }
 
@@ -1781,14 +1883,18 @@ mixin _$MedicationRequestSearch {
   List<SearchToken> get category;
   List<SearchDate> get date;
   List<SearchReference> get encounter;
-  List<SearchReference> get intended_dispenser;
-  List<SearchReference> get intended_performer;
-  List<SearchToken> get intended_performertype;
+  @JsonKey(name: 'intended-dispenser')
+  List<SearchReference> get intendedDispenser;
+  @JsonKey(name: 'intended-performer')
+  List<SearchReference> get intendedPerformer;
+  @JsonKey(name: 'intended-performertype')
+  List<SearchToken> get intendedPerformertype;
   List<SearchToken> get intent;
   List<SearchToken> get priority;
   List<SearchReference> get requester;
   List<SearchReference> get subject;
 
+  Map<String, dynamic> toJson();
   $MedicationRequestSearchCopyWith<MedicationRequestSearch> get copyWith;
 }
 
@@ -1815,9 +1921,12 @@ abstract class $MedicationRequestSearchCopyWith<$Res> {
       List<SearchToken> category,
       List<SearchDate> date,
       List<SearchReference> encounter,
-      List<SearchReference> intended_dispenser,
-      List<SearchReference> intended_performer,
-      List<SearchToken> intended_performertype,
+      @JsonKey(name: 'intended-dispenser')
+          List<SearchReference> intendedDispenser,
+      @JsonKey(name: 'intended-performer')
+          List<SearchReference> intendedPerformer,
+      @JsonKey(name: 'intended-performertype')
+          List<SearchToken> intendedPerformertype,
       List<SearchToken> intent,
       List<SearchToken> priority,
       List<SearchReference> requester,
@@ -1852,9 +1961,9 @@ class _$MedicationRequestSearchCopyWithImpl<$Res>
     Object category = freezed,
     Object date = freezed,
     Object encounter = freezed,
-    Object intended_dispenser = freezed,
-    Object intended_performer = freezed,
-    Object intended_performertype = freezed,
+    Object intendedDispenser = freezed,
+    Object intendedPerformer = freezed,
+    Object intendedPerformertype = freezed,
     Object intent = freezed,
     Object priority = freezed,
     Object requester = freezed,
@@ -1902,15 +2011,15 @@ class _$MedicationRequestSearchCopyWithImpl<$Res>
       encounter: encounter == freezed
           ? _value.encounter
           : encounter as List<SearchReference>,
-      intended_dispenser: intended_dispenser == freezed
-          ? _value.intended_dispenser
-          : intended_dispenser as List<SearchReference>,
-      intended_performer: intended_performer == freezed
-          ? _value.intended_performer
-          : intended_performer as List<SearchReference>,
-      intended_performertype: intended_performertype == freezed
-          ? _value.intended_performertype
-          : intended_performertype as List<SearchToken>,
+      intendedDispenser: intendedDispenser == freezed
+          ? _value.intendedDispenser
+          : intendedDispenser as List<SearchReference>,
+      intendedPerformer: intendedPerformer == freezed
+          ? _value.intendedPerformer
+          : intendedPerformer as List<SearchReference>,
+      intendedPerformertype: intendedPerformertype == freezed
+          ? _value.intendedPerformertype
+          : intendedPerformertype as List<SearchToken>,
       intent: intent == freezed ? _value.intent : intent as List<SearchToken>,
       priority:
           priority == freezed ? _value.priority : priority as List<SearchToken>,
@@ -1949,9 +2058,12 @@ abstract class _$MedicationRequestSearchCopyWith<$Res>
       List<SearchToken> category,
       List<SearchDate> date,
       List<SearchReference> encounter,
-      List<SearchReference> intended_dispenser,
-      List<SearchReference> intended_performer,
-      List<SearchToken> intended_performertype,
+      @JsonKey(name: 'intended-dispenser')
+          List<SearchReference> intendedDispenser,
+      @JsonKey(name: 'intended-performer')
+          List<SearchReference> intendedPerformer,
+      @JsonKey(name: 'intended-performertype')
+          List<SearchToken> intendedPerformertype,
       List<SearchToken> intent,
       List<SearchToken> priority,
       List<SearchReference> requester,
@@ -1989,9 +2101,9 @@ class __$MedicationRequestSearchCopyWithImpl<$Res>
     Object category = freezed,
     Object date = freezed,
     Object encounter = freezed,
-    Object intended_dispenser = freezed,
-    Object intended_performer = freezed,
-    Object intended_performertype = freezed,
+    Object intendedDispenser = freezed,
+    Object intendedPerformer = freezed,
+    Object intendedPerformertype = freezed,
     Object intent = freezed,
     Object priority = freezed,
     Object requester = freezed,
@@ -2039,15 +2151,15 @@ class __$MedicationRequestSearchCopyWithImpl<$Res>
       encounter: encounter == freezed
           ? _value.encounter
           : encounter as List<SearchReference>,
-      intended_dispenser: intended_dispenser == freezed
-          ? _value.intended_dispenser
-          : intended_dispenser as List<SearchReference>,
-      intended_performer: intended_performer == freezed
-          ? _value.intended_performer
-          : intended_performer as List<SearchReference>,
-      intended_performertype: intended_performertype == freezed
-          ? _value.intended_performertype
-          : intended_performertype as List<SearchToken>,
+      intendedDispenser: intendedDispenser == freezed
+          ? _value.intendedDispenser
+          : intendedDispenser as List<SearchReference>,
+      intendedPerformer: intendedPerformer == freezed
+          ? _value.intendedPerformer
+          : intendedPerformer as List<SearchReference>,
+      intendedPerformertype: intendedPerformertype == freezed
+          ? _value.intendedPerformertype
+          : intendedPerformertype as List<SearchToken>,
       intent: intent == freezed ? _value.intent : intent as List<SearchToken>,
       priority:
           priority == freezed ? _value.priority : priority as List<SearchToken>,
@@ -2060,6 +2172,8 @@ class __$MedicationRequestSearchCopyWithImpl<$Res>
     ));
   }
 }
+
+@JsonSerializable()
 
 /// @nodoc
 class _$_MedicationRequestSearch extends _MedicationRequestSearch {
@@ -2081,14 +2195,17 @@ class _$_MedicationRequestSearch extends _MedicationRequestSearch {
       this.category,
       this.date,
       this.encounter,
-      this.intended_dispenser,
-      this.intended_performer,
-      this.intended_performertype,
+      @JsonKey(name: 'intended-dispenser') this.intendedDispenser,
+      @JsonKey(name: 'intended-performer') this.intendedPerformer,
+      @JsonKey(name: 'intended-performertype') this.intendedPerformertype,
       this.intent,
       this.priority,
       this.requester,
       this.subject})
       : super._();
+
+  factory _$_MedicationRequestSearch.fromJson(Map<String, dynamic> json) =>
+      _$_$_MedicationRequestSearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -2126,11 +2243,14 @@ class _$_MedicationRequestSearch extends _MedicationRequestSearch {
   @override
   final List<SearchReference> encounter;
   @override
-  final List<SearchReference> intended_dispenser;
+  @JsonKey(name: 'intended-dispenser')
+  final List<SearchReference> intendedDispenser;
   @override
-  final List<SearchReference> intended_performer;
+  @JsonKey(name: 'intended-performer')
+  final List<SearchReference> intendedPerformer;
   @override
-  final List<SearchToken> intended_performertype;
+  @JsonKey(name: 'intended-performertype')
+  final List<SearchToken> intendedPerformertype;
   @override
   final List<SearchToken> intent;
   @override
@@ -2142,7 +2262,7 @@ class _$_MedicationRequestSearch extends _MedicationRequestSearch {
 
   @override
   String toString() {
-    return 'MedicationRequestSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, code: $code, identifier: $identifier, patient: $patient, medication: $medication, status: $status, authoredon: $authoredon, category: $category, date: $date, encounter: $encounter, intended_dispenser: $intended_dispenser, intended_performer: $intended_performer, intended_performertype: $intended_performertype, intent: $intent, priority: $priority, requester: $requester, subject: $subject)';
+    return 'MedicationRequestSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, code: $code, identifier: $identifier, patient: $patient, medication: $medication, status: $status, authoredon: $authoredon, category: $category, date: $date, encounter: $encounter, intendedDispenser: $intendedDispenser, intendedPerformer: $intendedPerformer, intendedPerformertype: $intendedPerformertype, intent: $intent, priority: $priority, requester: $requester, subject: $subject)';
   }
 
   @override
@@ -2197,15 +2317,15 @@ class _$_MedicationRequestSearch extends _MedicationRequestSearch {
             (identical(other.encounter, encounter) ||
                 const DeepCollectionEquality()
                     .equals(other.encounter, encounter)) &&
-            (identical(other.intended_dispenser, intended_dispenser) ||
+            (identical(other.intendedDispenser, intendedDispenser) ||
                 const DeepCollectionEquality()
-                    .equals(other.intended_dispenser, intended_dispenser)) &&
-            (identical(other.intended_performer, intended_performer) ||
+                    .equals(other.intendedDispenser, intendedDispenser)) &&
+            (identical(other.intendedPerformer, intendedPerformer) ||
                 const DeepCollectionEquality()
-                    .equals(other.intended_performer, intended_performer)) &&
-            (identical(other.intended_performertype, intended_performertype) ||
+                    .equals(other.intendedPerformer, intendedPerformer)) &&
+            (identical(other.intendedPerformertype, intendedPerformertype) ||
                 const DeepCollectionEquality().equals(
-                    other.intended_performertype, intended_performertype)) &&
+                    other.intendedPerformertype, intendedPerformertype)) &&
             (identical(other.intent, intent) ||
                 const DeepCollectionEquality().equals(other.intent, intent)) &&
             (identical(other.priority, priority) ||
@@ -2238,9 +2358,9 @@ class _$_MedicationRequestSearch extends _MedicationRequestSearch {
       const DeepCollectionEquality().hash(category) ^
       const DeepCollectionEquality().hash(date) ^
       const DeepCollectionEquality().hash(encounter) ^
-      const DeepCollectionEquality().hash(intended_dispenser) ^
-      const DeepCollectionEquality().hash(intended_performer) ^
-      const DeepCollectionEquality().hash(intended_performertype) ^
+      const DeepCollectionEquality().hash(intendedDispenser) ^
+      const DeepCollectionEquality().hash(intendedPerformer) ^
+      const DeepCollectionEquality().hash(intendedPerformertype) ^
       const DeepCollectionEquality().hash(intent) ^
       const DeepCollectionEquality().hash(priority) ^
       const DeepCollectionEquality().hash(requester) ^
@@ -2250,6 +2370,11 @@ class _$_MedicationRequestSearch extends _MedicationRequestSearch {
   _$MedicationRequestSearchCopyWith<_MedicationRequestSearch> get copyWith =>
       __$MedicationRequestSearchCopyWithImpl<_MedicationRequestSearch>(
           this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_MedicationRequestSearchToJson(this);
+  }
 }
 
 abstract class _MedicationRequestSearch extends MedicationRequestSearch {
@@ -2272,13 +2397,19 @@ abstract class _MedicationRequestSearch extends MedicationRequestSearch {
       List<SearchToken> category,
       List<SearchDate> date,
       List<SearchReference> encounter,
-      List<SearchReference> intended_dispenser,
-      List<SearchReference> intended_performer,
-      List<SearchToken> intended_performertype,
+      @JsonKey(name: 'intended-dispenser')
+          List<SearchReference> intendedDispenser,
+      @JsonKey(name: 'intended-performer')
+          List<SearchReference> intendedPerformer,
+      @JsonKey(name: 'intended-performertype')
+          List<SearchToken> intendedPerformertype,
       List<SearchToken> intent,
       List<SearchToken> priority,
       List<SearchReference> requester,
       List<SearchReference> subject}) = _$_MedicationRequestSearch;
+
+  factory _MedicationRequestSearch.fromJson(Map<String, dynamic> json) =
+      _$_MedicationRequestSearch.fromJson;
 
   @override
   List<Id> get searchId;
@@ -2316,11 +2447,14 @@ abstract class _MedicationRequestSearch extends MedicationRequestSearch {
   @override
   List<SearchReference> get encounter;
   @override
-  List<SearchReference> get intended_dispenser;
+  @JsonKey(name: 'intended-dispenser')
+  List<SearchReference> get intendedDispenser;
   @override
-  List<SearchReference> get intended_performer;
+  @JsonKey(name: 'intended-performer')
+  List<SearchReference> get intendedPerformer;
   @override
-  List<SearchToken> get intended_performertype;
+  @JsonKey(name: 'intended-performertype')
+  List<SearchToken> get intendedPerformertype;
   @override
   List<SearchToken> get intent;
   @override
@@ -2331,6 +2465,11 @@ abstract class _MedicationRequestSearch extends MedicationRequestSearch {
   List<SearchReference> get subject;
   @override
   _$MedicationRequestSearchCopyWith<_MedicationRequestSearch> get copyWith;
+}
+
+MedicationStatementSearch _$MedicationStatementSearchFromJson(
+    Map<String, dynamic> json) {
+  return _MedicationStatementSearch.fromJson(json);
 }
 
 /// @nodoc
@@ -2355,7 +2494,7 @@ class _$MedicationStatementSearchTearOff {
       List<SearchToken> category,
       List<SearchReference> context,
       List<SearchDate> effective,
-      List<SearchReference> part_of,
+      @JsonKey(name: 'part-of') List<SearchReference> partOf,
       List<SearchReference> source,
       List<SearchReference> subject}) {
     return _MedicationStatementSearch(
@@ -2375,10 +2514,15 @@ class _$MedicationStatementSearchTearOff {
       category: category,
       context: context,
       effective: effective,
-      part_of: part_of,
+      partOf: partOf,
       source: source,
       subject: subject,
     );
+  }
+
+// ignore: unused_element
+  MedicationStatementSearch fromJson(Map<String, Object> json) {
+    return MedicationStatementSearch.fromJson(json);
   }
 }
 
@@ -2405,10 +2549,12 @@ mixin _$MedicationStatementSearch {
   List<SearchToken> get category;
   List<SearchReference> get context;
   List<SearchDate> get effective;
-  List<SearchReference> get part_of;
+  @JsonKey(name: 'part-of')
+  List<SearchReference> get partOf;
   List<SearchReference> get source;
   List<SearchReference> get subject;
 
+  Map<String, dynamic> toJson();
   $MedicationStatementSearchCopyWith<MedicationStatementSearch> get copyWith;
 }
 
@@ -2434,7 +2580,7 @@ abstract class $MedicationStatementSearchCopyWith<$Res> {
       List<SearchToken> category,
       List<SearchReference> context,
       List<SearchDate> effective,
-      List<SearchReference> part_of,
+      @JsonKey(name: 'part-of') List<SearchReference> partOf,
       List<SearchReference> source,
       List<SearchReference> subject});
 }
@@ -2466,7 +2612,7 @@ class _$MedicationStatementSearchCopyWithImpl<$Res>
     Object category = freezed,
     Object context = freezed,
     Object effective = freezed,
-    Object part_of = freezed,
+    Object partOf = freezed,
     Object source = freezed,
     Object subject = freezed,
   }) {
@@ -2511,9 +2657,8 @@ class _$MedicationStatementSearchCopyWithImpl<$Res>
       effective: effective == freezed
           ? _value.effective
           : effective as List<SearchDate>,
-      part_of: part_of == freezed
-          ? _value.part_of
-          : part_of as List<SearchReference>,
+      partOf:
+          partOf == freezed ? _value.partOf : partOf as List<SearchReference>,
       source:
           source == freezed ? _value.source : source as List<SearchReference>,
       subject: subject == freezed
@@ -2547,7 +2692,7 @@ abstract class _$MedicationStatementSearchCopyWith<$Res>
       List<SearchToken> category,
       List<SearchReference> context,
       List<SearchDate> effective,
-      List<SearchReference> part_of,
+      @JsonKey(name: 'part-of') List<SearchReference> partOf,
       List<SearchReference> source,
       List<SearchReference> subject});
 }
@@ -2582,7 +2727,7 @@ class __$MedicationStatementSearchCopyWithImpl<$Res>
     Object category = freezed,
     Object context = freezed,
     Object effective = freezed,
-    Object part_of = freezed,
+    Object partOf = freezed,
     Object source = freezed,
     Object subject = freezed,
   }) {
@@ -2627,9 +2772,8 @@ class __$MedicationStatementSearchCopyWithImpl<$Res>
       effective: effective == freezed
           ? _value.effective
           : effective as List<SearchDate>,
-      part_of: part_of == freezed
-          ? _value.part_of
-          : part_of as List<SearchReference>,
+      partOf:
+          partOf == freezed ? _value.partOf : partOf as List<SearchReference>,
       source:
           source == freezed ? _value.source : source as List<SearchReference>,
       subject: subject == freezed
@@ -2638,6 +2782,8 @@ class __$MedicationStatementSearchCopyWithImpl<$Res>
     ));
   }
 }
+
+@JsonSerializable()
 
 /// @nodoc
 class _$_MedicationStatementSearch extends _MedicationStatementSearch {
@@ -2658,10 +2804,13 @@ class _$_MedicationStatementSearch extends _MedicationStatementSearch {
       this.category,
       this.context,
       this.effective,
-      this.part_of,
+      @JsonKey(name: 'part-of') this.partOf,
       this.source,
       this.subject})
       : super._();
+
+  factory _$_MedicationStatementSearch.fromJson(Map<String, dynamic> json) =>
+      _$_$_MedicationStatementSearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -2697,7 +2846,8 @@ class _$_MedicationStatementSearch extends _MedicationStatementSearch {
   @override
   final List<SearchDate> effective;
   @override
-  final List<SearchReference> part_of;
+  @JsonKey(name: 'part-of')
+  final List<SearchReference> partOf;
   @override
   final List<SearchReference> source;
   @override
@@ -2705,7 +2855,7 @@ class _$_MedicationStatementSearch extends _MedicationStatementSearch {
 
   @override
   String toString() {
-    return 'MedicationStatementSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, code: $code, identifier: $identifier, patient: $patient, medication: $medication, status: $status, category: $category, context: $context, effective: $effective, part_of: $part_of, source: $source, subject: $subject)';
+    return 'MedicationStatementSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, code: $code, identifier: $identifier, patient: $patient, medication: $medication, status: $status, category: $category, context: $context, effective: $effective, partOf: $partOf, source: $source, subject: $subject)';
   }
 
   @override
@@ -2758,9 +2908,8 @@ class _$_MedicationStatementSearch extends _MedicationStatementSearch {
             (identical(other.effective, effective) ||
                 const DeepCollectionEquality()
                     .equals(other.effective, effective)) &&
-            (identical(other.part_of, part_of) ||
-                const DeepCollectionEquality()
-                    .equals(other.part_of, part_of)) &&
+            (identical(other.partOf, partOf) ||
+                const DeepCollectionEquality().equals(other.partOf, partOf)) &&
             (identical(other.source, source) ||
                 const DeepCollectionEquality().equals(other.source, source)) &&
             (identical(other.subject, subject) ||
@@ -2786,7 +2935,7 @@ class _$_MedicationStatementSearch extends _MedicationStatementSearch {
       const DeepCollectionEquality().hash(category) ^
       const DeepCollectionEquality().hash(context) ^
       const DeepCollectionEquality().hash(effective) ^
-      const DeepCollectionEquality().hash(part_of) ^
+      const DeepCollectionEquality().hash(partOf) ^
       const DeepCollectionEquality().hash(source) ^
       const DeepCollectionEquality().hash(subject);
 
@@ -2795,6 +2944,11 @@ class _$_MedicationStatementSearch extends _MedicationStatementSearch {
       get copyWith =>
           __$MedicationStatementSearchCopyWithImpl<_MedicationStatementSearch>(
               this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_MedicationStatementSearchToJson(this);
+  }
 }
 
 abstract class _MedicationStatementSearch extends MedicationStatementSearch {
@@ -2816,9 +2970,12 @@ abstract class _MedicationStatementSearch extends MedicationStatementSearch {
       List<SearchToken> category,
       List<SearchReference> context,
       List<SearchDate> effective,
-      List<SearchReference> part_of,
+      @JsonKey(name: 'part-of') List<SearchReference> partOf,
       List<SearchReference> source,
       List<SearchReference> subject}) = _$_MedicationStatementSearch;
+
+  factory _MedicationStatementSearch.fromJson(Map<String, dynamic> json) =
+      _$_MedicationStatementSearch.fromJson;
 
   @override
   List<Id> get searchId;
@@ -2854,13 +3011,18 @@ abstract class _MedicationStatementSearch extends MedicationStatementSearch {
   @override
   List<SearchDate> get effective;
   @override
-  List<SearchReference> get part_of;
+  @JsonKey(name: 'part-of')
+  List<SearchReference> get partOf;
   @override
   List<SearchReference> get source;
   @override
   List<SearchReference> get subject;
   @override
   _$MedicationStatementSearchCopyWith<_MedicationStatementSearch> get copyWith;
+}
+
+ImmunizationSearch _$ImmunizationSearchFromJson(Map<String, dynamic> json) {
+  return _ImmunizationSearch.fromJson(json);
 }
 
 /// @nodoc
@@ -2881,18 +3043,18 @@ class _$ImmunizationSearchTearOff {
       List<SearchToken> identifier,
       List<SearchReference> patient,
       List<SearchReference> location,
-      List<SearchString> lot_number,
+      @JsonKey(name: 'lot-number') List<SearchString> lotNumber,
       List<SearchReference> manufacturer,
       List<SearchReference> performer,
       List<SearchReference> reaction,
-      List<SearchDate> reaction_date,
-      List<SearchToken> reason_code,
-      List<SearchReference> reason_reference,
+      @JsonKey(name: 'reaction-date') List<SearchDate> reactionDate,
+      @JsonKey(name: 'reason-code') List<SearchToken> reasonCode,
+      @JsonKey(name: 'reason-reference') List<SearchReference> reasonReference,
       List<SearchString> series,
       List<SearchToken> status,
-      List<SearchToken> status_reason,
-      List<SearchToken> target_disease,
-      List<SearchToken> vaccine_code}) {
+      @JsonKey(name: 'status-reason') List<SearchToken> statusReason,
+      @JsonKey(name: 'target-disease') List<SearchToken> targetDisease,
+      @JsonKey(name: 'vaccine-code') List<SearchToken> vaccineCode}) {
     return _ImmunizationSearch(
       searchId: searchId,
       searchLastUpdated: searchLastUpdated,
@@ -2906,19 +3068,24 @@ class _$ImmunizationSearchTearOff {
       identifier: identifier,
       patient: patient,
       location: location,
-      lot_number: lot_number,
+      lotNumber: lotNumber,
       manufacturer: manufacturer,
       performer: performer,
       reaction: reaction,
-      reaction_date: reaction_date,
-      reason_code: reason_code,
-      reason_reference: reason_reference,
+      reactionDate: reactionDate,
+      reasonCode: reasonCode,
+      reasonReference: reasonReference,
       series: series,
       status: status,
-      status_reason: status_reason,
-      target_disease: target_disease,
-      vaccine_code: vaccine_code,
+      statusReason: statusReason,
+      targetDisease: targetDisease,
+      vaccineCode: vaccineCode,
     );
+  }
+
+// ignore: unused_element
+  ImmunizationSearch fromJson(Map<String, Object> json) {
+    return ImmunizationSearch.fromJson(json);
   }
 }
 
@@ -2941,19 +3108,27 @@ mixin _$ImmunizationSearch {
   List<SearchToken> get identifier;
   List<SearchReference> get patient;
   List<SearchReference> get location;
-  List<SearchString> get lot_number;
+  @JsonKey(name: 'lot-number')
+  List<SearchString> get lotNumber;
   List<SearchReference> get manufacturer;
   List<SearchReference> get performer;
   List<SearchReference> get reaction;
-  List<SearchDate> get reaction_date;
-  List<SearchToken> get reason_code;
-  List<SearchReference> get reason_reference;
+  @JsonKey(name: 'reaction-date')
+  List<SearchDate> get reactionDate;
+  @JsonKey(name: 'reason-code')
+  List<SearchToken> get reasonCode;
+  @JsonKey(name: 'reason-reference')
+  List<SearchReference> get reasonReference;
   List<SearchString> get series;
   List<SearchToken> get status;
-  List<SearchToken> get status_reason;
-  List<SearchToken> get target_disease;
-  List<SearchToken> get vaccine_code;
+  @JsonKey(name: 'status-reason')
+  List<SearchToken> get statusReason;
+  @JsonKey(name: 'target-disease')
+  List<SearchToken> get targetDisease;
+  @JsonKey(name: 'vaccine-code')
+  List<SearchToken> get vaccineCode;
 
+  Map<String, dynamic> toJson();
   $ImmunizationSearchCopyWith<ImmunizationSearch> get copyWith;
 }
 
@@ -2975,18 +3150,18 @@ abstract class $ImmunizationSearchCopyWith<$Res> {
       List<SearchToken> identifier,
       List<SearchReference> patient,
       List<SearchReference> location,
-      List<SearchString> lot_number,
+      @JsonKey(name: 'lot-number') List<SearchString> lotNumber,
       List<SearchReference> manufacturer,
       List<SearchReference> performer,
       List<SearchReference> reaction,
-      List<SearchDate> reaction_date,
-      List<SearchToken> reason_code,
-      List<SearchReference> reason_reference,
+      @JsonKey(name: 'reaction-date') List<SearchDate> reactionDate,
+      @JsonKey(name: 'reason-code') List<SearchToken> reasonCode,
+      @JsonKey(name: 'reason-reference') List<SearchReference> reasonReference,
       List<SearchString> series,
       List<SearchToken> status,
-      List<SearchToken> status_reason,
-      List<SearchToken> target_disease,
-      List<SearchToken> vaccine_code});
+      @JsonKey(name: 'status-reason') List<SearchToken> statusReason,
+      @JsonKey(name: 'target-disease') List<SearchToken> targetDisease,
+      @JsonKey(name: 'vaccine-code') List<SearchToken> vaccineCode});
 }
 
 /// @nodoc
@@ -3012,18 +3187,18 @@ class _$ImmunizationSearchCopyWithImpl<$Res>
     Object identifier = freezed,
     Object patient = freezed,
     Object location = freezed,
-    Object lot_number = freezed,
+    Object lotNumber = freezed,
     Object manufacturer = freezed,
     Object performer = freezed,
     Object reaction = freezed,
-    Object reaction_date = freezed,
-    Object reason_code = freezed,
-    Object reason_reference = freezed,
+    Object reactionDate = freezed,
+    Object reasonCode = freezed,
+    Object reasonReference = freezed,
     Object series = freezed,
     Object status = freezed,
-    Object status_reason = freezed,
-    Object target_disease = freezed,
-    Object vaccine_code = freezed,
+    Object statusReason = freezed,
+    Object targetDisease = freezed,
+    Object vaccineCode = freezed,
   }) {
     return _then(_value.copyWith(
       searchId: searchId == freezed ? _value.searchId : searchId as List<Id>,
@@ -3057,9 +3232,9 @@ class _$ImmunizationSearchCopyWithImpl<$Res>
       location: location == freezed
           ? _value.location
           : location as List<SearchReference>,
-      lot_number: lot_number == freezed
-          ? _value.lot_number
-          : lot_number as List<SearchString>,
+      lotNumber: lotNumber == freezed
+          ? _value.lotNumber
+          : lotNumber as List<SearchString>,
       manufacturer: manufacturer == freezed
           ? _value.manufacturer
           : manufacturer as List<SearchReference>,
@@ -3069,26 +3244,26 @@ class _$ImmunizationSearchCopyWithImpl<$Res>
       reaction: reaction == freezed
           ? _value.reaction
           : reaction as List<SearchReference>,
-      reaction_date: reaction_date == freezed
-          ? _value.reaction_date
-          : reaction_date as List<SearchDate>,
-      reason_code: reason_code == freezed
-          ? _value.reason_code
-          : reason_code as List<SearchToken>,
-      reason_reference: reason_reference == freezed
-          ? _value.reason_reference
-          : reason_reference as List<SearchReference>,
+      reactionDate: reactionDate == freezed
+          ? _value.reactionDate
+          : reactionDate as List<SearchDate>,
+      reasonCode: reasonCode == freezed
+          ? _value.reasonCode
+          : reasonCode as List<SearchToken>,
+      reasonReference: reasonReference == freezed
+          ? _value.reasonReference
+          : reasonReference as List<SearchReference>,
       series: series == freezed ? _value.series : series as List<SearchString>,
       status: status == freezed ? _value.status : status as List<SearchToken>,
-      status_reason: status_reason == freezed
-          ? _value.status_reason
-          : status_reason as List<SearchToken>,
-      target_disease: target_disease == freezed
-          ? _value.target_disease
-          : target_disease as List<SearchToken>,
-      vaccine_code: vaccine_code == freezed
-          ? _value.vaccine_code
-          : vaccine_code as List<SearchToken>,
+      statusReason: statusReason == freezed
+          ? _value.statusReason
+          : statusReason as List<SearchToken>,
+      targetDisease: targetDisease == freezed
+          ? _value.targetDisease
+          : targetDisease as List<SearchToken>,
+      vaccineCode: vaccineCode == freezed
+          ? _value.vaccineCode
+          : vaccineCode as List<SearchToken>,
     ));
   }
 }
@@ -3113,18 +3288,18 @@ abstract class _$ImmunizationSearchCopyWith<$Res>
       List<SearchToken> identifier,
       List<SearchReference> patient,
       List<SearchReference> location,
-      List<SearchString> lot_number,
+      @JsonKey(name: 'lot-number') List<SearchString> lotNumber,
       List<SearchReference> manufacturer,
       List<SearchReference> performer,
       List<SearchReference> reaction,
-      List<SearchDate> reaction_date,
-      List<SearchToken> reason_code,
-      List<SearchReference> reason_reference,
+      @JsonKey(name: 'reaction-date') List<SearchDate> reactionDate,
+      @JsonKey(name: 'reason-code') List<SearchToken> reasonCode,
+      @JsonKey(name: 'reason-reference') List<SearchReference> reasonReference,
       List<SearchString> series,
       List<SearchToken> status,
-      List<SearchToken> status_reason,
-      List<SearchToken> target_disease,
-      List<SearchToken> vaccine_code});
+      @JsonKey(name: 'status-reason') List<SearchToken> statusReason,
+      @JsonKey(name: 'target-disease') List<SearchToken> targetDisease,
+      @JsonKey(name: 'vaccine-code') List<SearchToken> vaccineCode});
 }
 
 /// @nodoc
@@ -3152,18 +3327,18 @@ class __$ImmunizationSearchCopyWithImpl<$Res>
     Object identifier = freezed,
     Object patient = freezed,
     Object location = freezed,
-    Object lot_number = freezed,
+    Object lotNumber = freezed,
     Object manufacturer = freezed,
     Object performer = freezed,
     Object reaction = freezed,
-    Object reaction_date = freezed,
-    Object reason_code = freezed,
-    Object reason_reference = freezed,
+    Object reactionDate = freezed,
+    Object reasonCode = freezed,
+    Object reasonReference = freezed,
     Object series = freezed,
     Object status = freezed,
-    Object status_reason = freezed,
-    Object target_disease = freezed,
-    Object vaccine_code = freezed,
+    Object statusReason = freezed,
+    Object targetDisease = freezed,
+    Object vaccineCode = freezed,
   }) {
     return _then(_ImmunizationSearch(
       searchId: searchId == freezed ? _value.searchId : searchId as List<Id>,
@@ -3197,9 +3372,9 @@ class __$ImmunizationSearchCopyWithImpl<$Res>
       location: location == freezed
           ? _value.location
           : location as List<SearchReference>,
-      lot_number: lot_number == freezed
-          ? _value.lot_number
-          : lot_number as List<SearchString>,
+      lotNumber: lotNumber == freezed
+          ? _value.lotNumber
+          : lotNumber as List<SearchString>,
       manufacturer: manufacturer == freezed
           ? _value.manufacturer
           : manufacturer as List<SearchReference>,
@@ -3209,29 +3384,31 @@ class __$ImmunizationSearchCopyWithImpl<$Res>
       reaction: reaction == freezed
           ? _value.reaction
           : reaction as List<SearchReference>,
-      reaction_date: reaction_date == freezed
-          ? _value.reaction_date
-          : reaction_date as List<SearchDate>,
-      reason_code: reason_code == freezed
-          ? _value.reason_code
-          : reason_code as List<SearchToken>,
-      reason_reference: reason_reference == freezed
-          ? _value.reason_reference
-          : reason_reference as List<SearchReference>,
+      reactionDate: reactionDate == freezed
+          ? _value.reactionDate
+          : reactionDate as List<SearchDate>,
+      reasonCode: reasonCode == freezed
+          ? _value.reasonCode
+          : reasonCode as List<SearchToken>,
+      reasonReference: reasonReference == freezed
+          ? _value.reasonReference
+          : reasonReference as List<SearchReference>,
       series: series == freezed ? _value.series : series as List<SearchString>,
       status: status == freezed ? _value.status : status as List<SearchToken>,
-      status_reason: status_reason == freezed
-          ? _value.status_reason
-          : status_reason as List<SearchToken>,
-      target_disease: target_disease == freezed
-          ? _value.target_disease
-          : target_disease as List<SearchToken>,
-      vaccine_code: vaccine_code == freezed
-          ? _value.vaccine_code
-          : vaccine_code as List<SearchToken>,
+      statusReason: statusReason == freezed
+          ? _value.statusReason
+          : statusReason as List<SearchToken>,
+      targetDisease: targetDisease == freezed
+          ? _value.targetDisease
+          : targetDisease as List<SearchToken>,
+      vaccineCode: vaccineCode == freezed
+          ? _value.vaccineCode
+          : vaccineCode as List<SearchToken>,
     ));
   }
 }
+
+@JsonSerializable()
 
 /// @nodoc
 class _$_ImmunizationSearch extends _ImmunizationSearch {
@@ -3248,19 +3425,22 @@ class _$_ImmunizationSearch extends _ImmunizationSearch {
       this.identifier,
       this.patient,
       this.location,
-      this.lot_number,
+      @JsonKey(name: 'lot-number') this.lotNumber,
       this.manufacturer,
       this.performer,
       this.reaction,
-      this.reaction_date,
-      this.reason_code,
-      this.reason_reference,
+      @JsonKey(name: 'reaction-date') this.reactionDate,
+      @JsonKey(name: 'reason-code') this.reasonCode,
+      @JsonKey(name: 'reason-reference') this.reasonReference,
       this.series,
       this.status,
-      this.status_reason,
-      this.target_disease,
-      this.vaccine_code})
+      @JsonKey(name: 'status-reason') this.statusReason,
+      @JsonKey(name: 'target-disease') this.targetDisease,
+      @JsonKey(name: 'vaccine-code') this.vaccineCode})
       : super._();
+
+  factory _$_ImmunizationSearch.fromJson(Map<String, dynamic> json) =>
+      _$_$_ImmunizationSearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -3288,7 +3468,8 @@ class _$_ImmunizationSearch extends _ImmunizationSearch {
   @override
   final List<SearchReference> location;
   @override
-  final List<SearchString> lot_number;
+  @JsonKey(name: 'lot-number')
+  final List<SearchString> lotNumber;
   @override
   final List<SearchReference> manufacturer;
   @override
@@ -3296,25 +3477,31 @@ class _$_ImmunizationSearch extends _ImmunizationSearch {
   @override
   final List<SearchReference> reaction;
   @override
-  final List<SearchDate> reaction_date;
+  @JsonKey(name: 'reaction-date')
+  final List<SearchDate> reactionDate;
   @override
-  final List<SearchToken> reason_code;
+  @JsonKey(name: 'reason-code')
+  final List<SearchToken> reasonCode;
   @override
-  final List<SearchReference> reason_reference;
+  @JsonKey(name: 'reason-reference')
+  final List<SearchReference> reasonReference;
   @override
   final List<SearchString> series;
   @override
   final List<SearchToken> status;
   @override
-  final List<SearchToken> status_reason;
+  @JsonKey(name: 'status-reason')
+  final List<SearchToken> statusReason;
   @override
-  final List<SearchToken> target_disease;
+  @JsonKey(name: 'target-disease')
+  final List<SearchToken> targetDisease;
   @override
-  final List<SearchToken> vaccine_code;
+  @JsonKey(name: 'vaccine-code')
+  final List<SearchToken> vaccineCode;
 
   @override
   String toString() {
-    return 'ImmunizationSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, date: $date, identifier: $identifier, patient: $patient, location: $location, lot_number: $lot_number, manufacturer: $manufacturer, performer: $performer, reaction: $reaction, reaction_date: $reaction_date, reason_code: $reason_code, reason_reference: $reason_reference, series: $series, status: $status, status_reason: $status_reason, target_disease: $target_disease, vaccine_code: $vaccine_code)';
+    return 'ImmunizationSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, date: $date, identifier: $identifier, patient: $patient, location: $location, lotNumber: $lotNumber, manufacturer: $manufacturer, performer: $performer, reaction: $reaction, reactionDate: $reactionDate, reasonCode: $reasonCode, reasonReference: $reasonReference, series: $series, status: $status, statusReason: $statusReason, targetDisease: $targetDisease, vaccineCode: $vaccineCode)';
   }
 
   @override
@@ -3356,9 +3543,9 @@ class _$_ImmunizationSearch extends _ImmunizationSearch {
             (identical(other.location, location) ||
                 const DeepCollectionEquality()
                     .equals(other.location, location)) &&
-            (identical(other.lot_number, lot_number) ||
+            (identical(other.lotNumber, lotNumber) ||
                 const DeepCollectionEquality()
-                    .equals(other.lot_number, lot_number)) &&
+                    .equals(other.lotNumber, lotNumber)) &&
             (identical(other.manufacturer, manufacturer) ||
                 const DeepCollectionEquality()
                     .equals(other.manufacturer, manufacturer)) &&
@@ -3368,26 +3555,26 @@ class _$_ImmunizationSearch extends _ImmunizationSearch {
             (identical(other.reaction, reaction) ||
                 const DeepCollectionEquality()
                     .equals(other.reaction, reaction)) &&
-            (identical(other.reaction_date, reaction_date) ||
+            (identical(other.reactionDate, reactionDate) ||
                 const DeepCollectionEquality()
-                    .equals(other.reaction_date, reaction_date)) &&
-            (identical(other.reason_code, reason_code) ||
+                    .equals(other.reactionDate, reactionDate)) &&
+            (identical(other.reasonCode, reasonCode) ||
                 const DeepCollectionEquality()
-                    .equals(other.reason_code, reason_code)) &&
-            (identical(other.reason_reference, reason_reference) ||
+                    .equals(other.reasonCode, reasonCode)) &&
+            (identical(other.reasonReference, reasonReference) ||
                 const DeepCollectionEquality()
-                    .equals(other.reason_reference, reason_reference)) &&
+                    .equals(other.reasonReference, reasonReference)) &&
             (identical(other.series, series) ||
                 const DeepCollectionEquality().equals(other.series, series)) &&
             (identical(other.status, status) ||
                 const DeepCollectionEquality().equals(other.status, status)) &&
-            (identical(other.status_reason, status_reason) ||
+            (identical(other.statusReason, statusReason) ||
                 const DeepCollectionEquality()
-                    .equals(other.status_reason, status_reason)) &&
-            (identical(other.target_disease, target_disease) ||
+                    .equals(other.statusReason, statusReason)) &&
+            (identical(other.targetDisease, targetDisease) ||
                 const DeepCollectionEquality()
-                    .equals(other.target_disease, target_disease)) &&
-            (identical(other.vaccine_code, vaccine_code) || const DeepCollectionEquality().equals(other.vaccine_code, vaccine_code)));
+                    .equals(other.targetDisease, targetDisease)) &&
+            (identical(other.vaccineCode, vaccineCode) || const DeepCollectionEquality().equals(other.vaccineCode, vaccineCode)));
   }
 
   @override
@@ -3405,22 +3592,27 @@ class _$_ImmunizationSearch extends _ImmunizationSearch {
       const DeepCollectionEquality().hash(identifier) ^
       const DeepCollectionEquality().hash(patient) ^
       const DeepCollectionEquality().hash(location) ^
-      const DeepCollectionEquality().hash(lot_number) ^
+      const DeepCollectionEquality().hash(lotNumber) ^
       const DeepCollectionEquality().hash(manufacturer) ^
       const DeepCollectionEquality().hash(performer) ^
       const DeepCollectionEquality().hash(reaction) ^
-      const DeepCollectionEquality().hash(reaction_date) ^
-      const DeepCollectionEquality().hash(reason_code) ^
-      const DeepCollectionEquality().hash(reason_reference) ^
+      const DeepCollectionEquality().hash(reactionDate) ^
+      const DeepCollectionEquality().hash(reasonCode) ^
+      const DeepCollectionEquality().hash(reasonReference) ^
       const DeepCollectionEquality().hash(series) ^
       const DeepCollectionEquality().hash(status) ^
-      const DeepCollectionEquality().hash(status_reason) ^
-      const DeepCollectionEquality().hash(target_disease) ^
-      const DeepCollectionEquality().hash(vaccine_code);
+      const DeepCollectionEquality().hash(statusReason) ^
+      const DeepCollectionEquality().hash(targetDisease) ^
+      const DeepCollectionEquality().hash(vaccineCode);
 
   @override
   _$ImmunizationSearchCopyWith<_ImmunizationSearch> get copyWith =>
       __$ImmunizationSearchCopyWithImpl<_ImmunizationSearch>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_ImmunizationSearchToJson(this);
+  }
 }
 
 abstract class _ImmunizationSearch extends ImmunizationSearch {
@@ -3438,18 +3630,28 @@ abstract class _ImmunizationSearch extends ImmunizationSearch {
       List<SearchToken> identifier,
       List<SearchReference> patient,
       List<SearchReference> location,
-      List<SearchString> lot_number,
+      @JsonKey(name: 'lot-number')
+          List<SearchString> lotNumber,
       List<SearchReference> manufacturer,
       List<SearchReference> performer,
       List<SearchReference> reaction,
-      List<SearchDate> reaction_date,
-      List<SearchToken> reason_code,
-      List<SearchReference> reason_reference,
+      @JsonKey(name: 'reaction-date')
+          List<SearchDate> reactionDate,
+      @JsonKey(name: 'reason-code')
+          List<SearchToken> reasonCode,
+      @JsonKey(name: 'reason-reference')
+          List<SearchReference> reasonReference,
       List<SearchString> series,
       List<SearchToken> status,
-      List<SearchToken> status_reason,
-      List<SearchToken> target_disease,
-      List<SearchToken> vaccine_code}) = _$_ImmunizationSearch;
+      @JsonKey(name: 'status-reason')
+          List<SearchToken> statusReason,
+      @JsonKey(name: 'target-disease')
+          List<SearchToken> targetDisease,
+      @JsonKey(name: 'vaccine-code')
+          List<SearchToken> vaccineCode}) = _$_ImmunizationSearch;
+
+  factory _ImmunizationSearch.fromJson(Map<String, dynamic> json) =
+      _$_ImmunizationSearch.fromJson;
 
   @override
   List<Id> get searchId;
@@ -3477,7 +3679,8 @@ abstract class _ImmunizationSearch extends ImmunizationSearch {
   @override
   List<SearchReference> get location;
   @override
-  List<SearchString> get lot_number;
+  @JsonKey(name: 'lot-number')
+  List<SearchString> get lotNumber;
   @override
   List<SearchReference> get manufacturer;
   @override
@@ -3485,23 +3688,34 @@ abstract class _ImmunizationSearch extends ImmunizationSearch {
   @override
   List<SearchReference> get reaction;
   @override
-  List<SearchDate> get reaction_date;
+  @JsonKey(name: 'reaction-date')
+  List<SearchDate> get reactionDate;
   @override
-  List<SearchToken> get reason_code;
+  @JsonKey(name: 'reason-code')
+  List<SearchToken> get reasonCode;
   @override
-  List<SearchReference> get reason_reference;
+  @JsonKey(name: 'reason-reference')
+  List<SearchReference> get reasonReference;
   @override
   List<SearchString> get series;
   @override
   List<SearchToken> get status;
   @override
-  List<SearchToken> get status_reason;
+  @JsonKey(name: 'status-reason')
+  List<SearchToken> get statusReason;
   @override
-  List<SearchToken> get target_disease;
+  @JsonKey(name: 'target-disease')
+  List<SearchToken> get targetDisease;
   @override
-  List<SearchToken> get vaccine_code;
+  @JsonKey(name: 'vaccine-code')
+  List<SearchToken> get vaccineCode;
   @override
   _$ImmunizationSearchCopyWith<_ImmunizationSearch> get copyWith;
+}
+
+ImmunizationEvaluationSearch _$ImmunizationEvaluationSearchFromJson(
+    Map<String, dynamic> json) {
+  return _ImmunizationEvaluationSearch.fromJson(json);
 }
 
 /// @nodoc
@@ -3519,12 +3733,15 @@ class _$ImmunizationEvaluationSearchTearOff {
       List<SearchString> searchContent,
       List<Id> searchList,
       List<SearchDate> date,
-      List<SearchToken> dose_status,
+      @JsonKey(name: 'dose-status')
+          List<SearchToken> doseStatus,
       List<SearchToken> identifier,
-      List<SearchReference> immunization_event,
+      @JsonKey(name: 'immunization-event')
+          List<SearchReference> immunizationEvent,
       List<SearchReference> patient,
       List<SearchToken> status,
-      List<SearchToken> target_disease}) {
+      @JsonKey(name: 'target-disease')
+          List<SearchToken> targetDisease}) {
     return _ImmunizationEvaluationSearch(
       searchId: searchId,
       searchLastUpdated: searchLastUpdated,
@@ -3535,13 +3752,18 @@ class _$ImmunizationEvaluationSearchTearOff {
       searchContent: searchContent,
       searchList: searchList,
       date: date,
-      dose_status: dose_status,
+      doseStatus: doseStatus,
       identifier: identifier,
-      immunization_event: immunization_event,
+      immunizationEvent: immunizationEvent,
       patient: patient,
       status: status,
-      target_disease: target_disease,
+      targetDisease: targetDisease,
     );
+  }
+
+// ignore: unused_element
+  ImmunizationEvaluationSearch fromJson(Map<String, Object> json) {
+    return ImmunizationEvaluationSearch.fromJson(json);
   }
 }
 
@@ -3561,13 +3783,17 @@ mixin _$ImmunizationEvaluationSearch {
   List<Id> get searchList; //List<SearchString> searchHas,
 //List<SearchToken> searchType,
   List<SearchDate> get date;
-  List<SearchToken> get dose_status;
+  @JsonKey(name: 'dose-status')
+  List<SearchToken> get doseStatus;
   List<SearchToken> get identifier;
-  List<SearchReference> get immunization_event;
+  @JsonKey(name: 'immunization-event')
+  List<SearchReference> get immunizationEvent;
   List<SearchReference> get patient;
   List<SearchToken> get status;
-  List<SearchToken> get target_disease;
+  @JsonKey(name: 'target-disease')
+  List<SearchToken> get targetDisease;
 
+  Map<String, dynamic> toJson();
   $ImmunizationEvaluationSearchCopyWith<ImmunizationEvaluationSearch>
       get copyWith;
 }
@@ -3588,12 +3814,15 @@ abstract class $ImmunizationEvaluationSearchCopyWith<$Res> {
       List<SearchString> searchContent,
       List<Id> searchList,
       List<SearchDate> date,
-      List<SearchToken> dose_status,
+      @JsonKey(name: 'dose-status')
+          List<SearchToken> doseStatus,
       List<SearchToken> identifier,
-      List<SearchReference> immunization_event,
+      @JsonKey(name: 'immunization-event')
+          List<SearchReference> immunizationEvent,
       List<SearchReference> patient,
       List<SearchToken> status,
-      List<SearchToken> target_disease});
+      @JsonKey(name: 'target-disease')
+          List<SearchToken> targetDisease});
 }
 
 /// @nodoc
@@ -3616,12 +3845,12 @@ class _$ImmunizationEvaluationSearchCopyWithImpl<$Res>
     Object searchContent = freezed,
     Object searchList = freezed,
     Object date = freezed,
-    Object dose_status = freezed,
+    Object doseStatus = freezed,
     Object identifier = freezed,
-    Object immunization_event = freezed,
+    Object immunizationEvent = freezed,
     Object patient = freezed,
     Object status = freezed,
-    Object target_disease = freezed,
+    Object targetDisease = freezed,
   }) {
     return _then(_value.copyWith(
       searchId: searchId == freezed ? _value.searchId : searchId as List<Id>,
@@ -3646,22 +3875,22 @@ class _$ImmunizationEvaluationSearchCopyWithImpl<$Res>
       searchList:
           searchList == freezed ? _value.searchList : searchList as List<Id>,
       date: date == freezed ? _value.date : date as List<SearchDate>,
-      dose_status: dose_status == freezed
-          ? _value.dose_status
-          : dose_status as List<SearchToken>,
+      doseStatus: doseStatus == freezed
+          ? _value.doseStatus
+          : doseStatus as List<SearchToken>,
       identifier: identifier == freezed
           ? _value.identifier
           : identifier as List<SearchToken>,
-      immunization_event: immunization_event == freezed
-          ? _value.immunization_event
-          : immunization_event as List<SearchReference>,
+      immunizationEvent: immunizationEvent == freezed
+          ? _value.immunizationEvent
+          : immunizationEvent as List<SearchReference>,
       patient: patient == freezed
           ? _value.patient
           : patient as List<SearchReference>,
       status: status == freezed ? _value.status : status as List<SearchToken>,
-      target_disease: target_disease == freezed
-          ? _value.target_disease
-          : target_disease as List<SearchToken>,
+      targetDisease: targetDisease == freezed
+          ? _value.targetDisease
+          : targetDisease as List<SearchToken>,
     ));
   }
 }
@@ -3684,12 +3913,15 @@ abstract class _$ImmunizationEvaluationSearchCopyWith<$Res>
       List<SearchString> searchContent,
       List<Id> searchList,
       List<SearchDate> date,
-      List<SearchToken> dose_status,
+      @JsonKey(name: 'dose-status')
+          List<SearchToken> doseStatus,
       List<SearchToken> identifier,
-      List<SearchReference> immunization_event,
+      @JsonKey(name: 'immunization-event')
+          List<SearchReference> immunizationEvent,
       List<SearchReference> patient,
       List<SearchToken> status,
-      List<SearchToken> target_disease});
+      @JsonKey(name: 'target-disease')
+          List<SearchToken> targetDisease});
 }
 
 /// @nodoc
@@ -3716,12 +3948,12 @@ class __$ImmunizationEvaluationSearchCopyWithImpl<$Res>
     Object searchContent = freezed,
     Object searchList = freezed,
     Object date = freezed,
-    Object dose_status = freezed,
+    Object doseStatus = freezed,
     Object identifier = freezed,
-    Object immunization_event = freezed,
+    Object immunizationEvent = freezed,
     Object patient = freezed,
     Object status = freezed,
-    Object target_disease = freezed,
+    Object targetDisease = freezed,
   }) {
     return _then(_ImmunizationEvaluationSearch(
       searchId: searchId == freezed ? _value.searchId : searchId as List<Id>,
@@ -3746,25 +3978,27 @@ class __$ImmunizationEvaluationSearchCopyWithImpl<$Res>
       searchList:
           searchList == freezed ? _value.searchList : searchList as List<Id>,
       date: date == freezed ? _value.date : date as List<SearchDate>,
-      dose_status: dose_status == freezed
-          ? _value.dose_status
-          : dose_status as List<SearchToken>,
+      doseStatus: doseStatus == freezed
+          ? _value.doseStatus
+          : doseStatus as List<SearchToken>,
       identifier: identifier == freezed
           ? _value.identifier
           : identifier as List<SearchToken>,
-      immunization_event: immunization_event == freezed
-          ? _value.immunization_event
-          : immunization_event as List<SearchReference>,
+      immunizationEvent: immunizationEvent == freezed
+          ? _value.immunizationEvent
+          : immunizationEvent as List<SearchReference>,
       patient: patient == freezed
           ? _value.patient
           : patient as List<SearchReference>,
       status: status == freezed ? _value.status : status as List<SearchToken>,
-      target_disease: target_disease == freezed
-          ? _value.target_disease
-          : target_disease as List<SearchToken>,
+      targetDisease: targetDisease == freezed
+          ? _value.targetDisease
+          : targetDisease as List<SearchToken>,
     ));
   }
 }
+
+@JsonSerializable()
 
 /// @nodoc
 class _$_ImmunizationEvaluationSearch extends _ImmunizationEvaluationSearch {
@@ -3778,13 +4012,16 @@ class _$_ImmunizationEvaluationSearch extends _ImmunizationEvaluationSearch {
       this.searchContent,
       this.searchList,
       this.date,
-      this.dose_status,
+      @JsonKey(name: 'dose-status') this.doseStatus,
       this.identifier,
-      this.immunization_event,
+      @JsonKey(name: 'immunization-event') this.immunizationEvent,
       this.patient,
       this.status,
-      this.target_disease})
+      @JsonKey(name: 'target-disease') this.targetDisease})
       : super._();
+
+  factory _$_ImmunizationEvaluationSearch.fromJson(Map<String, dynamic> json) =>
+      _$_$_ImmunizationEvaluationSearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -3806,21 +4043,24 @@ class _$_ImmunizationEvaluationSearch extends _ImmunizationEvaluationSearch {
 //List<SearchToken> searchType,
   final List<SearchDate> date;
   @override
-  final List<SearchToken> dose_status;
+  @JsonKey(name: 'dose-status')
+  final List<SearchToken> doseStatus;
   @override
   final List<SearchToken> identifier;
   @override
-  final List<SearchReference> immunization_event;
+  @JsonKey(name: 'immunization-event')
+  final List<SearchReference> immunizationEvent;
   @override
   final List<SearchReference> patient;
   @override
   final List<SearchToken> status;
   @override
-  final List<SearchToken> target_disease;
+  @JsonKey(name: 'target-disease')
+  final List<SearchToken> targetDisease;
 
   @override
   String toString() {
-    return 'ImmunizationEvaluationSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, date: $date, dose_status: $dose_status, identifier: $identifier, immunization_event: $immunization_event, patient: $patient, status: $status, target_disease: $target_disease)';
+    return 'ImmunizationEvaluationSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, date: $date, doseStatus: $doseStatus, identifier: $identifier, immunizationEvent: $immunizationEvent, patient: $patient, status: $status, targetDisease: $targetDisease)';
   }
 
   @override
@@ -3853,23 +4093,23 @@ class _$_ImmunizationEvaluationSearch extends _ImmunizationEvaluationSearch {
                     .equals(other.searchList, searchList)) &&
             (identical(other.date, date) ||
                 const DeepCollectionEquality().equals(other.date, date)) &&
-            (identical(other.dose_status, dose_status) ||
+            (identical(other.doseStatus, doseStatus) ||
                 const DeepCollectionEquality()
-                    .equals(other.dose_status, dose_status)) &&
+                    .equals(other.doseStatus, doseStatus)) &&
             (identical(other.identifier, identifier) ||
                 const DeepCollectionEquality()
                     .equals(other.identifier, identifier)) &&
-            (identical(other.immunization_event, immunization_event) ||
+            (identical(other.immunizationEvent, immunizationEvent) ||
                 const DeepCollectionEquality()
-                    .equals(other.immunization_event, immunization_event)) &&
+                    .equals(other.immunizationEvent, immunizationEvent)) &&
             (identical(other.patient, patient) ||
                 const DeepCollectionEquality()
                     .equals(other.patient, patient)) &&
             (identical(other.status, status) ||
                 const DeepCollectionEquality().equals(other.status, status)) &&
-            (identical(other.target_disease, target_disease) ||
+            (identical(other.targetDisease, targetDisease) ||
                 const DeepCollectionEquality()
-                    .equals(other.target_disease, target_disease)));
+                    .equals(other.targetDisease, targetDisease)));
   }
 
   @override
@@ -3884,17 +4124,22 @@ class _$_ImmunizationEvaluationSearch extends _ImmunizationEvaluationSearch {
       const DeepCollectionEquality().hash(searchContent) ^
       const DeepCollectionEquality().hash(searchList) ^
       const DeepCollectionEquality().hash(date) ^
-      const DeepCollectionEquality().hash(dose_status) ^
+      const DeepCollectionEquality().hash(doseStatus) ^
       const DeepCollectionEquality().hash(identifier) ^
-      const DeepCollectionEquality().hash(immunization_event) ^
+      const DeepCollectionEquality().hash(immunizationEvent) ^
       const DeepCollectionEquality().hash(patient) ^
       const DeepCollectionEquality().hash(status) ^
-      const DeepCollectionEquality().hash(target_disease);
+      const DeepCollectionEquality().hash(targetDisease);
 
   @override
   _$ImmunizationEvaluationSearchCopyWith<_ImmunizationEvaluationSearch>
       get copyWith => __$ImmunizationEvaluationSearchCopyWithImpl<
           _ImmunizationEvaluationSearch>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_ImmunizationEvaluationSearchToJson(this);
+  }
 }
 
 abstract class _ImmunizationEvaluationSearch
@@ -3910,12 +4155,18 @@ abstract class _ImmunizationEvaluationSearch
       List<SearchString> searchContent,
       List<Id> searchList,
       List<SearchDate> date,
-      List<SearchToken> dose_status,
+      @JsonKey(name: 'dose-status')
+          List<SearchToken> doseStatus,
       List<SearchToken> identifier,
-      List<SearchReference> immunization_event,
+      @JsonKey(name: 'immunization-event')
+          List<SearchReference> immunizationEvent,
       List<SearchReference> patient,
       List<SearchToken> status,
-      List<SearchToken> target_disease}) = _$_ImmunizationEvaluationSearch;
+      @JsonKey(name: 'target-disease')
+          List<SearchToken> targetDisease}) = _$_ImmunizationEvaluationSearch;
+
+  factory _ImmunizationEvaluationSearch.fromJson(Map<String, dynamic> json) =
+      _$_ImmunizationEvaluationSearch.fromJson;
 
   @override
   List<Id> get searchId;
@@ -3937,20 +4188,28 @@ abstract class _ImmunizationEvaluationSearch
 //List<SearchToken> searchType,
   List<SearchDate> get date;
   @override
-  List<SearchToken> get dose_status;
+  @JsonKey(name: 'dose-status')
+  List<SearchToken> get doseStatus;
   @override
   List<SearchToken> get identifier;
   @override
-  List<SearchReference> get immunization_event;
+  @JsonKey(name: 'immunization-event')
+  List<SearchReference> get immunizationEvent;
   @override
   List<SearchReference> get patient;
   @override
   List<SearchToken> get status;
   @override
-  List<SearchToken> get target_disease;
+  @JsonKey(name: 'target-disease')
+  List<SearchToken> get targetDisease;
   @override
   _$ImmunizationEvaluationSearchCopyWith<_ImmunizationEvaluationSearch>
       get copyWith;
+}
+
+ImmunizationRecommendationSearch _$ImmunizationRecommendationSearchFromJson(
+    Map<String, dynamic> json) {
+  return _ImmunizationRecommendationSearch.fromJson(json);
 }
 
 /// @nodoc
@@ -3973,8 +4232,8 @@ class _$ImmunizationRecommendationSearchTearOff {
       List<SearchReference> patient,
       List<SearchToken> status,
       List<SearchReference> support,
-      List<SearchToken> target_disease,
-      List<SearchToken> vaccine_type}) {
+      @JsonKey(name: 'target-disease') List<SearchToken> targetDisease,
+      @JsonKey(name: 'vaccine-type') List<SearchToken> vaccineType}) {
     return _ImmunizationRecommendationSearch(
       searchId: searchId,
       searchLastUpdated: searchLastUpdated,
@@ -3990,9 +4249,14 @@ class _$ImmunizationRecommendationSearchTearOff {
       patient: patient,
       status: status,
       support: support,
-      target_disease: target_disease,
-      vaccine_type: vaccine_type,
+      targetDisease: targetDisease,
+      vaccineType: vaccineType,
     );
+  }
+
+// ignore: unused_element
+  ImmunizationRecommendationSearch fromJson(Map<String, Object> json) {
+    return ImmunizationRecommendationSearch.fromJson(json);
   }
 }
 
@@ -4018,9 +4282,12 @@ mixin _$ImmunizationRecommendationSearch {
   List<SearchReference> get patient;
   List<SearchToken> get status;
   List<SearchReference> get support;
-  List<SearchToken> get target_disease;
-  List<SearchToken> get vaccine_type;
+  @JsonKey(name: 'target-disease')
+  List<SearchToken> get targetDisease;
+  @JsonKey(name: 'vaccine-type')
+  List<SearchToken> get vaccineType;
 
+  Map<String, dynamic> toJson();
   $ImmunizationRecommendationSearchCopyWith<ImmunizationRecommendationSearch>
       get copyWith;
 }
@@ -4046,8 +4313,8 @@ abstract class $ImmunizationRecommendationSearchCopyWith<$Res> {
       List<SearchReference> patient,
       List<SearchToken> status,
       List<SearchReference> support,
-      List<SearchToken> target_disease,
-      List<SearchToken> vaccine_type});
+      @JsonKey(name: 'target-disease') List<SearchToken> targetDisease,
+      @JsonKey(name: 'vaccine-type') List<SearchToken> vaccineType});
 }
 
 /// @nodoc
@@ -4075,8 +4342,8 @@ class _$ImmunizationRecommendationSearchCopyWithImpl<$Res>
     Object patient = freezed,
     Object status = freezed,
     Object support = freezed,
-    Object target_disease = freezed,
-    Object vaccine_type = freezed,
+    Object targetDisease = freezed,
+    Object vaccineType = freezed,
   }) {
     return _then(_value.copyWith(
       searchId: searchId == freezed ? _value.searchId : searchId as List<Id>,
@@ -4114,12 +4381,12 @@ class _$ImmunizationRecommendationSearchCopyWithImpl<$Res>
       support: support == freezed
           ? _value.support
           : support as List<SearchReference>,
-      target_disease: target_disease == freezed
-          ? _value.target_disease
-          : target_disease as List<SearchToken>,
-      vaccine_type: vaccine_type == freezed
-          ? _value.vaccine_type
-          : vaccine_type as List<SearchToken>,
+      targetDisease: targetDisease == freezed
+          ? _value.targetDisease
+          : targetDisease as List<SearchToken>,
+      vaccineType: vaccineType == freezed
+          ? _value.vaccineType
+          : vaccineType as List<SearchToken>,
     ));
   }
 }
@@ -4147,8 +4414,8 @@ abstract class _$ImmunizationRecommendationSearchCopyWith<$Res>
       List<SearchReference> patient,
       List<SearchToken> status,
       List<SearchReference> support,
-      List<SearchToken> target_disease,
-      List<SearchToken> vaccine_type});
+      @JsonKey(name: 'target-disease') List<SearchToken> targetDisease,
+      @JsonKey(name: 'vaccine-type') List<SearchToken> vaccineType});
 }
 
 /// @nodoc
@@ -4180,8 +4447,8 @@ class __$ImmunizationRecommendationSearchCopyWithImpl<$Res>
     Object patient = freezed,
     Object status = freezed,
     Object support = freezed,
-    Object target_disease = freezed,
-    Object vaccine_type = freezed,
+    Object targetDisease = freezed,
+    Object vaccineType = freezed,
   }) {
     return _then(_ImmunizationRecommendationSearch(
       searchId: searchId == freezed ? _value.searchId : searchId as List<Id>,
@@ -4219,15 +4486,17 @@ class __$ImmunizationRecommendationSearchCopyWithImpl<$Res>
       support: support == freezed
           ? _value.support
           : support as List<SearchReference>,
-      target_disease: target_disease == freezed
-          ? _value.target_disease
-          : target_disease as List<SearchToken>,
-      vaccine_type: vaccine_type == freezed
-          ? _value.vaccine_type
-          : vaccine_type as List<SearchToken>,
+      targetDisease: targetDisease == freezed
+          ? _value.targetDisease
+          : targetDisease as List<SearchToken>,
+      vaccineType: vaccineType == freezed
+          ? _value.vaccineType
+          : vaccineType as List<SearchToken>,
     ));
   }
 }
+
+@JsonSerializable()
 
 /// @nodoc
 class _$_ImmunizationRecommendationSearch
@@ -4247,9 +4516,13 @@ class _$_ImmunizationRecommendationSearch
       this.patient,
       this.status,
       this.support,
-      this.target_disease,
-      this.vaccine_type})
+      @JsonKey(name: 'target-disease') this.targetDisease,
+      @JsonKey(name: 'vaccine-type') this.vaccineType})
       : super._();
+
+  factory _$_ImmunizationRecommendationSearch.fromJson(
+          Map<String, dynamic> json) =>
+      _$_$_ImmunizationRecommendationSearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -4281,13 +4554,15 @@ class _$_ImmunizationRecommendationSearch
   @override
   final List<SearchReference> support;
   @override
-  final List<SearchToken> target_disease;
+  @JsonKey(name: 'target-disease')
+  final List<SearchToken> targetDisease;
   @override
-  final List<SearchToken> vaccine_type;
+  @JsonKey(name: 'vaccine-type')
+  final List<SearchToken> vaccineType;
 
   @override
   String toString() {
-    return 'ImmunizationRecommendationSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, date: $date, identifier: $identifier, information: $information, patient: $patient, status: $status, support: $support, target_disease: $target_disease, vaccine_type: $vaccine_type)';
+    return 'ImmunizationRecommendationSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, date: $date, identifier: $identifier, information: $information, patient: $patient, status: $status, support: $support, targetDisease: $targetDisease, vaccineType: $vaccineType)';
   }
 
   @override
@@ -4334,12 +4609,12 @@ class _$_ImmunizationRecommendationSearch
             (identical(other.support, support) ||
                 const DeepCollectionEquality()
                     .equals(other.support, support)) &&
-            (identical(other.target_disease, target_disease) ||
+            (identical(other.targetDisease, targetDisease) ||
                 const DeepCollectionEquality()
-                    .equals(other.target_disease, target_disease)) &&
-            (identical(other.vaccine_type, vaccine_type) ||
+                    .equals(other.targetDisease, targetDisease)) &&
+            (identical(other.vaccineType, vaccineType) ||
                 const DeepCollectionEquality()
-                    .equals(other.vaccine_type, vaccine_type)));
+                    .equals(other.vaccineType, vaccineType)));
   }
 
   @override
@@ -4359,35 +4634,44 @@ class _$_ImmunizationRecommendationSearch
       const DeepCollectionEquality().hash(patient) ^
       const DeepCollectionEquality().hash(status) ^
       const DeepCollectionEquality().hash(support) ^
-      const DeepCollectionEquality().hash(target_disease) ^
-      const DeepCollectionEquality().hash(vaccine_type);
+      const DeepCollectionEquality().hash(targetDisease) ^
+      const DeepCollectionEquality().hash(vaccineType);
 
   @override
   _$ImmunizationRecommendationSearchCopyWith<_ImmunizationRecommendationSearch>
       get copyWith => __$ImmunizationRecommendationSearchCopyWithImpl<
           _ImmunizationRecommendationSearch>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_ImmunizationRecommendationSearchToJson(this);
+  }
 }
 
 abstract class _ImmunizationRecommendationSearch
     extends ImmunizationRecommendationSearch {
   _ImmunizationRecommendationSearch._() : super._();
   factory _ImmunizationRecommendationSearch(
-      {List<Id> searchId,
-      List<SearchDate> searchLastUpdated,
-      List<SearchToken> searchTag,
-      List<SearchUri> searchProfile,
-      List<SearchToken> searchSecurity,
-      List<SearchString> searchText,
-      List<SearchString> searchContent,
-      List<Id> searchList,
-      List<SearchDate> date,
-      List<SearchToken> identifier,
-      List<SearchReference> information,
-      List<SearchReference> patient,
-      List<SearchToken> status,
-      List<SearchReference> support,
-      List<SearchToken> target_disease,
-      List<SearchToken> vaccine_type}) = _$_ImmunizationRecommendationSearch;
+          {List<Id> searchId,
+          List<SearchDate> searchLastUpdated,
+          List<SearchToken> searchTag,
+          List<SearchUri> searchProfile,
+          List<SearchToken> searchSecurity,
+          List<SearchString> searchText,
+          List<SearchString> searchContent,
+          List<Id> searchList,
+          List<SearchDate> date,
+          List<SearchToken> identifier,
+          List<SearchReference> information,
+          List<SearchReference> patient,
+          List<SearchToken> status,
+          List<SearchReference> support,
+          @JsonKey(name: 'target-disease') List<SearchToken> targetDisease,
+          @JsonKey(name: 'vaccine-type') List<SearchToken> vaccineType}) =
+      _$_ImmunizationRecommendationSearch;
+
+  factory _ImmunizationRecommendationSearch.fromJson(
+      Map<String, dynamic> json) = _$_ImmunizationRecommendationSearch.fromJson;
 
   @override
   List<Id> get searchId;
@@ -4419,12 +4703,19 @@ abstract class _ImmunizationRecommendationSearch
   @override
   List<SearchReference> get support;
   @override
-  List<SearchToken> get target_disease;
+  @JsonKey(name: 'target-disease')
+  List<SearchToken> get targetDisease;
   @override
-  List<SearchToken> get vaccine_type;
+  @JsonKey(name: 'vaccine-type')
+  List<SearchToken> get vaccineType;
   @override
   _$ImmunizationRecommendationSearchCopyWith<_ImmunizationRecommendationSearch>
       get copyWith;
+}
+
+MedicationKnowledgeSearch _$MedicationKnowledgeSearchFromJson(
+    Map<String, dynamic> json) {
+  return _MedicationKnowledgeSearch.fromJson(json);
 }
 
 /// @nodoc
@@ -4442,17 +4733,23 @@ class _$MedicationKnowledgeSearchTearOff {
       List<SearchString> searchContent,
       List<Id> searchList,
       List<SearchToken> classification,
-      List<SearchToken> classification_type,
+      @JsonKey(name: 'classification-type')
+          List<SearchToken> classificationType,
       List<SearchToken> code,
       List<SearchToken> doseform,
       List<SearchReference> ingredient,
-      List<SearchToken> ingredient_code,
+      @JsonKey(name: 'ingredient-code')
+          List<SearchToken> ingredientCode,
       List<SearchReference> manufacturer,
-      List<SearchToken> monitoring_program_name,
-      List<SearchToken> monitoring_program_type,
+      @JsonKey(name: 'monitoring-program-name')
+          List<SearchToken> monitoringProgramname,
+      @JsonKey(name: 'monitoring-program-type')
+          List<SearchToken> monitoringProgramtype,
       List<SearchReference> monograph,
-      List<SearchToken> monograph_type,
-      List<SearchToken> source_cost,
+      @JsonKey(name: 'monograph-type')
+          List<SearchToken> monographType,
+      @JsonKey(name: 'source-cost')
+          List<SearchToken> sourceCost,
       List<SearchToken> status}) {
     return _MedicationKnowledgeSearch(
       searchId: searchId,
@@ -4464,19 +4761,24 @@ class _$MedicationKnowledgeSearchTearOff {
       searchContent: searchContent,
       searchList: searchList,
       classification: classification,
-      classification_type: classification_type,
+      classificationType: classificationType,
       code: code,
       doseform: doseform,
       ingredient: ingredient,
-      ingredient_code: ingredient_code,
+      ingredientCode: ingredientCode,
       manufacturer: manufacturer,
-      monitoring_program_name: monitoring_program_name,
-      monitoring_program_type: monitoring_program_type,
+      monitoringProgramname: monitoringProgramname,
+      monitoringProgramtype: monitoringProgramtype,
       monograph: monograph,
-      monograph_type: monograph_type,
-      source_cost: source_cost,
+      monographType: monographType,
+      sourceCost: sourceCost,
       status: status,
     );
+  }
+
+// ignore: unused_element
+  MedicationKnowledgeSearch fromJson(Map<String, Object> json) {
+    return MedicationKnowledgeSearch.fromJson(json);
   }
 }
 
@@ -4496,19 +4798,26 @@ mixin _$MedicationKnowledgeSearch {
   List<Id> get searchList; //List<SearchString> searchHas,
 //List<SearchToken> searchType,
   List<SearchToken> get classification;
-  List<SearchToken> get classification_type;
+  @JsonKey(name: 'classification-type')
+  List<SearchToken> get classificationType;
   List<SearchToken> get code;
   List<SearchToken> get doseform;
   List<SearchReference> get ingredient;
-  List<SearchToken> get ingredient_code;
+  @JsonKey(name: 'ingredient-code')
+  List<SearchToken> get ingredientCode;
   List<SearchReference> get manufacturer;
-  List<SearchToken> get monitoring_program_name;
-  List<SearchToken> get monitoring_program_type;
+  @JsonKey(name: 'monitoring-program-name')
+  List<SearchToken> get monitoringProgramname;
+  @JsonKey(name: 'monitoring-program-type')
+  List<SearchToken> get monitoringProgramtype;
   List<SearchReference> get monograph;
-  List<SearchToken> get monograph_type;
-  List<SearchToken> get source_cost;
+  @JsonKey(name: 'monograph-type')
+  List<SearchToken> get monographType;
+  @JsonKey(name: 'source-cost')
+  List<SearchToken> get sourceCost;
   List<SearchToken> get status;
 
+  Map<String, dynamic> toJson();
   $MedicationKnowledgeSearchCopyWith<MedicationKnowledgeSearch> get copyWith;
 }
 
@@ -4527,17 +4836,23 @@ abstract class $MedicationKnowledgeSearchCopyWith<$Res> {
       List<SearchString> searchContent,
       List<Id> searchList,
       List<SearchToken> classification,
-      List<SearchToken> classification_type,
+      @JsonKey(name: 'classification-type')
+          List<SearchToken> classificationType,
       List<SearchToken> code,
       List<SearchToken> doseform,
       List<SearchReference> ingredient,
-      List<SearchToken> ingredient_code,
+      @JsonKey(name: 'ingredient-code')
+          List<SearchToken> ingredientCode,
       List<SearchReference> manufacturer,
-      List<SearchToken> monitoring_program_name,
-      List<SearchToken> monitoring_program_type,
+      @JsonKey(name: 'monitoring-program-name')
+          List<SearchToken> monitoringProgramname,
+      @JsonKey(name: 'monitoring-program-type')
+          List<SearchToken> monitoringProgramtype,
       List<SearchReference> monograph,
-      List<SearchToken> monograph_type,
-      List<SearchToken> source_cost,
+      @JsonKey(name: 'monograph-type')
+          List<SearchToken> monographType,
+      @JsonKey(name: 'source-cost')
+          List<SearchToken> sourceCost,
       List<SearchToken> status});
 }
 
@@ -4561,17 +4876,17 @@ class _$MedicationKnowledgeSearchCopyWithImpl<$Res>
     Object searchContent = freezed,
     Object searchList = freezed,
     Object classification = freezed,
-    Object classification_type = freezed,
+    Object classificationType = freezed,
     Object code = freezed,
     Object doseform = freezed,
     Object ingredient = freezed,
-    Object ingredient_code = freezed,
+    Object ingredientCode = freezed,
     Object manufacturer = freezed,
-    Object monitoring_program_name = freezed,
-    Object monitoring_program_type = freezed,
+    Object monitoringProgramname = freezed,
+    Object monitoringProgramtype = freezed,
     Object monograph = freezed,
-    Object monograph_type = freezed,
-    Object source_cost = freezed,
+    Object monographType = freezed,
+    Object sourceCost = freezed,
     Object status = freezed,
   }) {
     return _then(_value.copyWith(
@@ -4599,36 +4914,36 @@ class _$MedicationKnowledgeSearchCopyWithImpl<$Res>
       classification: classification == freezed
           ? _value.classification
           : classification as List<SearchToken>,
-      classification_type: classification_type == freezed
-          ? _value.classification_type
-          : classification_type as List<SearchToken>,
+      classificationType: classificationType == freezed
+          ? _value.classificationType
+          : classificationType as List<SearchToken>,
       code: code == freezed ? _value.code : code as List<SearchToken>,
       doseform:
           doseform == freezed ? _value.doseform : doseform as List<SearchToken>,
       ingredient: ingredient == freezed
           ? _value.ingredient
           : ingredient as List<SearchReference>,
-      ingredient_code: ingredient_code == freezed
-          ? _value.ingredient_code
-          : ingredient_code as List<SearchToken>,
+      ingredientCode: ingredientCode == freezed
+          ? _value.ingredientCode
+          : ingredientCode as List<SearchToken>,
       manufacturer: manufacturer == freezed
           ? _value.manufacturer
           : manufacturer as List<SearchReference>,
-      monitoring_program_name: monitoring_program_name == freezed
-          ? _value.monitoring_program_name
-          : monitoring_program_name as List<SearchToken>,
-      monitoring_program_type: monitoring_program_type == freezed
-          ? _value.monitoring_program_type
-          : monitoring_program_type as List<SearchToken>,
+      monitoringProgramname: monitoringProgramname == freezed
+          ? _value.monitoringProgramname
+          : monitoringProgramname as List<SearchToken>,
+      monitoringProgramtype: monitoringProgramtype == freezed
+          ? _value.monitoringProgramtype
+          : monitoringProgramtype as List<SearchToken>,
       monograph: monograph == freezed
           ? _value.monograph
           : monograph as List<SearchReference>,
-      monograph_type: monograph_type == freezed
-          ? _value.monograph_type
-          : monograph_type as List<SearchToken>,
-      source_cost: source_cost == freezed
-          ? _value.source_cost
-          : source_cost as List<SearchToken>,
+      monographType: monographType == freezed
+          ? _value.monographType
+          : monographType as List<SearchToken>,
+      sourceCost: sourceCost == freezed
+          ? _value.sourceCost
+          : sourceCost as List<SearchToken>,
       status: status == freezed ? _value.status : status as List<SearchToken>,
     ));
   }
@@ -4651,17 +4966,23 @@ abstract class _$MedicationKnowledgeSearchCopyWith<$Res>
       List<SearchString> searchContent,
       List<Id> searchList,
       List<SearchToken> classification,
-      List<SearchToken> classification_type,
+      @JsonKey(name: 'classification-type')
+          List<SearchToken> classificationType,
       List<SearchToken> code,
       List<SearchToken> doseform,
       List<SearchReference> ingredient,
-      List<SearchToken> ingredient_code,
+      @JsonKey(name: 'ingredient-code')
+          List<SearchToken> ingredientCode,
       List<SearchReference> manufacturer,
-      List<SearchToken> monitoring_program_name,
-      List<SearchToken> monitoring_program_type,
+      @JsonKey(name: 'monitoring-program-name')
+          List<SearchToken> monitoringProgramname,
+      @JsonKey(name: 'monitoring-program-type')
+          List<SearchToken> monitoringProgramtype,
       List<SearchReference> monograph,
-      List<SearchToken> monograph_type,
-      List<SearchToken> source_cost,
+      @JsonKey(name: 'monograph-type')
+          List<SearchToken> monographType,
+      @JsonKey(name: 'source-cost')
+          List<SearchToken> sourceCost,
       List<SearchToken> status});
 }
 
@@ -4688,17 +5009,17 @@ class __$MedicationKnowledgeSearchCopyWithImpl<$Res>
     Object searchContent = freezed,
     Object searchList = freezed,
     Object classification = freezed,
-    Object classification_type = freezed,
+    Object classificationType = freezed,
     Object code = freezed,
     Object doseform = freezed,
     Object ingredient = freezed,
-    Object ingredient_code = freezed,
+    Object ingredientCode = freezed,
     Object manufacturer = freezed,
-    Object monitoring_program_name = freezed,
-    Object monitoring_program_type = freezed,
+    Object monitoringProgramname = freezed,
+    Object monitoringProgramtype = freezed,
     Object monograph = freezed,
-    Object monograph_type = freezed,
-    Object source_cost = freezed,
+    Object monographType = freezed,
+    Object sourceCost = freezed,
     Object status = freezed,
   }) {
     return _then(_MedicationKnowledgeSearch(
@@ -4726,40 +5047,42 @@ class __$MedicationKnowledgeSearchCopyWithImpl<$Res>
       classification: classification == freezed
           ? _value.classification
           : classification as List<SearchToken>,
-      classification_type: classification_type == freezed
-          ? _value.classification_type
-          : classification_type as List<SearchToken>,
+      classificationType: classificationType == freezed
+          ? _value.classificationType
+          : classificationType as List<SearchToken>,
       code: code == freezed ? _value.code : code as List<SearchToken>,
       doseform:
           doseform == freezed ? _value.doseform : doseform as List<SearchToken>,
       ingredient: ingredient == freezed
           ? _value.ingredient
           : ingredient as List<SearchReference>,
-      ingredient_code: ingredient_code == freezed
-          ? _value.ingredient_code
-          : ingredient_code as List<SearchToken>,
+      ingredientCode: ingredientCode == freezed
+          ? _value.ingredientCode
+          : ingredientCode as List<SearchToken>,
       manufacturer: manufacturer == freezed
           ? _value.manufacturer
           : manufacturer as List<SearchReference>,
-      monitoring_program_name: monitoring_program_name == freezed
-          ? _value.monitoring_program_name
-          : monitoring_program_name as List<SearchToken>,
-      monitoring_program_type: monitoring_program_type == freezed
-          ? _value.monitoring_program_type
-          : monitoring_program_type as List<SearchToken>,
+      monitoringProgramname: monitoringProgramname == freezed
+          ? _value.monitoringProgramname
+          : monitoringProgramname as List<SearchToken>,
+      monitoringProgramtype: monitoringProgramtype == freezed
+          ? _value.monitoringProgramtype
+          : monitoringProgramtype as List<SearchToken>,
       monograph: monograph == freezed
           ? _value.monograph
           : monograph as List<SearchReference>,
-      monograph_type: monograph_type == freezed
-          ? _value.monograph_type
-          : monograph_type as List<SearchToken>,
-      source_cost: source_cost == freezed
-          ? _value.source_cost
-          : source_cost as List<SearchToken>,
+      monographType: monographType == freezed
+          ? _value.monographType
+          : monographType as List<SearchToken>,
+      sourceCost: sourceCost == freezed
+          ? _value.sourceCost
+          : sourceCost as List<SearchToken>,
       status: status == freezed ? _value.status : status as List<SearchToken>,
     ));
   }
 }
+
+@JsonSerializable()
 
 /// @nodoc
 class _$_MedicationKnowledgeSearch extends _MedicationKnowledgeSearch {
@@ -4773,19 +5096,22 @@ class _$_MedicationKnowledgeSearch extends _MedicationKnowledgeSearch {
       this.searchContent,
       this.searchList,
       this.classification,
-      this.classification_type,
+      @JsonKey(name: 'classification-type') this.classificationType,
       this.code,
       this.doseform,
       this.ingredient,
-      this.ingredient_code,
+      @JsonKey(name: 'ingredient-code') this.ingredientCode,
       this.manufacturer,
-      this.monitoring_program_name,
-      this.monitoring_program_type,
+      @JsonKey(name: 'monitoring-program-name') this.monitoringProgramname,
+      @JsonKey(name: 'monitoring-program-type') this.monitoringProgramtype,
       this.monograph,
-      this.monograph_type,
-      this.source_cost,
+      @JsonKey(name: 'monograph-type') this.monographType,
+      @JsonKey(name: 'source-cost') this.sourceCost,
       this.status})
       : super._();
+
+  factory _$_MedicationKnowledgeSearch.fromJson(Map<String, dynamic> json) =>
+      _$_$_MedicationKnowledgeSearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -4807,7 +5133,8 @@ class _$_MedicationKnowledgeSearch extends _MedicationKnowledgeSearch {
 //List<SearchToken> searchType,
   final List<SearchToken> classification;
   @override
-  final List<SearchToken> classification_type;
+  @JsonKey(name: 'classification-type')
+  final List<SearchToken> classificationType;
   @override
   final List<SearchToken> code;
   @override
@@ -4815,25 +5142,30 @@ class _$_MedicationKnowledgeSearch extends _MedicationKnowledgeSearch {
   @override
   final List<SearchReference> ingredient;
   @override
-  final List<SearchToken> ingredient_code;
+  @JsonKey(name: 'ingredient-code')
+  final List<SearchToken> ingredientCode;
   @override
   final List<SearchReference> manufacturer;
   @override
-  final List<SearchToken> monitoring_program_name;
+  @JsonKey(name: 'monitoring-program-name')
+  final List<SearchToken> monitoringProgramname;
   @override
-  final List<SearchToken> monitoring_program_type;
+  @JsonKey(name: 'monitoring-program-type')
+  final List<SearchToken> monitoringProgramtype;
   @override
   final List<SearchReference> monograph;
   @override
-  final List<SearchToken> monograph_type;
+  @JsonKey(name: 'monograph-type')
+  final List<SearchToken> monographType;
   @override
-  final List<SearchToken> source_cost;
+  @JsonKey(name: 'source-cost')
+  final List<SearchToken> sourceCost;
   @override
   final List<SearchToken> status;
 
   @override
   String toString() {
-    return 'MedicationKnowledgeSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, classification: $classification, classification_type: $classification_type, code: $code, doseform: $doseform, ingredient: $ingredient, ingredient_code: $ingredient_code, manufacturer: $manufacturer, monitoring_program_name: $monitoring_program_name, monitoring_program_type: $monitoring_program_type, monograph: $monograph, monograph_type: $monograph_type, source_cost: $source_cost, status: $status)';
+    return 'MedicationKnowledgeSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, classification: $classification, classificationType: $classificationType, code: $code, doseform: $doseform, ingredient: $ingredient, ingredientCode: $ingredientCode, manufacturer: $manufacturer, monitoringProgramname: $monitoringProgramname, monitoringProgramtype: $monitoringProgramtype, monograph: $monograph, monographType: $monographType, sourceCost: $sourceCost, status: $status)';
   }
 
   @override
@@ -4867,9 +5199,9 @@ class _$_MedicationKnowledgeSearch extends _MedicationKnowledgeSearch {
             (identical(other.classification, classification) ||
                 const DeepCollectionEquality()
                     .equals(other.classification, classification)) &&
-            (identical(other.classification_type, classification_type) ||
+            (identical(other.classificationType, classificationType) ||
                 const DeepCollectionEquality()
-                    .equals(other.classification_type, classification_type)) &&
+                    .equals(other.classificationType, classificationType)) &&
             (identical(other.code, code) ||
                 const DeepCollectionEquality().equals(other.code, code)) &&
             (identical(other.doseform, doseform) ||
@@ -4878,27 +5210,27 @@ class _$_MedicationKnowledgeSearch extends _MedicationKnowledgeSearch {
             (identical(other.ingredient, ingredient) ||
                 const DeepCollectionEquality()
                     .equals(other.ingredient, ingredient)) &&
-            (identical(other.ingredient_code, ingredient_code) ||
+            (identical(other.ingredientCode, ingredientCode) ||
                 const DeepCollectionEquality()
-                    .equals(other.ingredient_code, ingredient_code)) &&
+                    .equals(other.ingredientCode, ingredientCode)) &&
             (identical(other.manufacturer, manufacturer) ||
                 const DeepCollectionEquality()
                     .equals(other.manufacturer, manufacturer)) &&
-            (identical(other.monitoring_program_name, monitoring_program_name) ||
+            (identical(other.monitoringProgramname, monitoringProgramname) ||
                 const DeepCollectionEquality().equals(
-                    other.monitoring_program_name, monitoring_program_name)) &&
-            (identical(other.monitoring_program_type, monitoring_program_type) ||
+                    other.monitoringProgramname, monitoringProgramname)) &&
+            (identical(other.monitoringProgramtype, monitoringProgramtype) ||
                 const DeepCollectionEquality().equals(
-                    other.monitoring_program_type, monitoring_program_type)) &&
+                    other.monitoringProgramtype, monitoringProgramtype)) &&
             (identical(other.monograph, monograph) ||
                 const DeepCollectionEquality()
                     .equals(other.monograph, monograph)) &&
-            (identical(other.monograph_type, monograph_type) ||
+            (identical(other.monographType, monographType) ||
                 const DeepCollectionEquality()
-                    .equals(other.monograph_type, monograph_type)) &&
-            (identical(other.source_cost, source_cost) ||
+                    .equals(other.monographType, monographType)) &&
+            (identical(other.sourceCost, sourceCost) ||
                 const DeepCollectionEquality()
-                    .equals(other.source_cost, source_cost)) &&
+                    .equals(other.sourceCost, sourceCost)) &&
             (identical(other.status, status) ||
                 const DeepCollectionEquality().equals(other.status, status)));
   }
@@ -4915,17 +5247,17 @@ class _$_MedicationKnowledgeSearch extends _MedicationKnowledgeSearch {
       const DeepCollectionEquality().hash(searchContent) ^
       const DeepCollectionEquality().hash(searchList) ^
       const DeepCollectionEquality().hash(classification) ^
-      const DeepCollectionEquality().hash(classification_type) ^
+      const DeepCollectionEquality().hash(classificationType) ^
       const DeepCollectionEquality().hash(code) ^
       const DeepCollectionEquality().hash(doseform) ^
       const DeepCollectionEquality().hash(ingredient) ^
-      const DeepCollectionEquality().hash(ingredient_code) ^
+      const DeepCollectionEquality().hash(ingredientCode) ^
       const DeepCollectionEquality().hash(manufacturer) ^
-      const DeepCollectionEquality().hash(monitoring_program_name) ^
-      const DeepCollectionEquality().hash(monitoring_program_type) ^
+      const DeepCollectionEquality().hash(monitoringProgramname) ^
+      const DeepCollectionEquality().hash(monitoringProgramtype) ^
       const DeepCollectionEquality().hash(monograph) ^
-      const DeepCollectionEquality().hash(monograph_type) ^
-      const DeepCollectionEquality().hash(source_cost) ^
+      const DeepCollectionEquality().hash(monographType) ^
+      const DeepCollectionEquality().hash(sourceCost) ^
       const DeepCollectionEquality().hash(status);
 
   @override
@@ -4933,6 +5265,11 @@ class _$_MedicationKnowledgeSearch extends _MedicationKnowledgeSearch {
       get copyWith =>
           __$MedicationKnowledgeSearchCopyWithImpl<_MedicationKnowledgeSearch>(
               this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_MedicationKnowledgeSearchToJson(this);
+  }
 }
 
 abstract class _MedicationKnowledgeSearch extends MedicationKnowledgeSearch {
@@ -4947,18 +5284,27 @@ abstract class _MedicationKnowledgeSearch extends MedicationKnowledgeSearch {
       List<SearchString> searchContent,
       List<Id> searchList,
       List<SearchToken> classification,
-      List<SearchToken> classification_type,
+      @JsonKey(name: 'classification-type')
+          List<SearchToken> classificationType,
       List<SearchToken> code,
       List<SearchToken> doseform,
       List<SearchReference> ingredient,
-      List<SearchToken> ingredient_code,
+      @JsonKey(name: 'ingredient-code')
+          List<SearchToken> ingredientCode,
       List<SearchReference> manufacturer,
-      List<SearchToken> monitoring_program_name,
-      List<SearchToken> monitoring_program_type,
+      @JsonKey(name: 'monitoring-program-name')
+          List<SearchToken> monitoringProgramname,
+      @JsonKey(name: 'monitoring-program-type')
+          List<SearchToken> monitoringProgramtype,
       List<SearchReference> monograph,
-      List<SearchToken> monograph_type,
-      List<SearchToken> source_cost,
+      @JsonKey(name: 'monograph-type')
+          List<SearchToken> monographType,
+      @JsonKey(name: 'source-cost')
+          List<SearchToken> sourceCost,
       List<SearchToken> status}) = _$_MedicationKnowledgeSearch;
+
+  factory _MedicationKnowledgeSearch.fromJson(Map<String, dynamic> json) =
+      _$_MedicationKnowledgeSearch.fromJson;
 
   @override
   List<Id> get searchId;
@@ -4980,7 +5326,8 @@ abstract class _MedicationKnowledgeSearch extends MedicationKnowledgeSearch {
 //List<SearchToken> searchType,
   List<SearchToken> get classification;
   @override
-  List<SearchToken> get classification_type;
+  @JsonKey(name: 'classification-type')
+  List<SearchToken> get classificationType;
   @override
   List<SearchToken> get code;
   @override
@@ -4988,19 +5335,24 @@ abstract class _MedicationKnowledgeSearch extends MedicationKnowledgeSearch {
   @override
   List<SearchReference> get ingredient;
   @override
-  List<SearchToken> get ingredient_code;
+  @JsonKey(name: 'ingredient-code')
+  List<SearchToken> get ingredientCode;
   @override
   List<SearchReference> get manufacturer;
   @override
-  List<SearchToken> get monitoring_program_name;
+  @JsonKey(name: 'monitoring-program-name')
+  List<SearchToken> get monitoringProgramname;
   @override
-  List<SearchToken> get monitoring_program_type;
+  @JsonKey(name: 'monitoring-program-type')
+  List<SearchToken> get monitoringProgramtype;
   @override
   List<SearchReference> get monograph;
   @override
-  List<SearchToken> get monograph_type;
+  @JsonKey(name: 'monograph-type')
+  List<SearchToken> get monographType;
   @override
-  List<SearchToken> get source_cost;
+  @JsonKey(name: 'source-cost')
+  List<SearchToken> get sourceCost;
   @override
   List<SearchToken> get status;
   @override

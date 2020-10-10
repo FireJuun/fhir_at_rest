@@ -57,13 +57,13 @@ abstract class VreadRequest with _$VreadRequest {
 
   Future<Either<RestfulFailure, dynamic>> request() async {
     var thisRequest = this.map(
-      dstu2: (req) => '${base}/${enumToString(req.type)}/${req.id.toString()}/'
+      dstu2: (req) => '$base/${enumToString(req.type)}/${req.id.toString()}/'
           '_history/${req.versionId.toString()}',
-      stu3: (req) => '${base}/${enumToString(req.type)}/${req.id.toString()}/'
+      stu3: (req) => '$base/${enumToString(req.type)}/${req.id.toString()}/'
           '_history/${req.versionId.toString()}',
-      r4: (req) => '${base}/${enumToString(req.type)}/${req.id.toString()}/'
+      r4: (req) => '$base/${enumToString(req.type)}/${req.id.toString()}/'
           '_history/${req.versionId.toString()}',
-      r5: (req) => '${base}/${enumToString(req.type)}/${req.id.toString()}/'
+      r5: (req) => '$base/${enumToString(req.type)}/${req.id.toString()}/'
           '_history/${req.versionId.toString()}',
     );
 

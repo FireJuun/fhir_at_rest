@@ -8,6 +8,9 @@ part of 'workflow.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
+AppointmentSearch _$AppointmentSearchFromJson(Map<String, dynamic> json) {
+  return _AppointmentSearch.fromJson(json);
+}
 
 /// @nodoc
 class _$AppointmentSearchTearOff {
@@ -24,22 +27,22 @@ class _$AppointmentSearchTearOff {
       List<SearchString> searchContent,
       List<Id> searchList,
       List<SearchReference> actor,
-      List<SearchToken> appointment_type,
-      List<SearchReference> based_on,
+      @JsonKey(name: 'appointment-type') List<SearchToken> appointmentType,
+      @JsonKey(name: 'based-on') List<SearchReference> basedOn,
       List<SearchDate> date,
       List<SearchToken> identifier,
       List<SearchReference> location,
-      List<SearchToken> part_status,
+      @JsonKey(name: 'part-status') List<SearchToken> partStatus,
       List<SearchReference> patient,
       List<SearchReference> practitioner,
-      List<SearchToken> reason_code,
-      List<SearchReference> reason_reference,
-      List<SearchToken> service_category,
-      List<SearchToken> service_type,
+      @JsonKey(name: 'reason-code') List<SearchToken> reasonCode,
+      @JsonKey(name: 'reason-reference') List<SearchReference> reasonReference,
+      @JsonKey(name: 'service-category') List<SearchToken> serviceCategory,
+      @JsonKey(name: 'service-type') List<SearchToken> serviceType,
       List<SearchReference> slot,
       List<SearchToken> specialty,
       List<SearchToken> status,
-      List<SearchReference> supporting_info}) {
+      @JsonKey(name: 'supporting-info') List<SearchReference> supportingInfo}) {
     return _AppointmentSearch(
       searchId: searchId,
       searchLastUpdated: searchLastUpdated,
@@ -50,23 +53,28 @@ class _$AppointmentSearchTearOff {
       searchContent: searchContent,
       searchList: searchList,
       actor: actor,
-      appointment_type: appointment_type,
-      based_on: based_on,
+      appointmentType: appointmentType,
+      basedOn: basedOn,
       date: date,
       identifier: identifier,
       location: location,
-      part_status: part_status,
+      partStatus: partStatus,
       patient: patient,
       practitioner: practitioner,
-      reason_code: reason_code,
-      reason_reference: reason_reference,
-      service_category: service_category,
-      service_type: service_type,
+      reasonCode: reasonCode,
+      reasonReference: reasonReference,
+      serviceCategory: serviceCategory,
+      serviceType: serviceType,
       slot: slot,
       specialty: specialty,
       status: status,
-      supporting_info: supporting_info,
+      supportingInfo: supportingInfo,
     );
+  }
+
+// ignore: unused_element
+  AppointmentSearch fromJson(Map<String, Object> json) {
+    return AppointmentSearch.fromJson(json);
   }
 }
 
@@ -86,23 +94,32 @@ mixin _$AppointmentSearch {
   List<Id> get searchList; //List<SearchString> searchHas,
 //List<SearchToken> searchType,
   List<SearchReference> get actor;
-  List<SearchToken> get appointment_type;
-  List<SearchReference> get based_on;
+  @JsonKey(name: 'appointment-type')
+  List<SearchToken> get appointmentType;
+  @JsonKey(name: 'based-on')
+  List<SearchReference> get basedOn;
   List<SearchDate> get date;
   List<SearchToken> get identifier;
   List<SearchReference> get location;
-  List<SearchToken> get part_status;
+  @JsonKey(name: 'part-status')
+  List<SearchToken> get partStatus;
   List<SearchReference> get patient;
   List<SearchReference> get practitioner;
-  List<SearchToken> get reason_code;
-  List<SearchReference> get reason_reference;
-  List<SearchToken> get service_category;
-  List<SearchToken> get service_type;
+  @JsonKey(name: 'reason-code')
+  List<SearchToken> get reasonCode;
+  @JsonKey(name: 'reason-reference')
+  List<SearchReference> get reasonReference;
+  @JsonKey(name: 'service-category')
+  List<SearchToken> get serviceCategory;
+  @JsonKey(name: 'service-type')
+  List<SearchToken> get serviceType;
   List<SearchReference> get slot;
   List<SearchToken> get specialty;
   List<SearchToken> get status;
-  List<SearchReference> get supporting_info;
+  @JsonKey(name: 'supporting-info')
+  List<SearchReference> get supportingInfo;
 
+  Map<String, dynamic> toJson();
   $AppointmentSearchCopyWith<AppointmentSearch> get copyWith;
 }
 
@@ -121,22 +138,22 @@ abstract class $AppointmentSearchCopyWith<$Res> {
       List<SearchString> searchContent,
       List<Id> searchList,
       List<SearchReference> actor,
-      List<SearchToken> appointment_type,
-      List<SearchReference> based_on,
+      @JsonKey(name: 'appointment-type') List<SearchToken> appointmentType,
+      @JsonKey(name: 'based-on') List<SearchReference> basedOn,
       List<SearchDate> date,
       List<SearchToken> identifier,
       List<SearchReference> location,
-      List<SearchToken> part_status,
+      @JsonKey(name: 'part-status') List<SearchToken> partStatus,
       List<SearchReference> patient,
       List<SearchReference> practitioner,
-      List<SearchToken> reason_code,
-      List<SearchReference> reason_reference,
-      List<SearchToken> service_category,
-      List<SearchToken> service_type,
+      @JsonKey(name: 'reason-code') List<SearchToken> reasonCode,
+      @JsonKey(name: 'reason-reference') List<SearchReference> reasonReference,
+      @JsonKey(name: 'service-category') List<SearchToken> serviceCategory,
+      @JsonKey(name: 'service-type') List<SearchToken> serviceType,
       List<SearchReference> slot,
       List<SearchToken> specialty,
       List<SearchToken> status,
-      List<SearchReference> supporting_info});
+      @JsonKey(name: 'supporting-info') List<SearchReference> supportingInfo});
 }
 
 /// @nodoc
@@ -159,22 +176,22 @@ class _$AppointmentSearchCopyWithImpl<$Res>
     Object searchContent = freezed,
     Object searchList = freezed,
     Object actor = freezed,
-    Object appointment_type = freezed,
-    Object based_on = freezed,
+    Object appointmentType = freezed,
+    Object basedOn = freezed,
     Object date = freezed,
     Object identifier = freezed,
     Object location = freezed,
-    Object part_status = freezed,
+    Object partStatus = freezed,
     Object patient = freezed,
     Object practitioner = freezed,
-    Object reason_code = freezed,
-    Object reason_reference = freezed,
-    Object service_category = freezed,
-    Object service_type = freezed,
+    Object reasonCode = freezed,
+    Object reasonReference = freezed,
+    Object serviceCategory = freezed,
+    Object serviceType = freezed,
     Object slot = freezed,
     Object specialty = freezed,
     Object status = freezed,
-    Object supporting_info = freezed,
+    Object supportingInfo = freezed,
   }) {
     return _then(_value.copyWith(
       searchId: searchId == freezed ? _value.searchId : searchId as List<Id>,
@@ -199,12 +216,12 @@ class _$AppointmentSearchCopyWithImpl<$Res>
       searchList:
           searchList == freezed ? _value.searchList : searchList as List<Id>,
       actor: actor == freezed ? _value.actor : actor as List<SearchReference>,
-      appointment_type: appointment_type == freezed
-          ? _value.appointment_type
-          : appointment_type as List<SearchToken>,
-      based_on: based_on == freezed
-          ? _value.based_on
-          : based_on as List<SearchReference>,
+      appointmentType: appointmentType == freezed
+          ? _value.appointmentType
+          : appointmentType as List<SearchToken>,
+      basedOn: basedOn == freezed
+          ? _value.basedOn
+          : basedOn as List<SearchReference>,
       date: date == freezed ? _value.date : date as List<SearchDate>,
       identifier: identifier == freezed
           ? _value.identifier
@@ -212,35 +229,35 @@ class _$AppointmentSearchCopyWithImpl<$Res>
       location: location == freezed
           ? _value.location
           : location as List<SearchReference>,
-      part_status: part_status == freezed
-          ? _value.part_status
-          : part_status as List<SearchToken>,
+      partStatus: partStatus == freezed
+          ? _value.partStatus
+          : partStatus as List<SearchToken>,
       patient: patient == freezed
           ? _value.patient
           : patient as List<SearchReference>,
       practitioner: practitioner == freezed
           ? _value.practitioner
           : practitioner as List<SearchReference>,
-      reason_code: reason_code == freezed
-          ? _value.reason_code
-          : reason_code as List<SearchToken>,
-      reason_reference: reason_reference == freezed
-          ? _value.reason_reference
-          : reason_reference as List<SearchReference>,
-      service_category: service_category == freezed
-          ? _value.service_category
-          : service_category as List<SearchToken>,
-      service_type: service_type == freezed
-          ? _value.service_type
-          : service_type as List<SearchToken>,
+      reasonCode: reasonCode == freezed
+          ? _value.reasonCode
+          : reasonCode as List<SearchToken>,
+      reasonReference: reasonReference == freezed
+          ? _value.reasonReference
+          : reasonReference as List<SearchReference>,
+      serviceCategory: serviceCategory == freezed
+          ? _value.serviceCategory
+          : serviceCategory as List<SearchToken>,
+      serviceType: serviceType == freezed
+          ? _value.serviceType
+          : serviceType as List<SearchToken>,
       slot: slot == freezed ? _value.slot : slot as List<SearchReference>,
       specialty: specialty == freezed
           ? _value.specialty
           : specialty as List<SearchToken>,
       status: status == freezed ? _value.status : status as List<SearchToken>,
-      supporting_info: supporting_info == freezed
-          ? _value.supporting_info
-          : supporting_info as List<SearchReference>,
+      supportingInfo: supportingInfo == freezed
+          ? _value.supportingInfo
+          : supportingInfo as List<SearchReference>,
     ));
   }
 }
@@ -262,22 +279,22 @@ abstract class _$AppointmentSearchCopyWith<$Res>
       List<SearchString> searchContent,
       List<Id> searchList,
       List<SearchReference> actor,
-      List<SearchToken> appointment_type,
-      List<SearchReference> based_on,
+      @JsonKey(name: 'appointment-type') List<SearchToken> appointmentType,
+      @JsonKey(name: 'based-on') List<SearchReference> basedOn,
       List<SearchDate> date,
       List<SearchToken> identifier,
       List<SearchReference> location,
-      List<SearchToken> part_status,
+      @JsonKey(name: 'part-status') List<SearchToken> partStatus,
       List<SearchReference> patient,
       List<SearchReference> practitioner,
-      List<SearchToken> reason_code,
-      List<SearchReference> reason_reference,
-      List<SearchToken> service_category,
-      List<SearchToken> service_type,
+      @JsonKey(name: 'reason-code') List<SearchToken> reasonCode,
+      @JsonKey(name: 'reason-reference') List<SearchReference> reasonReference,
+      @JsonKey(name: 'service-category') List<SearchToken> serviceCategory,
+      @JsonKey(name: 'service-type') List<SearchToken> serviceType,
       List<SearchReference> slot,
       List<SearchToken> specialty,
       List<SearchToken> status,
-      List<SearchReference> supporting_info});
+      @JsonKey(name: 'supporting-info') List<SearchReference> supportingInfo});
 }
 
 /// @nodoc
@@ -302,22 +319,22 @@ class __$AppointmentSearchCopyWithImpl<$Res>
     Object searchContent = freezed,
     Object searchList = freezed,
     Object actor = freezed,
-    Object appointment_type = freezed,
-    Object based_on = freezed,
+    Object appointmentType = freezed,
+    Object basedOn = freezed,
     Object date = freezed,
     Object identifier = freezed,
     Object location = freezed,
-    Object part_status = freezed,
+    Object partStatus = freezed,
     Object patient = freezed,
     Object practitioner = freezed,
-    Object reason_code = freezed,
-    Object reason_reference = freezed,
-    Object service_category = freezed,
-    Object service_type = freezed,
+    Object reasonCode = freezed,
+    Object reasonReference = freezed,
+    Object serviceCategory = freezed,
+    Object serviceType = freezed,
     Object slot = freezed,
     Object specialty = freezed,
     Object status = freezed,
-    Object supporting_info = freezed,
+    Object supportingInfo = freezed,
   }) {
     return _then(_AppointmentSearch(
       searchId: searchId == freezed ? _value.searchId : searchId as List<Id>,
@@ -342,12 +359,12 @@ class __$AppointmentSearchCopyWithImpl<$Res>
       searchList:
           searchList == freezed ? _value.searchList : searchList as List<Id>,
       actor: actor == freezed ? _value.actor : actor as List<SearchReference>,
-      appointment_type: appointment_type == freezed
-          ? _value.appointment_type
-          : appointment_type as List<SearchToken>,
-      based_on: based_on == freezed
-          ? _value.based_on
-          : based_on as List<SearchReference>,
+      appointmentType: appointmentType == freezed
+          ? _value.appointmentType
+          : appointmentType as List<SearchToken>,
+      basedOn: basedOn == freezed
+          ? _value.basedOn
+          : basedOn as List<SearchReference>,
       date: date == freezed ? _value.date : date as List<SearchDate>,
       identifier: identifier == freezed
           ? _value.identifier
@@ -355,38 +372,40 @@ class __$AppointmentSearchCopyWithImpl<$Res>
       location: location == freezed
           ? _value.location
           : location as List<SearchReference>,
-      part_status: part_status == freezed
-          ? _value.part_status
-          : part_status as List<SearchToken>,
+      partStatus: partStatus == freezed
+          ? _value.partStatus
+          : partStatus as List<SearchToken>,
       patient: patient == freezed
           ? _value.patient
           : patient as List<SearchReference>,
       practitioner: practitioner == freezed
           ? _value.practitioner
           : practitioner as List<SearchReference>,
-      reason_code: reason_code == freezed
-          ? _value.reason_code
-          : reason_code as List<SearchToken>,
-      reason_reference: reason_reference == freezed
-          ? _value.reason_reference
-          : reason_reference as List<SearchReference>,
-      service_category: service_category == freezed
-          ? _value.service_category
-          : service_category as List<SearchToken>,
-      service_type: service_type == freezed
-          ? _value.service_type
-          : service_type as List<SearchToken>,
+      reasonCode: reasonCode == freezed
+          ? _value.reasonCode
+          : reasonCode as List<SearchToken>,
+      reasonReference: reasonReference == freezed
+          ? _value.reasonReference
+          : reasonReference as List<SearchReference>,
+      serviceCategory: serviceCategory == freezed
+          ? _value.serviceCategory
+          : serviceCategory as List<SearchToken>,
+      serviceType: serviceType == freezed
+          ? _value.serviceType
+          : serviceType as List<SearchToken>,
       slot: slot == freezed ? _value.slot : slot as List<SearchReference>,
       specialty: specialty == freezed
           ? _value.specialty
           : specialty as List<SearchToken>,
       status: status == freezed ? _value.status : status as List<SearchToken>,
-      supporting_info: supporting_info == freezed
-          ? _value.supporting_info
-          : supporting_info as List<SearchReference>,
+      supportingInfo: supportingInfo == freezed
+          ? _value.supportingInfo
+          : supportingInfo as List<SearchReference>,
     ));
   }
 }
+
+@JsonSerializable()
 
 /// @nodoc
 class _$_AppointmentSearch extends _AppointmentSearch {
@@ -400,23 +419,26 @@ class _$_AppointmentSearch extends _AppointmentSearch {
       this.searchContent,
       this.searchList,
       this.actor,
-      this.appointment_type,
-      this.based_on,
+      @JsonKey(name: 'appointment-type') this.appointmentType,
+      @JsonKey(name: 'based-on') this.basedOn,
       this.date,
       this.identifier,
       this.location,
-      this.part_status,
+      @JsonKey(name: 'part-status') this.partStatus,
       this.patient,
       this.practitioner,
-      this.reason_code,
-      this.reason_reference,
-      this.service_category,
-      this.service_type,
+      @JsonKey(name: 'reason-code') this.reasonCode,
+      @JsonKey(name: 'reason-reference') this.reasonReference,
+      @JsonKey(name: 'service-category') this.serviceCategory,
+      @JsonKey(name: 'service-type') this.serviceType,
       this.slot,
       this.specialty,
       this.status,
-      this.supporting_info})
+      @JsonKey(name: 'supporting-info') this.supportingInfo})
       : super._();
+
+  factory _$_AppointmentSearch.fromJson(Map<String, dynamic> json) =>
+      _$_$_AppointmentSearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -438,9 +460,11 @@ class _$_AppointmentSearch extends _AppointmentSearch {
 //List<SearchToken> searchType,
   final List<SearchReference> actor;
   @override
-  final List<SearchToken> appointment_type;
+  @JsonKey(name: 'appointment-type')
+  final List<SearchToken> appointmentType;
   @override
-  final List<SearchReference> based_on;
+  @JsonKey(name: 'based-on')
+  final List<SearchReference> basedOn;
   @override
   final List<SearchDate> date;
   @override
@@ -448,19 +472,24 @@ class _$_AppointmentSearch extends _AppointmentSearch {
   @override
   final List<SearchReference> location;
   @override
-  final List<SearchToken> part_status;
+  @JsonKey(name: 'part-status')
+  final List<SearchToken> partStatus;
   @override
   final List<SearchReference> patient;
   @override
   final List<SearchReference> practitioner;
   @override
-  final List<SearchToken> reason_code;
+  @JsonKey(name: 'reason-code')
+  final List<SearchToken> reasonCode;
   @override
-  final List<SearchReference> reason_reference;
+  @JsonKey(name: 'reason-reference')
+  final List<SearchReference> reasonReference;
   @override
-  final List<SearchToken> service_category;
+  @JsonKey(name: 'service-category')
+  final List<SearchToken> serviceCategory;
   @override
-  final List<SearchToken> service_type;
+  @JsonKey(name: 'service-type')
+  final List<SearchToken> serviceType;
   @override
   final List<SearchReference> slot;
   @override
@@ -468,11 +497,12 @@ class _$_AppointmentSearch extends _AppointmentSearch {
   @override
   final List<SearchToken> status;
   @override
-  final List<SearchReference> supporting_info;
+  @JsonKey(name: 'supporting-info')
+  final List<SearchReference> supportingInfo;
 
   @override
   String toString() {
-    return 'AppointmentSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, actor: $actor, appointment_type: $appointment_type, based_on: $based_on, date: $date, identifier: $identifier, location: $location, part_status: $part_status, patient: $patient, practitioner: $practitioner, reason_code: $reason_code, reason_reference: $reason_reference, service_category: $service_category, service_type: $service_type, slot: $slot, specialty: $specialty, status: $status, supporting_info: $supporting_info)';
+    return 'AppointmentSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, actor: $actor, appointmentType: $appointmentType, basedOn: $basedOn, date: $date, identifier: $identifier, location: $location, partStatus: $partStatus, patient: $patient, practitioner: $practitioner, reasonCode: $reasonCode, reasonReference: $reasonReference, serviceCategory: $serviceCategory, serviceType: $serviceType, slot: $slot, specialty: $specialty, status: $status, supportingInfo: $supportingInfo)';
   }
 
   @override
@@ -505,12 +535,12 @@ class _$_AppointmentSearch extends _AppointmentSearch {
                     .equals(other.searchList, searchList)) &&
             (identical(other.actor, actor) ||
                 const DeepCollectionEquality().equals(other.actor, actor)) &&
-            (identical(other.appointment_type, appointment_type) ||
+            (identical(other.appointmentType, appointmentType) ||
                 const DeepCollectionEquality()
-                    .equals(other.appointment_type, appointment_type)) &&
-            (identical(other.based_on, based_on) ||
+                    .equals(other.appointmentType, appointmentType)) &&
+            (identical(other.basedOn, basedOn) ||
                 const DeepCollectionEquality()
-                    .equals(other.based_on, based_on)) &&
+                    .equals(other.basedOn, basedOn)) &&
             (identical(other.date, date) ||
                 const DeepCollectionEquality().equals(other.date, date)) &&
             (identical(other.identifier, identifier) ||
@@ -519,34 +549,34 @@ class _$_AppointmentSearch extends _AppointmentSearch {
             (identical(other.location, location) ||
                 const DeepCollectionEquality()
                     .equals(other.location, location)) &&
-            (identical(other.part_status, part_status) ||
+            (identical(other.partStatus, partStatus) ||
                 const DeepCollectionEquality()
-                    .equals(other.part_status, part_status)) &&
+                    .equals(other.partStatus, partStatus)) &&
             (identical(other.patient, patient) ||
                 const DeepCollectionEquality()
                     .equals(other.patient, patient)) &&
             (identical(other.practitioner, practitioner) ||
                 const DeepCollectionEquality()
                     .equals(other.practitioner, practitioner)) &&
-            (identical(other.reason_code, reason_code) ||
+            (identical(other.reasonCode, reasonCode) ||
                 const DeepCollectionEquality()
-                    .equals(other.reason_code, reason_code)) &&
-            (identical(other.reason_reference, reason_reference) ||
+                    .equals(other.reasonCode, reasonCode)) &&
+            (identical(other.reasonReference, reasonReference) ||
                 const DeepCollectionEquality()
-                    .equals(other.reason_reference, reason_reference)) &&
-            (identical(other.service_category, service_category) ||
+                    .equals(other.reasonReference, reasonReference)) &&
+            (identical(other.serviceCategory, serviceCategory) ||
                 const DeepCollectionEquality()
-                    .equals(other.service_category, service_category)) &&
-            (identical(other.service_type, service_type) ||
+                    .equals(other.serviceCategory, serviceCategory)) &&
+            (identical(other.serviceType, serviceType) ||
                 const DeepCollectionEquality()
-                    .equals(other.service_type, service_type)) &&
+                    .equals(other.serviceType, serviceType)) &&
             (identical(other.slot, slot) ||
                 const DeepCollectionEquality().equals(other.slot, slot)) &&
             (identical(other.specialty, specialty) ||
                 const DeepCollectionEquality()
                     .equals(other.specialty, specialty)) &&
             (identical(other.status, status) || const DeepCollectionEquality().equals(other.status, status)) &&
-            (identical(other.supporting_info, supporting_info) || const DeepCollectionEquality().equals(other.supporting_info, supporting_info)));
+            (identical(other.supportingInfo, supportingInfo) || const DeepCollectionEquality().equals(other.supportingInfo, supportingInfo)));
   }
 
   @override
@@ -561,26 +591,31 @@ class _$_AppointmentSearch extends _AppointmentSearch {
       const DeepCollectionEquality().hash(searchContent) ^
       const DeepCollectionEquality().hash(searchList) ^
       const DeepCollectionEquality().hash(actor) ^
-      const DeepCollectionEquality().hash(appointment_type) ^
-      const DeepCollectionEquality().hash(based_on) ^
+      const DeepCollectionEquality().hash(appointmentType) ^
+      const DeepCollectionEquality().hash(basedOn) ^
       const DeepCollectionEquality().hash(date) ^
       const DeepCollectionEquality().hash(identifier) ^
       const DeepCollectionEquality().hash(location) ^
-      const DeepCollectionEquality().hash(part_status) ^
+      const DeepCollectionEquality().hash(partStatus) ^
       const DeepCollectionEquality().hash(patient) ^
       const DeepCollectionEquality().hash(practitioner) ^
-      const DeepCollectionEquality().hash(reason_code) ^
-      const DeepCollectionEquality().hash(reason_reference) ^
-      const DeepCollectionEquality().hash(service_category) ^
-      const DeepCollectionEquality().hash(service_type) ^
+      const DeepCollectionEquality().hash(reasonCode) ^
+      const DeepCollectionEquality().hash(reasonReference) ^
+      const DeepCollectionEquality().hash(serviceCategory) ^
+      const DeepCollectionEquality().hash(serviceType) ^
       const DeepCollectionEquality().hash(slot) ^
       const DeepCollectionEquality().hash(specialty) ^
       const DeepCollectionEquality().hash(status) ^
-      const DeepCollectionEquality().hash(supporting_info);
+      const DeepCollectionEquality().hash(supportingInfo);
 
   @override
   _$AppointmentSearchCopyWith<_AppointmentSearch> get copyWith =>
       __$AppointmentSearchCopyWithImpl<_AppointmentSearch>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_AppointmentSearchToJson(this);
+  }
 }
 
 abstract class _AppointmentSearch extends AppointmentSearch {
@@ -595,22 +630,33 @@ abstract class _AppointmentSearch extends AppointmentSearch {
       List<SearchString> searchContent,
       List<Id> searchList,
       List<SearchReference> actor,
-      List<SearchToken> appointment_type,
-      List<SearchReference> based_on,
+      @JsonKey(name: 'appointment-type')
+          List<SearchToken> appointmentType,
+      @JsonKey(name: 'based-on')
+          List<SearchReference> basedOn,
       List<SearchDate> date,
       List<SearchToken> identifier,
       List<SearchReference> location,
-      List<SearchToken> part_status,
+      @JsonKey(name: 'part-status')
+          List<SearchToken> partStatus,
       List<SearchReference> patient,
       List<SearchReference> practitioner,
-      List<SearchToken> reason_code,
-      List<SearchReference> reason_reference,
-      List<SearchToken> service_category,
-      List<SearchToken> service_type,
+      @JsonKey(name: 'reason-code')
+          List<SearchToken> reasonCode,
+      @JsonKey(name: 'reason-reference')
+          List<SearchReference> reasonReference,
+      @JsonKey(name: 'service-category')
+          List<SearchToken> serviceCategory,
+      @JsonKey(name: 'service-type')
+          List<SearchToken> serviceType,
       List<SearchReference> slot,
       List<SearchToken> specialty,
       List<SearchToken> status,
-      List<SearchReference> supporting_info}) = _$_AppointmentSearch;
+      @JsonKey(name: 'supporting-info')
+          List<SearchReference> supportingInfo}) = _$_AppointmentSearch;
+
+  factory _AppointmentSearch.fromJson(Map<String, dynamic> json) =
+      _$_AppointmentSearch.fromJson;
 
   @override
   List<Id> get searchId;
@@ -632,9 +678,11 @@ abstract class _AppointmentSearch extends AppointmentSearch {
 //List<SearchToken> searchType,
   List<SearchReference> get actor;
   @override
-  List<SearchToken> get appointment_type;
+  @JsonKey(name: 'appointment-type')
+  List<SearchToken> get appointmentType;
   @override
-  List<SearchReference> get based_on;
+  @JsonKey(name: 'based-on')
+  List<SearchReference> get basedOn;
   @override
   List<SearchDate> get date;
   @override
@@ -642,19 +690,24 @@ abstract class _AppointmentSearch extends AppointmentSearch {
   @override
   List<SearchReference> get location;
   @override
-  List<SearchToken> get part_status;
+  @JsonKey(name: 'part-status')
+  List<SearchToken> get partStatus;
   @override
   List<SearchReference> get patient;
   @override
   List<SearchReference> get practitioner;
   @override
-  List<SearchToken> get reason_code;
+  @JsonKey(name: 'reason-code')
+  List<SearchToken> get reasonCode;
   @override
-  List<SearchReference> get reason_reference;
+  @JsonKey(name: 'reason-reference')
+  List<SearchReference> get reasonReference;
   @override
-  List<SearchToken> get service_category;
+  @JsonKey(name: 'service-category')
+  List<SearchToken> get serviceCategory;
   @override
-  List<SearchToken> get service_type;
+  @JsonKey(name: 'service-type')
+  List<SearchToken> get serviceType;
   @override
   List<SearchReference> get slot;
   @override
@@ -662,9 +715,15 @@ abstract class _AppointmentSearch extends AppointmentSearch {
   @override
   List<SearchToken> get status;
   @override
-  List<SearchReference> get supporting_info;
+  @JsonKey(name: 'supporting-info')
+  List<SearchReference> get supportingInfo;
   @override
   _$AppointmentSearchCopyWith<_AppointmentSearch> get copyWith;
+}
+
+AppointmentResponseSearch _$AppointmentResponseSearchFromJson(
+    Map<String, dynamic> json) {
+  return _AppointmentResponseSearch.fromJson(json);
 }
 
 /// @nodoc
@@ -685,7 +744,7 @@ class _$AppointmentResponseSearchTearOff {
       List<SearchReference> appointment,
       List<SearchToken> identifier,
       List<SearchReference> location,
-      List<SearchToken> part_status,
+      @JsonKey(name: 'part-status') List<SearchToken> partStatus,
       List<SearchReference> patient,
       List<SearchReference> practitioner}) {
     return _AppointmentResponseSearch(
@@ -701,10 +760,15 @@ class _$AppointmentResponseSearchTearOff {
       appointment: appointment,
       identifier: identifier,
       location: location,
-      part_status: part_status,
+      partStatus: partStatus,
       patient: patient,
       practitioner: practitioner,
     );
+  }
+
+// ignore: unused_element
+  AppointmentResponseSearch fromJson(Map<String, Object> json) {
+    return AppointmentResponseSearch.fromJson(json);
   }
 }
 
@@ -727,10 +791,12 @@ mixin _$AppointmentResponseSearch {
   List<SearchReference> get appointment;
   List<SearchToken> get identifier;
   List<SearchReference> get location;
-  List<SearchToken> get part_status;
+  @JsonKey(name: 'part-status')
+  List<SearchToken> get partStatus;
   List<SearchReference> get patient;
   List<SearchReference> get practitioner;
 
+  Map<String, dynamic> toJson();
   $AppointmentResponseSearchCopyWith<AppointmentResponseSearch> get copyWith;
 }
 
@@ -752,7 +818,7 @@ abstract class $AppointmentResponseSearchCopyWith<$Res> {
       List<SearchReference> appointment,
       List<SearchToken> identifier,
       List<SearchReference> location,
-      List<SearchToken> part_status,
+      @JsonKey(name: 'part-status') List<SearchToken> partStatus,
       List<SearchReference> patient,
       List<SearchReference> practitioner});
 }
@@ -780,7 +846,7 @@ class _$AppointmentResponseSearchCopyWithImpl<$Res>
     Object appointment = freezed,
     Object identifier = freezed,
     Object location = freezed,
-    Object part_status = freezed,
+    Object partStatus = freezed,
     Object patient = freezed,
     Object practitioner = freezed,
   }) {
@@ -816,9 +882,9 @@ class _$AppointmentResponseSearchCopyWithImpl<$Res>
       location: location == freezed
           ? _value.location
           : location as List<SearchReference>,
-      part_status: part_status == freezed
-          ? _value.part_status
-          : part_status as List<SearchToken>,
+      partStatus: partStatus == freezed
+          ? _value.partStatus
+          : partStatus as List<SearchToken>,
       patient: patient == freezed
           ? _value.patient
           : patient as List<SearchReference>,
@@ -849,7 +915,7 @@ abstract class _$AppointmentResponseSearchCopyWith<$Res>
       List<SearchReference> appointment,
       List<SearchToken> identifier,
       List<SearchReference> location,
-      List<SearchToken> part_status,
+      @JsonKey(name: 'part-status') List<SearchToken> partStatus,
       List<SearchReference> patient,
       List<SearchReference> practitioner});
 }
@@ -880,7 +946,7 @@ class __$AppointmentResponseSearchCopyWithImpl<$Res>
     Object appointment = freezed,
     Object identifier = freezed,
     Object location = freezed,
-    Object part_status = freezed,
+    Object partStatus = freezed,
     Object patient = freezed,
     Object practitioner = freezed,
   }) {
@@ -916,9 +982,9 @@ class __$AppointmentResponseSearchCopyWithImpl<$Res>
       location: location == freezed
           ? _value.location
           : location as List<SearchReference>,
-      part_status: part_status == freezed
-          ? _value.part_status
-          : part_status as List<SearchToken>,
+      partStatus: partStatus == freezed
+          ? _value.partStatus
+          : partStatus as List<SearchToken>,
       patient: patient == freezed
           ? _value.patient
           : patient as List<SearchReference>,
@@ -928,6 +994,8 @@ class __$AppointmentResponseSearchCopyWithImpl<$Res>
     ));
   }
 }
+
+@JsonSerializable()
 
 /// @nodoc
 class _$_AppointmentResponseSearch extends _AppointmentResponseSearch {
@@ -944,10 +1012,13 @@ class _$_AppointmentResponseSearch extends _AppointmentResponseSearch {
       this.appointment,
       this.identifier,
       this.location,
-      this.part_status,
+      @JsonKey(name: 'part-status') this.partStatus,
       this.patient,
       this.practitioner})
       : super._();
+
+  factory _$_AppointmentResponseSearch.fromJson(Map<String, dynamic> json) =>
+      _$_$_AppointmentResponseSearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -975,7 +1046,8 @@ class _$_AppointmentResponseSearch extends _AppointmentResponseSearch {
   @override
   final List<SearchReference> location;
   @override
-  final List<SearchToken> part_status;
+  @JsonKey(name: 'part-status')
+  final List<SearchToken> partStatus;
   @override
   final List<SearchReference> patient;
   @override
@@ -983,7 +1055,7 @@ class _$_AppointmentResponseSearch extends _AppointmentResponseSearch {
 
   @override
   String toString() {
-    return 'AppointmentResponseSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, actor: $actor, appointment: $appointment, identifier: $identifier, location: $location, part_status: $part_status, patient: $patient, practitioner: $practitioner)';
+    return 'AppointmentResponseSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, actor: $actor, appointment: $appointment, identifier: $identifier, location: $location, partStatus: $partStatus, patient: $patient, practitioner: $practitioner)';
   }
 
   @override
@@ -1025,9 +1097,9 @@ class _$_AppointmentResponseSearch extends _AppointmentResponseSearch {
             (identical(other.location, location) ||
                 const DeepCollectionEquality()
                     .equals(other.location, location)) &&
-            (identical(other.part_status, part_status) ||
+            (identical(other.partStatus, partStatus) ||
                 const DeepCollectionEquality()
-                    .equals(other.part_status, part_status)) &&
+                    .equals(other.partStatus, partStatus)) &&
             (identical(other.patient, patient) ||
                 const DeepCollectionEquality()
                     .equals(other.patient, patient)) &&
@@ -1051,7 +1123,7 @@ class _$_AppointmentResponseSearch extends _AppointmentResponseSearch {
       const DeepCollectionEquality().hash(appointment) ^
       const DeepCollectionEquality().hash(identifier) ^
       const DeepCollectionEquality().hash(location) ^
-      const DeepCollectionEquality().hash(part_status) ^
+      const DeepCollectionEquality().hash(partStatus) ^
       const DeepCollectionEquality().hash(patient) ^
       const DeepCollectionEquality().hash(practitioner);
 
@@ -1060,6 +1132,11 @@ class _$_AppointmentResponseSearch extends _AppointmentResponseSearch {
       get copyWith =>
           __$AppointmentResponseSearchCopyWithImpl<_AppointmentResponseSearch>(
               this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_AppointmentResponseSearchToJson(this);
+  }
 }
 
 abstract class _AppointmentResponseSearch extends AppointmentResponseSearch {
@@ -1077,9 +1154,12 @@ abstract class _AppointmentResponseSearch extends AppointmentResponseSearch {
       List<SearchReference> appointment,
       List<SearchToken> identifier,
       List<SearchReference> location,
-      List<SearchToken> part_status,
+      @JsonKey(name: 'part-status') List<SearchToken> partStatus,
       List<SearchReference> patient,
       List<SearchReference> practitioner}) = _$_AppointmentResponseSearch;
+
+  factory _AppointmentResponseSearch.fromJson(Map<String, dynamic> json) =
+      _$_AppointmentResponseSearch.fromJson;
 
   @override
   List<Id> get searchId;
@@ -1107,13 +1187,18 @@ abstract class _AppointmentResponseSearch extends AppointmentResponseSearch {
   @override
   List<SearchReference> get location;
   @override
-  List<SearchToken> get part_status;
+  @JsonKey(name: 'part-status')
+  List<SearchToken> get partStatus;
   @override
   List<SearchReference> get patient;
   @override
   List<SearchReference> get practitioner;
   @override
   _$AppointmentResponseSearchCopyWith<_AppointmentResponseSearch> get copyWith;
+}
+
+ScheduleSearch _$ScheduleSearchFromJson(Map<String, dynamic> json) {
+  return _ScheduleSearch.fromJson(json);
 }
 
 /// @nodoc
@@ -1134,8 +1219,8 @@ class _$ScheduleSearchTearOff {
       List<SearchReference> actor,
       List<SearchDate> date,
       List<SearchToken> identifier,
-      List<SearchToken> service_category,
-      List<SearchToken> service_type,
+      @JsonKey(name: 'service-category') List<SearchToken> serviceCategory,
+      @JsonKey(name: 'service-type') List<SearchToken> serviceType,
       List<SearchToken> specialty}) {
     return _ScheduleSearch(
       searchId: searchId,
@@ -1150,10 +1235,15 @@ class _$ScheduleSearchTearOff {
       actor: actor,
       date: date,
       identifier: identifier,
-      service_category: service_category,
-      service_type: service_type,
+      serviceCategory: serviceCategory,
+      serviceType: serviceType,
       specialty: specialty,
     );
+  }
+
+// ignore: unused_element
+  ScheduleSearch fromJson(Map<String, Object> json) {
+    return ScheduleSearch.fromJson(json);
   }
 }
 
@@ -1176,10 +1266,13 @@ mixin _$ScheduleSearch {
   List<SearchReference> get actor;
   List<SearchDate> get date;
   List<SearchToken> get identifier;
-  List<SearchToken> get service_category;
-  List<SearchToken> get service_type;
+  @JsonKey(name: 'service-category')
+  List<SearchToken> get serviceCategory;
+  @JsonKey(name: 'service-type')
+  List<SearchToken> get serviceType;
   List<SearchToken> get specialty;
 
+  Map<String, dynamic> toJson();
   $ScheduleSearchCopyWith<ScheduleSearch> get copyWith;
 }
 
@@ -1201,8 +1294,8 @@ abstract class $ScheduleSearchCopyWith<$Res> {
       List<SearchReference> actor,
       List<SearchDate> date,
       List<SearchToken> identifier,
-      List<SearchToken> service_category,
-      List<SearchToken> service_type,
+      @JsonKey(name: 'service-category') List<SearchToken> serviceCategory,
+      @JsonKey(name: 'service-type') List<SearchToken> serviceType,
       List<SearchToken> specialty});
 }
 
@@ -1229,8 +1322,8 @@ class _$ScheduleSearchCopyWithImpl<$Res>
     Object actor = freezed,
     Object date = freezed,
     Object identifier = freezed,
-    Object service_category = freezed,
-    Object service_type = freezed,
+    Object serviceCategory = freezed,
+    Object serviceType = freezed,
     Object specialty = freezed,
   }) {
     return _then(_value.copyWith(
@@ -1261,12 +1354,12 @@ class _$ScheduleSearchCopyWithImpl<$Res>
       identifier: identifier == freezed
           ? _value.identifier
           : identifier as List<SearchToken>,
-      service_category: service_category == freezed
-          ? _value.service_category
-          : service_category as List<SearchToken>,
-      service_type: service_type == freezed
-          ? _value.service_type
-          : service_type as List<SearchToken>,
+      serviceCategory: serviceCategory == freezed
+          ? _value.serviceCategory
+          : serviceCategory as List<SearchToken>,
+      serviceType: serviceType == freezed
+          ? _value.serviceType
+          : serviceType as List<SearchToken>,
       specialty: specialty == freezed
           ? _value.specialty
           : specialty as List<SearchToken>,
@@ -1294,8 +1387,8 @@ abstract class _$ScheduleSearchCopyWith<$Res>
       List<SearchReference> actor,
       List<SearchDate> date,
       List<SearchToken> identifier,
-      List<SearchToken> service_category,
-      List<SearchToken> service_type,
+      @JsonKey(name: 'service-category') List<SearchToken> serviceCategory,
+      @JsonKey(name: 'service-type') List<SearchToken> serviceType,
       List<SearchToken> specialty});
 }
 
@@ -1324,8 +1417,8 @@ class __$ScheduleSearchCopyWithImpl<$Res>
     Object actor = freezed,
     Object date = freezed,
     Object identifier = freezed,
-    Object service_category = freezed,
-    Object service_type = freezed,
+    Object serviceCategory = freezed,
+    Object serviceType = freezed,
     Object specialty = freezed,
   }) {
     return _then(_ScheduleSearch(
@@ -1356,18 +1449,20 @@ class __$ScheduleSearchCopyWithImpl<$Res>
       identifier: identifier == freezed
           ? _value.identifier
           : identifier as List<SearchToken>,
-      service_category: service_category == freezed
-          ? _value.service_category
-          : service_category as List<SearchToken>,
-      service_type: service_type == freezed
-          ? _value.service_type
-          : service_type as List<SearchToken>,
+      serviceCategory: serviceCategory == freezed
+          ? _value.serviceCategory
+          : serviceCategory as List<SearchToken>,
+      serviceType: serviceType == freezed
+          ? _value.serviceType
+          : serviceType as List<SearchToken>,
       specialty: specialty == freezed
           ? _value.specialty
           : specialty as List<SearchToken>,
     ));
   }
 }
+
+@JsonSerializable()
 
 /// @nodoc
 class _$_ScheduleSearch extends _ScheduleSearch {
@@ -1384,10 +1479,13 @@ class _$_ScheduleSearch extends _ScheduleSearch {
       this.actor,
       this.date,
       this.identifier,
-      this.service_category,
-      this.service_type,
+      @JsonKey(name: 'service-category') this.serviceCategory,
+      @JsonKey(name: 'service-type') this.serviceType,
       this.specialty})
       : super._();
+
+  factory _$_ScheduleSearch.fromJson(Map<String, dynamic> json) =>
+      _$_$_ScheduleSearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -1415,15 +1513,17 @@ class _$_ScheduleSearch extends _ScheduleSearch {
   @override
   final List<SearchToken> identifier;
   @override
-  final List<SearchToken> service_category;
+  @JsonKey(name: 'service-category')
+  final List<SearchToken> serviceCategory;
   @override
-  final List<SearchToken> service_type;
+  @JsonKey(name: 'service-type')
+  final List<SearchToken> serviceType;
   @override
   final List<SearchToken> specialty;
 
   @override
   String toString() {
-    return 'ScheduleSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, active: $active, actor: $actor, date: $date, identifier: $identifier, service_category: $service_category, service_type: $service_type, specialty: $specialty)';
+    return 'ScheduleSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, active: $active, actor: $actor, date: $date, identifier: $identifier, serviceCategory: $serviceCategory, serviceType: $serviceType, specialty: $specialty)';
   }
 
   @override
@@ -1463,12 +1563,12 @@ class _$_ScheduleSearch extends _ScheduleSearch {
             (identical(other.identifier, identifier) ||
                 const DeepCollectionEquality()
                     .equals(other.identifier, identifier)) &&
-            (identical(other.service_category, service_category) ||
+            (identical(other.serviceCategory, serviceCategory) ||
                 const DeepCollectionEquality()
-                    .equals(other.service_category, service_category)) &&
-            (identical(other.service_type, service_type) ||
+                    .equals(other.serviceCategory, serviceCategory)) &&
+            (identical(other.serviceType, serviceType) ||
                 const DeepCollectionEquality()
-                    .equals(other.service_type, service_type)) &&
+                    .equals(other.serviceType, serviceType)) &&
             (identical(other.specialty, specialty) ||
                 const DeepCollectionEquality()
                     .equals(other.specialty, specialty)));
@@ -1489,13 +1589,18 @@ class _$_ScheduleSearch extends _ScheduleSearch {
       const DeepCollectionEquality().hash(actor) ^
       const DeepCollectionEquality().hash(date) ^
       const DeepCollectionEquality().hash(identifier) ^
-      const DeepCollectionEquality().hash(service_category) ^
-      const DeepCollectionEquality().hash(service_type) ^
+      const DeepCollectionEquality().hash(serviceCategory) ^
+      const DeepCollectionEquality().hash(serviceType) ^
       const DeepCollectionEquality().hash(specialty);
 
   @override
   _$ScheduleSearchCopyWith<_ScheduleSearch> get copyWith =>
       __$ScheduleSearchCopyWithImpl<_ScheduleSearch>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_ScheduleSearchToJson(this);
+  }
 }
 
 abstract class _ScheduleSearch extends ScheduleSearch {
@@ -1513,9 +1618,12 @@ abstract class _ScheduleSearch extends ScheduleSearch {
       List<SearchReference> actor,
       List<SearchDate> date,
       List<SearchToken> identifier,
-      List<SearchToken> service_category,
-      List<SearchToken> service_type,
+      @JsonKey(name: 'service-category') List<SearchToken> serviceCategory,
+      @JsonKey(name: 'service-type') List<SearchToken> serviceType,
       List<SearchToken> specialty}) = _$_ScheduleSearch;
+
+  factory _ScheduleSearch.fromJson(Map<String, dynamic> json) =
+      _$_ScheduleSearch.fromJson;
 
   @override
   List<Id> get searchId;
@@ -1543,13 +1651,19 @@ abstract class _ScheduleSearch extends ScheduleSearch {
   @override
   List<SearchToken> get identifier;
   @override
-  List<SearchToken> get service_category;
+  @JsonKey(name: 'service-category')
+  List<SearchToken> get serviceCategory;
   @override
-  List<SearchToken> get service_type;
+  @JsonKey(name: 'service-type')
+  List<SearchToken> get serviceType;
   @override
   List<SearchToken> get specialty;
   @override
   _$ScheduleSearchCopyWith<_ScheduleSearch> get copyWith;
+}
+
+SlotSearch _$SlotSearchFromJson(Map<String, dynamic> json) {
+  return _SlotSearch.fromJson(json);
 }
 
 /// @nodoc
@@ -1566,11 +1680,11 @@ class _$SlotSearchTearOff {
       List<SearchString> searchText,
       List<SearchString> searchContent,
       List<Id> searchList,
-      List<SearchToken> appointment_type,
+      @JsonKey(name: 'appointment-type') List<SearchToken> appointmentType,
       List<SearchToken> identifier,
       List<SearchReference> schedule,
-      List<SearchToken> service_category,
-      List<SearchToken> service_type,
+      @JsonKey(name: 'service-category') List<SearchToken> serviceCategory,
+      @JsonKey(name: 'service-type') List<SearchToken> serviceType,
       List<SearchToken> specialty,
       List<SearchDate> start,
       List<SearchToken> status}) {
@@ -1583,15 +1697,20 @@ class _$SlotSearchTearOff {
       searchText: searchText,
       searchContent: searchContent,
       searchList: searchList,
-      appointment_type: appointment_type,
+      appointmentType: appointmentType,
       identifier: identifier,
       schedule: schedule,
-      service_category: service_category,
-      service_type: service_type,
+      serviceCategory: serviceCategory,
+      serviceType: serviceType,
       specialty: specialty,
       start: start,
       status: status,
     );
+  }
+
+// ignore: unused_element
+  SlotSearch fromJson(Map<String, Object> json) {
+    return SlotSearch.fromJson(json);
   }
 }
 
@@ -1610,15 +1729,19 @@ mixin _$SlotSearch {
   List<SearchString> get searchContent;
   List<Id> get searchList; //List<SearchString> searchHas,
 //List<SearchToken> searchType,
-  List<SearchToken> get appointment_type;
+  @JsonKey(name: 'appointment-type')
+  List<SearchToken> get appointmentType;
   List<SearchToken> get identifier;
   List<SearchReference> get schedule;
-  List<SearchToken> get service_category;
-  List<SearchToken> get service_type;
+  @JsonKey(name: 'service-category')
+  List<SearchToken> get serviceCategory;
+  @JsonKey(name: 'service-type')
+  List<SearchToken> get serviceType;
   List<SearchToken> get specialty;
   List<SearchDate> get start;
   List<SearchToken> get status;
 
+  Map<String, dynamic> toJson();
   $SlotSearchCopyWith<SlotSearch> get copyWith;
 }
 
@@ -1636,11 +1759,11 @@ abstract class $SlotSearchCopyWith<$Res> {
       List<SearchString> searchText,
       List<SearchString> searchContent,
       List<Id> searchList,
-      List<SearchToken> appointment_type,
+      @JsonKey(name: 'appointment-type') List<SearchToken> appointmentType,
       List<SearchToken> identifier,
       List<SearchReference> schedule,
-      List<SearchToken> service_category,
-      List<SearchToken> service_type,
+      @JsonKey(name: 'service-category') List<SearchToken> serviceCategory,
+      @JsonKey(name: 'service-type') List<SearchToken> serviceType,
       List<SearchToken> specialty,
       List<SearchDate> start,
       List<SearchToken> status});
@@ -1664,11 +1787,11 @@ class _$SlotSearchCopyWithImpl<$Res> implements $SlotSearchCopyWith<$Res> {
     Object searchText = freezed,
     Object searchContent = freezed,
     Object searchList = freezed,
-    Object appointment_type = freezed,
+    Object appointmentType = freezed,
     Object identifier = freezed,
     Object schedule = freezed,
-    Object service_category = freezed,
-    Object service_type = freezed,
+    Object serviceCategory = freezed,
+    Object serviceType = freezed,
     Object specialty = freezed,
     Object start = freezed,
     Object status = freezed,
@@ -1695,21 +1818,21 @@ class _$SlotSearchCopyWithImpl<$Res> implements $SlotSearchCopyWith<$Res> {
           : searchContent as List<SearchString>,
       searchList:
           searchList == freezed ? _value.searchList : searchList as List<Id>,
-      appointment_type: appointment_type == freezed
-          ? _value.appointment_type
-          : appointment_type as List<SearchToken>,
+      appointmentType: appointmentType == freezed
+          ? _value.appointmentType
+          : appointmentType as List<SearchToken>,
       identifier: identifier == freezed
           ? _value.identifier
           : identifier as List<SearchToken>,
       schedule: schedule == freezed
           ? _value.schedule
           : schedule as List<SearchReference>,
-      service_category: service_category == freezed
-          ? _value.service_category
-          : service_category as List<SearchToken>,
-      service_type: service_type == freezed
-          ? _value.service_type
-          : service_type as List<SearchToken>,
+      serviceCategory: serviceCategory == freezed
+          ? _value.serviceCategory
+          : serviceCategory as List<SearchToken>,
+      serviceType: serviceType == freezed
+          ? _value.serviceType
+          : serviceType as List<SearchToken>,
       specialty: specialty == freezed
           ? _value.specialty
           : specialty as List<SearchToken>,
@@ -1734,11 +1857,11 @@ abstract class _$SlotSearchCopyWith<$Res> implements $SlotSearchCopyWith<$Res> {
       List<SearchString> searchText,
       List<SearchString> searchContent,
       List<Id> searchList,
-      List<SearchToken> appointment_type,
+      @JsonKey(name: 'appointment-type') List<SearchToken> appointmentType,
       List<SearchToken> identifier,
       List<SearchReference> schedule,
-      List<SearchToken> service_category,
-      List<SearchToken> service_type,
+      @JsonKey(name: 'service-category') List<SearchToken> serviceCategory,
+      @JsonKey(name: 'service-type') List<SearchToken> serviceType,
       List<SearchToken> specialty,
       List<SearchDate> start,
       List<SearchToken> status});
@@ -1764,11 +1887,11 @@ class __$SlotSearchCopyWithImpl<$Res> extends _$SlotSearchCopyWithImpl<$Res>
     Object searchText = freezed,
     Object searchContent = freezed,
     Object searchList = freezed,
-    Object appointment_type = freezed,
+    Object appointmentType = freezed,
     Object identifier = freezed,
     Object schedule = freezed,
-    Object service_category = freezed,
-    Object service_type = freezed,
+    Object serviceCategory = freezed,
+    Object serviceType = freezed,
     Object specialty = freezed,
     Object start = freezed,
     Object status = freezed,
@@ -1795,21 +1918,21 @@ class __$SlotSearchCopyWithImpl<$Res> extends _$SlotSearchCopyWithImpl<$Res>
           : searchContent as List<SearchString>,
       searchList:
           searchList == freezed ? _value.searchList : searchList as List<Id>,
-      appointment_type: appointment_type == freezed
-          ? _value.appointment_type
-          : appointment_type as List<SearchToken>,
+      appointmentType: appointmentType == freezed
+          ? _value.appointmentType
+          : appointmentType as List<SearchToken>,
       identifier: identifier == freezed
           ? _value.identifier
           : identifier as List<SearchToken>,
       schedule: schedule == freezed
           ? _value.schedule
           : schedule as List<SearchReference>,
-      service_category: service_category == freezed
-          ? _value.service_category
-          : service_category as List<SearchToken>,
-      service_type: service_type == freezed
-          ? _value.service_type
-          : service_type as List<SearchToken>,
+      serviceCategory: serviceCategory == freezed
+          ? _value.serviceCategory
+          : serviceCategory as List<SearchToken>,
+      serviceType: serviceType == freezed
+          ? _value.serviceType
+          : serviceType as List<SearchToken>,
       specialty: specialty == freezed
           ? _value.specialty
           : specialty as List<SearchToken>,
@@ -1818,6 +1941,8 @@ class __$SlotSearchCopyWithImpl<$Res> extends _$SlotSearchCopyWithImpl<$Res>
     ));
   }
 }
+
+@JsonSerializable()
 
 /// @nodoc
 class _$_SlotSearch extends _SlotSearch {
@@ -1830,15 +1955,18 @@ class _$_SlotSearch extends _SlotSearch {
       this.searchText,
       this.searchContent,
       this.searchList,
-      this.appointment_type,
+      @JsonKey(name: 'appointment-type') this.appointmentType,
       this.identifier,
       this.schedule,
-      this.service_category,
-      this.service_type,
+      @JsonKey(name: 'service-category') this.serviceCategory,
+      @JsonKey(name: 'service-type') this.serviceType,
       this.specialty,
       this.start,
       this.status})
       : super._();
+
+  factory _$_SlotSearch.fromJson(Map<String, dynamic> json) =>
+      _$_$_SlotSearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -1858,15 +1986,18 @@ class _$_SlotSearch extends _SlotSearch {
   final List<Id> searchList;
   @override //List<SearchString> searchHas,
 //List<SearchToken> searchType,
-  final List<SearchToken> appointment_type;
+  @JsonKey(name: 'appointment-type')
+  final List<SearchToken> appointmentType;
   @override
   final List<SearchToken> identifier;
   @override
   final List<SearchReference> schedule;
   @override
-  final List<SearchToken> service_category;
+  @JsonKey(name: 'service-category')
+  final List<SearchToken> serviceCategory;
   @override
-  final List<SearchToken> service_type;
+  @JsonKey(name: 'service-type')
+  final List<SearchToken> serviceType;
   @override
   final List<SearchToken> specialty;
   @override
@@ -1876,7 +2007,7 @@ class _$_SlotSearch extends _SlotSearch {
 
   @override
   String toString() {
-    return 'SlotSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, appointment_type: $appointment_type, identifier: $identifier, schedule: $schedule, service_category: $service_category, service_type: $service_type, specialty: $specialty, start: $start, status: $status)';
+    return 'SlotSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, appointmentType: $appointmentType, identifier: $identifier, schedule: $schedule, serviceCategory: $serviceCategory, serviceType: $serviceType, specialty: $specialty, start: $start, status: $status)';
   }
 
   @override
@@ -1907,21 +2038,21 @@ class _$_SlotSearch extends _SlotSearch {
             (identical(other.searchList, searchList) ||
                 const DeepCollectionEquality()
                     .equals(other.searchList, searchList)) &&
-            (identical(other.appointment_type, appointment_type) ||
+            (identical(other.appointmentType, appointmentType) ||
                 const DeepCollectionEquality()
-                    .equals(other.appointment_type, appointment_type)) &&
+                    .equals(other.appointmentType, appointmentType)) &&
             (identical(other.identifier, identifier) ||
                 const DeepCollectionEquality()
                     .equals(other.identifier, identifier)) &&
             (identical(other.schedule, schedule) ||
                 const DeepCollectionEquality()
                     .equals(other.schedule, schedule)) &&
-            (identical(other.service_category, service_category) ||
+            (identical(other.serviceCategory, serviceCategory) ||
                 const DeepCollectionEquality()
-                    .equals(other.service_category, service_category)) &&
-            (identical(other.service_type, service_type) ||
+                    .equals(other.serviceCategory, serviceCategory)) &&
+            (identical(other.serviceType, serviceType) ||
                 const DeepCollectionEquality()
-                    .equals(other.service_type, service_type)) &&
+                    .equals(other.serviceType, serviceType)) &&
             (identical(other.specialty, specialty) ||
                 const DeepCollectionEquality()
                     .equals(other.specialty, specialty)) &&
@@ -1942,11 +2073,11 @@ class _$_SlotSearch extends _SlotSearch {
       const DeepCollectionEquality().hash(searchText) ^
       const DeepCollectionEquality().hash(searchContent) ^
       const DeepCollectionEquality().hash(searchList) ^
-      const DeepCollectionEquality().hash(appointment_type) ^
+      const DeepCollectionEquality().hash(appointmentType) ^
       const DeepCollectionEquality().hash(identifier) ^
       const DeepCollectionEquality().hash(schedule) ^
-      const DeepCollectionEquality().hash(service_category) ^
-      const DeepCollectionEquality().hash(service_type) ^
+      const DeepCollectionEquality().hash(serviceCategory) ^
+      const DeepCollectionEquality().hash(serviceType) ^
       const DeepCollectionEquality().hash(specialty) ^
       const DeepCollectionEquality().hash(start) ^
       const DeepCollectionEquality().hash(status);
@@ -1954,6 +2085,11 @@ class _$_SlotSearch extends _SlotSearch {
   @override
   _$SlotSearchCopyWith<_SlotSearch> get copyWith =>
       __$SlotSearchCopyWithImpl<_SlotSearch>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_SlotSearchToJson(this);
+  }
 }
 
 abstract class _SlotSearch extends SlotSearch {
@@ -1967,14 +2103,17 @@ abstract class _SlotSearch extends SlotSearch {
       List<SearchString> searchText,
       List<SearchString> searchContent,
       List<Id> searchList,
-      List<SearchToken> appointment_type,
+      @JsonKey(name: 'appointment-type') List<SearchToken> appointmentType,
       List<SearchToken> identifier,
       List<SearchReference> schedule,
-      List<SearchToken> service_category,
-      List<SearchToken> service_type,
+      @JsonKey(name: 'service-category') List<SearchToken> serviceCategory,
+      @JsonKey(name: 'service-type') List<SearchToken> serviceType,
       List<SearchToken> specialty,
       List<SearchDate> start,
       List<SearchToken> status}) = _$_SlotSearch;
+
+  factory _SlotSearch.fromJson(Map<String, dynamic> json) =
+      _$_SlotSearch.fromJson;
 
   @override
   List<Id> get searchId;
@@ -1994,15 +2133,18 @@ abstract class _SlotSearch extends SlotSearch {
   List<Id> get searchList;
   @override //List<SearchString> searchHas,
 //List<SearchToken> searchType,
-  List<SearchToken> get appointment_type;
+  @JsonKey(name: 'appointment-type')
+  List<SearchToken> get appointmentType;
   @override
   List<SearchToken> get identifier;
   @override
   List<SearchReference> get schedule;
   @override
-  List<SearchToken> get service_category;
+  @JsonKey(name: 'service-category')
+  List<SearchToken> get serviceCategory;
   @override
-  List<SearchToken> get service_type;
+  @JsonKey(name: 'service-type')
+  List<SearchToken> get serviceType;
   @override
   List<SearchToken> get specialty;
   @override
@@ -2011,6 +2153,10 @@ abstract class _SlotSearch extends SlotSearch {
   List<SearchToken> get status;
   @override
   _$SlotSearchCopyWith<_SlotSearch> get copyWith;
+}
+
+TaskSearch _$TaskSearchFromJson(Map<String, dynamic> json) {
+  return _TaskSearch.fromJson(json);
 }
 
 /// @nodoc
@@ -2027,18 +2173,18 @@ class _$TaskSearchTearOff {
       List<SearchString> searchText,
       List<SearchString> searchContent,
       List<Id> searchList,
-      List<SearchDate> authored_on,
-      List<SearchReference> based_on,
-      List<SearchToken> business_status,
+      @JsonKey(name: 'authored-on') List<SearchDate> authoredOn,
+      @JsonKey(name: 'based-on') List<SearchReference> basedOn,
+      @JsonKey(name: 'business-status') List<SearchToken> businessStatus,
       List<SearchToken> code,
       List<SearchReference> encounter,
       List<SearchReference> focus,
-      List<SearchToken> group_identifier,
+      @JsonKey(name: 'group-identifier') List<SearchToken> groupIdentifier,
       List<SearchToken> identifier,
       List<SearchToken> intent,
       List<SearchDate> modified,
       List<SearchReference> owner,
-      List<SearchReference> part_of,
+      @JsonKey(name: 'part-of') List<SearchReference> partOf,
       List<SearchReference> patient,
       List<SearchToken> performer,
       List<SearchDate> period,
@@ -2055,18 +2201,18 @@ class _$TaskSearchTearOff {
       searchText: searchText,
       searchContent: searchContent,
       searchList: searchList,
-      authored_on: authored_on,
-      based_on: based_on,
-      business_status: business_status,
+      authoredOn: authoredOn,
+      basedOn: basedOn,
+      businessStatus: businessStatus,
       code: code,
       encounter: encounter,
       focus: focus,
-      group_identifier: group_identifier,
+      groupIdentifier: groupIdentifier,
       identifier: identifier,
       intent: intent,
       modified: modified,
       owner: owner,
-      part_of: part_of,
+      partOf: partOf,
       patient: patient,
       performer: performer,
       period: period,
@@ -2075,6 +2221,11 @@ class _$TaskSearchTearOff {
       status: status,
       subject: subject,
     );
+  }
+
+// ignore: unused_element
+  TaskSearch fromJson(Map<String, Object> json) {
+    return TaskSearch.fromJson(json);
   }
 }
 
@@ -2093,18 +2244,23 @@ mixin _$TaskSearch {
   List<SearchString> get searchContent;
   List<Id> get searchList; //List<SearchString> searchHas,
 //List<SearchToken> searchType,
-  List<SearchDate> get authored_on;
-  List<SearchReference> get based_on;
-  List<SearchToken> get business_status;
+  @JsonKey(name: 'authored-on')
+  List<SearchDate> get authoredOn;
+  @JsonKey(name: 'based-on')
+  List<SearchReference> get basedOn;
+  @JsonKey(name: 'business-status')
+  List<SearchToken> get businessStatus;
   List<SearchToken> get code;
   List<SearchReference> get encounter;
   List<SearchReference> get focus;
-  List<SearchToken> get group_identifier;
+  @JsonKey(name: 'group-identifier')
+  List<SearchToken> get groupIdentifier;
   List<SearchToken> get identifier;
   List<SearchToken> get intent;
   List<SearchDate> get modified;
   List<SearchReference> get owner;
-  List<SearchReference> get part_of;
+  @JsonKey(name: 'part-of')
+  List<SearchReference> get partOf;
   List<SearchReference> get patient;
   List<SearchToken> get performer;
   List<SearchDate> get period;
@@ -2113,6 +2269,7 @@ mixin _$TaskSearch {
   List<SearchToken> get status;
   List<SearchReference> get subject;
 
+  Map<String, dynamic> toJson();
   $TaskSearchCopyWith<TaskSearch> get copyWith;
 }
 
@@ -2130,18 +2287,18 @@ abstract class $TaskSearchCopyWith<$Res> {
       List<SearchString> searchText,
       List<SearchString> searchContent,
       List<Id> searchList,
-      List<SearchDate> authored_on,
-      List<SearchReference> based_on,
-      List<SearchToken> business_status,
+      @JsonKey(name: 'authored-on') List<SearchDate> authoredOn,
+      @JsonKey(name: 'based-on') List<SearchReference> basedOn,
+      @JsonKey(name: 'business-status') List<SearchToken> businessStatus,
       List<SearchToken> code,
       List<SearchReference> encounter,
       List<SearchReference> focus,
-      List<SearchToken> group_identifier,
+      @JsonKey(name: 'group-identifier') List<SearchToken> groupIdentifier,
       List<SearchToken> identifier,
       List<SearchToken> intent,
       List<SearchDate> modified,
       List<SearchReference> owner,
-      List<SearchReference> part_of,
+      @JsonKey(name: 'part-of') List<SearchReference> partOf,
       List<SearchReference> patient,
       List<SearchToken> performer,
       List<SearchDate> period,
@@ -2169,18 +2326,18 @@ class _$TaskSearchCopyWithImpl<$Res> implements $TaskSearchCopyWith<$Res> {
     Object searchText = freezed,
     Object searchContent = freezed,
     Object searchList = freezed,
-    Object authored_on = freezed,
-    Object based_on = freezed,
-    Object business_status = freezed,
+    Object authoredOn = freezed,
+    Object basedOn = freezed,
+    Object businessStatus = freezed,
     Object code = freezed,
     Object encounter = freezed,
     Object focus = freezed,
-    Object group_identifier = freezed,
+    Object groupIdentifier = freezed,
     Object identifier = freezed,
     Object intent = freezed,
     Object modified = freezed,
     Object owner = freezed,
-    Object part_of = freezed,
+    Object partOf = freezed,
     Object patient = freezed,
     Object performer = freezed,
     Object period = freezed,
@@ -2211,23 +2368,23 @@ class _$TaskSearchCopyWithImpl<$Res> implements $TaskSearchCopyWith<$Res> {
           : searchContent as List<SearchString>,
       searchList:
           searchList == freezed ? _value.searchList : searchList as List<Id>,
-      authored_on: authored_on == freezed
-          ? _value.authored_on
-          : authored_on as List<SearchDate>,
-      based_on: based_on == freezed
-          ? _value.based_on
-          : based_on as List<SearchReference>,
-      business_status: business_status == freezed
-          ? _value.business_status
-          : business_status as List<SearchToken>,
+      authoredOn: authoredOn == freezed
+          ? _value.authoredOn
+          : authoredOn as List<SearchDate>,
+      basedOn: basedOn == freezed
+          ? _value.basedOn
+          : basedOn as List<SearchReference>,
+      businessStatus: businessStatus == freezed
+          ? _value.businessStatus
+          : businessStatus as List<SearchToken>,
       code: code == freezed ? _value.code : code as List<SearchToken>,
       encounter: encounter == freezed
           ? _value.encounter
           : encounter as List<SearchReference>,
       focus: focus == freezed ? _value.focus : focus as List<SearchReference>,
-      group_identifier: group_identifier == freezed
-          ? _value.group_identifier
-          : group_identifier as List<SearchToken>,
+      groupIdentifier: groupIdentifier == freezed
+          ? _value.groupIdentifier
+          : groupIdentifier as List<SearchToken>,
       identifier: identifier == freezed
           ? _value.identifier
           : identifier as List<SearchToken>,
@@ -2235,9 +2392,8 @@ class _$TaskSearchCopyWithImpl<$Res> implements $TaskSearchCopyWith<$Res> {
       modified:
           modified == freezed ? _value.modified : modified as List<SearchDate>,
       owner: owner == freezed ? _value.owner : owner as List<SearchReference>,
-      part_of: part_of == freezed
-          ? _value.part_of
-          : part_of as List<SearchReference>,
+      partOf:
+          partOf == freezed ? _value.partOf : partOf as List<SearchReference>,
       patient: patient == freezed
           ? _value.patient
           : patient as List<SearchReference>,
@@ -2273,18 +2429,18 @@ abstract class _$TaskSearchCopyWith<$Res> implements $TaskSearchCopyWith<$Res> {
       List<SearchString> searchText,
       List<SearchString> searchContent,
       List<Id> searchList,
-      List<SearchDate> authored_on,
-      List<SearchReference> based_on,
-      List<SearchToken> business_status,
+      @JsonKey(name: 'authored-on') List<SearchDate> authoredOn,
+      @JsonKey(name: 'based-on') List<SearchReference> basedOn,
+      @JsonKey(name: 'business-status') List<SearchToken> businessStatus,
       List<SearchToken> code,
       List<SearchReference> encounter,
       List<SearchReference> focus,
-      List<SearchToken> group_identifier,
+      @JsonKey(name: 'group-identifier') List<SearchToken> groupIdentifier,
       List<SearchToken> identifier,
       List<SearchToken> intent,
       List<SearchDate> modified,
       List<SearchReference> owner,
-      List<SearchReference> part_of,
+      @JsonKey(name: 'part-of') List<SearchReference> partOf,
       List<SearchReference> patient,
       List<SearchToken> performer,
       List<SearchDate> period,
@@ -2314,18 +2470,18 @@ class __$TaskSearchCopyWithImpl<$Res> extends _$TaskSearchCopyWithImpl<$Res>
     Object searchText = freezed,
     Object searchContent = freezed,
     Object searchList = freezed,
-    Object authored_on = freezed,
-    Object based_on = freezed,
-    Object business_status = freezed,
+    Object authoredOn = freezed,
+    Object basedOn = freezed,
+    Object businessStatus = freezed,
     Object code = freezed,
     Object encounter = freezed,
     Object focus = freezed,
-    Object group_identifier = freezed,
+    Object groupIdentifier = freezed,
     Object identifier = freezed,
     Object intent = freezed,
     Object modified = freezed,
     Object owner = freezed,
-    Object part_of = freezed,
+    Object partOf = freezed,
     Object patient = freezed,
     Object performer = freezed,
     Object period = freezed,
@@ -2356,23 +2512,23 @@ class __$TaskSearchCopyWithImpl<$Res> extends _$TaskSearchCopyWithImpl<$Res>
           : searchContent as List<SearchString>,
       searchList:
           searchList == freezed ? _value.searchList : searchList as List<Id>,
-      authored_on: authored_on == freezed
-          ? _value.authored_on
-          : authored_on as List<SearchDate>,
-      based_on: based_on == freezed
-          ? _value.based_on
-          : based_on as List<SearchReference>,
-      business_status: business_status == freezed
-          ? _value.business_status
-          : business_status as List<SearchToken>,
+      authoredOn: authoredOn == freezed
+          ? _value.authoredOn
+          : authoredOn as List<SearchDate>,
+      basedOn: basedOn == freezed
+          ? _value.basedOn
+          : basedOn as List<SearchReference>,
+      businessStatus: businessStatus == freezed
+          ? _value.businessStatus
+          : businessStatus as List<SearchToken>,
       code: code == freezed ? _value.code : code as List<SearchToken>,
       encounter: encounter == freezed
           ? _value.encounter
           : encounter as List<SearchReference>,
       focus: focus == freezed ? _value.focus : focus as List<SearchReference>,
-      group_identifier: group_identifier == freezed
-          ? _value.group_identifier
-          : group_identifier as List<SearchToken>,
+      groupIdentifier: groupIdentifier == freezed
+          ? _value.groupIdentifier
+          : groupIdentifier as List<SearchToken>,
       identifier: identifier == freezed
           ? _value.identifier
           : identifier as List<SearchToken>,
@@ -2380,9 +2536,8 @@ class __$TaskSearchCopyWithImpl<$Res> extends _$TaskSearchCopyWithImpl<$Res>
       modified:
           modified == freezed ? _value.modified : modified as List<SearchDate>,
       owner: owner == freezed ? _value.owner : owner as List<SearchReference>,
-      part_of: part_of == freezed
-          ? _value.part_of
-          : part_of as List<SearchReference>,
+      partOf:
+          partOf == freezed ? _value.partOf : partOf as List<SearchReference>,
       patient: patient == freezed
           ? _value.patient
           : patient as List<SearchReference>,
@@ -2403,6 +2558,8 @@ class __$TaskSearchCopyWithImpl<$Res> extends _$TaskSearchCopyWithImpl<$Res>
   }
 }
 
+@JsonSerializable()
+
 /// @nodoc
 class _$_TaskSearch extends _TaskSearch {
   _$_TaskSearch(
@@ -2414,18 +2571,18 @@ class _$_TaskSearch extends _TaskSearch {
       this.searchText,
       this.searchContent,
       this.searchList,
-      this.authored_on,
-      this.based_on,
-      this.business_status,
+      @JsonKey(name: 'authored-on') this.authoredOn,
+      @JsonKey(name: 'based-on') this.basedOn,
+      @JsonKey(name: 'business-status') this.businessStatus,
       this.code,
       this.encounter,
       this.focus,
-      this.group_identifier,
+      @JsonKey(name: 'group-identifier') this.groupIdentifier,
       this.identifier,
       this.intent,
       this.modified,
       this.owner,
-      this.part_of,
+      @JsonKey(name: 'part-of') this.partOf,
       this.patient,
       this.performer,
       this.period,
@@ -2434,6 +2591,9 @@ class _$_TaskSearch extends _TaskSearch {
       this.status,
       this.subject})
       : super._();
+
+  factory _$_TaskSearch.fromJson(Map<String, dynamic> json) =>
+      _$_$_TaskSearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -2453,11 +2613,14 @@ class _$_TaskSearch extends _TaskSearch {
   final List<Id> searchList;
   @override //List<SearchString> searchHas,
 //List<SearchToken> searchType,
-  final List<SearchDate> authored_on;
+  @JsonKey(name: 'authored-on')
+  final List<SearchDate> authoredOn;
   @override
-  final List<SearchReference> based_on;
+  @JsonKey(name: 'based-on')
+  final List<SearchReference> basedOn;
   @override
-  final List<SearchToken> business_status;
+  @JsonKey(name: 'business-status')
+  final List<SearchToken> businessStatus;
   @override
   final List<SearchToken> code;
   @override
@@ -2465,7 +2628,8 @@ class _$_TaskSearch extends _TaskSearch {
   @override
   final List<SearchReference> focus;
   @override
-  final List<SearchToken> group_identifier;
+  @JsonKey(name: 'group-identifier')
+  final List<SearchToken> groupIdentifier;
   @override
   final List<SearchToken> identifier;
   @override
@@ -2475,7 +2639,8 @@ class _$_TaskSearch extends _TaskSearch {
   @override
   final List<SearchReference> owner;
   @override
-  final List<SearchReference> part_of;
+  @JsonKey(name: 'part-of')
+  final List<SearchReference> partOf;
   @override
   final List<SearchReference> patient;
   @override
@@ -2493,7 +2658,7 @@ class _$_TaskSearch extends _TaskSearch {
 
   @override
   String toString() {
-    return 'TaskSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, authored_on: $authored_on, based_on: $based_on, business_status: $business_status, code: $code, encounter: $encounter, focus: $focus, group_identifier: $group_identifier, identifier: $identifier, intent: $intent, modified: $modified, owner: $owner, part_of: $part_of, patient: $patient, performer: $performer, period: $period, priority: $priority, requester: $requester, status: $status, subject: $subject)';
+    return 'TaskSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, authoredOn: $authoredOn, basedOn: $basedOn, businessStatus: $businessStatus, code: $code, encounter: $encounter, focus: $focus, groupIdentifier: $groupIdentifier, identifier: $identifier, intent: $intent, modified: $modified, owner: $owner, partOf: $partOf, patient: $patient, performer: $performer, period: $period, priority: $priority, requester: $requester, status: $status, subject: $subject)';
   }
 
   @override
@@ -2524,15 +2689,15 @@ class _$_TaskSearch extends _TaskSearch {
             (identical(other.searchList, searchList) ||
                 const DeepCollectionEquality()
                     .equals(other.searchList, searchList)) &&
-            (identical(other.authored_on, authored_on) ||
+            (identical(other.authoredOn, authoredOn) ||
                 const DeepCollectionEquality()
-                    .equals(other.authored_on, authored_on)) &&
-            (identical(other.based_on, based_on) ||
+                    .equals(other.authoredOn, authoredOn)) &&
+            (identical(other.basedOn, basedOn) ||
                 const DeepCollectionEquality()
-                    .equals(other.based_on, based_on)) &&
-            (identical(other.business_status, business_status) ||
+                    .equals(other.basedOn, basedOn)) &&
+            (identical(other.businessStatus, businessStatus) ||
                 const DeepCollectionEquality()
-                    .equals(other.business_status, business_status)) &&
+                    .equals(other.businessStatus, businessStatus)) &&
             (identical(other.code, code) ||
                 const DeepCollectionEquality().equals(other.code, code)) &&
             (identical(other.encounter, encounter) ||
@@ -2540,9 +2705,9 @@ class _$_TaskSearch extends _TaskSearch {
                     .equals(other.encounter, encounter)) &&
             (identical(other.focus, focus) ||
                 const DeepCollectionEquality().equals(other.focus, focus)) &&
-            (identical(other.group_identifier, group_identifier) ||
+            (identical(other.groupIdentifier, groupIdentifier) ||
                 const DeepCollectionEquality()
-                    .equals(other.group_identifier, group_identifier)) &&
+                    .equals(other.groupIdentifier, groupIdentifier)) &&
             (identical(other.identifier, identifier) ||
                 const DeepCollectionEquality()
                     .equals(other.identifier, identifier)) &&
@@ -2553,9 +2718,8 @@ class _$_TaskSearch extends _TaskSearch {
                     .equals(other.modified, modified)) &&
             (identical(other.owner, owner) ||
                 const DeepCollectionEquality().equals(other.owner, owner)) &&
-            (identical(other.part_of, part_of) ||
-                const DeepCollectionEquality()
-                    .equals(other.part_of, part_of)) &&
+            (identical(other.partOf, partOf) ||
+                const DeepCollectionEquality().equals(other.partOf, partOf)) &&
             (identical(other.patient, patient) ||
                 const DeepCollectionEquality()
                     .equals(other.patient, patient)) &&
@@ -2567,7 +2731,8 @@ class _$_TaskSearch extends _TaskSearch {
             (identical(other.priority, priority) ||
                 const DeepCollectionEquality()
                     .equals(other.priority, priority)) &&
-            (identical(other.requester, requester) || const DeepCollectionEquality().equals(other.requester, requester)) &&
+            (identical(other.requester, requester) ||
+                const DeepCollectionEquality().equals(other.requester, requester)) &&
             (identical(other.status, status) || const DeepCollectionEquality().equals(other.status, status)) &&
             (identical(other.subject, subject) || const DeepCollectionEquality().equals(other.subject, subject)));
   }
@@ -2583,18 +2748,18 @@ class _$_TaskSearch extends _TaskSearch {
       const DeepCollectionEquality().hash(searchText) ^
       const DeepCollectionEquality().hash(searchContent) ^
       const DeepCollectionEquality().hash(searchList) ^
-      const DeepCollectionEquality().hash(authored_on) ^
-      const DeepCollectionEquality().hash(based_on) ^
-      const DeepCollectionEquality().hash(business_status) ^
+      const DeepCollectionEquality().hash(authoredOn) ^
+      const DeepCollectionEquality().hash(basedOn) ^
+      const DeepCollectionEquality().hash(businessStatus) ^
       const DeepCollectionEquality().hash(code) ^
       const DeepCollectionEquality().hash(encounter) ^
       const DeepCollectionEquality().hash(focus) ^
-      const DeepCollectionEquality().hash(group_identifier) ^
+      const DeepCollectionEquality().hash(groupIdentifier) ^
       const DeepCollectionEquality().hash(identifier) ^
       const DeepCollectionEquality().hash(intent) ^
       const DeepCollectionEquality().hash(modified) ^
       const DeepCollectionEquality().hash(owner) ^
-      const DeepCollectionEquality().hash(part_of) ^
+      const DeepCollectionEquality().hash(partOf) ^
       const DeepCollectionEquality().hash(patient) ^
       const DeepCollectionEquality().hash(performer) ^
       const DeepCollectionEquality().hash(period) ^
@@ -2606,6 +2771,11 @@ class _$_TaskSearch extends _TaskSearch {
   @override
   _$TaskSearchCopyWith<_TaskSearch> get copyWith =>
       __$TaskSearchCopyWithImpl<_TaskSearch>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_TaskSearchToJson(this);
+  }
 }
 
 abstract class _TaskSearch extends TaskSearch {
@@ -2619,18 +2789,18 @@ abstract class _TaskSearch extends TaskSearch {
       List<SearchString> searchText,
       List<SearchString> searchContent,
       List<Id> searchList,
-      List<SearchDate> authored_on,
-      List<SearchReference> based_on,
-      List<SearchToken> business_status,
+      @JsonKey(name: 'authored-on') List<SearchDate> authoredOn,
+      @JsonKey(name: 'based-on') List<SearchReference> basedOn,
+      @JsonKey(name: 'business-status') List<SearchToken> businessStatus,
       List<SearchToken> code,
       List<SearchReference> encounter,
       List<SearchReference> focus,
-      List<SearchToken> group_identifier,
+      @JsonKey(name: 'group-identifier') List<SearchToken> groupIdentifier,
       List<SearchToken> identifier,
       List<SearchToken> intent,
       List<SearchDate> modified,
       List<SearchReference> owner,
-      List<SearchReference> part_of,
+      @JsonKey(name: 'part-of') List<SearchReference> partOf,
       List<SearchReference> patient,
       List<SearchToken> performer,
       List<SearchDate> period,
@@ -2638,6 +2808,9 @@ abstract class _TaskSearch extends TaskSearch {
       List<SearchReference> requester,
       List<SearchToken> status,
       List<SearchReference> subject}) = _$_TaskSearch;
+
+  factory _TaskSearch.fromJson(Map<String, dynamic> json) =
+      _$_TaskSearch.fromJson;
 
   @override
   List<Id> get searchId;
@@ -2657,11 +2830,14 @@ abstract class _TaskSearch extends TaskSearch {
   List<Id> get searchList;
   @override //List<SearchString> searchHas,
 //List<SearchToken> searchType,
-  List<SearchDate> get authored_on;
+  @JsonKey(name: 'authored-on')
+  List<SearchDate> get authoredOn;
   @override
-  List<SearchReference> get based_on;
+  @JsonKey(name: 'based-on')
+  List<SearchReference> get basedOn;
   @override
-  List<SearchToken> get business_status;
+  @JsonKey(name: 'business-status')
+  List<SearchToken> get businessStatus;
   @override
   List<SearchToken> get code;
   @override
@@ -2669,7 +2845,8 @@ abstract class _TaskSearch extends TaskSearch {
   @override
   List<SearchReference> get focus;
   @override
-  List<SearchToken> get group_identifier;
+  @JsonKey(name: 'group-identifier')
+  List<SearchToken> get groupIdentifier;
   @override
   List<SearchToken> get identifier;
   @override
@@ -2679,7 +2856,8 @@ abstract class _TaskSearch extends TaskSearch {
   @override
   List<SearchReference> get owner;
   @override
-  List<SearchReference> get part_of;
+  @JsonKey(name: 'part-of')
+  List<SearchReference> get partOf;
   @override
   List<SearchReference> get patient;
   @override
@@ -2696,6 +2874,11 @@ abstract class _TaskSearch extends TaskSearch {
   List<SearchReference> get subject;
   @override
   _$TaskSearchCopyWith<_TaskSearch> get copyWith;
+}
+
+VerificationResultSearch _$VerificationResultSearchFromJson(
+    Map<String, dynamic> json) {
+  return _VerificationResultSearch.fromJson(json);
 }
 
 /// @nodoc
@@ -2725,6 +2908,11 @@ class _$VerificationResultSearchTearOff {
       target: target,
     );
   }
+
+// ignore: unused_element
+  VerificationResultSearch fromJson(Map<String, Object> json) {
+    return VerificationResultSearch.fromJson(json);
+  }
 }
 
 /// @nodoc
@@ -2744,6 +2932,7 @@ mixin _$VerificationResultSearch {
 //List<SearchToken> searchType,
   List<SearchReference> get target;
 
+  Map<String, dynamic> toJson();
   $VerificationResultSearchCopyWith<VerificationResultSearch> get copyWith;
 }
 
@@ -2884,6 +3073,8 @@ class __$VerificationResultSearchCopyWithImpl<$Res>
   }
 }
 
+@JsonSerializable()
+
 /// @nodoc
 class _$_VerificationResultSearch extends _VerificationResultSearch {
   _$_VerificationResultSearch(
@@ -2897,6 +3088,9 @@ class _$_VerificationResultSearch extends _VerificationResultSearch {
       this.searchList,
       this.target})
       : super._();
+
+  factory _$_VerificationResultSearch.fromJson(Map<String, dynamic> json) =>
+      _$_$_VerificationResultSearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -2972,6 +3166,11 @@ class _$_VerificationResultSearch extends _VerificationResultSearch {
   _$VerificationResultSearchCopyWith<_VerificationResultSearch> get copyWith =>
       __$VerificationResultSearchCopyWithImpl<_VerificationResultSearch>(
           this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_VerificationResultSearchToJson(this);
+  }
 }
 
 abstract class _VerificationResultSearch extends VerificationResultSearch {
@@ -2986,6 +3185,9 @@ abstract class _VerificationResultSearch extends VerificationResultSearch {
       List<SearchString> searchContent,
       List<Id> searchList,
       List<SearchReference> target}) = _$_VerificationResultSearch;
+
+  factory _VerificationResultSearch.fromJson(Map<String, dynamic> json) =
+      _$_VerificationResultSearch.fromJson;
 
   @override
   List<Id> get searchId;

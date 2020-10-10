@@ -5,6 +5,7 @@ import '../../../search_parameter_types/search_parameter_types.dart';
 import '../../../search_parameters.dart';
 
 part 'general.freezed.dart';
+part 'general.g.dart';
 
 @freezed
 abstract class AccountSearch with R4SearchParameters implements _$AccountSearch {
@@ -29,7 +30,8 @@ List<SearchToken> status,
 List<SearchReference> subject,
 List<SearchToken> type,
 }) = _AccountSearch;
-}
+
+factory AccountSearch.fromJson(Map<String, dynamic> json) => _$AccountSearchFromJson(json);}
 
 @freezed
 abstract class ChargeItemSearch with R4SearchParameters implements _$ChargeItemSearch {
@@ -48,22 +50,23 @@ List<Id> searchList,
 List<SearchReference> account,
 List<SearchToken> code,
 List<SearchReference> context,
-List<SearchDate> entered_date,
+@JsonKey(name: 'entered-date') List<SearchDate> enteredDate,
 List<SearchReference> enterer,
-List<SearchNumber> factor_override,
+@JsonKey(name: 'factor-override') List<SearchNumber> factorOverride,
 List<SearchToken> identifier,
 List<SearchDate> occurrence,
 List<SearchReference> patient,
-List<SearchReference> performer_actor,
-List<SearchToken> performer_function,
-List<SearchReference> performing_organization,
-List<SearchQuantity> price_override,
+@JsonKey(name: 'performer-actor') List<SearchReference> performerActor,
+@JsonKey(name: 'performer-function') List<SearchToken> performerFunction,
+@JsonKey(name: 'performing-organization') List<SearchReference> performingOrganization,
+@JsonKey(name: 'price-override') List<SearchQuantity> priceOverride,
 List<SearchQuantity> quantity,
-List<SearchReference> requesting_organization,
+@JsonKey(name: 'requesting-organization') List<SearchReference> requestingOrganization,
 List<SearchReference> service,
 List<SearchReference> subject,
 }) = _ChargeItemSearch;
-}
+
+factory ChargeItemSearch.fromJson(Map<String, dynamic> json) => _$ChargeItemSearchFromJson(json);}
 
 @freezed
 abstract class ChargeItemDefinitionSearch with R4SearchParameters implements _$ChargeItemDefinitionSearch {
@@ -80,8 +83,8 @@ List<Id> searchList,
 //List<SearchString> searchHas,
 //List<SearchToken> searchType,
 List<SearchToken> context,
-List<SearchQuantity> context_quantity,
-List<SearchToken> context_type,
+@JsonKey(name: 'context-quantity') List<SearchQuantity> contextQuantity,
+@JsonKey(name: 'context-type') List<SearchToken> contextType,
 List<SearchDate> date,
 List<SearchString> description,
 List<SearchDate> effective,
@@ -92,10 +95,11 @@ List<SearchToken> status,
 List<SearchString> title,
 List<SearchUri> url,
 List<SearchToken> version,
-List<SearchComposite> context_type_quantity,
-List<SearchComposite> context_type_value,
+@JsonKey(name: 'context-type-quantity') List<SearchComposite> contextTypequantity,
+@JsonKey(name: 'context-type-value') List<SearchComposite> contextTypevalue,
 }) = _ChargeItemDefinitionSearch;
-}
+
+factory ChargeItemDefinitionSearch.fromJson(Map<String, dynamic> json) => _$ChargeItemDefinitionSearchFromJson(json);}
 
 @freezed
 abstract class ContractSearch with R4SearchParameters implements _$ContractSearch {
@@ -122,7 +126,8 @@ List<SearchToken> status,
 List<SearchReference> subject,
 List<SearchUri> url,
 }) = _ContractSearch;
-}
+
+factory ContractSearch.fromJson(Map<String, dynamic> json) => _$ContractSearchFromJson(json);}
 
 @freezed
 abstract class ExplanationOfBenefitSearch with R4SearchParameters implements _$ExplanationOfBenefitSearch {
@@ -138,25 +143,26 @@ List<SearchString> searchContent,
 List<Id> searchList,
 //List<SearchString> searchHas,
 //List<SearchToken> searchType,
-List<SearchReference> care_team,
+@JsonKey(name: 'care-team') List<SearchReference> careTeam,
 List<SearchReference> claim,
 List<SearchReference> coverage,
 List<SearchDate> created,
-List<SearchReference> detail_udi,
+@JsonKey(name: 'detail-udi') List<SearchReference> detailUdi,
 List<SearchString> disposition,
 List<SearchReference> encounter,
 List<SearchReference> enterer,
 List<SearchReference> facility,
 List<SearchToken> identifier,
-List<SearchReference> item_udi,
+@JsonKey(name: 'item-udi') List<SearchReference> itemUdi,
 List<SearchReference> patient,
 List<SearchReference> payee,
-List<SearchReference> procedure_udi,
+@JsonKey(name: 'procedure-udi') List<SearchReference> procedureUdi,
 List<SearchReference> provider,
 List<SearchToken> status,
-List<SearchReference> subdetail_udi,
+@JsonKey(name: 'subdetail-udi') List<SearchReference> subdetailUdi,
 }) = _ExplanationOfBenefitSearch;
-}
+
+factory ExplanationOfBenefitSearch.fromJson(Map<String, dynamic> json) => _$ExplanationOfBenefitSearchFromJson(json);}
 
 @freezed
 abstract class InsurancePlanSearch with R4SearchParameters implements _$InsurancePlanSearch {
@@ -173,19 +179,20 @@ List<Id> searchList,
 //List<SearchString> searchHas,
 //List<SearchToken> searchType,
 List<SearchString> address,
-List<SearchString> address_city,
-List<SearchString> address_country,
-List<SearchString> address_postalcode,
-List<SearchString> address_state,
-List<SearchToken> address_use,
-List<SearchReference> administered_by,
+@JsonKey(name: 'address-city') List<SearchString> addressCity,
+@JsonKey(name: 'address-country') List<SearchString> addressCountry,
+@JsonKey(name: 'address-postalcode') List<SearchString> addressPostalcode,
+@JsonKey(name: 'address-state') List<SearchString> addressState,
+@JsonKey(name: 'address-use') List<SearchToken> addressUse,
+@JsonKey(name: 'administered-by') List<SearchReference> administeredBy,
 List<SearchReference> endpoint,
 List<SearchToken> identifier,
 List<SearchString> name,
-List<SearchReference> owned_by,
+@JsonKey(name: 'owned-by') List<SearchReference> ownedBy,
 List<SearchString> phonetic,
 List<SearchToken> status,
 List<SearchToken> type,
 }) = _InsurancePlanSearch;
-}
+
+factory InsurancePlanSearch.fromJson(Map<String, dynamic> json) => _$InsurancePlanSearchFromJson(json);}
 

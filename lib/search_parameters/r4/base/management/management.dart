@@ -5,6 +5,7 @@ import '../../../search_parameter_types/search_parameter_types.dart';
 import '../../../search_parameters.dart';
 
 part 'management.freezed.dart';
+part 'management.g.dart';
 
 @freezed
 abstract class ListSearch with R4SearchParameters implements _$ListSearch {
@@ -25,7 +26,7 @@ abstract class ListSearch with R4SearchParameters implements _$ListSearch {
     List<SearchToken> identifier,
     List<SearchReference> patient,
     List<SearchReference> encounter,
-    List<SearchToken> empty_reason,
+    @JsonKey(name: 'empty-reason') List<SearchToken> emptyReason,
     List<SearchReference> item,
     List<SearchString> notes,
     List<SearchReference> source,
@@ -33,6 +34,9 @@ abstract class ListSearch with R4SearchParameters implements _$ListSearch {
     List<SearchReference> subject,
     List<SearchString> title,
   }) = _ListSearch;
+
+  factory ListSearch.fromJson(Map<String, dynamic> json) =>
+      _$ListSearchFromJson(json);
 }
 
 @freezed
@@ -57,24 +61,27 @@ abstract class EncounterSearch
     List<SearchToken> type,
     List<SearchReference> account,
     List<SearchReference> appointment,
-    List<SearchReference> based_on,
-    List<SearchToken> class_,
+    @JsonKey(name: 'based-on') List<SearchReference> basedOn,
+    @JsonKey(name: 'class') List<SearchToken> classs,
     List<SearchReference> diagnosis,
-    List<SearchReference> episode_of_care,
+    @JsonKey(name: 'episode-of-care') List<SearchReference> episodeOfcare,
     List<SearchQuantity> length,
     List<SearchReference> location,
-    List<SearchDate> location_period,
-    List<SearchReference> part_of,
+    @JsonKey(name: 'location-period') List<SearchDate> locationPeriod,
+    @JsonKey(name: 'part-of') List<SearchReference> partOf,
     List<SearchReference> participant,
-    List<SearchToken> participant_type,
+    @JsonKey(name: 'participant-type') List<SearchToken> participantType,
     List<SearchReference> practitioner,
-    List<SearchToken> reason_code,
-    List<SearchReference> reason_reference,
-    List<SearchReference> service_provider,
-    List<SearchToken> special_arrangement,
+    @JsonKey(name: 'reason-code') List<SearchToken> reasonCode,
+    @JsonKey(name: 'reason-reference') List<SearchReference> reasonReference,
+    @JsonKey(name: 'service-provider') List<SearchReference> serviceProvider,
+    @JsonKey(name: 'special-arrangement') List<SearchToken> specialArrangement,
     List<SearchToken> status,
     List<SearchReference> subject,
   }) = _EncounterSearch;
+
+  factory EncounterSearch.fromJson(Map<String, dynamic> json) =>
+      _$EncounterSearchFromJson(json);
 }
 
 @freezed
@@ -97,12 +104,15 @@ abstract class EpisodeOfCareSearch
     List<SearchToken> identifier,
     List<SearchReference> patient,
     List<SearchToken> type,
-    List<SearchReference> care_manager,
+    @JsonKey(name: 'care-manager') List<SearchReference> careManager,
     List<SearchReference> condition,
-    List<SearchReference> incoming_referral,
+    @JsonKey(name: 'incoming-referral') List<SearchReference> incomingReferral,
     List<SearchReference> organization,
     List<SearchToken> status,
   }) = _EpisodeOfCareSearch;
+
+  factory EpisodeOfCareSearch.fromJson(Map<String, dynamic> json) =>
+      _$EpisodeOfCareSearchFromJson(json);
 }
 
 @freezed
@@ -126,6 +136,9 @@ abstract class FlagSearch with R4SearchParameters implements _$FlagSearch {
     List<SearchToken> identifier,
     List<SearchReference> subject,
   }) = _FlagSearch;
+
+  factory FlagSearch.fromJson(Map<String, dynamic> json) =>
+      _$FlagSearchFromJson(json);
 }
 
 @freezed
@@ -144,14 +157,14 @@ abstract class LibrarySearch
     List<Id> searchList,
 //List<SearchString> searchHas,
 //List<SearchToken> searchType,
-    List<SearchReference> composed_of,
-    List<SearchToken> content_type,
+    @JsonKey(name: 'composed-of') List<SearchReference> composedOf,
+    @JsonKey(name: 'content-type') List<SearchToken> contentType,
     List<SearchToken> context,
-    List<SearchQuantity> context_quantity,
-    List<SearchToken> context_type,
+    @JsonKey(name: 'context-quantity') List<SearchQuantity> contextQuantity,
+    @JsonKey(name: 'context-type') List<SearchToken> contextType,
     List<SearchDate> date,
-    List<SearchReference> depends_on,
-    List<SearchReference> derived_from,
+    @JsonKey(name: 'depends-on') List<SearchReference> dependsOn,
+    @JsonKey(name: 'derived-from') List<SearchReference> derivedFrom,
     List<SearchString> description,
     List<SearchDate> effective,
     List<SearchToken> identifier,
@@ -166,7 +179,11 @@ abstract class LibrarySearch
     List<SearchToken> type,
     List<SearchUri> url,
     List<SearchToken> version,
-    List<SearchComposite> context_type_quantity,
-    List<SearchComposite> context_type_value,
+    @JsonKey(name: 'context-type-quantity')
+        List<SearchComposite> contextTypequantity,
+    @JsonKey(name: 'context-type-value') List<SearchComposite> contextTypevalue,
   }) = _LibrarySearch;
+
+  factory LibrarySearch.fromJson(Map<String, dynamic> json) =>
+      _$LibrarySearchFromJson(json);
 }

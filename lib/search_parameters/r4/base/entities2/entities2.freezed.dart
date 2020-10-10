@@ -8,6 +8,9 @@ part of 'entities2.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
+DeviceSearch _$DeviceSearchFromJson(Map<String, dynamic> json) {
+  return _DeviceSearch.fromJson(json);
+}
 
 /// @nodoc
 class _$DeviceSearchTearOff {
@@ -23,7 +26,7 @@ class _$DeviceSearchTearOff {
       List<SearchString> searchText,
       List<SearchString> searchContent,
       List<Id> searchList,
-      List<SearchString> device_name,
+      @JsonKey(name: 'device-name') List<SearchString> deviceName,
       List<SearchToken> identifier,
       List<SearchReference> location,
       List<SearchString> manufacturer,
@@ -32,8 +35,8 @@ class _$DeviceSearchTearOff {
       List<SearchReference> patient,
       List<SearchToken> status,
       List<SearchToken> type,
-      List<SearchString> udi_carrier,
-      List<SearchString> udi_di,
+      @JsonKey(name: 'udi-carrier') List<SearchString> udiCarrier,
+      @JsonKey(name: 'udi-di') List<SearchString> udiDi,
       List<SearchUri> url}) {
     return _DeviceSearch(
       searchId: searchId,
@@ -44,7 +47,7 @@ class _$DeviceSearchTearOff {
       searchText: searchText,
       searchContent: searchContent,
       searchList: searchList,
-      device_name: device_name,
+      deviceName: deviceName,
       identifier: identifier,
       location: location,
       manufacturer: manufacturer,
@@ -53,10 +56,15 @@ class _$DeviceSearchTearOff {
       patient: patient,
       status: status,
       type: type,
-      udi_carrier: udi_carrier,
-      udi_di: udi_di,
+      udiCarrier: udiCarrier,
+      udiDi: udiDi,
       url: url,
     );
+  }
+
+// ignore: unused_element
+  DeviceSearch fromJson(Map<String, Object> json) {
+    return DeviceSearch.fromJson(json);
   }
 }
 
@@ -75,7 +83,8 @@ mixin _$DeviceSearch {
   List<SearchString> get searchContent;
   List<Id> get searchList; //List<SearchString> searchHas,
 //List<SearchToken> searchType,
-  List<SearchString> get device_name;
+  @JsonKey(name: 'device-name')
+  List<SearchString> get deviceName;
   List<SearchToken> get identifier;
   List<SearchReference> get location;
   List<SearchString> get manufacturer;
@@ -84,10 +93,13 @@ mixin _$DeviceSearch {
   List<SearchReference> get patient;
   List<SearchToken> get status;
   List<SearchToken> get type;
-  List<SearchString> get udi_carrier;
-  List<SearchString> get udi_di;
+  @JsonKey(name: 'udi-carrier')
+  List<SearchString> get udiCarrier;
+  @JsonKey(name: 'udi-di')
+  List<SearchString> get udiDi;
   List<SearchUri> get url;
 
+  Map<String, dynamic> toJson();
   $DeviceSearchCopyWith<DeviceSearch> get copyWith;
 }
 
@@ -105,7 +117,7 @@ abstract class $DeviceSearchCopyWith<$Res> {
       List<SearchString> searchText,
       List<SearchString> searchContent,
       List<Id> searchList,
-      List<SearchString> device_name,
+      @JsonKey(name: 'device-name') List<SearchString> deviceName,
       List<SearchToken> identifier,
       List<SearchReference> location,
       List<SearchString> manufacturer,
@@ -114,8 +126,8 @@ abstract class $DeviceSearchCopyWith<$Res> {
       List<SearchReference> patient,
       List<SearchToken> status,
       List<SearchToken> type,
-      List<SearchString> udi_carrier,
-      List<SearchString> udi_di,
+      @JsonKey(name: 'udi-carrier') List<SearchString> udiCarrier,
+      @JsonKey(name: 'udi-di') List<SearchString> udiDi,
       List<SearchUri> url});
 }
 
@@ -137,7 +149,7 @@ class _$DeviceSearchCopyWithImpl<$Res> implements $DeviceSearchCopyWith<$Res> {
     Object searchText = freezed,
     Object searchContent = freezed,
     Object searchList = freezed,
-    Object device_name = freezed,
+    Object deviceName = freezed,
     Object identifier = freezed,
     Object location = freezed,
     Object manufacturer = freezed,
@@ -146,8 +158,8 @@ class _$DeviceSearchCopyWithImpl<$Res> implements $DeviceSearchCopyWith<$Res> {
     Object patient = freezed,
     Object status = freezed,
     Object type = freezed,
-    Object udi_carrier = freezed,
-    Object udi_di = freezed,
+    Object udiCarrier = freezed,
+    Object udiDi = freezed,
     Object url = freezed,
   }) {
     return _then(_value.copyWith(
@@ -172,9 +184,9 @@ class _$DeviceSearchCopyWithImpl<$Res> implements $DeviceSearchCopyWith<$Res> {
           : searchContent as List<SearchString>,
       searchList:
           searchList == freezed ? _value.searchList : searchList as List<Id>,
-      device_name: device_name == freezed
-          ? _value.device_name
-          : device_name as List<SearchString>,
+      deviceName: deviceName == freezed
+          ? _value.deviceName
+          : deviceName as List<SearchString>,
       identifier: identifier == freezed
           ? _value.identifier
           : identifier as List<SearchToken>,
@@ -193,10 +205,10 @@ class _$DeviceSearchCopyWithImpl<$Res> implements $DeviceSearchCopyWith<$Res> {
           : patient as List<SearchReference>,
       status: status == freezed ? _value.status : status as List<SearchToken>,
       type: type == freezed ? _value.type : type as List<SearchToken>,
-      udi_carrier: udi_carrier == freezed
-          ? _value.udi_carrier
-          : udi_carrier as List<SearchString>,
-      udi_di: udi_di == freezed ? _value.udi_di : udi_di as List<SearchString>,
+      udiCarrier: udiCarrier == freezed
+          ? _value.udiCarrier
+          : udiCarrier as List<SearchString>,
+      udiDi: udiDi == freezed ? _value.udiDi : udiDi as List<SearchString>,
       url: url == freezed ? _value.url : url as List<SearchUri>,
     ));
   }
@@ -218,7 +230,7 @@ abstract class _$DeviceSearchCopyWith<$Res>
       List<SearchString> searchText,
       List<SearchString> searchContent,
       List<Id> searchList,
-      List<SearchString> device_name,
+      @JsonKey(name: 'device-name') List<SearchString> deviceName,
       List<SearchToken> identifier,
       List<SearchReference> location,
       List<SearchString> manufacturer,
@@ -227,8 +239,8 @@ abstract class _$DeviceSearchCopyWith<$Res>
       List<SearchReference> patient,
       List<SearchToken> status,
       List<SearchToken> type,
-      List<SearchString> udi_carrier,
-      List<SearchString> udi_di,
+      @JsonKey(name: 'udi-carrier') List<SearchString> udiCarrier,
+      @JsonKey(name: 'udi-di') List<SearchString> udiDi,
       List<SearchUri> url});
 }
 
@@ -252,7 +264,7 @@ class __$DeviceSearchCopyWithImpl<$Res> extends _$DeviceSearchCopyWithImpl<$Res>
     Object searchText = freezed,
     Object searchContent = freezed,
     Object searchList = freezed,
-    Object device_name = freezed,
+    Object deviceName = freezed,
     Object identifier = freezed,
     Object location = freezed,
     Object manufacturer = freezed,
@@ -261,8 +273,8 @@ class __$DeviceSearchCopyWithImpl<$Res> extends _$DeviceSearchCopyWithImpl<$Res>
     Object patient = freezed,
     Object status = freezed,
     Object type = freezed,
-    Object udi_carrier = freezed,
-    Object udi_di = freezed,
+    Object udiCarrier = freezed,
+    Object udiDi = freezed,
     Object url = freezed,
   }) {
     return _then(_DeviceSearch(
@@ -287,9 +299,9 @@ class __$DeviceSearchCopyWithImpl<$Res> extends _$DeviceSearchCopyWithImpl<$Res>
           : searchContent as List<SearchString>,
       searchList:
           searchList == freezed ? _value.searchList : searchList as List<Id>,
-      device_name: device_name == freezed
-          ? _value.device_name
-          : device_name as List<SearchString>,
+      deviceName: deviceName == freezed
+          ? _value.deviceName
+          : deviceName as List<SearchString>,
       identifier: identifier == freezed
           ? _value.identifier
           : identifier as List<SearchToken>,
@@ -308,14 +320,16 @@ class __$DeviceSearchCopyWithImpl<$Res> extends _$DeviceSearchCopyWithImpl<$Res>
           : patient as List<SearchReference>,
       status: status == freezed ? _value.status : status as List<SearchToken>,
       type: type == freezed ? _value.type : type as List<SearchToken>,
-      udi_carrier: udi_carrier == freezed
-          ? _value.udi_carrier
-          : udi_carrier as List<SearchString>,
-      udi_di: udi_di == freezed ? _value.udi_di : udi_di as List<SearchString>,
+      udiCarrier: udiCarrier == freezed
+          ? _value.udiCarrier
+          : udiCarrier as List<SearchString>,
+      udiDi: udiDi == freezed ? _value.udiDi : udiDi as List<SearchString>,
       url: url == freezed ? _value.url : url as List<SearchUri>,
     ));
   }
 }
+
+@JsonSerializable()
 
 /// @nodoc
 class _$_DeviceSearch extends _DeviceSearch {
@@ -328,7 +342,7 @@ class _$_DeviceSearch extends _DeviceSearch {
       this.searchText,
       this.searchContent,
       this.searchList,
-      this.device_name,
+      @JsonKey(name: 'device-name') this.deviceName,
       this.identifier,
       this.location,
       this.manufacturer,
@@ -337,10 +351,13 @@ class _$_DeviceSearch extends _DeviceSearch {
       this.patient,
       this.status,
       this.type,
-      this.udi_carrier,
-      this.udi_di,
+      @JsonKey(name: 'udi-carrier') this.udiCarrier,
+      @JsonKey(name: 'udi-di') this.udiDi,
       this.url})
       : super._();
+
+  factory _$_DeviceSearch.fromJson(Map<String, dynamic> json) =>
+      _$_$_DeviceSearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -360,7 +377,8 @@ class _$_DeviceSearch extends _DeviceSearch {
   final List<Id> searchList;
   @override //List<SearchString> searchHas,
 //List<SearchToken> searchType,
-  final List<SearchString> device_name;
+  @JsonKey(name: 'device-name')
+  final List<SearchString> deviceName;
   @override
   final List<SearchToken> identifier;
   @override
@@ -378,15 +396,17 @@ class _$_DeviceSearch extends _DeviceSearch {
   @override
   final List<SearchToken> type;
   @override
-  final List<SearchString> udi_carrier;
+  @JsonKey(name: 'udi-carrier')
+  final List<SearchString> udiCarrier;
   @override
-  final List<SearchString> udi_di;
+  @JsonKey(name: 'udi-di')
+  final List<SearchString> udiDi;
   @override
   final List<SearchUri> url;
 
   @override
   String toString() {
-    return 'DeviceSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, device_name: $device_name, identifier: $identifier, location: $location, manufacturer: $manufacturer, model: $model, organization: $organization, patient: $patient, status: $status, type: $type, udi_carrier: $udi_carrier, udi_di: $udi_di, url: $url)';
+    return 'DeviceSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, deviceName: $deviceName, identifier: $identifier, location: $location, manufacturer: $manufacturer, model: $model, organization: $organization, patient: $patient, status: $status, type: $type, udiCarrier: $udiCarrier, udiDi: $udiDi, url: $url)';
   }
 
   @override
@@ -417,9 +437,9 @@ class _$_DeviceSearch extends _DeviceSearch {
             (identical(other.searchList, searchList) ||
                 const DeepCollectionEquality()
                     .equals(other.searchList, searchList)) &&
-            (identical(other.device_name, device_name) ||
+            (identical(other.deviceName, deviceName) ||
                 const DeepCollectionEquality()
-                    .equals(other.device_name, device_name)) &&
+                    .equals(other.deviceName, deviceName)) &&
             (identical(other.identifier, identifier) ||
                 const DeepCollectionEquality()
                     .equals(other.identifier, identifier)) &&
@@ -441,11 +461,11 @@ class _$_DeviceSearch extends _DeviceSearch {
                 const DeepCollectionEquality().equals(other.status, status)) &&
             (identical(other.type, type) ||
                 const DeepCollectionEquality().equals(other.type, type)) &&
-            (identical(other.udi_carrier, udi_carrier) ||
+            (identical(other.udiCarrier, udiCarrier) ||
                 const DeepCollectionEquality()
-                    .equals(other.udi_carrier, udi_carrier)) &&
-            (identical(other.udi_di, udi_di) ||
-                const DeepCollectionEquality().equals(other.udi_di, udi_di)) &&
+                    .equals(other.udiCarrier, udiCarrier)) &&
+            (identical(other.udiDi, udiDi) ||
+                const DeepCollectionEquality().equals(other.udiDi, udiDi)) &&
             (identical(other.url, url) ||
                 const DeepCollectionEquality().equals(other.url, url)));
   }
@@ -461,7 +481,7 @@ class _$_DeviceSearch extends _DeviceSearch {
       const DeepCollectionEquality().hash(searchText) ^
       const DeepCollectionEquality().hash(searchContent) ^
       const DeepCollectionEquality().hash(searchList) ^
-      const DeepCollectionEquality().hash(device_name) ^
+      const DeepCollectionEquality().hash(deviceName) ^
       const DeepCollectionEquality().hash(identifier) ^
       const DeepCollectionEquality().hash(location) ^
       const DeepCollectionEquality().hash(manufacturer) ^
@@ -470,13 +490,18 @@ class _$_DeviceSearch extends _DeviceSearch {
       const DeepCollectionEquality().hash(patient) ^
       const DeepCollectionEquality().hash(status) ^
       const DeepCollectionEquality().hash(type) ^
-      const DeepCollectionEquality().hash(udi_carrier) ^
-      const DeepCollectionEquality().hash(udi_di) ^
+      const DeepCollectionEquality().hash(udiCarrier) ^
+      const DeepCollectionEquality().hash(udiDi) ^
       const DeepCollectionEquality().hash(url);
 
   @override
   _$DeviceSearchCopyWith<_DeviceSearch> get copyWith =>
       __$DeviceSearchCopyWithImpl<_DeviceSearch>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_DeviceSearchToJson(this);
+  }
 }
 
 abstract class _DeviceSearch extends DeviceSearch {
@@ -490,7 +515,7 @@ abstract class _DeviceSearch extends DeviceSearch {
       List<SearchString> searchText,
       List<SearchString> searchContent,
       List<Id> searchList,
-      List<SearchString> device_name,
+      @JsonKey(name: 'device-name') List<SearchString> deviceName,
       List<SearchToken> identifier,
       List<SearchReference> location,
       List<SearchString> manufacturer,
@@ -499,9 +524,12 @@ abstract class _DeviceSearch extends DeviceSearch {
       List<SearchReference> patient,
       List<SearchToken> status,
       List<SearchToken> type,
-      List<SearchString> udi_carrier,
-      List<SearchString> udi_di,
+      @JsonKey(name: 'udi-carrier') List<SearchString> udiCarrier,
+      @JsonKey(name: 'udi-di') List<SearchString> udiDi,
       List<SearchUri> url}) = _$_DeviceSearch;
+
+  factory _DeviceSearch.fromJson(Map<String, dynamic> json) =
+      _$_DeviceSearch.fromJson;
 
   @override
   List<Id> get searchId;
@@ -521,7 +549,8 @@ abstract class _DeviceSearch extends DeviceSearch {
   List<Id> get searchList;
   @override //List<SearchString> searchHas,
 //List<SearchToken> searchType,
-  List<SearchString> get device_name;
+  @JsonKey(name: 'device-name')
+  List<SearchString> get deviceName;
   @override
   List<SearchToken> get identifier;
   @override
@@ -539,13 +568,19 @@ abstract class _DeviceSearch extends DeviceSearch {
   @override
   List<SearchToken> get type;
   @override
-  List<SearchString> get udi_carrier;
+  @JsonKey(name: 'udi-carrier')
+  List<SearchString> get udiCarrier;
   @override
-  List<SearchString> get udi_di;
+  @JsonKey(name: 'udi-di')
+  List<SearchString> get udiDi;
   @override
   List<SearchUri> get url;
   @override
   _$DeviceSearchCopyWith<_DeviceSearch> get copyWith;
+}
+
+DeviceMetricSearch _$DeviceMetricSearchFromJson(Map<String, dynamic> json) {
+  return _DeviceMetricSearch.fromJson(json);
 }
 
 /// @nodoc
@@ -583,6 +618,11 @@ class _$DeviceMetricSearchTearOff {
       type: type,
     );
   }
+
+// ignore: unused_element
+  DeviceMetricSearch fromJson(Map<String, Object> json) {
+    return DeviceMetricSearch.fromJson(json);
+  }
 }
 
 /// @nodoc
@@ -606,6 +646,7 @@ mixin _$DeviceMetricSearch {
   List<SearchReference> get source;
   List<SearchToken> get type;
 
+  Map<String, dynamic> toJson();
   $DeviceMetricSearchCopyWith<DeviceMetricSearch> get copyWith;
 }
 
@@ -777,6 +818,8 @@ class __$DeviceMetricSearchCopyWithImpl<$Res>
   }
 }
 
+@JsonSerializable()
+
 /// @nodoc
 class _$_DeviceMetricSearch extends _DeviceMetricSearch {
   _$_DeviceMetricSearch(
@@ -794,6 +837,9 @@ class _$_DeviceMetricSearch extends _DeviceMetricSearch {
       this.source,
       this.type})
       : super._();
+
+  factory _$_DeviceMetricSearch.fromJson(Map<String, dynamic> json) =>
+      _$_$_DeviceMetricSearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -890,6 +936,11 @@ class _$_DeviceMetricSearch extends _DeviceMetricSearch {
   @override
   _$DeviceMetricSearchCopyWith<_DeviceMetricSearch> get copyWith =>
       __$DeviceMetricSearchCopyWithImpl<_DeviceMetricSearch>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_DeviceMetricSearchToJson(this);
+  }
 }
 
 abstract class _DeviceMetricSearch extends DeviceMetricSearch {
@@ -908,6 +959,9 @@ abstract class _DeviceMetricSearch extends DeviceMetricSearch {
       List<SearchReference> parent,
       List<SearchReference> source,
       List<SearchToken> type}) = _$_DeviceMetricSearch;
+
+  factory _DeviceMetricSearch.fromJson(Map<String, dynamic> json) =
+      _$_DeviceMetricSearch.fromJson;
 
   @override
   List<Id> get searchId;
@@ -940,6 +994,10 @@ abstract class _DeviceMetricSearch extends DeviceMetricSearch {
   _$DeviceMetricSearchCopyWith<_DeviceMetricSearch> get copyWith;
 }
 
+SubstanceSearch _$SubstanceSearchFromJson(Map<String, dynamic> json) {
+  return _SubstanceSearch.fromJson(json);
+}
+
 /// @nodoc
 class _$SubstanceSearchTearOff {
   const _$SubstanceSearchTearOff();
@@ -956,12 +1014,14 @@ class _$SubstanceSearchTearOff {
       List<Id> searchList,
       List<SearchToken> category,
       List<SearchToken> code,
-      List<SearchToken> container_identifier,
+      @JsonKey(name: 'container-identifier')
+          List<SearchToken> containerIdentifier,
       List<SearchDate> expiry,
       List<SearchToken> identifier,
       List<SearchQuantity> quantity,
       List<SearchToken> status,
-      List<SearchReference> substance_reference}) {
+      @JsonKey(name: 'substance-reference')
+          List<SearchReference> substanceReference}) {
     return _SubstanceSearch(
       searchId: searchId,
       searchLastUpdated: searchLastUpdated,
@@ -973,13 +1033,18 @@ class _$SubstanceSearchTearOff {
       searchList: searchList,
       category: category,
       code: code,
-      container_identifier: container_identifier,
+      containerIdentifier: containerIdentifier,
       expiry: expiry,
       identifier: identifier,
       quantity: quantity,
       status: status,
-      substance_reference: substance_reference,
+      substanceReference: substanceReference,
     );
+  }
+
+// ignore: unused_element
+  SubstanceSearch fromJson(Map<String, Object> json) {
+    return SubstanceSearch.fromJson(json);
   }
 }
 
@@ -1000,13 +1065,16 @@ mixin _$SubstanceSearch {
 //List<SearchToken> searchType,
   List<SearchToken> get category;
   List<SearchToken> get code;
-  List<SearchToken> get container_identifier;
+  @JsonKey(name: 'container-identifier')
+  List<SearchToken> get containerIdentifier;
   List<SearchDate> get expiry;
   List<SearchToken> get identifier;
   List<SearchQuantity> get quantity;
   List<SearchToken> get status;
-  List<SearchReference> get substance_reference;
+  @JsonKey(name: 'substance-reference')
+  List<SearchReference> get substanceReference;
 
+  Map<String, dynamic> toJson();
   $SubstanceSearchCopyWith<SubstanceSearch> get copyWith;
 }
 
@@ -1026,12 +1094,14 @@ abstract class $SubstanceSearchCopyWith<$Res> {
       List<Id> searchList,
       List<SearchToken> category,
       List<SearchToken> code,
-      List<SearchToken> container_identifier,
+      @JsonKey(name: 'container-identifier')
+          List<SearchToken> containerIdentifier,
       List<SearchDate> expiry,
       List<SearchToken> identifier,
       List<SearchQuantity> quantity,
       List<SearchToken> status,
-      List<SearchReference> substance_reference});
+      @JsonKey(name: 'substance-reference')
+          List<SearchReference> substanceReference});
 }
 
 /// @nodoc
@@ -1055,12 +1125,12 @@ class _$SubstanceSearchCopyWithImpl<$Res>
     Object searchList = freezed,
     Object category = freezed,
     Object code = freezed,
-    Object container_identifier = freezed,
+    Object containerIdentifier = freezed,
     Object expiry = freezed,
     Object identifier = freezed,
     Object quantity = freezed,
     Object status = freezed,
-    Object substance_reference = freezed,
+    Object substanceReference = freezed,
   }) {
     return _then(_value.copyWith(
       searchId: searchId == freezed ? _value.searchId : searchId as List<Id>,
@@ -1087,9 +1157,9 @@ class _$SubstanceSearchCopyWithImpl<$Res>
       category:
           category == freezed ? _value.category : category as List<SearchToken>,
       code: code == freezed ? _value.code : code as List<SearchToken>,
-      container_identifier: container_identifier == freezed
-          ? _value.container_identifier
-          : container_identifier as List<SearchToken>,
+      containerIdentifier: containerIdentifier == freezed
+          ? _value.containerIdentifier
+          : containerIdentifier as List<SearchToken>,
       expiry: expiry == freezed ? _value.expiry : expiry as List<SearchDate>,
       identifier: identifier == freezed
           ? _value.identifier
@@ -1098,9 +1168,9 @@ class _$SubstanceSearchCopyWithImpl<$Res>
           ? _value.quantity
           : quantity as List<SearchQuantity>,
       status: status == freezed ? _value.status : status as List<SearchToken>,
-      substance_reference: substance_reference == freezed
-          ? _value.substance_reference
-          : substance_reference as List<SearchReference>,
+      substanceReference: substanceReference == freezed
+          ? _value.substanceReference
+          : substanceReference as List<SearchReference>,
     ));
   }
 }
@@ -1123,12 +1193,14 @@ abstract class _$SubstanceSearchCopyWith<$Res>
       List<Id> searchList,
       List<SearchToken> category,
       List<SearchToken> code,
-      List<SearchToken> container_identifier,
+      @JsonKey(name: 'container-identifier')
+          List<SearchToken> containerIdentifier,
       List<SearchDate> expiry,
       List<SearchToken> identifier,
       List<SearchQuantity> quantity,
       List<SearchToken> status,
-      List<SearchReference> substance_reference});
+      @JsonKey(name: 'substance-reference')
+          List<SearchReference> substanceReference});
 }
 
 /// @nodoc
@@ -1154,12 +1226,12 @@ class __$SubstanceSearchCopyWithImpl<$Res>
     Object searchList = freezed,
     Object category = freezed,
     Object code = freezed,
-    Object container_identifier = freezed,
+    Object containerIdentifier = freezed,
     Object expiry = freezed,
     Object identifier = freezed,
     Object quantity = freezed,
     Object status = freezed,
-    Object substance_reference = freezed,
+    Object substanceReference = freezed,
   }) {
     return _then(_SubstanceSearch(
       searchId: searchId == freezed ? _value.searchId : searchId as List<Id>,
@@ -1186,9 +1258,9 @@ class __$SubstanceSearchCopyWithImpl<$Res>
       category:
           category == freezed ? _value.category : category as List<SearchToken>,
       code: code == freezed ? _value.code : code as List<SearchToken>,
-      container_identifier: container_identifier == freezed
-          ? _value.container_identifier
-          : container_identifier as List<SearchToken>,
+      containerIdentifier: containerIdentifier == freezed
+          ? _value.containerIdentifier
+          : containerIdentifier as List<SearchToken>,
       expiry: expiry == freezed ? _value.expiry : expiry as List<SearchDate>,
       identifier: identifier == freezed
           ? _value.identifier
@@ -1197,12 +1269,14 @@ class __$SubstanceSearchCopyWithImpl<$Res>
           ? _value.quantity
           : quantity as List<SearchQuantity>,
       status: status == freezed ? _value.status : status as List<SearchToken>,
-      substance_reference: substance_reference == freezed
-          ? _value.substance_reference
-          : substance_reference as List<SearchReference>,
+      substanceReference: substanceReference == freezed
+          ? _value.substanceReference
+          : substanceReference as List<SearchReference>,
     ));
   }
 }
+
+@JsonSerializable()
 
 /// @nodoc
 class _$_SubstanceSearch extends _SubstanceSearch {
@@ -1217,13 +1291,16 @@ class _$_SubstanceSearch extends _SubstanceSearch {
       this.searchList,
       this.category,
       this.code,
-      this.container_identifier,
+      @JsonKey(name: 'container-identifier') this.containerIdentifier,
       this.expiry,
       this.identifier,
       this.quantity,
       this.status,
-      this.substance_reference})
+      @JsonKey(name: 'substance-reference') this.substanceReference})
       : super._();
+
+  factory _$_SubstanceSearch.fromJson(Map<String, dynamic> json) =>
+      _$_$_SubstanceSearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -1247,7 +1324,8 @@ class _$_SubstanceSearch extends _SubstanceSearch {
   @override
   final List<SearchToken> code;
   @override
-  final List<SearchToken> container_identifier;
+  @JsonKey(name: 'container-identifier')
+  final List<SearchToken> containerIdentifier;
   @override
   final List<SearchDate> expiry;
   @override
@@ -1257,11 +1335,12 @@ class _$_SubstanceSearch extends _SubstanceSearch {
   @override
   final List<SearchToken> status;
   @override
-  final List<SearchReference> substance_reference;
+  @JsonKey(name: 'substance-reference')
+  final List<SearchReference> substanceReference;
 
   @override
   String toString() {
-    return 'SubstanceSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, category: $category, code: $code, container_identifier: $container_identifier, expiry: $expiry, identifier: $identifier, quantity: $quantity, status: $status, substance_reference: $substance_reference)';
+    return 'SubstanceSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, category: $category, code: $code, containerIdentifier: $containerIdentifier, expiry: $expiry, identifier: $identifier, quantity: $quantity, status: $status, substanceReference: $substanceReference)';
   }
 
   @override
@@ -1297,9 +1376,9 @@ class _$_SubstanceSearch extends _SubstanceSearch {
                     .equals(other.category, category)) &&
             (identical(other.code, code) ||
                 const DeepCollectionEquality().equals(other.code, code)) &&
-            (identical(other.container_identifier, container_identifier) ||
-                const DeepCollectionEquality().equals(
-                    other.container_identifier, container_identifier)) &&
+            (identical(other.containerIdentifier, containerIdentifier) ||
+                const DeepCollectionEquality()
+                    .equals(other.containerIdentifier, containerIdentifier)) &&
             (identical(other.expiry, expiry) ||
                 const DeepCollectionEquality().equals(other.expiry, expiry)) &&
             (identical(other.identifier, identifier) ||
@@ -1310,9 +1389,9 @@ class _$_SubstanceSearch extends _SubstanceSearch {
                     .equals(other.quantity, quantity)) &&
             (identical(other.status, status) ||
                 const DeepCollectionEquality().equals(other.status, status)) &&
-            (identical(other.substance_reference, substance_reference) ||
+            (identical(other.substanceReference, substanceReference) ||
                 const DeepCollectionEquality()
-                    .equals(other.substance_reference, substance_reference)));
+                    .equals(other.substanceReference, substanceReference)));
   }
 
   @override
@@ -1328,16 +1407,21 @@ class _$_SubstanceSearch extends _SubstanceSearch {
       const DeepCollectionEquality().hash(searchList) ^
       const DeepCollectionEquality().hash(category) ^
       const DeepCollectionEquality().hash(code) ^
-      const DeepCollectionEquality().hash(container_identifier) ^
+      const DeepCollectionEquality().hash(containerIdentifier) ^
       const DeepCollectionEquality().hash(expiry) ^
       const DeepCollectionEquality().hash(identifier) ^
       const DeepCollectionEquality().hash(quantity) ^
       const DeepCollectionEquality().hash(status) ^
-      const DeepCollectionEquality().hash(substance_reference);
+      const DeepCollectionEquality().hash(substanceReference);
 
   @override
   _$SubstanceSearchCopyWith<_SubstanceSearch> get copyWith =>
       __$SubstanceSearchCopyWithImpl<_SubstanceSearch>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_SubstanceSearchToJson(this);
+  }
 }
 
 abstract class _SubstanceSearch extends SubstanceSearch {
@@ -1353,12 +1437,17 @@ abstract class _SubstanceSearch extends SubstanceSearch {
       List<Id> searchList,
       List<SearchToken> category,
       List<SearchToken> code,
-      List<SearchToken> container_identifier,
+      @JsonKey(name: 'container-identifier')
+          List<SearchToken> containerIdentifier,
       List<SearchDate> expiry,
       List<SearchToken> identifier,
       List<SearchQuantity> quantity,
       List<SearchToken> status,
-      List<SearchReference> substance_reference}) = _$_SubstanceSearch;
+      @JsonKey(name: 'substance-reference')
+          List<SearchReference> substanceReference}) = _$_SubstanceSearch;
+
+  factory _SubstanceSearch.fromJson(Map<String, dynamic> json) =
+      _$_SubstanceSearch.fromJson;
 
   @override
   List<Id> get searchId;
@@ -1382,7 +1471,8 @@ abstract class _SubstanceSearch extends SubstanceSearch {
   @override
   List<SearchToken> get code;
   @override
-  List<SearchToken> get container_identifier;
+  @JsonKey(name: 'container-identifier')
+  List<SearchToken> get containerIdentifier;
   @override
   List<SearchDate> get expiry;
   @override
@@ -1392,7 +1482,8 @@ abstract class _SubstanceSearch extends SubstanceSearch {
   @override
   List<SearchToken> get status;
   @override
-  List<SearchReference> get substance_reference;
+  @JsonKey(name: 'substance-reference')
+  List<SearchReference> get substanceReference;
   @override
   _$SubstanceSearchCopyWith<_SubstanceSearch> get copyWith;
 }

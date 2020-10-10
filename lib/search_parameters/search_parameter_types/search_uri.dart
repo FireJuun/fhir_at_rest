@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+
 import 'package:fhir/primitive_types/primitive_types.dart';
 import 'package:fhir_at_rest/enums/enums.dart';
 
@@ -19,6 +20,12 @@ class SearchUri extends SearchObject<String> {
   }
 
   const SearchUri._({this.uri, this.missing, this.modifier});
+
+  factory SearchUri.fromJson(Map<String, dynamic> json) => SearchUri(
+      uri: json['uri'], missing: json['missing'], modifier: json['modifier']);
+
+  Map<String, dynamic> toJson() => searchString()
+      .fold((l) => {'failure': l.errorMessage()}, (r) => {'value': r});
 
   Either<RestfulFailure, String> searchString() => missing != null
       ? right(':missing=$missing')

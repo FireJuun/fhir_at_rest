@@ -8,6 +8,9 @@ part of 'public_health_and_research.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
+ResearchStudySearch _$ResearchStudySearchFromJson(Map<String, dynamic> json) {
+  return _ResearchStudySearch.fromJson(json);
+}
 
 /// @nodoc
 class _$ResearchStudySearchTearOff {
@@ -60,6 +63,11 @@ class _$ResearchStudySearchTearOff {
       title: title,
     );
   }
+
+// ignore: unused_element
+  ResearchStudySearch fromJson(Map<String, Object> json) {
+    return ResearchStudySearch.fromJson(json);
+  }
 }
 
 /// @nodoc
@@ -91,6 +99,7 @@ mixin _$ResearchStudySearch {
   List<SearchToken> get status;
   List<SearchString> get title;
 
+  Map<String, dynamic> toJson();
   $ResearchStudySearchCopyWith<ResearchStudySearch> get copyWith;
 }
 
@@ -324,6 +333,8 @@ class __$ResearchStudySearchCopyWithImpl<$Res>
   }
 }
 
+@JsonSerializable()
+
 /// @nodoc
 class _$_ResearchStudySearch extends _ResearchStudySearch {
   _$_ResearchStudySearch(
@@ -349,6 +360,9 @@ class _$_ResearchStudySearch extends _ResearchStudySearch {
       this.status,
       this.title})
       : super._();
+
+  factory _$_ResearchStudySearch.fromJson(Map<String, dynamic> json) =>
+      _$_$_ResearchStudySearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -491,6 +505,11 @@ class _$_ResearchStudySearch extends _ResearchStudySearch {
   _$ResearchStudySearchCopyWith<_ResearchStudySearch> get copyWith =>
       __$ResearchStudySearchCopyWithImpl<_ResearchStudySearch>(
           this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_ResearchStudySearchToJson(this);
+  }
 }
 
 abstract class _ResearchStudySearch extends ResearchStudySearch {
@@ -517,6 +536,9 @@ abstract class _ResearchStudySearch extends ResearchStudySearch {
       List<SearchReference> sponsor,
       List<SearchToken> status,
       List<SearchString> title}) = _$_ResearchStudySearch;
+
+  factory _ResearchStudySearch.fromJson(Map<String, dynamic> json) =
+      _$_ResearchStudySearch.fromJson;
 
   @override
   List<Id> get searchId;
@@ -565,6 +587,11 @@ abstract class _ResearchStudySearch extends ResearchStudySearch {
   _$ResearchStudySearchCopyWith<_ResearchStudySearch> get copyWith;
 }
 
+ResearchSubjectSearch _$ResearchSubjectSearchFromJson(
+    Map<String, dynamic> json) {
+  return _ResearchSubjectSearch.fromJson(json);
+}
+
 /// @nodoc
 class _$ResearchSubjectSearchTearOff {
   const _$ResearchSubjectSearchTearOff();
@@ -602,6 +629,11 @@ class _$ResearchSubjectSearchTearOff {
       study: study,
     );
   }
+
+// ignore: unused_element
+  ResearchSubjectSearch fromJson(Map<String, Object> json) {
+    return ResearchSubjectSearch.fromJson(json);
+  }
 }
 
 /// @nodoc
@@ -626,6 +658,7 @@ mixin _$ResearchSubjectSearch {
   List<SearchToken> get status;
   List<SearchReference> get study;
 
+  Map<String, dynamic> toJson();
   $ResearchSubjectSearchCopyWith<ResearchSubjectSearch> get copyWith;
 }
 
@@ -805,6 +838,8 @@ class __$ResearchSubjectSearchCopyWithImpl<$Res>
   }
 }
 
+@JsonSerializable()
+
 /// @nodoc
 class _$_ResearchSubjectSearch extends _ResearchSubjectSearch {
   _$_ResearchSubjectSearch(
@@ -823,6 +858,9 @@ class _$_ResearchSubjectSearch extends _ResearchSubjectSearch {
       this.status,
       this.study})
       : super._();
+
+  factory _$_ResearchSubjectSearch.fromJson(Map<String, dynamic> json) =>
+      _$_$_ResearchSubjectSearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -926,6 +964,11 @@ class _$_ResearchSubjectSearch extends _ResearchSubjectSearch {
   _$ResearchSubjectSearchCopyWith<_ResearchSubjectSearch> get copyWith =>
       __$ResearchSubjectSearchCopyWithImpl<_ResearchSubjectSearch>(
           this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_ResearchSubjectSearchToJson(this);
+  }
 }
 
 abstract class _ResearchSubjectSearch extends ResearchSubjectSearch {
@@ -945,6 +988,9 @@ abstract class _ResearchSubjectSearch extends ResearchSubjectSearch {
       List<SearchReference> patient,
       List<SearchToken> status,
       List<SearchReference> study}) = _$_ResearchSubjectSearch;
+
+  factory _ResearchSubjectSearch.fromJson(Map<String, dynamic> json) =
+      _$_ResearchSubjectSearch.fromJson;
 
   @override
   List<Id> get searchId;

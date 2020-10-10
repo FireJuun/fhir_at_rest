@@ -56,10 +56,10 @@ abstract class UpdateRequest with _$UpdateRequest {
       return left(RestfulFailure.idDoesNotMatchResource(failedValue: resource));
     }
     var thisRequest = this.map(
-      dstu2: (req) => '${base}/${enumToString(req.type)}/${req.id.toString()}',
-      stu3: (req) => '${base}/${enumToString(req.type)}/${req.id.toString()}',
-      r4: (req) => '${base}/${enumToString(req.type)}/${req.id.toString()}',
-      r5: (req) => '${base}/${enumToString(req.type)}/${req.id.toString()}',
+      dstu2: (req) => '$base/${enumToString(req.type)}/${req.id.toString()}',
+      stu3: (req) => '$base/${enumToString(req.type)}/${req.id.toString()}',
+      r4: (req) => '$base/${enumToString(req.type)}/${req.id.toString()}',
+      r5: (req) => '$base/${enumToString(req.type)}/${req.id.toString()}',
     );
 
     thisRequest += '?_format=application/fhir+json'

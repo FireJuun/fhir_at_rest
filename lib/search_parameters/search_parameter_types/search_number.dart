@@ -1,5 +1,4 @@
 import 'package:dartz/dartz.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../../failures/restful_failure.dart';
 import 'search_objects.dart';
@@ -9,9 +8,7 @@ class SearchNumber extends SearchObject<String> {
   final bool missing;
   final NumberPrefix prefix;
 
-  factory SearchNumber(
-      {@required dynamic number, bool missing, NumberPrefix prefix}) {
-    assert(number != null);
+  factory SearchNumber({dynamic number, bool missing, NumberPrefix prefix}) {
     return SearchNumber._(
       number: validateSearchNumber(number),
       missing: missing,
@@ -19,7 +16,13 @@ class SearchNumber extends SearchObject<String> {
     );
   }
 
-  const SearchNumber._({@required this.number, this.missing, this.prefix});
+  const SearchNumber._({this.number, this.missing, this.prefix});
+
+  factory SearchNumber.fromJson(Map<String, dynamic> json) => SearchNumber(
+      number: json['date'], missing: json['missing'], prefix: json['prefix']);
+
+  Map<String, dynamic> toJson() => searchString()
+      .fold((l) => {'failure': l.errorMessage()}, (r) => {'value': r});
 
   Either<RestfulFailure, String> searchString() => missing != null
       ? right(':missing=$missing')

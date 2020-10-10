@@ -8,6 +8,10 @@ part of 'diagnostics.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
+DiagnosticReportSearch _$DiagnosticReportSearchFromJson(
+    Map<String, dynamic> json) {
+  return _DiagnosticReportSearch.fromJson(json);
+}
 
 /// @nodoc
 class _$DiagnosticReportSearchTearOff {
@@ -28,14 +32,16 @@ class _$DiagnosticReportSearchTearOff {
       List<SearchToken> identifier,
       List<SearchReference> patient,
       List<SearchReference> encounter,
-      List<SearchReference> based_on,
+      @JsonKey(name: 'based-on')
+          List<SearchReference> basedOn,
       List<SearchToken> category,
       List<SearchToken> conclusion,
       List<SearchDate> issued,
       List<SearchReference> media,
       List<SearchReference> performer,
       List<SearchReference> result,
-      List<SearchReference> results_interpreter,
+      @JsonKey(name: 'results-interpreter')
+          List<SearchReference> resultsInterpreter,
       List<SearchReference> specimen,
       List<SearchToken> status,
       List<SearchReference> subject}) {
@@ -53,18 +59,23 @@ class _$DiagnosticReportSearchTearOff {
       identifier: identifier,
       patient: patient,
       encounter: encounter,
-      based_on: based_on,
+      basedOn: basedOn,
       category: category,
       conclusion: conclusion,
       issued: issued,
       media: media,
       performer: performer,
       result: result,
-      results_interpreter: results_interpreter,
+      resultsInterpreter: resultsInterpreter,
       specimen: specimen,
       status: status,
       subject: subject,
     );
+  }
+
+// ignore: unused_element
+  DiagnosticReportSearch fromJson(Map<String, Object> json) {
+    return DiagnosticReportSearch.fromJson(json);
   }
 }
 
@@ -88,18 +99,21 @@ mixin _$DiagnosticReportSearch {
   List<SearchToken> get identifier;
   List<SearchReference> get patient;
   List<SearchReference> get encounter;
-  List<SearchReference> get based_on;
+  @JsonKey(name: 'based-on')
+  List<SearchReference> get basedOn;
   List<SearchToken> get category;
   List<SearchToken> get conclusion;
   List<SearchDate> get issued;
   List<SearchReference> get media;
   List<SearchReference> get performer;
   List<SearchReference> get result;
-  List<SearchReference> get results_interpreter;
+  @JsonKey(name: 'results-interpreter')
+  List<SearchReference> get resultsInterpreter;
   List<SearchReference> get specimen;
   List<SearchToken> get status;
   List<SearchReference> get subject;
 
+  Map<String, dynamic> toJson();
   $DiagnosticReportSearchCopyWith<DiagnosticReportSearch> get copyWith;
 }
 
@@ -122,14 +136,16 @@ abstract class $DiagnosticReportSearchCopyWith<$Res> {
       List<SearchToken> identifier,
       List<SearchReference> patient,
       List<SearchReference> encounter,
-      List<SearchReference> based_on,
+      @JsonKey(name: 'based-on')
+          List<SearchReference> basedOn,
       List<SearchToken> category,
       List<SearchToken> conclusion,
       List<SearchDate> issued,
       List<SearchReference> media,
       List<SearchReference> performer,
       List<SearchReference> result,
-      List<SearchReference> results_interpreter,
+      @JsonKey(name: 'results-interpreter')
+          List<SearchReference> resultsInterpreter,
       List<SearchReference> specimen,
       List<SearchToken> status,
       List<SearchReference> subject});
@@ -159,14 +175,14 @@ class _$DiagnosticReportSearchCopyWithImpl<$Res>
     Object identifier = freezed,
     Object patient = freezed,
     Object encounter = freezed,
-    Object based_on = freezed,
+    Object basedOn = freezed,
     Object category = freezed,
     Object conclusion = freezed,
     Object issued = freezed,
     Object media = freezed,
     Object performer = freezed,
     Object result = freezed,
-    Object results_interpreter = freezed,
+    Object resultsInterpreter = freezed,
     Object specimen = freezed,
     Object status = freezed,
     Object subject = freezed,
@@ -204,9 +220,9 @@ class _$DiagnosticReportSearchCopyWithImpl<$Res>
       encounter: encounter == freezed
           ? _value.encounter
           : encounter as List<SearchReference>,
-      based_on: based_on == freezed
-          ? _value.based_on
-          : based_on as List<SearchReference>,
+      basedOn: basedOn == freezed
+          ? _value.basedOn
+          : basedOn as List<SearchReference>,
       category:
           category == freezed ? _value.category : category as List<SearchToken>,
       conclusion: conclusion == freezed
@@ -219,9 +235,9 @@ class _$DiagnosticReportSearchCopyWithImpl<$Res>
           : performer as List<SearchReference>,
       result:
           result == freezed ? _value.result : result as List<SearchReference>,
-      results_interpreter: results_interpreter == freezed
-          ? _value.results_interpreter
-          : results_interpreter as List<SearchReference>,
+      resultsInterpreter: resultsInterpreter == freezed
+          ? _value.resultsInterpreter
+          : resultsInterpreter as List<SearchReference>,
       specimen: specimen == freezed
           ? _value.specimen
           : specimen as List<SearchReference>,
@@ -254,14 +270,16 @@ abstract class _$DiagnosticReportSearchCopyWith<$Res>
       List<SearchToken> identifier,
       List<SearchReference> patient,
       List<SearchReference> encounter,
-      List<SearchReference> based_on,
+      @JsonKey(name: 'based-on')
+          List<SearchReference> basedOn,
       List<SearchToken> category,
       List<SearchToken> conclusion,
       List<SearchDate> issued,
       List<SearchReference> media,
       List<SearchReference> performer,
       List<SearchReference> result,
-      List<SearchReference> results_interpreter,
+      @JsonKey(name: 'results-interpreter')
+          List<SearchReference> resultsInterpreter,
       List<SearchReference> specimen,
       List<SearchToken> status,
       List<SearchReference> subject});
@@ -293,14 +311,14 @@ class __$DiagnosticReportSearchCopyWithImpl<$Res>
     Object identifier = freezed,
     Object patient = freezed,
     Object encounter = freezed,
-    Object based_on = freezed,
+    Object basedOn = freezed,
     Object category = freezed,
     Object conclusion = freezed,
     Object issued = freezed,
     Object media = freezed,
     Object performer = freezed,
     Object result = freezed,
-    Object results_interpreter = freezed,
+    Object resultsInterpreter = freezed,
     Object specimen = freezed,
     Object status = freezed,
     Object subject = freezed,
@@ -338,9 +356,9 @@ class __$DiagnosticReportSearchCopyWithImpl<$Res>
       encounter: encounter == freezed
           ? _value.encounter
           : encounter as List<SearchReference>,
-      based_on: based_on == freezed
-          ? _value.based_on
-          : based_on as List<SearchReference>,
+      basedOn: basedOn == freezed
+          ? _value.basedOn
+          : basedOn as List<SearchReference>,
       category:
           category == freezed ? _value.category : category as List<SearchToken>,
       conclusion: conclusion == freezed
@@ -353,9 +371,9 @@ class __$DiagnosticReportSearchCopyWithImpl<$Res>
           : performer as List<SearchReference>,
       result:
           result == freezed ? _value.result : result as List<SearchReference>,
-      results_interpreter: results_interpreter == freezed
-          ? _value.results_interpreter
-          : results_interpreter as List<SearchReference>,
+      resultsInterpreter: resultsInterpreter == freezed
+          ? _value.resultsInterpreter
+          : resultsInterpreter as List<SearchReference>,
       specimen: specimen == freezed
           ? _value.specimen
           : specimen as List<SearchReference>,
@@ -366,6 +384,8 @@ class __$DiagnosticReportSearchCopyWithImpl<$Res>
     ));
   }
 }
+
+@JsonSerializable()
 
 /// @nodoc
 class _$_DiagnosticReportSearch extends _DiagnosticReportSearch {
@@ -383,18 +403,21 @@ class _$_DiagnosticReportSearch extends _DiagnosticReportSearch {
       this.identifier,
       this.patient,
       this.encounter,
-      this.based_on,
+      @JsonKey(name: 'based-on') this.basedOn,
       this.category,
       this.conclusion,
       this.issued,
       this.media,
       this.performer,
       this.result,
-      this.results_interpreter,
+      @JsonKey(name: 'results-interpreter') this.resultsInterpreter,
       this.specimen,
       this.status,
       this.subject})
       : super._();
+
+  factory _$_DiagnosticReportSearch.fromJson(Map<String, dynamic> json) =>
+      _$_$_DiagnosticReportSearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -424,7 +447,8 @@ class _$_DiagnosticReportSearch extends _DiagnosticReportSearch {
   @override
   final List<SearchReference> encounter;
   @override
-  final List<SearchReference> based_on;
+  @JsonKey(name: 'based-on')
+  final List<SearchReference> basedOn;
   @override
   final List<SearchToken> category;
   @override
@@ -438,7 +462,8 @@ class _$_DiagnosticReportSearch extends _DiagnosticReportSearch {
   @override
   final List<SearchReference> result;
   @override
-  final List<SearchReference> results_interpreter;
+  @JsonKey(name: 'results-interpreter')
+  final List<SearchReference> resultsInterpreter;
   @override
   final List<SearchReference> specimen;
   @override
@@ -448,7 +473,7 @@ class _$_DiagnosticReportSearch extends _DiagnosticReportSearch {
 
   @override
   String toString() {
-    return 'DiagnosticReportSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, code: $code, date: $date, identifier: $identifier, patient: $patient, encounter: $encounter, based_on: $based_on, category: $category, conclusion: $conclusion, issued: $issued, media: $media, performer: $performer, result: $result, results_interpreter: $results_interpreter, specimen: $specimen, status: $status, subject: $subject)';
+    return 'DiagnosticReportSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, code: $code, date: $date, identifier: $identifier, patient: $patient, encounter: $encounter, basedOn: $basedOn, category: $category, conclusion: $conclusion, issued: $issued, media: $media, performer: $performer, result: $result, resultsInterpreter: $resultsInterpreter, specimen: $specimen, status: $status, subject: $subject)';
   }
 
   @override
@@ -492,9 +517,9 @@ class _$_DiagnosticReportSearch extends _DiagnosticReportSearch {
             (identical(other.encounter, encounter) ||
                 const DeepCollectionEquality()
                     .equals(other.encounter, encounter)) &&
-            (identical(other.based_on, based_on) ||
+            (identical(other.basedOn, basedOn) ||
                 const DeepCollectionEquality()
-                    .equals(other.based_on, based_on)) &&
+                    .equals(other.basedOn, basedOn)) &&
             (identical(other.category, category) ||
                 const DeepCollectionEquality()
                     .equals(other.category, category)) &&
@@ -510,9 +535,9 @@ class _$_DiagnosticReportSearch extends _DiagnosticReportSearch {
                     .equals(other.performer, performer)) &&
             (identical(other.result, result) ||
                 const DeepCollectionEquality().equals(other.result, result)) &&
-            (identical(other.results_interpreter, results_interpreter) ||
+            (identical(other.resultsInterpreter, resultsInterpreter) ||
                 const DeepCollectionEquality()
-                    .equals(other.results_interpreter, results_interpreter)) &&
+                    .equals(other.resultsInterpreter, resultsInterpreter)) &&
             (identical(other.specimen, specimen) ||
                 const DeepCollectionEquality()
                     .equals(other.specimen, specimen)) &&
@@ -538,14 +563,14 @@ class _$_DiagnosticReportSearch extends _DiagnosticReportSearch {
       const DeepCollectionEquality().hash(identifier) ^
       const DeepCollectionEquality().hash(patient) ^
       const DeepCollectionEquality().hash(encounter) ^
-      const DeepCollectionEquality().hash(based_on) ^
+      const DeepCollectionEquality().hash(basedOn) ^
       const DeepCollectionEquality().hash(category) ^
       const DeepCollectionEquality().hash(conclusion) ^
       const DeepCollectionEquality().hash(issued) ^
       const DeepCollectionEquality().hash(media) ^
       const DeepCollectionEquality().hash(performer) ^
       const DeepCollectionEquality().hash(result) ^
-      const DeepCollectionEquality().hash(results_interpreter) ^
+      const DeepCollectionEquality().hash(resultsInterpreter) ^
       const DeepCollectionEquality().hash(specimen) ^
       const DeepCollectionEquality().hash(status) ^
       const DeepCollectionEquality().hash(subject);
@@ -554,6 +579,11 @@ class _$_DiagnosticReportSearch extends _DiagnosticReportSearch {
   _$DiagnosticReportSearchCopyWith<_DiagnosticReportSearch> get copyWith =>
       __$DiagnosticReportSearchCopyWithImpl<_DiagnosticReportSearch>(
           this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_DiagnosticReportSearchToJson(this);
+  }
 }
 
 abstract class _DiagnosticReportSearch extends DiagnosticReportSearch {
@@ -572,17 +602,22 @@ abstract class _DiagnosticReportSearch extends DiagnosticReportSearch {
       List<SearchToken> identifier,
       List<SearchReference> patient,
       List<SearchReference> encounter,
-      List<SearchReference> based_on,
+      @JsonKey(name: 'based-on')
+          List<SearchReference> basedOn,
       List<SearchToken> category,
       List<SearchToken> conclusion,
       List<SearchDate> issued,
       List<SearchReference> media,
       List<SearchReference> performer,
       List<SearchReference> result,
-      List<SearchReference> results_interpreter,
+      @JsonKey(name: 'results-interpreter')
+          List<SearchReference> resultsInterpreter,
       List<SearchReference> specimen,
       List<SearchToken> status,
       List<SearchReference> subject}) = _$_DiagnosticReportSearch;
+
+  factory _DiagnosticReportSearch.fromJson(Map<String, dynamic> json) =
+      _$_DiagnosticReportSearch.fromJson;
 
   @override
   List<Id> get searchId;
@@ -612,7 +647,8 @@ abstract class _DiagnosticReportSearch extends DiagnosticReportSearch {
   @override
   List<SearchReference> get encounter;
   @override
-  List<SearchReference> get based_on;
+  @JsonKey(name: 'based-on')
+  List<SearchReference> get basedOn;
   @override
   List<SearchToken> get category;
   @override
@@ -626,7 +662,8 @@ abstract class _DiagnosticReportSearch extends DiagnosticReportSearch {
   @override
   List<SearchReference> get result;
   @override
-  List<SearchReference> get results_interpreter;
+  @JsonKey(name: 'results-interpreter')
+  List<SearchReference> get resultsInterpreter;
   @override
   List<SearchReference> get specimen;
   @override
@@ -635,6 +672,10 @@ abstract class _DiagnosticReportSearch extends DiagnosticReportSearch {
   List<SearchReference> get subject;
   @override
   _$DiagnosticReportSearchCopyWith<_DiagnosticReportSearch> get copyWith;
+}
+
+ObservationSearch _$ObservationSearchFromJson(Map<String, dynamic> json) {
+  return _ObservationSearch.fromJson(json);
 }
 
 /// @nodoc
@@ -656,39 +697,64 @@ class _$ObservationSearchTearOff {
       List<SearchToken> identifier,
       List<SearchReference> patient,
       List<SearchReference> encounter,
-      List<SearchReference> based_on,
+      @JsonKey(name: 'based-on')
+          List<SearchReference> basedOn,
       List<SearchToken> category,
-      List<SearchToken> combo_code,
-      List<SearchToken> combo_data_absent_reason,
-      List<SearchToken> combo_value_concept,
-      List<SearchQuantity> combo_value_quantity,
-      List<SearchToken> component_code,
-      List<SearchToken> component_data_absent_reason,
-      List<SearchToken> component_value_concept,
-      List<SearchQuantity> component_value_quantity,
-      List<SearchToken> data_absent_reason,
-      List<SearchReference> derived_from,
+      @JsonKey(name: 'combo-code')
+          List<SearchToken> comboCode,
+      @JsonKey(name: 'combo-data-absent-reason')
+          List<SearchToken> comboDataabsentreason,
+      @JsonKey(name: 'combo-value-concept')
+          List<SearchToken> comboValueconcept,
+      @JsonKey(name: 'combo-value-quantity')
+          List<SearchQuantity> comboValuequantity,
+      @JsonKey(name: 'component-code')
+          List<SearchToken> componentCode,
+      @JsonKey(name: 'component-data-absent-reason')
+          List<SearchToken> componentDataabsentreason,
+      @JsonKey(name: 'component-value-concept')
+          List<SearchToken> componentValueconcept,
+      @JsonKey(name: 'component-value-quantity')
+          List<SearchQuantity> componentValuequantity,
+      @JsonKey(name: 'data-absent-reason')
+          List<SearchToken> dataAbsentreason,
+      @JsonKey(name: 'derived-from')
+          List<SearchReference> derivedFrom,
       List<SearchReference> device,
       List<SearchReference> focus,
-      List<SearchReference> has_member,
+      @JsonKey(name: 'has-member')
+          List<SearchReference> hasMember,
       List<SearchToken> method,
-      List<SearchReference> part_of,
+      @JsonKey(name: 'part-of')
+          List<SearchReference> partOf,
       List<SearchReference> performer,
       List<SearchReference> specimen,
       List<SearchToken> status,
       List<SearchReference> subject,
-      List<SearchToken> value_concept,
-      List<SearchDate> value_date,
-      List<SearchQuantity> value_quantity,
-      List<SearchString> value_string,
-      List<SearchComposite> code_value_concept,
-      List<SearchComposite> code_value_date,
-      List<SearchComposite> code_value_quantity,
-      List<SearchComposite> code_value_string,
-      List<SearchComposite> combo_code_value_concept,
-      List<SearchComposite> combo_code_value_quantity,
-      List<SearchComposite> component_code_value_concept,
-      List<SearchComposite> component_code_value_quantity}) {
+      @JsonKey(name: 'value-concept')
+          List<SearchToken> valueConcept,
+      @JsonKey(name: 'value-date')
+          List<SearchDate> valueDate,
+      @JsonKey(name: 'value-quantity')
+          List<SearchQuantity> valueQuantity,
+      @JsonKey(name: 'value-string')
+          List<SearchString> valueString,
+      @JsonKey(name: 'code-value-concept')
+          List<SearchComposite> codeValueconcept,
+      @JsonKey(name: 'code-value-date')
+          List<SearchComposite> codeValuedate,
+      @JsonKey(name: 'code-value-quantity')
+          List<SearchComposite> codeValuequantity,
+      @JsonKey(name: 'code-value-string')
+          List<SearchComposite> codeValuestring,
+      @JsonKey(name: 'combo-code-value-concept')
+          List<SearchComposite> comboCodevalueconcept,
+      @JsonKey(name: 'combo-code-value-quantity')
+          List<SearchComposite> comboCodevaluequantity,
+      @JsonKey(name: 'component-code-value-concept')
+          List<SearchComposite> componentCodevalueconcept,
+      @JsonKey(name: 'component-code-value-quantity')
+          List<SearchComposite> componentCodevaluequantity}) {
     return _ObservationSearch(
       searchId: searchId,
       searchLastUpdated: searchLastUpdated,
@@ -703,40 +769,45 @@ class _$ObservationSearchTearOff {
       identifier: identifier,
       patient: patient,
       encounter: encounter,
-      based_on: based_on,
+      basedOn: basedOn,
       category: category,
-      combo_code: combo_code,
-      combo_data_absent_reason: combo_data_absent_reason,
-      combo_value_concept: combo_value_concept,
-      combo_value_quantity: combo_value_quantity,
-      component_code: component_code,
-      component_data_absent_reason: component_data_absent_reason,
-      component_value_concept: component_value_concept,
-      component_value_quantity: component_value_quantity,
-      data_absent_reason: data_absent_reason,
-      derived_from: derived_from,
+      comboCode: comboCode,
+      comboDataabsentreason: comboDataabsentreason,
+      comboValueconcept: comboValueconcept,
+      comboValuequantity: comboValuequantity,
+      componentCode: componentCode,
+      componentDataabsentreason: componentDataabsentreason,
+      componentValueconcept: componentValueconcept,
+      componentValuequantity: componentValuequantity,
+      dataAbsentreason: dataAbsentreason,
+      derivedFrom: derivedFrom,
       device: device,
       focus: focus,
-      has_member: has_member,
+      hasMember: hasMember,
       method: method,
-      part_of: part_of,
+      partOf: partOf,
       performer: performer,
       specimen: specimen,
       status: status,
       subject: subject,
-      value_concept: value_concept,
-      value_date: value_date,
-      value_quantity: value_quantity,
-      value_string: value_string,
-      code_value_concept: code_value_concept,
-      code_value_date: code_value_date,
-      code_value_quantity: code_value_quantity,
-      code_value_string: code_value_string,
-      combo_code_value_concept: combo_code_value_concept,
-      combo_code_value_quantity: combo_code_value_quantity,
-      component_code_value_concept: component_code_value_concept,
-      component_code_value_quantity: component_code_value_quantity,
+      valueConcept: valueConcept,
+      valueDate: valueDate,
+      valueQuantity: valueQuantity,
+      valueString: valueString,
+      codeValueconcept: codeValueconcept,
+      codeValuedate: codeValuedate,
+      codeValuequantity: codeValuequantity,
+      codeValuestring: codeValuestring,
+      comboCodevalueconcept: comboCodevalueconcept,
+      comboCodevaluequantity: comboCodevaluequantity,
+      componentCodevalueconcept: componentCodevalueconcept,
+      componentCodevaluequantity: componentCodevaluequantity,
     );
+  }
+
+// ignore: unused_element
+  ObservationSearch fromJson(Map<String, Object> json) {
+    return ObservationSearch.fromJson(json);
   }
 }
 
@@ -760,40 +831,66 @@ mixin _$ObservationSearch {
   List<SearchToken> get identifier;
   List<SearchReference> get patient;
   List<SearchReference> get encounter;
-  List<SearchReference> get based_on;
+  @JsonKey(name: 'based-on')
+  List<SearchReference> get basedOn;
   List<SearchToken> get category;
-  List<SearchToken> get combo_code;
-  List<SearchToken> get combo_data_absent_reason;
-  List<SearchToken> get combo_value_concept;
-  List<SearchQuantity> get combo_value_quantity;
-  List<SearchToken> get component_code;
-  List<SearchToken> get component_data_absent_reason;
-  List<SearchToken> get component_value_concept;
-  List<SearchQuantity> get component_value_quantity;
-  List<SearchToken> get data_absent_reason;
-  List<SearchReference> get derived_from;
+  @JsonKey(name: 'combo-code')
+  List<SearchToken> get comboCode;
+  @JsonKey(name: 'combo-data-absent-reason')
+  List<SearchToken> get comboDataabsentreason;
+  @JsonKey(name: 'combo-value-concept')
+  List<SearchToken> get comboValueconcept;
+  @JsonKey(name: 'combo-value-quantity')
+  List<SearchQuantity> get comboValuequantity;
+  @JsonKey(name: 'component-code')
+  List<SearchToken> get componentCode;
+  @JsonKey(name: 'component-data-absent-reason')
+  List<SearchToken> get componentDataabsentreason;
+  @JsonKey(name: 'component-value-concept')
+  List<SearchToken> get componentValueconcept;
+  @JsonKey(name: 'component-value-quantity')
+  List<SearchQuantity> get componentValuequantity;
+  @JsonKey(name: 'data-absent-reason')
+  List<SearchToken> get dataAbsentreason;
+  @JsonKey(name: 'derived-from')
+  List<SearchReference> get derivedFrom;
   List<SearchReference> get device;
   List<SearchReference> get focus;
-  List<SearchReference> get has_member;
+  @JsonKey(name: 'has-member')
+  List<SearchReference> get hasMember;
   List<SearchToken> get method;
-  List<SearchReference> get part_of;
+  @JsonKey(name: 'part-of')
+  List<SearchReference> get partOf;
   List<SearchReference> get performer;
   List<SearchReference> get specimen;
   List<SearchToken> get status;
   List<SearchReference> get subject;
-  List<SearchToken> get value_concept;
-  List<SearchDate> get value_date;
-  List<SearchQuantity> get value_quantity;
-  List<SearchString> get value_string;
-  List<SearchComposite> get code_value_concept;
-  List<SearchComposite> get code_value_date;
-  List<SearchComposite> get code_value_quantity;
-  List<SearchComposite> get code_value_string;
-  List<SearchComposite> get combo_code_value_concept;
-  List<SearchComposite> get combo_code_value_quantity;
-  List<SearchComposite> get component_code_value_concept;
-  List<SearchComposite> get component_code_value_quantity;
+  @JsonKey(name: 'value-concept')
+  List<SearchToken> get valueConcept;
+  @JsonKey(name: 'value-date')
+  List<SearchDate> get valueDate;
+  @JsonKey(name: 'value-quantity')
+  List<SearchQuantity> get valueQuantity;
+  @JsonKey(name: 'value-string')
+  List<SearchString> get valueString;
+  @JsonKey(name: 'code-value-concept')
+  List<SearchComposite> get codeValueconcept;
+  @JsonKey(name: 'code-value-date')
+  List<SearchComposite> get codeValuedate;
+  @JsonKey(name: 'code-value-quantity')
+  List<SearchComposite> get codeValuequantity;
+  @JsonKey(name: 'code-value-string')
+  List<SearchComposite> get codeValuestring;
+  @JsonKey(name: 'combo-code-value-concept')
+  List<SearchComposite> get comboCodevalueconcept;
+  @JsonKey(name: 'combo-code-value-quantity')
+  List<SearchComposite> get comboCodevaluequantity;
+  @JsonKey(name: 'component-code-value-concept')
+  List<SearchComposite> get componentCodevalueconcept;
+  @JsonKey(name: 'component-code-value-quantity')
+  List<SearchComposite> get componentCodevaluequantity;
 
+  Map<String, dynamic> toJson();
   $ObservationSearchCopyWith<ObservationSearch> get copyWith;
 }
 
@@ -816,39 +913,64 @@ abstract class $ObservationSearchCopyWith<$Res> {
       List<SearchToken> identifier,
       List<SearchReference> patient,
       List<SearchReference> encounter,
-      List<SearchReference> based_on,
+      @JsonKey(name: 'based-on')
+          List<SearchReference> basedOn,
       List<SearchToken> category,
-      List<SearchToken> combo_code,
-      List<SearchToken> combo_data_absent_reason,
-      List<SearchToken> combo_value_concept,
-      List<SearchQuantity> combo_value_quantity,
-      List<SearchToken> component_code,
-      List<SearchToken> component_data_absent_reason,
-      List<SearchToken> component_value_concept,
-      List<SearchQuantity> component_value_quantity,
-      List<SearchToken> data_absent_reason,
-      List<SearchReference> derived_from,
+      @JsonKey(name: 'combo-code')
+          List<SearchToken> comboCode,
+      @JsonKey(name: 'combo-data-absent-reason')
+          List<SearchToken> comboDataabsentreason,
+      @JsonKey(name: 'combo-value-concept')
+          List<SearchToken> comboValueconcept,
+      @JsonKey(name: 'combo-value-quantity')
+          List<SearchQuantity> comboValuequantity,
+      @JsonKey(name: 'component-code')
+          List<SearchToken> componentCode,
+      @JsonKey(name: 'component-data-absent-reason')
+          List<SearchToken> componentDataabsentreason,
+      @JsonKey(name: 'component-value-concept')
+          List<SearchToken> componentValueconcept,
+      @JsonKey(name: 'component-value-quantity')
+          List<SearchQuantity> componentValuequantity,
+      @JsonKey(name: 'data-absent-reason')
+          List<SearchToken> dataAbsentreason,
+      @JsonKey(name: 'derived-from')
+          List<SearchReference> derivedFrom,
       List<SearchReference> device,
       List<SearchReference> focus,
-      List<SearchReference> has_member,
+      @JsonKey(name: 'has-member')
+          List<SearchReference> hasMember,
       List<SearchToken> method,
-      List<SearchReference> part_of,
+      @JsonKey(name: 'part-of')
+          List<SearchReference> partOf,
       List<SearchReference> performer,
       List<SearchReference> specimen,
       List<SearchToken> status,
       List<SearchReference> subject,
-      List<SearchToken> value_concept,
-      List<SearchDate> value_date,
-      List<SearchQuantity> value_quantity,
-      List<SearchString> value_string,
-      List<SearchComposite> code_value_concept,
-      List<SearchComposite> code_value_date,
-      List<SearchComposite> code_value_quantity,
-      List<SearchComposite> code_value_string,
-      List<SearchComposite> combo_code_value_concept,
-      List<SearchComposite> combo_code_value_quantity,
-      List<SearchComposite> component_code_value_concept,
-      List<SearchComposite> component_code_value_quantity});
+      @JsonKey(name: 'value-concept')
+          List<SearchToken> valueConcept,
+      @JsonKey(name: 'value-date')
+          List<SearchDate> valueDate,
+      @JsonKey(name: 'value-quantity')
+          List<SearchQuantity> valueQuantity,
+      @JsonKey(name: 'value-string')
+          List<SearchString> valueString,
+      @JsonKey(name: 'code-value-concept')
+          List<SearchComposite> codeValueconcept,
+      @JsonKey(name: 'code-value-date')
+          List<SearchComposite> codeValuedate,
+      @JsonKey(name: 'code-value-quantity')
+          List<SearchComposite> codeValuequantity,
+      @JsonKey(name: 'code-value-string')
+          List<SearchComposite> codeValuestring,
+      @JsonKey(name: 'combo-code-value-concept')
+          List<SearchComposite> comboCodevalueconcept,
+      @JsonKey(name: 'combo-code-value-quantity')
+          List<SearchComposite> comboCodevaluequantity,
+      @JsonKey(name: 'component-code-value-concept')
+          List<SearchComposite> componentCodevalueconcept,
+      @JsonKey(name: 'component-code-value-quantity')
+          List<SearchComposite> componentCodevaluequantity});
 }
 
 /// @nodoc
@@ -875,39 +997,39 @@ class _$ObservationSearchCopyWithImpl<$Res>
     Object identifier = freezed,
     Object patient = freezed,
     Object encounter = freezed,
-    Object based_on = freezed,
+    Object basedOn = freezed,
     Object category = freezed,
-    Object combo_code = freezed,
-    Object combo_data_absent_reason = freezed,
-    Object combo_value_concept = freezed,
-    Object combo_value_quantity = freezed,
-    Object component_code = freezed,
-    Object component_data_absent_reason = freezed,
-    Object component_value_concept = freezed,
-    Object component_value_quantity = freezed,
-    Object data_absent_reason = freezed,
-    Object derived_from = freezed,
+    Object comboCode = freezed,
+    Object comboDataabsentreason = freezed,
+    Object comboValueconcept = freezed,
+    Object comboValuequantity = freezed,
+    Object componentCode = freezed,
+    Object componentDataabsentreason = freezed,
+    Object componentValueconcept = freezed,
+    Object componentValuequantity = freezed,
+    Object dataAbsentreason = freezed,
+    Object derivedFrom = freezed,
     Object device = freezed,
     Object focus = freezed,
-    Object has_member = freezed,
+    Object hasMember = freezed,
     Object method = freezed,
-    Object part_of = freezed,
+    Object partOf = freezed,
     Object performer = freezed,
     Object specimen = freezed,
     Object status = freezed,
     Object subject = freezed,
-    Object value_concept = freezed,
-    Object value_date = freezed,
-    Object value_quantity = freezed,
-    Object value_string = freezed,
-    Object code_value_concept = freezed,
-    Object code_value_date = freezed,
-    Object code_value_quantity = freezed,
-    Object code_value_string = freezed,
-    Object combo_code_value_concept = freezed,
-    Object combo_code_value_quantity = freezed,
-    Object component_code_value_concept = freezed,
-    Object component_code_value_quantity = freezed,
+    Object valueConcept = freezed,
+    Object valueDate = freezed,
+    Object valueQuantity = freezed,
+    Object valueString = freezed,
+    Object codeValueconcept = freezed,
+    Object codeValuedate = freezed,
+    Object codeValuequantity = freezed,
+    Object codeValuestring = freezed,
+    Object comboCodevalueconcept = freezed,
+    Object comboCodevaluequantity = freezed,
+    Object componentCodevalueconcept = freezed,
+    Object componentCodevaluequantity = freezed,
   }) {
     return _then(_value.copyWith(
       searchId: searchId == freezed ? _value.searchId : searchId as List<Id>,
@@ -942,51 +1064,50 @@ class _$ObservationSearchCopyWithImpl<$Res>
       encounter: encounter == freezed
           ? _value.encounter
           : encounter as List<SearchReference>,
-      based_on: based_on == freezed
-          ? _value.based_on
-          : based_on as List<SearchReference>,
+      basedOn: basedOn == freezed
+          ? _value.basedOn
+          : basedOn as List<SearchReference>,
       category:
           category == freezed ? _value.category : category as List<SearchToken>,
-      combo_code: combo_code == freezed
-          ? _value.combo_code
-          : combo_code as List<SearchToken>,
-      combo_data_absent_reason: combo_data_absent_reason == freezed
-          ? _value.combo_data_absent_reason
-          : combo_data_absent_reason as List<SearchToken>,
-      combo_value_concept: combo_value_concept == freezed
-          ? _value.combo_value_concept
-          : combo_value_concept as List<SearchToken>,
-      combo_value_quantity: combo_value_quantity == freezed
-          ? _value.combo_value_quantity
-          : combo_value_quantity as List<SearchQuantity>,
-      component_code: component_code == freezed
-          ? _value.component_code
-          : component_code as List<SearchToken>,
-      component_data_absent_reason: component_data_absent_reason == freezed
-          ? _value.component_data_absent_reason
-          : component_data_absent_reason as List<SearchToken>,
-      component_value_concept: component_value_concept == freezed
-          ? _value.component_value_concept
-          : component_value_concept as List<SearchToken>,
-      component_value_quantity: component_value_quantity == freezed
-          ? _value.component_value_quantity
-          : component_value_quantity as List<SearchQuantity>,
-      data_absent_reason: data_absent_reason == freezed
-          ? _value.data_absent_reason
-          : data_absent_reason as List<SearchToken>,
-      derived_from: derived_from == freezed
-          ? _value.derived_from
-          : derived_from as List<SearchReference>,
+      comboCode: comboCode == freezed
+          ? _value.comboCode
+          : comboCode as List<SearchToken>,
+      comboDataabsentreason: comboDataabsentreason == freezed
+          ? _value.comboDataabsentreason
+          : comboDataabsentreason as List<SearchToken>,
+      comboValueconcept: comboValueconcept == freezed
+          ? _value.comboValueconcept
+          : comboValueconcept as List<SearchToken>,
+      comboValuequantity: comboValuequantity == freezed
+          ? _value.comboValuequantity
+          : comboValuequantity as List<SearchQuantity>,
+      componentCode: componentCode == freezed
+          ? _value.componentCode
+          : componentCode as List<SearchToken>,
+      componentDataabsentreason: componentDataabsentreason == freezed
+          ? _value.componentDataabsentreason
+          : componentDataabsentreason as List<SearchToken>,
+      componentValueconcept: componentValueconcept == freezed
+          ? _value.componentValueconcept
+          : componentValueconcept as List<SearchToken>,
+      componentValuequantity: componentValuequantity == freezed
+          ? _value.componentValuequantity
+          : componentValuequantity as List<SearchQuantity>,
+      dataAbsentreason: dataAbsentreason == freezed
+          ? _value.dataAbsentreason
+          : dataAbsentreason as List<SearchToken>,
+      derivedFrom: derivedFrom == freezed
+          ? _value.derivedFrom
+          : derivedFrom as List<SearchReference>,
       device:
           device == freezed ? _value.device : device as List<SearchReference>,
       focus: focus == freezed ? _value.focus : focus as List<SearchReference>,
-      has_member: has_member == freezed
-          ? _value.has_member
-          : has_member as List<SearchReference>,
+      hasMember: hasMember == freezed
+          ? _value.hasMember
+          : hasMember as List<SearchReference>,
       method: method == freezed ? _value.method : method as List<SearchToken>,
-      part_of: part_of == freezed
-          ? _value.part_of
-          : part_of as List<SearchReference>,
+      partOf:
+          partOf == freezed ? _value.partOf : partOf as List<SearchReference>,
       performer: performer == freezed
           ? _value.performer
           : performer as List<SearchReference>,
@@ -997,42 +1118,42 @@ class _$ObservationSearchCopyWithImpl<$Res>
       subject: subject == freezed
           ? _value.subject
           : subject as List<SearchReference>,
-      value_concept: value_concept == freezed
-          ? _value.value_concept
-          : value_concept as List<SearchToken>,
-      value_date: value_date == freezed
-          ? _value.value_date
-          : value_date as List<SearchDate>,
-      value_quantity: value_quantity == freezed
-          ? _value.value_quantity
-          : value_quantity as List<SearchQuantity>,
-      value_string: value_string == freezed
-          ? _value.value_string
-          : value_string as List<SearchString>,
-      code_value_concept: code_value_concept == freezed
-          ? _value.code_value_concept
-          : code_value_concept as List<SearchComposite>,
-      code_value_date: code_value_date == freezed
-          ? _value.code_value_date
-          : code_value_date as List<SearchComposite>,
-      code_value_quantity: code_value_quantity == freezed
-          ? _value.code_value_quantity
-          : code_value_quantity as List<SearchComposite>,
-      code_value_string: code_value_string == freezed
-          ? _value.code_value_string
-          : code_value_string as List<SearchComposite>,
-      combo_code_value_concept: combo_code_value_concept == freezed
-          ? _value.combo_code_value_concept
-          : combo_code_value_concept as List<SearchComposite>,
-      combo_code_value_quantity: combo_code_value_quantity == freezed
-          ? _value.combo_code_value_quantity
-          : combo_code_value_quantity as List<SearchComposite>,
-      component_code_value_concept: component_code_value_concept == freezed
-          ? _value.component_code_value_concept
-          : component_code_value_concept as List<SearchComposite>,
-      component_code_value_quantity: component_code_value_quantity == freezed
-          ? _value.component_code_value_quantity
-          : component_code_value_quantity as List<SearchComposite>,
+      valueConcept: valueConcept == freezed
+          ? _value.valueConcept
+          : valueConcept as List<SearchToken>,
+      valueDate: valueDate == freezed
+          ? _value.valueDate
+          : valueDate as List<SearchDate>,
+      valueQuantity: valueQuantity == freezed
+          ? _value.valueQuantity
+          : valueQuantity as List<SearchQuantity>,
+      valueString: valueString == freezed
+          ? _value.valueString
+          : valueString as List<SearchString>,
+      codeValueconcept: codeValueconcept == freezed
+          ? _value.codeValueconcept
+          : codeValueconcept as List<SearchComposite>,
+      codeValuedate: codeValuedate == freezed
+          ? _value.codeValuedate
+          : codeValuedate as List<SearchComposite>,
+      codeValuequantity: codeValuequantity == freezed
+          ? _value.codeValuequantity
+          : codeValuequantity as List<SearchComposite>,
+      codeValuestring: codeValuestring == freezed
+          ? _value.codeValuestring
+          : codeValuestring as List<SearchComposite>,
+      comboCodevalueconcept: comboCodevalueconcept == freezed
+          ? _value.comboCodevalueconcept
+          : comboCodevalueconcept as List<SearchComposite>,
+      comboCodevaluequantity: comboCodevaluequantity == freezed
+          ? _value.comboCodevaluequantity
+          : comboCodevaluequantity as List<SearchComposite>,
+      componentCodevalueconcept: componentCodevalueconcept == freezed
+          ? _value.componentCodevalueconcept
+          : componentCodevalueconcept as List<SearchComposite>,
+      componentCodevaluequantity: componentCodevaluequantity == freezed
+          ? _value.componentCodevaluequantity
+          : componentCodevaluequantity as List<SearchComposite>,
     ));
   }
 }
@@ -1058,39 +1179,64 @@ abstract class _$ObservationSearchCopyWith<$Res>
       List<SearchToken> identifier,
       List<SearchReference> patient,
       List<SearchReference> encounter,
-      List<SearchReference> based_on,
+      @JsonKey(name: 'based-on')
+          List<SearchReference> basedOn,
       List<SearchToken> category,
-      List<SearchToken> combo_code,
-      List<SearchToken> combo_data_absent_reason,
-      List<SearchToken> combo_value_concept,
-      List<SearchQuantity> combo_value_quantity,
-      List<SearchToken> component_code,
-      List<SearchToken> component_data_absent_reason,
-      List<SearchToken> component_value_concept,
-      List<SearchQuantity> component_value_quantity,
-      List<SearchToken> data_absent_reason,
-      List<SearchReference> derived_from,
+      @JsonKey(name: 'combo-code')
+          List<SearchToken> comboCode,
+      @JsonKey(name: 'combo-data-absent-reason')
+          List<SearchToken> comboDataabsentreason,
+      @JsonKey(name: 'combo-value-concept')
+          List<SearchToken> comboValueconcept,
+      @JsonKey(name: 'combo-value-quantity')
+          List<SearchQuantity> comboValuequantity,
+      @JsonKey(name: 'component-code')
+          List<SearchToken> componentCode,
+      @JsonKey(name: 'component-data-absent-reason')
+          List<SearchToken> componentDataabsentreason,
+      @JsonKey(name: 'component-value-concept')
+          List<SearchToken> componentValueconcept,
+      @JsonKey(name: 'component-value-quantity')
+          List<SearchQuantity> componentValuequantity,
+      @JsonKey(name: 'data-absent-reason')
+          List<SearchToken> dataAbsentreason,
+      @JsonKey(name: 'derived-from')
+          List<SearchReference> derivedFrom,
       List<SearchReference> device,
       List<SearchReference> focus,
-      List<SearchReference> has_member,
+      @JsonKey(name: 'has-member')
+          List<SearchReference> hasMember,
       List<SearchToken> method,
-      List<SearchReference> part_of,
+      @JsonKey(name: 'part-of')
+          List<SearchReference> partOf,
       List<SearchReference> performer,
       List<SearchReference> specimen,
       List<SearchToken> status,
       List<SearchReference> subject,
-      List<SearchToken> value_concept,
-      List<SearchDate> value_date,
-      List<SearchQuantity> value_quantity,
-      List<SearchString> value_string,
-      List<SearchComposite> code_value_concept,
-      List<SearchComposite> code_value_date,
-      List<SearchComposite> code_value_quantity,
-      List<SearchComposite> code_value_string,
-      List<SearchComposite> combo_code_value_concept,
-      List<SearchComposite> combo_code_value_quantity,
-      List<SearchComposite> component_code_value_concept,
-      List<SearchComposite> component_code_value_quantity});
+      @JsonKey(name: 'value-concept')
+          List<SearchToken> valueConcept,
+      @JsonKey(name: 'value-date')
+          List<SearchDate> valueDate,
+      @JsonKey(name: 'value-quantity')
+          List<SearchQuantity> valueQuantity,
+      @JsonKey(name: 'value-string')
+          List<SearchString> valueString,
+      @JsonKey(name: 'code-value-concept')
+          List<SearchComposite> codeValueconcept,
+      @JsonKey(name: 'code-value-date')
+          List<SearchComposite> codeValuedate,
+      @JsonKey(name: 'code-value-quantity')
+          List<SearchComposite> codeValuequantity,
+      @JsonKey(name: 'code-value-string')
+          List<SearchComposite> codeValuestring,
+      @JsonKey(name: 'combo-code-value-concept')
+          List<SearchComposite> comboCodevalueconcept,
+      @JsonKey(name: 'combo-code-value-quantity')
+          List<SearchComposite> comboCodevaluequantity,
+      @JsonKey(name: 'component-code-value-concept')
+          List<SearchComposite> componentCodevalueconcept,
+      @JsonKey(name: 'component-code-value-quantity')
+          List<SearchComposite> componentCodevaluequantity});
 }
 
 /// @nodoc
@@ -1119,39 +1265,39 @@ class __$ObservationSearchCopyWithImpl<$Res>
     Object identifier = freezed,
     Object patient = freezed,
     Object encounter = freezed,
-    Object based_on = freezed,
+    Object basedOn = freezed,
     Object category = freezed,
-    Object combo_code = freezed,
-    Object combo_data_absent_reason = freezed,
-    Object combo_value_concept = freezed,
-    Object combo_value_quantity = freezed,
-    Object component_code = freezed,
-    Object component_data_absent_reason = freezed,
-    Object component_value_concept = freezed,
-    Object component_value_quantity = freezed,
-    Object data_absent_reason = freezed,
-    Object derived_from = freezed,
+    Object comboCode = freezed,
+    Object comboDataabsentreason = freezed,
+    Object comboValueconcept = freezed,
+    Object comboValuequantity = freezed,
+    Object componentCode = freezed,
+    Object componentDataabsentreason = freezed,
+    Object componentValueconcept = freezed,
+    Object componentValuequantity = freezed,
+    Object dataAbsentreason = freezed,
+    Object derivedFrom = freezed,
     Object device = freezed,
     Object focus = freezed,
-    Object has_member = freezed,
+    Object hasMember = freezed,
     Object method = freezed,
-    Object part_of = freezed,
+    Object partOf = freezed,
     Object performer = freezed,
     Object specimen = freezed,
     Object status = freezed,
     Object subject = freezed,
-    Object value_concept = freezed,
-    Object value_date = freezed,
-    Object value_quantity = freezed,
-    Object value_string = freezed,
-    Object code_value_concept = freezed,
-    Object code_value_date = freezed,
-    Object code_value_quantity = freezed,
-    Object code_value_string = freezed,
-    Object combo_code_value_concept = freezed,
-    Object combo_code_value_quantity = freezed,
-    Object component_code_value_concept = freezed,
-    Object component_code_value_quantity = freezed,
+    Object valueConcept = freezed,
+    Object valueDate = freezed,
+    Object valueQuantity = freezed,
+    Object valueString = freezed,
+    Object codeValueconcept = freezed,
+    Object codeValuedate = freezed,
+    Object codeValuequantity = freezed,
+    Object codeValuestring = freezed,
+    Object comboCodevalueconcept = freezed,
+    Object comboCodevaluequantity = freezed,
+    Object componentCodevalueconcept = freezed,
+    Object componentCodevaluequantity = freezed,
   }) {
     return _then(_ObservationSearch(
       searchId: searchId == freezed ? _value.searchId : searchId as List<Id>,
@@ -1186,51 +1332,50 @@ class __$ObservationSearchCopyWithImpl<$Res>
       encounter: encounter == freezed
           ? _value.encounter
           : encounter as List<SearchReference>,
-      based_on: based_on == freezed
-          ? _value.based_on
-          : based_on as List<SearchReference>,
+      basedOn: basedOn == freezed
+          ? _value.basedOn
+          : basedOn as List<SearchReference>,
       category:
           category == freezed ? _value.category : category as List<SearchToken>,
-      combo_code: combo_code == freezed
-          ? _value.combo_code
-          : combo_code as List<SearchToken>,
-      combo_data_absent_reason: combo_data_absent_reason == freezed
-          ? _value.combo_data_absent_reason
-          : combo_data_absent_reason as List<SearchToken>,
-      combo_value_concept: combo_value_concept == freezed
-          ? _value.combo_value_concept
-          : combo_value_concept as List<SearchToken>,
-      combo_value_quantity: combo_value_quantity == freezed
-          ? _value.combo_value_quantity
-          : combo_value_quantity as List<SearchQuantity>,
-      component_code: component_code == freezed
-          ? _value.component_code
-          : component_code as List<SearchToken>,
-      component_data_absent_reason: component_data_absent_reason == freezed
-          ? _value.component_data_absent_reason
-          : component_data_absent_reason as List<SearchToken>,
-      component_value_concept: component_value_concept == freezed
-          ? _value.component_value_concept
-          : component_value_concept as List<SearchToken>,
-      component_value_quantity: component_value_quantity == freezed
-          ? _value.component_value_quantity
-          : component_value_quantity as List<SearchQuantity>,
-      data_absent_reason: data_absent_reason == freezed
-          ? _value.data_absent_reason
-          : data_absent_reason as List<SearchToken>,
-      derived_from: derived_from == freezed
-          ? _value.derived_from
-          : derived_from as List<SearchReference>,
+      comboCode: comboCode == freezed
+          ? _value.comboCode
+          : comboCode as List<SearchToken>,
+      comboDataabsentreason: comboDataabsentreason == freezed
+          ? _value.comboDataabsentreason
+          : comboDataabsentreason as List<SearchToken>,
+      comboValueconcept: comboValueconcept == freezed
+          ? _value.comboValueconcept
+          : comboValueconcept as List<SearchToken>,
+      comboValuequantity: comboValuequantity == freezed
+          ? _value.comboValuequantity
+          : comboValuequantity as List<SearchQuantity>,
+      componentCode: componentCode == freezed
+          ? _value.componentCode
+          : componentCode as List<SearchToken>,
+      componentDataabsentreason: componentDataabsentreason == freezed
+          ? _value.componentDataabsentreason
+          : componentDataabsentreason as List<SearchToken>,
+      componentValueconcept: componentValueconcept == freezed
+          ? _value.componentValueconcept
+          : componentValueconcept as List<SearchToken>,
+      componentValuequantity: componentValuequantity == freezed
+          ? _value.componentValuequantity
+          : componentValuequantity as List<SearchQuantity>,
+      dataAbsentreason: dataAbsentreason == freezed
+          ? _value.dataAbsentreason
+          : dataAbsentreason as List<SearchToken>,
+      derivedFrom: derivedFrom == freezed
+          ? _value.derivedFrom
+          : derivedFrom as List<SearchReference>,
       device:
           device == freezed ? _value.device : device as List<SearchReference>,
       focus: focus == freezed ? _value.focus : focus as List<SearchReference>,
-      has_member: has_member == freezed
-          ? _value.has_member
-          : has_member as List<SearchReference>,
+      hasMember: hasMember == freezed
+          ? _value.hasMember
+          : hasMember as List<SearchReference>,
       method: method == freezed ? _value.method : method as List<SearchToken>,
-      part_of: part_of == freezed
-          ? _value.part_of
-          : part_of as List<SearchReference>,
+      partOf:
+          partOf == freezed ? _value.partOf : partOf as List<SearchReference>,
       performer: performer == freezed
           ? _value.performer
           : performer as List<SearchReference>,
@@ -1241,45 +1386,47 @@ class __$ObservationSearchCopyWithImpl<$Res>
       subject: subject == freezed
           ? _value.subject
           : subject as List<SearchReference>,
-      value_concept: value_concept == freezed
-          ? _value.value_concept
-          : value_concept as List<SearchToken>,
-      value_date: value_date == freezed
-          ? _value.value_date
-          : value_date as List<SearchDate>,
-      value_quantity: value_quantity == freezed
-          ? _value.value_quantity
-          : value_quantity as List<SearchQuantity>,
-      value_string: value_string == freezed
-          ? _value.value_string
-          : value_string as List<SearchString>,
-      code_value_concept: code_value_concept == freezed
-          ? _value.code_value_concept
-          : code_value_concept as List<SearchComposite>,
-      code_value_date: code_value_date == freezed
-          ? _value.code_value_date
-          : code_value_date as List<SearchComposite>,
-      code_value_quantity: code_value_quantity == freezed
-          ? _value.code_value_quantity
-          : code_value_quantity as List<SearchComposite>,
-      code_value_string: code_value_string == freezed
-          ? _value.code_value_string
-          : code_value_string as List<SearchComposite>,
-      combo_code_value_concept: combo_code_value_concept == freezed
-          ? _value.combo_code_value_concept
-          : combo_code_value_concept as List<SearchComposite>,
-      combo_code_value_quantity: combo_code_value_quantity == freezed
-          ? _value.combo_code_value_quantity
-          : combo_code_value_quantity as List<SearchComposite>,
-      component_code_value_concept: component_code_value_concept == freezed
-          ? _value.component_code_value_concept
-          : component_code_value_concept as List<SearchComposite>,
-      component_code_value_quantity: component_code_value_quantity == freezed
-          ? _value.component_code_value_quantity
-          : component_code_value_quantity as List<SearchComposite>,
+      valueConcept: valueConcept == freezed
+          ? _value.valueConcept
+          : valueConcept as List<SearchToken>,
+      valueDate: valueDate == freezed
+          ? _value.valueDate
+          : valueDate as List<SearchDate>,
+      valueQuantity: valueQuantity == freezed
+          ? _value.valueQuantity
+          : valueQuantity as List<SearchQuantity>,
+      valueString: valueString == freezed
+          ? _value.valueString
+          : valueString as List<SearchString>,
+      codeValueconcept: codeValueconcept == freezed
+          ? _value.codeValueconcept
+          : codeValueconcept as List<SearchComposite>,
+      codeValuedate: codeValuedate == freezed
+          ? _value.codeValuedate
+          : codeValuedate as List<SearchComposite>,
+      codeValuequantity: codeValuequantity == freezed
+          ? _value.codeValuequantity
+          : codeValuequantity as List<SearchComposite>,
+      codeValuestring: codeValuestring == freezed
+          ? _value.codeValuestring
+          : codeValuestring as List<SearchComposite>,
+      comboCodevalueconcept: comboCodevalueconcept == freezed
+          ? _value.comboCodevalueconcept
+          : comboCodevalueconcept as List<SearchComposite>,
+      comboCodevaluequantity: comboCodevaluequantity == freezed
+          ? _value.comboCodevaluequantity
+          : comboCodevaluequantity as List<SearchComposite>,
+      componentCodevalueconcept: componentCodevalueconcept == freezed
+          ? _value.componentCodevalueconcept
+          : componentCodevalueconcept as List<SearchComposite>,
+      componentCodevaluequantity: componentCodevaluequantity == freezed
+          ? _value.componentCodevaluequantity
+          : componentCodevaluequantity as List<SearchComposite>,
     ));
   }
 }
+
+@JsonSerializable()
 
 /// @nodoc
 class _$_ObservationSearch extends _ObservationSearch {
@@ -1297,40 +1444,68 @@ class _$_ObservationSearch extends _ObservationSearch {
       this.identifier,
       this.patient,
       this.encounter,
-      this.based_on,
+      @JsonKey(name: 'based-on')
+          this.basedOn,
       this.category,
-      this.combo_code,
-      this.combo_data_absent_reason,
-      this.combo_value_concept,
-      this.combo_value_quantity,
-      this.component_code,
-      this.component_data_absent_reason,
-      this.component_value_concept,
-      this.component_value_quantity,
-      this.data_absent_reason,
-      this.derived_from,
+      @JsonKey(name: 'combo-code')
+          this.comboCode,
+      @JsonKey(name: 'combo-data-absent-reason')
+          this.comboDataabsentreason,
+      @JsonKey(name: 'combo-value-concept')
+          this.comboValueconcept,
+      @JsonKey(name: 'combo-value-quantity')
+          this.comboValuequantity,
+      @JsonKey(name: 'component-code')
+          this.componentCode,
+      @JsonKey(name: 'component-data-absent-reason')
+          this.componentDataabsentreason,
+      @JsonKey(name: 'component-value-concept')
+          this.componentValueconcept,
+      @JsonKey(name: 'component-value-quantity')
+          this.componentValuequantity,
+      @JsonKey(name: 'data-absent-reason')
+          this.dataAbsentreason,
+      @JsonKey(name: 'derived-from')
+          this.derivedFrom,
       this.device,
       this.focus,
-      this.has_member,
+      @JsonKey(name: 'has-member')
+          this.hasMember,
       this.method,
-      this.part_of,
+      @JsonKey(name: 'part-of')
+          this.partOf,
       this.performer,
       this.specimen,
       this.status,
       this.subject,
-      this.value_concept,
-      this.value_date,
-      this.value_quantity,
-      this.value_string,
-      this.code_value_concept,
-      this.code_value_date,
-      this.code_value_quantity,
-      this.code_value_string,
-      this.combo_code_value_concept,
-      this.combo_code_value_quantity,
-      this.component_code_value_concept,
-      this.component_code_value_quantity})
+      @JsonKey(name: 'value-concept')
+          this.valueConcept,
+      @JsonKey(name: 'value-date')
+          this.valueDate,
+      @JsonKey(name: 'value-quantity')
+          this.valueQuantity,
+      @JsonKey(name: 'value-string')
+          this.valueString,
+      @JsonKey(name: 'code-value-concept')
+          this.codeValueconcept,
+      @JsonKey(name: 'code-value-date')
+          this.codeValuedate,
+      @JsonKey(name: 'code-value-quantity')
+          this.codeValuequantity,
+      @JsonKey(name: 'code-value-string')
+          this.codeValuestring,
+      @JsonKey(name: 'combo-code-value-concept')
+          this.comboCodevalueconcept,
+      @JsonKey(name: 'combo-code-value-quantity')
+          this.comboCodevaluequantity,
+      @JsonKey(name: 'component-code-value-concept')
+          this.componentCodevalueconcept,
+      @JsonKey(name: 'component-code-value-quantity')
+          this.componentCodevaluequantity})
       : super._();
+
+  factory _$_ObservationSearch.fromJson(Map<String, dynamic> json) =>
+      _$_$_ObservationSearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -1360,39 +1535,52 @@ class _$_ObservationSearch extends _ObservationSearch {
   @override
   final List<SearchReference> encounter;
   @override
-  final List<SearchReference> based_on;
+  @JsonKey(name: 'based-on')
+  final List<SearchReference> basedOn;
   @override
   final List<SearchToken> category;
   @override
-  final List<SearchToken> combo_code;
+  @JsonKey(name: 'combo-code')
+  final List<SearchToken> comboCode;
   @override
-  final List<SearchToken> combo_data_absent_reason;
+  @JsonKey(name: 'combo-data-absent-reason')
+  final List<SearchToken> comboDataabsentreason;
   @override
-  final List<SearchToken> combo_value_concept;
+  @JsonKey(name: 'combo-value-concept')
+  final List<SearchToken> comboValueconcept;
   @override
-  final List<SearchQuantity> combo_value_quantity;
+  @JsonKey(name: 'combo-value-quantity')
+  final List<SearchQuantity> comboValuequantity;
   @override
-  final List<SearchToken> component_code;
+  @JsonKey(name: 'component-code')
+  final List<SearchToken> componentCode;
   @override
-  final List<SearchToken> component_data_absent_reason;
+  @JsonKey(name: 'component-data-absent-reason')
+  final List<SearchToken> componentDataabsentreason;
   @override
-  final List<SearchToken> component_value_concept;
+  @JsonKey(name: 'component-value-concept')
+  final List<SearchToken> componentValueconcept;
   @override
-  final List<SearchQuantity> component_value_quantity;
+  @JsonKey(name: 'component-value-quantity')
+  final List<SearchQuantity> componentValuequantity;
   @override
-  final List<SearchToken> data_absent_reason;
+  @JsonKey(name: 'data-absent-reason')
+  final List<SearchToken> dataAbsentreason;
   @override
-  final List<SearchReference> derived_from;
+  @JsonKey(name: 'derived-from')
+  final List<SearchReference> derivedFrom;
   @override
   final List<SearchReference> device;
   @override
   final List<SearchReference> focus;
   @override
-  final List<SearchReference> has_member;
+  @JsonKey(name: 'has-member')
+  final List<SearchReference> hasMember;
   @override
   final List<SearchToken> method;
   @override
-  final List<SearchReference> part_of;
+  @JsonKey(name: 'part-of')
+  final List<SearchReference> partOf;
   @override
   final List<SearchReference> performer;
   @override
@@ -1402,33 +1590,45 @@ class _$_ObservationSearch extends _ObservationSearch {
   @override
   final List<SearchReference> subject;
   @override
-  final List<SearchToken> value_concept;
+  @JsonKey(name: 'value-concept')
+  final List<SearchToken> valueConcept;
   @override
-  final List<SearchDate> value_date;
+  @JsonKey(name: 'value-date')
+  final List<SearchDate> valueDate;
   @override
-  final List<SearchQuantity> value_quantity;
+  @JsonKey(name: 'value-quantity')
+  final List<SearchQuantity> valueQuantity;
   @override
-  final List<SearchString> value_string;
+  @JsonKey(name: 'value-string')
+  final List<SearchString> valueString;
   @override
-  final List<SearchComposite> code_value_concept;
+  @JsonKey(name: 'code-value-concept')
+  final List<SearchComposite> codeValueconcept;
   @override
-  final List<SearchComposite> code_value_date;
+  @JsonKey(name: 'code-value-date')
+  final List<SearchComposite> codeValuedate;
   @override
-  final List<SearchComposite> code_value_quantity;
+  @JsonKey(name: 'code-value-quantity')
+  final List<SearchComposite> codeValuequantity;
   @override
-  final List<SearchComposite> code_value_string;
+  @JsonKey(name: 'code-value-string')
+  final List<SearchComposite> codeValuestring;
   @override
-  final List<SearchComposite> combo_code_value_concept;
+  @JsonKey(name: 'combo-code-value-concept')
+  final List<SearchComposite> comboCodevalueconcept;
   @override
-  final List<SearchComposite> combo_code_value_quantity;
+  @JsonKey(name: 'combo-code-value-quantity')
+  final List<SearchComposite> comboCodevaluequantity;
   @override
-  final List<SearchComposite> component_code_value_concept;
+  @JsonKey(name: 'component-code-value-concept')
+  final List<SearchComposite> componentCodevalueconcept;
   @override
-  final List<SearchComposite> component_code_value_quantity;
+  @JsonKey(name: 'component-code-value-quantity')
+  final List<SearchComposite> componentCodevaluequantity;
 
   @override
   String toString() {
-    return 'ObservationSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, code: $code, date: $date, identifier: $identifier, patient: $patient, encounter: $encounter, based_on: $based_on, category: $category, combo_code: $combo_code, combo_data_absent_reason: $combo_data_absent_reason, combo_value_concept: $combo_value_concept, combo_value_quantity: $combo_value_quantity, component_code: $component_code, component_data_absent_reason: $component_data_absent_reason, component_value_concept: $component_value_concept, component_value_quantity: $component_value_quantity, data_absent_reason: $data_absent_reason, derived_from: $derived_from, device: $device, focus: $focus, has_member: $has_member, method: $method, part_of: $part_of, performer: $performer, specimen: $specimen, status: $status, subject: $subject, value_concept: $value_concept, value_date: $value_date, value_quantity: $value_quantity, value_string: $value_string, code_value_concept: $code_value_concept, code_value_date: $code_value_date, code_value_quantity: $code_value_quantity, code_value_string: $code_value_string, combo_code_value_concept: $combo_code_value_concept, combo_code_value_quantity: $combo_code_value_quantity, component_code_value_concept: $component_code_value_concept, component_code_value_quantity: $component_code_value_quantity)';
+    return 'ObservationSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, code: $code, date: $date, identifier: $identifier, patient: $patient, encounter: $encounter, basedOn: $basedOn, category: $category, comboCode: $comboCode, comboDataabsentreason: $comboDataabsentreason, comboValueconcept: $comboValueconcept, comboValuequantity: $comboValuequantity, componentCode: $componentCode, componentDataabsentreason: $componentDataabsentreason, componentValueconcept: $componentValueconcept, componentValuequantity: $componentValuequantity, dataAbsentreason: $dataAbsentreason, derivedFrom: $derivedFrom, device: $device, focus: $focus, hasMember: $hasMember, method: $method, partOf: $partOf, performer: $performer, specimen: $specimen, status: $status, subject: $subject, valueConcept: $valueConcept, valueDate: $valueDate, valueQuantity: $valueQuantity, valueString: $valueString, codeValueconcept: $codeValueconcept, codeValuedate: $codeValuedate, codeValuequantity: $codeValuequantity, codeValuestring: $codeValuestring, comboCodevalueconcept: $comboCodevalueconcept, comboCodevaluequantity: $comboCodevaluequantity, componentCodevalueconcept: $componentCodevalueconcept, componentCodevaluequantity: $componentCodevaluequantity)';
   }
 
   @override
@@ -1472,56 +1672,57 @@ class _$_ObservationSearch extends _ObservationSearch {
             (identical(other.encounter, encounter) ||
                 const DeepCollectionEquality()
                     .equals(other.encounter, encounter)) &&
-            (identical(other.based_on, based_on) ||
+            (identical(other.basedOn, basedOn) ||
                 const DeepCollectionEquality()
-                    .equals(other.based_on, based_on)) &&
+                    .equals(other.basedOn, basedOn)) &&
             (identical(other.category, category) ||
                 const DeepCollectionEquality()
                     .equals(other.category, category)) &&
-            (identical(other.combo_code, combo_code) ||
+            (identical(other.comboCode, comboCode) ||
                 const DeepCollectionEquality()
-                    .equals(other.combo_code, combo_code)) &&
-            (identical(other.combo_data_absent_reason, combo_data_absent_reason) ||
+                    .equals(other.comboCode, comboCode)) &&
+            (identical(other.comboDataabsentreason, comboDataabsentreason) ||
                 const DeepCollectionEquality().equals(
-                    other.combo_data_absent_reason,
-                    combo_data_absent_reason)) &&
-            (identical(other.combo_value_concept, combo_value_concept) ||
+                    other.comboDataabsentreason, comboDataabsentreason)) &&
+            (identical(other.comboValueconcept, comboValueconcept) ||
                 const DeepCollectionEquality()
-                    .equals(other.combo_value_concept, combo_value_concept)) &&
-            (identical(other.combo_value_quantity, combo_value_quantity) ||
-                const DeepCollectionEquality().equals(
-                    other.combo_value_quantity, combo_value_quantity)) &&
-            (identical(other.component_code, component_code) ||
+                    .equals(other.comboValueconcept, comboValueconcept)) &&
+            (identical(other.comboValuequantity, comboValuequantity) ||
                 const DeepCollectionEquality()
-                    .equals(other.component_code, component_code)) &&
-            (identical(other.component_data_absent_reason, component_data_absent_reason) ||
+                    .equals(other.comboValuequantity, comboValuequantity)) &&
+            (identical(other.componentCode, componentCode) ||
+                const DeepCollectionEquality()
+                    .equals(other.componentCode, componentCode)) &&
+            (identical(other.componentDataabsentreason, componentDataabsentreason) ||
                 const DeepCollectionEquality().equals(
-                    other.component_data_absent_reason, component_data_absent_reason)) &&
-            (identical(other.component_value_concept, component_value_concept) || const DeepCollectionEquality().equals(other.component_value_concept, component_value_concept)) &&
-            (identical(other.component_value_quantity, component_value_quantity) || const DeepCollectionEquality().equals(other.component_value_quantity, component_value_quantity)) &&
-            (identical(other.data_absent_reason, data_absent_reason) || const DeepCollectionEquality().equals(other.data_absent_reason, data_absent_reason)) &&
-            (identical(other.derived_from, derived_from) || const DeepCollectionEquality().equals(other.derived_from, derived_from)) &&
+                    other.componentDataabsentreason,
+                    componentDataabsentreason)) &&
+            (identical(other.componentValueconcept, componentValueconcept) ||
+                const DeepCollectionEquality().equals(other.componentValueconcept, componentValueconcept)) &&
+            (identical(other.componentValuequantity, componentValuequantity) || const DeepCollectionEquality().equals(other.componentValuequantity, componentValuequantity)) &&
+            (identical(other.dataAbsentreason, dataAbsentreason) || const DeepCollectionEquality().equals(other.dataAbsentreason, dataAbsentreason)) &&
+            (identical(other.derivedFrom, derivedFrom) || const DeepCollectionEquality().equals(other.derivedFrom, derivedFrom)) &&
             (identical(other.device, device) || const DeepCollectionEquality().equals(other.device, device)) &&
             (identical(other.focus, focus) || const DeepCollectionEquality().equals(other.focus, focus)) &&
-            (identical(other.has_member, has_member) || const DeepCollectionEquality().equals(other.has_member, has_member)) &&
+            (identical(other.hasMember, hasMember) || const DeepCollectionEquality().equals(other.hasMember, hasMember)) &&
             (identical(other.method, method) || const DeepCollectionEquality().equals(other.method, method)) &&
-            (identical(other.part_of, part_of) || const DeepCollectionEquality().equals(other.part_of, part_of)) &&
+            (identical(other.partOf, partOf) || const DeepCollectionEquality().equals(other.partOf, partOf)) &&
             (identical(other.performer, performer) || const DeepCollectionEquality().equals(other.performer, performer)) &&
             (identical(other.specimen, specimen) || const DeepCollectionEquality().equals(other.specimen, specimen)) &&
             (identical(other.status, status) || const DeepCollectionEquality().equals(other.status, status)) &&
             (identical(other.subject, subject) || const DeepCollectionEquality().equals(other.subject, subject)) &&
-            (identical(other.value_concept, value_concept) || const DeepCollectionEquality().equals(other.value_concept, value_concept)) &&
-            (identical(other.value_date, value_date) || const DeepCollectionEquality().equals(other.value_date, value_date)) &&
-            (identical(other.value_quantity, value_quantity) || const DeepCollectionEquality().equals(other.value_quantity, value_quantity)) &&
-            (identical(other.value_string, value_string) || const DeepCollectionEquality().equals(other.value_string, value_string)) &&
-            (identical(other.code_value_concept, code_value_concept) || const DeepCollectionEquality().equals(other.code_value_concept, code_value_concept)) &&
-            (identical(other.code_value_date, code_value_date) || const DeepCollectionEquality().equals(other.code_value_date, code_value_date)) &&
-            (identical(other.code_value_quantity, code_value_quantity) || const DeepCollectionEquality().equals(other.code_value_quantity, code_value_quantity)) &&
-            (identical(other.code_value_string, code_value_string) || const DeepCollectionEquality().equals(other.code_value_string, code_value_string)) &&
-            (identical(other.combo_code_value_concept, combo_code_value_concept) || const DeepCollectionEquality().equals(other.combo_code_value_concept, combo_code_value_concept)) &&
-            (identical(other.combo_code_value_quantity, combo_code_value_quantity) || const DeepCollectionEquality().equals(other.combo_code_value_quantity, combo_code_value_quantity)) &&
-            (identical(other.component_code_value_concept, component_code_value_concept) || const DeepCollectionEquality().equals(other.component_code_value_concept, component_code_value_concept)) &&
-            (identical(other.component_code_value_quantity, component_code_value_quantity) || const DeepCollectionEquality().equals(other.component_code_value_quantity, component_code_value_quantity)));
+            (identical(other.valueConcept, valueConcept) || const DeepCollectionEquality().equals(other.valueConcept, valueConcept)) &&
+            (identical(other.valueDate, valueDate) || const DeepCollectionEquality().equals(other.valueDate, valueDate)) &&
+            (identical(other.valueQuantity, valueQuantity) || const DeepCollectionEquality().equals(other.valueQuantity, valueQuantity)) &&
+            (identical(other.valueString, valueString) || const DeepCollectionEquality().equals(other.valueString, valueString)) &&
+            (identical(other.codeValueconcept, codeValueconcept) || const DeepCollectionEquality().equals(other.codeValueconcept, codeValueconcept)) &&
+            (identical(other.codeValuedate, codeValuedate) || const DeepCollectionEquality().equals(other.codeValuedate, codeValuedate)) &&
+            (identical(other.codeValuequantity, codeValuequantity) || const DeepCollectionEquality().equals(other.codeValuequantity, codeValuequantity)) &&
+            (identical(other.codeValuestring, codeValuestring) || const DeepCollectionEquality().equals(other.codeValuestring, codeValuestring)) &&
+            (identical(other.comboCodevalueconcept, comboCodevalueconcept) || const DeepCollectionEquality().equals(other.comboCodevalueconcept, comboCodevalueconcept)) &&
+            (identical(other.comboCodevaluequantity, comboCodevaluequantity) || const DeepCollectionEquality().equals(other.comboCodevaluequantity, comboCodevaluequantity)) &&
+            (identical(other.componentCodevalueconcept, componentCodevalueconcept) || const DeepCollectionEquality().equals(other.componentCodevalueconcept, componentCodevalueconcept)) &&
+            (identical(other.componentCodevaluequantity, componentCodevaluequantity) || const DeepCollectionEquality().equals(other.componentCodevaluequantity, componentCodevaluequantity)));
   }
 
   @override
@@ -1540,43 +1741,48 @@ class _$_ObservationSearch extends _ObservationSearch {
       const DeepCollectionEquality().hash(identifier) ^
       const DeepCollectionEquality().hash(patient) ^
       const DeepCollectionEquality().hash(encounter) ^
-      const DeepCollectionEquality().hash(based_on) ^
+      const DeepCollectionEquality().hash(basedOn) ^
       const DeepCollectionEquality().hash(category) ^
-      const DeepCollectionEquality().hash(combo_code) ^
-      const DeepCollectionEquality().hash(combo_data_absent_reason) ^
-      const DeepCollectionEquality().hash(combo_value_concept) ^
-      const DeepCollectionEquality().hash(combo_value_quantity) ^
-      const DeepCollectionEquality().hash(component_code) ^
-      const DeepCollectionEquality().hash(component_data_absent_reason) ^
-      const DeepCollectionEquality().hash(component_value_concept) ^
-      const DeepCollectionEquality().hash(component_value_quantity) ^
-      const DeepCollectionEquality().hash(data_absent_reason) ^
-      const DeepCollectionEquality().hash(derived_from) ^
+      const DeepCollectionEquality().hash(comboCode) ^
+      const DeepCollectionEquality().hash(comboDataabsentreason) ^
+      const DeepCollectionEquality().hash(comboValueconcept) ^
+      const DeepCollectionEquality().hash(comboValuequantity) ^
+      const DeepCollectionEquality().hash(componentCode) ^
+      const DeepCollectionEquality().hash(componentDataabsentreason) ^
+      const DeepCollectionEquality().hash(componentValueconcept) ^
+      const DeepCollectionEquality().hash(componentValuequantity) ^
+      const DeepCollectionEquality().hash(dataAbsentreason) ^
+      const DeepCollectionEquality().hash(derivedFrom) ^
       const DeepCollectionEquality().hash(device) ^
       const DeepCollectionEquality().hash(focus) ^
-      const DeepCollectionEquality().hash(has_member) ^
+      const DeepCollectionEquality().hash(hasMember) ^
       const DeepCollectionEquality().hash(method) ^
-      const DeepCollectionEquality().hash(part_of) ^
+      const DeepCollectionEquality().hash(partOf) ^
       const DeepCollectionEquality().hash(performer) ^
       const DeepCollectionEquality().hash(specimen) ^
       const DeepCollectionEquality().hash(status) ^
       const DeepCollectionEquality().hash(subject) ^
-      const DeepCollectionEquality().hash(value_concept) ^
-      const DeepCollectionEquality().hash(value_date) ^
-      const DeepCollectionEquality().hash(value_quantity) ^
-      const DeepCollectionEquality().hash(value_string) ^
-      const DeepCollectionEquality().hash(code_value_concept) ^
-      const DeepCollectionEquality().hash(code_value_date) ^
-      const DeepCollectionEquality().hash(code_value_quantity) ^
-      const DeepCollectionEquality().hash(code_value_string) ^
-      const DeepCollectionEquality().hash(combo_code_value_concept) ^
-      const DeepCollectionEquality().hash(combo_code_value_quantity) ^
-      const DeepCollectionEquality().hash(component_code_value_concept) ^
-      const DeepCollectionEquality().hash(component_code_value_quantity);
+      const DeepCollectionEquality().hash(valueConcept) ^
+      const DeepCollectionEquality().hash(valueDate) ^
+      const DeepCollectionEquality().hash(valueQuantity) ^
+      const DeepCollectionEquality().hash(valueString) ^
+      const DeepCollectionEquality().hash(codeValueconcept) ^
+      const DeepCollectionEquality().hash(codeValuedate) ^
+      const DeepCollectionEquality().hash(codeValuequantity) ^
+      const DeepCollectionEquality().hash(codeValuestring) ^
+      const DeepCollectionEquality().hash(comboCodevalueconcept) ^
+      const DeepCollectionEquality().hash(comboCodevaluequantity) ^
+      const DeepCollectionEquality().hash(componentCodevalueconcept) ^
+      const DeepCollectionEquality().hash(componentCodevaluequantity);
 
   @override
   _$ObservationSearchCopyWith<_ObservationSearch> get copyWith =>
       __$ObservationSearchCopyWithImpl<_ObservationSearch>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_ObservationSearchToJson(this);
+  }
 }
 
 abstract class _ObservationSearch extends ObservationSearch {
@@ -1595,40 +1801,68 @@ abstract class _ObservationSearch extends ObservationSearch {
           List<SearchToken> identifier,
           List<SearchReference> patient,
           List<SearchReference> encounter,
-          List<SearchReference> based_on,
+          @JsonKey(name: 'based-on')
+              List<SearchReference> basedOn,
           List<SearchToken> category,
-          List<SearchToken> combo_code,
-          List<SearchToken> combo_data_absent_reason,
-          List<SearchToken> combo_value_concept,
-          List<SearchQuantity> combo_value_quantity,
-          List<SearchToken> component_code,
-          List<SearchToken> component_data_absent_reason,
-          List<SearchToken> component_value_concept,
-          List<SearchQuantity> component_value_quantity,
-          List<SearchToken> data_absent_reason,
-          List<SearchReference> derived_from,
+          @JsonKey(name: 'combo-code')
+              List<SearchToken> comboCode,
+          @JsonKey(name: 'combo-data-absent-reason')
+              List<SearchToken> comboDataabsentreason,
+          @JsonKey(name: 'combo-value-concept')
+              List<SearchToken> comboValueconcept,
+          @JsonKey(name: 'combo-value-quantity')
+              List<SearchQuantity> comboValuequantity,
+          @JsonKey(name: 'component-code')
+              List<SearchToken> componentCode,
+          @JsonKey(name: 'component-data-absent-reason')
+              List<SearchToken> componentDataabsentreason,
+          @JsonKey(name: 'component-value-concept')
+              List<SearchToken> componentValueconcept,
+          @JsonKey(name: 'component-value-quantity')
+              List<SearchQuantity> componentValuequantity,
+          @JsonKey(name: 'data-absent-reason')
+              List<SearchToken> dataAbsentreason,
+          @JsonKey(name: 'derived-from')
+              List<SearchReference> derivedFrom,
           List<SearchReference> device,
           List<SearchReference> focus,
-          List<SearchReference> has_member,
+          @JsonKey(name: 'has-member')
+              List<SearchReference> hasMember,
           List<SearchToken> method,
-          List<SearchReference> part_of,
+          @JsonKey(name: 'part-of')
+              List<SearchReference> partOf,
           List<SearchReference> performer,
           List<SearchReference> specimen,
           List<SearchToken> status,
           List<SearchReference> subject,
-          List<SearchToken> value_concept,
-          List<SearchDate> value_date,
-          List<SearchQuantity> value_quantity,
-          List<SearchString> value_string,
-          List<SearchComposite> code_value_concept,
-          List<SearchComposite> code_value_date,
-          List<SearchComposite> code_value_quantity,
-          List<SearchComposite> code_value_string,
-          List<SearchComposite> combo_code_value_concept,
-          List<SearchComposite> combo_code_value_quantity,
-          List<SearchComposite> component_code_value_concept,
-          List<SearchComposite> component_code_value_quantity}) =
+          @JsonKey(name: 'value-concept')
+              List<SearchToken> valueConcept,
+          @JsonKey(name: 'value-date')
+              List<SearchDate> valueDate,
+          @JsonKey(name: 'value-quantity')
+              List<SearchQuantity> valueQuantity,
+          @JsonKey(name: 'value-string')
+              List<SearchString> valueString,
+          @JsonKey(name: 'code-value-concept')
+              List<SearchComposite> codeValueconcept,
+          @JsonKey(name: 'code-value-date')
+              List<SearchComposite> codeValuedate,
+          @JsonKey(name: 'code-value-quantity')
+              List<SearchComposite> codeValuequantity,
+          @JsonKey(name: 'code-value-string')
+              List<SearchComposite> codeValuestring,
+          @JsonKey(name: 'combo-code-value-concept')
+              List<SearchComposite> comboCodevalueconcept,
+          @JsonKey(name: 'combo-code-value-quantity')
+              List<SearchComposite> comboCodevaluequantity,
+          @JsonKey(name: 'component-code-value-concept')
+              List<SearchComposite> componentCodevalueconcept,
+          @JsonKey(name: 'component-code-value-quantity')
+              List<SearchComposite> componentCodevaluequantity}) =
       _$_ObservationSearch;
+
+  factory _ObservationSearch.fromJson(Map<String, dynamic> json) =
+      _$_ObservationSearch.fromJson;
 
   @override
   List<Id> get searchId;
@@ -1658,39 +1892,52 @@ abstract class _ObservationSearch extends ObservationSearch {
   @override
   List<SearchReference> get encounter;
   @override
-  List<SearchReference> get based_on;
+  @JsonKey(name: 'based-on')
+  List<SearchReference> get basedOn;
   @override
   List<SearchToken> get category;
   @override
-  List<SearchToken> get combo_code;
+  @JsonKey(name: 'combo-code')
+  List<SearchToken> get comboCode;
   @override
-  List<SearchToken> get combo_data_absent_reason;
+  @JsonKey(name: 'combo-data-absent-reason')
+  List<SearchToken> get comboDataabsentreason;
   @override
-  List<SearchToken> get combo_value_concept;
+  @JsonKey(name: 'combo-value-concept')
+  List<SearchToken> get comboValueconcept;
   @override
-  List<SearchQuantity> get combo_value_quantity;
+  @JsonKey(name: 'combo-value-quantity')
+  List<SearchQuantity> get comboValuequantity;
   @override
-  List<SearchToken> get component_code;
+  @JsonKey(name: 'component-code')
+  List<SearchToken> get componentCode;
   @override
-  List<SearchToken> get component_data_absent_reason;
+  @JsonKey(name: 'component-data-absent-reason')
+  List<SearchToken> get componentDataabsentreason;
   @override
-  List<SearchToken> get component_value_concept;
+  @JsonKey(name: 'component-value-concept')
+  List<SearchToken> get componentValueconcept;
   @override
-  List<SearchQuantity> get component_value_quantity;
+  @JsonKey(name: 'component-value-quantity')
+  List<SearchQuantity> get componentValuequantity;
   @override
-  List<SearchToken> get data_absent_reason;
+  @JsonKey(name: 'data-absent-reason')
+  List<SearchToken> get dataAbsentreason;
   @override
-  List<SearchReference> get derived_from;
+  @JsonKey(name: 'derived-from')
+  List<SearchReference> get derivedFrom;
   @override
   List<SearchReference> get device;
   @override
   List<SearchReference> get focus;
   @override
-  List<SearchReference> get has_member;
+  @JsonKey(name: 'has-member')
+  List<SearchReference> get hasMember;
   @override
   List<SearchToken> get method;
   @override
-  List<SearchReference> get part_of;
+  @JsonKey(name: 'part-of')
+  List<SearchReference> get partOf;
   @override
   List<SearchReference> get performer;
   @override
@@ -1700,31 +1947,47 @@ abstract class _ObservationSearch extends ObservationSearch {
   @override
   List<SearchReference> get subject;
   @override
-  List<SearchToken> get value_concept;
+  @JsonKey(name: 'value-concept')
+  List<SearchToken> get valueConcept;
   @override
-  List<SearchDate> get value_date;
+  @JsonKey(name: 'value-date')
+  List<SearchDate> get valueDate;
   @override
-  List<SearchQuantity> get value_quantity;
+  @JsonKey(name: 'value-quantity')
+  List<SearchQuantity> get valueQuantity;
   @override
-  List<SearchString> get value_string;
+  @JsonKey(name: 'value-string')
+  List<SearchString> get valueString;
   @override
-  List<SearchComposite> get code_value_concept;
+  @JsonKey(name: 'code-value-concept')
+  List<SearchComposite> get codeValueconcept;
   @override
-  List<SearchComposite> get code_value_date;
+  @JsonKey(name: 'code-value-date')
+  List<SearchComposite> get codeValuedate;
   @override
-  List<SearchComposite> get code_value_quantity;
+  @JsonKey(name: 'code-value-quantity')
+  List<SearchComposite> get codeValuequantity;
   @override
-  List<SearchComposite> get code_value_string;
+  @JsonKey(name: 'code-value-string')
+  List<SearchComposite> get codeValuestring;
   @override
-  List<SearchComposite> get combo_code_value_concept;
+  @JsonKey(name: 'combo-code-value-concept')
+  List<SearchComposite> get comboCodevalueconcept;
   @override
-  List<SearchComposite> get combo_code_value_quantity;
+  @JsonKey(name: 'combo-code-value-quantity')
+  List<SearchComposite> get comboCodevaluequantity;
   @override
-  List<SearchComposite> get component_code_value_concept;
+  @JsonKey(name: 'component-code-value-concept')
+  List<SearchComposite> get componentCodevalueconcept;
   @override
-  List<SearchComposite> get component_code_value_quantity;
+  @JsonKey(name: 'component-code-value-quantity')
+  List<SearchComposite> get componentCodevaluequantity;
   @override
   _$ObservationSearchCopyWith<_ObservationSearch> get copyWith;
+}
+
+ImagingStudySearch _$ImagingStudySearchFromJson(Map<String, dynamic> json) {
+  return _ImagingStudySearch.fromJson(json);
 }
 
 /// @nodoc
@@ -1745,7 +2008,7 @@ class _$ImagingStudySearchTearOff {
       List<SearchReference> patient,
       List<SearchReference> basedon,
       List<SearchToken> bodysite,
-      List<SearchToken> dicom_class,
+      @JsonKey(name: 'dicom-class') List<SearchToken> dicomClass,
       List<SearchReference> encounter,
       List<SearchReference> endpoint,
       List<SearchToken> instance,
@@ -1771,7 +2034,7 @@ class _$ImagingStudySearchTearOff {
       patient: patient,
       basedon: basedon,
       bodysite: bodysite,
-      dicom_class: dicom_class,
+      dicomClass: dicomClass,
       encounter: encounter,
       endpoint: endpoint,
       instance: instance,
@@ -1785,6 +2048,11 @@ class _$ImagingStudySearchTearOff {
       status: status,
       subject: subject,
     );
+  }
+
+// ignore: unused_element
+  ImagingStudySearch fromJson(Map<String, Object> json) {
+    return ImagingStudySearch.fromJson(json);
   }
 }
 
@@ -1807,7 +2075,8 @@ mixin _$ImagingStudySearch {
   List<SearchReference> get patient;
   List<SearchReference> get basedon;
   List<SearchToken> get bodysite;
-  List<SearchToken> get dicom_class;
+  @JsonKey(name: 'dicom-class')
+  List<SearchToken> get dicomClass;
   List<SearchReference> get encounter;
   List<SearchReference> get endpoint;
   List<SearchToken> get instance;
@@ -1821,6 +2090,7 @@ mixin _$ImagingStudySearch {
   List<SearchToken> get status;
   List<SearchReference> get subject;
 
+  Map<String, dynamic> toJson();
   $ImagingStudySearchCopyWith<ImagingStudySearch> get copyWith;
 }
 
@@ -1842,7 +2112,7 @@ abstract class $ImagingStudySearchCopyWith<$Res> {
       List<SearchReference> patient,
       List<SearchReference> basedon,
       List<SearchToken> bodysite,
-      List<SearchToken> dicom_class,
+      @JsonKey(name: 'dicom-class') List<SearchToken> dicomClass,
       List<SearchReference> encounter,
       List<SearchReference> endpoint,
       List<SearchToken> instance,
@@ -1880,7 +2150,7 @@ class _$ImagingStudySearchCopyWithImpl<$Res>
     Object patient = freezed,
     Object basedon = freezed,
     Object bodysite = freezed,
-    Object dicom_class = freezed,
+    Object dicomClass = freezed,
     Object encounter = freezed,
     Object endpoint = freezed,
     Object instance = freezed,
@@ -1927,9 +2197,9 @@ class _$ImagingStudySearchCopyWithImpl<$Res>
           : basedon as List<SearchReference>,
       bodysite:
           bodysite == freezed ? _value.bodysite : bodysite as List<SearchToken>,
-      dicom_class: dicom_class == freezed
-          ? _value.dicom_class
-          : dicom_class as List<SearchToken>,
+      dicomClass: dicomClass == freezed
+          ? _value.dicomClass
+          : dicomClass as List<SearchToken>,
       encounter: encounter == freezed
           ? _value.encounter
           : encounter as List<SearchReference>,
@@ -1981,7 +2251,7 @@ abstract class _$ImagingStudySearchCopyWith<$Res>
       List<SearchReference> patient,
       List<SearchReference> basedon,
       List<SearchToken> bodysite,
-      List<SearchToken> dicom_class,
+      @JsonKey(name: 'dicom-class') List<SearchToken> dicomClass,
       List<SearchReference> encounter,
       List<SearchReference> endpoint,
       List<SearchToken> instance,
@@ -2021,7 +2291,7 @@ class __$ImagingStudySearchCopyWithImpl<$Res>
     Object patient = freezed,
     Object basedon = freezed,
     Object bodysite = freezed,
-    Object dicom_class = freezed,
+    Object dicomClass = freezed,
     Object encounter = freezed,
     Object endpoint = freezed,
     Object instance = freezed,
@@ -2068,9 +2338,9 @@ class __$ImagingStudySearchCopyWithImpl<$Res>
           : basedon as List<SearchReference>,
       bodysite:
           bodysite == freezed ? _value.bodysite : bodysite as List<SearchToken>,
-      dicom_class: dicom_class == freezed
-          ? _value.dicom_class
-          : dicom_class as List<SearchToken>,
+      dicomClass: dicomClass == freezed
+          ? _value.dicomClass
+          : dicomClass as List<SearchToken>,
       encounter: encounter == freezed
           ? _value.encounter
           : encounter as List<SearchReference>,
@@ -2102,6 +2372,8 @@ class __$ImagingStudySearchCopyWithImpl<$Res>
   }
 }
 
+@JsonSerializable()
+
 /// @nodoc
 class _$_ImagingStudySearch extends _ImagingStudySearch {
   _$_ImagingStudySearch(
@@ -2117,7 +2389,7 @@ class _$_ImagingStudySearch extends _ImagingStudySearch {
       this.patient,
       this.basedon,
       this.bodysite,
-      this.dicom_class,
+      @JsonKey(name: 'dicom-class') this.dicomClass,
       this.encounter,
       this.endpoint,
       this.instance,
@@ -2131,6 +2403,9 @@ class _$_ImagingStudySearch extends _ImagingStudySearch {
       this.status,
       this.subject})
       : super._();
+
+  factory _$_ImagingStudySearch.fromJson(Map<String, dynamic> json) =>
+      _$_$_ImagingStudySearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -2158,7 +2433,8 @@ class _$_ImagingStudySearch extends _ImagingStudySearch {
   @override
   final List<SearchToken> bodysite;
   @override
-  final List<SearchToken> dicom_class;
+  @JsonKey(name: 'dicom-class')
+  final List<SearchToken> dicomClass;
   @override
   final List<SearchReference> encounter;
   @override
@@ -2186,7 +2462,7 @@ class _$_ImagingStudySearch extends _ImagingStudySearch {
 
   @override
   String toString() {
-    return 'ImagingStudySearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, identifier: $identifier, patient: $patient, basedon: $basedon, bodysite: $bodysite, dicom_class: $dicom_class, encounter: $encounter, endpoint: $endpoint, instance: $instance, interpreter: $interpreter, modality: $modality, performer: $performer, reason: $reason, referrer: $referrer, series: $series, started: $started, status: $status, subject: $subject)';
+    return 'ImagingStudySearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, identifier: $identifier, patient: $patient, basedon: $basedon, bodysite: $bodysite, dicomClass: $dicomClass, encounter: $encounter, endpoint: $endpoint, instance: $instance, interpreter: $interpreter, modality: $modality, performer: $performer, reason: $reason, referrer: $referrer, series: $series, started: $started, status: $status, subject: $subject)';
   }
 
   @override
@@ -2229,9 +2505,9 @@ class _$_ImagingStudySearch extends _ImagingStudySearch {
             (identical(other.bodysite, bodysite) ||
                 const DeepCollectionEquality()
                     .equals(other.bodysite, bodysite)) &&
-            (identical(other.dicom_class, dicom_class) ||
+            (identical(other.dicomClass, dicomClass) ||
                 const DeepCollectionEquality()
-                    .equals(other.dicom_class, dicom_class)) &&
+                    .equals(other.dicomClass, dicomClass)) &&
             (identical(other.encounter, encounter) ||
                 const DeepCollectionEquality()
                     .equals(other.encounter, encounter)) &&
@@ -2278,7 +2554,7 @@ class _$_ImagingStudySearch extends _ImagingStudySearch {
       const DeepCollectionEquality().hash(patient) ^
       const DeepCollectionEquality().hash(basedon) ^
       const DeepCollectionEquality().hash(bodysite) ^
-      const DeepCollectionEquality().hash(dicom_class) ^
+      const DeepCollectionEquality().hash(dicomClass) ^
       const DeepCollectionEquality().hash(encounter) ^
       const DeepCollectionEquality().hash(endpoint) ^
       const DeepCollectionEquality().hash(instance) ^
@@ -2295,6 +2571,11 @@ class _$_ImagingStudySearch extends _ImagingStudySearch {
   @override
   _$ImagingStudySearchCopyWith<_ImagingStudySearch> get copyWith =>
       __$ImagingStudySearchCopyWithImpl<_ImagingStudySearch>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_ImagingStudySearchToJson(this);
+  }
 }
 
 abstract class _ImagingStudySearch extends ImagingStudySearch {
@@ -2312,7 +2593,7 @@ abstract class _ImagingStudySearch extends ImagingStudySearch {
       List<SearchReference> patient,
       List<SearchReference> basedon,
       List<SearchToken> bodysite,
-      List<SearchToken> dicom_class,
+      @JsonKey(name: 'dicom-class') List<SearchToken> dicomClass,
       List<SearchReference> encounter,
       List<SearchReference> endpoint,
       List<SearchToken> instance,
@@ -2325,6 +2606,9 @@ abstract class _ImagingStudySearch extends ImagingStudySearch {
       List<SearchDate> started,
       List<SearchToken> status,
       List<SearchReference> subject}) = _$_ImagingStudySearch;
+
+  factory _ImagingStudySearch.fromJson(Map<String, dynamic> json) =
+      _$_ImagingStudySearch.fromJson;
 
   @override
   List<Id> get searchId;
@@ -2352,7 +2636,8 @@ abstract class _ImagingStudySearch extends ImagingStudySearch {
   @override
   List<SearchToken> get bodysite;
   @override
-  List<SearchToken> get dicom_class;
+  @JsonKey(name: 'dicom-class')
+  List<SearchToken> get dicomClass;
   @override
   List<SearchReference> get encounter;
   @override
@@ -2379,6 +2664,10 @@ abstract class _ImagingStudySearch extends ImagingStudySearch {
   List<SearchReference> get subject;
   @override
   _$ImagingStudySearchCopyWith<_ImagingStudySearch> get copyWith;
+}
+
+BodyStructureSearch _$BodyStructureSearchFromJson(Map<String, dynamic> json) {
+  return _BodyStructureSearch.fromJson(json);
 }
 
 /// @nodoc
@@ -2414,6 +2703,11 @@ class _$BodyStructureSearchTearOff {
       patient: patient,
     );
   }
+
+// ignore: unused_element
+  BodyStructureSearch fromJson(Map<String, Object> json) {
+    return BodyStructureSearch.fromJson(json);
+  }
 }
 
 /// @nodoc
@@ -2436,6 +2730,7 @@ mixin _$BodyStructureSearch {
   List<SearchToken> get morphology;
   List<SearchReference> get patient;
 
+  Map<String, dynamic> toJson();
   $BodyStructureSearchCopyWith<BodyStructureSearch> get copyWith;
 }
 
@@ -2605,6 +2900,8 @@ class __$BodyStructureSearchCopyWithImpl<$Res>
   }
 }
 
+@JsonSerializable()
+
 /// @nodoc
 class _$_BodyStructureSearch extends _BodyStructureSearch {
   _$_BodyStructureSearch(
@@ -2621,6 +2918,9 @@ class _$_BodyStructureSearch extends _BodyStructureSearch {
       this.morphology,
       this.patient})
       : super._();
+
+  factory _$_BodyStructureSearch.fromJson(Map<String, dynamic> json) =>
+      _$_$_BodyStructureSearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -2714,6 +3014,11 @@ class _$_BodyStructureSearch extends _BodyStructureSearch {
   _$BodyStructureSearchCopyWith<_BodyStructureSearch> get copyWith =>
       __$BodyStructureSearchCopyWithImpl<_BodyStructureSearch>(
           this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_BodyStructureSearchToJson(this);
+  }
 }
 
 abstract class _BodyStructureSearch extends BodyStructureSearch {
@@ -2731,6 +3036,9 @@ abstract class _BodyStructureSearch extends BodyStructureSearch {
       List<SearchToken> location,
       List<SearchToken> morphology,
       List<SearchReference> patient}) = _$_BodyStructureSearch;
+
+  factory _BodyStructureSearch.fromJson(Map<String, dynamic> json) =
+      _$_BodyStructureSearch.fromJson;
 
   @override
   List<Id> get searchId;
@@ -2761,6 +3069,10 @@ abstract class _BodyStructureSearch extends BodyStructureSearch {
   _$BodyStructureSearchCopyWith<_BodyStructureSearch> get copyWith;
 }
 
+MediaSearch _$MediaSearchFromJson(Map<String, dynamic> json) {
+  return _MediaSearch.fromJson(json);
+}
+
 /// @nodoc
 class _$MediaSearchTearOff {
   const _$MediaSearchTearOff();
@@ -2775,7 +3087,7 @@ class _$MediaSearchTearOff {
       List<SearchString> searchText,
       List<SearchString> searchContent,
       List<Id> searchList,
-      List<SearchReference> based_on,
+      @JsonKey(name: 'based-on') List<SearchReference> basedOn,
       List<SearchDate> created,
       List<SearchReference> device,
       List<SearchReference> encounter,
@@ -2797,7 +3109,7 @@ class _$MediaSearchTearOff {
       searchText: searchText,
       searchContent: searchContent,
       searchList: searchList,
-      based_on: based_on,
+      basedOn: basedOn,
       created: created,
       device: device,
       encounter: encounter,
@@ -2811,6 +3123,11 @@ class _$MediaSearchTearOff {
       type: type,
       view: view,
     );
+  }
+
+// ignore: unused_element
+  MediaSearch fromJson(Map<String, Object> json) {
+    return MediaSearch.fromJson(json);
   }
 }
 
@@ -2829,7 +3146,8 @@ mixin _$MediaSearch {
   List<SearchString> get searchContent;
   List<Id> get searchList; //List<SearchString> searchHas,
 //List<SearchToken> searchType,
-  List<SearchReference> get based_on;
+  @JsonKey(name: 'based-on')
+  List<SearchReference> get basedOn;
   List<SearchDate> get created;
   List<SearchReference> get device;
   List<SearchReference> get encounter;
@@ -2843,6 +3161,7 @@ mixin _$MediaSearch {
   List<SearchToken> get type;
   List<SearchToken> get view;
 
+  Map<String, dynamic> toJson();
   $MediaSearchCopyWith<MediaSearch> get copyWith;
 }
 
@@ -2860,7 +3179,7 @@ abstract class $MediaSearchCopyWith<$Res> {
       List<SearchString> searchText,
       List<SearchString> searchContent,
       List<Id> searchList,
-      List<SearchReference> based_on,
+      @JsonKey(name: 'based-on') List<SearchReference> basedOn,
       List<SearchDate> created,
       List<SearchReference> device,
       List<SearchReference> encounter,
@@ -2893,7 +3212,7 @@ class _$MediaSearchCopyWithImpl<$Res> implements $MediaSearchCopyWith<$Res> {
     Object searchText = freezed,
     Object searchContent = freezed,
     Object searchList = freezed,
-    Object based_on = freezed,
+    Object basedOn = freezed,
     Object created = freezed,
     Object device = freezed,
     Object encounter = freezed,
@@ -2929,9 +3248,9 @@ class _$MediaSearchCopyWithImpl<$Res> implements $MediaSearchCopyWith<$Res> {
           : searchContent as List<SearchString>,
       searchList:
           searchList == freezed ? _value.searchList : searchList as List<Id>,
-      based_on: based_on == freezed
-          ? _value.based_on
-          : based_on as List<SearchReference>,
+      basedOn: basedOn == freezed
+          ? _value.basedOn
+          : basedOn as List<SearchReference>,
       created:
           created == freezed ? _value.created : created as List<SearchDate>,
       device:
@@ -2977,7 +3296,7 @@ abstract class _$MediaSearchCopyWith<$Res>
       List<SearchString> searchText,
       List<SearchString> searchContent,
       List<Id> searchList,
-      List<SearchReference> based_on,
+      @JsonKey(name: 'based-on') List<SearchReference> basedOn,
       List<SearchDate> created,
       List<SearchReference> device,
       List<SearchReference> encounter,
@@ -3012,7 +3331,7 @@ class __$MediaSearchCopyWithImpl<$Res> extends _$MediaSearchCopyWithImpl<$Res>
     Object searchText = freezed,
     Object searchContent = freezed,
     Object searchList = freezed,
-    Object based_on = freezed,
+    Object basedOn = freezed,
     Object created = freezed,
     Object device = freezed,
     Object encounter = freezed,
@@ -3048,9 +3367,9 @@ class __$MediaSearchCopyWithImpl<$Res> extends _$MediaSearchCopyWithImpl<$Res>
           : searchContent as List<SearchString>,
       searchList:
           searchList == freezed ? _value.searchList : searchList as List<Id>,
-      based_on: based_on == freezed
-          ? _value.based_on
-          : based_on as List<SearchReference>,
+      basedOn: basedOn == freezed
+          ? _value.basedOn
+          : basedOn as List<SearchReference>,
       created:
           created == freezed ? _value.created : created as List<SearchDate>,
       device:
@@ -3080,6 +3399,8 @@ class __$MediaSearchCopyWithImpl<$Res> extends _$MediaSearchCopyWithImpl<$Res>
   }
 }
 
+@JsonSerializable()
+
 /// @nodoc
 class _$_MediaSearch extends _MediaSearch {
   _$_MediaSearch(
@@ -3091,7 +3412,7 @@ class _$_MediaSearch extends _MediaSearch {
       this.searchText,
       this.searchContent,
       this.searchList,
-      this.based_on,
+      @JsonKey(name: 'based-on') this.basedOn,
       this.created,
       this.device,
       this.encounter,
@@ -3105,6 +3426,9 @@ class _$_MediaSearch extends _MediaSearch {
       this.type,
       this.view})
       : super._();
+
+  factory _$_MediaSearch.fromJson(Map<String, dynamic> json) =>
+      _$_$_MediaSearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -3124,7 +3448,8 @@ class _$_MediaSearch extends _MediaSearch {
   final List<Id> searchList;
   @override //List<SearchString> searchHas,
 //List<SearchToken> searchType,
-  final List<SearchReference> based_on;
+  @JsonKey(name: 'based-on')
+  final List<SearchReference> basedOn;
   @override
   final List<SearchDate> created;
   @override
@@ -3152,7 +3477,7 @@ class _$_MediaSearch extends _MediaSearch {
 
   @override
   String toString() {
-    return 'MediaSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, based_on: $based_on, created: $created, device: $device, encounter: $encounter, identifier: $identifier, modality: $modality, operator: $operator, patient: $patient, site: $site, status: $status, subject: $subject, type: $type, view: $view)';
+    return 'MediaSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, basedOn: $basedOn, created: $created, device: $device, encounter: $encounter, identifier: $identifier, modality: $modality, operator: $operator, patient: $patient, site: $site, status: $status, subject: $subject, type: $type, view: $view)';
   }
 
   @override
@@ -3183,9 +3508,9 @@ class _$_MediaSearch extends _MediaSearch {
             (identical(other.searchList, searchList) ||
                 const DeepCollectionEquality()
                     .equals(other.searchList, searchList)) &&
-            (identical(other.based_on, based_on) ||
+            (identical(other.basedOn, basedOn) ||
                 const DeepCollectionEquality()
-                    .equals(other.based_on, based_on)) &&
+                    .equals(other.basedOn, basedOn)) &&
             (identical(other.created, created) ||
                 const DeepCollectionEquality()
                     .equals(other.created, created)) &&
@@ -3230,7 +3555,7 @@ class _$_MediaSearch extends _MediaSearch {
       const DeepCollectionEquality().hash(searchText) ^
       const DeepCollectionEquality().hash(searchContent) ^
       const DeepCollectionEquality().hash(searchList) ^
-      const DeepCollectionEquality().hash(based_on) ^
+      const DeepCollectionEquality().hash(basedOn) ^
       const DeepCollectionEquality().hash(created) ^
       const DeepCollectionEquality().hash(device) ^
       const DeepCollectionEquality().hash(encounter) ^
@@ -3247,6 +3572,11 @@ class _$_MediaSearch extends _MediaSearch {
   @override
   _$MediaSearchCopyWith<_MediaSearch> get copyWith =>
       __$MediaSearchCopyWithImpl<_MediaSearch>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_MediaSearchToJson(this);
+  }
 }
 
 abstract class _MediaSearch extends MediaSearch {
@@ -3260,7 +3590,7 @@ abstract class _MediaSearch extends MediaSearch {
       List<SearchString> searchText,
       List<SearchString> searchContent,
       List<Id> searchList,
-      List<SearchReference> based_on,
+      @JsonKey(name: 'based-on') List<SearchReference> basedOn,
       List<SearchDate> created,
       List<SearchReference> device,
       List<SearchReference> encounter,
@@ -3273,6 +3603,9 @@ abstract class _MediaSearch extends MediaSearch {
       List<SearchReference> subject,
       List<SearchToken> type,
       List<SearchToken> view}) = _$_MediaSearch;
+
+  factory _MediaSearch.fromJson(Map<String, dynamic> json) =
+      _$_MediaSearch.fromJson;
 
   @override
   List<Id> get searchId;
@@ -3292,7 +3625,8 @@ abstract class _MediaSearch extends MediaSearch {
   List<Id> get searchList;
   @override //List<SearchString> searchHas,
 //List<SearchToken> searchType,
-  List<SearchReference> get based_on;
+  @JsonKey(name: 'based-on')
+  List<SearchReference> get basedOn;
   @override
   List<SearchDate> get created;
   @override
@@ -3321,6 +3655,11 @@ abstract class _MediaSearch extends MediaSearch {
   _$MediaSearchCopyWith<_MediaSearch> get copyWith;
 }
 
+MolecularSequenceSearch _$MolecularSequenceSearchFromJson(
+    Map<String, dynamic> json) {
+  return _MolecularSequenceSearch.fromJson(json);
+}
+
 /// @nodoc
 class _$MolecularSequenceSearchTearOff {
   const _$MolecularSequenceSearchTearOff();
@@ -3340,14 +3679,22 @@ class _$MolecularSequenceSearchTearOff {
       List<SearchReference> patient,
       List<SearchToken> referenceseqid,
       List<SearchToken> type,
-      List<SearchNumber> variant_end,
-      List<SearchNumber> variant_start,
-      List<SearchNumber> window_end,
-      List<SearchNumber> window_start,
-      List<SearchComposite> chromosome_variant_coordinate,
-      List<SearchComposite> chromosome_window_coordinate,
-      List<SearchComposite> referenceseqid_variant_coordinate,
-      List<SearchComposite> referenceseqid_window_coordinate}) {
+      @JsonKey(name: 'variant-end')
+          List<SearchNumber> variantEnd,
+      @JsonKey(name: 'variant-start')
+          List<SearchNumber> variantStart,
+      @JsonKey(name: 'window-end')
+          List<SearchNumber> windowEnd,
+      @JsonKey(name: 'window-start')
+          List<SearchNumber> windowStart,
+      @JsonKey(name: 'chromosome-variant-coordinate')
+          List<SearchComposite> chromosomeVariantcoordinate,
+      @JsonKey(name: 'chromosome-window-coordinate')
+          List<SearchComposite> chromosomeWindowcoordinate,
+      @JsonKey(name: 'referenceseqid-variant-coordinate')
+          List<SearchComposite> referenceseqidVariantcoordinate,
+      @JsonKey(name: 'referenceseqid-window-coordinate')
+          List<SearchComposite> referenceseqidWindowcoordinate}) {
     return _MolecularSequenceSearch(
       searchId: searchId,
       searchLastUpdated: searchLastUpdated,
@@ -3362,15 +3709,20 @@ class _$MolecularSequenceSearchTearOff {
       patient: patient,
       referenceseqid: referenceseqid,
       type: type,
-      variant_end: variant_end,
-      variant_start: variant_start,
-      window_end: window_end,
-      window_start: window_start,
-      chromosome_variant_coordinate: chromosome_variant_coordinate,
-      chromosome_window_coordinate: chromosome_window_coordinate,
-      referenceseqid_variant_coordinate: referenceseqid_variant_coordinate,
-      referenceseqid_window_coordinate: referenceseqid_window_coordinate,
+      variantEnd: variantEnd,
+      variantStart: variantStart,
+      windowEnd: windowEnd,
+      windowStart: windowStart,
+      chromosomeVariantcoordinate: chromosomeVariantcoordinate,
+      chromosomeWindowcoordinate: chromosomeWindowcoordinate,
+      referenceseqidVariantcoordinate: referenceseqidVariantcoordinate,
+      referenceseqidWindowcoordinate: referenceseqidWindowcoordinate,
     );
+  }
+
+// ignore: unused_element
+  MolecularSequenceSearch fromJson(Map<String, Object> json) {
+    return MolecularSequenceSearch.fromJson(json);
   }
 }
 
@@ -3394,15 +3746,24 @@ mixin _$MolecularSequenceSearch {
   List<SearchReference> get patient;
   List<SearchToken> get referenceseqid;
   List<SearchToken> get type;
-  List<SearchNumber> get variant_end;
-  List<SearchNumber> get variant_start;
-  List<SearchNumber> get window_end;
-  List<SearchNumber> get window_start;
-  List<SearchComposite> get chromosome_variant_coordinate;
-  List<SearchComposite> get chromosome_window_coordinate;
-  List<SearchComposite> get referenceseqid_variant_coordinate;
-  List<SearchComposite> get referenceseqid_window_coordinate;
+  @JsonKey(name: 'variant-end')
+  List<SearchNumber> get variantEnd;
+  @JsonKey(name: 'variant-start')
+  List<SearchNumber> get variantStart;
+  @JsonKey(name: 'window-end')
+  List<SearchNumber> get windowEnd;
+  @JsonKey(name: 'window-start')
+  List<SearchNumber> get windowStart;
+  @JsonKey(name: 'chromosome-variant-coordinate')
+  List<SearchComposite> get chromosomeVariantcoordinate;
+  @JsonKey(name: 'chromosome-window-coordinate')
+  List<SearchComposite> get chromosomeWindowcoordinate;
+  @JsonKey(name: 'referenceseqid-variant-coordinate')
+  List<SearchComposite> get referenceseqidVariantcoordinate;
+  @JsonKey(name: 'referenceseqid-window-coordinate')
+  List<SearchComposite> get referenceseqidWindowcoordinate;
 
+  Map<String, dynamic> toJson();
   $MolecularSequenceSearchCopyWith<MolecularSequenceSearch> get copyWith;
 }
 
@@ -3425,14 +3786,22 @@ abstract class $MolecularSequenceSearchCopyWith<$Res> {
       List<SearchReference> patient,
       List<SearchToken> referenceseqid,
       List<SearchToken> type,
-      List<SearchNumber> variant_end,
-      List<SearchNumber> variant_start,
-      List<SearchNumber> window_end,
-      List<SearchNumber> window_start,
-      List<SearchComposite> chromosome_variant_coordinate,
-      List<SearchComposite> chromosome_window_coordinate,
-      List<SearchComposite> referenceseqid_variant_coordinate,
-      List<SearchComposite> referenceseqid_window_coordinate});
+      @JsonKey(name: 'variant-end')
+          List<SearchNumber> variantEnd,
+      @JsonKey(name: 'variant-start')
+          List<SearchNumber> variantStart,
+      @JsonKey(name: 'window-end')
+          List<SearchNumber> windowEnd,
+      @JsonKey(name: 'window-start')
+          List<SearchNumber> windowStart,
+      @JsonKey(name: 'chromosome-variant-coordinate')
+          List<SearchComposite> chromosomeVariantcoordinate,
+      @JsonKey(name: 'chromosome-window-coordinate')
+          List<SearchComposite> chromosomeWindowcoordinate,
+      @JsonKey(name: 'referenceseqid-variant-coordinate')
+          List<SearchComposite> referenceseqidVariantcoordinate,
+      @JsonKey(name: 'referenceseqid-window-coordinate')
+          List<SearchComposite> referenceseqidWindowcoordinate});
 }
 
 /// @nodoc
@@ -3459,14 +3828,14 @@ class _$MolecularSequenceSearchCopyWithImpl<$Res>
     Object patient = freezed,
     Object referenceseqid = freezed,
     Object type = freezed,
-    Object variant_end = freezed,
-    Object variant_start = freezed,
-    Object window_end = freezed,
-    Object window_start = freezed,
-    Object chromosome_variant_coordinate = freezed,
-    Object chromosome_window_coordinate = freezed,
-    Object referenceseqid_variant_coordinate = freezed,
-    Object referenceseqid_window_coordinate = freezed,
+    Object variantEnd = freezed,
+    Object variantStart = freezed,
+    Object windowEnd = freezed,
+    Object windowStart = freezed,
+    Object chromosomeVariantcoordinate = freezed,
+    Object chromosomeWindowcoordinate = freezed,
+    Object referenceseqidVariantcoordinate = freezed,
+    Object referenceseqidWindowcoordinate = freezed,
   }) {
     return _then(_value.copyWith(
       searchId: searchId == freezed ? _value.searchId : searchId as List<Id>,
@@ -3503,32 +3872,31 @@ class _$MolecularSequenceSearchCopyWithImpl<$Res>
           ? _value.referenceseqid
           : referenceseqid as List<SearchToken>,
       type: type == freezed ? _value.type : type as List<SearchToken>,
-      variant_end: variant_end == freezed
-          ? _value.variant_end
-          : variant_end as List<SearchNumber>,
-      variant_start: variant_start == freezed
-          ? _value.variant_start
-          : variant_start as List<SearchNumber>,
-      window_end: window_end == freezed
-          ? _value.window_end
-          : window_end as List<SearchNumber>,
-      window_start: window_start == freezed
-          ? _value.window_start
-          : window_start as List<SearchNumber>,
-      chromosome_variant_coordinate: chromosome_variant_coordinate == freezed
-          ? _value.chromosome_variant_coordinate
-          : chromosome_variant_coordinate as List<SearchComposite>,
-      chromosome_window_coordinate: chromosome_window_coordinate == freezed
-          ? _value.chromosome_window_coordinate
-          : chromosome_window_coordinate as List<SearchComposite>,
-      referenceseqid_variant_coordinate:
-          referenceseqid_variant_coordinate == freezed
-              ? _value.referenceseqid_variant_coordinate
-              : referenceseqid_variant_coordinate as List<SearchComposite>,
-      referenceseqid_window_coordinate:
-          referenceseqid_window_coordinate == freezed
-              ? _value.referenceseqid_window_coordinate
-              : referenceseqid_window_coordinate as List<SearchComposite>,
+      variantEnd: variantEnd == freezed
+          ? _value.variantEnd
+          : variantEnd as List<SearchNumber>,
+      variantStart: variantStart == freezed
+          ? _value.variantStart
+          : variantStart as List<SearchNumber>,
+      windowEnd: windowEnd == freezed
+          ? _value.windowEnd
+          : windowEnd as List<SearchNumber>,
+      windowStart: windowStart == freezed
+          ? _value.windowStart
+          : windowStart as List<SearchNumber>,
+      chromosomeVariantcoordinate: chromosomeVariantcoordinate == freezed
+          ? _value.chromosomeVariantcoordinate
+          : chromosomeVariantcoordinate as List<SearchComposite>,
+      chromosomeWindowcoordinate: chromosomeWindowcoordinate == freezed
+          ? _value.chromosomeWindowcoordinate
+          : chromosomeWindowcoordinate as List<SearchComposite>,
+      referenceseqidVariantcoordinate:
+          referenceseqidVariantcoordinate == freezed
+              ? _value.referenceseqidVariantcoordinate
+              : referenceseqidVariantcoordinate as List<SearchComposite>,
+      referenceseqidWindowcoordinate: referenceseqidWindowcoordinate == freezed
+          ? _value.referenceseqidWindowcoordinate
+          : referenceseqidWindowcoordinate as List<SearchComposite>,
     ));
   }
 }
@@ -3554,14 +3922,22 @@ abstract class _$MolecularSequenceSearchCopyWith<$Res>
       List<SearchReference> patient,
       List<SearchToken> referenceseqid,
       List<SearchToken> type,
-      List<SearchNumber> variant_end,
-      List<SearchNumber> variant_start,
-      List<SearchNumber> window_end,
-      List<SearchNumber> window_start,
-      List<SearchComposite> chromosome_variant_coordinate,
-      List<SearchComposite> chromosome_window_coordinate,
-      List<SearchComposite> referenceseqid_variant_coordinate,
-      List<SearchComposite> referenceseqid_window_coordinate});
+      @JsonKey(name: 'variant-end')
+          List<SearchNumber> variantEnd,
+      @JsonKey(name: 'variant-start')
+          List<SearchNumber> variantStart,
+      @JsonKey(name: 'window-end')
+          List<SearchNumber> windowEnd,
+      @JsonKey(name: 'window-start')
+          List<SearchNumber> windowStart,
+      @JsonKey(name: 'chromosome-variant-coordinate')
+          List<SearchComposite> chromosomeVariantcoordinate,
+      @JsonKey(name: 'chromosome-window-coordinate')
+          List<SearchComposite> chromosomeWindowcoordinate,
+      @JsonKey(name: 'referenceseqid-variant-coordinate')
+          List<SearchComposite> referenceseqidVariantcoordinate,
+      @JsonKey(name: 'referenceseqid-window-coordinate')
+          List<SearchComposite> referenceseqidWindowcoordinate});
 }
 
 /// @nodoc
@@ -3591,14 +3967,14 @@ class __$MolecularSequenceSearchCopyWithImpl<$Res>
     Object patient = freezed,
     Object referenceseqid = freezed,
     Object type = freezed,
-    Object variant_end = freezed,
-    Object variant_start = freezed,
-    Object window_end = freezed,
-    Object window_start = freezed,
-    Object chromosome_variant_coordinate = freezed,
-    Object chromosome_window_coordinate = freezed,
-    Object referenceseqid_variant_coordinate = freezed,
-    Object referenceseqid_window_coordinate = freezed,
+    Object variantEnd = freezed,
+    Object variantStart = freezed,
+    Object windowEnd = freezed,
+    Object windowStart = freezed,
+    Object chromosomeVariantcoordinate = freezed,
+    Object chromosomeWindowcoordinate = freezed,
+    Object referenceseqidVariantcoordinate = freezed,
+    Object referenceseqidWindowcoordinate = freezed,
   }) {
     return _then(_MolecularSequenceSearch(
       searchId: searchId == freezed ? _value.searchId : searchId as List<Id>,
@@ -3635,35 +4011,36 @@ class __$MolecularSequenceSearchCopyWithImpl<$Res>
           ? _value.referenceseqid
           : referenceseqid as List<SearchToken>,
       type: type == freezed ? _value.type : type as List<SearchToken>,
-      variant_end: variant_end == freezed
-          ? _value.variant_end
-          : variant_end as List<SearchNumber>,
-      variant_start: variant_start == freezed
-          ? _value.variant_start
-          : variant_start as List<SearchNumber>,
-      window_end: window_end == freezed
-          ? _value.window_end
-          : window_end as List<SearchNumber>,
-      window_start: window_start == freezed
-          ? _value.window_start
-          : window_start as List<SearchNumber>,
-      chromosome_variant_coordinate: chromosome_variant_coordinate == freezed
-          ? _value.chromosome_variant_coordinate
-          : chromosome_variant_coordinate as List<SearchComposite>,
-      chromosome_window_coordinate: chromosome_window_coordinate == freezed
-          ? _value.chromosome_window_coordinate
-          : chromosome_window_coordinate as List<SearchComposite>,
-      referenceseqid_variant_coordinate:
-          referenceseqid_variant_coordinate == freezed
-              ? _value.referenceseqid_variant_coordinate
-              : referenceseqid_variant_coordinate as List<SearchComposite>,
-      referenceseqid_window_coordinate:
-          referenceseqid_window_coordinate == freezed
-              ? _value.referenceseqid_window_coordinate
-              : referenceseqid_window_coordinate as List<SearchComposite>,
+      variantEnd: variantEnd == freezed
+          ? _value.variantEnd
+          : variantEnd as List<SearchNumber>,
+      variantStart: variantStart == freezed
+          ? _value.variantStart
+          : variantStart as List<SearchNumber>,
+      windowEnd: windowEnd == freezed
+          ? _value.windowEnd
+          : windowEnd as List<SearchNumber>,
+      windowStart: windowStart == freezed
+          ? _value.windowStart
+          : windowStart as List<SearchNumber>,
+      chromosomeVariantcoordinate: chromosomeVariantcoordinate == freezed
+          ? _value.chromosomeVariantcoordinate
+          : chromosomeVariantcoordinate as List<SearchComposite>,
+      chromosomeWindowcoordinate: chromosomeWindowcoordinate == freezed
+          ? _value.chromosomeWindowcoordinate
+          : chromosomeWindowcoordinate as List<SearchComposite>,
+      referenceseqidVariantcoordinate:
+          referenceseqidVariantcoordinate == freezed
+              ? _value.referenceseqidVariantcoordinate
+              : referenceseqidVariantcoordinate as List<SearchComposite>,
+      referenceseqidWindowcoordinate: referenceseqidWindowcoordinate == freezed
+          ? _value.referenceseqidWindowcoordinate
+          : referenceseqidWindowcoordinate as List<SearchComposite>,
     ));
   }
 }
+
+@JsonSerializable()
 
 /// @nodoc
 class _$_MolecularSequenceSearch extends _MolecularSequenceSearch {
@@ -3681,15 +4058,26 @@ class _$_MolecularSequenceSearch extends _MolecularSequenceSearch {
       this.patient,
       this.referenceseqid,
       this.type,
-      this.variant_end,
-      this.variant_start,
-      this.window_end,
-      this.window_start,
-      this.chromosome_variant_coordinate,
-      this.chromosome_window_coordinate,
-      this.referenceseqid_variant_coordinate,
-      this.referenceseqid_window_coordinate})
+      @JsonKey(name: 'variant-end')
+          this.variantEnd,
+      @JsonKey(name: 'variant-start')
+          this.variantStart,
+      @JsonKey(name: 'window-end')
+          this.windowEnd,
+      @JsonKey(name: 'window-start')
+          this.windowStart,
+      @JsonKey(name: 'chromosome-variant-coordinate')
+          this.chromosomeVariantcoordinate,
+      @JsonKey(name: 'chromosome-window-coordinate')
+          this.chromosomeWindowcoordinate,
+      @JsonKey(name: 'referenceseqid-variant-coordinate')
+          this.referenceseqidVariantcoordinate,
+      @JsonKey(name: 'referenceseqid-window-coordinate')
+          this.referenceseqidWindowcoordinate})
       : super._();
+
+  factory _$_MolecularSequenceSearch.fromJson(Map<String, dynamic> json) =>
+      _$_$_MolecularSequenceSearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -3719,25 +4107,33 @@ class _$_MolecularSequenceSearch extends _MolecularSequenceSearch {
   @override
   final List<SearchToken> type;
   @override
-  final List<SearchNumber> variant_end;
+  @JsonKey(name: 'variant-end')
+  final List<SearchNumber> variantEnd;
   @override
-  final List<SearchNumber> variant_start;
+  @JsonKey(name: 'variant-start')
+  final List<SearchNumber> variantStart;
   @override
-  final List<SearchNumber> window_end;
+  @JsonKey(name: 'window-end')
+  final List<SearchNumber> windowEnd;
   @override
-  final List<SearchNumber> window_start;
+  @JsonKey(name: 'window-start')
+  final List<SearchNumber> windowStart;
   @override
-  final List<SearchComposite> chromosome_variant_coordinate;
+  @JsonKey(name: 'chromosome-variant-coordinate')
+  final List<SearchComposite> chromosomeVariantcoordinate;
   @override
-  final List<SearchComposite> chromosome_window_coordinate;
+  @JsonKey(name: 'chromosome-window-coordinate')
+  final List<SearchComposite> chromosomeWindowcoordinate;
   @override
-  final List<SearchComposite> referenceseqid_variant_coordinate;
+  @JsonKey(name: 'referenceseqid-variant-coordinate')
+  final List<SearchComposite> referenceseqidVariantcoordinate;
   @override
-  final List<SearchComposite> referenceseqid_window_coordinate;
+  @JsonKey(name: 'referenceseqid-window-coordinate')
+  final List<SearchComposite> referenceseqidWindowcoordinate;
 
   @override
   String toString() {
-    return 'MolecularSequenceSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, chromosome: $chromosome, identifier: $identifier, patient: $patient, referenceseqid: $referenceseqid, type: $type, variant_end: $variant_end, variant_start: $variant_start, window_end: $window_end, window_start: $window_start, chromosome_variant_coordinate: $chromosome_variant_coordinate, chromosome_window_coordinate: $chromosome_window_coordinate, referenceseqid_variant_coordinate: $referenceseqid_variant_coordinate, referenceseqid_window_coordinate: $referenceseqid_window_coordinate)';
+    return 'MolecularSequenceSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, chromosome: $chromosome, identifier: $identifier, patient: $patient, referenceseqid: $referenceseqid, type: $type, variantEnd: $variantEnd, variantStart: $variantStart, windowEnd: $windowEnd, windowStart: $windowStart, chromosomeVariantcoordinate: $chromosomeVariantcoordinate, chromosomeWindowcoordinate: $chromosomeWindowcoordinate, referenceseqidVariantcoordinate: $referenceseqidVariantcoordinate, referenceseqidWindowcoordinate: $referenceseqidWindowcoordinate)';
   }
 
   @override
@@ -3782,31 +4178,31 @@ class _$_MolecularSequenceSearch extends _MolecularSequenceSearch {
                     .equals(other.referenceseqid, referenceseqid)) &&
             (identical(other.type, type) ||
                 const DeepCollectionEquality().equals(other.type, type)) &&
-            (identical(other.variant_end, variant_end) ||
+            (identical(other.variantEnd, variantEnd) ||
                 const DeepCollectionEquality()
-                    .equals(other.variant_end, variant_end)) &&
-            (identical(other.variant_start, variant_start) ||
+                    .equals(other.variantEnd, variantEnd)) &&
+            (identical(other.variantStart, variantStart) ||
                 const DeepCollectionEquality()
-                    .equals(other.variant_start, variant_start)) &&
-            (identical(other.window_end, window_end) ||
+                    .equals(other.variantStart, variantStart)) &&
+            (identical(other.windowEnd, windowEnd) ||
                 const DeepCollectionEquality()
-                    .equals(other.window_end, window_end)) &&
-            (identical(other.window_start, window_start) ||
+                    .equals(other.windowEnd, windowEnd)) &&
+            (identical(other.windowStart, windowStart) ||
                 const DeepCollectionEquality()
-                    .equals(other.window_start, window_start)) &&
-            (identical(other.chromosome_variant_coordinate, chromosome_variant_coordinate) ||
+                    .equals(other.windowStart, windowStart)) &&
+            (identical(other.chromosomeVariantcoordinate, chromosomeVariantcoordinate) ||
                 const DeepCollectionEquality().equals(
-                    other.chromosome_variant_coordinate,
-                    chromosome_variant_coordinate)) &&
-            (identical(other.chromosome_window_coordinate, chromosome_window_coordinate) ||
+                    other.chromosomeVariantcoordinate,
+                    chromosomeVariantcoordinate)) &&
+            (identical(other.chromosomeWindowcoordinate, chromosomeWindowcoordinate) ||
                 const DeepCollectionEquality().equals(
-                    other.chromosome_window_coordinate,
-                    chromosome_window_coordinate)) &&
-            (identical(other.referenceseqid_variant_coordinate, referenceseqid_variant_coordinate) ||
+                    other.chromosomeWindowcoordinate,
+                    chromosomeWindowcoordinate)) &&
+            (identical(other.referenceseqidVariantcoordinate, referenceseqidVariantcoordinate) ||
                 const DeepCollectionEquality().equals(
-                    other.referenceseqid_variant_coordinate,
-                    referenceseqid_variant_coordinate)) &&
-            (identical(other.referenceseqid_window_coordinate, referenceseqid_window_coordinate) || const DeepCollectionEquality().equals(other.referenceseqid_window_coordinate, referenceseqid_window_coordinate)));
+                    other.referenceseqidVariantcoordinate,
+                    referenceseqidVariantcoordinate)) &&
+            (identical(other.referenceseqidWindowcoordinate, referenceseqidWindowcoordinate) || const DeepCollectionEquality().equals(other.referenceseqidWindowcoordinate, referenceseqidWindowcoordinate)));
   }
 
   @override
@@ -3825,19 +4221,24 @@ class _$_MolecularSequenceSearch extends _MolecularSequenceSearch {
       const DeepCollectionEquality().hash(patient) ^
       const DeepCollectionEquality().hash(referenceseqid) ^
       const DeepCollectionEquality().hash(type) ^
-      const DeepCollectionEquality().hash(variant_end) ^
-      const DeepCollectionEquality().hash(variant_start) ^
-      const DeepCollectionEquality().hash(window_end) ^
-      const DeepCollectionEquality().hash(window_start) ^
-      const DeepCollectionEquality().hash(chromosome_variant_coordinate) ^
-      const DeepCollectionEquality().hash(chromosome_window_coordinate) ^
-      const DeepCollectionEquality().hash(referenceseqid_variant_coordinate) ^
-      const DeepCollectionEquality().hash(referenceseqid_window_coordinate);
+      const DeepCollectionEquality().hash(variantEnd) ^
+      const DeepCollectionEquality().hash(variantStart) ^
+      const DeepCollectionEquality().hash(windowEnd) ^
+      const DeepCollectionEquality().hash(windowStart) ^
+      const DeepCollectionEquality().hash(chromosomeVariantcoordinate) ^
+      const DeepCollectionEquality().hash(chromosomeWindowcoordinate) ^
+      const DeepCollectionEquality().hash(referenceseqidVariantcoordinate) ^
+      const DeepCollectionEquality().hash(referenceseqidWindowcoordinate);
 
   @override
   _$MolecularSequenceSearchCopyWith<_MolecularSequenceSearch> get copyWith =>
       __$MolecularSequenceSearchCopyWithImpl<_MolecularSequenceSearch>(
           this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_MolecularSequenceSearchToJson(this);
+  }
 }
 
 abstract class _MolecularSequenceSearch extends MolecularSequenceSearch {
@@ -3856,15 +4257,26 @@ abstract class _MolecularSequenceSearch extends MolecularSequenceSearch {
           List<SearchReference> patient,
           List<SearchToken> referenceseqid,
           List<SearchToken> type,
-          List<SearchNumber> variant_end,
-          List<SearchNumber> variant_start,
-          List<SearchNumber> window_end,
-          List<SearchNumber> window_start,
-          List<SearchComposite> chromosome_variant_coordinate,
-          List<SearchComposite> chromosome_window_coordinate,
-          List<SearchComposite> referenceseqid_variant_coordinate,
-          List<SearchComposite> referenceseqid_window_coordinate}) =
+          @JsonKey(name: 'variant-end')
+              List<SearchNumber> variantEnd,
+          @JsonKey(name: 'variant-start')
+              List<SearchNumber> variantStart,
+          @JsonKey(name: 'window-end')
+              List<SearchNumber> windowEnd,
+          @JsonKey(name: 'window-start')
+              List<SearchNumber> windowStart,
+          @JsonKey(name: 'chromosome-variant-coordinate')
+              List<SearchComposite> chromosomeVariantcoordinate,
+          @JsonKey(name: 'chromosome-window-coordinate')
+              List<SearchComposite> chromosomeWindowcoordinate,
+          @JsonKey(name: 'referenceseqid-variant-coordinate')
+              List<SearchComposite> referenceseqidVariantcoordinate,
+          @JsonKey(name: 'referenceseqid-window-coordinate')
+              List<SearchComposite> referenceseqidWindowcoordinate}) =
       _$_MolecularSequenceSearch;
+
+  factory _MolecularSequenceSearch.fromJson(Map<String, dynamic> json) =
+      _$_MolecularSequenceSearch.fromJson;
 
   @override
   List<Id> get searchId;
@@ -3894,23 +4306,36 @@ abstract class _MolecularSequenceSearch extends MolecularSequenceSearch {
   @override
   List<SearchToken> get type;
   @override
-  List<SearchNumber> get variant_end;
+  @JsonKey(name: 'variant-end')
+  List<SearchNumber> get variantEnd;
   @override
-  List<SearchNumber> get variant_start;
+  @JsonKey(name: 'variant-start')
+  List<SearchNumber> get variantStart;
   @override
-  List<SearchNumber> get window_end;
+  @JsonKey(name: 'window-end')
+  List<SearchNumber> get windowEnd;
   @override
-  List<SearchNumber> get window_start;
+  @JsonKey(name: 'window-start')
+  List<SearchNumber> get windowStart;
   @override
-  List<SearchComposite> get chromosome_variant_coordinate;
+  @JsonKey(name: 'chromosome-variant-coordinate')
+  List<SearchComposite> get chromosomeVariantcoordinate;
   @override
-  List<SearchComposite> get chromosome_window_coordinate;
+  @JsonKey(name: 'chromosome-window-coordinate')
+  List<SearchComposite> get chromosomeWindowcoordinate;
   @override
-  List<SearchComposite> get referenceseqid_variant_coordinate;
+  @JsonKey(name: 'referenceseqid-variant-coordinate')
+  List<SearchComposite> get referenceseqidVariantcoordinate;
   @override
-  List<SearchComposite> get referenceseqid_window_coordinate;
+  @JsonKey(name: 'referenceseqid-window-coordinate')
+  List<SearchComposite> get referenceseqidWindowcoordinate;
   @override
   _$MolecularSequenceSearchCopyWith<_MolecularSequenceSearch> get copyWith;
+}
+
+QuestionnaireResponseSearch _$QuestionnaireResponseSearchFromJson(
+    Map<String, dynamic> json) {
+  return _QuestionnaireResponseSearch.fromJson(json);
 }
 
 /// @nodoc
@@ -3929,10 +4354,10 @@ class _$QuestionnaireResponseSearchTearOff {
       List<Id> searchList,
       List<SearchReference> author,
       List<SearchDate> authored,
-      List<SearchReference> based_on,
+      @JsonKey(name: 'based-on') List<SearchReference> basedOn,
       List<SearchReference> encounter,
       List<SearchToken> identifier,
-      List<SearchReference> part_of,
+      @JsonKey(name: 'part-of') List<SearchReference> partOf,
       List<SearchReference> patient,
       List<SearchReference> questionnaire,
       List<SearchReference> source,
@@ -3949,16 +4374,21 @@ class _$QuestionnaireResponseSearchTearOff {
       searchList: searchList,
       author: author,
       authored: authored,
-      based_on: based_on,
+      basedOn: basedOn,
       encounter: encounter,
       identifier: identifier,
-      part_of: part_of,
+      partOf: partOf,
       patient: patient,
       questionnaire: questionnaire,
       source: source,
       status: status,
       subject: subject,
     );
+  }
+
+// ignore: unused_element
+  QuestionnaireResponseSearch fromJson(Map<String, Object> json) {
+    return QuestionnaireResponseSearch.fromJson(json);
   }
 }
 
@@ -3979,16 +4409,19 @@ mixin _$QuestionnaireResponseSearch {
 //List<SearchToken> searchType,
   List<SearchReference> get author;
   List<SearchDate> get authored;
-  List<SearchReference> get based_on;
+  @JsonKey(name: 'based-on')
+  List<SearchReference> get basedOn;
   List<SearchReference> get encounter;
   List<SearchToken> get identifier;
-  List<SearchReference> get part_of;
+  @JsonKey(name: 'part-of')
+  List<SearchReference> get partOf;
   List<SearchReference> get patient;
   List<SearchReference> get questionnaire;
   List<SearchReference> get source;
   List<SearchToken> get status;
   List<SearchReference> get subject;
 
+  Map<String, dynamic> toJson();
   $QuestionnaireResponseSearchCopyWith<QuestionnaireResponseSearch>
       get copyWith;
 }
@@ -4010,10 +4443,10 @@ abstract class $QuestionnaireResponseSearchCopyWith<$Res> {
       List<Id> searchList,
       List<SearchReference> author,
       List<SearchDate> authored,
-      List<SearchReference> based_on,
+      @JsonKey(name: 'based-on') List<SearchReference> basedOn,
       List<SearchReference> encounter,
       List<SearchToken> identifier,
-      List<SearchReference> part_of,
+      @JsonKey(name: 'part-of') List<SearchReference> partOf,
       List<SearchReference> patient,
       List<SearchReference> questionnaire,
       List<SearchReference> source,
@@ -4042,10 +4475,10 @@ class _$QuestionnaireResponseSearchCopyWithImpl<$Res>
     Object searchList = freezed,
     Object author = freezed,
     Object authored = freezed,
-    Object based_on = freezed,
+    Object basedOn = freezed,
     Object encounter = freezed,
     Object identifier = freezed,
-    Object part_of = freezed,
+    Object partOf = freezed,
     Object patient = freezed,
     Object questionnaire = freezed,
     Object source = freezed,
@@ -4078,18 +4511,17 @@ class _$QuestionnaireResponseSearchCopyWithImpl<$Res>
           author == freezed ? _value.author : author as List<SearchReference>,
       authored:
           authored == freezed ? _value.authored : authored as List<SearchDate>,
-      based_on: based_on == freezed
-          ? _value.based_on
-          : based_on as List<SearchReference>,
+      basedOn: basedOn == freezed
+          ? _value.basedOn
+          : basedOn as List<SearchReference>,
       encounter: encounter == freezed
           ? _value.encounter
           : encounter as List<SearchReference>,
       identifier: identifier == freezed
           ? _value.identifier
           : identifier as List<SearchToken>,
-      part_of: part_of == freezed
-          ? _value.part_of
-          : part_of as List<SearchReference>,
+      partOf:
+          partOf == freezed ? _value.partOf : partOf as List<SearchReference>,
       patient: patient == freezed
           ? _value.patient
           : patient as List<SearchReference>,
@@ -4125,10 +4557,10 @@ abstract class _$QuestionnaireResponseSearchCopyWith<$Res>
       List<Id> searchList,
       List<SearchReference> author,
       List<SearchDate> authored,
-      List<SearchReference> based_on,
+      @JsonKey(name: 'based-on') List<SearchReference> basedOn,
       List<SearchReference> encounter,
       List<SearchToken> identifier,
-      List<SearchReference> part_of,
+      @JsonKey(name: 'part-of') List<SearchReference> partOf,
       List<SearchReference> patient,
       List<SearchReference> questionnaire,
       List<SearchReference> source,
@@ -4161,10 +4593,10 @@ class __$QuestionnaireResponseSearchCopyWithImpl<$Res>
     Object searchList = freezed,
     Object author = freezed,
     Object authored = freezed,
-    Object based_on = freezed,
+    Object basedOn = freezed,
     Object encounter = freezed,
     Object identifier = freezed,
-    Object part_of = freezed,
+    Object partOf = freezed,
     Object patient = freezed,
     Object questionnaire = freezed,
     Object source = freezed,
@@ -4197,18 +4629,17 @@ class __$QuestionnaireResponseSearchCopyWithImpl<$Res>
           author == freezed ? _value.author : author as List<SearchReference>,
       authored:
           authored == freezed ? _value.authored : authored as List<SearchDate>,
-      based_on: based_on == freezed
-          ? _value.based_on
-          : based_on as List<SearchReference>,
+      basedOn: basedOn == freezed
+          ? _value.basedOn
+          : basedOn as List<SearchReference>,
       encounter: encounter == freezed
           ? _value.encounter
           : encounter as List<SearchReference>,
       identifier: identifier == freezed
           ? _value.identifier
           : identifier as List<SearchToken>,
-      part_of: part_of == freezed
-          ? _value.part_of
-          : part_of as List<SearchReference>,
+      partOf:
+          partOf == freezed ? _value.partOf : partOf as List<SearchReference>,
       patient: patient == freezed
           ? _value.patient
           : patient as List<SearchReference>,
@@ -4225,6 +4656,8 @@ class __$QuestionnaireResponseSearchCopyWithImpl<$Res>
   }
 }
 
+@JsonSerializable()
+
 /// @nodoc
 class _$_QuestionnaireResponseSearch extends _QuestionnaireResponseSearch {
   _$_QuestionnaireResponseSearch(
@@ -4238,16 +4671,19 @@ class _$_QuestionnaireResponseSearch extends _QuestionnaireResponseSearch {
       this.searchList,
       this.author,
       this.authored,
-      this.based_on,
+      @JsonKey(name: 'based-on') this.basedOn,
       this.encounter,
       this.identifier,
-      this.part_of,
+      @JsonKey(name: 'part-of') this.partOf,
       this.patient,
       this.questionnaire,
       this.source,
       this.status,
       this.subject})
       : super._();
+
+  factory _$_QuestionnaireResponseSearch.fromJson(Map<String, dynamic> json) =>
+      _$_$_QuestionnaireResponseSearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -4271,13 +4707,15 @@ class _$_QuestionnaireResponseSearch extends _QuestionnaireResponseSearch {
   @override
   final List<SearchDate> authored;
   @override
-  final List<SearchReference> based_on;
+  @JsonKey(name: 'based-on')
+  final List<SearchReference> basedOn;
   @override
   final List<SearchReference> encounter;
   @override
   final List<SearchToken> identifier;
   @override
-  final List<SearchReference> part_of;
+  @JsonKey(name: 'part-of')
+  final List<SearchReference> partOf;
   @override
   final List<SearchReference> patient;
   @override
@@ -4291,7 +4729,7 @@ class _$_QuestionnaireResponseSearch extends _QuestionnaireResponseSearch {
 
   @override
   String toString() {
-    return 'QuestionnaireResponseSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, author: $author, authored: $authored, based_on: $based_on, encounter: $encounter, identifier: $identifier, part_of: $part_of, patient: $patient, questionnaire: $questionnaire, source: $source, status: $status, subject: $subject)';
+    return 'QuestionnaireResponseSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, author: $author, authored: $authored, basedOn: $basedOn, encounter: $encounter, identifier: $identifier, partOf: $partOf, patient: $patient, questionnaire: $questionnaire, source: $source, status: $status, subject: $subject)';
   }
 
   @override
@@ -4327,18 +4765,17 @@ class _$_QuestionnaireResponseSearch extends _QuestionnaireResponseSearch {
             (identical(other.authored, authored) ||
                 const DeepCollectionEquality()
                     .equals(other.authored, authored)) &&
-            (identical(other.based_on, based_on) ||
+            (identical(other.basedOn, basedOn) ||
                 const DeepCollectionEquality()
-                    .equals(other.based_on, based_on)) &&
+                    .equals(other.basedOn, basedOn)) &&
             (identical(other.encounter, encounter) ||
                 const DeepCollectionEquality()
                     .equals(other.encounter, encounter)) &&
             (identical(other.identifier, identifier) ||
                 const DeepCollectionEquality()
                     .equals(other.identifier, identifier)) &&
-            (identical(other.part_of, part_of) ||
-                const DeepCollectionEquality()
-                    .equals(other.part_of, part_of)) &&
+            (identical(other.partOf, partOf) ||
+                const DeepCollectionEquality().equals(other.partOf, partOf)) &&
             (identical(other.patient, patient) ||
                 const DeepCollectionEquality()
                     .equals(other.patient, patient)) &&
@@ -4366,10 +4803,10 @@ class _$_QuestionnaireResponseSearch extends _QuestionnaireResponseSearch {
       const DeepCollectionEquality().hash(searchList) ^
       const DeepCollectionEquality().hash(author) ^
       const DeepCollectionEquality().hash(authored) ^
-      const DeepCollectionEquality().hash(based_on) ^
+      const DeepCollectionEquality().hash(basedOn) ^
       const DeepCollectionEquality().hash(encounter) ^
       const DeepCollectionEquality().hash(identifier) ^
-      const DeepCollectionEquality().hash(part_of) ^
+      const DeepCollectionEquality().hash(partOf) ^
       const DeepCollectionEquality().hash(patient) ^
       const DeepCollectionEquality().hash(questionnaire) ^
       const DeepCollectionEquality().hash(source) ^
@@ -4380,6 +4817,11 @@ class _$_QuestionnaireResponseSearch extends _QuestionnaireResponseSearch {
   _$QuestionnaireResponseSearchCopyWith<_QuestionnaireResponseSearch>
       get copyWith => __$QuestionnaireResponseSearchCopyWithImpl<
           _QuestionnaireResponseSearch>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_QuestionnaireResponseSearchToJson(this);
+  }
 }
 
 abstract class _QuestionnaireResponseSearch
@@ -4396,15 +4838,18 @@ abstract class _QuestionnaireResponseSearch
       List<Id> searchList,
       List<SearchReference> author,
       List<SearchDate> authored,
-      List<SearchReference> based_on,
+      @JsonKey(name: 'based-on') List<SearchReference> basedOn,
       List<SearchReference> encounter,
       List<SearchToken> identifier,
-      List<SearchReference> part_of,
+      @JsonKey(name: 'part-of') List<SearchReference> partOf,
       List<SearchReference> patient,
       List<SearchReference> questionnaire,
       List<SearchReference> source,
       List<SearchToken> status,
       List<SearchReference> subject}) = _$_QuestionnaireResponseSearch;
+
+  factory _QuestionnaireResponseSearch.fromJson(Map<String, dynamic> json) =
+      _$_QuestionnaireResponseSearch.fromJson;
 
   @override
   List<Id> get searchId;
@@ -4428,13 +4873,15 @@ abstract class _QuestionnaireResponseSearch
   @override
   List<SearchDate> get authored;
   @override
-  List<SearchReference> get based_on;
+  @JsonKey(name: 'based-on')
+  List<SearchReference> get basedOn;
   @override
   List<SearchReference> get encounter;
   @override
   List<SearchToken> get identifier;
   @override
-  List<SearchReference> get part_of;
+  @JsonKey(name: 'part-of')
+  List<SearchReference> get partOf;
   @override
   List<SearchReference> get patient;
   @override
@@ -4448,6 +4895,10 @@ abstract class _QuestionnaireResponseSearch
   @override
   _$QuestionnaireResponseSearchCopyWith<_QuestionnaireResponseSearch>
       get copyWith;
+}
+
+SpecimenSearch _$SpecimenSearchFromJson(Map<String, dynamic> json) {
+  return _SpecimenSearch.fromJson(json);
 }
 
 /// @nodoc
@@ -4469,7 +4920,7 @@ class _$SpecimenSearchTearOff {
       List<SearchDate> collected,
       List<SearchReference> collector,
       List<SearchToken> container,
-      List<SearchToken> container_id,
+      @JsonKey(name: 'container-id') List<SearchToken> containerId,
       List<SearchToken> identifier,
       List<SearchReference> parent,
       List<SearchReference> patient,
@@ -4490,7 +4941,7 @@ class _$SpecimenSearchTearOff {
       collected: collected,
       collector: collector,
       container: container,
-      container_id: container_id,
+      containerId: containerId,
       identifier: identifier,
       parent: parent,
       patient: patient,
@@ -4498,6 +4949,11 @@ class _$SpecimenSearchTearOff {
       subject: subject,
       type: type,
     );
+  }
+
+// ignore: unused_element
+  SpecimenSearch fromJson(Map<String, Object> json) {
+    return SpecimenSearch.fromJson(json);
   }
 }
 
@@ -4521,7 +4977,8 @@ mixin _$SpecimenSearch {
   List<SearchDate> get collected;
   List<SearchReference> get collector;
   List<SearchToken> get container;
-  List<SearchToken> get container_id;
+  @JsonKey(name: 'container-id')
+  List<SearchToken> get containerId;
   List<SearchToken> get identifier;
   List<SearchReference> get parent;
   List<SearchReference> get patient;
@@ -4529,6 +4986,7 @@ mixin _$SpecimenSearch {
   List<SearchReference> get subject;
   List<SearchToken> get type;
 
+  Map<String, dynamic> toJson();
   $SpecimenSearchCopyWith<SpecimenSearch> get copyWith;
 }
 
@@ -4551,7 +5009,7 @@ abstract class $SpecimenSearchCopyWith<$Res> {
       List<SearchDate> collected,
       List<SearchReference> collector,
       List<SearchToken> container,
-      List<SearchToken> container_id,
+      @JsonKey(name: 'container-id') List<SearchToken> containerId,
       List<SearchToken> identifier,
       List<SearchReference> parent,
       List<SearchReference> patient,
@@ -4584,7 +5042,7 @@ class _$SpecimenSearchCopyWithImpl<$Res>
     Object collected = freezed,
     Object collector = freezed,
     Object container = freezed,
-    Object container_id = freezed,
+    Object containerId = freezed,
     Object identifier = freezed,
     Object parent = freezed,
     Object patient = freezed,
@@ -4628,9 +5086,9 @@ class _$SpecimenSearchCopyWithImpl<$Res>
       container: container == freezed
           ? _value.container
           : container as List<SearchToken>,
-      container_id: container_id == freezed
-          ? _value.container_id
-          : container_id as List<SearchToken>,
+      containerId: containerId == freezed
+          ? _value.containerId
+          : containerId as List<SearchToken>,
       identifier: identifier == freezed
           ? _value.identifier
           : identifier as List<SearchToken>,
@@ -4669,7 +5127,7 @@ abstract class _$SpecimenSearchCopyWith<$Res>
       List<SearchDate> collected,
       List<SearchReference> collector,
       List<SearchToken> container,
-      List<SearchToken> container_id,
+      @JsonKey(name: 'container-id') List<SearchToken> containerId,
       List<SearchToken> identifier,
       List<SearchReference> parent,
       List<SearchReference> patient,
@@ -4704,7 +5162,7 @@ class __$SpecimenSearchCopyWithImpl<$Res>
     Object collected = freezed,
     Object collector = freezed,
     Object container = freezed,
-    Object container_id = freezed,
+    Object containerId = freezed,
     Object identifier = freezed,
     Object parent = freezed,
     Object patient = freezed,
@@ -4748,9 +5206,9 @@ class __$SpecimenSearchCopyWithImpl<$Res>
       container: container == freezed
           ? _value.container
           : container as List<SearchToken>,
-      container_id: container_id == freezed
-          ? _value.container_id
-          : container_id as List<SearchToken>,
+      containerId: containerId == freezed
+          ? _value.containerId
+          : containerId as List<SearchToken>,
       identifier: identifier == freezed
           ? _value.identifier
           : identifier as List<SearchToken>,
@@ -4768,6 +5226,8 @@ class __$SpecimenSearchCopyWithImpl<$Res>
   }
 }
 
+@JsonSerializable()
+
 /// @nodoc
 class _$_SpecimenSearch extends _SpecimenSearch {
   _$_SpecimenSearch(
@@ -4784,7 +5244,7 @@ class _$_SpecimenSearch extends _SpecimenSearch {
       this.collected,
       this.collector,
       this.container,
-      this.container_id,
+      @JsonKey(name: 'container-id') this.containerId,
       this.identifier,
       this.parent,
       this.patient,
@@ -4792,6 +5252,9 @@ class _$_SpecimenSearch extends _SpecimenSearch {
       this.subject,
       this.type})
       : super._();
+
+  factory _$_SpecimenSearch.fromJson(Map<String, dynamic> json) =>
+      _$_$_SpecimenSearchFromJson(json);
 
   @override
   final List<Id> searchId;
@@ -4821,7 +5284,8 @@ class _$_SpecimenSearch extends _SpecimenSearch {
   @override
   final List<SearchToken> container;
   @override
-  final List<SearchToken> container_id;
+  @JsonKey(name: 'container-id')
+  final List<SearchToken> containerId;
   @override
   final List<SearchToken> identifier;
   @override
@@ -4837,7 +5301,7 @@ class _$_SpecimenSearch extends _SpecimenSearch {
 
   @override
   String toString() {
-    return 'SpecimenSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, accession: $accession, bodysite: $bodysite, collected: $collected, collector: $collector, container: $container, container_id: $container_id, identifier: $identifier, parent: $parent, patient: $patient, status: $status, subject: $subject, type: $type)';
+    return 'SpecimenSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, accession: $accession, bodysite: $bodysite, collected: $collected, collector: $collector, container: $container, containerId: $containerId, identifier: $identifier, parent: $parent, patient: $patient, status: $status, subject: $subject, type: $type)';
   }
 
   @override
@@ -4883,9 +5347,9 @@ class _$_SpecimenSearch extends _SpecimenSearch {
             (identical(other.container, container) ||
                 const DeepCollectionEquality()
                     .equals(other.container, container)) &&
-            (identical(other.container_id, container_id) ||
+            (identical(other.containerId, containerId) ||
                 const DeepCollectionEquality()
-                    .equals(other.container_id, container_id)) &&
+                    .equals(other.containerId, containerId)) &&
             (identical(other.identifier, identifier) ||
                 const DeepCollectionEquality()
                     .equals(other.identifier, identifier)) &&
@@ -4919,7 +5383,7 @@ class _$_SpecimenSearch extends _SpecimenSearch {
       const DeepCollectionEquality().hash(collected) ^
       const DeepCollectionEquality().hash(collector) ^
       const DeepCollectionEquality().hash(container) ^
-      const DeepCollectionEquality().hash(container_id) ^
+      const DeepCollectionEquality().hash(containerId) ^
       const DeepCollectionEquality().hash(identifier) ^
       const DeepCollectionEquality().hash(parent) ^
       const DeepCollectionEquality().hash(patient) ^
@@ -4930,6 +5394,11 @@ class _$_SpecimenSearch extends _SpecimenSearch {
   @override
   _$SpecimenSearchCopyWith<_SpecimenSearch> get copyWith =>
       __$SpecimenSearchCopyWithImpl<_SpecimenSearch>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$_$_SpecimenSearchToJson(this);
+  }
 }
 
 abstract class _SpecimenSearch extends SpecimenSearch {
@@ -4948,13 +5417,16 @@ abstract class _SpecimenSearch extends SpecimenSearch {
       List<SearchDate> collected,
       List<SearchReference> collector,
       List<SearchToken> container,
-      List<SearchToken> container_id,
+      @JsonKey(name: 'container-id') List<SearchToken> containerId,
       List<SearchToken> identifier,
       List<SearchReference> parent,
       List<SearchReference> patient,
       List<SearchToken> status,
       List<SearchReference> subject,
       List<SearchToken> type}) = _$_SpecimenSearch;
+
+  factory _SpecimenSearch.fromJson(Map<String, dynamic> json) =
+      _$_SpecimenSearch.fromJson;
 
   @override
   List<Id> get searchId;
@@ -4984,7 +5456,8 @@ abstract class _SpecimenSearch extends SpecimenSearch {
   @override
   List<SearchToken> get container;
   @override
-  List<SearchToken> get container_id;
+  @JsonKey(name: 'container-id')
+  List<SearchToken> get containerId;
   @override
   List<SearchToken> get identifier;
   @override

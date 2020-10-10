@@ -48,10 +48,10 @@ abstract class CreateRequest with _$CreateRequest {
 
   Future<Either<RestfulFailure, dynamic>> request(dynamic resource) async {
     var thisRequest = this.map(
-      dstu2: (req) => '${base}/${enumToString(req.type)}',
-      stu3: (req) => '${base}/${enumToString(req.type)}',
-      r4: (req) => '${base}/${enumToString(req.type)}',
-      r5: (req) => '${base}/${enumToString(req.type)}',
+      dstu2: (req) => '$base/${enumToString(req.type)}',
+      stu3: (req) => '$base/${enumToString(req.type)}',
+      r4: (req) => '$base/${enumToString(req.type)}',
+      r5: (req) => '$base/${enumToString(req.type)}',
     );
 
     thisRequest += '?_format=application/fhir+json'

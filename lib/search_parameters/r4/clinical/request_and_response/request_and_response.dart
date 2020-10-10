@@ -5,6 +5,7 @@ import '../../../search_parameter_types/search_parameter_types.dart';
 import '../../../search_parameters.dart';
 
 part 'request_and_response.freezed.dart';
+part 'request_and_response.g.dart';
 
 @freezed
 abstract class DeviceRequestSearch with R4SearchParameters implements _$DeviceRequestSearch {
@@ -24,22 +25,23 @@ List<SearchToken> code,
 List<SearchToken> identifier,
 List<SearchReference> patient,
 List<SearchReference> encounter,
-List<SearchDate> authored_on,
-List<SearchReference> based_on,
+@JsonKey(name: 'authored-on') List<SearchDate> authoredOn,
+@JsonKey(name: 'based-on') List<SearchReference> basedOn,
 List<SearchReference> device,
-List<SearchDate> event_date,
-List<SearchToken> group_identifier,
-List<SearchReference> instantiates_canonical,
-List<SearchUri> instantiates_uri,
+@JsonKey(name: 'event-date') List<SearchDate> eventDate,
+@JsonKey(name: 'group-identifier') List<SearchToken> groupIdentifier,
+@JsonKey(name: 'instantiates-canonical') List<SearchReference> instantiatesCanonical,
+@JsonKey(name: 'instantiates-uri') List<SearchUri> instantiatesUri,
 List<SearchReference> insurance,
 List<SearchToken> intent,
 List<SearchReference> performer,
-List<SearchReference> prior_request,
+@JsonKey(name: 'prior-request') List<SearchReference> priorRequest,
 List<SearchReference> requester,
 List<SearchToken> status,
 List<SearchReference> subject,
 }) = _DeviceRequestSearch;
-}
+
+factory DeviceRequestSearch.fromJson(Map<String, dynamic> json) => _$DeviceRequestSearchFromJson(json);}
 
 @freezed
 abstract class SupplyRequestSearch with R4SearchParameters implements _$SupplyRequestSearch {
@@ -63,7 +65,8 @@ List<SearchToken> status,
 List<SearchReference> subject,
 List<SearchReference> supplier,
 }) = _SupplyRequestSearch;
-}
+
+factory SupplyRequestSearch.fromJson(Map<String, dynamic> json) => _$SupplyRequestSearchFromJson(json);}
 
 @freezed
 abstract class SupplyDeliverySearch with R4SearchParameters implements _$SupplyDeliverySearch {
@@ -85,7 +88,8 @@ List<SearchReference> receiver,
 List<SearchToken> status,
 List<SearchReference> supplier,
 }) = _SupplyDeliverySearch;
-}
+
+factory SupplyDeliverySearch.fromJson(Map<String, dynamic> json) => _$SupplyDeliverySearchFromJson(json);}
 
 @freezed
 abstract class DeviceUseStatementSearch with R4SearchParameters implements _$DeviceUseStatementSearch {
@@ -106,7 +110,8 @@ List<SearchReference> device,
 List<SearchToken> identifier,
 List<SearchReference> subject,
 }) = _DeviceUseStatementSearch;
-}
+
+factory DeviceUseStatementSearch.fromJson(Map<String, dynamic> json) => _$DeviceUseStatementSearchFromJson(json);}
 
 @freezed
 abstract class CommunicationSearch with R4SearchParameters implements _$CommunicationSearch {
@@ -122,14 +127,14 @@ List<SearchString> searchContent,
 List<Id> searchList,
 //List<SearchString> searchHas,
 //List<SearchToken> searchType,
-List<SearchReference> based_on,
+@JsonKey(name: 'based-on') List<SearchReference> basedOn,
 List<SearchToken> category,
 List<SearchReference> encounter,
 List<SearchToken> identifier,
-List<SearchReference> instantiates_canonical,
-List<SearchUri> instantiates_uri,
+@JsonKey(name: 'instantiates-canonical') List<SearchReference> instantiatesCanonical,
+@JsonKey(name: 'instantiates-uri') List<SearchUri> instantiatesUri,
 List<SearchToken> medium,
-List<SearchReference> part_of,
+@JsonKey(name: 'part-of') List<SearchReference> partOf,
 List<SearchReference> patient,
 List<SearchDate> received,
 List<SearchReference> recipient,
@@ -138,7 +143,8 @@ List<SearchDate> sent,
 List<SearchToken> status,
 List<SearchReference> subject,
 }) = _CommunicationSearch;
-}
+
+factory CommunicationSearch.fromJson(Map<String, dynamic> json) => _$CommunicationSearchFromJson(json);}
 
 @freezed
 abstract class CommunicationRequestSearch with R4SearchParameters implements _$CommunicationRequestSearch {
@@ -155,10 +161,10 @@ List<Id> searchList,
 //List<SearchString> searchHas,
 //List<SearchToken> searchType,
 List<SearchDate> authored,
-List<SearchReference> based_on,
+@JsonKey(name: 'based-on') List<SearchReference> basedOn,
 List<SearchToken> category,
 List<SearchReference> encounter,
-List<SearchToken> group_identifier,
+@JsonKey(name: 'group-identifier') List<SearchToken> groupIdentifier,
 List<SearchToken> identifier,
 List<SearchToken> medium,
 List<SearchDate> occurrence,
@@ -171,7 +177,8 @@ List<SearchReference> sender,
 List<SearchToken> status,
 List<SearchReference> subject,
 }) = _CommunicationRequestSearch;
-}
+
+factory CommunicationRequestSearch.fromJson(Map<String, dynamic> json) => _$CommunicationRequestSearchFromJson(json);}
 
 @freezed
 abstract class GuidanceResponseSearch with R4SearchParameters implements _$GuidanceResponseSearch {
@@ -192,5 +199,6 @@ List<SearchReference> patient,
 List<SearchToken> request,
 List<SearchReference> subject,
 }) = _GuidanceResponseSearch;
-}
+
+factory GuidanceResponseSearch.fromJson(Map<String, dynamic> json) => _$GuidanceResponseSearchFromJson(json);}
 

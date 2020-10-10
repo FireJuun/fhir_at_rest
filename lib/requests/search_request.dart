@@ -49,10 +49,10 @@ abstract class SearchRequest with _$SearchRequest {
 
   Future<Either<RestfulFailure<dynamic>, dynamic>> request() async {
     var thisRequest = this.map(
-      dstu2: (req) => '${base}/${enumToString(req.type)}',
-      stu3: (req) => '${base}/${enumToString(req.type)}',
-      r4: (req) => '${base}/${enumToString(req.type)}',
-      r5: (req) => '${base}/${enumToString(req.type)}',
+      dstu2: (req) => '$base/${enumToString(req.type)}',
+      stu3: (req) => '$base/${enumToString(req.type)}',
+      r4: (req) => '$base/${enumToString(req.type)}',
+      r5: (req) => '$base/${enumToString(req.type)}',
     );
 
     thisRequest += '?_format=application/fhir+json'

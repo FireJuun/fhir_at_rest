@@ -5,6 +5,7 @@ import '../../../search_parameter_types/search_parameter_types.dart';
 import '../../../search_parameters.dart';
 
 part 'summary.freezed.dart';
+part 'summary.g.dart';
 
 @freezed
 abstract class AdverseEventSearch with R4SearchParameters implements _$AdverseEventSearch {
@@ -33,7 +34,8 @@ List<SearchReference> study,
 List<SearchReference> subject,
 List<SearchReference> substance,
 }) = _AdverseEventSearch;
-}
+
+factory AdverseEventSearch.fromJson(Map<String, dynamic> json) => _$AdverseEventSearchFromJson(json);}
 
 @freezed
 abstract class AllergyIntoleranceSearch with R4SearchParameters implements _$AllergyIntoleranceSearch {
@@ -51,12 +53,12 @@ List<Id> searchList,
 //List<SearchToken> searchType,
 List<SearchReference> asserter,
 List<SearchToken> category,
-List<SearchToken> clinical_status,
+@JsonKey(name: 'clinical-status') List<SearchToken> clinicalStatus,
 List<SearchToken> code,
 List<SearchToken> criticality,
 List<SearchDate> date,
 List<SearchToken> identifier,
-List<SearchDate> last_date,
+@JsonKey(name: 'last-date') List<SearchDate> lastDate,
 List<SearchToken> manifestation,
 List<SearchDate> onset,
 List<SearchReference> patient,
@@ -64,9 +66,10 @@ List<SearchReference> recorder,
 List<SearchToken> route,
 List<SearchToken> severity,
 List<SearchToken> type,
-List<SearchToken> verification_status,
+@JsonKey(name: 'verification-status') List<SearchToken> verificationStatus,
 }) = _AllergyIntoleranceSearch;
-}
+
+factory AllergyIntoleranceSearch.fromJson(Map<String, dynamic> json) => _$AllergyIntoleranceSearchFromJson(json);}
 
 @freezed
 abstract class ConditionSearch with R4SearchParameters implements _$ConditionSearch {
@@ -85,26 +88,27 @@ List<Id> searchList,
 List<SearchToken> code,
 List<SearchToken> identifier,
 List<SearchReference> patient,
-List<SearchQuantity> abatement_age,
-List<SearchDate> abatement_date,
-List<SearchString> abatement_string,
+@JsonKey(name: 'abatement-age') List<SearchQuantity> abatementAge,
+@JsonKey(name: 'abatement-date') List<SearchDate> abatementDate,
+@JsonKey(name: 'abatement-string') List<SearchString> abatementString,
 List<SearchReference> asserter,
-List<SearchToken> body_site,
+@JsonKey(name: 'body-site') List<SearchToken> bodySite,
 List<SearchToken> category,
-List<SearchToken> clinical_status,
+@JsonKey(name: 'clinical-status') List<SearchToken> clinicalStatus,
 List<SearchReference> encounter,
 List<SearchToken> evidence,
-List<SearchReference> evidence_detail,
-List<SearchQuantity> onset_age,
-List<SearchDate> onset_date,
-List<SearchString> onset_info,
-List<SearchDate> recorded_date,
+@JsonKey(name: 'evidence-detail') List<SearchReference> evidenceDetail,
+@JsonKey(name: 'onset-age') List<SearchQuantity> onsetAge,
+@JsonKey(name: 'onset-date') List<SearchDate> onsetDate,
+@JsonKey(name: 'onset-info') List<SearchString> onsetInfo,
+@JsonKey(name: 'recorded-date') List<SearchDate> recordedDate,
 List<SearchToken> severity,
 List<SearchToken> stage,
 List<SearchReference> subject,
-List<SearchToken> verification_status,
+@JsonKey(name: 'verification-status') List<SearchToken> verificationStatus,
 }) = _ConditionSearch;
-}
+
+factory ConditionSearch.fromJson(Map<String, dynamic> json) => _$ConditionSearchFromJson(json);}
 
 @freezed
 abstract class FamilyMemberHistorySearch with R4SearchParameters implements _$FamilyMemberHistorySearch {
@@ -124,13 +128,14 @@ List<SearchToken> code,
 List<SearchDate> date,
 List<SearchToken> identifier,
 List<SearchReference> patient,
-List<SearchReference> instantiates_canonical,
-List<SearchUri> instantiates_uri,
+@JsonKey(name: 'instantiates-canonical') List<SearchReference> instantiatesCanonical,
+@JsonKey(name: 'instantiates-uri') List<SearchUri> instantiatesUri,
 List<SearchToken> relationship,
 List<SearchToken> sex,
 List<SearchToken> status,
 }) = _FamilyMemberHistorySearch;
-}
+
+factory FamilyMemberHistorySearch.fromJson(Map<String, dynamic> json) => _$FamilyMemberHistorySearchFromJson(json);}
 
 @freezed
 abstract class ProcedureSearch with R4SearchParameters implements _$ProcedureSearch {
@@ -151,19 +156,20 @@ List<SearchDate> date,
 List<SearchToken> identifier,
 List<SearchReference> patient,
 List<SearchReference> encounter,
-List<SearchReference> based_on,
+@JsonKey(name: 'based-on') List<SearchReference> basedOn,
 List<SearchToken> category,
-List<SearchReference> instantiates_canonical,
-List<SearchUri> instantiates_uri,
+@JsonKey(name: 'instantiates-canonical') List<SearchReference> instantiatesCanonical,
+@JsonKey(name: 'instantiates-uri') List<SearchUri> instantiatesUri,
 List<SearchReference> location,
-List<SearchReference> part_of,
+@JsonKey(name: 'part-of') List<SearchReference> partOf,
 List<SearchReference> performer,
-List<SearchToken> reason_code,
-List<SearchReference> reason_reference,
+@JsonKey(name: 'reason-code') List<SearchToken> reasonCode,
+@JsonKey(name: 'reason-reference') List<SearchReference> reasonReference,
 List<SearchToken> status,
 List<SearchReference> subject,
 }) = _ProcedureSearch;
-}
+
+factory ProcedureSearch.fromJson(Map<String, dynamic> json) => _$ProcedureSearchFromJson(json);}
 
 @freezed
 abstract class ClinicalImpressionSearch with R4SearchParameters implements _$ClinicalImpressionSearch {
@@ -183,17 +189,18 @@ List<SearchDate> date,
 List<SearchReference> patient,
 List<SearchReference> assessor,
 List<SearchReference> encounter,
-List<SearchToken> finding_code,
-List<SearchReference> finding_ref,
+@JsonKey(name: 'finding-code') List<SearchToken> findingCode,
+@JsonKey(name: 'finding-ref') List<SearchReference> findingRef,
 List<SearchToken> identifier,
 List<SearchReference> investigation,
 List<SearchReference> previous,
 List<SearchReference> problem,
 List<SearchToken> status,
 List<SearchReference> subject,
-List<SearchReference> supporting_info,
+@JsonKey(name: 'supporting-info') List<SearchReference> supportingInfo,
 }) = _ClinicalImpressionSearch;
-}
+
+factory ClinicalImpressionSearch.fromJson(Map<String, dynamic> json) => _$ClinicalImpressionSearchFromJson(json);}
 
 @freezed
 abstract class DetectedIssueSearch with R4SearchParameters implements _$DetectedIssueSearch {
@@ -216,5 +223,6 @@ List<SearchToken> code,
 List<SearchDate> identified,
 List<SearchReference> implicated,
 }) = _DetectedIssueSearch;
-}
+
+factory DetectedIssueSearch.fromJson(Map<String, dynamic> json) => _$DetectedIssueSearchFromJson(json);}
 

@@ -5,6 +5,7 @@ import '../../../search_parameter_types/search_parameter_types.dart';
 import '../../../search_parameters.dart';
 
 part 'diagnostics.freezed.dart';
+part 'diagnostics.g.dart';
 
 @freezed
 abstract class DiagnosticReportSearch with R4SearchParameters implements _$DiagnosticReportSearch {
@@ -25,19 +26,20 @@ List<SearchDate> date,
 List<SearchToken> identifier,
 List<SearchReference> patient,
 List<SearchReference> encounter,
-List<SearchReference> based_on,
+@JsonKey(name: 'based-on') List<SearchReference> basedOn,
 List<SearchToken> category,
 List<SearchToken> conclusion,
 List<SearchDate> issued,
 List<SearchReference> media,
 List<SearchReference> performer,
 List<SearchReference> result,
-List<SearchReference> results_interpreter,
+@JsonKey(name: 'results-interpreter') List<SearchReference> resultsInterpreter,
 List<SearchReference> specimen,
 List<SearchToken> status,
 List<SearchReference> subject,
 }) = _DiagnosticReportSearch;
-}
+
+factory DiagnosticReportSearch.fromJson(Map<String, dynamic> json) => _$DiagnosticReportSearchFromJson(json);}
 
 @freezed
 abstract class ObservationSearch with R4SearchParameters implements _$ObservationSearch {
@@ -58,41 +60,42 @@ List<SearchDate> date,
 List<SearchToken> identifier,
 List<SearchReference> patient,
 List<SearchReference> encounter,
-List<SearchReference> based_on,
+@JsonKey(name: 'based-on') List<SearchReference> basedOn,
 List<SearchToken> category,
-List<SearchToken> combo_code,
-List<SearchToken> combo_data_absent_reason,
-List<SearchToken> combo_value_concept,
-List<SearchQuantity> combo_value_quantity,
-List<SearchToken> component_code,
-List<SearchToken> component_data_absent_reason,
-List<SearchToken> component_value_concept,
-List<SearchQuantity> component_value_quantity,
-List<SearchToken> data_absent_reason,
-List<SearchReference> derived_from,
+@JsonKey(name: 'combo-code') List<SearchToken> comboCode,
+@JsonKey(name: 'combo-data-absent-reason') List<SearchToken> comboDataabsentreason,
+@JsonKey(name: 'combo-value-concept') List<SearchToken> comboValueconcept,
+@JsonKey(name: 'combo-value-quantity') List<SearchQuantity> comboValuequantity,
+@JsonKey(name: 'component-code') List<SearchToken> componentCode,
+@JsonKey(name: 'component-data-absent-reason') List<SearchToken> componentDataabsentreason,
+@JsonKey(name: 'component-value-concept') List<SearchToken> componentValueconcept,
+@JsonKey(name: 'component-value-quantity') List<SearchQuantity> componentValuequantity,
+@JsonKey(name: 'data-absent-reason') List<SearchToken> dataAbsentreason,
+@JsonKey(name: 'derived-from') List<SearchReference> derivedFrom,
 List<SearchReference> device,
 List<SearchReference> focus,
-List<SearchReference> has_member,
+@JsonKey(name: 'has-member') List<SearchReference> hasMember,
 List<SearchToken> method,
-List<SearchReference> part_of,
+@JsonKey(name: 'part-of') List<SearchReference> partOf,
 List<SearchReference> performer,
 List<SearchReference> specimen,
 List<SearchToken> status,
 List<SearchReference> subject,
-List<SearchToken> value_concept,
-List<SearchDate> value_date,
-List<SearchQuantity> value_quantity,
-List<SearchString> value_string,
-List<SearchComposite> code_value_concept,
-List<SearchComposite> code_value_date,
-List<SearchComposite> code_value_quantity,
-List<SearchComposite> code_value_string,
-List<SearchComposite> combo_code_value_concept,
-List<SearchComposite> combo_code_value_quantity,
-List<SearchComposite> component_code_value_concept,
-List<SearchComposite> component_code_value_quantity,
+@JsonKey(name: 'value-concept') List<SearchToken> valueConcept,
+@JsonKey(name: 'value-date') List<SearchDate> valueDate,
+@JsonKey(name: 'value-quantity') List<SearchQuantity> valueQuantity,
+@JsonKey(name: 'value-string') List<SearchString> valueString,
+@JsonKey(name: 'code-value-concept') List<SearchComposite> codeValueconcept,
+@JsonKey(name: 'code-value-date') List<SearchComposite> codeValuedate,
+@JsonKey(name: 'code-value-quantity') List<SearchComposite> codeValuequantity,
+@JsonKey(name: 'code-value-string') List<SearchComposite> codeValuestring,
+@JsonKey(name: 'combo-code-value-concept') List<SearchComposite> comboCodevalueconcept,
+@JsonKey(name: 'combo-code-value-quantity') List<SearchComposite> comboCodevaluequantity,
+@JsonKey(name: 'component-code-value-concept') List<SearchComposite> componentCodevalueconcept,
+@JsonKey(name: 'component-code-value-quantity') List<SearchComposite> componentCodevaluequantity,
 }) = _ObservationSearch;
-}
+
+factory ObservationSearch.fromJson(Map<String, dynamic> json) => _$ObservationSearchFromJson(json);}
 
 @freezed
 abstract class ImagingStudySearch with R4SearchParameters implements _$ImagingStudySearch {
@@ -112,7 +115,7 @@ List<SearchToken> identifier,
 List<SearchReference> patient,
 List<SearchReference> basedon,
 List<SearchToken> bodysite,
-List<SearchToken> dicom_class,
+@JsonKey(name: 'dicom-class') List<SearchToken> dicomClass,
 List<SearchReference> encounter,
 List<SearchReference> endpoint,
 List<SearchToken> instance,
@@ -126,7 +129,8 @@ List<SearchDate> started,
 List<SearchToken> status,
 List<SearchReference> subject,
 }) = _ImagingStudySearch;
-}
+
+factory ImagingStudySearch.fromJson(Map<String, dynamic> json) => _$ImagingStudySearchFromJson(json);}
 
 @freezed
 abstract class BodyStructureSearch with R4SearchParameters implements _$BodyStructureSearch {
@@ -147,7 +151,8 @@ List<SearchToken> location,
 List<SearchToken> morphology,
 List<SearchReference> patient,
 }) = _BodyStructureSearch;
-}
+
+factory BodyStructureSearch.fromJson(Map<String, dynamic> json) => _$BodyStructureSearchFromJson(json);}
 
 @freezed
 abstract class MediaSearch with R4SearchParameters implements _$MediaSearch {
@@ -163,7 +168,7 @@ List<SearchString> searchContent,
 List<Id> searchList,
 //List<SearchString> searchHas,
 //List<SearchToken> searchType,
-List<SearchReference> based_on,
+@JsonKey(name: 'based-on') List<SearchReference> basedOn,
 List<SearchDate> created,
 List<SearchReference> device,
 List<SearchReference> encounter,
@@ -177,7 +182,8 @@ List<SearchReference> subject,
 List<SearchToken> type,
 List<SearchToken> view,
 }) = _MediaSearch;
-}
+
+factory MediaSearch.fromJson(Map<String, dynamic> json) => _$MediaSearchFromJson(json);}
 
 @freezed
 abstract class MolecularSequenceSearch with R4SearchParameters implements _$MolecularSequenceSearch {
@@ -198,16 +204,17 @@ List<SearchToken> identifier,
 List<SearchReference> patient,
 List<SearchToken> referenceseqid,
 List<SearchToken> type,
-List<SearchNumber> variant_end,
-List<SearchNumber> variant_start,
-List<SearchNumber> window_end,
-List<SearchNumber> window_start,
-List<SearchComposite> chromosome_variant_coordinate,
-List<SearchComposite> chromosome_window_coordinate,
-List<SearchComposite> referenceseqid_variant_coordinate,
-List<SearchComposite> referenceseqid_window_coordinate,
+@JsonKey(name: 'variant-end') List<SearchNumber> variantEnd,
+@JsonKey(name: 'variant-start') List<SearchNumber> variantStart,
+@JsonKey(name: 'window-end') List<SearchNumber> windowEnd,
+@JsonKey(name: 'window-start') List<SearchNumber> windowStart,
+@JsonKey(name: 'chromosome-variant-coordinate') List<SearchComposite> chromosomeVariantcoordinate,
+@JsonKey(name: 'chromosome-window-coordinate') List<SearchComposite> chromosomeWindowcoordinate,
+@JsonKey(name: 'referenceseqid-variant-coordinate') List<SearchComposite> referenceseqidVariantcoordinate,
+@JsonKey(name: 'referenceseqid-window-coordinate') List<SearchComposite> referenceseqidWindowcoordinate,
 }) = _MolecularSequenceSearch;
-}
+
+factory MolecularSequenceSearch.fromJson(Map<String, dynamic> json) => _$MolecularSequenceSearchFromJson(json);}
 
 @freezed
 abstract class QuestionnaireResponseSearch with R4SearchParameters implements _$QuestionnaireResponseSearch {
@@ -225,17 +232,18 @@ List<Id> searchList,
 //List<SearchToken> searchType,
 List<SearchReference> author,
 List<SearchDate> authored,
-List<SearchReference> based_on,
+@JsonKey(name: 'based-on') List<SearchReference> basedOn,
 List<SearchReference> encounter,
 List<SearchToken> identifier,
-List<SearchReference> part_of,
+@JsonKey(name: 'part-of') List<SearchReference> partOf,
 List<SearchReference> patient,
 List<SearchReference> questionnaire,
 List<SearchReference> source,
 List<SearchToken> status,
 List<SearchReference> subject,
 }) = _QuestionnaireResponseSearch;
-}
+
+factory QuestionnaireResponseSearch.fromJson(Map<String, dynamic> json) => _$QuestionnaireResponseSearchFromJson(json);}
 
 @freezed
 abstract class SpecimenSearch with R4SearchParameters implements _$SpecimenSearch {
@@ -256,7 +264,7 @@ List<SearchToken> bodysite,
 List<SearchDate> collected,
 List<SearchReference> collector,
 List<SearchToken> container,
-List<SearchToken> container_id,
+@JsonKey(name: 'container-id') List<SearchToken> containerId,
 List<SearchToken> identifier,
 List<SearchReference> parent,
 List<SearchReference> patient,
@@ -264,5 +272,6 @@ List<SearchToken> status,
 List<SearchReference> subject,
 List<SearchToken> type,
 }) = _SpecimenSearch;
-}
+
+factory SpecimenSearch.fromJson(Map<String, dynamic> json) => _$SpecimenSearchFromJson(json);}
 
