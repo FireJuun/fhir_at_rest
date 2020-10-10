@@ -24,8 +24,7 @@ class SearchUri extends SearchObject<String> {
   factory SearchUri.fromJson(Map<String, dynamic> json) => SearchUri(
       uri: json['uri'], missing: json['missing'], modifier: json['modifier']);
 
-  Map<String, dynamic> toJson() => searchString()
-      .fold((l) => {'failure': l.errorMessage()}, (r) => {'value': r});
+  Either<RestfulFailure, String> toJson() => searchString();
 
   Either<RestfulFailure, String> searchString() => missing != null
       ? right(':missing=$missing')

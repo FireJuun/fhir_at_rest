@@ -19,8 +19,7 @@ class SearchSpecial extends SearchObject<String> {
   factory SearchSpecial.fromJson(Map<String, dynamic> json) =>
       SearchSpecial(string: json['string'], missing: json['missing']);
 
-  Map<String, dynamic> toJson() => searchString()
-      .fold((l) => {'failure': l.errorMessage()}, (r) => {'value': r});
+  Either<RestfulFailure, String> toJson() => searchString();
 
   Either<RestfulFailure, String> searchString() => missing != null
       ? right(':missing=$missing')

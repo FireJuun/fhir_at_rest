@@ -2,7 +2,6 @@ import 'package:dartz/dartz.dart';
 import 'package:fhir/primitive_types/primitive_types.dart';
 
 import '../search_parameters/search_parameter_types/search_parameter_types.dart';
-import '../enums/enums.dart';
 import '../failures/restful_failure.dart';
 
 class Dstu2SearchParameters {
@@ -194,7 +193,20 @@ Either<RestfulFailure, String> _parametersToString(dynamic search) {
   final searchMap = search.toJson();
   for (var k in searchMap.keys) {
     if (!_commonParameters.contains(k) && searchMap[k] != null) {
-      parameterString += searchMap[k];
+      for (var j in searchMap[k]) {
+        var searchString = j.searchString();
+        if (searchString.isLeft()) {
+          return left(
+            searchString.fold(
+              (l) => RestfulFailure.searchParameterFailure(
+                  parameter: '$k', failedValue: l.errorMessage()),
+              (r) => RestfulFailure.unknownFailure(failedValue: r),
+            ),
+          );
+        } else {
+          parameterString += searchString.fold((l) => '', (r) => '&$k$r');
+        }
+      }
     }
   }
   return right(parameterString);

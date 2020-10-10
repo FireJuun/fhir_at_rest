@@ -19,8 +19,7 @@ class SearchComposite extends SearchObject<String> {
   factory SearchComposite.fromJson(Map<String, dynamic> json) =>
       SearchComposite(string: json['string'], missing: json['missing']);
 
-  Map<String, dynamic> toJson() => searchString()
-      .fold((l) => {'failure': l.errorMessage()}, (r) => {'value': r});
+  Either<RestfulFailure, String> toJson() => searchString();
 
   Either<RestfulFailure, String> searchString() => missing != null
       ? right(':missing=$missing')

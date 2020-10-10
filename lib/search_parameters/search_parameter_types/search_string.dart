@@ -27,8 +27,7 @@ class SearchString extends SearchObject<String> {
       missing: json['missing'],
       modifier: json['modifier']);
 
-  Map<String, dynamic> toJson() => searchString()
-      .fold((l) => {'failure': l.errorMessage()}, (r) => {'value': r});
+  Either<RestfulFailure, String> toJson() => searchString();
 
   Either<RestfulFailure, String> searchString() => missing != null
       ? right(':missing=$missing')

@@ -323,14 +323,11 @@ void main() {
       );
     });
 
-    test('Patient Search if missing gender', () async {
-      var toke = SearchToken(missing: true);
-      var search = PatientSearch(gender: [toke]);
+    test('Patient Search if gender present', () async {
       var request = SearchRequest.r4(
         base: Uri.parse('http://hapi.fhir.org/baseR4'),
         type: R4Types.patient,
-        parameters: search,
-        // system: FhirUri('http://this.sucks'),
+        parameters: PatientSearch(gender: [SearchToken(missing: true)]),
       );
       var response = await request.request();
       expect(

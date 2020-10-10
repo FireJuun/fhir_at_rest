@@ -32,8 +32,7 @@ class SearchReference extends SearchObject<String> {
           url: json['url'],
           missing: json['missing']);
 
-  Map<String, dynamic> toJson() => searchString()
-      .fold((l) => {'failure': l.errorMessage()}, (r) => {'value': r});
+  Either<RestfulFailure, String> toJson() => searchString();
 
   Either<RestfulFailure, String> searchString() {
     if (missing != null) {

@@ -23,8 +23,7 @@ class SearchDate extends SearchObject<String> {
   factory SearchDate.fromJson(Map<String, dynamic> json) => SearchDate(
       date: json['date'], missing: json['missing'], prefix: json['prefix']);
 
-  Map<String, dynamic> toJson() => searchString()
-      .fold((l) => {'failure': l.errorMessage()}, (r) => {'value': r});
+  Either<RestfulFailure, String> toJson() => searchString();
 
   Either<RestfulFailure, String> searchString() => missing != null
       ? right(':missing=$missing')
