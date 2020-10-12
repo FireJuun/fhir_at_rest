@@ -9,8 +9,7 @@ part 'care_provision.g.dart';
 
 @freezed
 abstract class ServiceRequestSearch with R4SearchParameters implements _$ServiceRequestSearch {
-ServiceRequestSearch._(); 
- factory ServiceRequestSearch ({
+factory ServiceRequestSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -44,12 +43,12 @@ List<SearchToken> status,
 List<SearchReference> subject,
 }) = _ServiceRequestSearch;
 
+ServiceRequestSearch._(); 
 factory ServiceRequestSearch.fromJson(Map<String, dynamic> json) => _$ServiceRequestSearchFromJson(json);}
 
 @freezed
 abstract class CarePlanSearch with R4SearchParameters implements _$CarePlanSearch {
-CarePlanSearch._(); 
- factory CarePlanSearch ({
+factory CarePlanSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -82,12 +81,12 @@ List<SearchToken> status,
 List<SearchReference> subject,
 }) = _CarePlanSearch;
 
+CarePlanSearch._(); 
 factory CarePlanSearch.fromJson(Map<String, dynamic> json) => _$CarePlanSearchFromJson(json);}
 
 @freezed
 abstract class CareTeamSearch with R4SearchParameters implements _$CareTeamSearch {
-CareTeamSearch._(); 
- factory CareTeamSearch ({
+factory CareTeamSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -108,12 +107,12 @@ List<SearchToken> status,
 List<SearchReference> subject,
 }) = _CareTeamSearch;
 
+CareTeamSearch._(); 
 factory CareTeamSearch.fromJson(Map<String, dynamic> json) => _$CareTeamSearchFromJson(json);}
 
 @freezed
 abstract class RiskAssessmentSearch with R4SearchParameters implements _$RiskAssessmentSearch {
-RiskAssessmentSearch._(); 
- factory RiskAssessmentSearch ({
+factory RiskAssessmentSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -136,12 +135,12 @@ List<SearchToken> risk,
 List<SearchReference> subject,
 }) = _RiskAssessmentSearch;
 
+RiskAssessmentSearch._(); 
 factory RiskAssessmentSearch.fromJson(Map<String, dynamic> json) => _$RiskAssessmentSearchFromJson(json);}
 
 @freezed
 abstract class GoalSearch with R4SearchParameters implements _$GoalSearch {
-GoalSearch._(); 
- factory GoalSearch ({
+factory GoalSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -162,12 +161,12 @@ List<SearchReference> subject,
 @JsonKey(name: 'target-date') List<SearchDate> targetDate,
 }) = _GoalSearch;
 
+GoalSearch._(); 
 factory GoalSearch.fromJson(Map<String, dynamic> json) => _$GoalSearchFromJson(json);}
 
 @freezed
 abstract class NutritionOrderSearch with R4SearchParameters implements _$NutritionOrderSearch {
-NutritionOrderSearch._(); 
- factory NutritionOrderSearch ({
+factory NutritionOrderSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -192,12 +191,12 @@ List<SearchToken> status,
 List<SearchToken> supplement,
 }) = _NutritionOrderSearch;
 
+NutritionOrderSearch._(); 
 factory NutritionOrderSearch.fromJson(Map<String, dynamic> json) => _$NutritionOrderSearchFromJson(json);}
 
 @freezed
 abstract class VisionPrescriptionSearch with R4SearchParameters implements _$VisionPrescriptionSearch {
-VisionPrescriptionSearch._(); 
- factory VisionPrescriptionSearch ({
+factory VisionPrescriptionSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -216,12 +215,12 @@ List<SearchReference> prescriber,
 List<SearchToken> status,
 }) = _VisionPrescriptionSearch;
 
+VisionPrescriptionSearch._(); 
 factory VisionPrescriptionSearch.fromJson(Map<String, dynamic> json) => _$VisionPrescriptionSearchFromJson(json);}
 
 @freezed
 abstract class RequestGroupSearch with R4SearchParameters implements _$RequestGroupSearch {
-RequestGroupSearch._(); 
- factory RequestGroupSearch ({
+factory RequestGroupSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -248,5 +247,6 @@ List<SearchToken> status,
 List<SearchReference> subject,
 }) = _RequestGroupSearch;
 
+RequestGroupSearch._(); 
 factory RequestGroupSearch.fromJson(Map<String, dynamic> json) => _$RequestGroupSearchFromJson(json);}
 

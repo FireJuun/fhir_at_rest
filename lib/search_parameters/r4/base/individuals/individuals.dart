@@ -9,8 +9,7 @@ part 'individuals.g.dart';
 
 @freezed
 abstract class GroupSearch with R4SearchParameters implements _$GroupSearch {
-GroupSearch._(); 
- factory GroupSearch ({
+factory GroupSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -33,12 +32,12 @@ List<SearchToken> value,
 @JsonKey(name: 'characteristic-value') List<SearchComposite> characteristicValue,
 }) = _GroupSearch;
 
+GroupSearch._(); 
 factory GroupSearch.fromJson(Map<String, dynamic> json) => _$GroupSearchFromJson(json);}
 
 @freezed
 abstract class PatientSearch with R4SearchParameters implements _$PatientSearch {
-PatientSearch._(); 
- factory PatientSearch ({
+factory PatientSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -74,12 +73,12 @@ List<SearchString> phonetic,
 List<SearchToken> telecom,
 }) = _PatientSearch;
 
+PatientSearch._(); 
 factory PatientSearch.fromJson(Map<String, dynamic> json) => _$PatientSearchFromJson(json);}
 
 @freezed
 abstract class PersonSearch with R4SearchParameters implements _$PersonSearch {
-PersonSearch._(); 
- factory PersonSearch ({
+factory PersonSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -111,12 +110,12 @@ List<SearchReference> practitioner,
 List<SearchReference> relatedperson,
 }) = _PersonSearch;
 
+PersonSearch._(); 
 factory PersonSearch.fromJson(Map<String, dynamic> json) => _$PersonSearchFromJson(json);}
 
 @freezed
 abstract class PractitionerSearch with R4SearchParameters implements _$PractitionerSearch {
-PractitionerSearch._(); 
- factory PractitionerSearch ({
+factory PractitionerSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -146,12 +145,12 @@ List<SearchToken> identifier,
 List<SearchString> name,
 }) = _PractitionerSearch;
 
+PractitionerSearch._(); 
 factory PractitionerSearch.fromJson(Map<String, dynamic> json) => _$PractitionerSearchFromJson(json);}
 
 @freezed
 abstract class RelatedPersonSearch with R4SearchParameters implements _$RelatedPersonSearch {
-RelatedPersonSearch._(); 
- factory RelatedPersonSearch ({
+factory RelatedPersonSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -181,12 +180,12 @@ List<SearchReference> patient,
 List<SearchToken> relationship,
 }) = _RelatedPersonSearch;
 
+RelatedPersonSearch._(); 
 factory RelatedPersonSearch.fromJson(Map<String, dynamic> json) => _$RelatedPersonSearchFromJson(json);}
 
 @freezed
 abstract class PractitionerRoleSearch with R4SearchParameters implements _$PractitionerRoleSearch {
-PractitionerRoleSearch._(); 
- factory PractitionerRoleSearch ({
+factory PractitionerRoleSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -212,5 +211,6 @@ List<SearchReference> service,
 List<SearchToken> specialty,
 }) = _PractitionerRoleSearch;
 
+PractitionerRoleSearch._(); 
 factory PractitionerRoleSearch.fromJson(Map<String, dynamic> json) => _$PractitionerRoleSearchFromJson(json);}
 

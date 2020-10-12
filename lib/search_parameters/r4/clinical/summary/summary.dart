@@ -9,8 +9,7 @@ part 'summary.g.dart';
 
 @freezed
 abstract class AdverseEventSearch with R4SearchParameters implements _$AdverseEventSearch {
-AdverseEventSearch._(); 
- factory AdverseEventSearch ({
+factory AdverseEventSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -35,12 +34,12 @@ List<SearchReference> subject,
 List<SearchReference> substance,
 }) = _AdverseEventSearch;
 
+AdverseEventSearch._(); 
 factory AdverseEventSearch.fromJson(Map<String, dynamic> json) => _$AdverseEventSearchFromJson(json);}
 
 @freezed
 abstract class AllergyIntoleranceSearch with R4SearchParameters implements _$AllergyIntoleranceSearch {
-AllergyIntoleranceSearch._(); 
- factory AllergyIntoleranceSearch ({
+factory AllergyIntoleranceSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -69,12 +68,12 @@ List<SearchToken> type,
 @JsonKey(name: 'verification-status') List<SearchToken> verificationStatus,
 }) = _AllergyIntoleranceSearch;
 
+AllergyIntoleranceSearch._(); 
 factory AllergyIntoleranceSearch.fromJson(Map<String, dynamic> json) => _$AllergyIntoleranceSearchFromJson(json);}
 
 @freezed
 abstract class ConditionSearch with R4SearchParameters implements _$ConditionSearch {
-ConditionSearch._(); 
- factory ConditionSearch ({
+factory ConditionSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -108,12 +107,12 @@ List<SearchReference> subject,
 @JsonKey(name: 'verification-status') List<SearchToken> verificationStatus,
 }) = _ConditionSearch;
 
+ConditionSearch._(); 
 factory ConditionSearch.fromJson(Map<String, dynamic> json) => _$ConditionSearchFromJson(json);}
 
 @freezed
 abstract class FamilyMemberHistorySearch with R4SearchParameters implements _$FamilyMemberHistorySearch {
-FamilyMemberHistorySearch._(); 
- factory FamilyMemberHistorySearch ({
+factory FamilyMemberHistorySearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -135,12 +134,12 @@ List<SearchToken> sex,
 List<SearchToken> status,
 }) = _FamilyMemberHistorySearch;
 
+FamilyMemberHistorySearch._(); 
 factory FamilyMemberHistorySearch.fromJson(Map<String, dynamic> json) => _$FamilyMemberHistorySearchFromJson(json);}
 
 @freezed
 abstract class ProcedureSearch with R4SearchParameters implements _$ProcedureSearch {
-ProcedureSearch._(); 
- factory ProcedureSearch ({
+factory ProcedureSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -169,12 +168,12 @@ List<SearchToken> status,
 List<SearchReference> subject,
 }) = _ProcedureSearch;
 
+ProcedureSearch._(); 
 factory ProcedureSearch.fromJson(Map<String, dynamic> json) => _$ProcedureSearchFromJson(json);}
 
 @freezed
 abstract class ClinicalImpressionSearch with R4SearchParameters implements _$ClinicalImpressionSearch {
-ClinicalImpressionSearch._(); 
- factory ClinicalImpressionSearch ({
+factory ClinicalImpressionSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -200,12 +199,12 @@ List<SearchReference> subject,
 @JsonKey(name: 'supporting-info') List<SearchReference> supportingInfo,
 }) = _ClinicalImpressionSearch;
 
+ClinicalImpressionSearch._(); 
 factory ClinicalImpressionSearch.fromJson(Map<String, dynamic> json) => _$ClinicalImpressionSearchFromJson(json);}
 
 @freezed
 abstract class DetectedIssueSearch with R4SearchParameters implements _$DetectedIssueSearch {
-DetectedIssueSearch._(); 
- factory DetectedIssueSearch ({
+factory DetectedIssueSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -224,5 +223,6 @@ List<SearchDate> identified,
 List<SearchReference> implicated,
 }) = _DetectedIssueSearch;
 
+DetectedIssueSearch._(); 
 factory DetectedIssueSearch.fromJson(Map<String, dynamic> json) => _$DetectedIssueSearchFromJson(json);}
 

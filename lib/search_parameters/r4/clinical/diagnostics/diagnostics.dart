@@ -9,8 +9,7 @@ part 'diagnostics.g.dart';
 
 @freezed
 abstract class DiagnosticReportSearch with R4SearchParameters implements _$DiagnosticReportSearch {
-DiagnosticReportSearch._(); 
- factory DiagnosticReportSearch ({
+factory DiagnosticReportSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -39,12 +38,12 @@ List<SearchToken> status,
 List<SearchReference> subject,
 }) = _DiagnosticReportSearch;
 
+DiagnosticReportSearch._(); 
 factory DiagnosticReportSearch.fromJson(Map<String, dynamic> json) => _$DiagnosticReportSearchFromJson(json);}
 
 @freezed
 abstract class ObservationSearch with R4SearchParameters implements _$ObservationSearch {
-ObservationSearch._(); 
- factory ObservationSearch ({
+factory ObservationSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -95,12 +94,12 @@ List<SearchReference> subject,
 @JsonKey(name: 'component-code-value-quantity') List<SearchComposite> componentCodevaluequantity,
 }) = _ObservationSearch;
 
+ObservationSearch._(); 
 factory ObservationSearch.fromJson(Map<String, dynamic> json) => _$ObservationSearchFromJson(json);}
 
 @freezed
 abstract class ImagingStudySearch with R4SearchParameters implements _$ImagingStudySearch {
-ImagingStudySearch._(); 
- factory ImagingStudySearch ({
+factory ImagingStudySearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -130,12 +129,12 @@ List<SearchToken> status,
 List<SearchReference> subject,
 }) = _ImagingStudySearch;
 
+ImagingStudySearch._(); 
 factory ImagingStudySearch.fromJson(Map<String, dynamic> json) => _$ImagingStudySearchFromJson(json);}
 
 @freezed
 abstract class BodyStructureSearch with R4SearchParameters implements _$BodyStructureSearch {
-BodyStructureSearch._(); 
- factory BodyStructureSearch ({
+factory BodyStructureSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -152,12 +151,12 @@ List<SearchToken> morphology,
 List<SearchReference> patient,
 }) = _BodyStructureSearch;
 
+BodyStructureSearch._(); 
 factory BodyStructureSearch.fromJson(Map<String, dynamic> json) => _$BodyStructureSearchFromJson(json);}
 
 @freezed
 abstract class MediaSearch with R4SearchParameters implements _$MediaSearch {
-MediaSearch._(); 
- factory MediaSearch ({
+factory MediaSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -183,12 +182,12 @@ List<SearchToken> type,
 List<SearchToken> view,
 }) = _MediaSearch;
 
+MediaSearch._(); 
 factory MediaSearch.fromJson(Map<String, dynamic> json) => _$MediaSearchFromJson(json);}
 
 @freezed
 abstract class MolecularSequenceSearch with R4SearchParameters implements _$MolecularSequenceSearch {
-MolecularSequenceSearch._(); 
- factory MolecularSequenceSearch ({
+factory MolecularSequenceSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -214,12 +213,12 @@ List<SearchToken> type,
 @JsonKey(name: 'referenceseqid-window-coordinate') List<SearchComposite> referenceseqidWindowcoordinate,
 }) = _MolecularSequenceSearch;
 
+MolecularSequenceSearch._(); 
 factory MolecularSequenceSearch.fromJson(Map<String, dynamic> json) => _$MolecularSequenceSearchFromJson(json);}
 
 @freezed
 abstract class QuestionnaireResponseSearch with R4SearchParameters implements _$QuestionnaireResponseSearch {
-QuestionnaireResponseSearch._(); 
- factory QuestionnaireResponseSearch ({
+factory QuestionnaireResponseSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -243,12 +242,12 @@ List<SearchToken> status,
 List<SearchReference> subject,
 }) = _QuestionnaireResponseSearch;
 
+QuestionnaireResponseSearch._(); 
 factory QuestionnaireResponseSearch.fromJson(Map<String, dynamic> json) => _$QuestionnaireResponseSearchFromJson(json);}
 
 @freezed
 abstract class SpecimenSearch with R4SearchParameters implements _$SpecimenSearch {
-SpecimenSearch._(); 
- factory SpecimenSearch ({
+factory SpecimenSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -273,5 +272,6 @@ List<SearchReference> subject,
 List<SearchToken> type,
 }) = _SpecimenSearch;
 
+SpecimenSearch._(); 
 factory SpecimenSearch.fromJson(Map<String, dynamic> json) => _$SpecimenSearchFromJson(json);}
 

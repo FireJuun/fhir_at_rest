@@ -6,12 +6,6 @@ import '../../failures/restful_failure.dart';
 import 'search_objects.dart';
 
 class SearchQuantity extends SearchObject<String> {
-  final QuantityPrefix prefix;
-  final Either<RestfulFailure, String> number;
-  final FhirUri system;
-  final Code code;
-  final bool missing;
-
   factory SearchQuantity(
       {dynamic number,
       FhirUri system,
@@ -37,13 +31,19 @@ class SearchQuantity extends SearchObject<String> {
       missing: json['missing'],
       prefix: json['prefix']);
 
+  final QuantityPrefix prefix;
+  final Either<RestfulFailure, String> number;
+  final FhirUri system;
+  final Code code;
+  final bool missing;
+
   Either<RestfulFailure, String> toJson() => searchString();
 
   Either<RestfulFailure, String> searchString() => missing != null
       ? right(':missing=$missing')
       : number.fold(
           (l) => left(RestfulFailure.primitiveFailure(
-              parameter: "Quantity", failedValue: l)),
+              parameter: 'Quantity', failedValue: l)),
           (r) {
             final value = num.tryParse(r.toString());
             if (value == null) {
@@ -75,8 +75,8 @@ class SearchQuantity extends SearchObject<String> {
                 returnString += '||${code.toString()}';
               }
             }
-            return (right(
-                '$returnString${missing == null ? "" : ":missing=$missing"}'));
+            return right(
+                '$returnString${missing == null ? "" : ":missing=$missing"}');
           },
         );
 }

@@ -17,8 +17,6 @@ String enumToString<T>(T enumValue) {
       return R5TypesEnumMap[enumValue];
     case Mode:
       return ModeEnumMap[enumValue];
-    case Summary:
-      return SummaryEnumMap[enumValue];
     default:
       return '';
   }

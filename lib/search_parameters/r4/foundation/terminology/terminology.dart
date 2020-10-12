@@ -9,8 +9,7 @@ part 'terminology.g.dart';
 
 @freezed
 abstract class CodeSystemSearch with R4SearchParameters implements _$CodeSystemSearch {
-CodeSystemSearch._(); 
- factory CodeSystemSearch ({
+factory CodeSystemSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -43,12 +42,12 @@ List<SearchReference> supplements,
 List<SearchUri> system,
 }) = _CodeSystemSearch;
 
+CodeSystemSearch._(); 
 factory CodeSystemSearch.fromJson(Map<String, dynamic> json) => _$CodeSystemSearchFromJson(json);}
 
 @freezed
 abstract class ConceptMapSearch with R4SearchParameters implements _$ConceptMapSearch {
-ConceptMapSearch._(); 
- factory ConceptMapSearch ({
+factory ConceptMapSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -87,12 +86,12 @@ List<SearchReference> target,
 @JsonKey(name: 'target-uri') List<SearchReference> targetUri,
 }) = _ConceptMapSearch;
 
+ConceptMapSearch._(); 
 factory ConceptMapSearch.fromJson(Map<String, dynamic> json) => _$ConceptMapSearchFromJson(json);}
 
 @freezed
 abstract class NamingSystemSearch with R4SearchParameters implements _$NamingSystemSearch {
-NamingSystemSearch._(); 
- factory NamingSystemSearch ({
+factory NamingSystemSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -124,12 +123,12 @@ List<SearchToken> type,
 List<SearchString> value,
 }) = _NamingSystemSearch;
 
+NamingSystemSearch._(); 
 factory NamingSystemSearch.fromJson(Map<String, dynamic> json) => _$NamingSystemSearchFromJson(json);}
 
 @freezed
 abstract class TerminologyCapabilitiesSearch with R4SearchParameters implements _$TerminologyCapabilitiesSearch {
-TerminologyCapabilitiesSearch._(); 
- factory TerminologyCapabilitiesSearch ({
+factory TerminologyCapabilitiesSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -156,12 +155,12 @@ List<SearchToken> version,
 @JsonKey(name: 'context-type-value') List<SearchComposite> contextTypevalue,
 }) = _TerminologyCapabilitiesSearch;
 
+TerminologyCapabilitiesSearch._(); 
 factory TerminologyCapabilitiesSearch.fromJson(Map<String, dynamic> json) => _$TerminologyCapabilitiesSearchFromJson(json);}
 
 @freezed
 abstract class ValueSetSearch with R4SearchParameters implements _$ValueSetSearch {
-ValueSetSearch._(); 
- factory ValueSetSearch ({
+factory ValueSetSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -192,5 +191,6 @@ List<SearchUri> expansion,
 List<SearchUri> reference,
 }) = _ValueSetSearch;
 
+ValueSetSearch._(); 
 factory ValueSetSearch.fromJson(Map<String, dynamic> json) => _$ValueSetSearchFromJson(json);}
 

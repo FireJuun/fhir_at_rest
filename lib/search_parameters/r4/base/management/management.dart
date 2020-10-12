@@ -9,7 +9,6 @@ part 'management.g.dart';
 
 @freezed
 abstract class ListSearch with R4SearchParameters implements _$ListSearch {
-  ListSearch._();
   factory ListSearch({
     List<Id> searchId,
     List<SearchDate> searchLastUpdated,
@@ -35,6 +34,7 @@ abstract class ListSearch with R4SearchParameters implements _$ListSearch {
     List<SearchString> title,
   }) = _ListSearch;
 
+  ListSearch._();
   factory ListSearch.fromJson(Map<String, dynamic> json) =>
       _$ListSearchFromJson(json);
 }
@@ -43,7 +43,6 @@ abstract class ListSearch with R4SearchParameters implements _$ListSearch {
 abstract class EncounterSearch
     with R4SearchParameters
     implements _$EncounterSearch {
-  EncounterSearch._();
   factory EncounterSearch({
     List<Id> searchId,
     List<SearchDate> searchLastUpdated,
@@ -80,6 +79,7 @@ abstract class EncounterSearch
     List<SearchReference> subject,
   }) = _EncounterSearch;
 
+  EncounterSearch._();
   factory EncounterSearch.fromJson(Map<String, dynamic> json) =>
       _$EncounterSearchFromJson(json);
 }
@@ -88,7 +88,6 @@ abstract class EncounterSearch
 abstract class EpisodeOfCareSearch
     with R4SearchParameters
     implements _$EpisodeOfCareSearch {
-  EpisodeOfCareSearch._();
   factory EpisodeOfCareSearch({
     List<Id> searchId,
     List<SearchDate> searchLastUpdated,
@@ -111,13 +110,13 @@ abstract class EpisodeOfCareSearch
     List<SearchToken> status,
   }) = _EpisodeOfCareSearch;
 
+  EpisodeOfCareSearch._();
   factory EpisodeOfCareSearch.fromJson(Map<String, dynamic> json) =>
       _$EpisodeOfCareSearchFromJson(json);
 }
 
 @freezed
 abstract class FlagSearch with R4SearchParameters implements _$FlagSearch {
-  FlagSearch._();
   factory FlagSearch({
     List<Id> searchId,
     List<SearchDate> searchLastUpdated,
@@ -137,6 +136,7 @@ abstract class FlagSearch with R4SearchParameters implements _$FlagSearch {
     List<SearchReference> subject,
   }) = _FlagSearch;
 
+  FlagSearch._();
   factory FlagSearch.fromJson(Map<String, dynamic> json) =>
       _$FlagSearchFromJson(json);
 }
@@ -145,7 +145,6 @@ abstract class FlagSearch with R4SearchParameters implements _$FlagSearch {
 abstract class LibrarySearch
     with R4SearchParameters
     implements _$LibrarySearch {
-  LibrarySearch._();
   factory LibrarySearch({
     List<Id> searchId,
     List<SearchDate> searchLastUpdated,
@@ -184,6 +183,7 @@ abstract class LibrarySearch
     @JsonKey(name: 'context-type-value') List<SearchComposite> contextTypevalue,
   }) = _LibrarySearch;
 
+  LibrarySearch._();
   factory LibrarySearch.fromJson(Map<String, dynamic> json) =>
       _$LibrarySearchFromJson(json);
 }

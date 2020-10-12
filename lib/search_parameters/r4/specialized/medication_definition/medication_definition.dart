@@ -9,8 +9,7 @@ part 'medication_definition.g.dart';
 
 @freezed
 abstract class MedicinalProductSearch with R4SearchParameters implements _$MedicinalProductSearch {
-MedicinalProductSearch._(); 
- factory MedicinalProductSearch ({
+factory MedicinalProductSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -26,12 +25,12 @@ List<SearchString> name,
 @JsonKey(name: 'name-language') List<SearchToken> nameLanguage,
 }) = _MedicinalProductSearch;
 
+MedicinalProductSearch._(); 
 factory MedicinalProductSearch.fromJson(Map<String, dynamic> json) => _$MedicinalProductSearchFromJson(json);}
 
 @freezed
 abstract class MedicinalProductAuthorizationSearch with R4SearchParameters implements _$MedicinalProductAuthorizationSearch {
-MedicinalProductAuthorizationSearch._(); 
- factory MedicinalProductAuthorizationSearch ({
+factory MedicinalProductAuthorizationSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -49,12 +48,12 @@ List<SearchToken> status,
 List<SearchReference> subject,
 }) = _MedicinalProductAuthorizationSearch;
 
+MedicinalProductAuthorizationSearch._(); 
 factory MedicinalProductAuthorizationSearch.fromJson(Map<String, dynamic> json) => _$MedicinalProductAuthorizationSearchFromJson(json);}
 
 @freezed
 abstract class MedicinalProductContraindicationSearch with R4SearchParameters implements _$MedicinalProductContraindicationSearch {
-MedicinalProductContraindicationSearch._(); 
- factory MedicinalProductContraindicationSearch ({
+factory MedicinalProductContraindicationSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -68,12 +67,12 @@ List<Id> searchList,
 List<SearchReference> subject,
 }) = _MedicinalProductContraindicationSearch;
 
+MedicinalProductContraindicationSearch._(); 
 factory MedicinalProductContraindicationSearch.fromJson(Map<String, dynamic> json) => _$MedicinalProductContraindicationSearchFromJson(json);}
 
 @freezed
 abstract class MedicinalProductIndicationSearch with R4SearchParameters implements _$MedicinalProductIndicationSearch {
-MedicinalProductIndicationSearch._(); 
- factory MedicinalProductIndicationSearch ({
+factory MedicinalProductIndicationSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -87,12 +86,12 @@ List<Id> searchList,
 List<SearchReference> subject,
 }) = _MedicinalProductIndicationSearch;
 
+MedicinalProductIndicationSearch._(); 
 factory MedicinalProductIndicationSearch.fromJson(Map<String, dynamic> json) => _$MedicinalProductIndicationSearchFromJson(json);}
 
 @freezed
 abstract class MedicinalProductInteractionSearch with R4SearchParameters implements _$MedicinalProductInteractionSearch {
-MedicinalProductInteractionSearch._(); 
- factory MedicinalProductInteractionSearch ({
+factory MedicinalProductInteractionSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -106,12 +105,12 @@ List<Id> searchList,
 List<SearchReference> subject,
 }) = _MedicinalProductInteractionSearch;
 
+MedicinalProductInteractionSearch._(); 
 factory MedicinalProductInteractionSearch.fromJson(Map<String, dynamic> json) => _$MedicinalProductInteractionSearchFromJson(json);}
 
 @freezed
 abstract class MedicinalProductPackagedSearch with R4SearchParameters implements _$MedicinalProductPackagedSearch {
-MedicinalProductPackagedSearch._(); 
- factory MedicinalProductPackagedSearch ({
+factory MedicinalProductPackagedSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -126,12 +125,12 @@ List<SearchToken> identifier,
 List<SearchReference> subject,
 }) = _MedicinalProductPackagedSearch;
 
+MedicinalProductPackagedSearch._(); 
 factory MedicinalProductPackagedSearch.fromJson(Map<String, dynamic> json) => _$MedicinalProductPackagedSearchFromJson(json);}
 
 @freezed
 abstract class MedicinalProductPharmaceuticalSearch with R4SearchParameters implements _$MedicinalProductPharmaceuticalSearch {
-MedicinalProductPharmaceuticalSearch._(); 
- factory MedicinalProductPharmaceuticalSearch ({
+factory MedicinalProductPharmaceuticalSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -147,12 +146,12 @@ List<SearchToken> route,
 @JsonKey(name: 'target-species') List<SearchToken> targetSpecies,
 }) = _MedicinalProductPharmaceuticalSearch;
 
+MedicinalProductPharmaceuticalSearch._(); 
 factory MedicinalProductPharmaceuticalSearch.fromJson(Map<String, dynamic> json) => _$MedicinalProductPharmaceuticalSearchFromJson(json);}
 
 @freezed
 abstract class MedicinalProductUndesirableEffectSearch with R4SearchParameters implements _$MedicinalProductUndesirableEffectSearch {
-MedicinalProductUndesirableEffectSearch._(); 
- factory MedicinalProductUndesirableEffectSearch ({
+factory MedicinalProductUndesirableEffectSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -166,12 +165,12 @@ List<Id> searchList,
 List<SearchReference> subject,
 }) = _MedicinalProductUndesirableEffectSearch;
 
+MedicinalProductUndesirableEffectSearch._(); 
 factory MedicinalProductUndesirableEffectSearch.fromJson(Map<String, dynamic> json) => _$MedicinalProductUndesirableEffectSearchFromJson(json);}
 
 @freezed
 abstract class SubstanceSpecificationSearch with R4SearchParameters implements _$SubstanceSpecificationSearch {
-SubstanceSpecificationSearch._(); 
- factory SubstanceSpecificationSearch ({
+factory SubstanceSpecificationSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -185,5 +184,6 @@ List<Id> searchList,
 List<SearchToken> code,
 }) = _SubstanceSpecificationSearch;
 
+SubstanceSpecificationSearch._(); 
 factory SubstanceSpecificationSearch.fromJson(Map<String, dynamic> json) => _$SubstanceSpecificationSearchFromJson(json);}
 

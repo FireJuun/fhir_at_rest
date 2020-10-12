@@ -9,8 +9,7 @@ part 'security.g.dart';
 
 @freezed
 abstract class ConsentSearch with R4SearchParameters implements _$ConsentSearch {
-ConsentSearch._(); 
- factory ConsentSearch ({
+factory ConsentSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -38,12 +37,12 @@ List<SearchToken> scope,
 List<SearchToken> status,
 }) = _ConsentSearch;
 
+ConsentSearch._(); 
 factory ConsentSearch.fromJson(Map<String, dynamic> json) => _$ConsentSearchFromJson(json);}
 
 @freezed
 abstract class AuditEventSearch with R4SearchParameters implements _$AuditEventSearch {
-AuditEventSearch._(); 
- factory AuditEventSearch ({
+factory AuditEventSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -74,12 +73,12 @@ List<SearchToken> subtype,
 List<SearchToken> type,
 }) = _AuditEventSearch;
 
+AuditEventSearch._(); 
 factory AuditEventSearch.fromJson(Map<String, dynamic> json) => _$AuditEventSearchFromJson(json);}
 
 @freezed
 abstract class ProvenanceSearch with R4SearchParameters implements _$ProvenanceSearch {
-ProvenanceSearch._(); 
- factory ProvenanceSearch ({
+factory ProvenanceSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -102,5 +101,6 @@ List<SearchReference> target,
 List<SearchDate> when,
 }) = _ProvenanceSearch;
 
+ProvenanceSearch._(); 
 factory ProvenanceSearch.fromJson(Map<String, dynamic> json) => _$ProvenanceSearchFromJson(json);}
 

@@ -9,10 +9,10 @@ import 'package:fhir/stu3.dart' as stu3;
 import 'package:fhir/r4.dart' as r4;
 import 'package:fhir/r5.dart' as r5;
 
-import '../search_parameters/search_parameter_types/search_parameter_types.dart';
-import '../resource_types/resource_types.dart';
 import '../enums/enums.dart';
 import '../failures/restful_failure.dart';
+import '../resource_types/resource_types.dart';
+import '../search_parameters/search_parameter_types/search_parameter_types.dart';
 import 'make_request.dart';
 
 part 'history_request.freezed.dart';
@@ -62,7 +62,7 @@ abstract class HistoryRequest with _$HistoryRequest {
 
   Future<Either<RestfulFailure, dynamic>> request() async {
     var thisRequest = '$base/';
-    thisRequest += this.map(
+    thisRequest += map(
       dstu2: (req) => req.type == null
           ? ''
           : '${enumToString(req.type)}/'
@@ -99,7 +99,7 @@ abstract class HistoryRequest with _$HistoryRequest {
 
     return result.fold(
         (ifLeft) => left(ifLeft),
-        (ifRight) => right(this.map(
+        (ifRight) => right(map(
               dstu2: (r) => dstu2.Resource.fromJson(json.decode(ifRight.body)),
               stu3: (r) => stu3.Resource.fromJson(json.decode(ifRight.body)),
               r4: (r) => r4.Resource.fromJson(json.decode(ifRight.body)),

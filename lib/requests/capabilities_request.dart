@@ -58,7 +58,7 @@ abstract class CapabilitiesRequest with _$CapabilitiesRequest {
 
     return result.fold(
         (ifLeft) => left(ifLeft),
-        (ifRight) => right(this.map(
+        (ifRight) => right(map(
               dstu2: (r) => dstu2.Resource.fromJson(json.decode(ifRight.body)),
               stu3: (r) => stu3.Resource.fromJson(json.decode(ifRight.body)),
               r4: (r) => r4.Resource.fromJson(json.decode(ifRight.body)),

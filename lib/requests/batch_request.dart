@@ -42,7 +42,7 @@ abstract class BatchRequest with _$BatchRequest {
   }) = _BatchRequestR5;
 
   Future<Either<RestfulFailure, dynamic>> request(dynamic resource) async {
-    if (this.map(
+    if (map(
         dstu2: (req) => resource is! dstu2.Bundle,
         stu3: (req) => resource is! stu3.Bundle,
         r4: (req) => resource is! r4.Bundle,
@@ -51,7 +51,7 @@ abstract class BatchRequest with _$BatchRequest {
           failedValue: resource, batchOrTransaction: 'Batch'));
     }
 
-    if (this.map(
+    if (map(
         dstu2: (req) => resource.type != dstu2.BundleType.batch,
         stu3: (req) => resource.type != stu3.BundleType.batch,
         r4: (req) => resource.type != r4.BundleType.batch,
@@ -69,7 +69,7 @@ abstract class BatchRequest with _$BatchRequest {
       }
     }
 
-    var thisRequest = '$base?_format=application/fhir+json'
+    final thisRequest = '$base?_format=application/fhir+json'
         '${pretty ? "&_pretty=$pretty" : ""}'
         '${summary != Summary.none ? "&_summary=${enumToString(summary)}" : ""}';
 
@@ -80,7 +80,7 @@ abstract class BatchRequest with _$BatchRequest {
 
     return result.fold(
         (ifLeft) => left(ifLeft),
-        (ifRight) => right(this.map(
+        (ifRight) => right(map(
               dstu2: (r) => dstu2.Resource.fromJson(json.decode(ifRight.body)),
               stu3: (r) => stu3.Resource.fromJson(json.decode(ifRight.body)),
               r4: (r) => r4.Resource.fromJson(json.decode(ifRight.body)),

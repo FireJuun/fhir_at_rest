@@ -9,9 +9,9 @@ import 'package:fhir/stu3.dart' as stu3;
 import 'package:fhir/r4.dart' as r4;
 import 'package:fhir/r5.dart' as r5;
 
-import '../resource_types/resource_types.dart';
 import '../enums/enums.dart';
 import '../failures/restful_failure.dart';
+import '../resource_types/resource_types.dart';
 import 'make_request.dart';
 
 part 'read_request.freezed.dart';
@@ -52,7 +52,7 @@ abstract class ReadRequest with _$ReadRequest {
   }) = _ReadRequestR5;
 
   Future<Either<RestfulFailure, dynamic>> request() async {
-    var thisRequest = this.map(
+    var thisRequest = map(
       dstu2: (req) => '$base/${enumToString(req.type)}/${req.id.toString()}',
       stu3: (req) => '$base/${enumToString(req.type)}/${req.id.toString()}',
       r4: (req) => '$base/${enumToString(req.type)}/${req.id.toString()}',
@@ -71,7 +71,7 @@ abstract class ReadRequest with _$ReadRequest {
     return result.fold(
       (l) => left(l),
       (r) => right(
-        this.map(
+        map(
           dstu2: (i) => dstu2.Resource.fromJson(json.decode(r.body)),
           stu3: (i) => stu3.Resource.fromJson(json.decode(r.body)),
           r4: (i) => r4.Resource.fromJson(json.decode(r.body)),

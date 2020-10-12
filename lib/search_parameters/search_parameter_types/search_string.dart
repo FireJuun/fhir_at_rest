@@ -8,10 +8,6 @@ import 'search_objects.dart';
 /// Todo: add :text modifier
 
 class SearchString extends SearchObject<String> {
-  final String string;
-  final bool missing;
-  final StringModifier modifier;
-
   factory SearchString({String string, bool missing, StringModifier modifier}) {
     return SearchString._(
       string: string,
@@ -27,6 +23,10 @@ class SearchString extends SearchObject<String> {
       missing: json['missing'],
       modifier: json['modifier']);
 
+  final String string;
+  final bool missing;
+  final StringModifier modifier;
+
   Either<RestfulFailure, String> toJson() => searchString();
 
   Either<RestfulFailure, String> searchString() => missing != null
@@ -35,7 +35,8 @@ class SearchString extends SearchObject<String> {
           ? right(
               '${modifier != null ? ":${simpleEnumToString(modifier)}=" : "="}'
               '$string')
-          : left(RestfulFailure.emptySearchParameters(parameter: 'String'));
+          : left(
+              const RestfulFailure.emptySearchParameters(parameter: 'String'));
 }
 
 enum StringModifier {

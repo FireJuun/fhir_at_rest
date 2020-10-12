@@ -9,8 +9,7 @@ part 'entities2.g.dart';
 
 @freezed
 abstract class DeviceSearch with R4SearchParameters implements _$DeviceSearch {
-DeviceSearch._(); 
- factory DeviceSearch ({
+factory DeviceSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -35,12 +34,12 @@ List<SearchToken> type,
 List<SearchUri> url,
 }) = _DeviceSearch;
 
+DeviceSearch._(); 
 factory DeviceSearch.fromJson(Map<String, dynamic> json) => _$DeviceSearchFromJson(json);}
 
 @freezed
 abstract class DeviceMetricSearch with R4SearchParameters implements _$DeviceMetricSearch {
-DeviceMetricSearch._(); 
- factory DeviceMetricSearch ({
+factory DeviceMetricSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -58,12 +57,12 @@ List<SearchReference> source,
 List<SearchToken> type,
 }) = _DeviceMetricSearch;
 
+DeviceMetricSearch._(); 
 factory DeviceMetricSearch.fromJson(Map<String, dynamic> json) => _$DeviceMetricSearchFromJson(json);}
 
 @freezed
 abstract class SubstanceSearch with R4SearchParameters implements _$SubstanceSearch {
-SubstanceSearch._(); 
- factory SubstanceSearch ({
+factory SubstanceSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -84,5 +83,6 @@ List<SearchToken> status,
 @JsonKey(name: 'substance-reference') List<SearchReference> substanceReference,
 }) = _SubstanceSearch;
 
+SubstanceSearch._(); 
 factory SubstanceSearch.fromJson(Map<String, dynamic> json) => _$SubstanceSearchFromJson(json);}
 

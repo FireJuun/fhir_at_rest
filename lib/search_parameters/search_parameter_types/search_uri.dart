@@ -7,10 +7,6 @@ import '../../failures/restful_failure.dart';
 import 'search_objects.dart';
 
 class SearchUri extends SearchObject<String> {
-  final FhirUri uri;
-  final bool missing;
-  final UriModifier modifier;
-
   factory SearchUri({FhirUri uri, bool missing, UriModifier modifier}) {
     return SearchUri._(
       uri: uri,
@@ -23,6 +19,10 @@ class SearchUri extends SearchObject<String> {
 
   factory SearchUri.fromJson(Map<String, dynamic> json) => SearchUri(
       uri: json['uri'], missing: json['missing'], modifier: json['modifier']);
+
+  final FhirUri uri;
+  final bool missing;
+  final UriModifier modifier;
 
   Either<RestfulFailure, String> toJson() => searchString();
 

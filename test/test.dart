@@ -114,35 +114,35 @@ void main() {
 
   group('Batch/Transaction Requests', () {
     test('Batch Request', () async {
-      var req10 = BatchRequest.r4(
+      final req10 = BatchRequest.r4(
         base: Uri.parse('http://hapi.fhir.org/baseR4'),
       );
-      var newBundle = Bundle(
+      final newBundle = Bundle(
           resourceType: 'Bundle', type: BundleType.batch, id: Id('12345'));
-      var makeReq10 = await req10.request(newBundle);
+      final makeReq10 = await req10.request(newBundle);
       expect(makeReq10.fold((l) => l.errorMessage(), (r) => r),
           'http://hapi.fhir.org/baseR4?_format=application/fhir+json');
     });
 
     test('Batch Request with error', () async {
-      var req21 = BatchRequest.r4(
+      final req21 = BatchRequest.r4(
         base: Uri.parse('http://hapi.fhir.org/baseR4'),
       );
-      var newBundle = Bundle(
+      final newBundle = Bundle(
           resourceType: 'Bundle',
           type: BundleType.batch,
           id: Id('12345'),
           entry: [BundleEntry(request: BundleRequest())]);
-      var makeReq21 = await req21.request(newBundle);
+      final makeReq21 = await req21.request(newBundle);
       expect(makeReq21.fold((l) => l.errorMessage(), (r) => r),
           'Each bundle entry request needs a method type specified, but some of the entries in this bundle are missing a method.');
     });
 
     test('Transaction Request', () async {
-      var transaction = TransactionRequest.r4(
+      final transaction = TransactionRequest.r4(
         base: Uri.parse('http://hapi.fhir.org/baseR4'),
       );
-      var transactionBundle = Bundle(
+      final transactionBundle = Bundle(
           resourceType: 'Bundle',
           type: BundleType.transaction,
           id: Id('12345'),
@@ -150,7 +150,7 @@ void main() {
             BundleEntry(
                 request: BundleRequest(method: BundleRequestMethod.delete))
           ]);
-      var transactionReq = await transaction.request(transactionBundle);
+      final transactionReq = await transaction.request(transactionBundle);
       expect(transactionReq.fold((l) => l.errorMessage(), (r) => r),
           'http://hapi.fhir.org/baseR4?_format=application/fhir+json');
     });
@@ -158,45 +158,45 @@ void main() {
 
   group('History Requests', () {
     test('History of Specific Observation', () async {
-      var req11 = HistoryRequest.r4(
+      final req11 = HistoryRequest.r4(
         base: Uri.parse('http://hapi.fhir.org/baseR4'),
         type: R4Types.observation,
         id: Id('12345'),
       );
-      var makeReq11 = await req11.request();
+      final makeReq11 = await req11.request();
       expect(makeReq11.fold((l) => l.errorMessage(), (r) => r),
           'http://hapi.fhir.org/baseR4/Observation/12345/_history?_format=application/fhir+json');
     });
 
     test('History of all Observations', () async {
-      var req12 = HistoryRequest.r4(
+      final req12 = HistoryRequest.r4(
         base: Uri.parse('http://hapi.fhir.org/baseR4'),
         type: R4Types.observation,
       );
-      var makeReq12 = await req12.request();
+      final makeReq12 = await req12.request();
       expect(makeReq12.fold((l) => l.errorMessage(), (r) => r),
           'http://hapi.fhir.org/baseR4/Observation/_history?_format=application/fhir+json');
     });
 
     test('History of everything', () async {
-      var req13 = HistoryRequest.r4(
+      final req13 = HistoryRequest.r4(
         base: Uri.parse('http://hapi.fhir.org/baseR4'),
       );
-      var makeReq13 = await req13.request();
+      final makeReq13 = await req13.request();
       expect(makeReq13.fold((l) => l.errorMessage(), (r) => r),
           'http://hapi.fhir.org/baseR4/_history?_format=application/fhir+json');
     });
 
     test('History of Observations, count of 10, after a specified date',
         () async {
-      var req14 = HistoryRequest.r4(
+      final req14 = HistoryRequest.r4(
         base: Uri.parse('http://hapi.fhir.org/baseR4'),
         type: R4Types.observation,
         id: Id('12345'),
         count: 10,
         since: Instant('2020-10-08T16:58:07.241117Z'),
       );
-      var makeReq14 = await req14.request();
+      final makeReq14 = await req14.request();
       expect(makeReq14.fold((l) => l.errorMessage(), (r) => r),
           'http://hapi.fhir.org/baseR4/Observation/12345/_history?_format=application/fhir+json&_count=10&_since=2020-10-08T16:58:07.241117Z');
     });
@@ -204,57 +204,57 @@ void main() {
 
   group('Other Requests', () {
     test('Update Request', () async {
-      var req4 = UpdateRequest.r4(
+      final req4 = UpdateRequest.r4(
         base: Uri.parse('http://hapi.fhir.org/baseR4'),
         type: R4Types.patient,
         id: Id('12345'),
       );
-      var patientToUpdate = Patient(resourceType: 'Patient', id: Id('12345'));
-      var makeReq4 = await req4.request(patientToUpdate);
+      final patientToUpdate = Patient(resourceType: 'Patient', id: Id('12345'));
+      final makeReq4 = await req4.request(patientToUpdate);
       expect(makeReq4.fold((l) => l.errorMessage(), (r) => r),
           'http://hapi.fhir.org/baseR4/Patient/12345?_format=application/fhir+json');
     });
 
     test('Patch Request', () async {
-      var req5 = PatchRequest.r4(
+      final req5 = PatchRequest.r4(
         base: Uri.parse('http://hapi.fhir.org/baseR4'),
         type: R4Types.patient,
         id: Id('12345'),
       );
-      var patientToPatch = Patient(resourceType: 'Patient', id: Id('12345'));
-      var makeReq5 = await req5.request(patientToPatch);
+      final patientToPatch = Patient(resourceType: 'Patient', id: Id('12345'));
+      final makeReq5 = await req5.request(patientToPatch);
       expect(makeReq5.fold((l) => l.errorMessage(), (r) => r),
           'http://hapi.fhir.org/baseR4/Patient/12345?_format=application/fhir+json');
     });
 
     test('Delete Request', () async {
-      var req6 = DeleteRequest.r4(
+      final req6 = DeleteRequest.r4(
         base: Uri.parse('http://hapi.fhir.org/baseR4'),
         type: R4Types.patient,
         id: Id('12345'),
       );
-      var makeReq6 = await req6.request();
+      final makeReq6 = await req6.request();
       expect(makeReq6.fold((l) => l.errorMessage(), (r) => r),
           'http://hapi.fhir.org/baseR4/Patient/12345?_format=application/fhir+json');
     });
 
     test('Create Request', () async {
-      var req7 = CreateRequest.r4(
+      final req7 = CreateRequest.r4(
         base: Uri.parse('http://hapi.fhir.org/baseR4'),
         type: R4Types.patient,
       );
-      var patientToCreate = Patient(resourceType: 'Patient', id: Id('12345'));
-      var makeReq7 = await req7.request(patientToCreate);
+      final patientToCreate = Patient(resourceType: 'Patient', id: Id('12345'));
+      final makeReq7 = await req7.request(patientToCreate);
       expect(makeReq7.fold((l) => l.errorMessage(), (r) => r),
           'http://hapi.fhir.org/baseR4/Patient?_format=application/fhir+json');
     });
 
     test('Capabilities Request', () async {
-      var req9 = CapabilitiesRequest.r4(
+      final req9 = CapabilitiesRequest.r4(
         base: Uri.parse('http://hapi.fhir.org/baseR4'),
         mode: Mode.normative,
       );
-      var makeReq9 = await req9.request();
+      final makeReq9 = await req9.request();
       expect(makeReq9.fold((l) => l.errorMessage(), (r) => r),
           'http://hapi.fhir.org/baseR4/metadata?mode=normative&_format=application/fhir+json');
     });
@@ -262,12 +262,12 @@ void main() {
 
   group('Search Request', () {
     test('Patient ID Search', () async {
-      var request = SearchRequest.r4(
+      final request = SearchRequest.r4(
         base: Uri.parse('http://hapi.fhir.org/baseR4'),
         type: R4Types.patient,
         parameters: PatientSearch(searchId: [Id('12345')]),
       );
-      var response = await request.request();
+      final response = await request.request();
       expect(
         response.fold((l) => l.errorMessage(), (r) => r),
         'http://hapi.fhir.org/baseR4/Patient?_format=application/fhir+json&_id=12345',
@@ -275,14 +275,14 @@ void main() {
     });
 
     test('Observation Time Search', () async {
-      var request = SearchRequest.r4(
+      final request = SearchRequest.r4(
         base: Uri.parse('http://hapi.fhir.org/baseR4'),
         type: R4Types.observation,
         parameters: ObservationSearch(searchLastUpdated: [
           SearchDate(date: FhirDateTime('2010-10-01'), prefix: DatePrefix.gt)
         ]),
       );
-      var response = await request.request();
+      final response = await request.request();
       expect(
         response.fold((l) => l.errorMessage(), (r) => r),
         'http://hapi.fhir.org/baseR4/Observation?_format=application/fhir+json&_lastUpdated=gt2010-10-01',
@@ -290,7 +290,7 @@ void main() {
     });
 
     test('Condition search, code parameter (_tag)', () async {
-      var request = SearchRequest.r4(
+      final request = SearchRequest.r4(
         base: Uri.parse('http://hapi.fhir.org/baseR4'),
         type: R4Types.condition,
         parameters: ConditionSearch(
@@ -301,7 +301,7 @@ void main() {
           ],
         ),
       );
-      var response = await request.request();
+      final response = await request.request();
       expect(
         response.fold((l) => l.errorMessage(), (r) => r),
         'http://hapi.fhir.org/baseR4/Condition?_format=application/fhir+json&_tag=http://acme.org/codes|needs-review',
@@ -309,14 +309,14 @@ void main() {
     });
 
     test('Diagnostic Report Search, Uri parameter (_profile)', () async {
-      var request = SearchRequest.r4(
+      final request = SearchRequest.r4(
         base: Uri.parse('http://hapi.fhir.org/baseR4'),
         type: R4Types.diagnosticreport,
         parameters: DiagnosticReportSearch(
           searchProfile: [SearchUri(uri: FhirUri('http://acme.org/codes'))],
         ),
       );
-      var response = await request.request();
+      final response = await request.request();
       expect(
         response.fold((l) => l.errorMessage(), (r) => r),
         'http://hapi.fhir.org/baseR4/DiagnosticReport?_format=application/fhir+json&_profile=http://acme.org/codes',
@@ -324,12 +324,12 @@ void main() {
     });
 
     test('Patient Search if gender present', () async {
-      var request = SearchRequest.r4(
+      final request = SearchRequest.r4(
         base: Uri.parse('http://hapi.fhir.org/baseR4'),
         type: R4Types.patient,
         parameters: PatientSearch(gender: [SearchToken(missing: true)]),
       );
-      var response = await request.request();
+      final response = await request.request();
       expect(
         response.fold((l) => l.errorMessage(), (r) => r),
         'http://hapi.fhir.org/baseR4/Patient?_format=application/fhir+json&gender:missing=true',
@@ -337,12 +337,12 @@ void main() {
     });
 
     test('Patient Search if gender present', () async {
-      var request = SearchRequest.r4(
+      final request = SearchRequest.r4(
         base: Uri.parse('http://hapi.fhir.org/baseR4'),
         type: R4Types.patient,
         parameters: PatientSearch(gender: [SearchToken(missing: false)]),
       );
-      var response = await request.request();
+      final response = await request.request();
       expect(
         response.fold((l) => l.errorMessage(), (r) => r),
         'http://hapi.fhir.org/baseR4/Patient?_format=application/fhir+json&gender:missing=false',
@@ -350,14 +350,14 @@ void main() {
     });
 
     test('Patient Search for exact text match', () async {
-      var request = SearchRequest.r4(
+      final request = SearchRequest.r4(
         base: Uri.parse('http://hapi.fhir.org/baseR4'),
         type: R4Types.patient,
         parameters: PatientSearch(searchText: [
           SearchString(string: 'Stark', modifier: StringModifier.exact)
         ]),
       );
-      var response = await request.request();
+      final response = await request.request();
       expect(
         response.fold((l) => l.errorMessage(), (r) => r),
         'http://hapi.fhir.org/baseR4/Patient?_format=application/fhir+json&_text:exact=Stark',
@@ -365,14 +365,14 @@ void main() {
     });
 
     test('Observation Search "le"', () async {
-      var request = SearchRequest.r4(
+      final request = SearchRequest.r4(
         base: Uri.parse('http://hapi.fhir.org/baseR4'),
         type: R4Types.observation,
         parameters: ObservationSearch(searchLastUpdated: [
           SearchDate(date: FhirDateTime('2010-10-01'), prefix: DatePrefix.le)
         ]),
       );
-      var response = await request.request();
+      final response = await request.request();
       expect(
         response.fold((l) => l.errorMessage(), (r) => r),
         'http://hapi.fhir.org/baseR4/Observation?_format=application/fhir+json&_lastUpdated=le2010-10-01',
@@ -380,13 +380,13 @@ void main() {
     });
 
     test('Risk Assessment Search, probability > 0.8', () async {
-      var request = SearchRequest.r4(
+      final request = SearchRequest.r4(
         base: Uri.parse('http://hapi.fhir.org/baseR4'),
         type: R4Types.riskassessment,
         parameters: RiskAssessmentSearch(
             probability: [SearchNumber(number: 0.8, prefix: NumberPrefix.gt)]),
       );
-      var response = await request.request();
+      final response = await request.request();
       expect(
         response.fold((l) => l.errorMessage(), (r) => r),
         'http://hapi.fhir.org/baseR4/RiskAssessment?_format=application/fhir+json&probability=gt0.8',
@@ -394,7 +394,7 @@ void main() {
     });
 
     test('Patient Search for birthday between two dates', () async {
-      var request = SearchRequest.r4(
+      final request = SearchRequest.r4(
         base: Uri.parse('http://hapi.fhir.org/baseR4'),
         type: R4Types.patient,
         parameters: PatientSearch(birthdate: [
@@ -402,7 +402,7 @@ void main() {
           SearchDate(date: FhirDateTime('2011-12-31'), prefix: DatePrefix.le)
         ]),
       );
-      var response = await request.request();
+      final response = await request.request();
       expect(
         response.fold((l) => l.errorMessage(), (r) => r),
         'http://hapi.fhir.org/baseR4/Patient?_format=application/fhir+json&birthdate=ge2010-01-01&birthdate=le2011-12-31',
@@ -410,7 +410,7 @@ void main() {
     });
 
     test('Patient Search given name with parameters', () async {
-      var request = SearchRequest.r4(
+      final request = SearchRequest.r4(
           base: Uri.parse('http://hapi.fhir.org/baseR4'),
           type: R4Types.patient,
           parameters: PatientSearch(
@@ -420,7 +420,7 @@ void main() {
               SearchString(string: 'eve', modifier: StringModifier.exact)
             ],
           ));
-      var response = await request.request();
+      final response = await request.request();
       expect(
         response.fold((l) => l.errorMessage(), (r) => r),
         'http://hapi.fhir.org/baseR4/Patient?_format=application/fhir+json&given=eve&given:contains=eve&given:exact=eve',
@@ -428,7 +428,7 @@ void main() {
     });
 
     test('Patient Search with identifier', () async {
-      var request = SearchRequest.r4(
+      final request = SearchRequest.r4(
           base: Uri.parse('http://hapi.fhir.org/baseR4'),
           type: R4Types.patient,
           parameters: PatientSearch(
@@ -438,7 +438,7 @@ void main() {
                   code: Code('2345'))
             ],
           ));
-      var response = await request.request();
+      final response = await request.request();
       expect(
         response.fold((l) => l.errorMessage(), (r) => r),
         'http://hapi.fhir.org/baseR4/Patient?_format=application/fhir+json&identifier=http://acme.org/patient|2345',
@@ -446,7 +446,7 @@ void main() {
     });
 
     test('Composition Search Section Code', () async {
-      var request = SearchRequest.r4(
+      final request = SearchRequest.r4(
           base: Uri.parse('http://hapi.fhir.org/baseR4'),
           type: R4Types.composition,
           parameters: CompositionSearch(
@@ -454,7 +454,7 @@ void main() {
               SearchToken(code: Code('48765-2'), modifier: TokenModifier.not)
             ],
           ));
-      var response = await request.request();
+      final response = await request.request();
       expect(
         response.fold((l) => l.errorMessage(), (r) => r),
         'http://hapi.fhir.org/baseR4/Composition?_format=application/fhir+json&section:not=48765-2',
@@ -462,7 +462,7 @@ void main() {
     });
 
     test('Condition search via snomed code', () async {
-      var request = SearchRequest.r4(
+      final request = SearchRequest.r4(
           base: Uri.parse('http://hapi.fhir.org/baseR4'),
           type: R4Types.condition,
           parameters: ConditionSearch(
@@ -473,7 +473,7 @@ void main() {
                   modifier: TokenModifier.in_)
             ],
           ));
-      var response = await request.request();
+      final response = await request.request();
       expect(
         response.fold((l) => l.errorMessage(), (r) => r),
         'http://hapi.fhir.org/baseR4/Condition?_format=application/fhir+json&code:in=http%3A%2F%2Fsnomed.info%2Fsct%3Ffhir_vs%3Disa%2F126851005',
@@ -481,7 +481,7 @@ void main() {
     });
 
     test('Patient search by mr code', () async {
-      var request = SearchRequest.r4(
+      final request = SearchRequest.r4(
           base: Uri.parse('http://hapi.fhir.org/baseR4'),
           type: R4Types.patient,
           parameters: PatientSearch(
@@ -495,7 +495,7 @@ void main() {
               ),
             ],
           ));
-      var response = await request.request();
+      final response = await request.request();
       expect(
         response.fold((l) => l.errorMessage(), (r) => r),
         'http://hapi.fhir.org/baseR4/Patient?_format=application/fhir+json&identifier:of-type=http://terminology.hl7.org/CodeSystem/v2-0203|MR|446053',
@@ -503,7 +503,7 @@ void main() {
     });
 
     test('Observation search by quantity, with prefix', () async {
-      var request = SearchRequest.r4(
+      final request = SearchRequest.r4(
         base: Uri.parse('http://hapi.fhir.org/baseR4'),
         type: R4Types.observation,
         parameters: ObservationSearch(
@@ -517,7 +517,7 @@ void main() {
           ],
         ),
       );
-      var response = await request.request();
+      final response = await request.request();
       expect(
         response.fold((l) => l.errorMessage(), (r) => r),
         'http://hapi.fhir.org/baseR4/Observation?_format=application/fhir+json&value-quantity=ap5.4|http://unitsofmeasure.org|mg',
@@ -525,7 +525,7 @@ void main() {
     });
 
     test('Observation search by quantity, without prefix', () async {
-      var request = SearchRequest.r4(
+      final request = SearchRequest.r4(
         base: Uri.parse('http://hapi.fhir.org/baseR4'),
         type: R4Types.observation,
         parameters: ObservationSearch(
@@ -538,7 +538,7 @@ void main() {
           ],
         ),
       );
-      var response = await request.request();
+      final response = await request.request();
       expect(
         response.fold((l) => l.errorMessage(), (r) => r),
         'http://hapi.fhir.org/baseR4/Observation?_format=application/fhir+json&value-quantity=5.4|http://unitsofmeasure.org|mg',
@@ -546,7 +546,7 @@ void main() {
     });
 
     test('Observation search by quantity, testing number parsing', () async {
-      var request = SearchRequest.r4(
+      final request = SearchRequest.r4(
         base: Uri.parse('http://hapi.fhir.org/baseR4'),
         type: R4Types.observation,
         parameters: ObservationSearch(
@@ -559,7 +559,7 @@ void main() {
           ],
         ),
       );
-      var response = await request.request();
+      final response = await request.request();
       expect(
         response.fold((l) => l.errorMessage(), (r) => r),
         'http://hapi.fhir.org/baseR4/Observation?_format=application/fhir+json&value-quantity=0.0054|http://unitsofmeasure.org|g',

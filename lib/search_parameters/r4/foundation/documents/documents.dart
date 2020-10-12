@@ -9,8 +9,7 @@ part 'documents.g.dart';
 
 @freezed
 abstract class CompositionSearch with R4SearchParameters implements _$CompositionSearch {
-CompositionSearch._(); 
- factory CompositionSearch ({
+factory CompositionSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -41,12 +40,12 @@ List<SearchReference> subject,
 List<SearchString> title,
 }) = _CompositionSearch;
 
+CompositionSearch._(); 
 factory CompositionSearch.fromJson(Map<String, dynamic> json) => _$CompositionSearchFromJson(json);}
 
 @freezed
 abstract class DocumentManifestSearch with R4SearchParameters implements _$DocumentManifestSearch {
-DocumentManifestSearch._(); 
- factory DocumentManifestSearch ({
+factory DocumentManifestSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -72,12 +71,12 @@ List<SearchToken> status,
 List<SearchReference> subject,
 }) = _DocumentManifestSearch;
 
+DocumentManifestSearch._(); 
 factory DocumentManifestSearch.fromJson(Map<String, dynamic> json) => _$DocumentManifestSearchFromJson(json);}
 
 @freezed
 abstract class DocumentReferenceSearch with R4SearchParameters implements _$DocumentReferenceSearch {
-DocumentReferenceSearch._(); 
- factory DocumentReferenceSearch ({
+factory DocumentReferenceSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -115,5 +114,6 @@ List<SearchReference> subject,
 List<SearchComposite> relationship,
 }) = _DocumentReferenceSearch;
 
+DocumentReferenceSearch._(); 
 factory DocumentReferenceSearch.fromJson(Map<String, dynamic> json) => _$DocumentReferenceSearchFromJson(json);}
 

@@ -9,8 +9,7 @@ part 'other.g.dart';
 
 @freezed
 abstract class BasicSearch with R4SearchParameters implements _$BasicSearch {
-BasicSearch._(); 
- factory BasicSearch ({
+factory BasicSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -29,12 +28,12 @@ List<SearchReference> patient,
 List<SearchReference> subject,
 }) = _BasicSearch;
 
+BasicSearch._(); 
 factory BasicSearch.fromJson(Map<String, dynamic> json) => _$BasicSearchFromJson(json);}
 
 @freezed
 abstract class BundleSearch with R4SearchParameters implements _$BundleSearch {
-BundleSearch._(); 
- factory BundleSearch ({
+factory BundleSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -52,12 +51,12 @@ List<SearchDate> timestamp,
 List<SearchToken> type,
 }) = _BundleSearch;
 
+BundleSearch._(); 
 factory BundleSearch.fromJson(Map<String, dynamic> json) => _$BundleSearchFromJson(json);}
 
 @freezed
 abstract class LinkageSearch with R4SearchParameters implements _$LinkageSearch {
-LinkageSearch._(); 
- factory LinkageSearch ({
+factory LinkageSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -73,12 +72,12 @@ List<SearchReference> item,
 List<SearchReference> source,
 }) = _LinkageSearch;
 
+LinkageSearch._(); 
 factory LinkageSearch.fromJson(Map<String, dynamic> json) => _$LinkageSearchFromJson(json);}
 
 @freezed
 abstract class MessageHeaderSearch with R4SearchParameters implements _$MessageHeaderSearch {
-MessageHeaderSearch._(); 
- factory MessageHeaderSearch ({
+factory MessageHeaderSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -105,12 +104,12 @@ List<SearchString> source,
 List<SearchReference> target,
 }) = _MessageHeaderSearch;
 
+MessageHeaderSearch._(); 
 factory MessageHeaderSearch.fromJson(Map<String, dynamic> json) => _$MessageHeaderSearchFromJson(json);}
 
 @freezed
 abstract class SubscriptionSearch with R4SearchParameters implements _$SubscriptionSearch {
-SubscriptionSearch._(); 
- factory SubscriptionSearch ({
+factory SubscriptionSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -129,5 +128,6 @@ List<SearchToken> type,
 List<SearchUri> url,
 }) = _SubscriptionSearch;
 
+SubscriptionSearch._(); 
 factory SubscriptionSearch.fromJson(Map<String, dynamic> json) => _$SubscriptionSearchFromJson(json);}
 

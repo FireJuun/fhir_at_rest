@@ -9,8 +9,7 @@ part 'payment.g.dart';
 
 @freezed
 abstract class PaymentNoticeSearch with R4SearchParameters implements _$PaymentNoticeSearch {
-PaymentNoticeSearch._(); 
- factory PaymentNoticeSearch ({
+factory PaymentNoticeSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -30,12 +29,12 @@ List<SearchReference> response,
 List<SearchToken> status,
 }) = _PaymentNoticeSearch;
 
+PaymentNoticeSearch._(); 
 factory PaymentNoticeSearch.fromJson(Map<String, dynamic> json) => _$PaymentNoticeSearchFromJson(json);}
 
 @freezed
 abstract class PaymentReconciliationSearch with R4SearchParameters implements _$PaymentReconciliationSearch {
-PaymentReconciliationSearch._(); 
- factory PaymentReconciliationSearch ({
+factory PaymentReconciliationSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -56,5 +55,6 @@ List<SearchReference> requestor,
 List<SearchToken> status,
 }) = _PaymentReconciliationSearch;
 
+PaymentReconciliationSearch._(); 
 factory PaymentReconciliationSearch.fromJson(Map<String, dynamic> json) => _$PaymentReconciliationSearchFromJson(json);}
 

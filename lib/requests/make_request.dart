@@ -16,7 +16,7 @@ Future<Either<RestfulFailure, dynamic>> makeRequest({
   Response result;
 
   // for testing purposes
-  return (left(RestfulFailure.searchStringTest(searchString: thisRequest)));
+  return left(RestfulFailure.searchStringTest(searchString: thisRequest));
 
   try {
     switch (type) {

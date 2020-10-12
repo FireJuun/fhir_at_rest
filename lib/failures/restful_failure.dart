@@ -59,7 +59,7 @@ abstract class RestfulFailure<T> with _$RestfulFailure<T> {
     @required String parameter,
   }) = EmptySearchParameters;
 
-  String errorMessage() => this.map(
+  String errorMessage() => map(
         searchStringTest: (f) => f.searchString,
         httpFailure: (f) => '',
         unknownFailure: (f) => '',

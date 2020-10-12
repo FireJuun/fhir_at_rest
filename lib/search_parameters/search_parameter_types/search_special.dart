@@ -4,9 +4,6 @@ import '../../failures/restful_failure.dart';
 import 'search_objects.dart';
 
 class SearchSpecial extends SearchObject<String> {
-  final String string;
-  final bool missing;
-
   factory SearchSpecial({String string, bool missing}) {
     return SearchSpecial._(
       string: string,
@@ -18,6 +15,8 @@ class SearchSpecial extends SearchObject<String> {
 
   factory SearchSpecial.fromJson(Map<String, dynamic> json) =>
       SearchSpecial(string: json['string'], missing: json['missing']);
+  final String string;
+  final bool missing;
 
   Either<RestfulFailure, String> toJson() => searchString();
 
@@ -25,5 +24,6 @@ class SearchSpecial extends SearchObject<String> {
       ? right(':missing=$missing')
       : string != null
           ? right('$string${missing != null ? ":missing=$missing" : ""}')
-          : left(RestfulFailure.emptySearchParameters(parameter: 'Special'));
+          : left(
+              const RestfulFailure.emptySearchParameters(parameter: 'Special'));
 }

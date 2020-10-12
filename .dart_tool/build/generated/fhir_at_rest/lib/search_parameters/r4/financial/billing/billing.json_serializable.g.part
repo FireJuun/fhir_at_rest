@@ -117,34 +117,59 @@ _$_ClaimSearch _$_$_ClaimSearchFromJson(Map<String, dynamic> json) {
   );
 }
 
-Map<String, dynamic> _$_$_ClaimSearchToJson(_$_ClaimSearch instance) =>
-    <String, dynamic>{
-      'searchId': instance.searchId,
-      'searchLastUpdated': instance.searchLastUpdated,
-      'searchTag': instance.searchTag,
-      'searchProfile': instance.searchProfile,
-      'searchSecurity': instance.searchSecurity,
-      'searchText': instance.searchText,
-      'searchContent': instance.searchContent,
-      'searchList': instance.searchList,
-      'care-team': instance.careTeam,
-      'created': instance.created,
-      'detail-udi': instance.detailUdi,
-      'encounter': instance.encounter,
-      'enterer': instance.enterer,
-      'facility': instance.facility,
-      'identifier': instance.identifier,
-      'insurer': instance.insurer,
-      'item-udi': instance.itemUdi,
-      'patient': instance.patient,
-      'payee': instance.payee,
-      'priority': instance.priority,
-      'procedure-udi': instance.procedureUdi,
-      'provider': instance.provider,
-      'status': instance.status,
-      'subdetail-udi': instance.subdetailUdi,
-      'use': instance.use,
-    };
+Map<String, dynamic> _$_$_ClaimSearchToJson(_$_ClaimSearch instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull(
+      'searchId', instance.searchId?.map((e) => e?.toJson())?.toList());
+  writeNotNull('searchLastUpdated',
+      instance.searchLastUpdated?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'searchTag', instance.searchTag?.map((e) => e?.toJson())?.toList());
+  writeNotNull('searchProfile',
+      instance.searchProfile?.map((e) => e?.toJson())?.toList());
+  writeNotNull('searchSecurity',
+      instance.searchSecurity?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'searchText', instance.searchText?.map((e) => e?.toJson())?.toList());
+  writeNotNull('searchContent',
+      instance.searchContent?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'searchList', instance.searchList?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'care-team', instance.careTeam?.map((e) => e?.toJson())?.toList());
+  writeNotNull('created', instance.created?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'detail-udi', instance.detailUdi?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'encounter', instance.encounter?.map((e) => e?.toJson())?.toList());
+  writeNotNull('enterer', instance.enterer?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'facility', instance.facility?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'identifier', instance.identifier?.map((e) => e?.toJson())?.toList());
+  writeNotNull('insurer', instance.insurer?.map((e) => e?.toJson())?.toList());
+  writeNotNull('item-udi', instance.itemUdi?.map((e) => e?.toJson())?.toList());
+  writeNotNull('patient', instance.patient?.map((e) => e?.toJson())?.toList());
+  writeNotNull('payee', instance.payee?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'priority', instance.priority?.map((e) => e?.toJson())?.toList());
+  writeNotNull('procedure-udi',
+      instance.procedureUdi?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'provider', instance.provider?.map((e) => e?.toJson())?.toList());
+  writeNotNull('status', instance.status?.map((e) => e?.toJson())?.toList());
+  writeNotNull('subdetail-udi',
+      instance.subdetailUdi?.map((e) => e?.toJson())?.toList());
+  writeNotNull('use', instance.use?.map((e) => e?.toJson())?.toList());
+  return val;
+}
 
 _$_ClaimResponseSearch _$_$_ClaimResponseSearchFromJson(
     Map<String, dynamic> json) {
@@ -231,28 +256,48 @@ _$_ClaimResponseSearch _$_$_ClaimResponseSearchFromJson(
 }
 
 Map<String, dynamic> _$_$_ClaimResponseSearchToJson(
-        _$_ClaimResponseSearch instance) =>
-    <String, dynamic>{
-      'searchId': instance.searchId,
-      'searchLastUpdated': instance.searchLastUpdated,
-      'searchTag': instance.searchTag,
-      'searchProfile': instance.searchProfile,
-      'searchSecurity': instance.searchSecurity,
-      'searchText': instance.searchText,
-      'searchContent': instance.searchContent,
-      'searchList': instance.searchList,
-      'created': instance.created,
-      'disposition': instance.disposition,
-      'identifier': instance.identifier,
-      'insurer': instance.insurer,
-      'outcome': instance.outcome,
-      'patient': instance.patient,
-      'payment-date': instance.paymentDate,
-      'request': instance.request,
-      'requestor': instance.requestor,
-      'status': instance.status,
-      'use': instance.use,
-    };
+    _$_ClaimResponseSearch instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull(
+      'searchId', instance.searchId?.map((e) => e?.toJson())?.toList());
+  writeNotNull('searchLastUpdated',
+      instance.searchLastUpdated?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'searchTag', instance.searchTag?.map((e) => e?.toJson())?.toList());
+  writeNotNull('searchProfile',
+      instance.searchProfile?.map((e) => e?.toJson())?.toList());
+  writeNotNull('searchSecurity',
+      instance.searchSecurity?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'searchText', instance.searchText?.map((e) => e?.toJson())?.toList());
+  writeNotNull('searchContent',
+      instance.searchContent?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'searchList', instance.searchList?.map((e) => e?.toJson())?.toList());
+  writeNotNull('created', instance.created?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'disposition', instance.disposition?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'identifier', instance.identifier?.map((e) => e?.toJson())?.toList());
+  writeNotNull('insurer', instance.insurer?.map((e) => e?.toJson())?.toList());
+  writeNotNull('outcome', instance.outcome?.map((e) => e?.toJson())?.toList());
+  writeNotNull('patient', instance.patient?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'payment-date', instance.paymentDate?.map((e) => e?.toJson())?.toList());
+  writeNotNull('request', instance.request?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'requestor', instance.requestor?.map((e) => e?.toJson())?.toList());
+  writeNotNull('status', instance.status?.map((e) => e?.toJson())?.toList());
+  writeNotNull('use', instance.use?.map((e) => e?.toJson())?.toList());
+  return val;
+}
 
 _$_InvoiceSearch _$_$_InvoiceSearchFromJson(Map<String, dynamic> json) {
   return _$_InvoiceSearch(
@@ -349,27 +394,49 @@ _$_InvoiceSearch _$_$_InvoiceSearchFromJson(Map<String, dynamic> json) {
   );
 }
 
-Map<String, dynamic> _$_$_InvoiceSearchToJson(_$_InvoiceSearch instance) =>
-    <String, dynamic>{
-      'searchId': instance.searchId,
-      'searchLastUpdated': instance.searchLastUpdated,
-      'searchTag': instance.searchTag,
-      'searchProfile': instance.searchProfile,
-      'searchSecurity': instance.searchSecurity,
-      'searchText': instance.searchText,
-      'searchContent': instance.searchContent,
-      'searchList': instance.searchList,
-      'account': instance.account,
-      'date': instance.date,
-      'identifier': instance.identifier,
-      'issuer': instance.issuer,
-      'participant': instance.participant,
-      'participant-role': instance.participantRole,
-      'patient': instance.patient,
-      'recipient': instance.recipient,
-      'status': instance.status,
-      'subject': instance.subject,
-      'totalgross': instance.totalgross,
-      'totalnet': instance.totalnet,
-      'type': instance.type,
-    };
+Map<String, dynamic> _$_$_InvoiceSearchToJson(_$_InvoiceSearch instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull(
+      'searchId', instance.searchId?.map((e) => e?.toJson())?.toList());
+  writeNotNull('searchLastUpdated',
+      instance.searchLastUpdated?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'searchTag', instance.searchTag?.map((e) => e?.toJson())?.toList());
+  writeNotNull('searchProfile',
+      instance.searchProfile?.map((e) => e?.toJson())?.toList());
+  writeNotNull('searchSecurity',
+      instance.searchSecurity?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'searchText', instance.searchText?.map((e) => e?.toJson())?.toList());
+  writeNotNull('searchContent',
+      instance.searchContent?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'searchList', instance.searchList?.map((e) => e?.toJson())?.toList());
+  writeNotNull('account', instance.account?.map((e) => e?.toJson())?.toList());
+  writeNotNull('date', instance.date?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'identifier', instance.identifier?.map((e) => e?.toJson())?.toList());
+  writeNotNull('issuer', instance.issuer?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'participant', instance.participant?.map((e) => e?.toJson())?.toList());
+  writeNotNull('participant-role',
+      instance.participantRole?.map((e) => e?.toJson())?.toList());
+  writeNotNull('patient', instance.patient?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'recipient', instance.recipient?.map((e) => e?.toJson())?.toList());
+  writeNotNull('status', instance.status?.map((e) => e?.toJson())?.toList());
+  writeNotNull('subject', instance.subject?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'totalgross', instance.totalgross?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'totalnet', instance.totalnet?.map((e) => e?.toJson())?.toList());
+  writeNotNull('type', instance.type?.map((e) => e?.toJson())?.toList());
+  return val;
+}

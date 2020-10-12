@@ -9,8 +9,7 @@ part 'request_and_response.g.dart';
 
 @freezed
 abstract class DeviceRequestSearch with R4SearchParameters implements _$DeviceRequestSearch {
-DeviceRequestSearch._(); 
- factory DeviceRequestSearch ({
+factory DeviceRequestSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -41,12 +40,12 @@ List<SearchToken> status,
 List<SearchReference> subject,
 }) = _DeviceRequestSearch;
 
+DeviceRequestSearch._(); 
 factory DeviceRequestSearch.fromJson(Map<String, dynamic> json) => _$DeviceRequestSearchFromJson(json);}
 
 @freezed
 abstract class SupplyRequestSearch with R4SearchParameters implements _$SupplyRequestSearch {
-SupplyRequestSearch._(); 
- factory SupplyRequestSearch ({
+factory SupplyRequestSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -66,12 +65,12 @@ List<SearchReference> subject,
 List<SearchReference> supplier,
 }) = _SupplyRequestSearch;
 
+SupplyRequestSearch._(); 
 factory SupplyRequestSearch.fromJson(Map<String, dynamic> json) => _$SupplyRequestSearchFromJson(json);}
 
 @freezed
 abstract class SupplyDeliverySearch with R4SearchParameters implements _$SupplyDeliverySearch {
-SupplyDeliverySearch._(); 
- factory SupplyDeliverySearch ({
+factory SupplyDeliverySearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -89,12 +88,12 @@ List<SearchToken> status,
 List<SearchReference> supplier,
 }) = _SupplyDeliverySearch;
 
+SupplyDeliverySearch._(); 
 factory SupplyDeliverySearch.fromJson(Map<String, dynamic> json) => _$SupplyDeliverySearchFromJson(json);}
 
 @freezed
 abstract class DeviceUseStatementSearch with R4SearchParameters implements _$DeviceUseStatementSearch {
-DeviceUseStatementSearch._(); 
- factory DeviceUseStatementSearch ({
+factory DeviceUseStatementSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -111,12 +110,12 @@ List<SearchToken> identifier,
 List<SearchReference> subject,
 }) = _DeviceUseStatementSearch;
 
+DeviceUseStatementSearch._(); 
 factory DeviceUseStatementSearch.fromJson(Map<String, dynamic> json) => _$DeviceUseStatementSearchFromJson(json);}
 
 @freezed
 abstract class CommunicationSearch with R4SearchParameters implements _$CommunicationSearch {
-CommunicationSearch._(); 
- factory CommunicationSearch ({
+factory CommunicationSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -144,12 +143,12 @@ List<SearchToken> status,
 List<SearchReference> subject,
 }) = _CommunicationSearch;
 
+CommunicationSearch._(); 
 factory CommunicationSearch.fromJson(Map<String, dynamic> json) => _$CommunicationSearchFromJson(json);}
 
 @freezed
 abstract class CommunicationRequestSearch with R4SearchParameters implements _$CommunicationRequestSearch {
-CommunicationRequestSearch._(); 
- factory CommunicationRequestSearch ({
+factory CommunicationRequestSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -178,12 +177,12 @@ List<SearchToken> status,
 List<SearchReference> subject,
 }) = _CommunicationRequestSearch;
 
+CommunicationRequestSearch._(); 
 factory CommunicationRequestSearch.fromJson(Map<String, dynamic> json) => _$CommunicationRequestSearchFromJson(json);}
 
 @freezed
 abstract class GuidanceResponseSearch with R4SearchParameters implements _$GuidanceResponseSearch {
-GuidanceResponseSearch._(); 
- factory GuidanceResponseSearch ({
+factory GuidanceResponseSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -200,5 +199,6 @@ List<SearchToken> request,
 List<SearchReference> subject,
 }) = _GuidanceResponseSearch;
 
+GuidanceResponseSearch._(); 
 factory GuidanceResponseSearch.fromJson(Map<String, dynamic> json) => _$GuidanceResponseSearchFromJson(json);}
 

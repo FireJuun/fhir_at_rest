@@ -4,9 +4,6 @@ import '../../failures/restful_failure.dart';
 import 'search_objects.dart';
 
 class SearchComposite extends SearchObject<String> {
-  final String string;
-  final bool missing;
-
   factory SearchComposite({String string, bool missing}) {
     return SearchComposite._(
       string: string,
@@ -19,11 +16,15 @@ class SearchComposite extends SearchObject<String> {
   factory SearchComposite.fromJson(Map<String, dynamic> json) =>
       SearchComposite(string: json['string'], missing: json['missing']);
 
+  final String string;
+  final bool missing;
+
   Either<RestfulFailure, String> toJson() => searchString();
 
   Either<RestfulFailure, String> searchString() => missing != null
       ? right(':missing=$missing')
       : string != null
           ? right('$string${missing != null ? ":missing=$missing" : ""}')
-          : left(RestfulFailure.emptySearchParameters(parameter: 'Composite'));
+          : left(const RestfulFailure.emptySearchParameters(
+              parameter: 'Composite'));
 }

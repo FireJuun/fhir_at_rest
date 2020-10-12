@@ -9,8 +9,7 @@ part 'evidence_based_medicine.g.dart';
 
 @freezed
 abstract class EffectEvidenceSynthesisSearch with R4SearchParameters implements _$EffectEvidenceSynthesisSearch {
-EffectEvidenceSynthesisSearch._(); 
- factory EffectEvidenceSynthesisSearch ({
+factory EffectEvidenceSynthesisSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -39,12 +38,12 @@ List<SearchToken> version,
 @JsonKey(name: 'context-type-value') List<SearchComposite> contextTypevalue,
 }) = _EffectEvidenceSynthesisSearch;
 
+EffectEvidenceSynthesisSearch._(); 
 factory EffectEvidenceSynthesisSearch.fromJson(Map<String, dynamic> json) => _$EffectEvidenceSynthesisSearchFromJson(json);}
 
 @freezed
 abstract class EvidenceSearch with R4SearchParameters implements _$EvidenceSearch {
-EvidenceSearch._(); 
- factory EvidenceSearch ({
+factory EvidenceSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -79,12 +78,12 @@ List<SearchToken> version,
 @JsonKey(name: 'context-type-value') List<SearchComposite> contextTypevalue,
 }) = _EvidenceSearch;
 
+EvidenceSearch._(); 
 factory EvidenceSearch.fromJson(Map<String, dynamic> json) => _$EvidenceSearchFromJson(json);}
 
 @freezed
 abstract class EvidenceVariableSearch with R4SearchParameters implements _$EvidenceVariableSearch {
-EvidenceVariableSearch._(); 
- factory EvidenceVariableSearch ({
+factory EvidenceVariableSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -119,12 +118,12 @@ List<SearchToken> version,
 @JsonKey(name: 'context-type-value') List<SearchComposite> contextTypevalue,
 }) = _EvidenceVariableSearch;
 
+EvidenceVariableSearch._(); 
 factory EvidenceVariableSearch.fromJson(Map<String, dynamic> json) => _$EvidenceVariableSearchFromJson(json);}
 
 @freezed
 abstract class ResearchDefinitionSearch with R4SearchParameters implements _$ResearchDefinitionSearch {
-ResearchDefinitionSearch._(); 
- factory ResearchDefinitionSearch ({
+factory ResearchDefinitionSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -159,12 +158,12 @@ List<SearchToken> version,
 @JsonKey(name: 'context-type-value') List<SearchComposite> contextTypevalue,
 }) = _ResearchDefinitionSearch;
 
+ResearchDefinitionSearch._(); 
 factory ResearchDefinitionSearch.fromJson(Map<String, dynamic> json) => _$ResearchDefinitionSearchFromJson(json);}
 
 @freezed
 abstract class ResearchElementDefinitionSearch with R4SearchParameters implements _$ResearchElementDefinitionSearch {
-ResearchElementDefinitionSearch._(); 
- factory ResearchElementDefinitionSearch ({
+factory ResearchElementDefinitionSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -199,12 +198,12 @@ List<SearchToken> version,
 @JsonKey(name: 'context-type-value') List<SearchComposite> contextTypevalue,
 }) = _ResearchElementDefinitionSearch;
 
+ResearchElementDefinitionSearch._(); 
 factory ResearchElementDefinitionSearch.fromJson(Map<String, dynamic> json) => _$ResearchElementDefinitionSearchFromJson(json);}
 
 @freezed
 abstract class RiskEvidenceSynthesisSearch with R4SearchParameters implements _$RiskEvidenceSynthesisSearch {
-RiskEvidenceSynthesisSearch._(); 
- factory RiskEvidenceSynthesisSearch ({
+factory RiskEvidenceSynthesisSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -233,5 +232,6 @@ List<SearchToken> version,
 @JsonKey(name: 'context-type-value') List<SearchComposite> contextTypevalue,
 }) = _RiskEvidenceSynthesisSearch;
 
+RiskEvidenceSynthesisSearch._(); 
 factory RiskEvidenceSynthesisSearch.fromJson(Map<String, dynamic> json) => _$RiskEvidenceSynthesisSearchFromJson(json);}
 

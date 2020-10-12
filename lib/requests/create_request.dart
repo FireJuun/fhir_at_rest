@@ -8,9 +8,9 @@ import 'package:fhir/stu3.dart' as stu3;
 import 'package:fhir/r4.dart' as r4;
 import 'package:fhir/r5.dart' as r5;
 
-import '../resource_types/resource_types.dart';
 import '../enums/enums.dart';
 import '../failures/restful_failure.dart';
+import '../resource_types/resource_types.dart';
 import 'make_request.dart';
 
 part 'create_request.freezed.dart';
@@ -47,7 +47,7 @@ abstract class CreateRequest with _$CreateRequest {
   }) = _CreateRequestR5;
 
   Future<Either<RestfulFailure, dynamic>> request(dynamic resource) async {
-    var thisRequest = this.map(
+    var thisRequest = map(
       dstu2: (req) => '$base/${enumToString(req.type)}',
       stu3: (req) => '$base/${enumToString(req.type)}',
       r4: (req) => '$base/${enumToString(req.type)}',
@@ -65,7 +65,7 @@ abstract class CreateRequest with _$CreateRequest {
 
     return result.fold(
         (ifLeft) => left(ifLeft),
-        (ifRight) => right(this.map(
+        (ifRight) => right(map(
               dstu2: (r) => dstu2.Resource.fromJson(json.decode(ifRight.body)),
               stu3: (r) => stu3.Resource.fromJson(json.decode(ifRight.body)),
               r4: (r) => r4.Resource.fromJson(json.decode(ifRight.body)),

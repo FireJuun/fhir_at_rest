@@ -9,8 +9,7 @@ part 'conformance.g.dart';
 
 @freezed
 abstract class CapabilityStatementSearch with R4SearchParameters implements _$CapabilityStatementSearch {
-CapabilityStatementSearch._(); 
- factory CapabilityStatementSearch ({
+factory CapabilityStatementSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -46,12 +45,12 @@ List<SearchToken> version,
 @JsonKey(name: 'context-type-value') List<SearchComposite> contextTypevalue,
 }) = _CapabilityStatementSearch;
 
+CapabilityStatementSearch._(); 
 factory CapabilityStatementSearch.fromJson(Map<String, dynamic> json) => _$CapabilityStatementSearchFromJson(json);}
 
 @freezed
 abstract class CompartmentDefinitionSearch with R4SearchParameters implements _$CompartmentDefinitionSearch {
-CompartmentDefinitionSearch._(); 
- factory CompartmentDefinitionSearch ({
+factory CompartmentDefinitionSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -78,12 +77,12 @@ List<SearchToken> code,
 List<SearchToken> resource,
 }) = _CompartmentDefinitionSearch;
 
+CompartmentDefinitionSearch._(); 
 factory CompartmentDefinitionSearch.fromJson(Map<String, dynamic> json) => _$CompartmentDefinitionSearchFromJson(json);}
 
 @freezed
 abstract class GraphDefinitionSearch with R4SearchParameters implements _$GraphDefinitionSearch {
-GraphDefinitionSearch._(); 
- factory GraphDefinitionSearch ({
+factory GraphDefinitionSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -110,12 +109,12 @@ List<SearchToken> version,
 List<SearchToken> start,
 }) = _GraphDefinitionSearch;
 
+GraphDefinitionSearch._(); 
 factory GraphDefinitionSearch.fromJson(Map<String, dynamic> json) => _$GraphDefinitionSearchFromJson(json);}
 
 @freezed
 abstract class ImplementationGuideSearch with R4SearchParameters implements _$ImplementationGuideSearch {
-ImplementationGuideSearch._(); 
- factory ImplementationGuideSearch ({
+factory ImplementationGuideSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -146,12 +145,12 @@ List<SearchReference> global,
 List<SearchReference> resource,
 }) = _ImplementationGuideSearch;
 
+ImplementationGuideSearch._(); 
 factory ImplementationGuideSearch.fromJson(Map<String, dynamic> json) => _$ImplementationGuideSearchFromJson(json);}
 
 @freezed
 abstract class MessageDefinitionSearch with R4SearchParameters implements _$MessageDefinitionSearch {
-MessageDefinitionSearch._(); 
- factory MessageDefinitionSearch ({
+factory MessageDefinitionSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -183,12 +182,12 @@ List<SearchToken> focus,
 List<SearchReference> parent,
 }) = _MessageDefinitionSearch;
 
+MessageDefinitionSearch._(); 
 factory MessageDefinitionSearch.fromJson(Map<String, dynamic> json) => _$MessageDefinitionSearchFromJson(json);}
 
 @freezed
 abstract class OperationDefinitionSearch with R4SearchParameters implements _$OperationDefinitionSearch {
-OperationDefinitionSearch._(); 
- factory OperationDefinitionSearch ({
+factory OperationDefinitionSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -223,12 +222,12 @@ List<SearchToken> system,
 List<SearchToken> type,
 }) = _OperationDefinitionSearch;
 
+OperationDefinitionSearch._(); 
 factory OperationDefinitionSearch.fromJson(Map<String, dynamic> json) => _$OperationDefinitionSearchFromJson(json);}
 
 @freezed
 abstract class SearchParameterSearch with R4SearchParameters implements _$SearchParameterSearch {
-SearchParameterSearch._(); 
- factory SearchParameterSearch ({
+factory SearchParameterSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -260,12 +259,12 @@ List<SearchToken> target,
 List<SearchToken> type,
 }) = _SearchParameterSearch;
 
+SearchParameterSearch._(); 
 factory SearchParameterSearch.fromJson(Map<String, dynamic> json) => _$SearchParameterSearchFromJson(json);}
 
 @freezed
 abstract class StructureDefinitionSearch with R4SearchParameters implements _$StructureDefinitionSearch {
-StructureDefinitionSearch._(); 
- factory StructureDefinitionSearch ({
+factory StructureDefinitionSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -304,12 +303,12 @@ List<SearchUri> type,
 List<SearchReference> valueset,
 }) = _StructureDefinitionSearch;
 
+StructureDefinitionSearch._(); 
 factory StructureDefinitionSearch.fromJson(Map<String, dynamic> json) => _$StructureDefinitionSearchFromJson(json);}
 
 @freezed
 abstract class StructureMapSearch with R4SearchParameters implements _$StructureMapSearch {
-StructureMapSearch._(); 
- factory StructureMapSearch ({
+factory StructureMapSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -337,12 +336,12 @@ List<SearchToken> version,
 List<SearchToken> identifier,
 }) = _StructureMapSearch;
 
+StructureMapSearch._(); 
 factory StructureMapSearch.fromJson(Map<String, dynamic> json) => _$StructureMapSearchFromJson(json);}
 
 @freezed
 abstract class ExampleScenarioSearch with R4SearchParameters implements _$ExampleScenarioSearch {
-ExampleScenarioSearch._(); 
- factory ExampleScenarioSearch ({
+factory ExampleScenarioSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -368,5 +367,6 @@ List<SearchToken> version,
 @JsonKey(name: 'context-type-value') List<SearchComposite> contextTypevalue,
 }) = _ExampleScenarioSearch;
 
+ExampleScenarioSearch._(); 
 factory ExampleScenarioSearch.fromJson(Map<String, dynamic> json) => _$ExampleScenarioSearchFromJson(json);}
 

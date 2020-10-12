@@ -110,33 +110,58 @@ _$_EffectEvidenceSynthesisSearch _$_$_EffectEvidenceSynthesisSearchFromJson(
 }
 
 Map<String, dynamic> _$_$_EffectEvidenceSynthesisSearchToJson(
-        _$_EffectEvidenceSynthesisSearch instance) =>
-    <String, dynamic>{
-      'searchId': instance.searchId,
-      'searchLastUpdated': instance.searchLastUpdated,
-      'searchTag': instance.searchTag,
-      'searchProfile': instance.searchProfile,
-      'searchSecurity': instance.searchSecurity,
-      'searchText': instance.searchText,
-      'searchContent': instance.searchContent,
-      'searchList': instance.searchList,
-      'context': instance.context,
-      'context-quantity': instance.contextQuantity,
-      'context-type': instance.contextType,
-      'date': instance.date,
-      'description': instance.description,
-      'effective': instance.effective,
-      'identifier': instance.identifier,
-      'jurisdiction': instance.jurisdiction,
-      'name': instance.name,
-      'publisher': instance.publisher,
-      'status': instance.status,
-      'title': instance.title,
-      'url': instance.url,
-      'version': instance.version,
-      'context-type-quantity': instance.contextTypequantity,
-      'context-type-value': instance.contextTypevalue,
-    };
+    _$_EffectEvidenceSynthesisSearch instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull(
+      'searchId', instance.searchId?.map((e) => e?.toJson())?.toList());
+  writeNotNull('searchLastUpdated',
+      instance.searchLastUpdated?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'searchTag', instance.searchTag?.map((e) => e?.toJson())?.toList());
+  writeNotNull('searchProfile',
+      instance.searchProfile?.map((e) => e?.toJson())?.toList());
+  writeNotNull('searchSecurity',
+      instance.searchSecurity?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'searchText', instance.searchText?.map((e) => e?.toJson())?.toList());
+  writeNotNull('searchContent',
+      instance.searchContent?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'searchList', instance.searchList?.map((e) => e?.toJson())?.toList());
+  writeNotNull('context', instance.context?.map((e) => e?.toJson())?.toList());
+  writeNotNull('context-quantity',
+      instance.contextQuantity?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'context-type', instance.contextType?.map((e) => e?.toJson())?.toList());
+  writeNotNull('date', instance.date?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'description', instance.description?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'effective', instance.effective?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'identifier', instance.identifier?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'jurisdiction', instance.jurisdiction?.map((e) => e?.toJson())?.toList());
+  writeNotNull('name', instance.name?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'publisher', instance.publisher?.map((e) => e?.toJson())?.toList());
+  writeNotNull('status', instance.status?.map((e) => e?.toJson())?.toList());
+  writeNotNull('title', instance.title?.map((e) => e?.toJson())?.toList());
+  writeNotNull('url', instance.url?.map((e) => e?.toJson())?.toList());
+  writeNotNull('version', instance.version?.map((e) => e?.toJson())?.toList());
+  writeNotNull('context-type-quantity',
+      instance.contextTypequantity?.map((e) => e?.toJson())?.toList());
+  writeNotNull('context-type-value',
+      instance.contextTypevalue?.map((e) => e?.toJson())?.toList());
+  return val;
+}
 
 _$_EvidenceSearch _$_$_EvidenceSearchFromJson(Map<String, dynamic> json) {
   return _$_EvidenceSearch(
@@ -269,39 +294,69 @@ _$_EvidenceSearch _$_$_EvidenceSearchFromJson(Map<String, dynamic> json) {
   );
 }
 
-Map<String, dynamic> _$_$_EvidenceSearchToJson(_$_EvidenceSearch instance) =>
-    <String, dynamic>{
-      'searchId': instance.searchId,
-      'searchLastUpdated': instance.searchLastUpdated,
-      'searchTag': instance.searchTag,
-      'searchProfile': instance.searchProfile,
-      'searchSecurity': instance.searchSecurity,
-      'searchText': instance.searchText,
-      'searchContent': instance.searchContent,
-      'searchList': instance.searchList,
-      'composed-of': instance.composedOf,
-      'context': instance.context,
-      'context-quantity': instance.contextQuantity,
-      'context-type': instance.contextType,
-      'date': instance.date,
-      'depends-on': instance.dependsOn,
-      'derived-from': instance.derivedFrom,
-      'description': instance.description,
-      'effective': instance.effective,
-      'identifier': instance.identifier,
-      'jurisdiction': instance.jurisdiction,
-      'name': instance.name,
-      'predecessor': instance.predecessor,
-      'publisher': instance.publisher,
-      'status': instance.status,
-      'successor': instance.successor,
-      'title': instance.title,
-      'topic': instance.topic,
-      'url': instance.url,
-      'version': instance.version,
-      'context-type-quantity': instance.contextTypequantity,
-      'context-type-value': instance.contextTypevalue,
-    };
+Map<String, dynamic> _$_$_EvidenceSearchToJson(_$_EvidenceSearch instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull(
+      'searchId', instance.searchId?.map((e) => e?.toJson())?.toList());
+  writeNotNull('searchLastUpdated',
+      instance.searchLastUpdated?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'searchTag', instance.searchTag?.map((e) => e?.toJson())?.toList());
+  writeNotNull('searchProfile',
+      instance.searchProfile?.map((e) => e?.toJson())?.toList());
+  writeNotNull('searchSecurity',
+      instance.searchSecurity?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'searchText', instance.searchText?.map((e) => e?.toJson())?.toList());
+  writeNotNull('searchContent',
+      instance.searchContent?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'searchList', instance.searchList?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'composed-of', instance.composedOf?.map((e) => e?.toJson())?.toList());
+  writeNotNull('context', instance.context?.map((e) => e?.toJson())?.toList());
+  writeNotNull('context-quantity',
+      instance.contextQuantity?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'context-type', instance.contextType?.map((e) => e?.toJson())?.toList());
+  writeNotNull('date', instance.date?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'depends-on', instance.dependsOn?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'derived-from', instance.derivedFrom?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'description', instance.description?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'effective', instance.effective?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'identifier', instance.identifier?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'jurisdiction', instance.jurisdiction?.map((e) => e?.toJson())?.toList());
+  writeNotNull('name', instance.name?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'predecessor', instance.predecessor?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'publisher', instance.publisher?.map((e) => e?.toJson())?.toList());
+  writeNotNull('status', instance.status?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'successor', instance.successor?.map((e) => e?.toJson())?.toList());
+  writeNotNull('title', instance.title?.map((e) => e?.toJson())?.toList());
+  writeNotNull('topic', instance.topic?.map((e) => e?.toJson())?.toList());
+  writeNotNull('url', instance.url?.map((e) => e?.toJson())?.toList());
+  writeNotNull('version', instance.version?.map((e) => e?.toJson())?.toList());
+  writeNotNull('context-type-quantity',
+      instance.contextTypequantity?.map((e) => e?.toJson())?.toList());
+  writeNotNull('context-type-value',
+      instance.contextTypevalue?.map((e) => e?.toJson())?.toList());
+  return val;
+}
 
 _$_EvidenceVariableSearch _$_$_EvidenceVariableSearchFromJson(
     Map<String, dynamic> json) {
@@ -436,39 +491,69 @@ _$_EvidenceVariableSearch _$_$_EvidenceVariableSearchFromJson(
 }
 
 Map<String, dynamic> _$_$_EvidenceVariableSearchToJson(
-        _$_EvidenceVariableSearch instance) =>
-    <String, dynamic>{
-      'searchId': instance.searchId,
-      'searchLastUpdated': instance.searchLastUpdated,
-      'searchTag': instance.searchTag,
-      'searchProfile': instance.searchProfile,
-      'searchSecurity': instance.searchSecurity,
-      'searchText': instance.searchText,
-      'searchContent': instance.searchContent,
-      'searchList': instance.searchList,
-      'composed-of': instance.composedOf,
-      'context': instance.context,
-      'context-quantity': instance.contextQuantity,
-      'context-type': instance.contextType,
-      'date': instance.date,
-      'depends-on': instance.dependsOn,
-      'derived-from': instance.derivedFrom,
-      'description': instance.description,
-      'effective': instance.effective,
-      'identifier': instance.identifier,
-      'jurisdiction': instance.jurisdiction,
-      'name': instance.name,
-      'predecessor': instance.predecessor,
-      'publisher': instance.publisher,
-      'status': instance.status,
-      'successor': instance.successor,
-      'title': instance.title,
-      'topic': instance.topic,
-      'url': instance.url,
-      'version': instance.version,
-      'context-type-quantity': instance.contextTypequantity,
-      'context-type-value': instance.contextTypevalue,
-    };
+    _$_EvidenceVariableSearch instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull(
+      'searchId', instance.searchId?.map((e) => e?.toJson())?.toList());
+  writeNotNull('searchLastUpdated',
+      instance.searchLastUpdated?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'searchTag', instance.searchTag?.map((e) => e?.toJson())?.toList());
+  writeNotNull('searchProfile',
+      instance.searchProfile?.map((e) => e?.toJson())?.toList());
+  writeNotNull('searchSecurity',
+      instance.searchSecurity?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'searchText', instance.searchText?.map((e) => e?.toJson())?.toList());
+  writeNotNull('searchContent',
+      instance.searchContent?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'searchList', instance.searchList?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'composed-of', instance.composedOf?.map((e) => e?.toJson())?.toList());
+  writeNotNull('context', instance.context?.map((e) => e?.toJson())?.toList());
+  writeNotNull('context-quantity',
+      instance.contextQuantity?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'context-type', instance.contextType?.map((e) => e?.toJson())?.toList());
+  writeNotNull('date', instance.date?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'depends-on', instance.dependsOn?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'derived-from', instance.derivedFrom?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'description', instance.description?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'effective', instance.effective?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'identifier', instance.identifier?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'jurisdiction', instance.jurisdiction?.map((e) => e?.toJson())?.toList());
+  writeNotNull('name', instance.name?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'predecessor', instance.predecessor?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'publisher', instance.publisher?.map((e) => e?.toJson())?.toList());
+  writeNotNull('status', instance.status?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'successor', instance.successor?.map((e) => e?.toJson())?.toList());
+  writeNotNull('title', instance.title?.map((e) => e?.toJson())?.toList());
+  writeNotNull('topic', instance.topic?.map((e) => e?.toJson())?.toList());
+  writeNotNull('url', instance.url?.map((e) => e?.toJson())?.toList());
+  writeNotNull('version', instance.version?.map((e) => e?.toJson())?.toList());
+  writeNotNull('context-type-quantity',
+      instance.contextTypequantity?.map((e) => e?.toJson())?.toList());
+  writeNotNull('context-type-value',
+      instance.contextTypevalue?.map((e) => e?.toJson())?.toList());
+  return val;
+}
 
 _$_ResearchDefinitionSearch _$_$_ResearchDefinitionSearchFromJson(
     Map<String, dynamic> json) {
@@ -603,39 +688,69 @@ _$_ResearchDefinitionSearch _$_$_ResearchDefinitionSearchFromJson(
 }
 
 Map<String, dynamic> _$_$_ResearchDefinitionSearchToJson(
-        _$_ResearchDefinitionSearch instance) =>
-    <String, dynamic>{
-      'searchId': instance.searchId,
-      'searchLastUpdated': instance.searchLastUpdated,
-      'searchTag': instance.searchTag,
-      'searchProfile': instance.searchProfile,
-      'searchSecurity': instance.searchSecurity,
-      'searchText': instance.searchText,
-      'searchContent': instance.searchContent,
-      'searchList': instance.searchList,
-      'composed-of': instance.composedOf,
-      'context': instance.context,
-      'context-quantity': instance.contextQuantity,
-      'context-type': instance.contextType,
-      'date': instance.date,
-      'depends-on': instance.dependsOn,
-      'derived-from': instance.derivedFrom,
-      'description': instance.description,
-      'effective': instance.effective,
-      'identifier': instance.identifier,
-      'jurisdiction': instance.jurisdiction,
-      'name': instance.name,
-      'predecessor': instance.predecessor,
-      'publisher': instance.publisher,
-      'status': instance.status,
-      'successor': instance.successor,
-      'title': instance.title,
-      'topic': instance.topic,
-      'url': instance.url,
-      'version': instance.version,
-      'context-type-quantity': instance.contextTypequantity,
-      'context-type-value': instance.contextTypevalue,
-    };
+    _$_ResearchDefinitionSearch instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull(
+      'searchId', instance.searchId?.map((e) => e?.toJson())?.toList());
+  writeNotNull('searchLastUpdated',
+      instance.searchLastUpdated?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'searchTag', instance.searchTag?.map((e) => e?.toJson())?.toList());
+  writeNotNull('searchProfile',
+      instance.searchProfile?.map((e) => e?.toJson())?.toList());
+  writeNotNull('searchSecurity',
+      instance.searchSecurity?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'searchText', instance.searchText?.map((e) => e?.toJson())?.toList());
+  writeNotNull('searchContent',
+      instance.searchContent?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'searchList', instance.searchList?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'composed-of', instance.composedOf?.map((e) => e?.toJson())?.toList());
+  writeNotNull('context', instance.context?.map((e) => e?.toJson())?.toList());
+  writeNotNull('context-quantity',
+      instance.contextQuantity?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'context-type', instance.contextType?.map((e) => e?.toJson())?.toList());
+  writeNotNull('date', instance.date?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'depends-on', instance.dependsOn?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'derived-from', instance.derivedFrom?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'description', instance.description?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'effective', instance.effective?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'identifier', instance.identifier?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'jurisdiction', instance.jurisdiction?.map((e) => e?.toJson())?.toList());
+  writeNotNull('name', instance.name?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'predecessor', instance.predecessor?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'publisher', instance.publisher?.map((e) => e?.toJson())?.toList());
+  writeNotNull('status', instance.status?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'successor', instance.successor?.map((e) => e?.toJson())?.toList());
+  writeNotNull('title', instance.title?.map((e) => e?.toJson())?.toList());
+  writeNotNull('topic', instance.topic?.map((e) => e?.toJson())?.toList());
+  writeNotNull('url', instance.url?.map((e) => e?.toJson())?.toList());
+  writeNotNull('version', instance.version?.map((e) => e?.toJson())?.toList());
+  writeNotNull('context-type-quantity',
+      instance.contextTypequantity?.map((e) => e?.toJson())?.toList());
+  writeNotNull('context-type-value',
+      instance.contextTypevalue?.map((e) => e?.toJson())?.toList());
+  return val;
+}
 
 _$_ResearchElementDefinitionSearch _$_$_ResearchElementDefinitionSearchFromJson(
     Map<String, dynamic> json) {
@@ -770,39 +885,69 @@ _$_ResearchElementDefinitionSearch _$_$_ResearchElementDefinitionSearchFromJson(
 }
 
 Map<String, dynamic> _$_$_ResearchElementDefinitionSearchToJson(
-        _$_ResearchElementDefinitionSearch instance) =>
-    <String, dynamic>{
-      'searchId': instance.searchId,
-      'searchLastUpdated': instance.searchLastUpdated,
-      'searchTag': instance.searchTag,
-      'searchProfile': instance.searchProfile,
-      'searchSecurity': instance.searchSecurity,
-      'searchText': instance.searchText,
-      'searchContent': instance.searchContent,
-      'searchList': instance.searchList,
-      'composed-of': instance.composedOf,
-      'context': instance.context,
-      'context-quantity': instance.contextQuantity,
-      'context-type': instance.contextType,
-      'date': instance.date,
-      'depends-on': instance.dependsOn,
-      'derived-from': instance.derivedFrom,
-      'description': instance.description,
-      'effective': instance.effective,
-      'identifier': instance.identifier,
-      'jurisdiction': instance.jurisdiction,
-      'name': instance.name,
-      'predecessor': instance.predecessor,
-      'publisher': instance.publisher,
-      'status': instance.status,
-      'successor': instance.successor,
-      'title': instance.title,
-      'topic': instance.topic,
-      'url': instance.url,
-      'version': instance.version,
-      'context-type-quantity': instance.contextTypequantity,
-      'context-type-value': instance.contextTypevalue,
-    };
+    _$_ResearchElementDefinitionSearch instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull(
+      'searchId', instance.searchId?.map((e) => e?.toJson())?.toList());
+  writeNotNull('searchLastUpdated',
+      instance.searchLastUpdated?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'searchTag', instance.searchTag?.map((e) => e?.toJson())?.toList());
+  writeNotNull('searchProfile',
+      instance.searchProfile?.map((e) => e?.toJson())?.toList());
+  writeNotNull('searchSecurity',
+      instance.searchSecurity?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'searchText', instance.searchText?.map((e) => e?.toJson())?.toList());
+  writeNotNull('searchContent',
+      instance.searchContent?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'searchList', instance.searchList?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'composed-of', instance.composedOf?.map((e) => e?.toJson())?.toList());
+  writeNotNull('context', instance.context?.map((e) => e?.toJson())?.toList());
+  writeNotNull('context-quantity',
+      instance.contextQuantity?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'context-type', instance.contextType?.map((e) => e?.toJson())?.toList());
+  writeNotNull('date', instance.date?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'depends-on', instance.dependsOn?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'derived-from', instance.derivedFrom?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'description', instance.description?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'effective', instance.effective?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'identifier', instance.identifier?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'jurisdiction', instance.jurisdiction?.map((e) => e?.toJson())?.toList());
+  writeNotNull('name', instance.name?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'predecessor', instance.predecessor?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'publisher', instance.publisher?.map((e) => e?.toJson())?.toList());
+  writeNotNull('status', instance.status?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'successor', instance.successor?.map((e) => e?.toJson())?.toList());
+  writeNotNull('title', instance.title?.map((e) => e?.toJson())?.toList());
+  writeNotNull('topic', instance.topic?.map((e) => e?.toJson())?.toList());
+  writeNotNull('url', instance.url?.map((e) => e?.toJson())?.toList());
+  writeNotNull('version', instance.version?.map((e) => e?.toJson())?.toList());
+  writeNotNull('context-type-quantity',
+      instance.contextTypequantity?.map((e) => e?.toJson())?.toList());
+  writeNotNull('context-type-value',
+      instance.contextTypevalue?.map((e) => e?.toJson())?.toList());
+  return val;
+}
 
 _$_RiskEvidenceSynthesisSearch _$_$_RiskEvidenceSynthesisSearchFromJson(
     Map<String, dynamic> json) {
@@ -908,30 +1053,55 @@ _$_RiskEvidenceSynthesisSearch _$_$_RiskEvidenceSynthesisSearchFromJson(
 }
 
 Map<String, dynamic> _$_$_RiskEvidenceSynthesisSearchToJson(
-        _$_RiskEvidenceSynthesisSearch instance) =>
-    <String, dynamic>{
-      'searchId': instance.searchId,
-      'searchLastUpdated': instance.searchLastUpdated,
-      'searchTag': instance.searchTag,
-      'searchProfile': instance.searchProfile,
-      'searchSecurity': instance.searchSecurity,
-      'searchText': instance.searchText,
-      'searchContent': instance.searchContent,
-      'searchList': instance.searchList,
-      'context': instance.context,
-      'context-quantity': instance.contextQuantity,
-      'context-type': instance.contextType,
-      'date': instance.date,
-      'description': instance.description,
-      'effective': instance.effective,
-      'identifier': instance.identifier,
-      'jurisdiction': instance.jurisdiction,
-      'name': instance.name,
-      'publisher': instance.publisher,
-      'status': instance.status,
-      'title': instance.title,
-      'url': instance.url,
-      'version': instance.version,
-      'context-type-quantity': instance.contextTypequantity,
-      'context-type-value': instance.contextTypevalue,
-    };
+    _$_RiskEvidenceSynthesisSearch instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull(
+      'searchId', instance.searchId?.map((e) => e?.toJson())?.toList());
+  writeNotNull('searchLastUpdated',
+      instance.searchLastUpdated?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'searchTag', instance.searchTag?.map((e) => e?.toJson())?.toList());
+  writeNotNull('searchProfile',
+      instance.searchProfile?.map((e) => e?.toJson())?.toList());
+  writeNotNull('searchSecurity',
+      instance.searchSecurity?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'searchText', instance.searchText?.map((e) => e?.toJson())?.toList());
+  writeNotNull('searchContent',
+      instance.searchContent?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'searchList', instance.searchList?.map((e) => e?.toJson())?.toList());
+  writeNotNull('context', instance.context?.map((e) => e?.toJson())?.toList());
+  writeNotNull('context-quantity',
+      instance.contextQuantity?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'context-type', instance.contextType?.map((e) => e?.toJson())?.toList());
+  writeNotNull('date', instance.date?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'description', instance.description?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'effective', instance.effective?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'identifier', instance.identifier?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'jurisdiction', instance.jurisdiction?.map((e) => e?.toJson())?.toList());
+  writeNotNull('name', instance.name?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'publisher', instance.publisher?.map((e) => e?.toJson())?.toList());
+  writeNotNull('status', instance.status?.map((e) => e?.toJson())?.toList());
+  writeNotNull('title', instance.title?.map((e) => e?.toJson())?.toList());
+  writeNotNull('url', instance.url?.map((e) => e?.toJson())?.toList());
+  writeNotNull('version', instance.version?.map((e) => e?.toJson())?.toList());
+  writeNotNull('context-type-quantity',
+      instance.contextTypequantity?.map((e) => e?.toJson())?.toList());
+  writeNotNull('context-type-value',
+      instance.contextTypevalue?.map((e) => e?.toJson())?.toList());
+  return val;
+}

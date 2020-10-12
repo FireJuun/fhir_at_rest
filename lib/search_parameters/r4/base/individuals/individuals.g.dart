@@ -84,27 +84,47 @@ _$_GroupSearch _$_$_GroupSearchFromJson(Map<String, dynamic> json) {
   );
 }
 
-Map<String, dynamic> _$_$_GroupSearchToJson(_$_GroupSearch instance) =>
-    <String, dynamic>{
-      'searchId': instance.searchId,
-      'searchLastUpdated': instance.searchLastUpdated,
-      'searchTag': instance.searchTag,
-      'searchProfile': instance.searchProfile,
-      'searchSecurity': instance.searchSecurity,
-      'searchText': instance.searchText,
-      'searchContent': instance.searchContent,
-      'searchList': instance.searchList,
-      'actual': instance.actual,
-      'characteristic': instance.characteristic,
-      'code': instance.code,
-      'exclude': instance.exclude,
-      'identifier': instance.identifier,
-      'managing-entity': instance.managingEntity,
-      'member': instance.member,
-      'type': instance.type,
-      'value': instance.value,
-      'characteristic-value': instance.characteristicValue,
-    };
+Map<String, dynamic> _$_$_GroupSearchToJson(_$_GroupSearch instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull(
+      'searchId', instance.searchId?.map((e) => e?.toJson())?.toList());
+  writeNotNull('searchLastUpdated',
+      instance.searchLastUpdated?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'searchTag', instance.searchTag?.map((e) => e?.toJson())?.toList());
+  writeNotNull('searchProfile',
+      instance.searchProfile?.map((e) => e?.toJson())?.toList());
+  writeNotNull('searchSecurity',
+      instance.searchSecurity?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'searchText', instance.searchText?.map((e) => e?.toJson())?.toList());
+  writeNotNull('searchContent',
+      instance.searchContent?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'searchList', instance.searchList?.map((e) => e?.toJson())?.toList());
+  writeNotNull('actual', instance.actual?.map((e) => e?.toJson())?.toList());
+  writeNotNull('characteristic',
+      instance.characteristic?.map((e) => e?.toJson())?.toList());
+  writeNotNull('code', instance.code?.map((e) => e?.toJson())?.toList());
+  writeNotNull('exclude', instance.exclude?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'identifier', instance.identifier?.map((e) => e?.toJson())?.toList());
+  writeNotNull('managing-entity',
+      instance.managingEntity?.map((e) => e?.toJson())?.toList());
+  writeNotNull('member', instance.member?.map((e) => e?.toJson())?.toList());
+  writeNotNull('type', instance.type?.map((e) => e?.toJson())?.toList());
+  writeNotNull('value', instance.value?.map((e) => e?.toJson())?.toList());
+  writeNotNull('characteristic-value',
+      instance.characteristicValue?.map((e) => e?.toJson())?.toList());
+  return val;
+}
 
 _$_PatientSearch _$_$_PatientSearchFromJson(Map<String, dynamic> json) {
   return _$_PatientSearch(
@@ -236,40 +256,69 @@ _$_PatientSearch _$_$_PatientSearchFromJson(Map<String, dynamic> json) {
   );
 }
 
-Map<String, dynamic> _$_$_PatientSearchToJson(_$_PatientSearch instance) =>
-    <String, dynamic>{
-      'searchId': instance.searchId,
-      'searchLastUpdated': instance.searchLastUpdated,
-      'searchTag': instance.searchTag,
-      'searchProfile': instance.searchProfile,
-      'searchSecurity': instance.searchSecurity,
-      'searchText': instance.searchText,
-      'searchContent': instance.searchContent,
-      'searchList': instance.searchList,
-      'active': instance.active,
-      'address': instance.address,
-      'address-city': instance.addressCity,
-      'address-country': instance.addressCountry,
-      'address-postalcode': instance.addressPostalcode,
-      'address-state': instance.addressState,
-      'address-use': instance.addressUse,
-      'birthdate': instance.birthdate,
-      'death-date': instance.deathDate,
-      'deceased': instance.deceased,
-      'email': instance.email,
-      'family': instance.family,
-      'gender': instance.gender,
-      'general-practitioner': instance.generalPractitioner,
-      'given': instance.given,
-      'identifier': instance.identifier,
-      'language': instance.language,
-      'link': instance.link,
-      'name': instance.name,
-      'organization': instance.organization,
-      'phone': instance.phone,
-      'phonetic': instance.phonetic,
-      'telecom': instance.telecom,
-    };
+Map<String, dynamic> _$_$_PatientSearchToJson(_$_PatientSearch instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull(
+      'searchId', instance.searchId?.map((e) => e?.toJson())?.toList());
+  writeNotNull('searchLastUpdated',
+      instance.searchLastUpdated?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'searchTag', instance.searchTag?.map((e) => e?.toJson())?.toList());
+  writeNotNull('searchProfile',
+      instance.searchProfile?.map((e) => e?.toJson())?.toList());
+  writeNotNull('searchSecurity',
+      instance.searchSecurity?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'searchText', instance.searchText?.map((e) => e?.toJson())?.toList());
+  writeNotNull('searchContent',
+      instance.searchContent?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'searchList', instance.searchList?.map((e) => e?.toJson())?.toList());
+  writeNotNull('active', instance.active?.map((e) => e?.toJson())?.toList());
+  writeNotNull('address', instance.address?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'address-city', instance.addressCity?.map((e) => e?.toJson())?.toList());
+  writeNotNull('address-country',
+      instance.addressCountry?.map((e) => e?.toJson())?.toList());
+  writeNotNull('address-postalcode',
+      instance.addressPostalcode?.map((e) => e?.toJson())?.toList());
+  writeNotNull('address-state',
+      instance.addressState?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'address-use', instance.addressUse?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'birthdate', instance.birthdate?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'death-date', instance.deathDate?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'deceased', instance.deceased?.map((e) => e?.toJson())?.toList());
+  writeNotNull('email', instance.email?.map((e) => e?.toJson())?.toList());
+  writeNotNull('family', instance.family?.map((e) => e?.toJson())?.toList());
+  writeNotNull('gender', instance.gender?.map((e) => e?.toJson())?.toList());
+  writeNotNull('general-practitioner',
+      instance.generalPractitioner?.map((e) => e?.toJson())?.toList());
+  writeNotNull('given', instance.given?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'identifier', instance.identifier?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'language', instance.language?.map((e) => e?.toJson())?.toList());
+  writeNotNull('link', instance.link?.map((e) => e?.toJson())?.toList());
+  writeNotNull('name', instance.name?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'organization', instance.organization?.map((e) => e?.toJson())?.toList());
+  writeNotNull('phone', instance.phone?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'phonetic', instance.phonetic?.map((e) => e?.toJson())?.toList());
+  writeNotNull('telecom', instance.telecom?.map((e) => e?.toJson())?.toList());
+  return val;
+}
 
 _$_PersonSearch _$_$_PersonSearchFromJson(Map<String, dynamic> json) {
   return _$_PersonSearch(
@@ -387,36 +436,63 @@ _$_PersonSearch _$_$_PersonSearchFromJson(Map<String, dynamic> json) {
   );
 }
 
-Map<String, dynamic> _$_$_PersonSearchToJson(_$_PersonSearch instance) =>
-    <String, dynamic>{
-      'searchId': instance.searchId,
-      'searchLastUpdated': instance.searchLastUpdated,
-      'searchTag': instance.searchTag,
-      'searchProfile': instance.searchProfile,
-      'searchSecurity': instance.searchSecurity,
-      'searchText': instance.searchText,
-      'searchContent': instance.searchContent,
-      'searchList': instance.searchList,
-      'address': instance.address,
-      'address-city': instance.addressCity,
-      'address-country': instance.addressCountry,
-      'address-postalcode': instance.addressPostalcode,
-      'address-state': instance.addressState,
-      'address-use': instance.addressUse,
-      'birthdate': instance.birthdate,
-      'email': instance.email,
-      'gender': instance.gender,
-      'phone': instance.phone,
-      'phonetic': instance.phonetic,
-      'telecom': instance.telecom,
-      'identifier': instance.identifier,
-      'link': instance.link,
-      'name': instance.name,
-      'organization': instance.organization,
-      'patient': instance.patient,
-      'practitioner': instance.practitioner,
-      'relatedperson': instance.relatedperson,
-    };
+Map<String, dynamic> _$_$_PersonSearchToJson(_$_PersonSearch instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull(
+      'searchId', instance.searchId?.map((e) => e?.toJson())?.toList());
+  writeNotNull('searchLastUpdated',
+      instance.searchLastUpdated?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'searchTag', instance.searchTag?.map((e) => e?.toJson())?.toList());
+  writeNotNull('searchProfile',
+      instance.searchProfile?.map((e) => e?.toJson())?.toList());
+  writeNotNull('searchSecurity',
+      instance.searchSecurity?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'searchText', instance.searchText?.map((e) => e?.toJson())?.toList());
+  writeNotNull('searchContent',
+      instance.searchContent?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'searchList', instance.searchList?.map((e) => e?.toJson())?.toList());
+  writeNotNull('address', instance.address?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'address-city', instance.addressCity?.map((e) => e?.toJson())?.toList());
+  writeNotNull('address-country',
+      instance.addressCountry?.map((e) => e?.toJson())?.toList());
+  writeNotNull('address-postalcode',
+      instance.addressPostalcode?.map((e) => e?.toJson())?.toList());
+  writeNotNull('address-state',
+      instance.addressState?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'address-use', instance.addressUse?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'birthdate', instance.birthdate?.map((e) => e?.toJson())?.toList());
+  writeNotNull('email', instance.email?.map((e) => e?.toJson())?.toList());
+  writeNotNull('gender', instance.gender?.map((e) => e?.toJson())?.toList());
+  writeNotNull('phone', instance.phone?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'phonetic', instance.phonetic?.map((e) => e?.toJson())?.toList());
+  writeNotNull('telecom', instance.telecom?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'identifier', instance.identifier?.map((e) => e?.toJson())?.toList());
+  writeNotNull('link', instance.link?.map((e) => e?.toJson())?.toList());
+  writeNotNull('name', instance.name?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'organization', instance.organization?.map((e) => e?.toJson())?.toList());
+  writeNotNull('patient', instance.patient?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'practitioner', instance.practitioner?.map((e) => e?.toJson())?.toList());
+  writeNotNull('relatedperson',
+      instance.relatedperson?.map((e) => e?.toJson())?.toList());
+  return val;
+}
 
 _$_PractitionerSearch _$_$_PractitionerSearchFromJson(
     Map<String, dynamic> json) {
@@ -523,34 +599,58 @@ _$_PractitionerSearch _$_$_PractitionerSearchFromJson(
 }
 
 Map<String, dynamic> _$_$_PractitionerSearchToJson(
-        _$_PractitionerSearch instance) =>
-    <String, dynamic>{
-      'searchId': instance.searchId,
-      'searchLastUpdated': instance.searchLastUpdated,
-      'searchTag': instance.searchTag,
-      'searchProfile': instance.searchProfile,
-      'searchSecurity': instance.searchSecurity,
-      'searchText': instance.searchText,
-      'searchContent': instance.searchContent,
-      'searchList': instance.searchList,
-      'address': instance.address,
-      'address-city': instance.addressCity,
-      'address-country': instance.addressCountry,
-      'address-postalcode': instance.addressPostalcode,
-      'address-state': instance.addressState,
-      'address-use': instance.addressUse,
-      'email': instance.email,
-      'family': instance.family,
-      'gender': instance.gender,
-      'given': instance.given,
-      'phone': instance.phone,
-      'phonetic': instance.phonetic,
-      'telecom': instance.telecom,
-      'active': instance.active,
-      'communication': instance.communication,
-      'identifier': instance.identifier,
-      'name': instance.name,
-    };
+    _$_PractitionerSearch instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull(
+      'searchId', instance.searchId?.map((e) => e?.toJson())?.toList());
+  writeNotNull('searchLastUpdated',
+      instance.searchLastUpdated?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'searchTag', instance.searchTag?.map((e) => e?.toJson())?.toList());
+  writeNotNull('searchProfile',
+      instance.searchProfile?.map((e) => e?.toJson())?.toList());
+  writeNotNull('searchSecurity',
+      instance.searchSecurity?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'searchText', instance.searchText?.map((e) => e?.toJson())?.toList());
+  writeNotNull('searchContent',
+      instance.searchContent?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'searchList', instance.searchList?.map((e) => e?.toJson())?.toList());
+  writeNotNull('address', instance.address?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'address-city', instance.addressCity?.map((e) => e?.toJson())?.toList());
+  writeNotNull('address-country',
+      instance.addressCountry?.map((e) => e?.toJson())?.toList());
+  writeNotNull('address-postalcode',
+      instance.addressPostalcode?.map((e) => e?.toJson())?.toList());
+  writeNotNull('address-state',
+      instance.addressState?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'address-use', instance.addressUse?.map((e) => e?.toJson())?.toList());
+  writeNotNull('email', instance.email?.map((e) => e?.toJson())?.toList());
+  writeNotNull('family', instance.family?.map((e) => e?.toJson())?.toList());
+  writeNotNull('gender', instance.gender?.map((e) => e?.toJson())?.toList());
+  writeNotNull('given', instance.given?.map((e) => e?.toJson())?.toList());
+  writeNotNull('phone', instance.phone?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'phonetic', instance.phonetic?.map((e) => e?.toJson())?.toList());
+  writeNotNull('telecom', instance.telecom?.map((e) => e?.toJson())?.toList());
+  writeNotNull('active', instance.active?.map((e) => e?.toJson())?.toList());
+  writeNotNull('communication',
+      instance.communication?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'identifier', instance.identifier?.map((e) => e?.toJson())?.toList());
+  writeNotNull('name', instance.name?.map((e) => e?.toJson())?.toList());
+  return val;
+}
 
 _$_RelatedPersonSearch _$_$_RelatedPersonSearchFromJson(
     Map<String, dynamic> json) {
@@ -658,34 +758,59 @@ _$_RelatedPersonSearch _$_$_RelatedPersonSearchFromJson(
 }
 
 Map<String, dynamic> _$_$_RelatedPersonSearchToJson(
-        _$_RelatedPersonSearch instance) =>
-    <String, dynamic>{
-      'searchId': instance.searchId,
-      'searchLastUpdated': instance.searchLastUpdated,
-      'searchTag': instance.searchTag,
-      'searchProfile': instance.searchProfile,
-      'searchSecurity': instance.searchSecurity,
-      'searchText': instance.searchText,
-      'searchContent': instance.searchContent,
-      'searchList': instance.searchList,
-      'address': instance.address,
-      'address-city': instance.addressCity,
-      'address-country': instance.addressCountry,
-      'address-postalcode': instance.addressPostalcode,
-      'address-state': instance.addressState,
-      'address-use': instance.addressUse,
-      'birthdate': instance.birthdate,
-      'email': instance.email,
-      'gender': instance.gender,
-      'phone': instance.phone,
-      'phonetic': instance.phonetic,
-      'telecom': instance.telecom,
-      'active': instance.active,
-      'identifier': instance.identifier,
-      'name': instance.name,
-      'patient': instance.patient,
-      'relationship': instance.relationship,
-    };
+    _$_RelatedPersonSearch instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull(
+      'searchId', instance.searchId?.map((e) => e?.toJson())?.toList());
+  writeNotNull('searchLastUpdated',
+      instance.searchLastUpdated?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'searchTag', instance.searchTag?.map((e) => e?.toJson())?.toList());
+  writeNotNull('searchProfile',
+      instance.searchProfile?.map((e) => e?.toJson())?.toList());
+  writeNotNull('searchSecurity',
+      instance.searchSecurity?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'searchText', instance.searchText?.map((e) => e?.toJson())?.toList());
+  writeNotNull('searchContent',
+      instance.searchContent?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'searchList', instance.searchList?.map((e) => e?.toJson())?.toList());
+  writeNotNull('address', instance.address?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'address-city', instance.addressCity?.map((e) => e?.toJson())?.toList());
+  writeNotNull('address-country',
+      instance.addressCountry?.map((e) => e?.toJson())?.toList());
+  writeNotNull('address-postalcode',
+      instance.addressPostalcode?.map((e) => e?.toJson())?.toList());
+  writeNotNull('address-state',
+      instance.addressState?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'address-use', instance.addressUse?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'birthdate', instance.birthdate?.map((e) => e?.toJson())?.toList());
+  writeNotNull('email', instance.email?.map((e) => e?.toJson())?.toList());
+  writeNotNull('gender', instance.gender?.map((e) => e?.toJson())?.toList());
+  writeNotNull('phone', instance.phone?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'phonetic', instance.phonetic?.map((e) => e?.toJson())?.toList());
+  writeNotNull('telecom', instance.telecom?.map((e) => e?.toJson())?.toList());
+  writeNotNull('active', instance.active?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'identifier', instance.identifier?.map((e) => e?.toJson())?.toList());
+  writeNotNull('name', instance.name?.map((e) => e?.toJson())?.toList());
+  writeNotNull('patient', instance.patient?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'relationship', instance.relationship?.map((e) => e?.toJson())?.toList());
+  return val;
+}
 
 _$_PractitionerRoleSearch _$_$_PractitionerRoleSearchFromJson(
     Map<String, dynamic> json) {
@@ -781,27 +906,49 @@ _$_PractitionerRoleSearch _$_$_PractitionerRoleSearchFromJson(
 }
 
 Map<String, dynamic> _$_$_PractitionerRoleSearchToJson(
-        _$_PractitionerRoleSearch instance) =>
-    <String, dynamic>{
-      'searchId': instance.searchId,
-      'searchLastUpdated': instance.searchLastUpdated,
-      'searchTag': instance.searchTag,
-      'searchProfile': instance.searchProfile,
-      'searchSecurity': instance.searchSecurity,
-      'searchText': instance.searchText,
-      'searchContent': instance.searchContent,
-      'searchList': instance.searchList,
-      'email': instance.email,
-      'phone': instance.phone,
-      'telecom': instance.telecom,
-      'active': instance.active,
-      'date': instance.date,
-      'endpoint': instance.endpoint,
-      'identifier': instance.identifier,
-      'location': instance.location,
-      'organization': instance.organization,
-      'practitioner': instance.practitioner,
-      'role': instance.role,
-      'service': instance.service,
-      'specialty': instance.specialty,
-    };
+    _$_PractitionerRoleSearch instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull(
+      'searchId', instance.searchId?.map((e) => e?.toJson())?.toList());
+  writeNotNull('searchLastUpdated',
+      instance.searchLastUpdated?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'searchTag', instance.searchTag?.map((e) => e?.toJson())?.toList());
+  writeNotNull('searchProfile',
+      instance.searchProfile?.map((e) => e?.toJson())?.toList());
+  writeNotNull('searchSecurity',
+      instance.searchSecurity?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'searchText', instance.searchText?.map((e) => e?.toJson())?.toList());
+  writeNotNull('searchContent',
+      instance.searchContent?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'searchList', instance.searchList?.map((e) => e?.toJson())?.toList());
+  writeNotNull('email', instance.email?.map((e) => e?.toJson())?.toList());
+  writeNotNull('phone', instance.phone?.map((e) => e?.toJson())?.toList());
+  writeNotNull('telecom', instance.telecom?.map((e) => e?.toJson())?.toList());
+  writeNotNull('active', instance.active?.map((e) => e?.toJson())?.toList());
+  writeNotNull('date', instance.date?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'endpoint', instance.endpoint?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'identifier', instance.identifier?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'location', instance.location?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'organization', instance.organization?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'practitioner', instance.practitioner?.map((e) => e?.toJson())?.toList());
+  writeNotNull('role', instance.role?.map((e) => e?.toJson())?.toList());
+  writeNotNull('service', instance.service?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'specialty', instance.specialty?.map((e) => e?.toJson())?.toList());
+  return val;
+}

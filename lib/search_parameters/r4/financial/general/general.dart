@@ -9,8 +9,7 @@ part 'general.g.dart';
 
 @freezed
 abstract class AccountSearch with R4SearchParameters implements _$AccountSearch {
-AccountSearch._(); 
- factory AccountSearch ({
+factory AccountSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -31,12 +30,12 @@ List<SearchReference> subject,
 List<SearchToken> type,
 }) = _AccountSearch;
 
+AccountSearch._(); 
 factory AccountSearch.fromJson(Map<String, dynamic> json) => _$AccountSearchFromJson(json);}
 
 @freezed
 abstract class ChargeItemSearch with R4SearchParameters implements _$ChargeItemSearch {
-ChargeItemSearch._(); 
- factory ChargeItemSearch ({
+factory ChargeItemSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -66,12 +65,12 @@ List<SearchReference> service,
 List<SearchReference> subject,
 }) = _ChargeItemSearch;
 
+ChargeItemSearch._(); 
 factory ChargeItemSearch.fromJson(Map<String, dynamic> json) => _$ChargeItemSearchFromJson(json);}
 
 @freezed
 abstract class ChargeItemDefinitionSearch with R4SearchParameters implements _$ChargeItemDefinitionSearch {
-ChargeItemDefinitionSearch._(); 
- factory ChargeItemDefinitionSearch ({
+factory ChargeItemDefinitionSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -99,12 +98,12 @@ List<SearchToken> version,
 @JsonKey(name: 'context-type-value') List<SearchComposite> contextTypevalue,
 }) = _ChargeItemDefinitionSearch;
 
+ChargeItemDefinitionSearch._(); 
 factory ChargeItemDefinitionSearch.fromJson(Map<String, dynamic> json) => _$ChargeItemDefinitionSearchFromJson(json);}
 
 @freezed
 abstract class ContractSearch with R4SearchParameters implements _$ContractSearch {
-ContractSearch._(); 
- factory ContractSearch ({
+factory ContractSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -127,12 +126,12 @@ List<SearchReference> subject,
 List<SearchUri> url,
 }) = _ContractSearch;
 
+ContractSearch._(); 
 factory ContractSearch.fromJson(Map<String, dynamic> json) => _$ContractSearchFromJson(json);}
 
 @freezed
 abstract class ExplanationOfBenefitSearch with R4SearchParameters implements _$ExplanationOfBenefitSearch {
-ExplanationOfBenefitSearch._(); 
- factory ExplanationOfBenefitSearch ({
+factory ExplanationOfBenefitSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -162,12 +161,12 @@ List<SearchToken> status,
 @JsonKey(name: 'subdetail-udi') List<SearchReference> subdetailUdi,
 }) = _ExplanationOfBenefitSearch;
 
+ExplanationOfBenefitSearch._(); 
 factory ExplanationOfBenefitSearch.fromJson(Map<String, dynamic> json) => _$ExplanationOfBenefitSearchFromJson(json);}
 
 @freezed
 abstract class InsurancePlanSearch with R4SearchParameters implements _$InsurancePlanSearch {
-InsurancePlanSearch._(); 
- factory InsurancePlanSearch ({
+factory InsurancePlanSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -194,5 +193,6 @@ List<SearchToken> status,
 List<SearchToken> type,
 }) = _InsurancePlanSearch;
 
+InsurancePlanSearch._(); 
 factory InsurancePlanSearch.fromJson(Map<String, dynamic> json) => _$InsurancePlanSearchFromJson(json);}
 

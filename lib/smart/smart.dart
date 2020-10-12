@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:dartz/dartz.dart';
+import 'package:flutter_appauth/flutter_appauth.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import 'package:fhir/dstu2.dart' as dstu2;
@@ -19,7 +20,7 @@ abstract class Smart with _$Smart {
   factory Smart.r4() = SmartR4;
   factory Smart.r5() = SmartR5;
 
-  Future conformance() async => this.map(
+  Future conformance() async => map(
         dstu2: (f) async {
           // final conformanceStatement = await CapabilitiesRequest.dstu2(
           //   base: Uri.parse(
@@ -70,7 +71,7 @@ abstract class Smart with _$Smart {
               final authorize = _authUri(r as r4.CapabilityStatement);
               print(token);
               print(authorize);
-              var authRequest = ('$authorize?response_type=code');
+              var authRequest = '$authorize?response_type=code';
             },
           );
         },
@@ -107,13 +108,53 @@ abstract class Smart with _$Smart {
 const baseUrl =
     'http://hapi.fhir.org/baseR4/metadata?_format=application/fhir+json';
 
-Future main() async {
-  var smart2 = Smart.dstu2();
-  var smart3 = Smart.stu3();
-  var smart4 = Smart.r4();
-  var smart5 = Smart.r5();
-  await smart2.conformance();
-  await smart3.conformance();
-  await smart4.conformance();
-  await smart5.conformance();
+Future smarter() async {
+  print(
+    AuthorizationTokenRequest(
+      'app-client-id',
+      'https%3A%2F%2Fapp%2Fafter-auth',
+      issuer: 'https://\$AUTH0_Domain',
+      additionalParameters: {
+        'response_type': 'code',
+        'launch': 'xyz123',
+        'state': '98wrghuwuogerg97',
+        'aud': 'https://ehr/fhir',
+      },
+      scopes: [
+        'launch',
+        'patient/Patient.read',
+        'patient/Observation.read',
+        'openid',
+        'fhirUser',
+      ],
+    ),
+  );
+  // FlutterAppAuth appAuth = FlutterAppAuth();
+
+  // final AuthorizationTokenResponse result =
+  //     await appAuth.authorizeAndExchangeCode(
+  //   AuthorizationTokenRequest('app-client-id', 'https%3A%2F%2Fapp%2Fafter-auth',
+  //       additionalParameters: {
+  //         'response_type': 'code',
+  //         'launch': 'xyz123',
+  //         'state': '98wrghuwuogerg97',
+  //         'aud': 'https://ehr/fhir',
+  //       },
+  //       scopes: [
+  //         'launch',
+  //         'patient/Patient.read',
+  //         'patient/Observation.read',
+  //         'openid',
+  //         'fhirUser',
+  //       ]),
+  // );
+
+  // var smart2 = Smart.dstu2();
+  // var smart3 = Smart.stu3();
+  // var smart4 = Smart.r4();
+  // var smart5 = Smart.r5();
+  // await smart2.conformance();
+  // await smart3.conformance();
+  // await smart4.conformance();
+  // await smart5.conformance();
 }

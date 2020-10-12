@@ -9,8 +9,7 @@ part 'billing.g.dart';
 
 @freezed
 abstract class ClaimSearch with R4SearchParameters implements _$ClaimSearch {
-ClaimSearch._(); 
- factory ClaimSearch ({
+factory ClaimSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -40,12 +39,12 @@ List<SearchToken> status,
 List<SearchToken> use,
 }) = _ClaimSearch;
 
+ClaimSearch._(); 
 factory ClaimSearch.fromJson(Map<String, dynamic> json) => _$ClaimSearchFromJson(json);}
 
 @freezed
 abstract class ClaimResponseSearch with R4SearchParameters implements _$ClaimResponseSearch {
-ClaimResponseSearch._(); 
- factory ClaimResponseSearch ({
+factory ClaimResponseSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -69,12 +68,12 @@ List<SearchToken> status,
 List<SearchToken> use,
 }) = _ClaimResponseSearch;
 
+ClaimResponseSearch._(); 
 factory ClaimResponseSearch.fromJson(Map<String, dynamic> json) => _$ClaimResponseSearchFromJson(json);}
 
 @freezed
 abstract class InvoiceSearch with R4SearchParameters implements _$InvoiceSearch {
-InvoiceSearch._(); 
- factory InvoiceSearch ({
+factory InvoiceSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -100,5 +99,6 @@ List<SearchQuantity> totalnet,
 List<SearchToken> type,
 }) = _InvoiceSearch;
 
+InvoiceSearch._(); 
 factory InvoiceSearch.fromJson(Map<String, dynamic> json) => _$InvoiceSearchFromJson(json);}
 

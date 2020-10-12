@@ -154,7 +154,7 @@ void main() async {
         fileString += '@freezed\nabstract class '
             '${j.value1.toString()}Search with R4SearchParameters implements '
             '_\$${j.value1.toString()}Search {\n'
-            '${j.value1.toString()}Search._(); \n factory ${j.value1.toString()}Search ({\n'
+            'factory ${j.value1.toString()}Search ({\n'
             'List<Id> searchId,\n'
             'List<SearchDate> searchLastUpdated,\n'
             'List<SearchToken> searchTag,\n'
@@ -181,6 +181,7 @@ void main() async {
         }
 
         fileString += '}) = _${j.value1.toString()}Search;\n\n'
+            '${j.value1.toString()}Search._(); \n'
             'factory ${j.value1.toString()}Search.fromJson(Map<String, dynamic> json)'
             ' => _\$${j.value1.toString()}SearchFromJson(json);}\n\n';
         await File(file).writeAsString(fileString);

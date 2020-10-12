@@ -9,8 +9,7 @@ part 'public_health_and_research.g.dart';
 
 @freezed
 abstract class ResearchStudySearch with R4SearchParameters implements _$ResearchStudySearch {
-ResearchStudySearch._(); 
- factory ResearchStudySearch ({
+factory ResearchStudySearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -36,12 +35,12 @@ List<SearchToken> status,
 List<SearchString> title,
 }) = _ResearchStudySearch;
 
+ResearchStudySearch._(); 
 factory ResearchStudySearch.fromJson(Map<String, dynamic> json) => _$ResearchStudySearchFromJson(json);}
 
 @freezed
 abstract class ResearchSubjectSearch with R4SearchParameters implements _$ResearchSubjectSearch {
-ResearchSubjectSearch._(); 
- factory ResearchSubjectSearch ({
+factory ResearchSubjectSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -60,5 +59,6 @@ List<SearchToken> status,
 List<SearchReference> study,
 }) = _ResearchSubjectSearch;
 
+ResearchSubjectSearch._(); 
 factory ResearchSubjectSearch.fromJson(Map<String, dynamic> json) => _$ResearchSubjectSearchFromJson(json);}
 

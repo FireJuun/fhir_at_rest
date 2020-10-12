@@ -4,10 +4,6 @@ import '../../failures/restful_failure.dart';
 import 'search_objects.dart';
 
 class SearchNumber extends SearchObject<String> {
-  final Either<RestfulFailure, String> number;
-  final bool missing;
-  final NumberPrefix prefix;
-
   factory SearchNumber({dynamic number, bool missing, NumberPrefix prefix}) {
     return SearchNumber._(
       number: validateSearchNumber(number),
@@ -21,13 +17,17 @@ class SearchNumber extends SearchObject<String> {
   factory SearchNumber.fromJson(Map<String, dynamic> json) => SearchNumber(
       number: json['date'], missing: json['missing'], prefix: json['prefix']);
 
+  final Either<RestfulFailure, String> number;
+  final bool missing;
+  final NumberPrefix prefix;
+
   Either<RestfulFailure, String> toJson() => searchString();
 
   Either<RestfulFailure, String> searchString() => missing != null
       ? right(':missing=$missing')
       : number.fold(
           (l) => left(RestfulFailure.primitiveFailure(
-              parameter: "Number", failedValue: l)),
+              parameter: 'Number', failedValue: l)),
           (r) => right(
               '=${prefix == NumberPrefix.eq ? "" : mapNumberPrefix[prefix]}'
               '$r${missing == null ? "" : ":missing=$missing"}'),

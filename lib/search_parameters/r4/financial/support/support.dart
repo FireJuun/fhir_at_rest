@@ -9,8 +9,7 @@ part 'support.g.dart';
 
 @freezed
 abstract class CoverageSearch with R4SearchParameters implements _$CoverageSearch {
-CoverageSearch._(); 
- factory CoverageSearch ({
+factory CoverageSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -34,12 +33,12 @@ List<SearchReference> subscriber,
 List<SearchToken> type,
 }) = _CoverageSearch;
 
+CoverageSearch._(); 
 factory CoverageSearch.fromJson(Map<String, dynamic> json) => _$CoverageSearchFromJson(json);}
 
 @freezed
 abstract class CoverageEligibilityRequestSearch with R4SearchParameters implements _$CoverageEligibilityRequestSearch {
-CoverageEligibilityRequestSearch._(); 
- factory CoverageEligibilityRequestSearch ({
+factory CoverageEligibilityRequestSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -59,12 +58,12 @@ List<SearchReference> provider,
 List<SearchToken> status,
 }) = _CoverageEligibilityRequestSearch;
 
+CoverageEligibilityRequestSearch._(); 
 factory CoverageEligibilityRequestSearch.fromJson(Map<String, dynamic> json) => _$CoverageEligibilityRequestSearchFromJson(json);}
 
 @freezed
 abstract class CoverageEligibilityResponseSearch with R4SearchParameters implements _$CoverageEligibilityResponseSearch {
-CoverageEligibilityResponseSearch._(); 
- factory CoverageEligibilityResponseSearch ({
+factory CoverageEligibilityResponseSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -86,12 +85,12 @@ List<SearchReference> requestor,
 List<SearchToken> status,
 }) = _CoverageEligibilityResponseSearch;
 
+CoverageEligibilityResponseSearch._(); 
 factory CoverageEligibilityResponseSearch.fromJson(Map<String, dynamic> json) => _$CoverageEligibilityResponseSearchFromJson(json);}
 
 @freezed
 abstract class EnrollmentRequestSearch with R4SearchParameters implements _$EnrollmentRequestSearch {
-EnrollmentRequestSearch._(); 
- factory EnrollmentRequestSearch ({
+factory EnrollmentRequestSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -108,12 +107,12 @@ List<SearchToken> status,
 List<SearchReference> subject,
 }) = _EnrollmentRequestSearch;
 
+EnrollmentRequestSearch._(); 
 factory EnrollmentRequestSearch.fromJson(Map<String, dynamic> json) => _$EnrollmentRequestSearchFromJson(json);}
 
 @freezed
 abstract class EnrollmentResponseSearch with R4SearchParameters implements _$EnrollmentResponseSearch {
-EnrollmentResponseSearch._(); 
- factory EnrollmentResponseSearch ({
+factory EnrollmentResponseSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -129,5 +128,6 @@ List<SearchReference> request,
 List<SearchToken> status,
 }) = _EnrollmentResponseSearch;
 
+EnrollmentResponseSearch._(); 
 factory EnrollmentResponseSearch.fromJson(Map<String, dynamic> json) => _$EnrollmentResponseSearchFromJson(json);}
 

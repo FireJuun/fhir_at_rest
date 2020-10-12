@@ -9,8 +9,7 @@ part 'workflow.g.dart';
 
 @freezed
 abstract class AppointmentSearch with R4SearchParameters implements _$AppointmentSearch {
-AppointmentSearch._(); 
- factory AppointmentSearch ({
+factory AppointmentSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -40,12 +39,12 @@ List<SearchToken> status,
 @JsonKey(name: 'supporting-info') List<SearchReference> supportingInfo,
 }) = _AppointmentSearch;
 
+AppointmentSearch._(); 
 factory AppointmentSearch.fromJson(Map<String, dynamic> json) => _$AppointmentSearchFromJson(json);}
 
 @freezed
 abstract class AppointmentResponseSearch with R4SearchParameters implements _$AppointmentResponseSearch {
-AppointmentResponseSearch._(); 
- factory AppointmentResponseSearch ({
+factory AppointmentResponseSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -65,12 +64,12 @@ List<SearchReference> patient,
 List<SearchReference> practitioner,
 }) = _AppointmentResponseSearch;
 
+AppointmentResponseSearch._(); 
 factory AppointmentResponseSearch.fromJson(Map<String, dynamic> json) => _$AppointmentResponseSearchFromJson(json);}
 
 @freezed
 abstract class ScheduleSearch with R4SearchParameters implements _$ScheduleSearch {
-ScheduleSearch._(); 
- factory ScheduleSearch ({
+factory ScheduleSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -90,12 +89,12 @@ List<SearchToken> identifier,
 List<SearchToken> specialty,
 }) = _ScheduleSearch;
 
+ScheduleSearch._(); 
 factory ScheduleSearch.fromJson(Map<String, dynamic> json) => _$ScheduleSearchFromJson(json);}
 
 @freezed
 abstract class SlotSearch with R4SearchParameters implements _$SlotSearch {
-SlotSearch._(); 
- factory SlotSearch ({
+factory SlotSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -116,12 +115,12 @@ List<SearchDate> start,
 List<SearchToken> status,
 }) = _SlotSearch;
 
+SlotSearch._(); 
 factory SlotSearch.fromJson(Map<String, dynamic> json) => _$SlotSearchFromJson(json);}
 
 @freezed
 abstract class TaskSearch with R4SearchParameters implements _$TaskSearch {
-TaskSearch._(); 
- factory TaskSearch ({
+factory TaskSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -153,12 +152,12 @@ List<SearchToken> status,
 List<SearchReference> subject,
 }) = _TaskSearch;
 
+TaskSearch._(); 
 factory TaskSearch.fromJson(Map<String, dynamic> json) => _$TaskSearchFromJson(json);}
 
 @freezed
 abstract class VerificationResultSearch with R4SearchParameters implements _$VerificationResultSearch {
-VerificationResultSearch._(); 
- factory VerificationResultSearch ({
+factory VerificationResultSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -172,5 +171,6 @@ List<Id> searchList,
 List<SearchReference> target,
 }) = _VerificationResultSearch;
 
+VerificationResultSearch._(); 
 factory VerificationResultSearch.fromJson(Map<String, dynamic> json) => _$VerificationResultSearchFromJson(json);}
 

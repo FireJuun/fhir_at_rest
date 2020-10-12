@@ -6,10 +6,6 @@ import '../../failures/restful_failure.dart';
 import 'search_objects.dart';
 
 class SearchDate extends SearchObject<String> {
-  final FhirDateTime date;
-  final bool missing;
-  final DatePrefix prefix;
-
   factory SearchDate({FhirDateTime date, bool missing, DatePrefix prefix}) {
     return SearchDate._(
       date: date,
@@ -23,13 +19,17 @@ class SearchDate extends SearchObject<String> {
   factory SearchDate.fromJson(Map<String, dynamic> json) => SearchDate(
       date: json['date'], missing: json['missing'], prefix: json['prefix']);
 
+  final FhirDateTime date;
+  final bool missing;
+  final DatePrefix prefix;
+
   Either<RestfulFailure, String> toJson() => searchString();
 
   Either<RestfulFailure, String> searchString() => missing != null
       ? right(':missing=$missing')
       : date.value.isLeft()
           ? left(RestfulFailure.primitiveFailure(
-              parameter: "Date", failedValue: date))
+              parameter: 'Date', failedValue: date))
           : right('=${prefix == DatePrefix.eq ? "" : mapDatePrefix[prefix]}'
               '${date.toString()}${missing == null ? "" : ":missing=$missing"}');
 }

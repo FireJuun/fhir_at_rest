@@ -6,12 +6,6 @@ import '../../failures/restful_failure.dart';
 import 'search_objects.dart';
 
 class SearchToken extends SearchObject<String> {
-  final FhirUri system;
-  final Code code;
-  final String value;
-  final bool missing;
-  final TokenModifier modifier;
-
   factory SearchToken({
     FhirUri system,
     Code code,
@@ -42,6 +36,11 @@ class SearchToken extends SearchObject<String> {
       value: json['value'],
       missing: json['missing'],
       modifier: json['modifier']);
+  final FhirUri system;
+  final Code code;
+  final String value;
+  final bool missing;
+  final TokenModifier modifier;
 
   Either<RestfulFailure, String> toJson() => searchString();
 
@@ -51,7 +50,7 @@ class SearchToken extends SearchObject<String> {
       return right(':missing=$missing');
     } else {
       if (system == null && code == null) {
-        return left(RestfulFailure.searchParameterFailure(
+        return left(const RestfulFailure.searchParameterFailure(
             parameter: 'Token',
             failedValue: 'Neither system or code parameterwas provided. This'));
       } else if (system != null && code != null) {
@@ -74,7 +73,7 @@ class SearchToken extends SearchObject<String> {
       } else if (code != null) {
         returnString = code.toString();
       } else {
-        return left(RestfulFailure.searchParameterFailure(
+        return left(const RestfulFailure.searchParameterFailure(
             parameter: 'Token', failedValue: 'No arguments passed '));
       }
 
@@ -106,7 +105,7 @@ class SearchToken extends SearchObject<String> {
         case TokenModifier.of_type:
           {
             return value == null
-                ? left(RestfulFailure.searchParameterFailure(
+                ? left(const RestfulFailure.searchParameterFailure(
                     parameter: 'Token',
                     failedValue:
                         'A value must be provided with "of_type" search, This'))

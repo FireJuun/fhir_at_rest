@@ -3,8 +3,8 @@ import 'package:fhir/primitive_types/primitive_types.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../../enums/enums.dart';
-import '../../resource_types/resource_types.dart';
 import '../../failures/restful_failure.dart';
+import '../../resource_types/resource_types.dart';
 
 @immutable
 abstract class SearchObject<T> {
@@ -46,7 +46,7 @@ Either<RestfulFailure, String> validateSearchType(dynamic value) {
       value is R5Types) {
     return enumToString(value) != 'none'
         ? right(enumToString(value))
-        : left(RestfulFailure.searchParameterFailure(
+        : left(const RestfulFailure.searchParameterFailure(
             parameter: 'Invalid Type', failedValue: 'No Type Provided'));
   } else {
     return left(RestfulFailure.searchParameterFailure(

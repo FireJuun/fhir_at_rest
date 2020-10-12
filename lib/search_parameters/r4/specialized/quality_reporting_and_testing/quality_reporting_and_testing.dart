@@ -9,8 +9,7 @@ part 'quality_reporting_and_testing.g.dart';
 
 @freezed
 abstract class MeasureSearch with R4SearchParameters implements _$MeasureSearch {
-MeasureSearch._(); 
- factory MeasureSearch ({
+factory MeasureSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -45,12 +44,12 @@ List<SearchToken> version,
 @JsonKey(name: 'context-type-value') List<SearchComposite> contextTypevalue,
 }) = _MeasureSearch;
 
+MeasureSearch._(); 
 factory MeasureSearch.fromJson(Map<String, dynamic> json) => _$MeasureSearchFromJson(json);}
 
 @freezed
 abstract class MeasureReportSearch with R4SearchParameters implements _$MeasureReportSearch {
-MeasureReportSearch._(); 
- factory MeasureReportSearch ({
+factory MeasureReportSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -72,12 +71,12 @@ List<SearchToken> status,
 List<SearchReference> subject,
 }) = _MeasureReportSearch;
 
+MeasureReportSearch._(); 
 factory MeasureReportSearch.fromJson(Map<String, dynamic> json) => _$MeasureReportSearchFromJson(json);}
 
 @freezed
 abstract class TestReportSearch with R4SearchParameters implements _$TestReportSearch {
-TestReportSearch._(); 
- factory TestReportSearch ({
+factory TestReportSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -96,12 +95,12 @@ List<SearchString> tester,
 List<SearchReference> testscript,
 }) = _TestReportSearch;
 
+TestReportSearch._(); 
 factory TestReportSearch.fromJson(Map<String, dynamic> json) => _$TestReportSearchFromJson(json);}
 
 @freezed
 abstract class TestScriptSearch with R4SearchParameters implements _$TestScriptSearch {
-TestScriptSearch._(); 
- factory TestScriptSearch ({
+factory TestScriptSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -130,5 +129,6 @@ List<SearchToken> version,
 @JsonKey(name: 'context-type-value') List<SearchComposite> contextTypevalue,
 }) = _TestScriptSearch;
 
+TestScriptSearch._(); 
 factory TestScriptSearch.fromJson(Map<String, dynamic> json) => _$TestScriptSearchFromJson(json);}
 

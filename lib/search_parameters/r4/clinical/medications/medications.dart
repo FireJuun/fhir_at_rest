@@ -9,8 +9,7 @@ part 'medications.g.dart';
 
 @freezed
 abstract class MedicationSearch with R4SearchParameters implements _$MedicationSearch {
-MedicationSearch._(); 
- factory MedicationSearch ({
+factory MedicationSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -32,12 +31,12 @@ List<SearchReference> manufacturer,
 List<SearchToken> status,
 }) = _MedicationSearch;
 
+MedicationSearch._(); 
 factory MedicationSearch.fromJson(Map<String, dynamic> json) => _$MedicationSearchFromJson(json);}
 
 @freezed
 abstract class MedicationAdministrationSearch with R4SearchParameters implements _$MedicationAdministrationSearch {
-MedicationAdministrationSearch._(); 
- factory MedicationAdministrationSearch ({
+factory MedicationAdministrationSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -63,12 +62,12 @@ List<SearchToken> status,
 List<SearchReference> subject,
 }) = _MedicationAdministrationSearch;
 
+MedicationAdministrationSearch._(); 
 factory MedicationAdministrationSearch.fromJson(Map<String, dynamic> json) => _$MedicationAdministrationSearchFromJson(json);}
 
 @freezed
 abstract class MedicationDispenseSearch with R4SearchParameters implements _$MedicationDispenseSearch {
-MedicationDispenseSearch._(); 
- factory MedicationDispenseSearch ({
+factory MedicationDispenseSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -96,12 +95,12 @@ List<SearchDate> whenhandedover,
 List<SearchDate> whenprepared,
 }) = _MedicationDispenseSearch;
 
+MedicationDispenseSearch._(); 
 factory MedicationDispenseSearch.fromJson(Map<String, dynamic> json) => _$MedicationDispenseSearchFromJson(json);}
 
 @freezed
 abstract class MedicationRequestSearch with R4SearchParameters implements _$MedicationRequestSearch {
-MedicationRequestSearch._(); 
- factory MedicationRequestSearch ({
+factory MedicationRequestSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -130,12 +129,12 @@ List<SearchReference> requester,
 List<SearchReference> subject,
 }) = _MedicationRequestSearch;
 
+MedicationRequestSearch._(); 
 factory MedicationRequestSearch.fromJson(Map<String, dynamic> json) => _$MedicationRequestSearchFromJson(json);}
 
 @freezed
 abstract class MedicationStatementSearch with R4SearchParameters implements _$MedicationStatementSearch {
-MedicationStatementSearch._(); 
- factory MedicationStatementSearch ({
+factory MedicationStatementSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -159,12 +158,12 @@ List<SearchReference> source,
 List<SearchReference> subject,
 }) = _MedicationStatementSearch;
 
+MedicationStatementSearch._(); 
 factory MedicationStatementSearch.fromJson(Map<String, dynamic> json) => _$MedicationStatementSearchFromJson(json);}
 
 @freezed
 abstract class ImmunizationSearch with R4SearchParameters implements _$ImmunizationSearch {
-ImmunizationSearch._(); 
- factory ImmunizationSearch ({
+factory ImmunizationSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -193,12 +192,12 @@ List<SearchToken> status,
 @JsonKey(name: 'vaccine-code') List<SearchToken> vaccineCode,
 }) = _ImmunizationSearch;
 
+ImmunizationSearch._(); 
 factory ImmunizationSearch.fromJson(Map<String, dynamic> json) => _$ImmunizationSearchFromJson(json);}
 
 @freezed
 abstract class ImmunizationEvaluationSearch with R4SearchParameters implements _$ImmunizationEvaluationSearch {
-ImmunizationEvaluationSearch._(); 
- factory ImmunizationEvaluationSearch ({
+factory ImmunizationEvaluationSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -218,12 +217,12 @@ List<SearchToken> status,
 @JsonKey(name: 'target-disease') List<SearchToken> targetDisease,
 }) = _ImmunizationEvaluationSearch;
 
+ImmunizationEvaluationSearch._(); 
 factory ImmunizationEvaluationSearch.fromJson(Map<String, dynamic> json) => _$ImmunizationEvaluationSearchFromJson(json);}
 
 @freezed
 abstract class ImmunizationRecommendationSearch with R4SearchParameters implements _$ImmunizationRecommendationSearch {
-ImmunizationRecommendationSearch._(); 
- factory ImmunizationRecommendationSearch ({
+factory ImmunizationRecommendationSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -244,12 +243,12 @@ List<SearchReference> support,
 @JsonKey(name: 'vaccine-type') List<SearchToken> vaccineType,
 }) = _ImmunizationRecommendationSearch;
 
+ImmunizationRecommendationSearch._(); 
 factory ImmunizationRecommendationSearch.fromJson(Map<String, dynamic> json) => _$ImmunizationRecommendationSearchFromJson(json);}
 
 @freezed
 abstract class MedicationKnowledgeSearch with R4SearchParameters implements _$MedicationKnowledgeSearch {
-MedicationKnowledgeSearch._(); 
- factory MedicationKnowledgeSearch ({
+factory MedicationKnowledgeSearch ({
 List<Id> searchId,
 List<SearchDate> searchLastUpdated,
 List<SearchToken> searchTag,
@@ -275,5 +274,6 @@ List<SearchReference> monograph,
 List<SearchToken> status,
 }) = _MedicationKnowledgeSearch;
 
+MedicationKnowledgeSearch._(); 
 factory MedicationKnowledgeSearch.fromJson(Map<String, dynamic> json) => _$MedicationKnowledgeSearchFromJson(json);}
 

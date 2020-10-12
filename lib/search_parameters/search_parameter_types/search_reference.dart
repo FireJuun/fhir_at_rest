@@ -9,11 +9,6 @@ import 'search_objects.dart';
 // ToDo: identifier
 
 class SearchReference extends SearchObject<String> {
-  final Id id;
-  final Either<RestfulFailure, String> type;
-  final FhirUri url;
-  final bool missing;
-
   factory SearchReference({Id id, dynamic type, FhirUri url, bool missing}) {
     return SearchReference._(
       id: id,
@@ -32,13 +27,18 @@ class SearchReference extends SearchObject<String> {
           url: json['url'],
           missing: json['missing']);
 
+  final Id id;
+  final Either<RestfulFailure, String> type;
+  final FhirUri url;
+  final bool missing;
+
   Either<RestfulFailure, String> toJson() => searchString();
 
   Either<RestfulFailure, String> searchString() {
     if (missing != null) {
       return right(':missing=$missing');
     } else if (id == null && url == null) {
-      return left(RestfulFailure.searchParameterFailure(
+      return left(const RestfulFailure.searchParameterFailure(
           parameter: 'SearchReference',
           failedValue: 'No Id or Url Provided. This '));
     } else {
