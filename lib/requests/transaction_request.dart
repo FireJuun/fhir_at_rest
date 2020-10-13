@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -81,12 +79,21 @@ abstract class TransactionRequest with _$TransactionRequest {
         resource: resource.toJson());
 
     return result.fold(
-        (ifLeft) => left(ifLeft),
-        (ifRight) => right(map(
-              dstu2: (r) => dstu2.Resource.fromJson(json.decode(ifRight.body)),
-              stu3: (r) => stu3.Resource.fromJson(json.decode(ifRight.body)),
-              r4: (r) => r4.Resource.fromJson(json.decode(ifRight.body)),
-              r5: (r) => r5.Resource.fromJson(json.decode(ifRight.body)),
-            )));
+      (l) => left(l),
+      (r) {
+        dynamic resource;
+        try {
+          resource = map(
+            dstu2: (m) => dstu2.Resource.fromJson(r),
+            stu3: (m) => stu3.Resource.fromJson(r),
+            r4: (m) => r4.Resource.fromJson(r),
+            r5: (m) => r5.Resource.fromJson(r),
+          );
+        } catch (e) {
+          return left(RestfulFailure.unknownFailure(failedValue: e));
+        }
+        return right(resource);
+      },
+    );
   }
 }

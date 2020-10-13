@@ -14,23 +14,21 @@ class _$SmartTearOff {
   const _$SmartTearOff();
 
 // ignore: unused_element
-  SmartDstu2 dstu2() {
-    return SmartDstu2();
-  }
-
-// ignore: unused_element
-  SmartStu3 stu3() {
-    return SmartStu3();
-  }
-
-// ignore: unused_element
-  SmartR4 r4() {
-    return SmartR4();
-  }
-
-// ignore: unused_element
-  SmartR5 r5() {
-    return SmartR5();
+  _SmartR4 r4(
+      {@required FhirUri baseUrl,
+      @required String clientId,
+      @required FhirUri redirectUri,
+      String launch,
+      List<Scope> scope,
+      @required FhirUri fhirServer}) {
+    return _SmartR4(
+      baseUrl: baseUrl,
+      clientId: clientId,
+      redirectUri: redirectUri,
+      launch: launch,
+      scope: scope,
+      fhirServer: fhirServer,
+    );
   }
 }
 
@@ -40,42 +38,49 @@ const $Smart = _$SmartTearOff();
 
 /// @nodoc
 mixin _$Smart {
+  FhirUri get baseUrl;
+  String get clientId;
+  FhirUri get redirectUri;
+  String get launch;
+  List<Scope> get scope;
+  FhirUri get fhirServer;
+
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result dstu2(),
-    @required Result stu3(),
-    @required Result r4(),
-    @required Result r5(),
+    @required
+        Result r4(FhirUri baseUrl, String clientId, FhirUri redirectUri,
+            String launch, List<Scope> scope, FhirUri fhirServer),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result dstu2(),
-    Result stu3(),
-    Result r4(),
-    Result r5(),
+    Result r4(FhirUri baseUrl, String clientId, FhirUri redirectUri,
+        String launch, List<Scope> scope, FhirUri fhirServer),
     @required Result orElse(),
   });
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result dstu2(SmartDstu2 value),
-    @required Result stu3(SmartStu3 value),
-    @required Result r4(SmartR4 value),
-    @required Result r5(SmartR5 value),
+    @required Result r4(_SmartR4 value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result dstu2(SmartDstu2 value),
-    Result stu3(SmartStu3 value),
-    Result r4(SmartR4 value),
-    Result r5(SmartR5 value),
+    Result r4(_SmartR4 value),
     @required Result orElse(),
   });
+
+  $SmartCopyWith<Smart> get copyWith;
 }
 
 /// @nodoc
 abstract class $SmartCopyWith<$Res> {
   factory $SmartCopyWith(Smart value, $Res Function(Smart) then) =
       _$SmartCopyWithImpl<$Res>;
+  $Res call(
+      {FhirUri baseUrl,
+      String clientId,
+      FhirUri redirectUri,
+      String launch,
+      List<Scope> scope,
+      FhirUri fhirServer});
 }
 
 /// @nodoc
@@ -85,271 +90,164 @@ class _$SmartCopyWithImpl<$Res> implements $SmartCopyWith<$Res> {
   final Smart _value;
   // ignore: unused_field
   final $Res Function(Smart) _then;
-}
-
-/// @nodoc
-abstract class $SmartDstu2CopyWith<$Res> {
-  factory $SmartDstu2CopyWith(
-          SmartDstu2 value, $Res Function(SmartDstu2) then) =
-      _$SmartDstu2CopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class _$SmartDstu2CopyWithImpl<$Res> extends _$SmartCopyWithImpl<$Res>
-    implements $SmartDstu2CopyWith<$Res> {
-  _$SmartDstu2CopyWithImpl(SmartDstu2 _value, $Res Function(SmartDstu2) _then)
-      : super(_value, (v) => _then(v as SmartDstu2));
 
   @override
-  SmartDstu2 get _value => super._value as SmartDstu2;
+  $Res call({
+    Object baseUrl = freezed,
+    Object clientId = freezed,
+    Object redirectUri = freezed,
+    Object launch = freezed,
+    Object scope = freezed,
+    Object fhirServer = freezed,
+  }) {
+    return _then(_value.copyWith(
+      baseUrl: baseUrl == freezed ? _value.baseUrl : baseUrl as FhirUri,
+      clientId: clientId == freezed ? _value.clientId : clientId as String,
+      redirectUri:
+          redirectUri == freezed ? _value.redirectUri : redirectUri as FhirUri,
+      launch: launch == freezed ? _value.launch : launch as String,
+      scope: scope == freezed ? _value.scope : scope as List<Scope>,
+      fhirServer:
+          fhirServer == freezed ? _value.fhirServer : fhirServer as FhirUri,
+    ));
+  }
 }
 
 /// @nodoc
-class _$SmartDstu2 extends SmartDstu2 {
-  _$SmartDstu2() : super._();
+abstract class _$SmartR4CopyWith<$Res> implements $SmartCopyWith<$Res> {
+  factory _$SmartR4CopyWith(_SmartR4 value, $Res Function(_SmartR4) then) =
+      __$SmartR4CopyWithImpl<$Res>;
+  @override
+  $Res call(
+      {FhirUri baseUrl,
+      String clientId,
+      FhirUri redirectUri,
+      String launch,
+      List<Scope> scope,
+      FhirUri fhirServer});
+}
+
+/// @nodoc
+class __$SmartR4CopyWithImpl<$Res> extends _$SmartCopyWithImpl<$Res>
+    implements _$SmartR4CopyWith<$Res> {
+  __$SmartR4CopyWithImpl(_SmartR4 _value, $Res Function(_SmartR4) _then)
+      : super(_value, (v) => _then(v as _SmartR4));
+
+  @override
+  _SmartR4 get _value => super._value as _SmartR4;
+
+  @override
+  $Res call({
+    Object baseUrl = freezed,
+    Object clientId = freezed,
+    Object redirectUri = freezed,
+    Object launch = freezed,
+    Object scope = freezed,
+    Object fhirServer = freezed,
+  }) {
+    return _then(_SmartR4(
+      baseUrl: baseUrl == freezed ? _value.baseUrl : baseUrl as FhirUri,
+      clientId: clientId == freezed ? _value.clientId : clientId as String,
+      redirectUri:
+          redirectUri == freezed ? _value.redirectUri : redirectUri as FhirUri,
+      launch: launch == freezed ? _value.launch : launch as String,
+      scope: scope == freezed ? _value.scope : scope as List<Scope>,
+      fhirServer:
+          fhirServer == freezed ? _value.fhirServer : fhirServer as FhirUri,
+    ));
+  }
+}
+
+/// @nodoc
+class _$_SmartR4 extends _SmartR4 {
+  _$_SmartR4(
+      {@required this.baseUrl,
+      @required this.clientId,
+      @required this.redirectUri,
+      this.launch,
+      this.scope,
+      @required this.fhirServer})
+      : assert(baseUrl != null),
+        assert(clientId != null),
+        assert(redirectUri != null),
+        assert(fhirServer != null),
+        super._();
+
+  @override
+  final FhirUri baseUrl;
+  @override
+  final String clientId;
+  @override
+  final FhirUri redirectUri;
+  @override
+  final String launch;
+  @override
+  final List<Scope> scope;
+  @override
+  final FhirUri fhirServer;
 
   @override
   String toString() {
-    return 'Smart.dstu2()';
+    return 'Smart.r4(baseUrl: $baseUrl, clientId: $clientId, redirectUri: $redirectUri, launch: $launch, scope: $scope, fhirServer: $fhirServer)';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is SmartDstu2);
+    return identical(this, other) ||
+        (other is _SmartR4 &&
+            (identical(other.baseUrl, baseUrl) ||
+                const DeepCollectionEquality()
+                    .equals(other.baseUrl, baseUrl)) &&
+            (identical(other.clientId, clientId) ||
+                const DeepCollectionEquality()
+                    .equals(other.clientId, clientId)) &&
+            (identical(other.redirectUri, redirectUri) ||
+                const DeepCollectionEquality()
+                    .equals(other.redirectUri, redirectUri)) &&
+            (identical(other.launch, launch) ||
+                const DeepCollectionEquality().equals(other.launch, launch)) &&
+            (identical(other.scope, scope) ||
+                const DeepCollectionEquality().equals(other.scope, scope)) &&
+            (identical(other.fhirServer, fhirServer) ||
+                const DeepCollectionEquality()
+                    .equals(other.fhirServer, fhirServer)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(baseUrl) ^
+      const DeepCollectionEquality().hash(clientId) ^
+      const DeepCollectionEquality().hash(redirectUri) ^
+      const DeepCollectionEquality().hash(launch) ^
+      const DeepCollectionEquality().hash(scope) ^
+      const DeepCollectionEquality().hash(fhirServer);
+
+  @override
+  _$SmartR4CopyWith<_SmartR4> get copyWith =>
+      __$SmartR4CopyWithImpl<_SmartR4>(this, _$identity);
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result dstu2(),
-    @required Result stu3(),
-    @required Result r4(),
-    @required Result r5(),
+    @required
+        Result r4(FhirUri baseUrl, String clientId, FhirUri redirectUri,
+            String launch, List<Scope> scope, FhirUri fhirServer),
   }) {
-    assert(dstu2 != null);
-    assert(stu3 != null);
     assert(r4 != null);
-    assert(r5 != null);
-    return dstu2();
+    return r4(baseUrl, clientId, redirectUri, launch, scope, fhirServer);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result dstu2(),
-    Result stu3(),
-    Result r4(),
-    Result r5(),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (dstu2 != null) {
-      return dstu2();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result dstu2(SmartDstu2 value),
-    @required Result stu3(SmartStu3 value),
-    @required Result r4(SmartR4 value),
-    @required Result r5(SmartR5 value),
-  }) {
-    assert(dstu2 != null);
-    assert(stu3 != null);
-    assert(r4 != null);
-    assert(r5 != null);
-    return dstu2(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result dstu2(SmartDstu2 value),
-    Result stu3(SmartStu3 value),
-    Result r4(SmartR4 value),
-    Result r5(SmartR5 value),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (dstu2 != null) {
-      return dstu2(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class SmartDstu2 extends Smart {
-  SmartDstu2._() : super._();
-  factory SmartDstu2() = _$SmartDstu2;
-}
-
-/// @nodoc
-abstract class $SmartStu3CopyWith<$Res> {
-  factory $SmartStu3CopyWith(SmartStu3 value, $Res Function(SmartStu3) then) =
-      _$SmartStu3CopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class _$SmartStu3CopyWithImpl<$Res> extends _$SmartCopyWithImpl<$Res>
-    implements $SmartStu3CopyWith<$Res> {
-  _$SmartStu3CopyWithImpl(SmartStu3 _value, $Res Function(SmartStu3) _then)
-      : super(_value, (v) => _then(v as SmartStu3));
-
-  @override
-  SmartStu3 get _value => super._value as SmartStu3;
-}
-
-/// @nodoc
-class _$SmartStu3 extends SmartStu3 {
-  _$SmartStu3() : super._();
-
-  @override
-  String toString() {
-    return 'Smart.stu3()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is SmartStu3);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result dstu2(),
-    @required Result stu3(),
-    @required Result r4(),
-    @required Result r5(),
-  }) {
-    assert(dstu2 != null);
-    assert(stu3 != null);
-    assert(r4 != null);
-    assert(r5 != null);
-    return stu3();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result dstu2(),
-    Result stu3(),
-    Result r4(),
-    Result r5(),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (stu3 != null) {
-      return stu3();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result dstu2(SmartDstu2 value),
-    @required Result stu3(SmartStu3 value),
-    @required Result r4(SmartR4 value),
-    @required Result r5(SmartR5 value),
-  }) {
-    assert(dstu2 != null);
-    assert(stu3 != null);
-    assert(r4 != null);
-    assert(r5 != null);
-    return stu3(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result dstu2(SmartDstu2 value),
-    Result stu3(SmartStu3 value),
-    Result r4(SmartR4 value),
-    Result r5(SmartR5 value),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (stu3 != null) {
-      return stu3(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class SmartStu3 extends Smart {
-  SmartStu3._() : super._();
-  factory SmartStu3() = _$SmartStu3;
-}
-
-/// @nodoc
-abstract class $SmartR4CopyWith<$Res> {
-  factory $SmartR4CopyWith(SmartR4 value, $Res Function(SmartR4) then) =
-      _$SmartR4CopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class _$SmartR4CopyWithImpl<$Res> extends _$SmartCopyWithImpl<$Res>
-    implements $SmartR4CopyWith<$Res> {
-  _$SmartR4CopyWithImpl(SmartR4 _value, $Res Function(SmartR4) _then)
-      : super(_value, (v) => _then(v as SmartR4));
-
-  @override
-  SmartR4 get _value => super._value as SmartR4;
-}
-
-/// @nodoc
-class _$SmartR4 extends SmartR4 {
-  _$SmartR4() : super._();
-
-  @override
-  String toString() {
-    return 'Smart.r4()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is SmartR4);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result dstu2(),
-    @required Result stu3(),
-    @required Result r4(),
-    @required Result r5(),
-  }) {
-    assert(dstu2 != null);
-    assert(stu3 != null);
-    assert(r4 != null);
-    assert(r5 != null);
-    return r4();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result dstu2(),
-    Result stu3(),
-    Result r4(),
-    Result r5(),
+    Result r4(FhirUri baseUrl, String clientId, FhirUri redirectUri,
+        String launch, List<Scope> scope, FhirUri fhirServer),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (r4 != null) {
-      return r4();
+      return r4(baseUrl, clientId, redirectUri, launch, scope, fhirServer);
     }
     return orElse();
   }
@@ -357,25 +255,16 @@ class _$SmartR4 extends SmartR4 {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result dstu2(SmartDstu2 value),
-    @required Result stu3(SmartStu3 value),
-    @required Result r4(SmartR4 value),
-    @required Result r5(SmartR5 value),
+    @required Result r4(_SmartR4 value),
   }) {
-    assert(dstu2 != null);
-    assert(stu3 != null);
     assert(r4 != null);
-    assert(r5 != null);
     return r4(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result dstu2(SmartDstu2 value),
-    Result stu3(SmartStu3 value),
-    Result r4(SmartR4 value),
-    Result r5(SmartR5 value),
+    Result r4(_SmartR4 value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -386,108 +275,28 @@ class _$SmartR4 extends SmartR4 {
   }
 }
 
-abstract class SmartR4 extends Smart {
-  SmartR4._() : super._();
-  factory SmartR4() = _$SmartR4;
-}
-
-/// @nodoc
-abstract class $SmartR5CopyWith<$Res> {
-  factory $SmartR5CopyWith(SmartR5 value, $Res Function(SmartR5) then) =
-      _$SmartR5CopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class _$SmartR5CopyWithImpl<$Res> extends _$SmartCopyWithImpl<$Res>
-    implements $SmartR5CopyWith<$Res> {
-  _$SmartR5CopyWithImpl(SmartR5 _value, $Res Function(SmartR5) _then)
-      : super(_value, (v) => _then(v as SmartR5));
+abstract class _SmartR4 extends Smart {
+  _SmartR4._() : super._();
+  factory _SmartR4(
+      {@required FhirUri baseUrl,
+      @required String clientId,
+      @required FhirUri redirectUri,
+      String launch,
+      List<Scope> scope,
+      @required FhirUri fhirServer}) = _$_SmartR4;
 
   @override
-  SmartR5 get _value => super._value as SmartR5;
-}
-
-/// @nodoc
-class _$SmartR5 extends SmartR5 {
-  _$SmartR5() : super._();
-
+  FhirUri get baseUrl;
   @override
-  String toString() {
-    return 'Smart.r5()';
-  }
-
+  String get clientId;
   @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is SmartR5);
-  }
-
+  FhirUri get redirectUri;
   @override
-  int get hashCode => runtimeType.hashCode;
-
+  String get launch;
   @override
-  @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result dstu2(),
-    @required Result stu3(),
-    @required Result r4(),
-    @required Result r5(),
-  }) {
-    assert(dstu2 != null);
-    assert(stu3 != null);
-    assert(r4 != null);
-    assert(r5 != null);
-    return r5();
-  }
-
+  List<Scope> get scope;
   @override
-  @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result dstu2(),
-    Result stu3(),
-    Result r4(),
-    Result r5(),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (r5 != null) {
-      return r5();
-    }
-    return orElse();
-  }
-
+  FhirUri get fhirServer;
   @override
-  @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result dstu2(SmartDstu2 value),
-    @required Result stu3(SmartStu3 value),
-    @required Result r4(SmartR4 value),
-    @required Result r5(SmartR5 value),
-  }) {
-    assert(dstu2 != null);
-    assert(stu3 != null);
-    assert(r4 != null);
-    assert(r5 != null);
-    return r5(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result dstu2(SmartDstu2 value),
-    Result stu3(SmartStu3 value),
-    Result r4(SmartR4 value),
-    Result r5(SmartR5 value),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (r5 != null) {
-      return r5(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class SmartR5 extends Smart {
-  SmartR5._() : super._();
-  factory SmartR5() = _$SmartR5;
+  _$SmartR4CopyWith<_SmartR4> get copyWith;
 }

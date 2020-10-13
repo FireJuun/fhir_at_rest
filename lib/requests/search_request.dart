@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -79,14 +77,20 @@ abstract class SearchRequest with _$SearchRequest {
 
     return result.fold(
       (l) => left(l),
-      (r) => right(
-        map(
-          dstu2: (i) => dstu2.Resource.fromJson(json.decode(r.body)),
-          stu3: (i) => stu3.Resource.fromJson(json.decode(r.body)),
-          r4: (i) => r4.Resource.fromJson(json.decode(r.body)),
-          r5: (i) => r5.Resource.fromJson(json.decode(r.body)),
-        ),
-      ),
+      (r) {
+        dynamic resource;
+        try {
+          resource = map(
+            dstu2: (m) => dstu2.Resource.fromJson(r),
+            stu3: (m) => stu3.Resource.fromJson(r),
+            r4: (m) => r4.Resource.fromJson(r),
+            r5: (m) => r5.Resource.fromJson(r),
+          );
+        } catch (e) {
+          return left(RestfulFailure.unknownFailure(failedValue: e));
+        }
+        return right(resource);
+      },
     );
   }
 }

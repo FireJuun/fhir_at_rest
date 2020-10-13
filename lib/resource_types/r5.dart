@@ -142,6 +142,7 @@ enum R5Types {
   verificationresult,
   visionprescription,
   none,
+  any,
 }
 
 const R5TypesEnumMap = {
@@ -288,4 +289,5 @@ const R5TypesEnumMap = {
   R5Types.verificationresult: 'VerificationResult',
   R5Types.visionprescription: 'VisionPrescription',
   R5Types.none: '',
+  R5Types.any: '*',
 };

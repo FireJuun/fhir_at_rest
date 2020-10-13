@@ -6,7 +6,7 @@ import 'package:http/http.dart';
 
 import '../failures/restful_failure.dart';
 
-Future<Either<RestfulFailure, dynamic>> makeRequest({
+Future<Either<RestfulFailure, Map<String, dynamic>>> makeRequest({
   @required RestfulRequest type,
   @required String thisRequest,
   Map<String, dynamic> headers,
@@ -16,8 +16,7 @@ Future<Either<RestfulFailure, dynamic>> makeRequest({
   Response result;
 
   // for testing purposes
-  return left(RestfulFailure.searchStringTest(searchString: thisRequest));
-
+  // return left(RestfulFailure.searchStringTest(searchString: thisRequest));
   try {
     switch (type) {
       case RestfulRequest.get_:
@@ -139,12 +138,17 @@ Future<Either<RestfulFailure, dynamic>> makeRequest({
     }
   }
 
-  if (result.body.runtimeType != {}.runtimeType) {
+  Map<String, dynamic> returnResult;
+
+  try {
+    returnResult = json.decode(result.body);
+  } catch (e) {
     return left(RestfulFailure.unknownFailure(
       failedValue: result.body,
     ));
   }
-  return right(result.body);
+
+  return right(returnResult);
 }
 
 const _errorCodes = {

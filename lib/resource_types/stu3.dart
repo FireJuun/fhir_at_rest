@@ -117,6 +117,7 @@ enum Stu3Types {
   valueset,
   visionprescription,
   none,
+  any,
 }
 
 const Stu3TypesEnumMap = {
@@ -238,4 +239,5 @@ const Stu3TypesEnumMap = {
   Stu3Types.valueset: 'ValueSet',
   Stu3Types.visionprescription: 'VisionPrescription',
   Stu3Types.none: '',
+  Stu3Types.any: '*',
 };

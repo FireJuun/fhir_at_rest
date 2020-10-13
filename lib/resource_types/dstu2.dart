@@ -94,6 +94,7 @@ enum Dstu2Types {
   paymentreconciliation,
   explanationofbenefit,
   none,
+  any,
 }
 
 const Dstu2TypesEnumMap = {
@@ -192,4 +193,5 @@ const Dstu2TypesEnumMap = {
   Dstu2Types.paymentreconciliation: 'PaymentReconciliation',
   Dstu2Types.explanationofbenefit: 'ExplanationOfBenefit',
   Dstu2Types.none: '',
+  Dstu2Types.any: '*',
 };

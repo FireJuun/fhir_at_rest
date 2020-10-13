@@ -146,6 +146,7 @@ enum R4Types {
   verificationresult,
   visionprescription,
   none,
+  any,
 }
 
 const R4TypesEnumMap = {
@@ -297,4 +298,5 @@ const R4TypesEnumMap = {
   R4Types.verificationresult: 'VerificationResult',
   R4Types.visionprescription: 'VisionPrescription',
   R4Types.none: '',
+  R4Types.any: '*',
 };
