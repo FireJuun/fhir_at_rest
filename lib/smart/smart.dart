@@ -12,7 +12,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 // import 'package:fhir/stu3.dart' as stu3;
 import 'package:fhir/r4.dart' as r4;
 
-import 'scopes/scopes.dart';
+import 'scope.dart';
 // import 'package:fhir/r5.dart' as r5;
 
 part 'smart.freezed.dart';
@@ -135,7 +135,7 @@ Future smarter() async {
     baseUrl: FhirUri(thisUrl),
     clientId: 'this-client-id',
     redirectUri: FhirUri(thisUrl),
-    scope: [ContextScope(patientLaunch: true)],
+    scope: [Scope.context(patientLaunch: true)],
     fhirServer: FhirUri(thisUrl),
   );
 

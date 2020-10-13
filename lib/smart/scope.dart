@@ -2,9 +2,7 @@ import 'package:fhir_at_rest/enums/enums.dart';
 import 'package:fhir_at_rest/resource_types/resource_types.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import 'scopes.dart';
-
-part 'clinical_scope.freezed.dart';
+part 'scope.freezed.dart';
 
 @freezed
 abstract class Scope implements _$Scope {
@@ -38,18 +36,23 @@ abstract class Scope implements _$Scope {
   }) = _ContextScope;
 
   @override
-  String toString() =>
-      '${role == Role.patient ? "patient" : "user"}/${enumToString(type)}.'
-      '${interaction == Interaction.any ? "*" : simpleEnumToString(interaction)}';
+  String toString() => map(
+        clinicalDstu2: (m) => _clinical(m),
+        clinicalStu3: (m) => _clinical(m),
+        clinicalR4: (m) => _clinical(m),
+        clinicalR5: (m) => _clinical(m),
+        context: (m) => m.ehrLaunch ?? false
+            ? 'launch'
+            : m.patientLaunch ?? false
+                ? 'launch/patient${m.patientValue == null ? "" : "/${m.patientValue}"}'
+                : m.encounterLaunch ?? false
+                    ? 'launch/encounter${m.encounterValue == null ? "" : "/${m.patientValue}"}'
+                    : null,
+      );
 
-  @override
-  String toString() => ehrLaunch ?? false
-      ? 'launch'
-      : patientLaunch ?? false
-          ? 'launch/patient${patientValue == null ? "" : "/$patientValue"}'
-          : encounterLaunch ?? false
-              ? 'launch/encounter${encounterValue == null ? "" : "/$patientValue"}'
-              : null;
+  String _clinical(dynamic scope) =>
+      '${scope.role == Role.patient ? "patient" : "user"}/${enumToString(scope.type)}.'
+      '${scope.interaction == Interaction.any ? "*" : simpleEnumToString(scope.interaction)}';
 }
 
 enum Role { patient, user }
