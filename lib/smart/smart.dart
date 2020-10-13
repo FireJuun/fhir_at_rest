@@ -1,10 +1,8 @@
-import 'dart:convert';
-import 'dart:io';
-
 import 'package:dartz/dartz.dart';
 import 'package:fhir/primitive_types/primitive_types.dart';
 import 'package:fhir_at_rest/failures/smart_failure.dart';
 import 'package:fhir_at_rest/requests/request_types.dart';
+import 'package:fhir_at_rest/resource_types/resource_types.dart';
 import 'package:flutter_appauth/flutter_appauth.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -18,7 +16,7 @@ import 'scope.dart';
 part 'smart.freezed.dart';
 
 @freezed
-abstract class Smart with _$Smart {
+abstract class Smart implements _$Smart {
   Smart._();
   // factory Smart.dstu2(FhirUri baseUrl) = _SmartDstu2;
   // factory Smart.stu3(FhirUri baseUrl) = _SmartStu3;
@@ -58,12 +56,17 @@ abstract class Smart with _$Smart {
                 serviceConfiguration: AuthorizationServiceConfiguration(
                     authorize.toString(), token.toString()),
                 additionalParameters: launch == null
-                    ? {'aud': fhirServer.toString()}
+                    ? {
+                        // 'aud': fhirServer.toString(),
+                        'login_type': 'provider',
+                        'aud_validated': '1',
+                      }
                     : {'aud': fhirServer.toString(), 'launch': launch},
                 scopes: _getScopes(),
               );
-              AuthorizationTokenResponse authorization;
 
+              AuthorizationTokenResponse authorization;
+              print('trying authorization');
               try {
                 authorization =
                     await appAuth.authorizeAndExchangeCode(authRequest);
@@ -129,13 +132,22 @@ abstract class Smart with _$Smart {
 }
 
 Future smarter() async {
-  const thisUrl =
-      'https://launch.smarthealthit.org/v/r4/sim/eyJoIjoiMSIsImIiOiJmYzIwMGZhMi0xMmM5LTQyNzYtYmE0YS1lMDYwMWQ0MjRlNTUifQ/fhir';
+  const thisUrl = 'https://launch.smarthealthit.org/v/r4/sim/eyJoIjoiMSJ9/fhir';
   final smart = Smart.r4(
     baseUrl: FhirUri(thisUrl),
-    clientId: 'this-client-id',
-    redirectUri: FhirUri(thisUrl),
-    scope: [Scope.context(patientLaunch: true)],
+    clientId: 'my_web_app',
+    redirectUri:
+        FhirUri('https%3A%2F%2Flaunch.smarthealthit.org%2Fsample-app%2F'),
+    scope: [
+      Scope.clinicalR4(
+        role: Role.patient,
+        type: R4Types.encounter,
+        interaction: Interaction.any,
+      ),
+      Scope.context(encounterLaunch: true),
+      Scope.identity(openid: true, fhirUser: true),
+      Scope.refreshToken(offlineAccess: true)
+    ],
     fhirServer: FhirUri(thisUrl),
   );
 
