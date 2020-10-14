@@ -1,12 +1,5 @@
-abstract class R5Parameters {
-  List<String> id;
-  List<String> lastUpdated;
-  List<String> tag;
-  List<String> profile;
-  List<String> security;
-  List<String> text;
-  List<String> content;
-  List<String> list;
-  List<String> has;
-  List<String> type;
-}
+export 'base/base.dart';
+export 'clinical/clinical.dart';
+export 'financial/financial.dart';
+export 'foundation/foundation.dart';
+export 'specialized/specialized.dart';

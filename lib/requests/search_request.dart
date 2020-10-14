@@ -45,7 +45,7 @@ abstract class SearchRequest with _$SearchRequest {
     R5SearchParameters parameters,
   }) = _SearchRequestR5;
 
-  Future<Either<RestfulFailure<dynamic>, dynamic>> request() async {
+  Future<Either<RestfulFailure, dynamic>> request() async {
     var thisRequest = map(
       dstu2: (req) => '$base/${enumToString(req.type)}',
       stu3: (req) => '$base/${enumToString(req.type)}',

@@ -197,7 +197,7 @@ _$_EncounterSearch _$_$_EncounterSearchFromJson(Map<String, dynamic> json) {
             ? null
             : SearchReference.fromJson(e as Map<String, dynamic>))
         ?.toList(),
-    classs: (json['class'] as List)
+    class_: (json['class'] as List)
         ?.map((e) =>
             e == null ? null : SearchToken.fromJson(e as Map<String, dynamic>))
         ?.toList(),
@@ -308,7 +308,7 @@ Map<String, dynamic> _$_$_EncounterSearchToJson(_$_EncounterSearch instance) {
   writeNotNull(
       'appointment', instance.appointment?.map((e) => e?.toJson())?.toList());
   writeNotNull('based-on', instance.basedOn?.map((e) => e?.toJson())?.toList());
-  writeNotNull('class', instance.classs?.map((e) => e?.toJson())?.toList());
+  writeNotNull('class', instance.class_?.map((e) => e?.toJson())?.toList());
   writeNotNull(
       'diagnosis', instance.diagnosis?.map((e) => e?.toJson())?.toList());
   writeNotNull('episode-of-care',

@@ -6,19 +6,21 @@ import 'package:dartz/dartz.dart';
 import 'fhir_types_lists.dart';
 import 'get_file_name.dart';
 
-void main() async {
+Future getR5Parameters() async {
   //location of fhir search parameters
-  var file = File('./lib/search_parameters/search-parameters.json');
-  var contents = await file.readAsString();
-  var types = [];
+  final file = File('./get_parameters/r5/search-parameters.json');
+  final contents = await file.readAsString();
+  final types = [];
 
-  Map schema = json.decode(contents);
+  final Map schema = json.decode(contents);
   for (var obj in schema['entry']) {
     for (var base in obj['resource']['base']) {
-      if (!types.contains(base)) types.add(base);
+      if (!types.contains(base)) {
+        types.add(base);
+      }
     }
   }
-  var typeMap = {};
+  final typeMap = {};
   for (var type in types) {
     typeMap[type] = [];
   }
@@ -29,7 +31,7 @@ void main() async {
     }
   }
 
-  var tipos = {};
+  final tipos = {};
   tipos['entities1'] = [];
   tipos['entities2'] = [];
   tipos['individuals'] = [];
@@ -132,7 +134,7 @@ void main() async {
 
   for (var k in tipos.keys) {
     for (var j in tipos[k]) {
-      var file = getFileName(k);
+      final file = getFileName(k);
       if (file != '') {
         await File(file).create();
         await File(file).writeAsString(
@@ -148,11 +150,11 @@ void main() async {
 
   for (var k in tipos.keys) {
     for (var j in tipos[k]) {
-      var file = getFileName(k);
+      final file = getFileName(k);
       if (file != '') {
         var fileString = await File(file).readAsString();
         fileString += '@freezed\nabstract class '
-            '${j.value1.toString()}Search with R4SearchParameters implements '
+            '${j.value1.toString()}Search with R5SearchParameters implements '
             '_\$${j.value1.toString()}Search {\n'
             'factory ${j.value1.toString()}Search ({\n'
             'List<Id> searchId,\n'
@@ -167,7 +169,7 @@ void main() async {
             '//List<SearchToken> searchType,\n';
 
         for (var i in j.value2) {
-          var location = i.value2.toString().indexOf('-');
+          final location = i.value2.toString().indexOf('-');
           if (location != -1) {
             fileString += "@JsonKey(name: '${i.value2.toString()}') ";
           }
@@ -184,6 +186,12 @@ void main() async {
             '${j.value1.toString()}Search._(); \n'
             'factory ${j.value1.toString()}Search.fromJson(Map<String, dynamic> json)'
             ' => _\$${j.value1.toString()}SearchFromJson(json);}\n\n';
+        fileString = fileString.replaceAll('List\<SearchToken\> class,',
+            "@JsonKey(name: 'class') List<SearchToken> class_,");
+        fileString = fileString.replaceAll('List\<SearchString\> class,',
+            "@JsonKey(name: 'class') List<SearchString> class_,");
+        fileString = fileString.replaceAll('List\<SearchToken\> case,',
+            "@JsonKey(name: 'case') List<SearchToken> case_,");
         await File(file).writeAsString(fileString);
       }
     }
@@ -191,15 +199,33 @@ void main() async {
 }
 
 String parameterTypeToString(String type) {
-  if (type == 'date') return 'List<SearchDate>';
-  if (type == 'number') return 'List<SearchNumber>';
-  if (type == 'string') return 'List<SearchString>';
-  if (type == 'token') return 'List<SearchToken>';
-  if (type == 'uri') return 'List<SearchUri>';
-  if (type == 'quantity') return 'List<SearchQuantity>';
-  if (type == 'reference') return 'List<SearchReference>';
-  if (type == 'composite') return 'List<SearchComposite>';
-  if (type == 'special') return 'List<SearchSpecial>';
+  if (type == 'date') {
+    return 'List<SearchDate>';
+  }
+  if (type == 'number') {
+    return 'List<SearchNumber>';
+  }
+  if (type == 'string') {
+    return 'List<SearchString>';
+  }
+  if (type == 'token') {
+    return 'List<SearchToken>';
+  }
+  if (type == 'uri') {
+    return 'List<SearchUri>';
+  }
+  if (type == 'quantity') {
+    return 'List<SearchQuantity>';
+  }
+  if (type == 'reference') {
+    return 'List<SearchReference>';
+  }
+  if (type == 'composite') {
+    return 'List<SearchComposite>';
+  }
+  if (type == 'special') {
+    return 'List<SearchSpecial>';
+  }
   print(type);
   return 'List<String>';
 }

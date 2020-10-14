@@ -2,11 +2,8 @@ import 'package:dartz/dartz.dart';
 
 import 'package:fhir/primitive_types/primitive_types.dart';
 
-import '../../enums/enums.dart';
 import '../../failures/restful_failure.dart';
 import 'search_objects.dart';
-
-// ToDo: identifier
 
 class SearchReference extends SearchObject<String> {
   factory SearchReference({Id id, dynamic type, FhirUri url, bool missing}) {
@@ -52,7 +49,7 @@ class SearchReference extends SearchObject<String> {
       } else {
         if (type != null) {
           return type.fold((l) => right('=${id.toString()}'),
-              (r) => right('=${enumToString(type)}/${id.toString()}'));
+              (r) => right('=$r/${id.toString()}'));
         } else {
           return right('=${id.toString()}');
         }

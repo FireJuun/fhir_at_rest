@@ -17,7 +17,8 @@ Either<RestfulFailure, String> validateSearchNumber(dynamic value) =>
         : num.tryParse(value) != null
             ? right(value)
             : left(RestfulFailure.searchParameterFailure(
-                parameter: 'SearchNumber', failedValue: value));
+                parameter: 'SearchNumber',
+                failedValue: value ?? 'value was null'));
 
 Either<RestfulFailure, String> validateSearchQuantity(dynamic value) =>
     value is num
@@ -25,19 +26,20 @@ Either<RestfulFailure, String> validateSearchQuantity(dynamic value) =>
         : num.tryParse(value) != null
             ? right(value)
             : left(RestfulFailure.searchParameterFailure(
-                parameter: 'SearchQuantity', failedValue: value));
+                parameter: 'SearchQuantity',
+                failedValue: value ?? 'value was null'));
 
 Either<RestfulFailure, String> validateSearchDate(dynamic value) =>
     FhirDateTime(value).value.isRight()
         ? right(value.toString())
         : left(RestfulFailure.searchParameterFailure(
-            parameter: 'SearchDate', failedValue: value));
+            parameter: 'SearchDate', failedValue: value ?? 'value was null'));
 
 Either<RestfulFailure, String> validateSearchUri(dynamic value) =>
     FhirUri(value).value.isRight()
         ? right(value.toString())
         : left(RestfulFailure.searchParameterFailure(
-            parameter: 'SearchDate', failedValue: value));
+            parameter: 'SearchDate', failedValue: value ?? 'value was null'));
 
 Either<RestfulFailure, String> validateSearchType(dynamic value) {
   if (value is Dstu2Types ||
@@ -50,6 +52,7 @@ Either<RestfulFailure, String> validateSearchType(dynamic value) {
             parameter: 'Invalid Type', failedValue: 'No Type Provided'));
   } else {
     return left(RestfulFailure.searchParameterFailure(
-        parameter: 'Invalid Type', failedValue: value));
+        parameter: 'Invalid Type',
+        failedValue: value ?? 'value was null' ?? 'value was null'));
   }
 }

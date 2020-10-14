@@ -5,8 +5,6 @@ import 'package:fhir_at_rest/enums/enums.dart';
 import '../../failures/restful_failure.dart';
 import 'search_objects.dart';
 
-/// Todo: add :text modifier
-
 class SearchString extends SearchObject<String> {
   factory SearchString({String string, bool missing, StringModifier modifier}) {
     return SearchString._(

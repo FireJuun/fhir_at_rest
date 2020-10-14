@@ -565,5 +565,44 @@ void main() {
         'http://hapi.fhir.org/baseR4/Observation?_format=application/fhir+json&value-quantity=0.0054|http://unitsofmeasure.org|g',
       );
     });
+
+    test('Observation search by reference, using url', () async {
+      final request = SearchRequest.r4(
+        base: Uri.parse('http://hapi.fhir.org/baseR4'),
+        type: R4Types.observation,
+        parameters: ObservationSearch(
+          subject: [
+            SearchReference(
+              url: FhirUri('Patient/123'),
+            ),
+          ],
+        ),
+      );
+      final response = await request.request();
+      expect(
+        response.fold((l) => l.errorMessage(), (r) => r),
+        'http://hapi.fhir.org/baseR4/Observation?_format=application/fhir+json&subject=Patient/123',
+      );
+    });
+
+    test('Observation search by reference, using type and ID', () async {
+      final request = SearchRequest.r4(
+        base: Uri.parse('http://hapi.fhir.org/baseR4'),
+        type: R4Types.observation,
+        parameters: ObservationSearch(
+          subject: [
+            SearchReference(
+              type: R4Types.patient,
+              id: Id('123'),
+            ),
+          ],
+        ),
+      );
+      final response = await request.request();
+      expect(
+        response.fold((l) => l.errorMessage(), (r) => r),
+        'http://hapi.fhir.org/baseR4/Observation?_format=application/fhir+json&subject=Patient/123',
+      );
+    });
   });
 }

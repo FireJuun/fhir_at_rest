@@ -7,61 +7,61 @@ abstract class RestfulFailure<T> with _$RestfulFailure<T> {
   const RestfulFailure._();
   const factory RestfulFailure.searchStringTest({
     String searchString,
-  }) = _SearchStringTest;
+  }) = SearchStringTest;
   const factory RestfulFailure.httpFailure({
     int statusCode,
     String errorType,
     T failedValue,
-  }) = _HttpFailure<T>;
+  }) = HttpFailure<T>;
   const factory RestfulFailure.unknownFailure({
     @required T failedValue,
-  }) = _UnknownFailure<T>;
+  }) = UnknownFailure<T>;
   const factory RestfulFailure.noInternet({
     @required T failedValue,
-  }) = _NoInternet<T>;
+  }) = NoInternet<T>;
   const factory RestfulFailure.noType({
     @required T failedValue,
-  }) = _NoType<T>;
+  }) = NoType<T>;
   const factory RestfulFailure.noId({
     @required T failedValue,
-  }) = _NoId<T>;
+  }) = NoId<T>;
   const factory RestfulFailure.noVid({
     @required T failedValue,
-  }) = _NoVid<T>;
+  }) = NoVid<T>;
   const factory RestfulFailure.idDoesNotMatchResource({
     @required T failedValue,
-  }) = _IdDoesNotMatchResource<T>;
+  }) = IdDoesNotMatchResource<T>;
   const factory RestfulFailure.noBundle({
     @required T failedValue,
     @required String batchOrTransaction,
-  }) = _NoBundle<T>;
+  }) = NoBundle<T>;
   const factory RestfulFailure.notABatchBundle({
     @required T failedValue,
-  }) = _NotABatchBundle<T>;
+  }) = NotABatchBundle<T>;
   const factory RestfulFailure.notATransactionBundle({
     @required T failedValue,
-  }) = _NotATransactionBundle<T>;
+  }) = NotATransactionBundle<T>;
   const factory RestfulFailure.missingEntryRequest({
     @required T failedValue,
-  }) = _MissingEntryRequest<T>;
+  }) = MissingEntryRequest<T>;
   const factory RestfulFailure.missingRequestMethod({
     @required T failedValue,
-  }) = _MissingRequestMethod<T>;
+  }) = MissingRequestMethod<T>;
   const factory RestfulFailure.primitiveFailure({
     @required String parameter,
     @required T failedValue,
-  }) = _PrimitiveFailure<T>;
+  }) = PrimitiveFailure<T>;
   const factory RestfulFailure.searchParameterFailure({
     @required String parameter,
     @required T failedValue,
-  }) = _SearchParameterFailure<T>;
+  }) = SearchParameterFailure<T>;
   const factory RestfulFailure.emptySearchParameters({
     @required String parameter,
-  }) = _EmptySearchParameters;
+  }) = EmptySearchParameters;
   const factory RestfulFailure.parameterTypeNotResourceType({
     @required String resourceType,
     @required T type,
-  }) = _ParameterTypeNotResourceType<T>;
+  }) = ParameterTypeNotResourceType<T>;
 
   String errorMessage() => map(
         searchStringTest: (f) => f.searchString,

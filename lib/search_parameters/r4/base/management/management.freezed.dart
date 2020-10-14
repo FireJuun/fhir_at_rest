@@ -591,7 +591,7 @@ class _$EncounterSearchTearOff {
       @JsonKey(name: 'based-on')
           List<SearchReference> basedOn,
       @JsonKey(name: 'class')
-          List<SearchToken> classs,
+          List<SearchToken> class_,
       List<SearchReference> diagnosis,
       @JsonKey(name: 'episode-of-care')
           List<SearchReference> episodeOfcare,
@@ -631,7 +631,7 @@ class _$EncounterSearchTearOff {
       account: account,
       appointment: appointment,
       basedOn: basedOn,
-      classs: classs,
+      class_: class_,
       diagnosis: diagnosis,
       episodeOfcare: episodeOfcare,
       length: length,
@@ -680,7 +680,7 @@ mixin _$EncounterSearch {
   @JsonKey(name: 'based-on')
   List<SearchReference> get basedOn;
   @JsonKey(name: 'class')
-  List<SearchToken> get classs;
+  List<SearchToken> get class_;
   List<SearchReference> get diagnosis;
   @JsonKey(name: 'episode-of-care')
   List<SearchReference> get episodeOfcare;
@@ -732,7 +732,7 @@ abstract class $EncounterSearchCopyWith<$Res> {
       @JsonKey(name: 'based-on')
           List<SearchReference> basedOn,
       @JsonKey(name: 'class')
-          List<SearchToken> classs,
+          List<SearchToken> class_,
       List<SearchReference> diagnosis,
       @JsonKey(name: 'episode-of-care')
           List<SearchReference> episodeOfcare,
@@ -784,7 +784,7 @@ class _$EncounterSearchCopyWithImpl<$Res>
     Object account = freezed,
     Object appointment = freezed,
     Object basedOn = freezed,
-    Object classs = freezed,
+    Object class_ = freezed,
     Object diagnosis = freezed,
     Object episodeOfcare = freezed,
     Object length = freezed,
@@ -840,7 +840,7 @@ class _$EncounterSearchCopyWithImpl<$Res>
       basedOn: basedOn == freezed
           ? _value.basedOn
           : basedOn as List<SearchReference>,
-      classs: classs == freezed ? _value.classs : classs as List<SearchToken>,
+      class_: class_ == freezed ? _value.class_ : class_ as List<SearchToken>,
       diagnosis: diagnosis == freezed
           ? _value.diagnosis
           : diagnosis as List<SearchReference>,
@@ -911,7 +911,7 @@ abstract class _$EncounterSearchCopyWith<$Res>
       @JsonKey(name: 'based-on')
           List<SearchReference> basedOn,
       @JsonKey(name: 'class')
-          List<SearchToken> classs,
+          List<SearchToken> class_,
       List<SearchReference> diagnosis,
       @JsonKey(name: 'episode-of-care')
           List<SearchReference> episodeOfcare,
@@ -965,7 +965,7 @@ class __$EncounterSearchCopyWithImpl<$Res>
     Object account = freezed,
     Object appointment = freezed,
     Object basedOn = freezed,
-    Object classs = freezed,
+    Object class_ = freezed,
     Object diagnosis = freezed,
     Object episodeOfcare = freezed,
     Object length = freezed,
@@ -1021,7 +1021,7 @@ class __$EncounterSearchCopyWithImpl<$Res>
       basedOn: basedOn == freezed
           ? _value.basedOn
           : basedOn as List<SearchReference>,
-      classs: classs == freezed ? _value.classs : classs as List<SearchToken>,
+      class_: class_ == freezed ? _value.class_ : class_ as List<SearchToken>,
       diagnosis: diagnosis == freezed
           ? _value.diagnosis
           : diagnosis as List<SearchReference>,
@@ -1087,7 +1087,7 @@ class _$_EncounterSearch extends _EncounterSearch {
       this.account,
       this.appointment,
       @JsonKey(name: 'based-on') this.basedOn,
-      @JsonKey(name: 'class') this.classs,
+      @JsonKey(name: 'class') this.class_,
       this.diagnosis,
       @JsonKey(name: 'episode-of-care') this.episodeOfcare,
       this.length,
@@ -1142,7 +1142,7 @@ class _$_EncounterSearch extends _EncounterSearch {
   final List<SearchReference> basedOn;
   @override
   @JsonKey(name: 'class')
-  final List<SearchToken> classs;
+  final List<SearchToken> class_;
   @override
   final List<SearchReference> diagnosis;
   @override
@@ -1184,7 +1184,7 @@ class _$_EncounterSearch extends _EncounterSearch {
 
   @override
   String toString() {
-    return 'EncounterSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, date: $date, identifier: $identifier, patient: $patient, type: $type, account: $account, appointment: $appointment, basedOn: $basedOn, classs: $classs, diagnosis: $diagnosis, episodeOfcare: $episodeOfcare, length: $length, location: $location, locationPeriod: $locationPeriod, partOf: $partOf, participant: $participant, participantType: $participantType, practitioner: $practitioner, reasonCode: $reasonCode, reasonReference: $reasonReference, serviceProvider: $serviceProvider, specialArrangement: $specialArrangement, status: $status, subject: $subject)';
+    return 'EncounterSearch(searchId: $searchId, searchLastUpdated: $searchLastUpdated, searchTag: $searchTag, searchProfile: $searchProfile, searchSecurity: $searchSecurity, searchText: $searchText, searchContent: $searchContent, searchList: $searchList, date: $date, identifier: $identifier, patient: $patient, type: $type, account: $account, appointment: $appointment, basedOn: $basedOn, class_: $class_, diagnosis: $diagnosis, episodeOfcare: $episodeOfcare, length: $length, location: $location, locationPeriod: $locationPeriod, partOf: $partOf, participant: $participant, participantType: $participantType, practitioner: $practitioner, reasonCode: $reasonCode, reasonReference: $reasonReference, serviceProvider: $serviceProvider, specialArrangement: $specialArrangement, status: $status, subject: $subject)';
   }
 
   @override
@@ -1234,8 +1234,8 @@ class _$_EncounterSearch extends _EncounterSearch {
             (identical(other.basedOn, basedOn) ||
                 const DeepCollectionEquality()
                     .equals(other.basedOn, basedOn)) &&
-            (identical(other.classs, classs) ||
-                const DeepCollectionEquality().equals(other.classs, classs)) &&
+            (identical(other.class_, class_) ||
+                const DeepCollectionEquality().equals(other.class_, class_)) &&
             (identical(other.diagnosis, diagnosis) ||
                 const DeepCollectionEquality()
                     .equals(other.diagnosis, diagnosis)) &&
@@ -1285,7 +1285,7 @@ class _$_EncounterSearch extends _EncounterSearch {
       const DeepCollectionEquality().hash(account) ^
       const DeepCollectionEquality().hash(appointment) ^
       const DeepCollectionEquality().hash(basedOn) ^
-      const DeepCollectionEquality().hash(classs) ^
+      const DeepCollectionEquality().hash(class_) ^
       const DeepCollectionEquality().hash(diagnosis) ^
       const DeepCollectionEquality().hash(episodeOfcare) ^
       const DeepCollectionEquality().hash(length) ^
@@ -1332,7 +1332,7 @@ abstract class _EncounterSearch extends EncounterSearch {
       @JsonKey(name: 'based-on')
           List<SearchReference> basedOn,
       @JsonKey(name: 'class')
-          List<SearchToken> classs,
+          List<SearchToken> class_,
       List<SearchReference> diagnosis,
       @JsonKey(name: 'episode-of-care')
           List<SearchReference> episodeOfcare,
@@ -1394,7 +1394,7 @@ abstract class _EncounterSearch extends EncounterSearch {
   List<SearchReference> get basedOn;
   @override
   @JsonKey(name: 'class')
-  List<SearchToken> get classs;
+  List<SearchToken> get class_;
   @override
   List<SearchReference> get diagnosis;
   @override

@@ -2,7 +2,7 @@ import '../enums/enums.dart';
 import '../resource_types/resource_types.dart';
 
 String enumToString<T>(T enumValue) {
-  switch (T) {
+  switch (enumValue.runtimeType) {
     case Compartment:
       return CompartmentEnumMap[enumValue];
     case Summary:
@@ -18,7 +18,7 @@ String enumToString<T>(T enumValue) {
     case Mode:
       return ModeEnumMap[enumValue];
     default:
-      return '';
+      return enumValue.toString();
   }
 }
 

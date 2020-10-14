@@ -2,7 +2,7 @@
 
 ## More FHIR functionality in Flutter
 
-This project builds upon work done in the basic FHIR package: https://github.com/Dokotela/fhir. It is designed to allow easier RESTful requests to FHIR APIs. Most of the basic requests are described on the [RESTful API](https://www.hl7.org/fhir/http.html) page of [HL7 FHIR](http://hl7.org/fhir/), or on the page for [Search parameters](https://www.hl7.org/fhir/search.html).
+This project builds upon work done in the basic FHIR package: https://github.com/Dokotela/fhir. It is designed to allow easier RESTful requests to FHIR APIs. Most of the basic requests are described on the [RESTful API](https://www.hl7.org/fhir/http.html) page of [HL7 FHIR](http://hl7.org/fhir/), or on the page for [Search parameters](https://www.hl7.org/fhir/search.html). Not all search parameters are yet implemented.
 
 
 ## It's not complicated, but it is detailed
@@ -260,7 +260,10 @@ http://hapi.fhir.org/baseR4/Observation/12345/_history&_format=application/fhir+
 ```
 ### HEAD - same as get requests, but I haven't implemented them. Not sure I will.
 
-## Search - ToDo, Variant Search - ToDo
+#### ToDo: Variant Search
+
+## Search
+
 Searching is challenging. I've tried to detail it by showing examples how you would perform all of the searches listed on the [HL7 page](https://www.hl7.org/fhir/search.html). Note - all searches, like above requests, will be of formatted as fhir+json. For each type of resource there are some common fields that can be searched on. ```_content, _id, _lastUpdated, _profile, _query, _security, _source, _tag```. 
 
 ToDo: text/filter
@@ -512,6 +515,9 @@ Result:
 GET http://hapi.fhir.org/baseR4/Patient?_format=application/fhir+json&identifier:of-type=http://terminology.hl7.org/CodeSystem/v2-0203|MR|446053
 ```
 Please note that for the prefix ```:of-type``` it requires ALL 3 parameters, a system, a code and a value, or else it will return a failure.
+
+### Searching Mime Types ToDo: not sure when I'll ever use this, I'll get around to it eventually
+
 #### *Quantity*
 For quantity you're allowed to define a prefix, number, system and code. Sysem and code are similar to Token above, except that if you put a system, you also need a code, but otherwise both are optional. So you could just put  a number (```5.4```), you could put a number and a code (```5.4||mg```) or a number, system and a code (```5.4|http://unitsofmeasure.org|mg```). Putting them all together to search for all the observations where the value of is about 5.4 mg where mg is understood as a UCUM unit
 ```
@@ -536,4 +542,41 @@ Result:
 GET http://hapi.fhir.org/baseR4/Observation?_format=application/fhir+json&value-quantity=ap5.4|http://unitsofmeasure.org|mg
 ```
 #### *Reference*
-A reference takes an id, a type and id, or a url. 
+A reference takes an id, a type and id, or a url. Using just a url looks like this:
+```
+final request = SearchRequest.r4(
+  base: Uri.parse('http://hapi.fhir.org/baseR4'),
+  type: R4Types.observation,
+  parameters: ObservationSearch(
+    subject: [
+      SearchReference(
+        url: FhirUri('Patient/123'),
+      ),
+    ],
+  ),
+);
+final response = await request.request();
+```
+While using a type and id looks like this:
+```
+final request = SearchRequest.r4(
+  base: Uri.parse('http://hapi.fhir.org/baseR4'),
+  type: R4Types.observation,
+  parameters: ObservationSearch(
+    subject: [
+      SearchReference(
+        type: R4Types.patient,
+        id: Id('123'),
+      ),
+    ],
+  ),
+);
+final response = await request.request();
+```
+However, the result is the same:
+```
+GET http://hapi.fhir.org/baseR4/Observation?_format=application/fhir+json&subject=Patient/123
+```
+#### ToDo: References and Versions
+
+#### ToDo: Searching Hierarchies
