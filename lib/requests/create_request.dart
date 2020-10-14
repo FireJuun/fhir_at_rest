@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:fhir_at_rest/search_parameters/search_parameters.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import 'package:fhir/dstu2.dart' as dstu2;
@@ -44,7 +45,8 @@ abstract class CreateRequest with _$CreateRequest {
     @Default(Summary.none) Summary summary,
   }) = _CreateRequestR5;
 
-  Future<Either<RestfulFailure, dynamic>> request(dynamic resource) async {
+  Future<Either<RestfulFailure, dynamic>> request(
+      {@required dynamic resource, dynamic search}) async {
     var thisRequest = map(
       dstu2: (req) => '$base/${enumToString(req.type)}',
       stu3: (req) => '$base/${enumToString(req.type)}',
@@ -55,6 +57,18 @@ abstract class CreateRequest with _$CreateRequest {
     thisRequest += '?_format=application/fhir+json'
         '${pretty ? "&_pretty=$pretty" : ""}'
         '${summary != Summary.none ? "&_summary=${enumToString(summary)}" : ""}';
+
+    if (search != null) {
+      if (search is Dstu2SearchParameters && this is! _CreateRequestDstu2 ||
+          search is Stu3SearchParameters && this is! _CreateRequestStu3 ||
+          search is R4SearchParameters && this is! _CreateRequestR4 ||
+          search is R5SearchParameters && this is! _CreateRequestR5) {
+        return left(RestfulFailure.parameterTypeNotResourceType(
+            resourceType: resource.resourceType, type: search.runtimeType));
+      } else {
+        thisRequest += search.searchString();
+      }
+    }
 
     final result = await makeRequest(
         type: RestfulRequest.post_,

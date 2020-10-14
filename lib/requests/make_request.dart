@@ -16,7 +16,8 @@ Future<Either<RestfulFailure, Map<String, dynamic>>> makeRequest({
   Response result;
 
   // for testing purposes
-  // return left(RestfulFailure.searchStringTest(searchString: thisRequest));
+  return left(RestfulFailure.searchStringTest(searchString: thisRequest));
+
   try {
     switch (type) {
       case RestfulRequest.get_:

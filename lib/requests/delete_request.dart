@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:fhir_at_rest/search_parameters/search_parameters.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:fhir/primitive_types/id.dart';
 
@@ -49,7 +50,7 @@ abstract class DeleteRequest with _$DeleteRequest {
     @Default(Summary.none) Summary summary,
   }) = _DeleteRequestR5;
 
-  Future<Either<RestfulFailure, dynamic>> request() async {
+  Future<Either<RestfulFailure, dynamic>> request({dynamic search}) async {
     var thisRequest = map(
       dstu2: (req) => '$base/${enumToString(req.type)}/${req.id.toString()}',
       stu3: (req) => '$base/${enumToString(req.type)}/${req.id.toString()}',
@@ -60,6 +61,26 @@ abstract class DeleteRequest with _$DeleteRequest {
     thisRequest += '?_format=application/fhir+json'
         '${pretty ? "&_pretty=$pretty" : ""}'
         '${summary != Summary.none ? "&_summary=${enumToString(summary)}" : ""}';
+
+    if (search != null) {
+      if (search is Dstu2SearchParameters && this is! _DeleteRequestDstu2 ||
+          search is Stu3SearchParameters && this is! _DeleteRequestStu3 ||
+          search is R4SearchParameters && this is! _DeleteRequestR4 ||
+          search is R5SearchParameters && this is! _DeleteRequestR5) {
+        return left(RestfulFailure.parameterTypeNotResourceType(
+            resourceType: enumToString(
+              map(
+                dstu2: (m) => enumToString(m.type),
+                stu3: (m) => enumToString(m.type),
+                r4: (m) => enumToString(m.type),
+                r5: (m) => enumToString(m.type),
+              ),
+            ),
+            type: search.runtimeType));
+      } else {
+        thisRequest += search.searchString();
+      }
+    }
 
     final result = await makeRequest(
       type: RestfulRequest.delete_,

@@ -210,7 +210,7 @@ void main() {
         id: Id('12345'),
       );
       final patientToUpdate = Patient(resourceType: 'Patient', id: Id('12345'));
-      final makeReq4 = await req4.request(patientToUpdate);
+      final makeReq4 = await req4.request(resource: patientToUpdate);
       expect(makeReq4.fold((l) => l.errorMessage(), (r) => r),
           'http://hapi.fhir.org/baseR4/Patient/12345?_format=application/fhir+json');
     });
@@ -222,7 +222,7 @@ void main() {
         id: Id('12345'),
       );
       final patientToPatch = Patient(resourceType: 'Patient', id: Id('12345'));
-      final makeReq5 = await req5.request(patientToPatch);
+      final makeReq5 = await req5.request(resource: patientToPatch);
       expect(makeReq5.fold((l) => l.errorMessage(), (r) => r),
           'http://hapi.fhir.org/baseR4/Patient/12345?_format=application/fhir+json');
     });
@@ -244,7 +244,7 @@ void main() {
         type: R4Types.patient,
       );
       final patientToCreate = Patient(resourceType: 'Patient', id: Id('12345'));
-      final makeReq7 = await req7.request(patientToCreate);
+      final makeReq7 = await req7.request(resource: patientToCreate);
       expect(makeReq7.fold((l) => l.errorMessage(), (r) => r),
           'http://hapi.fhir.org/baseR4/Patient?_format=application/fhir+json');
     });

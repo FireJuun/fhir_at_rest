@@ -136,6 +136,15 @@ class _$RestfulFailureTearOff {
       parameter: parameter,
     );
   }
+
+// ignore: unused_element
+  _ParameterTypeNotResourceType<T> parameterTypeNotResourceType<T>(
+      {@required String resourceType, @required T type}) {
+    return _ParameterTypeNotResourceType<T>(
+      resourceType: resourceType,
+      type: type,
+    );
+  }
 }
 
 /// @nodoc
@@ -163,6 +172,7 @@ mixin _$RestfulFailure<T> {
     @required Result primitiveFailure(String parameter, T failedValue),
     @required Result searchParameterFailure(String parameter, T failedValue),
     @required Result emptySearchParameters(String parameter),
+    @required Result parameterTypeNotResourceType(String resourceType, T type),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
@@ -182,6 +192,7 @@ mixin _$RestfulFailure<T> {
     Result primitiveFailure(String parameter, T failedValue),
     Result searchParameterFailure(String parameter, T failedValue),
     Result emptySearchParameters(String parameter),
+    Result parameterTypeNotResourceType(String resourceType, T type),
     @required Result orElse(),
   });
   @optionalTypeArgs
@@ -202,6 +213,9 @@ mixin _$RestfulFailure<T> {
     @required Result primitiveFailure(_PrimitiveFailure<T> value),
     @required Result searchParameterFailure(_SearchParameterFailure<T> value),
     @required Result emptySearchParameters(_EmptySearchParameters<T> value),
+    @required
+        Result parameterTypeNotResourceType(
+            _ParameterTypeNotResourceType<T> value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
@@ -221,6 +235,7 @@ mixin _$RestfulFailure<T> {
     Result primitiveFailure(_PrimitiveFailure<T> value),
     Result searchParameterFailure(_SearchParameterFailure<T> value),
     Result emptySearchParameters(_EmptySearchParameters<T> value),
+    Result parameterTypeNotResourceType(_ParameterTypeNotResourceType<T> value),
     @required Result orElse(),
   });
 }
@@ -323,6 +338,7 @@ class _$_SearchStringTest<T> extends _SearchStringTest<T> {
     @required Result primitiveFailure(String parameter, T failedValue),
     @required Result searchParameterFailure(String parameter, T failedValue),
     @required Result emptySearchParameters(String parameter),
+    @required Result parameterTypeNotResourceType(String resourceType, T type),
   }) {
     assert(searchStringTest != null);
     assert(httpFailure != null);
@@ -340,6 +356,7 @@ class _$_SearchStringTest<T> extends _SearchStringTest<T> {
     assert(primitiveFailure != null);
     assert(searchParameterFailure != null);
     assert(emptySearchParameters != null);
+    assert(parameterTypeNotResourceType != null);
     return searchStringTest(searchString);
   }
 
@@ -362,6 +379,7 @@ class _$_SearchStringTest<T> extends _SearchStringTest<T> {
     Result primitiveFailure(String parameter, T failedValue),
     Result searchParameterFailure(String parameter, T failedValue),
     Result emptySearchParameters(String parameter),
+    Result parameterTypeNotResourceType(String resourceType, T type),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -390,6 +408,9 @@ class _$_SearchStringTest<T> extends _SearchStringTest<T> {
     @required Result primitiveFailure(_PrimitiveFailure<T> value),
     @required Result searchParameterFailure(_SearchParameterFailure<T> value),
     @required Result emptySearchParameters(_EmptySearchParameters<T> value),
+    @required
+        Result parameterTypeNotResourceType(
+            _ParameterTypeNotResourceType<T> value),
   }) {
     assert(searchStringTest != null);
     assert(httpFailure != null);
@@ -407,6 +428,7 @@ class _$_SearchStringTest<T> extends _SearchStringTest<T> {
     assert(primitiveFailure != null);
     assert(searchParameterFailure != null);
     assert(emptySearchParameters != null);
+    assert(parameterTypeNotResourceType != null);
     return searchStringTest(this);
   }
 
@@ -429,6 +451,7 @@ class _$_SearchStringTest<T> extends _SearchStringTest<T> {
     Result primitiveFailure(_PrimitiveFailure<T> value),
     Result searchParameterFailure(_SearchParameterFailure<T> value),
     Result emptySearchParameters(_EmptySearchParameters<T> value),
+    Result parameterTypeNotResourceType(_ParameterTypeNotResourceType<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -545,6 +568,7 @@ class _$_HttpFailure<T> extends _HttpFailure<T> {
     @required Result primitiveFailure(String parameter, T failedValue),
     @required Result searchParameterFailure(String parameter, T failedValue),
     @required Result emptySearchParameters(String parameter),
+    @required Result parameterTypeNotResourceType(String resourceType, T type),
   }) {
     assert(searchStringTest != null);
     assert(httpFailure != null);
@@ -562,6 +586,7 @@ class _$_HttpFailure<T> extends _HttpFailure<T> {
     assert(primitiveFailure != null);
     assert(searchParameterFailure != null);
     assert(emptySearchParameters != null);
+    assert(parameterTypeNotResourceType != null);
     return httpFailure(statusCode, errorType, failedValue);
   }
 
@@ -584,6 +609,7 @@ class _$_HttpFailure<T> extends _HttpFailure<T> {
     Result primitiveFailure(String parameter, T failedValue),
     Result searchParameterFailure(String parameter, T failedValue),
     Result emptySearchParameters(String parameter),
+    Result parameterTypeNotResourceType(String resourceType, T type),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -612,6 +638,9 @@ class _$_HttpFailure<T> extends _HttpFailure<T> {
     @required Result primitiveFailure(_PrimitiveFailure<T> value),
     @required Result searchParameterFailure(_SearchParameterFailure<T> value),
     @required Result emptySearchParameters(_EmptySearchParameters<T> value),
+    @required
+        Result parameterTypeNotResourceType(
+            _ParameterTypeNotResourceType<T> value),
   }) {
     assert(searchStringTest != null);
     assert(httpFailure != null);
@@ -629,6 +658,7 @@ class _$_HttpFailure<T> extends _HttpFailure<T> {
     assert(primitiveFailure != null);
     assert(searchParameterFailure != null);
     assert(emptySearchParameters != null);
+    assert(parameterTypeNotResourceType != null);
     return httpFailure(this);
   }
 
@@ -651,6 +681,7 @@ class _$_HttpFailure<T> extends _HttpFailure<T> {
     Result primitiveFailure(_PrimitiveFailure<T> value),
     Result searchParameterFailure(_SearchParameterFailure<T> value),
     Result emptySearchParameters(_EmptySearchParameters<T> value),
+    Result parameterTypeNotResourceType(_ParameterTypeNotResourceType<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -753,6 +784,7 @@ class _$_UnknownFailure<T> extends _UnknownFailure<T> {
     @required Result primitiveFailure(String parameter, T failedValue),
     @required Result searchParameterFailure(String parameter, T failedValue),
     @required Result emptySearchParameters(String parameter),
+    @required Result parameterTypeNotResourceType(String resourceType, T type),
   }) {
     assert(searchStringTest != null);
     assert(httpFailure != null);
@@ -770,6 +802,7 @@ class _$_UnknownFailure<T> extends _UnknownFailure<T> {
     assert(primitiveFailure != null);
     assert(searchParameterFailure != null);
     assert(emptySearchParameters != null);
+    assert(parameterTypeNotResourceType != null);
     return unknownFailure(failedValue);
   }
 
@@ -792,6 +825,7 @@ class _$_UnknownFailure<T> extends _UnknownFailure<T> {
     Result primitiveFailure(String parameter, T failedValue),
     Result searchParameterFailure(String parameter, T failedValue),
     Result emptySearchParameters(String parameter),
+    Result parameterTypeNotResourceType(String resourceType, T type),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -820,6 +854,9 @@ class _$_UnknownFailure<T> extends _UnknownFailure<T> {
     @required Result primitiveFailure(_PrimitiveFailure<T> value),
     @required Result searchParameterFailure(_SearchParameterFailure<T> value),
     @required Result emptySearchParameters(_EmptySearchParameters<T> value),
+    @required
+        Result parameterTypeNotResourceType(
+            _ParameterTypeNotResourceType<T> value),
   }) {
     assert(searchStringTest != null);
     assert(httpFailure != null);
@@ -837,6 +874,7 @@ class _$_UnknownFailure<T> extends _UnknownFailure<T> {
     assert(primitiveFailure != null);
     assert(searchParameterFailure != null);
     assert(emptySearchParameters != null);
+    assert(parameterTypeNotResourceType != null);
     return unknownFailure(this);
   }
 
@@ -859,6 +897,7 @@ class _$_UnknownFailure<T> extends _UnknownFailure<T> {
     Result primitiveFailure(_PrimitiveFailure<T> value),
     Result searchParameterFailure(_SearchParameterFailure<T> value),
     Result emptySearchParameters(_EmptySearchParameters<T> value),
+    Result parameterTypeNotResourceType(_ParameterTypeNotResourceType<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -959,6 +998,7 @@ class _$_NoInternet<T> extends _NoInternet<T> {
     @required Result primitiveFailure(String parameter, T failedValue),
     @required Result searchParameterFailure(String parameter, T failedValue),
     @required Result emptySearchParameters(String parameter),
+    @required Result parameterTypeNotResourceType(String resourceType, T type),
   }) {
     assert(searchStringTest != null);
     assert(httpFailure != null);
@@ -976,6 +1016,7 @@ class _$_NoInternet<T> extends _NoInternet<T> {
     assert(primitiveFailure != null);
     assert(searchParameterFailure != null);
     assert(emptySearchParameters != null);
+    assert(parameterTypeNotResourceType != null);
     return noInternet(failedValue);
   }
 
@@ -998,6 +1039,7 @@ class _$_NoInternet<T> extends _NoInternet<T> {
     Result primitiveFailure(String parameter, T failedValue),
     Result searchParameterFailure(String parameter, T failedValue),
     Result emptySearchParameters(String parameter),
+    Result parameterTypeNotResourceType(String resourceType, T type),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1026,6 +1068,9 @@ class _$_NoInternet<T> extends _NoInternet<T> {
     @required Result primitiveFailure(_PrimitiveFailure<T> value),
     @required Result searchParameterFailure(_SearchParameterFailure<T> value),
     @required Result emptySearchParameters(_EmptySearchParameters<T> value),
+    @required
+        Result parameterTypeNotResourceType(
+            _ParameterTypeNotResourceType<T> value),
   }) {
     assert(searchStringTest != null);
     assert(httpFailure != null);
@@ -1043,6 +1088,7 @@ class _$_NoInternet<T> extends _NoInternet<T> {
     assert(primitiveFailure != null);
     assert(searchParameterFailure != null);
     assert(emptySearchParameters != null);
+    assert(parameterTypeNotResourceType != null);
     return noInternet(this);
   }
 
@@ -1065,6 +1111,7 @@ class _$_NoInternet<T> extends _NoInternet<T> {
     Result primitiveFailure(_PrimitiveFailure<T> value),
     Result searchParameterFailure(_SearchParameterFailure<T> value),
     Result emptySearchParameters(_EmptySearchParameters<T> value),
+    Result parameterTypeNotResourceType(_ParameterTypeNotResourceType<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1162,6 +1209,7 @@ class _$_NoType<T> extends _NoType<T> {
     @required Result primitiveFailure(String parameter, T failedValue),
     @required Result searchParameterFailure(String parameter, T failedValue),
     @required Result emptySearchParameters(String parameter),
+    @required Result parameterTypeNotResourceType(String resourceType, T type),
   }) {
     assert(searchStringTest != null);
     assert(httpFailure != null);
@@ -1179,6 +1227,7 @@ class _$_NoType<T> extends _NoType<T> {
     assert(primitiveFailure != null);
     assert(searchParameterFailure != null);
     assert(emptySearchParameters != null);
+    assert(parameterTypeNotResourceType != null);
     return noType(failedValue);
   }
 
@@ -1201,6 +1250,7 @@ class _$_NoType<T> extends _NoType<T> {
     Result primitiveFailure(String parameter, T failedValue),
     Result searchParameterFailure(String parameter, T failedValue),
     Result emptySearchParameters(String parameter),
+    Result parameterTypeNotResourceType(String resourceType, T type),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1229,6 +1279,9 @@ class _$_NoType<T> extends _NoType<T> {
     @required Result primitiveFailure(_PrimitiveFailure<T> value),
     @required Result searchParameterFailure(_SearchParameterFailure<T> value),
     @required Result emptySearchParameters(_EmptySearchParameters<T> value),
+    @required
+        Result parameterTypeNotResourceType(
+            _ParameterTypeNotResourceType<T> value),
   }) {
     assert(searchStringTest != null);
     assert(httpFailure != null);
@@ -1246,6 +1299,7 @@ class _$_NoType<T> extends _NoType<T> {
     assert(primitiveFailure != null);
     assert(searchParameterFailure != null);
     assert(emptySearchParameters != null);
+    assert(parameterTypeNotResourceType != null);
     return noType(this);
   }
 
@@ -1268,6 +1322,7 @@ class _$_NoType<T> extends _NoType<T> {
     Result primitiveFailure(_PrimitiveFailure<T> value),
     Result searchParameterFailure(_SearchParameterFailure<T> value),
     Result emptySearchParameters(_EmptySearchParameters<T> value),
+    Result parameterTypeNotResourceType(_ParameterTypeNotResourceType<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1364,6 +1419,7 @@ class _$_NoId<T> extends _NoId<T> {
     @required Result primitiveFailure(String parameter, T failedValue),
     @required Result searchParameterFailure(String parameter, T failedValue),
     @required Result emptySearchParameters(String parameter),
+    @required Result parameterTypeNotResourceType(String resourceType, T type),
   }) {
     assert(searchStringTest != null);
     assert(httpFailure != null);
@@ -1381,6 +1437,7 @@ class _$_NoId<T> extends _NoId<T> {
     assert(primitiveFailure != null);
     assert(searchParameterFailure != null);
     assert(emptySearchParameters != null);
+    assert(parameterTypeNotResourceType != null);
     return noId(failedValue);
   }
 
@@ -1403,6 +1460,7 @@ class _$_NoId<T> extends _NoId<T> {
     Result primitiveFailure(String parameter, T failedValue),
     Result searchParameterFailure(String parameter, T failedValue),
     Result emptySearchParameters(String parameter),
+    Result parameterTypeNotResourceType(String resourceType, T type),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1431,6 +1489,9 @@ class _$_NoId<T> extends _NoId<T> {
     @required Result primitiveFailure(_PrimitiveFailure<T> value),
     @required Result searchParameterFailure(_SearchParameterFailure<T> value),
     @required Result emptySearchParameters(_EmptySearchParameters<T> value),
+    @required
+        Result parameterTypeNotResourceType(
+            _ParameterTypeNotResourceType<T> value),
   }) {
     assert(searchStringTest != null);
     assert(httpFailure != null);
@@ -1448,6 +1509,7 @@ class _$_NoId<T> extends _NoId<T> {
     assert(primitiveFailure != null);
     assert(searchParameterFailure != null);
     assert(emptySearchParameters != null);
+    assert(parameterTypeNotResourceType != null);
     return noId(this);
   }
 
@@ -1470,6 +1532,7 @@ class _$_NoId<T> extends _NoId<T> {
     Result primitiveFailure(_PrimitiveFailure<T> value),
     Result searchParameterFailure(_SearchParameterFailure<T> value),
     Result emptySearchParameters(_EmptySearchParameters<T> value),
+    Result parameterTypeNotResourceType(_ParameterTypeNotResourceType<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1567,6 +1630,7 @@ class _$_NoVid<T> extends _NoVid<T> {
     @required Result primitiveFailure(String parameter, T failedValue),
     @required Result searchParameterFailure(String parameter, T failedValue),
     @required Result emptySearchParameters(String parameter),
+    @required Result parameterTypeNotResourceType(String resourceType, T type),
   }) {
     assert(searchStringTest != null);
     assert(httpFailure != null);
@@ -1584,6 +1648,7 @@ class _$_NoVid<T> extends _NoVid<T> {
     assert(primitiveFailure != null);
     assert(searchParameterFailure != null);
     assert(emptySearchParameters != null);
+    assert(parameterTypeNotResourceType != null);
     return noVid(failedValue);
   }
 
@@ -1606,6 +1671,7 @@ class _$_NoVid<T> extends _NoVid<T> {
     Result primitiveFailure(String parameter, T failedValue),
     Result searchParameterFailure(String parameter, T failedValue),
     Result emptySearchParameters(String parameter),
+    Result parameterTypeNotResourceType(String resourceType, T type),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1634,6 +1700,9 @@ class _$_NoVid<T> extends _NoVid<T> {
     @required Result primitiveFailure(_PrimitiveFailure<T> value),
     @required Result searchParameterFailure(_SearchParameterFailure<T> value),
     @required Result emptySearchParameters(_EmptySearchParameters<T> value),
+    @required
+        Result parameterTypeNotResourceType(
+            _ParameterTypeNotResourceType<T> value),
   }) {
     assert(searchStringTest != null);
     assert(httpFailure != null);
@@ -1651,6 +1720,7 @@ class _$_NoVid<T> extends _NoVid<T> {
     assert(primitiveFailure != null);
     assert(searchParameterFailure != null);
     assert(emptySearchParameters != null);
+    assert(parameterTypeNotResourceType != null);
     return noVid(this);
   }
 
@@ -1673,6 +1743,7 @@ class _$_NoVid<T> extends _NoVid<T> {
     Result primitiveFailure(_PrimitiveFailure<T> value),
     Result searchParameterFailure(_SearchParameterFailure<T> value),
     Result emptySearchParameters(_EmptySearchParameters<T> value),
+    Result parameterTypeNotResourceType(_ParameterTypeNotResourceType<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1775,6 +1846,7 @@ class _$_IdDoesNotMatchResource<T> extends _IdDoesNotMatchResource<T> {
     @required Result primitiveFailure(String parameter, T failedValue),
     @required Result searchParameterFailure(String parameter, T failedValue),
     @required Result emptySearchParameters(String parameter),
+    @required Result parameterTypeNotResourceType(String resourceType, T type),
   }) {
     assert(searchStringTest != null);
     assert(httpFailure != null);
@@ -1792,6 +1864,7 @@ class _$_IdDoesNotMatchResource<T> extends _IdDoesNotMatchResource<T> {
     assert(primitiveFailure != null);
     assert(searchParameterFailure != null);
     assert(emptySearchParameters != null);
+    assert(parameterTypeNotResourceType != null);
     return idDoesNotMatchResource(failedValue);
   }
 
@@ -1814,6 +1887,7 @@ class _$_IdDoesNotMatchResource<T> extends _IdDoesNotMatchResource<T> {
     Result primitiveFailure(String parameter, T failedValue),
     Result searchParameterFailure(String parameter, T failedValue),
     Result emptySearchParameters(String parameter),
+    Result parameterTypeNotResourceType(String resourceType, T type),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1842,6 +1916,9 @@ class _$_IdDoesNotMatchResource<T> extends _IdDoesNotMatchResource<T> {
     @required Result primitiveFailure(_PrimitiveFailure<T> value),
     @required Result searchParameterFailure(_SearchParameterFailure<T> value),
     @required Result emptySearchParameters(_EmptySearchParameters<T> value),
+    @required
+        Result parameterTypeNotResourceType(
+            _ParameterTypeNotResourceType<T> value),
   }) {
     assert(searchStringTest != null);
     assert(httpFailure != null);
@@ -1859,6 +1936,7 @@ class _$_IdDoesNotMatchResource<T> extends _IdDoesNotMatchResource<T> {
     assert(primitiveFailure != null);
     assert(searchParameterFailure != null);
     assert(emptySearchParameters != null);
+    assert(parameterTypeNotResourceType != null);
     return idDoesNotMatchResource(this);
   }
 
@@ -1881,6 +1959,7 @@ class _$_IdDoesNotMatchResource<T> extends _IdDoesNotMatchResource<T> {
     Result primitiveFailure(_PrimitiveFailure<T> value),
     Result searchParameterFailure(_SearchParameterFailure<T> value),
     Result emptySearchParameters(_EmptySearchParameters<T> value),
+    Result parameterTypeNotResourceType(_ParameterTypeNotResourceType<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1994,6 +2073,7 @@ class _$_NoBundle<T> extends _NoBundle<T> {
     @required Result primitiveFailure(String parameter, T failedValue),
     @required Result searchParameterFailure(String parameter, T failedValue),
     @required Result emptySearchParameters(String parameter),
+    @required Result parameterTypeNotResourceType(String resourceType, T type),
   }) {
     assert(searchStringTest != null);
     assert(httpFailure != null);
@@ -2011,6 +2091,7 @@ class _$_NoBundle<T> extends _NoBundle<T> {
     assert(primitiveFailure != null);
     assert(searchParameterFailure != null);
     assert(emptySearchParameters != null);
+    assert(parameterTypeNotResourceType != null);
     return noBundle(failedValue, batchOrTransaction);
   }
 
@@ -2033,6 +2114,7 @@ class _$_NoBundle<T> extends _NoBundle<T> {
     Result primitiveFailure(String parameter, T failedValue),
     Result searchParameterFailure(String parameter, T failedValue),
     Result emptySearchParameters(String parameter),
+    Result parameterTypeNotResourceType(String resourceType, T type),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -2061,6 +2143,9 @@ class _$_NoBundle<T> extends _NoBundle<T> {
     @required Result primitiveFailure(_PrimitiveFailure<T> value),
     @required Result searchParameterFailure(_SearchParameterFailure<T> value),
     @required Result emptySearchParameters(_EmptySearchParameters<T> value),
+    @required
+        Result parameterTypeNotResourceType(
+            _ParameterTypeNotResourceType<T> value),
   }) {
     assert(searchStringTest != null);
     assert(httpFailure != null);
@@ -2078,6 +2163,7 @@ class _$_NoBundle<T> extends _NoBundle<T> {
     assert(primitiveFailure != null);
     assert(searchParameterFailure != null);
     assert(emptySearchParameters != null);
+    assert(parameterTypeNotResourceType != null);
     return noBundle(this);
   }
 
@@ -2100,6 +2186,7 @@ class _$_NoBundle<T> extends _NoBundle<T> {
     Result primitiveFailure(_PrimitiveFailure<T> value),
     Result searchParameterFailure(_SearchParameterFailure<T> value),
     Result emptySearchParameters(_EmptySearchParameters<T> value),
+    Result parameterTypeNotResourceType(_ParameterTypeNotResourceType<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -2202,6 +2289,7 @@ class _$_NotABatchBundle<T> extends _NotABatchBundle<T> {
     @required Result primitiveFailure(String parameter, T failedValue),
     @required Result searchParameterFailure(String parameter, T failedValue),
     @required Result emptySearchParameters(String parameter),
+    @required Result parameterTypeNotResourceType(String resourceType, T type),
   }) {
     assert(searchStringTest != null);
     assert(httpFailure != null);
@@ -2219,6 +2307,7 @@ class _$_NotABatchBundle<T> extends _NotABatchBundle<T> {
     assert(primitiveFailure != null);
     assert(searchParameterFailure != null);
     assert(emptySearchParameters != null);
+    assert(parameterTypeNotResourceType != null);
     return notABatchBundle(failedValue);
   }
 
@@ -2241,6 +2330,7 @@ class _$_NotABatchBundle<T> extends _NotABatchBundle<T> {
     Result primitiveFailure(String parameter, T failedValue),
     Result searchParameterFailure(String parameter, T failedValue),
     Result emptySearchParameters(String parameter),
+    Result parameterTypeNotResourceType(String resourceType, T type),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -2269,6 +2359,9 @@ class _$_NotABatchBundle<T> extends _NotABatchBundle<T> {
     @required Result primitiveFailure(_PrimitiveFailure<T> value),
     @required Result searchParameterFailure(_SearchParameterFailure<T> value),
     @required Result emptySearchParameters(_EmptySearchParameters<T> value),
+    @required
+        Result parameterTypeNotResourceType(
+            _ParameterTypeNotResourceType<T> value),
   }) {
     assert(searchStringTest != null);
     assert(httpFailure != null);
@@ -2286,6 +2379,7 @@ class _$_NotABatchBundle<T> extends _NotABatchBundle<T> {
     assert(primitiveFailure != null);
     assert(searchParameterFailure != null);
     assert(emptySearchParameters != null);
+    assert(parameterTypeNotResourceType != null);
     return notABatchBundle(this);
   }
 
@@ -2308,6 +2402,7 @@ class _$_NotABatchBundle<T> extends _NotABatchBundle<T> {
     Result primitiveFailure(_PrimitiveFailure<T> value),
     Result searchParameterFailure(_SearchParameterFailure<T> value),
     Result emptySearchParameters(_EmptySearchParameters<T> value),
+    Result parameterTypeNotResourceType(_ParameterTypeNotResourceType<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -2410,6 +2505,7 @@ class _$_NotATransactionBundle<T> extends _NotATransactionBundle<T> {
     @required Result primitiveFailure(String parameter, T failedValue),
     @required Result searchParameterFailure(String parameter, T failedValue),
     @required Result emptySearchParameters(String parameter),
+    @required Result parameterTypeNotResourceType(String resourceType, T type),
   }) {
     assert(searchStringTest != null);
     assert(httpFailure != null);
@@ -2427,6 +2523,7 @@ class _$_NotATransactionBundle<T> extends _NotATransactionBundle<T> {
     assert(primitiveFailure != null);
     assert(searchParameterFailure != null);
     assert(emptySearchParameters != null);
+    assert(parameterTypeNotResourceType != null);
     return notATransactionBundle(failedValue);
   }
 
@@ -2449,6 +2546,7 @@ class _$_NotATransactionBundle<T> extends _NotATransactionBundle<T> {
     Result primitiveFailure(String parameter, T failedValue),
     Result searchParameterFailure(String parameter, T failedValue),
     Result emptySearchParameters(String parameter),
+    Result parameterTypeNotResourceType(String resourceType, T type),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -2477,6 +2575,9 @@ class _$_NotATransactionBundle<T> extends _NotATransactionBundle<T> {
     @required Result primitiveFailure(_PrimitiveFailure<T> value),
     @required Result searchParameterFailure(_SearchParameterFailure<T> value),
     @required Result emptySearchParameters(_EmptySearchParameters<T> value),
+    @required
+        Result parameterTypeNotResourceType(
+            _ParameterTypeNotResourceType<T> value),
   }) {
     assert(searchStringTest != null);
     assert(httpFailure != null);
@@ -2494,6 +2595,7 @@ class _$_NotATransactionBundle<T> extends _NotATransactionBundle<T> {
     assert(primitiveFailure != null);
     assert(searchParameterFailure != null);
     assert(emptySearchParameters != null);
+    assert(parameterTypeNotResourceType != null);
     return notATransactionBundle(this);
   }
 
@@ -2516,6 +2618,7 @@ class _$_NotATransactionBundle<T> extends _NotATransactionBundle<T> {
     Result primitiveFailure(_PrimitiveFailure<T> value),
     Result searchParameterFailure(_SearchParameterFailure<T> value),
     Result emptySearchParameters(_EmptySearchParameters<T> value),
+    Result parameterTypeNotResourceType(_ParameterTypeNotResourceType<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -2617,6 +2720,7 @@ class _$_MissingEntryRequest<T> extends _MissingEntryRequest<T> {
     @required Result primitiveFailure(String parameter, T failedValue),
     @required Result searchParameterFailure(String parameter, T failedValue),
     @required Result emptySearchParameters(String parameter),
+    @required Result parameterTypeNotResourceType(String resourceType, T type),
   }) {
     assert(searchStringTest != null);
     assert(httpFailure != null);
@@ -2634,6 +2738,7 @@ class _$_MissingEntryRequest<T> extends _MissingEntryRequest<T> {
     assert(primitiveFailure != null);
     assert(searchParameterFailure != null);
     assert(emptySearchParameters != null);
+    assert(parameterTypeNotResourceType != null);
     return missingEntryRequest(failedValue);
   }
 
@@ -2656,6 +2761,7 @@ class _$_MissingEntryRequest<T> extends _MissingEntryRequest<T> {
     Result primitiveFailure(String parameter, T failedValue),
     Result searchParameterFailure(String parameter, T failedValue),
     Result emptySearchParameters(String parameter),
+    Result parameterTypeNotResourceType(String resourceType, T type),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -2684,6 +2790,9 @@ class _$_MissingEntryRequest<T> extends _MissingEntryRequest<T> {
     @required Result primitiveFailure(_PrimitiveFailure<T> value),
     @required Result searchParameterFailure(_SearchParameterFailure<T> value),
     @required Result emptySearchParameters(_EmptySearchParameters<T> value),
+    @required
+        Result parameterTypeNotResourceType(
+            _ParameterTypeNotResourceType<T> value),
   }) {
     assert(searchStringTest != null);
     assert(httpFailure != null);
@@ -2701,6 +2810,7 @@ class _$_MissingEntryRequest<T> extends _MissingEntryRequest<T> {
     assert(primitiveFailure != null);
     assert(searchParameterFailure != null);
     assert(emptySearchParameters != null);
+    assert(parameterTypeNotResourceType != null);
     return missingEntryRequest(this);
   }
 
@@ -2723,6 +2833,7 @@ class _$_MissingEntryRequest<T> extends _MissingEntryRequest<T> {
     Result primitiveFailure(_PrimitiveFailure<T> value),
     Result searchParameterFailure(_SearchParameterFailure<T> value),
     Result emptySearchParameters(_EmptySearchParameters<T> value),
+    Result parameterTypeNotResourceType(_ParameterTypeNotResourceType<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -2825,6 +2936,7 @@ class _$_MissingRequestMethod<T> extends _MissingRequestMethod<T> {
     @required Result primitiveFailure(String parameter, T failedValue),
     @required Result searchParameterFailure(String parameter, T failedValue),
     @required Result emptySearchParameters(String parameter),
+    @required Result parameterTypeNotResourceType(String resourceType, T type),
   }) {
     assert(searchStringTest != null);
     assert(httpFailure != null);
@@ -2842,6 +2954,7 @@ class _$_MissingRequestMethod<T> extends _MissingRequestMethod<T> {
     assert(primitiveFailure != null);
     assert(searchParameterFailure != null);
     assert(emptySearchParameters != null);
+    assert(parameterTypeNotResourceType != null);
     return missingRequestMethod(failedValue);
   }
 
@@ -2864,6 +2977,7 @@ class _$_MissingRequestMethod<T> extends _MissingRequestMethod<T> {
     Result primitiveFailure(String parameter, T failedValue),
     Result searchParameterFailure(String parameter, T failedValue),
     Result emptySearchParameters(String parameter),
+    Result parameterTypeNotResourceType(String resourceType, T type),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -2892,6 +3006,9 @@ class _$_MissingRequestMethod<T> extends _MissingRequestMethod<T> {
     @required Result primitiveFailure(_PrimitiveFailure<T> value),
     @required Result searchParameterFailure(_SearchParameterFailure<T> value),
     @required Result emptySearchParameters(_EmptySearchParameters<T> value),
+    @required
+        Result parameterTypeNotResourceType(
+            _ParameterTypeNotResourceType<T> value),
   }) {
     assert(searchStringTest != null);
     assert(httpFailure != null);
@@ -2909,6 +3026,7 @@ class _$_MissingRequestMethod<T> extends _MissingRequestMethod<T> {
     assert(primitiveFailure != null);
     assert(searchParameterFailure != null);
     assert(emptySearchParameters != null);
+    assert(parameterTypeNotResourceType != null);
     return missingRequestMethod(this);
   }
 
@@ -2931,6 +3049,7 @@ class _$_MissingRequestMethod<T> extends _MissingRequestMethod<T> {
     Result primitiveFailure(_PrimitiveFailure<T> value),
     Result searchParameterFailure(_SearchParameterFailure<T> value),
     Result emptySearchParameters(_EmptySearchParameters<T> value),
+    Result parameterTypeNotResourceType(_ParameterTypeNotResourceType<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -3043,6 +3162,7 @@ class _$_PrimitiveFailure<T> extends _PrimitiveFailure<T> {
     @required Result primitiveFailure(String parameter, T failedValue),
     @required Result searchParameterFailure(String parameter, T failedValue),
     @required Result emptySearchParameters(String parameter),
+    @required Result parameterTypeNotResourceType(String resourceType, T type),
   }) {
     assert(searchStringTest != null);
     assert(httpFailure != null);
@@ -3060,6 +3180,7 @@ class _$_PrimitiveFailure<T> extends _PrimitiveFailure<T> {
     assert(primitiveFailure != null);
     assert(searchParameterFailure != null);
     assert(emptySearchParameters != null);
+    assert(parameterTypeNotResourceType != null);
     return primitiveFailure(parameter, failedValue);
   }
 
@@ -3082,6 +3203,7 @@ class _$_PrimitiveFailure<T> extends _PrimitiveFailure<T> {
     Result primitiveFailure(String parameter, T failedValue),
     Result searchParameterFailure(String parameter, T failedValue),
     Result emptySearchParameters(String parameter),
+    Result parameterTypeNotResourceType(String resourceType, T type),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -3110,6 +3232,9 @@ class _$_PrimitiveFailure<T> extends _PrimitiveFailure<T> {
     @required Result primitiveFailure(_PrimitiveFailure<T> value),
     @required Result searchParameterFailure(_SearchParameterFailure<T> value),
     @required Result emptySearchParameters(_EmptySearchParameters<T> value),
+    @required
+        Result parameterTypeNotResourceType(
+            _ParameterTypeNotResourceType<T> value),
   }) {
     assert(searchStringTest != null);
     assert(httpFailure != null);
@@ -3127,6 +3252,7 @@ class _$_PrimitiveFailure<T> extends _PrimitiveFailure<T> {
     assert(primitiveFailure != null);
     assert(searchParameterFailure != null);
     assert(emptySearchParameters != null);
+    assert(parameterTypeNotResourceType != null);
     return primitiveFailure(this);
   }
 
@@ -3149,6 +3275,7 @@ class _$_PrimitiveFailure<T> extends _PrimitiveFailure<T> {
     Result primitiveFailure(_PrimitiveFailure<T> value),
     Result searchParameterFailure(_SearchParameterFailure<T> value),
     Result emptySearchParameters(_EmptySearchParameters<T> value),
+    Result parameterTypeNotResourceType(_ParameterTypeNotResourceType<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -3265,6 +3392,7 @@ class _$_SearchParameterFailure<T> extends _SearchParameterFailure<T> {
     @required Result primitiveFailure(String parameter, T failedValue),
     @required Result searchParameterFailure(String parameter, T failedValue),
     @required Result emptySearchParameters(String parameter),
+    @required Result parameterTypeNotResourceType(String resourceType, T type),
   }) {
     assert(searchStringTest != null);
     assert(httpFailure != null);
@@ -3282,6 +3410,7 @@ class _$_SearchParameterFailure<T> extends _SearchParameterFailure<T> {
     assert(primitiveFailure != null);
     assert(searchParameterFailure != null);
     assert(emptySearchParameters != null);
+    assert(parameterTypeNotResourceType != null);
     return searchParameterFailure(parameter, failedValue);
   }
 
@@ -3304,6 +3433,7 @@ class _$_SearchParameterFailure<T> extends _SearchParameterFailure<T> {
     Result primitiveFailure(String parameter, T failedValue),
     Result searchParameterFailure(String parameter, T failedValue),
     Result emptySearchParameters(String parameter),
+    Result parameterTypeNotResourceType(String resourceType, T type),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -3332,6 +3462,9 @@ class _$_SearchParameterFailure<T> extends _SearchParameterFailure<T> {
     @required Result primitiveFailure(_PrimitiveFailure<T> value),
     @required Result searchParameterFailure(_SearchParameterFailure<T> value),
     @required Result emptySearchParameters(_EmptySearchParameters<T> value),
+    @required
+        Result parameterTypeNotResourceType(
+            _ParameterTypeNotResourceType<T> value),
   }) {
     assert(searchStringTest != null);
     assert(httpFailure != null);
@@ -3349,6 +3482,7 @@ class _$_SearchParameterFailure<T> extends _SearchParameterFailure<T> {
     assert(primitiveFailure != null);
     assert(searchParameterFailure != null);
     assert(emptySearchParameters != null);
+    assert(parameterTypeNotResourceType != null);
     return searchParameterFailure(this);
   }
 
@@ -3371,6 +3505,7 @@ class _$_SearchParameterFailure<T> extends _SearchParameterFailure<T> {
     Result primitiveFailure(_PrimitiveFailure<T> value),
     Result searchParameterFailure(_SearchParameterFailure<T> value),
     Result emptySearchParameters(_EmptySearchParameters<T> value),
+    Result parameterTypeNotResourceType(_ParameterTypeNotResourceType<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -3474,6 +3609,7 @@ class _$_EmptySearchParameters<T> extends _EmptySearchParameters<T> {
     @required Result primitiveFailure(String parameter, T failedValue),
     @required Result searchParameterFailure(String parameter, T failedValue),
     @required Result emptySearchParameters(String parameter),
+    @required Result parameterTypeNotResourceType(String resourceType, T type),
   }) {
     assert(searchStringTest != null);
     assert(httpFailure != null);
@@ -3491,6 +3627,7 @@ class _$_EmptySearchParameters<T> extends _EmptySearchParameters<T> {
     assert(primitiveFailure != null);
     assert(searchParameterFailure != null);
     assert(emptySearchParameters != null);
+    assert(parameterTypeNotResourceType != null);
     return emptySearchParameters(parameter);
   }
 
@@ -3513,6 +3650,7 @@ class _$_EmptySearchParameters<T> extends _EmptySearchParameters<T> {
     Result primitiveFailure(String parameter, T failedValue),
     Result searchParameterFailure(String parameter, T failedValue),
     Result emptySearchParameters(String parameter),
+    Result parameterTypeNotResourceType(String resourceType, T type),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -3541,6 +3679,9 @@ class _$_EmptySearchParameters<T> extends _EmptySearchParameters<T> {
     @required Result primitiveFailure(_PrimitiveFailure<T> value),
     @required Result searchParameterFailure(_SearchParameterFailure<T> value),
     @required Result emptySearchParameters(_EmptySearchParameters<T> value),
+    @required
+        Result parameterTypeNotResourceType(
+            _ParameterTypeNotResourceType<T> value),
   }) {
     assert(searchStringTest != null);
     assert(httpFailure != null);
@@ -3558,6 +3699,7 @@ class _$_EmptySearchParameters<T> extends _EmptySearchParameters<T> {
     assert(primitiveFailure != null);
     assert(searchParameterFailure != null);
     assert(emptySearchParameters != null);
+    assert(parameterTypeNotResourceType != null);
     return emptySearchParameters(this);
   }
 
@@ -3580,6 +3722,7 @@ class _$_EmptySearchParameters<T> extends _EmptySearchParameters<T> {
     Result primitiveFailure(_PrimitiveFailure<T> value),
     Result searchParameterFailure(_SearchParameterFailure<T> value),
     Result emptySearchParameters(_EmptySearchParameters<T> value),
+    Result parameterTypeNotResourceType(_ParameterTypeNotResourceType<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -3597,4 +3740,237 @@ abstract class _EmptySearchParameters<T> extends RestfulFailure<T> {
 
   String get parameter;
   _$EmptySearchParametersCopyWith<T, _EmptySearchParameters<T>> get copyWith;
+}
+
+/// @nodoc
+abstract class _$ParameterTypeNotResourceTypeCopyWith<T, $Res> {
+  factory _$ParameterTypeNotResourceTypeCopyWith(
+          _ParameterTypeNotResourceType<T> value,
+          $Res Function(_ParameterTypeNotResourceType<T>) then) =
+      __$ParameterTypeNotResourceTypeCopyWithImpl<T, $Res>;
+  $Res call({String resourceType, T type});
+}
+
+/// @nodoc
+class __$ParameterTypeNotResourceTypeCopyWithImpl<T, $Res>
+    extends _$RestfulFailureCopyWithImpl<T, $Res>
+    implements _$ParameterTypeNotResourceTypeCopyWith<T, $Res> {
+  __$ParameterTypeNotResourceTypeCopyWithImpl(
+      _ParameterTypeNotResourceType<T> _value,
+      $Res Function(_ParameterTypeNotResourceType<T>) _then)
+      : super(_value, (v) => _then(v as _ParameterTypeNotResourceType<T>));
+
+  @override
+  _ParameterTypeNotResourceType<T> get _value =>
+      super._value as _ParameterTypeNotResourceType<T>;
+
+  @override
+  $Res call({
+    Object resourceType = freezed,
+    Object type = freezed,
+  }) {
+    return _then(_ParameterTypeNotResourceType<T>(
+      resourceType: resourceType == freezed
+          ? _value.resourceType
+          : resourceType as String,
+      type: type == freezed ? _value.type : type as T,
+    ));
+  }
+}
+
+/// @nodoc
+class _$_ParameterTypeNotResourceType<T>
+    extends _ParameterTypeNotResourceType<T> {
+  const _$_ParameterTypeNotResourceType(
+      {@required this.resourceType, @required this.type})
+      : assert(resourceType != null),
+        assert(type != null),
+        super._();
+
+  @override
+  final String resourceType;
+  @override
+  final T type;
+
+  @override
+  String toString() {
+    return 'RestfulFailure<$T>.parameterTypeNotResourceType(resourceType: $resourceType, type: $type)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _ParameterTypeNotResourceType<T> &&
+            (identical(other.resourceType, resourceType) ||
+                const DeepCollectionEquality()
+                    .equals(other.resourceType, resourceType)) &&
+            (identical(other.type, type) ||
+                const DeepCollectionEquality().equals(other.type, type)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(resourceType) ^
+      const DeepCollectionEquality().hash(type);
+
+  @override
+  _$ParameterTypeNotResourceTypeCopyWith<T, _ParameterTypeNotResourceType<T>>
+      get copyWith => __$ParameterTypeNotResourceTypeCopyWithImpl<T,
+          _ParameterTypeNotResourceType<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result searchStringTest(String searchString),
+    @required
+        Result httpFailure(int statusCode, String errorType, T failedValue),
+    @required Result unknownFailure(T failedValue),
+    @required Result noInternet(T failedValue),
+    @required Result noType(T failedValue),
+    @required Result noId(T failedValue),
+    @required Result noVid(T failedValue),
+    @required Result idDoesNotMatchResource(T failedValue),
+    @required Result noBundle(T failedValue, String batchOrTransaction),
+    @required Result notABatchBundle(T failedValue),
+    @required Result notATransactionBundle(T failedValue),
+    @required Result missingEntryRequest(T failedValue),
+    @required Result missingRequestMethod(T failedValue),
+    @required Result primitiveFailure(String parameter, T failedValue),
+    @required Result searchParameterFailure(String parameter, T failedValue),
+    @required Result emptySearchParameters(String parameter),
+    @required Result parameterTypeNotResourceType(String resourceType, T type),
+  }) {
+    assert(searchStringTest != null);
+    assert(httpFailure != null);
+    assert(unknownFailure != null);
+    assert(noInternet != null);
+    assert(noType != null);
+    assert(noId != null);
+    assert(noVid != null);
+    assert(idDoesNotMatchResource != null);
+    assert(noBundle != null);
+    assert(notABatchBundle != null);
+    assert(notATransactionBundle != null);
+    assert(missingEntryRequest != null);
+    assert(missingRequestMethod != null);
+    assert(primitiveFailure != null);
+    assert(searchParameterFailure != null);
+    assert(emptySearchParameters != null);
+    assert(parameterTypeNotResourceType != null);
+    return parameterTypeNotResourceType(resourceType, type);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result searchStringTest(String searchString),
+    Result httpFailure(int statusCode, String errorType, T failedValue),
+    Result unknownFailure(T failedValue),
+    Result noInternet(T failedValue),
+    Result noType(T failedValue),
+    Result noId(T failedValue),
+    Result noVid(T failedValue),
+    Result idDoesNotMatchResource(T failedValue),
+    Result noBundle(T failedValue, String batchOrTransaction),
+    Result notABatchBundle(T failedValue),
+    Result notATransactionBundle(T failedValue),
+    Result missingEntryRequest(T failedValue),
+    Result missingRequestMethod(T failedValue),
+    Result primitiveFailure(String parameter, T failedValue),
+    Result searchParameterFailure(String parameter, T failedValue),
+    Result emptySearchParameters(String parameter),
+    Result parameterTypeNotResourceType(String resourceType, T type),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (parameterTypeNotResourceType != null) {
+      return parameterTypeNotResourceType(resourceType, type);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result searchStringTest(_SearchStringTest<T> value),
+    @required Result httpFailure(_HttpFailure<T> value),
+    @required Result unknownFailure(_UnknownFailure<T> value),
+    @required Result noInternet(_NoInternet<T> value),
+    @required Result noType(_NoType<T> value),
+    @required Result noId(_NoId<T> value),
+    @required Result noVid(_NoVid<T> value),
+    @required Result idDoesNotMatchResource(_IdDoesNotMatchResource<T> value),
+    @required Result noBundle(_NoBundle<T> value),
+    @required Result notABatchBundle(_NotABatchBundle<T> value),
+    @required Result notATransactionBundle(_NotATransactionBundle<T> value),
+    @required Result missingEntryRequest(_MissingEntryRequest<T> value),
+    @required Result missingRequestMethod(_MissingRequestMethod<T> value),
+    @required Result primitiveFailure(_PrimitiveFailure<T> value),
+    @required Result searchParameterFailure(_SearchParameterFailure<T> value),
+    @required Result emptySearchParameters(_EmptySearchParameters<T> value),
+    @required
+        Result parameterTypeNotResourceType(
+            _ParameterTypeNotResourceType<T> value),
+  }) {
+    assert(searchStringTest != null);
+    assert(httpFailure != null);
+    assert(unknownFailure != null);
+    assert(noInternet != null);
+    assert(noType != null);
+    assert(noId != null);
+    assert(noVid != null);
+    assert(idDoesNotMatchResource != null);
+    assert(noBundle != null);
+    assert(notABatchBundle != null);
+    assert(notATransactionBundle != null);
+    assert(missingEntryRequest != null);
+    assert(missingRequestMethod != null);
+    assert(primitiveFailure != null);
+    assert(searchParameterFailure != null);
+    assert(emptySearchParameters != null);
+    assert(parameterTypeNotResourceType != null);
+    return parameterTypeNotResourceType(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result searchStringTest(_SearchStringTest<T> value),
+    Result httpFailure(_HttpFailure<T> value),
+    Result unknownFailure(_UnknownFailure<T> value),
+    Result noInternet(_NoInternet<T> value),
+    Result noType(_NoType<T> value),
+    Result noId(_NoId<T> value),
+    Result noVid(_NoVid<T> value),
+    Result idDoesNotMatchResource(_IdDoesNotMatchResource<T> value),
+    Result noBundle(_NoBundle<T> value),
+    Result notABatchBundle(_NotABatchBundle<T> value),
+    Result notATransactionBundle(_NotATransactionBundle<T> value),
+    Result missingEntryRequest(_MissingEntryRequest<T> value),
+    Result missingRequestMethod(_MissingRequestMethod<T> value),
+    Result primitiveFailure(_PrimitiveFailure<T> value),
+    Result searchParameterFailure(_SearchParameterFailure<T> value),
+    Result emptySearchParameters(_EmptySearchParameters<T> value),
+    Result parameterTypeNotResourceType(_ParameterTypeNotResourceType<T> value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (parameterTypeNotResourceType != null) {
+      return parameterTypeNotResourceType(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ParameterTypeNotResourceType<T> extends RestfulFailure<T> {
+  const _ParameterTypeNotResourceType._() : super._();
+  const factory _ParameterTypeNotResourceType(
+      {@required String resourceType,
+      @required T type}) = _$_ParameterTypeNotResourceType<T>;
+
+  String get resourceType;
+  T get type;
+  _$ParameterTypeNotResourceTypeCopyWith<T, _ParameterTypeNotResourceType<T>>
+      get copyWith;
 }

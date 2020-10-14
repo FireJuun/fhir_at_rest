@@ -10,6 +10,7 @@ import 'package:fhir/r5.dart' as r5;
 import '../enums/enums.dart';
 import '../failures/restful_failure.dart';
 import '../resource_types/resource_types.dart';
+import '../search_parameters/search_parameters.dart';
 import 'make_request.dart';
 
 part 'patch_request.freezed.dart';
@@ -49,7 +50,8 @@ abstract class PatchRequest with _$PatchRequest {
     @Default(Summary.none) Summary summary,
   }) = _PatchRequestR5;
 
-  Future<Either<RestfulFailure, dynamic>> request(dynamic resource) async {
+  Future<Either<RestfulFailure, dynamic>> request(
+      {@required dynamic resource, dynamic search}) async {
     if (resource.id != this.id) {
       return left(RestfulFailure.idDoesNotMatchResource(failedValue: resource));
     }
@@ -63,6 +65,18 @@ abstract class PatchRequest with _$PatchRequest {
     thisRequest += '?_format=application/fhir+json'
         '${pretty ? "&_pretty=$pretty" : ""}'
         '${summary != Summary.none ? "&_summary=${enumToString(summary)}" : ""}';
+
+    if (search != null) {
+      if (search is Dstu2SearchParameters && this is! _PatchRequestDstu2 ||
+          search is Stu3SearchParameters && this is! _PatchRequestStu3 ||
+          search is R4SearchParameters && this is! _PatchRequestR4 ||
+          search is R5SearchParameters && this is! _PatchRequestR5) {
+        return left(RestfulFailure.parameterTypeNotResourceType(
+            resourceType: resource.resourceType, type: search.runtimeType));
+      } else {
+        thisRequest += search.searchString();
+      }
+    }
 
     final result = await makeRequest(
         type: RestfulRequest.patch_,

@@ -84,7 +84,7 @@ Result:
 GET http://hapi.fhir.org/baseR4/Patient/12345/_history/6789?_format=application/fhir+json
 ```
 
-### Update - ToDo: conditional update
+### Update
 This is obviously different because we're sending data instead of asking for it. We use ```PUT```. We also pass in a resource.
 ```
   var req4 = UpdateRequest.r4(
@@ -103,7 +103,7 @@ PUT http://hapi.fhir.org/baseR4/Patient/12345?_format=application/fhir+json
 ```
 This function also passes the resource as a Map to the MakeRequest Function. All types of requests get passed to this function in order to obtain a result, and it will be discussed later.
 
-### Patch - ToDo: full testing of format
+### Patch
 Same request format as Update, but using ```PATCH```, and also requiring a resource.
 ```
   var req5 = PatchRequest.r4(
@@ -119,7 +119,7 @@ Result:
 PATCH http://hapi.fhir.org/baseR4/Patient/12345?_format=application/fhir+json
 ```
 
-### Delete - ToDo: conditional delete
+### Delete
 This one is pretty straightforward. Just need the base, type and id, and it will perform a ```DELETE``` request.
 ```
   var req6 = DeleteRequest.r4(
@@ -133,7 +133,7 @@ Result:
 ```
 DELETE http://hapi.fhir.org/baseR4/Patient/12345?_format=application/fhir+json
 ```
-### Create - ToDo: conditional create
+### Create
 Same request format as Update, but using ```POST```, and also requiring a resource.
 ```
   var req7 = CreateRequest.r4(
@@ -260,7 +260,7 @@ http://hapi.fhir.org/baseR4/Observation/12345/_history&_format=application/fhir+
 ```
 ### HEAD - same as get requests, but I haven't implemented them. Not sure I will.
 
-## Search - ToDo
+## Search - ToDo, Variant Search - ToDo
 Searching is challenging. I've tried to detail it by showing examples how you would perform all of the searches listed on the [HL7 page](https://www.hl7.org/fhir/search.html). Note - all searches, like above requests, will be of formatted as fhir+json. For each type of resource there are some common fields that can be searched on. ```_content, _id, _lastUpdated, _profile, _query, _security, _source, _tag```. 
 
 ToDo: text/filter

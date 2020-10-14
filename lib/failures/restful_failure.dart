@@ -58,6 +58,10 @@ abstract class RestfulFailure<T> with _$RestfulFailure<T> {
   const factory RestfulFailure.emptySearchParameters({
     @required String parameter,
   }) = _EmptySearchParameters;
+  const factory RestfulFailure.parameterTypeNotResourceType({
+    @required String resourceType,
+    @required T type,
+  }) = _ParameterTypeNotResourceType<T>;
 
   String errorMessage() => map(
         searchStringTest: (f) => f.searchString,
@@ -91,5 +95,7 @@ abstract class RestfulFailure<T> with _$RestfulFailure<T> {
             '${f.failedValue} is not a valid ${f.parameter}.',
         emptySearchParameters: (f) =>
             'No arguments were passed for this ${f.parameter} search, it is invalid.',
+        parameterTypeNotResourceType: (f) =>
+            'The resourceType: ${f.resourceType} does not match the parameterType: ${f.type}',
       );
 }
