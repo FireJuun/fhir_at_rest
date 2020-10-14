@@ -61,13 +61,16 @@ abstract class RestfulFailure<T> with _$RestfulFailure<T> {
 
   String errorMessage() => map(
         searchStringTest: (f) => f.searchString,
-        httpFailure: (f) => '',
+        httpFailure: (f) =>
+            'There was an error with ${f.errorType} with code ${f.statusCode}'
+            'failed value: ${f.failedValue}',
         unknownFailure: (f) =>
             'An unknown failure occured with the value: ${f.failedValue}',
-        noInternet: (f) => '',
-        noType: (f) => '',
-        noId: (f) => '',
-        noVid: (f) => '',
+        noInternet: (f) =>
+            'No internet connection, failed value: ${f.failedValue}',
+        noType: (f) => 'No type was specified for ${f.failedValue}',
+        noId: (f) => 'No Id was specified for ${f.failedValue}',
+        noVid: (f) => 'No Vid was specified for ${f.failedValue}',
         idDoesNotMatchResource: (f) => 'The ID for the request does not match '
             'the id of the resource.',
         noBundle: (f) =>
