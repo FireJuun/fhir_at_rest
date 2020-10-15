@@ -2,7 +2,7 @@
 
 ## More FHIR functionality in Flutter
 
-This project builds upon work done in the basic FHIR package: httpss://github.com/Dokotela/fhir. It is designed to allow easier RESTful requests to FHIR APIs. Most of the basic requests are described on the [RESTful API](httpss://www.hl7.org/fhir/https.html) page of [HL7 FHIR](https://hl7.org/fhir/), or on the page for [Search parameters](httpss://www.hl7.org/fhir/search.html). Not all search parameters are yet implemented.
+This project builds upon work done in the basic FHIR package: https://github.com/Dokotela/fhir. It is designed to allow easier RESTful requests to FHIR APIs. Most of the basic requests are described on the [RESTful API](https://www.hl7.org/fhir/https.html) page of [HL7 FHIR](https://hl7.org/fhir/), or on the page for [Search parameters](https://www.hl7.org/fhir/search.html). Not all search parameters are yet implemented.
 
 
 ## It's not complicated, but it is detailed
@@ -35,7 +35,7 @@ However, for this package we only allow ```application/fhir+json``` because I do
 I make pretty liberal use of enums in the project (mostly just to try and constrain anyone from entering inappropriate data). So when possible, parameters are enums, and that includes resourceTypes.
 
 ### Read Request
-Let's try and read Patient, id: 12345. (Side note: most of these classs are (freezed)[httpss://pub.dev/packages/freezed] unions. Meaning they function the same for all versions of FHIR, just replace the R4 below with dstu2, stu3, or r5).
+Let's try and read Patient, id: 12345. (Side note: most of these classs are (freezed)[https://pub.dev/packages/freezed] unions. Meaning they function the same for all versions of FHIR, just replace the R4 below with dstu2, stu3, or r5).
 ```
 final req = ReadRequest.r4(
         base: Uri.parse('https://hapi.fhir.org/baseR4'),
@@ -264,7 +264,7 @@ https://hapi.fhir.org/baseR4/Observation/12345/_history&_format=application/fhir
 
 ## Search
 
-Searching is challenging. I've tried to detail it by showing examples how you would perform all of the searches listed on the [HL7 page](httpss://www.hl7.org/fhir/search.html). Note - all searches, like above requests, will be of formatted as fhir+json. For each type of resource there are some common fields that can be searched on. ```_content, _id, _lastUpdated, _profile, _query, _security, _source, _tag```. 
+Searching is challenging. I've tried to detail it by showing examples how you would perform all of the searches listed on the [HL7 page](https://www.hl7.org/fhir/search.html). Note - all searches, like above requests, will be of formatted as fhir+json. For each type of resource there are some common fields that can be searched on. ```_content, _id, _lastUpdated, _profile, _query, _security, _source, _tag```. 
 
 ToDo: text/filter
 
@@ -277,9 +277,9 @@ Basic formatting for the search request is as follows:
   );
   var response = await request.request();
 ```
-[Parameters are all lists](httpss://www.hl7.org/fhir/search.html#ptypes), and are of the following types: ```SearchComposite, SearchDate, SearchNumber, SearchQuantity, SearchReference, SearchSpecial, SearchString, SearchToken, SearchUri```.
+[Parameters are all lists](https://www.hl7.org/fhir/search.html#ptypes), and are of the following types: ```SearchComposite, SearchDate, SearchNumber, SearchQuantity, SearchReference, SearchSpecial, SearchString, SearchToken, SearchUri```.
 
-These basic examples are from the [HL7 Summary of searching](httpss://www.hl7.org/fhir/search.html#standard). To search for the patient with an id of 23:
+These basic examples are from the [HL7 Summary of searching](https://www.hl7.org/fhir/search.html#standard). To search for the patient with an id of 23:
 ```
   var request = SearchRequest.r4(
     base: Uri.parse('https://hapi.fhir.org/baseR4'),
@@ -343,7 +343,7 @@ Result:
 ```
 GET https://hapi.fhir.org/baseR4/DiagnosticReport?_format=application/fhir+json&_profile=https://acme.org/codes
 ```
-[Modifiers](httpss://www.hl7.org/fhir/search.html#modifiers) are defined per resource. All interactions (except combination) can contain a password called ```:missing```. To search for all patients that don't have a gender (you can also use ```:missing=false``` if you want to search patients that do have a recorded gender):
+[Modifiers](https://www.hl7.org/fhir/search.html#modifiers) are defined per resource. All interactions (except combination) can contain a password called ```:missing```. To search for all patients that don't have a gender (you can also use ```:missing=false``` if you want to search patients that do have a recorded gender):
 ```
     request = SearchRequest.r4(
     base: Uri.parse('https://hapi.fhir.org/baseR4'),
@@ -373,7 +373,7 @@ GET https://hapi.fhir.org/baseR4/Patient?_format=application/fhir+json&_text:exa
 ```
 Similarly ```:text``` can be used in a searchToken, ```:[type]``` can be used in a searchReference, and ```:below``` and ```:above``` can be used for searchUri. We will discuss all of these more below.
 
-### [Prefixes](httpss://www.hl7.org/fhir/search.html#prefix)
+### [Prefixes](https://www.hl7.org/fhir/search.html#prefix)
 
 #### *Number, Date and Quantity*
 
@@ -393,7 +393,7 @@ Result:
 GET https://hapi.fhir.org/baseR4/Observation?_format=application/fhir+json&_lastUpdated=le2010-10-01T00:00:00.000
 ```
 #### *Date*
-There are some specifications on exaclty how the comparisons are done using dates, [you can find them here](httpss://www.hl7.org/fhir/search.html#date). One more example is finding an event between two dates.
+There are some specifications on exaclty how the comparisons are done using dates, [you can find them here](https://www.hl7.org/fhir/search.html#date). One more example is finding an event between two dates.
 ```
   request = SearchRequest.r4(
     base: Uri.parse('https://hapi.fhir.org/baseR4'),
@@ -429,14 +429,14 @@ Result:
 GET https://hapi.fhir.org/baseR4/Patient?_format=application/fhir+json&given=eve&given:contains=eve&given:exact=eve
 ```
 #### *Uri/Url*
-For a ```URI``` search, the prefixes are ```:above=``` and ```:below=```. This basically walks down the directory structure. So [(from HL7's website)](httpss://www.hl7.org/fhir/search.html#uri):
+For a ```URI``` search, the prefixes are ```:above=``` and ```:below=```. This basically walks down the directory structure. So [(from HL7's website)](https://www.hl7.org/fhir/search.html#uri):
 ```
  GET [base]/ValueSet?url:below=https://acme.org/fhir/
  GET [base]/ValueSet?url:above=https://acme.org/fhir/ValueSet/123/_history/5
  ```
  The first would search for anything with a URL that begins with "https://acme.org/fhir/". The second would match the URL, and anything shorter than it ("https://acme.org/fhir/ValueSet/123/" for instance).
 
- #### [*Token*](httpss://www.hl7.org/fhir/search.html#token)
+ #### [*Token*](https://www.hl7.org/fhir/search.html#token)
 Just read the HL7 page for a description, it's easier. A token can contain a system, a code or both. And can contain the prefixes, ```:text, :not, :above, :below, :in, :not-in, and :of-type```. I'm including a number of examples (all stolen from the above link, so HL7 please don't be mad).
 
 Search for all the patients with an identifier with key = "2345" in the system "https://acme.org/patient"
