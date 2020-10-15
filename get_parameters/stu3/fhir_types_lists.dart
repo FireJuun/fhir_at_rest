@@ -583,7 +583,6 @@ var request_and_response = [
   'communicationrequest',
   'devicerequest',
   'deviceusestatement',
-  'guidanceresponse',
   'supplyrequest',
   'supplydelivery',
 ];
