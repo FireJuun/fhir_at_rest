@@ -1,0 +1,551 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+part of 'individuals.dart';
+
+// **************************************************************************
+// JsonSerializableGenerator
+// **************************************************************************
+
+_$_PractitionerSearch _$_$_PractitionerSearchFromJson(
+    Map<String, dynamic> json) {
+  return _$_PractitionerSearch(
+    searchId: (json['searchId'] as List)
+        ?.map((e) => e == null ? null : Id.fromJson(e as String))
+        ?.toList(),
+    searchLastUpdated: (json['searchLastUpdated'] as List)
+        ?.map((e) =>
+            e == null ? null : SearchDate.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+    searchTag: (json['searchTag'] as List)
+        ?.map((e) =>
+            e == null ? null : SearchToken.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+    searchProfile: (json['searchProfile'] as List)
+        ?.map((e) =>
+            e == null ? null : SearchUri.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+    searchSecurity: (json['searchSecurity'] as List)
+        ?.map((e) =>
+            e == null ? null : SearchToken.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+    searchText: (json['searchText'] as List)
+        ?.map((e) =>
+            e == null ? null : SearchString.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+    searchContent: (json['searchContent'] as List)
+        ?.map((e) =>
+            e == null ? null : SearchString.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+    searchList: (json['searchList'] as List)
+        ?.map((e) => e == null ? null : Id.fromJson(e as String))
+        ?.toList(),
+    address: (json['address'] as List)
+        ?.map((e) =>
+            e == null ? null : SearchString.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+    addressCity: (json['address-city'] as List)
+        ?.map((e) =>
+            e == null ? null : SearchString.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+    addressCountry: (json['address-country'] as List)
+        ?.map((e) =>
+            e == null ? null : SearchString.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+    addressPostalcode: (json['address-postalcode'] as List)
+        ?.map((e) =>
+            e == null ? null : SearchString.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+    addressState: (json['address-state'] as List)
+        ?.map((e) =>
+            e == null ? null : SearchString.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+    addressUse: (json['address-use'] as List)
+        ?.map((e) =>
+            e == null ? null : SearchToken.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+    communication: (json['communication'] as List)
+        ?.map((e) =>
+            e == null ? null : SearchToken.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+    email: (json['email'] as List)
+        ?.map((e) =>
+            e == null ? null : SearchToken.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+    family: (json['family'] as List)
+        ?.map((e) =>
+            e == null ? null : SearchString.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+    gender: (json['gender'] as List)
+        ?.map((e) =>
+            e == null ? null : SearchToken.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+    given: (json['given'] as List)
+        ?.map((e) =>
+            e == null ? null : SearchString.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+    identifier: (json['identifier'] as List)
+        ?.map((e) =>
+            e == null ? null : SearchToken.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+    location: (json['location'] as List)
+        ?.map((e) => e == null
+            ? null
+            : SearchReference.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+    name: (json['name'] as List)
+        ?.map((e) =>
+            e == null ? null : SearchString.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+    organization: (json['organization'] as List)
+        ?.map((e) => e == null
+            ? null
+            : SearchReference.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+    phone: (json['phone'] as List)
+        ?.map((e) =>
+            e == null ? null : SearchToken.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+    phonetic: (json['phonetic'] as List)
+        ?.map((e) =>
+            e == null ? null : SearchString.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+    role: (json['role'] as List)
+        ?.map((e) =>
+            e == null ? null : SearchToken.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+    specialty: (json['specialty'] as List)
+        ?.map((e) =>
+            e == null ? null : SearchToken.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+    telecom: (json['telecom'] as List)
+        ?.map((e) =>
+            e == null ? null : SearchToken.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+  );
+}
+
+Map<String, dynamic> _$_$_PractitionerSearchToJson(
+    _$_PractitionerSearch instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull(
+      'searchId', instance.searchId?.map((e) => e?.toJson())?.toList());
+  writeNotNull('searchLastUpdated',
+      instance.searchLastUpdated?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'searchTag', instance.searchTag?.map((e) => e?.toJson())?.toList());
+  writeNotNull('searchProfile',
+      instance.searchProfile?.map((e) => e?.toJson())?.toList());
+  writeNotNull('searchSecurity',
+      instance.searchSecurity?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'searchText', instance.searchText?.map((e) => e?.toJson())?.toList());
+  writeNotNull('searchContent',
+      instance.searchContent?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'searchList', instance.searchList?.map((e) => e?.toJson())?.toList());
+  writeNotNull('address', instance.address?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'address-city', instance.addressCity?.map((e) => e?.toJson())?.toList());
+  writeNotNull('address-country',
+      instance.addressCountry?.map((e) => e?.toJson())?.toList());
+  writeNotNull('address-postalcode',
+      instance.addressPostalcode?.map((e) => e?.toJson())?.toList());
+  writeNotNull('address-state',
+      instance.addressState?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'address-use', instance.addressUse?.map((e) => e?.toJson())?.toList());
+  writeNotNull('communication',
+      instance.communication?.map((e) => e?.toJson())?.toList());
+  writeNotNull('email', instance.email?.map((e) => e?.toJson())?.toList());
+  writeNotNull('family', instance.family?.map((e) => e?.toJson())?.toList());
+  writeNotNull('gender', instance.gender?.map((e) => e?.toJson())?.toList());
+  writeNotNull('given', instance.given?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'identifier', instance.identifier?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'location', instance.location?.map((e) => e?.toJson())?.toList());
+  writeNotNull('name', instance.name?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'organization', instance.organization?.map((e) => e?.toJson())?.toList());
+  writeNotNull('phone', instance.phone?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'phonetic', instance.phonetic?.map((e) => e?.toJson())?.toList());
+  writeNotNull('role', instance.role?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'specialty', instance.specialty?.map((e) => e?.toJson())?.toList());
+  writeNotNull('telecom', instance.telecom?.map((e) => e?.toJson())?.toList());
+  return val;
+}
+
+_$_RelatedPersonSearch _$_$_RelatedPersonSearchFromJson(
+    Map<String, dynamic> json) {
+  return _$_RelatedPersonSearch(
+    searchId: (json['searchId'] as List)
+        ?.map((e) => e == null ? null : Id.fromJson(e as String))
+        ?.toList(),
+    searchLastUpdated: (json['searchLastUpdated'] as List)
+        ?.map((e) =>
+            e == null ? null : SearchDate.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+    searchTag: (json['searchTag'] as List)
+        ?.map((e) =>
+            e == null ? null : SearchToken.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+    searchProfile: (json['searchProfile'] as List)
+        ?.map((e) =>
+            e == null ? null : SearchUri.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+    searchSecurity: (json['searchSecurity'] as List)
+        ?.map((e) =>
+            e == null ? null : SearchToken.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+    searchText: (json['searchText'] as List)
+        ?.map((e) =>
+            e == null ? null : SearchString.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+    searchContent: (json['searchContent'] as List)
+        ?.map((e) =>
+            e == null ? null : SearchString.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+    searchList: (json['searchList'] as List)
+        ?.map((e) => e == null ? null : Id.fromJson(e as String))
+        ?.toList(),
+    address: (json['address'] as List)
+        ?.map((e) =>
+            e == null ? null : SearchString.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+    addressCity: (json['address-city'] as List)
+        ?.map((e) =>
+            e == null ? null : SearchString.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+    addressCountry: (json['address-country'] as List)
+        ?.map((e) =>
+            e == null ? null : SearchString.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+    addressPostalcode: (json['address-postalcode'] as List)
+        ?.map((e) =>
+            e == null ? null : SearchString.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+    addressState: (json['address-state'] as List)
+        ?.map((e) =>
+            e == null ? null : SearchString.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+    addressUse: (json['address-use'] as List)
+        ?.map((e) =>
+            e == null ? null : SearchToken.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+    birthdate: (json['birthdate'] as List)
+        ?.map((e) =>
+            e == null ? null : SearchDate.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+    email: (json['email'] as List)
+        ?.map((e) =>
+            e == null ? null : SearchToken.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+    gender: (json['gender'] as List)
+        ?.map((e) =>
+            e == null ? null : SearchToken.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+    identifier: (json['identifier'] as List)
+        ?.map((e) =>
+            e == null ? null : SearchToken.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+    name: (json['name'] as List)
+        ?.map((e) =>
+            e == null ? null : SearchString.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+    patient: (json['patient'] as List)
+        ?.map((e) => e == null
+            ? null
+            : SearchReference.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+    phone: (json['phone'] as List)
+        ?.map((e) =>
+            e == null ? null : SearchToken.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+    phonetic: (json['phonetic'] as List)
+        ?.map((e) =>
+            e == null ? null : SearchString.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+    telecom: (json['telecom'] as List)
+        ?.map((e) =>
+            e == null ? null : SearchToken.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+  );
+}
+
+Map<String, dynamic> _$_$_RelatedPersonSearchToJson(
+    _$_RelatedPersonSearch instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull(
+      'searchId', instance.searchId?.map((e) => e?.toJson())?.toList());
+  writeNotNull('searchLastUpdated',
+      instance.searchLastUpdated?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'searchTag', instance.searchTag?.map((e) => e?.toJson())?.toList());
+  writeNotNull('searchProfile',
+      instance.searchProfile?.map((e) => e?.toJson())?.toList());
+  writeNotNull('searchSecurity',
+      instance.searchSecurity?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'searchText', instance.searchText?.map((e) => e?.toJson())?.toList());
+  writeNotNull('searchContent',
+      instance.searchContent?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'searchList', instance.searchList?.map((e) => e?.toJson())?.toList());
+  writeNotNull('address', instance.address?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'address-city', instance.addressCity?.map((e) => e?.toJson())?.toList());
+  writeNotNull('address-country',
+      instance.addressCountry?.map((e) => e?.toJson())?.toList());
+  writeNotNull('address-postalcode',
+      instance.addressPostalcode?.map((e) => e?.toJson())?.toList());
+  writeNotNull('address-state',
+      instance.addressState?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'address-use', instance.addressUse?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'birthdate', instance.birthdate?.map((e) => e?.toJson())?.toList());
+  writeNotNull('email', instance.email?.map((e) => e?.toJson())?.toList());
+  writeNotNull('gender', instance.gender?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'identifier', instance.identifier?.map((e) => e?.toJson())?.toList());
+  writeNotNull('name', instance.name?.map((e) => e?.toJson())?.toList());
+  writeNotNull('patient', instance.patient?.map((e) => e?.toJson())?.toList());
+  writeNotNull('phone', instance.phone?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'phonetic', instance.phonetic?.map((e) => e?.toJson())?.toList());
+  writeNotNull('telecom', instance.telecom?.map((e) => e?.toJson())?.toList());
+  return val;
+}
+
+_$_PatientSearch _$_$_PatientSearchFromJson(Map<String, dynamic> json) {
+  return _$_PatientSearch(
+    searchId: (json['searchId'] as List)
+        ?.map((e) => e == null ? null : Id.fromJson(e as String))
+        ?.toList(),
+    searchLastUpdated: (json['searchLastUpdated'] as List)
+        ?.map((e) =>
+            e == null ? null : SearchDate.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+    searchTag: (json['searchTag'] as List)
+        ?.map((e) =>
+            e == null ? null : SearchToken.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+    searchProfile: (json['searchProfile'] as List)
+        ?.map((e) =>
+            e == null ? null : SearchUri.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+    searchSecurity: (json['searchSecurity'] as List)
+        ?.map((e) =>
+            e == null ? null : SearchToken.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+    searchText: (json['searchText'] as List)
+        ?.map((e) =>
+            e == null ? null : SearchString.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+    searchContent: (json['searchContent'] as List)
+        ?.map((e) =>
+            e == null ? null : SearchString.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+    searchList: (json['searchList'] as List)
+        ?.map((e) => e == null ? null : Id.fromJson(e as String))
+        ?.toList(),
+    active: (json['active'] as List)
+        ?.map((e) =>
+            e == null ? null : SearchToken.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+    address: (json['address'] as List)
+        ?.map((e) =>
+            e == null ? null : SearchString.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+    addressCity: (json['address-city'] as List)
+        ?.map((e) =>
+            e == null ? null : SearchString.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+    addressCountry: (json['address-country'] as List)
+        ?.map((e) =>
+            e == null ? null : SearchString.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+    addressPostalcode: (json['address-postalcode'] as List)
+        ?.map((e) =>
+            e == null ? null : SearchString.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+    addressState: (json['address-state'] as List)
+        ?.map((e) =>
+            e == null ? null : SearchString.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+    addressUse: (json['address-use'] as List)
+        ?.map((e) =>
+            e == null ? null : SearchToken.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+    animalBreed: (json['animal-breed'] as List)
+        ?.map((e) =>
+            e == null ? null : SearchToken.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+    animalSpecies: (json['animal-species'] as List)
+        ?.map((e) =>
+            e == null ? null : SearchToken.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+    birthdate: (json['birthdate'] as List)
+        ?.map((e) =>
+            e == null ? null : SearchDate.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+    careprovider: (json['careprovider'] as List)
+        ?.map((e) => e == null
+            ? null
+            : SearchReference.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+    deathdate: (json['deathdate'] as List)
+        ?.map((e) =>
+            e == null ? null : SearchDate.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+    deceased: (json['deceased'] as List)
+        ?.map((e) =>
+            e == null ? null : SearchToken.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+    email: (json['email'] as List)
+        ?.map((e) =>
+            e == null ? null : SearchToken.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+    family: (json['family'] as List)
+        ?.map((e) =>
+            e == null ? null : SearchString.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+    gender: (json['gender'] as List)
+        ?.map((e) =>
+            e == null ? null : SearchToken.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+    given: (json['given'] as List)
+        ?.map((e) =>
+            e == null ? null : SearchString.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+    identifier: (json['identifier'] as List)
+        ?.map((e) =>
+            e == null ? null : SearchToken.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+    language: (json['language'] as List)
+        ?.map((e) =>
+            e == null ? null : SearchToken.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+    link: (json['link'] as List)
+        ?.map((e) => e == null
+            ? null
+            : SearchReference.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+    name: (json['name'] as List)
+        ?.map((e) =>
+            e == null ? null : SearchString.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+    organization: (json['organization'] as List)
+        ?.map((e) => e == null
+            ? null
+            : SearchReference.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+    phone: (json['phone'] as List)
+        ?.map((e) =>
+            e == null ? null : SearchToken.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+    phonetic: (json['phonetic'] as List)
+        ?.map((e) =>
+            e == null ? null : SearchString.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+    telecom: (json['telecom'] as List)
+        ?.map((e) =>
+            e == null ? null : SearchToken.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+    race: (json['race'] as List)
+        ?.map((e) =>
+            e == null ? null : SearchToken.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+    ethnicity: (json['ethnicity'] as List)
+        ?.map((e) =>
+            e == null ? null : SearchToken.fromJson(e as Map<String, dynamic>))
+        ?.toList(),
+  );
+}
+
+Map<String, dynamic> _$_$_PatientSearchToJson(_$_PatientSearch instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull(
+      'searchId', instance.searchId?.map((e) => e?.toJson())?.toList());
+  writeNotNull('searchLastUpdated',
+      instance.searchLastUpdated?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'searchTag', instance.searchTag?.map((e) => e?.toJson())?.toList());
+  writeNotNull('searchProfile',
+      instance.searchProfile?.map((e) => e?.toJson())?.toList());
+  writeNotNull('searchSecurity',
+      instance.searchSecurity?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'searchText', instance.searchText?.map((e) => e?.toJson())?.toList());
+  writeNotNull('searchContent',
+      instance.searchContent?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'searchList', instance.searchList?.map((e) => e?.toJson())?.toList());
+  writeNotNull('active', instance.active?.map((e) => e?.toJson())?.toList());
+  writeNotNull('address', instance.address?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'address-city', instance.addressCity?.map((e) => e?.toJson())?.toList());
+  writeNotNull('address-country',
+      instance.addressCountry?.map((e) => e?.toJson())?.toList());
+  writeNotNull('address-postalcode',
+      instance.addressPostalcode?.map((e) => e?.toJson())?.toList());
+  writeNotNull('address-state',
+      instance.addressState?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'address-use', instance.addressUse?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'animal-breed', instance.animalBreed?.map((e) => e?.toJson())?.toList());
+  writeNotNull('animal-species',
+      instance.animalSpecies?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'birthdate', instance.birthdate?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'careprovider', instance.careprovider?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'deathdate', instance.deathdate?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'deceased', instance.deceased?.map((e) => e?.toJson())?.toList());
+  writeNotNull('email', instance.email?.map((e) => e?.toJson())?.toList());
+  writeNotNull('family', instance.family?.map((e) => e?.toJson())?.toList());
+  writeNotNull('gender', instance.gender?.map((e) => e?.toJson())?.toList());
+  writeNotNull('given', instance.given?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'identifier', instance.identifier?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'language', instance.language?.map((e) => e?.toJson())?.toList());
+  writeNotNull('link', instance.link?.map((e) => e?.toJson())?.toList());
+  writeNotNull('name', instance.name?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'organization', instance.organization?.map((e) => e?.toJson())?.toList());
+  writeNotNull('phone', instance.phone?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'phonetic', instance.phonetic?.map((e) => e?.toJson())?.toList());
+  writeNotNull('telecom', instance.telecom?.map((e) => e?.toJson())?.toList());
+  writeNotNull('race', instance.race?.map((e) => e?.toJson())?.toList());
+  writeNotNull(
+      'ethnicity', instance.ethnicity?.map((e) => e?.toJson())?.toList());
+  return val;
+}

@@ -1,12 +1,6 @@
-abstract class Dstu2Parameters {
-  List<String> id;
-  List<String> lastUpdated;
-  List<String> tag;
-  List<String> profile;
-  List<String> security;
-  List<String> text;
-  List<String> content;
-  List<String> list;
-  List<String> has;
-  List<String> type;
-}
+export 'clinical/clinical.dart';
+export 'conformance/conformance.dart';
+export 'financial/financial.dart';
+export 'identification/identification.dart';
+export 'infrastructure/infrastructure.dart';
+export 'workflow/workflow.dart';

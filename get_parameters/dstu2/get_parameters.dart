@@ -14,10 +14,9 @@ Future getDstu2Parameters() async {
 
   final Map schema = json.decode(contents);
   for (var obj in schema['entry']) {
-    for (var base in obj['resource']['base']) {
-      if (!types.contains(base)) {
-        types.add(base);
-      }
+    final base = obj['resource']['base'];
+    if (!types.contains(base)) {
+      types.add(base);
     }
   }
   final typeMap = {};
@@ -25,10 +24,8 @@ Future getDstu2Parameters() async {
     typeMap[type] = [];
   }
   for (var obj in schema['entry']) {
-    for (var base in obj['resource']['base']) {
-      typeMap[base]
-          .add(Tuple2(obj['resource']['type'], obj['resource']['code']));
-    }
+    typeMap[obj['resource']['base']]
+        .add(Tuple2(obj['resource']['type'], obj['resource']['code']));
   }
 
   final tipos = {};
