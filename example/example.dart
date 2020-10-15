@@ -7,7 +7,6 @@ import 'package:fhir_at_rest/search_parameters/r4/parameters.dart';
 import 'package:fhir_at_rest/search_parameters/search_parameter_types/search_parameter_types.dart';
 import 'package:test/test.dart';
 
-/// To run this test, make sure to uncomment line 19 in lib/requests/make_request.dart
 void main() {
   group('Read Request', () {
     test('Basic Read Request', () async {

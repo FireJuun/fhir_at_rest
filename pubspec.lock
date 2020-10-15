@@ -172,11 +172,9 @@ packages:
   fhir:
     dependency: "direct main"
     description:
-      path: "."
-      ref: HEAD
-      resolved-ref: "6db188f6d12ecd0e065e900ebd6dcd4d39032557"
-      url: "git://github.com/Dokotela/fhir.git"
-    source: git
+      name: fhir
+      url: "https://pub.dartlang.org"
+    source: hosted
     version: "0.0.8"
   fixnum:
     dependency: transitive
