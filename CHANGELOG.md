@@ -1,3 +1,9 @@
+## [0.0.4]
+
+* Fixed some if-else brackets
+* ran formatter
+* generated documentation
+
 ## [0.0.3]
 
 * Still an issue with the links

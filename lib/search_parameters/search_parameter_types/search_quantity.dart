@@ -65,8 +65,9 @@ class SearchQuantity extends SearchObject<String> {
               } else if (code.value.isLeft()) {
                 left(RestfulFailure.primitiveFailure(
                     parameter: 'Code', failedValue: code));
-              } else
+              } else {
                 returnString += '|${system.toString()}|${code.toString()}';
+              }
             } else if (code != null) {
               if (code.value.isLeft()) {
                 return left(RestfulFailure.primitiveFailure(

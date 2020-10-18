@@ -66,8 +66,9 @@ class SearchToken extends SearchObject<String> {
         } else if (code.value.isLeft()) {
           left(RestfulFailure.primitiveFailure(
               parameter: 'Code', failedValue: code));
-        } else
+        } else {
           returnString = '${system.toString()}|${code.toString()}';
+        }
       } else if (system != null) {
         returnString = system.toString();
       } else if (code != null) {
