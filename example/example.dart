@@ -5,7 +5,7 @@ import 'package:fhir_at_rest/requests/request_types.dart';
 import 'package:fhir_at_rest/resource_types/resource_types.dart';
 import 'package:fhir_at_rest/search_parameters/r4/parameters.dart';
 import 'package:fhir_at_rest/search_parameters/search_parameter_types/search_parameter_types.dart';
-import 'package:test/test.dart';
+import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   group('Read Request', () {

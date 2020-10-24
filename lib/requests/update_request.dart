@@ -63,9 +63,12 @@ abstract class UpdateRequest with _$UpdateRequest {
       r5: (req) => '$base/${enumToString(req.type)}/${req.id.toString()}',
     );
 
-    thisRequest += '?_format=application/fhir+json'
+    final searchString = '?'
+        '_format=${Uri.encodeQueryComponent('application/fhir+json')}'
         '${pretty ? "&_pretty=$pretty" : ""}'
         '${summary != Summary.none ? "&_summary=${enumToString(summary)}" : ""}';
+
+    thisRequest += searchString;
 
     if (search != null) {
       if (search is Dstu2SearchParameters && this is! _UpdateRequestDstu2 ||

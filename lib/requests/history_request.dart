@@ -79,9 +79,13 @@ abstract class HistoryRequest with _$HistoryRequest {
               '${req.id == null ? "" : "${req.id.toString()}/"}',
     );
     thisRequest += '_history';
-    thisRequest += '?_format=application/fhir+json';
-    thisRequest += count == null ? '' : '&_count=$count';
-    thisRequest += since == null ? '' : '&_since=${since.toString()}';
+
+    final searchString = '?'
+        '_format=${Uri.encodeQueryComponent('application/fhir+json')}'
+        '${count == null ? "" : "&_count=$count"}'
+        '${since == null ? "" : "&_since=${since.toString()}"}';
+
+    thisRequest += searchString;
 
     final result = await makeRequest(
       type: RestfulRequest.get_,

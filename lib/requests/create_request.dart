@@ -54,7 +54,8 @@ abstract class CreateRequest with _$CreateRequest {
       r5: (req) => '$base/${enumToString(req.type)}',
     );
 
-    thisRequest += '?_format=application/fhir+json'
+    thisRequest += '?'
+        '_format=${Uri.encodeQueryComponent('application/fhir+json')}'
         '${pretty ? "&_pretty=$pretty" : ""}'
         '${summary != Summary.none ? "&_summary=${enumToString(summary)}" : ""}';
 

@@ -57,9 +57,12 @@ abstract class ReadRequest with _$ReadRequest {
       r5: (req) => '$base/${enumToString(req.type)}/${req.id.toString()}',
     );
 
-    thisRequest += '?_format=application/fhir+json'
+    final searchString = '?'
+        '_format=${Uri.encodeQueryComponent('application/fhir+json')}'
         '${pretty ? "&_pretty=$pretty" : ""}'
         '${summary != Summary.none ? "&_summary=${enumToString(summary)}" : ""}';
+
+    thisRequest += searchString;
 
     final result = await makeRequest(
       type: RestfulRequest.get_,
