@@ -53,8 +53,11 @@ abstract class SearchRequest with _$SearchRequest {
       r5: (req) => '$base/${enumToString(req.type)}',
     );
 
-    thisRequest += '?_format=application/fhir+json'
+    final searchString = '?'
+        '_format=${Uri.encodeQueryComponent('application/fhir+json')}'
         '${pretty ? "&_pretty=$pretty" : ""}';
+
+    thisRequest += searchString;
 
     final parametersString = map(
       dstu2: (req) => req.parameters.searchString(),

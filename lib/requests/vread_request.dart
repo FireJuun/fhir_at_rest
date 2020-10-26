@@ -65,9 +65,12 @@ abstract class VreadRequest with _$VreadRequest {
           '_history/${req.versionId.toString()}',
     );
 
-    thisRequest += '?_format=application/fhir+json'
+    final searchString = '?'
+        '_format=${Uri.encodeQueryComponent('application/fhir+json')}'
         '${pretty ? "&_pretty=$pretty" : ""}'
         '${summary != Summary.none ? "&_summary=${enumToString(summary)}" : ""}';
+
+    thisRequest += searchString;
 
     final result = await makeRequest(
       type: RestfulRequest.get_,

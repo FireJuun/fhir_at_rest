@@ -1,4 +1,3 @@
-import 'package:fhir/primitive_types/primitive_types.dart';
 import 'package:fhir/r4.dart';
 import 'package:fhir_at_rest/enums/enums.dart';
 import 'package:fhir_at_rest/requests/request_types.dart';
@@ -6,9 +5,12 @@ import 'package:fhir_at_rest/resource_types/resource_types.dart';
 import 'package:fhir_at_rest/search_parameters/r4/parameters.dart';
 import 'package:fhir_at_rest/search_parameters/search_parameter_types/search_parameter_types.dart';
 import 'package:test/test.dart';
+import 'package:fhir_at_rest/globals.dart' as globals;
 
-/// To run this test, make sure to uncomment line 19 in lib/requests/make_request.dart
 void main() {
+  globals.kTestMode = true;
+  final String mimeType = Uri.encodeQueryComponent('application/fhir+json');
+
   group('Read Request', () {
     test('Basic Read Request', () async {
       final req = ReadRequest.r4(
@@ -18,7 +20,7 @@ void main() {
       );
       final makeReq = await req.request();
       expect(makeReq.fold((l) => l.errorMessage(), (r) => r),
-          'http://hapi.fhir.org/baseR4/Patient/12345?_format=application/fhir+json');
+          'http://hapi.fhir.org/baseR4/Patient/12345?_format=$mimeType');
     });
 
     test('Pretty read request', () async {
@@ -30,7 +32,7 @@ void main() {
       );
       final makeReq = await req.request();
       expect(makeReq.fold((l) => l.errorMessage(), (r) => r),
-          'http://hapi.fhir.org/baseR4/Patient/12345?_format=application/fhir+json&_pretty=true');
+          'http://hapi.fhir.org/baseR4/Patient/12345?_format=$mimeType&_pretty=true');
     });
 
     test('Pretty read request, true summary', () async {
@@ -43,7 +45,7 @@ void main() {
       );
       final makeReq = await req.request();
       expect(makeReq.fold((l) => l.errorMessage(), (r) => r),
-          'http://hapi.fhir.org/baseR4/Patient/12345?_format=application/fhir+json&_pretty=true&_summary=true');
+          'http://hapi.fhir.org/baseR4/Patient/12345?_format=$mimeType&_pretty=true&_summary=true');
     });
 
     test('Request, summary count', () async {
@@ -55,7 +57,7 @@ void main() {
       );
       final makeReq = await req.request();
       expect(makeReq.fold((l) => l.errorMessage(), (r) => r),
-          'http://hapi.fhir.org/baseR4/Patient/12345?_format=application/fhir+json&_summary=count');
+          'http://hapi.fhir.org/baseR4/Patient/12345?_format=$mimeType&_summary=count');
     });
   });
 
@@ -69,7 +71,7 @@ void main() {
       );
       final makeReq = await req.request();
       expect(makeReq.fold((l) => l.errorMessage(), (r) => r),
-          'http://hapi.fhir.org/baseR4/Patient/12345/_history/6789?_format=application/fhir+json');
+          'http://hapi.fhir.org/baseR4/Patient/12345/_history/6789?_format=$mimeType');
     });
 
     test('Pretty read request', () async {
@@ -82,7 +84,7 @@ void main() {
       );
       final makeReq = await req.request();
       expect(makeReq.fold((l) => l.errorMessage(), (r) => r),
-          'http://hapi.fhir.org/baseR4/Patient/12345/_history/6789?_format=application/fhir+json&_pretty=true');
+          'http://hapi.fhir.org/baseR4/Patient/12345/_history/6789?_format=$mimeType&_pretty=true');
     });
 
     test('Pretty read request, true summary', () async {
@@ -96,7 +98,7 @@ void main() {
       );
       final makeReq = await req.request();
       expect(makeReq.fold((l) => l.errorMessage(), (r) => r),
-          'http://hapi.fhir.org/baseR4/Patient/12345/_history/6789?_format=application/fhir+json&_pretty=true&_summary=true');
+          'http://hapi.fhir.org/baseR4/Patient/12345/_history/6789?_format=$mimeType&_pretty=true&_summary=true');
     });
 
     test('Request, summary count', () async {
@@ -109,7 +111,7 @@ void main() {
       );
       final makeReq = await req.request();
       expect(makeReq.fold((l) => l.errorMessage(), (r) => r),
-          'http://hapi.fhir.org/baseR4/Patient/12345/_history/6789?_format=application/fhir+json&_summary=count');
+          'http://hapi.fhir.org/baseR4/Patient/12345/_history/6789?_format=$mimeType&_summary=count');
     });
   });
 
@@ -122,7 +124,7 @@ void main() {
           resourceType: 'Bundle', type: BundleType.batch, id: Id('12345'));
       final makeReq10 = await req10.request(newBundle);
       expect(makeReq10.fold((l) => l.errorMessage(), (r) => r),
-          'http://hapi.fhir.org/baseR4?_format=application/fhir+json');
+          'http://hapi.fhir.org/baseR4?_format=$mimeType');
     });
 
     test('Batch Request with error', () async {
@@ -153,7 +155,7 @@ void main() {
           ]);
       final transactionReq = await transaction.request(transactionBundle);
       expect(transactionReq.fold((l) => l.errorMessage(), (r) => r),
-          'http://hapi.fhir.org/baseR4?_format=application/fhir+json');
+          'http://hapi.fhir.org/baseR4?_format=$mimeType');
     });
   });
 
@@ -166,7 +168,7 @@ void main() {
       );
       final makeReq11 = await req11.request();
       expect(makeReq11.fold((l) => l.errorMessage(), (r) => r),
-          'http://hapi.fhir.org/baseR4/Observation/12345/_history?_format=application/fhir+json');
+          'http://hapi.fhir.org/baseR4/Observation/12345/_history?_format=$mimeType');
     });
 
     test('History of all Observations', () async {
@@ -176,7 +178,7 @@ void main() {
       );
       final makeReq12 = await req12.request();
       expect(makeReq12.fold((l) => l.errorMessage(), (r) => r),
-          'http://hapi.fhir.org/baseR4/Observation/_history?_format=application/fhir+json');
+          'http://hapi.fhir.org/baseR4/Observation/_history?_format=$mimeType');
     });
 
     test('History of everything', () async {
@@ -185,7 +187,7 @@ void main() {
       );
       final makeReq13 = await req13.request();
       expect(makeReq13.fold((l) => l.errorMessage(), (r) => r),
-          'http://hapi.fhir.org/baseR4/_history?_format=application/fhir+json');
+          'http://hapi.fhir.org/baseR4/_history?_format=$mimeType');
     });
 
     test('History of Observations, count of 10, after a specified date',
@@ -199,7 +201,7 @@ void main() {
       );
       final makeReq14 = await req14.request();
       expect(makeReq14.fold((l) => l.errorMessage(), (r) => r),
-          'http://hapi.fhir.org/baseR4/Observation/12345/_history?_format=application/fhir+json&_count=10&_since=2020-10-08T16:58:07.241117Z');
+          'http://hapi.fhir.org/baseR4/Observation/12345/_history?_format=$mimeType&_count=10&_since=2020-10-08T16:58:07.241117Z');
     });
   });
 
@@ -213,7 +215,7 @@ void main() {
       final patientToUpdate = Patient(resourceType: 'Patient', id: Id('12345'));
       final makeReq4 = await req4.request(resource: patientToUpdate);
       expect(makeReq4.fold((l) => l.errorMessage(), (r) => r),
-          'http://hapi.fhir.org/baseR4/Patient/12345?_format=application/fhir+json');
+          'http://hapi.fhir.org/baseR4/Patient/12345?_format=$mimeType');
     });
 
     test('Patch Request', () async {
@@ -225,7 +227,7 @@ void main() {
       final patientToPatch = Patient(resourceType: 'Patient', id: Id('12345'));
       final makeReq5 = await req5.request(resource: patientToPatch);
       expect(makeReq5.fold((l) => l.errorMessage(), (r) => r),
-          'http://hapi.fhir.org/baseR4/Patient/12345?_format=application/fhir+json');
+          'http://hapi.fhir.org/baseR4/Patient/12345?_format=$mimeType');
     });
 
     test('Delete Request', () async {
@@ -236,7 +238,7 @@ void main() {
       );
       final makeReq6 = await req6.request();
       expect(makeReq6.fold((l) => l.errorMessage(), (r) => r),
-          'http://hapi.fhir.org/baseR4/Patient/12345?_format=application/fhir+json');
+          'http://hapi.fhir.org/baseR4/Patient/12345?_format=$mimeType');
     });
 
     test('Create Request', () async {
@@ -247,7 +249,7 @@ void main() {
       final patientToCreate = Patient(resourceType: 'Patient', id: Id('12345'));
       final makeReq7 = await req7.request(resource: patientToCreate);
       expect(makeReq7.fold((l) => l.errorMessage(), (r) => r),
-          'http://hapi.fhir.org/baseR4/Patient?_format=application/fhir+json');
+          'http://hapi.fhir.org/baseR4/Patient?_format=$mimeType');
     });
 
     test('Capabilities Request', () async {
@@ -257,7 +259,7 @@ void main() {
       );
       final makeReq9 = await req9.request();
       expect(makeReq9.fold((l) => l.errorMessage(), (r) => r),
-          'http://hapi.fhir.org/baseR4/metadata?mode=normative&_format=application/fhir+json');
+          'http://hapi.fhir.org/baseR4/metadata?mode=normative&_format=$mimeType');
     });
   });
 
@@ -271,7 +273,7 @@ void main() {
       final response = await request.request();
       expect(
         response.fold((l) => l.errorMessage(), (r) => r),
-        'http://hapi.fhir.org/baseR4/Patient?_format=application/fhir+json&_id=12345',
+        'http://hapi.fhir.org/baseR4/Patient?_format=$mimeType&_id=12345',
       );
     });
 
@@ -286,7 +288,7 @@ void main() {
       final response = await request.request();
       expect(
         response.fold((l) => l.errorMessage(), (r) => r),
-        'http://hapi.fhir.org/baseR4/Observation?_format=application/fhir+json&_lastUpdated=gt2010-10-01',
+        'http://hapi.fhir.org/baseR4/Observation?_format=$mimeType&_lastUpdated=gt2010-10-01',
       );
     });
 
@@ -305,7 +307,7 @@ void main() {
       final response = await request.request();
       expect(
         response.fold((l) => l.errorMessage(), (r) => r),
-        'http://hapi.fhir.org/baseR4/Condition?_format=application/fhir+json&_tag=http://acme.org/codes|needs-review',
+        'http://hapi.fhir.org/baseR4/Condition?_format=$mimeType&_tag=http://acme.org/codes|needs-review',
       );
     });
 
@@ -320,7 +322,7 @@ void main() {
       final response = await request.request();
       expect(
         response.fold((l) => l.errorMessage(), (r) => r),
-        'http://hapi.fhir.org/baseR4/DiagnosticReport?_format=application/fhir+json&_profile=http://acme.org/codes',
+        'http://hapi.fhir.org/baseR4/DiagnosticReport?_format=$mimeType&_profile=http://acme.org/codes',
       );
     });
 
@@ -333,7 +335,7 @@ void main() {
       final response = await request.request();
       expect(
         response.fold((l) => l.errorMessage(), (r) => r),
-        'http://hapi.fhir.org/baseR4/Patient?_format=application/fhir+json&gender:missing=true',
+        'http://hapi.fhir.org/baseR4/Patient?_format=$mimeType&gender:missing=true',
       );
     });
 
@@ -346,7 +348,7 @@ void main() {
       final response = await request.request();
       expect(
         response.fold((l) => l.errorMessage(), (r) => r),
-        'http://hapi.fhir.org/baseR4/Patient?_format=application/fhir+json&gender:missing=false',
+        'http://hapi.fhir.org/baseR4/Patient?_format=$mimeType&gender:missing=false',
       );
     });
 
@@ -361,7 +363,7 @@ void main() {
       final response = await request.request();
       expect(
         response.fold((l) => l.errorMessage(), (r) => r),
-        'http://hapi.fhir.org/baseR4/Patient?_format=application/fhir+json&_text:exact=Stark',
+        'http://hapi.fhir.org/baseR4/Patient?_format=$mimeType&_text:exact=Stark',
       );
     });
 
@@ -376,7 +378,7 @@ void main() {
       final response = await request.request();
       expect(
         response.fold((l) => l.errorMessage(), (r) => r),
-        'http://hapi.fhir.org/baseR4/Observation?_format=application/fhir+json&_lastUpdated=le2010-10-01',
+        'http://hapi.fhir.org/baseR4/Observation?_format=$mimeType&_lastUpdated=le2010-10-01',
       );
     });
 
@@ -390,7 +392,7 @@ void main() {
       final response = await request.request();
       expect(
         response.fold((l) => l.errorMessage(), (r) => r),
-        'http://hapi.fhir.org/baseR4/RiskAssessment?_format=application/fhir+json&probability=gt0.8',
+        'http://hapi.fhir.org/baseR4/RiskAssessment?_format=$mimeType&probability=gt0.8',
       );
     });
 
@@ -406,7 +408,7 @@ void main() {
       final response = await request.request();
       expect(
         response.fold((l) => l.errorMessage(), (r) => r),
-        'http://hapi.fhir.org/baseR4/Patient?_format=application/fhir+json&birthdate=ge2010-01-01&birthdate=le2011-12-31',
+        'http://hapi.fhir.org/baseR4/Patient?_format=$mimeType&birthdate=ge2010-01-01&birthdate=le2011-12-31',
       );
     });
 
@@ -424,7 +426,7 @@ void main() {
       final response = await request.request();
       expect(
         response.fold((l) => l.errorMessage(), (r) => r),
-        'http://hapi.fhir.org/baseR4/Patient?_format=application/fhir+json&given=eve&given:contains=eve&given:exact=eve',
+        'http://hapi.fhir.org/baseR4/Patient?_format=$mimeType&given=eve&given:contains=eve&given:exact=eve',
       );
     });
 
@@ -442,7 +444,7 @@ void main() {
       final response = await request.request();
       expect(
         response.fold((l) => l.errorMessage(), (r) => r),
-        'http://hapi.fhir.org/baseR4/Patient?_format=application/fhir+json&identifier=http://acme.org/patient|2345',
+        'http://hapi.fhir.org/baseR4/Patient?_format=$mimeType&identifier=http://acme.org/patient|2345',
       );
     });
 
@@ -458,7 +460,7 @@ void main() {
       final response = await request.request();
       expect(
         response.fold((l) => l.errorMessage(), (r) => r),
-        'http://hapi.fhir.org/baseR4/Composition?_format=application/fhir+json&section:not=48765-2',
+        'http://hapi.fhir.org/baseR4/Composition?_format=$mimeType&section:not=48765-2',
       );
     });
 
@@ -477,7 +479,7 @@ void main() {
       final response = await request.request();
       expect(
         response.fold((l) => l.errorMessage(), (r) => r),
-        'http://hapi.fhir.org/baseR4/Condition?_format=application/fhir+json&code:in=http%3A%2F%2Fsnomed.info%2Fsct%3Ffhir_vs%3Disa%2F126851005',
+        'http://hapi.fhir.org/baseR4/Condition?_format=$mimeType&code:in=http%3A%2F%2Fsnomed.info%2Fsct%3Ffhir_vs%3Disa%2F126851005',
       );
     });
 
@@ -499,7 +501,7 @@ void main() {
       final response = await request.request();
       expect(
         response.fold((l) => l.errorMessage(), (r) => r),
-        'http://hapi.fhir.org/baseR4/Patient?_format=application/fhir+json&identifier:of-type=http://terminology.hl7.org/CodeSystem/v2-0203|MR|446053',
+        'http://hapi.fhir.org/baseR4/Patient?_format=$mimeType&identifier:of-type=http://terminology.hl7.org/CodeSystem/v2-0203|MR|446053',
       );
     });
 
@@ -521,7 +523,7 @@ void main() {
       final response = await request.request();
       expect(
         response.fold((l) => l.errorMessage(), (r) => r),
-        'http://hapi.fhir.org/baseR4/Observation?_format=application/fhir+json&value-quantity=ap5.4|http://unitsofmeasure.org|mg',
+        'http://hapi.fhir.org/baseR4/Observation?_format=$mimeType&value-quantity=ap5.4|http://unitsofmeasure.org|mg',
       );
     });
 
@@ -542,7 +544,7 @@ void main() {
       final response = await request.request();
       expect(
         response.fold((l) => l.errorMessage(), (r) => r),
-        'http://hapi.fhir.org/baseR4/Observation?_format=application/fhir+json&value-quantity=5.4|http://unitsofmeasure.org|mg',
+        'http://hapi.fhir.org/baseR4/Observation?_format=$mimeType&value-quantity=5.4|http://unitsofmeasure.org|mg',
       );
     });
 
@@ -563,7 +565,7 @@ void main() {
       final response = await request.request();
       expect(
         response.fold((l) => l.errorMessage(), (r) => r),
-        'http://hapi.fhir.org/baseR4/Observation?_format=application/fhir+json&value-quantity=0.0054|http://unitsofmeasure.org|g',
+        'http://hapi.fhir.org/baseR4/Observation?_format=$mimeType&value-quantity=0.0054|http://unitsofmeasure.org|g',
       );
     });
 
@@ -582,7 +584,7 @@ void main() {
       final response = await request.request();
       expect(
         response.fold((l) => l.errorMessage(), (r) => r),
-        'http://hapi.fhir.org/baseR4/Observation?_format=application/fhir+json&subject=Patient/123',
+        'http://hapi.fhir.org/baseR4/Observation?_format=$mimeType&subject=Patient/123',
       );
     });
 
@@ -602,7 +604,7 @@ void main() {
       final response = await request.request();
       expect(
         response.fold((l) => l.errorMessage(), (r) => r),
-        'http://hapi.fhir.org/baseR4/Observation?_format=application/fhir+json&subject=Patient/123',
+        'http://hapi.fhir.org/baseR4/Observation?_format=$mimeType&subject=Patient/123',
       );
     });
   });

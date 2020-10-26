@@ -69,9 +69,12 @@ abstract class TransactionRequest with _$TransactionRequest {
       }
     }
 
-    final thisRequest = '$base?_format=application/fhir+json'
+    final searchString = '?'
+        '_format=${Uri.encodeQueryComponent('application/fhir+json')}'
         '${pretty ? "&_pretty=$pretty" : ""}'
         '${summary != Summary.none ? "&_summary=${enumToString(summary)}" : ""}';
+
+    final thisRequest = base.toString() + searchString;
 
     final result = await makeRequest(
         type: RestfulRequest.get_,
