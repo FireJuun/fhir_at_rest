@@ -4,12 +4,13 @@ import 'package:fhir_at_rest/requests/request_types.dart';
 import 'package:fhir_at_rest/resource_types/resource_types.dart';
 import 'package:fhir_at_rest/search_parameters/r4/parameters.dart';
 import 'package:fhir_at_rest/search_parameters/search_parameter_types/search_parameter_types.dart';
-import 'package:flutter_test/flutter_test.dart';
-import 'package:fhir_at_rest/helpers/globals.dart' as globals;
+import 'package:test/test.dart';
+import 'package:fhir_at_rest/globals.dart' as globals;
 
 void main() {
   globals.kTestMode = true;
   final String mimeType = Uri.encodeQueryComponent('application/fhir+json');
+
   group('Read Request', () {
     test('Basic Read Request', () async {
       final req = ReadRequest.r4(

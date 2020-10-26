@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:dartz/dartz.dart';
-import 'package:fhir_at_rest/helpers/globals.dart' as globals;
+import 'package:fhir_at_rest/globals.dart' as globals;
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:http/http.dart';
 
