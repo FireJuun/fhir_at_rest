@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:fhir_at_rest/fhir_uri/fhir_uri.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:fhir/primitive_types/id.dart';
 
@@ -54,27 +55,44 @@ abstract class VreadRequest with _$VreadRequest {
   }) = _VreadRequestR5;
 
   Future<Either<RestfulFailure, dynamic>> request() async {
-    var thisRequest = map(
-      dstu2: (req) => '$base/${enumToString(req.type)}/${req.id.toString()}/'
-          '_history/${req.versionId.toString()}',
-      stu3: (req) => '$base/${enumToString(req.type)}/${req.id.toString()}/'
-          '_history/${req.versionId.toString()}',
-      r4: (req) => '$base/${enumToString(req.type)}/${req.id.toString()}/'
-          '_history/${req.versionId.toString()}',
-      r5: (req) => '$base/${enumToString(req.type)}/${req.id.toString()}/'
-          '_history/${req.versionId.toString()}',
+    final FHIRUri fhirUri = map(
+      dstu2: (req) => FHIRUri.dstu2VRead(
+        base: req.base,
+        type: req.type,
+        id: req.id,
+        vid: req.versionId,
+        pretty: req.pretty,
+        summary: req.summary,
+      ),
+      stu3: (req) => FHIRUri.stu3VRead(
+        base: req.base,
+        type: req.type,
+        id: req.id,
+        vid: req.versionId,
+        pretty: req.pretty,
+        summary: req.summary,
+      ),
+      r4: (req) => FHIRUri.r4VRead(
+        base: req.base,
+        type: req.type,
+        id: req.id,
+        vid: req.versionId,
+        pretty: req.pretty,
+        summary: req.summary,
+      ),
+      r5: (req) => FHIRUri.r5VRead(
+        base: req.base,
+        type: req.type,
+        id: req.id,
+        vid: req.versionId,
+        pretty: req.pretty,
+        summary: req.summary,
+      ),
     );
-
-    final searchString = '?'
-        '_format=${Uri.encodeQueryComponent('application/fhir+json')}'
-        '${pretty ? "&_pretty=$pretty" : ""}'
-        '${summary != Summary.none ? "&_summary=${enumToString(summary)}" : ""}';
-
-    thisRequest += searchString;
 
     final result = await makeRequest(
       type: RestfulRequest.get_,
-      thisRequest: thisRequest,
+      thisRequest: fhirUri.uri,
     );
 
     return result.fold(

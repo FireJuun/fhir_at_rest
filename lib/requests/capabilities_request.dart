@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:fhir_at_rest/fhir_uri/fhir_uri.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import 'package:fhir/dstu2.dart' as dstu2;
@@ -44,19 +45,32 @@ abstract class CapabilitiesRequest with _$CapabilitiesRequest {
   }) = _CapabilitiesRequestR5;
 
   Future<Either<RestfulFailure, dynamic>> request() async {
-    var thisRequest = '$base/metadata';
-
-    final searchString = '?'
-        'mode=${enumToString(mode)}'
-        '&_format=${Uri.encodeQueryComponent('application/fhir+json')}'
-        '${pretty ? "&_pretty=$pretty" : ""}'
-        '${summary != Summary.none ? "&_summary=${enumToString(summary)}" : ""}';
-
-    thisRequest += searchString;
+    final FHIRUri fhirUri = map(
+      dstu2: (req) => FHIRUri.dstu2Capabilities(
+        base: req.base,
+        pretty: req.pretty,
+        mode: req.mode,
+      ),
+      stu3: (req) => FHIRUri.stu3Capabilities(
+        base: req.base,
+        pretty: req.pretty,
+        mode: req.mode,
+      ),
+      r4: (req) => FHIRUri.r4Capabilities(
+        base: req.base,
+        pretty: req.pretty,
+        mode: req.mode,
+      ),
+      r5: (req) => FHIRUri.r5Capabilities(
+        base: req.base,
+        pretty: req.pretty,
+        mode: req.mode,
+      ),
+    );
 
     final result = await makeRequest(
       type: RestfulRequest.get_,
-      thisRequest: thisRequest,
+      thisRequest: fhirUri.uri,
     );
 
     return result.fold(

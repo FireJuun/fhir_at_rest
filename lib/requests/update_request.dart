@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:fhir_at_rest/fhir_uri/fhir_uri.dart';
 import 'package:fhir_at_rest/search_parameters/search_parameters.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:fhir/primitive_types/id.dart';
@@ -50,26 +51,46 @@ abstract class UpdateRequest with _$UpdateRequest {
     @Default(Summary.none) Summary summary,
   }) = _UpdateRequestR5;
 
-  Future<Either<RestfulFailure, dynamic>> request(
-      {@required dynamic resource, dynamic search}) async {
+  Future<Either<RestfulFailure, dynamic>> request({
+    @required dynamic resource,
+    dynamic search,
+  }) async {
     if (resource.id != this.id) {
       return left(RestfulFailure.idDoesNotMatchResource(failedValue: resource));
     }
 
-    var thisRequest = map(
-      dstu2: (req) => '$base/${enumToString(req.type)}/${req.id.toString()}',
-      stu3: (req) => '$base/${enumToString(req.type)}/${req.id.toString()}',
-      r4: (req) => '$base/${enumToString(req.type)}/${req.id.toString()}',
-      r5: (req) => '$base/${enumToString(req.type)}/${req.id.toString()}',
+    final FHIRUri fhirUri = map(
+      dstu2: (req) => FHIRUri.dstu2Update(
+        base: req.base,
+        type: req.type,
+        id: req.id,
+        pretty: req.pretty,
+        summary: req.summary,
+      ),
+      stu3: (req) => FHIRUri.stu3Update(
+        base: req.base,
+        type: req.type,
+        id: req.id,
+        pretty: req.pretty,
+        summary: req.summary,
+      ),
+      r4: (req) => FHIRUri.r4Update(
+        base: req.base,
+        type: req.type,
+        id: req.id,
+        pretty: req.pretty,
+        summary: req.summary,
+      ),
+      r5: (req) => FHIRUri.r5Update(
+        base: req.base,
+        type: req.type,
+        id: req.id,
+        pretty: req.pretty,
+        summary: req.summary,
+      ),
     );
 
-    final searchString = '?'
-        '_format=${Uri.encodeQueryComponent('application/fhir+json')}'
-        '${pretty ? "&_pretty=$pretty" : ""}'
-        '${summary != Summary.none ? "&_summary=${enumToString(summary)}" : ""}';
-
-    thisRequest += searchString;
-
+    var searchString = '';
     if (search != null) {
       if (search is Dstu2SearchParameters && this is! _UpdateRequestDstu2 ||
           search is Stu3SearchParameters && this is! _UpdateRequestStu3 ||
@@ -78,13 +99,13 @@ abstract class UpdateRequest with _$UpdateRequest {
         return left(RestfulFailure.parameterTypeNotResourceType(
             resourceType: resource.resourceType, type: search.runtimeType));
       } else {
-        thisRequest += search.searchString();
+        searchString = search.searchString();
       }
     }
 
     final result = await makeRequest(
         type: RestfulRequest.put_,
-        thisRequest: thisRequest,
+        thisRequest: fhirUri.uri + searchString,
         resource: resource.toJson());
 
     return result.fold(

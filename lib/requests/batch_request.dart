@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:fhir_at_rest/fhir_uri/fhir_uri.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import 'package:fhir/dstu2.dart' as dstu2;
@@ -67,16 +68,32 @@ abstract class BatchRequest with _$BatchRequest {
       }
     }
 
-    final searchString = '?'
-        '_format=${Uri.encodeQueryComponent('application/fhir+json')}'
-        '${pretty ? "&_pretty=$pretty" : ""}'
-        '${summary != Summary.none ? "&_summary=${enumToString(summary)}" : ""}';
-
-    final thisRequest = base.toString() + searchString;
+    final FHIRUri fhirUri = map(
+      dstu2: (req) => FHIRUri.dstu2Transaction(
+        base: req.base,
+        pretty: req.pretty,
+        summary: req.summary,
+      ),
+      stu3: (req) => FHIRUri.stu3Transaction(
+        base: req.base,
+        pretty: req.pretty,
+        summary: req.summary,
+      ),
+      r4: (req) => FHIRUri.r4Transaction(
+        base: req.base,
+        pretty: req.pretty,
+        summary: req.summary,
+      ),
+      r5: (req) => FHIRUri.r5Transaction(
+        base: req.base,
+        pretty: req.pretty,
+        summary: req.summary,
+      ),
+    );
 
     final result = await makeRequest(
         type: RestfulRequest.post_,
-        thisRequest: thisRequest,
+        thisRequest: fhirUri.uri,
         resource: resource.toJson());
 
     return result.fold(

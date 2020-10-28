@@ -1,5 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:fhir/primitive_types/primitive_types.dart';
+import 'package:fhir_at_rest/fhir_uri/fhir_uri.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import 'package:fhir/dstu2.dart' as dstu2;
@@ -7,7 +8,6 @@ import 'package:fhir/stu3.dart' as stu3;
 import 'package:fhir/r4.dart' as r4;
 import 'package:fhir/r5.dart' as r5;
 
-import '../enums/enums.dart';
 import '../failures/restful_failure.dart';
 import '../resource_types/resource_types.dart';
 import '../search_parameters/search_parameter_types/search_parameter_types.dart';
@@ -59,37 +59,71 @@ abstract class HistoryRequest with _$HistoryRequest {
   }) = _HistoryRequestR5;
 
   Future<Either<RestfulFailure, dynamic>> request() async {
-    var thisRequest = '$base/';
-    thisRequest += map(
+    final FHIRUri fhirUri = map(
       dstu2: (req) => req.type == null
-          ? ''
-          : '${enumToString(req.type)}/'
-              '${req.id == null ? "" : "${req.id.toString()}/"}',
+          ? FHIRUri.dstu2HistoryAll(
+              base: req.base,
+            )
+          : req.id == null
+              ? FHIRUri.dstu2HistoryType(
+                  base: req.base,
+                  type: req.type,
+                )
+              : FHIRUri.dstu2History(
+                  base: req.base,
+                  type: req.type,
+                  id: req.id,
+                ),
       stu3: (req) => req.type == null
-          ? ''
-          : '${enumToString(req.type)}/'
-              '${req.id == null ? "" : "${req.id.toString()}/"}',
+          ? FHIRUri.stu3HistoryAll(
+              base: req.base,
+            )
+          : req.id == null
+              ? FHIRUri.stu3HistoryType(
+                  base: req.base,
+                  type: req.type,
+                )
+              : FHIRUri.stu3History(
+                  base: req.base,
+                  type: req.type,
+                  id: req.id,
+                ),
       r4: (req) => req.type == null
-          ? ''
-          : '${enumToString(req.type)}/'
-              '${req.id == null ? "" : "${req.id.toString()}/"}',
+          ? FHIRUri.r4HistoryAll(
+              base: req.base,
+            )
+          : req.id == null
+              ? FHIRUri.r4HistoryType(
+                  base: req.base,
+                  type: req.type,
+                )
+              : FHIRUri.r4History(
+                  base: req.base,
+                  type: req.type,
+                  id: req.id,
+                ),
       r5: (req) => req.type == null
-          ? ''
-          : '${enumToString(req.type)}/'
-              '${req.id == null ? "" : "${req.id.toString()}/"}',
+          ? FHIRUri.r5HistoryAll(
+              base: req.base,
+            )
+          : req.id == null
+              ? FHIRUri.r5HistoryType(
+                  base: req.base,
+                  type: req.type,
+                )
+              : FHIRUri.r5History(
+                  base: req.base,
+                  type: req.type,
+                  id: req.id,
+                ),
     );
-    thisRequest += '_history';
 
-    final searchString = '?'
-        '_format=${Uri.encodeQueryComponent('application/fhir+json')}'
-        '${count == null ? "" : "&_count=$count"}'
+    final parameters = '${count == null ? "" : "&_count=$count"}'
         '${since == null ? "" : "&_since=${since.toString()}"}';
-
-    thisRequest += searchString;
 
     final result = await makeRequest(
       type: RestfulRequest.get_,
-      thisRequest: thisRequest,
+      thisRequest: fhirUri.uri + parameters,
     );
 
     return result.fold(

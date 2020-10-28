@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:fhir_at_rest/fhir_uri/fhir_uri.dart';
 import 'package:fhir_at_rest/search_parameters/search_parameters.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -47,18 +48,34 @@ abstract class CreateRequest with _$CreateRequest {
 
   Future<Either<RestfulFailure, dynamic>> request(
       {@required dynamic resource, dynamic search}) async {
-    var thisRequest = map(
-      dstu2: (req) => '$base/${enumToString(req.type)}',
-      stu3: (req) => '$base/${enumToString(req.type)}',
-      r4: (req) => '$base/${enumToString(req.type)}',
-      r5: (req) => '$base/${enumToString(req.type)}',
+    final FHIRUri fhirUri = map(
+      dstu2: (req) => FHIRUri.dstu2Create(
+        base: req.base,
+        type: req.type,
+        pretty: req.pretty,
+        summary: req.summary,
+      ),
+      stu3: (req) => FHIRUri.stu3Create(
+        base: req.base,
+        type: req.type,
+        pretty: req.pretty,
+        summary: req.summary,
+      ),
+      r4: (req) => FHIRUri.r4Create(
+        base: req.base,
+        type: req.type,
+        pretty: req.pretty,
+        summary: req.summary,
+      ),
+      r5: (req) => FHIRUri.r5Create(
+        base: req.base,
+        type: req.type,
+        pretty: req.pretty,
+        summary: req.summary,
+      ),
     );
 
-    thisRequest += '?'
-        '_format=${Uri.encodeQueryComponent('application/fhir+json')}'
-        '${pretty ? "&_pretty=$pretty" : ""}'
-        '${summary != Summary.none ? "&_summary=${enumToString(summary)}" : ""}';
-
+    var searchString = '';
     if (search != null) {
       if (search is Dstu2SearchParameters && this is! _CreateRequestDstu2 ||
           search is Stu3SearchParameters && this is! _CreateRequestStu3 ||
@@ -67,13 +84,13 @@ abstract class CreateRequest with _$CreateRequest {
         return left(RestfulFailure.parameterTypeNotResourceType(
             resourceType: resource.resourceType, type: search.runtimeType));
       } else {
-        thisRequest += search.searchString();
+        searchString = search.searchString();
       }
     }
 
     final result = await makeRequest(
         type: RestfulRequest.post_,
-        thisRequest: thisRequest,
+        thisRequest: fhirUri.uri + searchString,
         resource: resource.toJson());
 
     return result.fold(
