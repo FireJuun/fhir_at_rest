@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:fhir_at_rest/fhir_uri/fhir_uri.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:fhir/primitive_types/id.dart';
 
@@ -50,23 +51,40 @@ abstract class ReadRequest with _$ReadRequest {
   }) = _ReadRequestR5;
 
   Future<Either<RestfulFailure, dynamic>> request() async {
-    var thisRequest = map(
-      dstu2: (req) => '$base/${enumToString(req.type)}/${req.id.toString()}',
-      stu3: (req) => '$base/${enumToString(req.type)}/${req.id.toString()}',
-      r4: (req) => '$base/${enumToString(req.type)}/${req.id.toString()}',
-      r5: (req) => '$base/${enumToString(req.type)}/${req.id.toString()}',
+    final FHIRUri fhirUri = map(
+      dstu2: (req) => FHIRUri.dstu2Read(
+        base: req.base,
+        type: req.type,
+        id: req.id,
+        pretty: req.pretty,
+        summary: req.summary,
+      ),
+      stu3: (req) => FHIRUri.stu3Read(
+        base: req.base,
+        type: req.type,
+        id: req.id,
+        pretty: req.pretty,
+        summary: req.summary,
+      ),
+      r4: (req) => FHIRUri.r4Read(
+        base: req.base,
+        type: req.type,
+        id: req.id,
+        pretty: req.pretty,
+        summary: req.summary,
+      ),
+      r5: (req) => FHIRUri.r5Read(
+        base: req.base,
+        type: req.type,
+        id: req.id,
+        pretty: req.pretty,
+        summary: req.summary,
+      ),
     );
-
-    final searchString = '?'
-        '_format=${Uri.encodeQueryComponent('application/fhir+json')}'
-        '${pretty ? "&_pretty=$pretty" : ""}'
-        '${summary != Summary.none ? "&_summary=${enumToString(summary)}" : ""}';
-
-    thisRequest += searchString;
 
     final result = await makeRequest(
       type: RestfulRequest.get_,
-      thisRequest: thisRequest,
+      thisRequest: fhirUri.uri,
     );
 
     return result.fold(
