@@ -7,70 +7,77 @@ import 'package:fhir/stu3.dart' as stu3;
 import 'package:fhir/r4.dart' as r4;
 import 'package:fhir/r5.dart' as r5;
 
-import '../enums/enums.dart';
 import '../failures/restful_failure.dart';
+import '../search_parameters/search_parameters.dart';
 import 'make_request.dart';
 
-part 'capabilities_request.freezed.dart';
+part 'search_all_request.freezed.dart';
 
 @freezed
-abstract class CapabilitiesRequest with _$CapabilitiesRequest {
-  CapabilitiesRequest._();
-  factory CapabilitiesRequest.dstu2({
+abstract class SearchAllRequest with _$SearchAllRequest {
+  SearchAllRequest._();
+  factory SearchAllRequest.dstu2({
     @required Uri base,
-    @Default(Mode.full) Mode mode,
     @Default(false) bool pretty,
-    @Default(Summary.none) Summary summary,
-  }) = _CapabilitiesRequestDstu2;
+    Dstu2SearchParameters parameters,
+  }) = _SearchAllRequestDstu2;
 
-  factory CapabilitiesRequest.stu3({
+  factory SearchAllRequest.stu3({
     @required Uri base,
-    @Default(Mode.full) Mode mode,
     @Default(false) bool pretty,
-    @Default(Summary.none) Summary summary,
-  }) = _CapabilitiesRequestStu3;
+    Stu3SearchParameters parameters,
+  }) = _SearchAllRequestStu3;
 
-  factory CapabilitiesRequest.r4({
+  factory SearchAllRequest.r4({
     @required Uri base,
-    @Default(Mode.full) Mode mode,
     @Default(false) bool pretty,
-    @Default(Summary.none) Summary summary,
-  }) = _CapabilitiesRequestR4;
+    R4SearchParameters parameters,
+  }) = _SearchAllRequestR4;
 
-  factory CapabilitiesRequest.r5({
+  factory SearchAllRequest.r5({
     @required Uri base,
-    @Default(Mode.full) Mode mode,
     @Default(false) bool pretty,
-    @Default(Summary.none) Summary summary,
-  }) = _CapabilitiesRequestR5;
+    R5SearchParameters parameters,
+  }) = _SearchAllRequestR5;
 
   Future<Either<RestfulFailure, dynamic>> request() async {
     final FHIRUri fhirUri = map(
-      dstu2: (req) => FHIRUri.dstu2Capabilities(
+      dstu2: (req) => FHIRUri.dstu2SearchAll(
         base: req.base,
         pretty: req.pretty,
-        mode: req.mode,
       ),
-      stu3: (req) => FHIRUri.stu3Capabilities(
+      stu3: (req) => FHIRUri.stu3SearchAll(
         base: req.base,
         pretty: req.pretty,
-        mode: req.mode,
       ),
-      r4: (req) => FHIRUri.r4Capabilities(
+      r4: (req) => FHIRUri.r4SearchAll(
         base: req.base,
         pretty: req.pretty,
-        mode: req.mode,
       ),
-      r5: (req) => FHIRUri.r5Capabilities(
+      r5: (req) => FHIRUri.r5SearchAll(
         base: req.base,
         pretty: req.pretty,
-        mode: req.mode,
       ),
     );
 
+    final parametersString = map(
+      dstu2: (req) => req.parameters.searchString(),
+      stu3: (req) => req.parameters.searchString(),
+      r4: (req) => req.parameters.searchString(),
+      r5: (req) => req.parameters.searchString(),
+    );
+
+    var searchString = '';
+    if (parametersString.isRight()) {
+      searchString = parametersString.getOrElse(() => '');
+    } else {
+      return left(parametersString.fold((l) => l,
+          (r) => RestfulFailure.unknownFailure(failedValue: parametersString)));
+    }
+
     final result = await makeRequest(
       type: RestfulRequest.get_,
-      thisRequest: fhirUri.uri,
+      thisRequest: fhirUri.uri + searchString,
     );
 
     return result.fold(
