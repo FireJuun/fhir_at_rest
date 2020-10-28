@@ -884,6 +884,86 @@ class _$FHIRUriTearOff {
       summary: summary,
     );
   }
+
+// ignore: unused_element
+  _FHIRUriDstu2Operation dstu2Operation(
+      {@required Uri base,
+      String mimeType = 'application/json+fhir',
+      bool pretty = false,
+      Summary summary = Summary.none,
+      Dstu2Types type,
+      Id id,
+      @required String operation}) {
+    return _FHIRUriDstu2Operation(
+      base: base,
+      mimeType: mimeType,
+      pretty: pretty,
+      summary: summary,
+      type: type,
+      id: id,
+      operation: operation,
+    );
+  }
+
+// ignore: unused_element
+  _FHIRUriStu3Operation stu3Operation(
+      {@required Uri base,
+      String mimeType = 'application/fhir+json',
+      bool pretty = false,
+      Summary summary = Summary.none,
+      Stu3Types type,
+      Id id,
+      @required String operation}) {
+    return _FHIRUriStu3Operation(
+      base: base,
+      mimeType: mimeType,
+      pretty: pretty,
+      summary: summary,
+      type: type,
+      id: id,
+      operation: operation,
+    );
+  }
+
+// ignore: unused_element
+  _FHIRUriR4Operation r4Operation(
+      {@required Uri base,
+      String mimeType = 'application/fhir+json',
+      bool pretty = false,
+      Summary summary = Summary.none,
+      R4Types type,
+      Id id,
+      @required String operation}) {
+    return _FHIRUriR4Operation(
+      base: base,
+      mimeType: mimeType,
+      pretty: pretty,
+      summary: summary,
+      type: type,
+      id: id,
+      operation: operation,
+    );
+  }
+
+// ignore: unused_element
+  _FHIRUriR5Operation r5Operation(
+      {@required Uri base,
+      String mimeType = 'application/fhir+json',
+      bool pretty = false,
+      Summary summary = Summary.none,
+      R5Types type,
+      Id id,
+      @required String operation}) {
+    return _FHIRUriR5Operation(
+      base: base,
+      mimeType: mimeType,
+      pretty: pretty,
+      summary: summary,
+      type: type,
+      id: id,
+      operation: operation,
+    );
+  }
 }
 
 /// @nodoc
@@ -1055,6 +1135,18 @@ mixin _$FHIRUri {
     @required
         Result r5HistoryAll(
             Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result dstu2Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Dstu2Types type, Id id, String operation),
+    @required
+        Result stu3Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Stu3Types type, Id id, String operation),
+    @required
+        Result r4Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R4Types type, Id id, String operation),
+    @required
+        Result r5Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R5Types type, Id id, String operation),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
@@ -1160,6 +1252,14 @@ mixin _$FHIRUri {
         Uri base, String mimeType, bool pretty, Summary summary),
     Result r5HistoryAll(
         Uri base, String mimeType, bool pretty, Summary summary),
+    Result dstu2Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Dstu2Types type, Id id, String operation),
+    Result stu3Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Stu3Types type, Id id, String operation),
+    Result r4Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R4Types type, Id id, String operation),
+    Result r5Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R5Types type, Id id, String operation),
     @required Result orElse(),
   });
   @optionalTypeArgs
@@ -1216,6 +1316,10 @@ mixin _$FHIRUri {
     @required Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     @required Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     @required Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    @required Result dstu2Operation(_FHIRUriDstu2Operation value),
+    @required Result stu3Operation(_FHIRUriStu3Operation value),
+    @required Result r4Operation(_FHIRUriR4Operation value),
+    @required Result r5Operation(_FHIRUriR5Operation value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
@@ -1271,6 +1375,10 @@ mixin _$FHIRUri {
     Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    Result dstu2Operation(_FHIRUriDstu2Operation value),
+    Result stu3Operation(_FHIRUriStu3Operation value),
+    Result r4Operation(_FHIRUriR4Operation value),
+    Result r5Operation(_FHIRUriR5Operation value),
     @required Result orElse(),
   });
 
@@ -1580,6 +1688,18 @@ class _$_FHIRUriDstu2Read extends _FHIRUriDstu2Read {
     @required
         Result r5HistoryAll(
             Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result dstu2Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Dstu2Types type, Id id, String operation),
+    @required
+        Result stu3Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Stu3Types type, Id id, String operation),
+    @required
+        Result r4Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R4Types type, Id id, String operation),
+    @required
+        Result r5Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R5Types type, Id id, String operation),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -1633,6 +1753,10 @@ class _$_FHIRUriDstu2Read extends _FHIRUriDstu2Read {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return dstu2Read(base, mimeType, pretty, summary, type, id);
   }
 
@@ -1741,6 +1865,14 @@ class _$_FHIRUriDstu2Read extends _FHIRUriDstu2Read {
         Uri base, String mimeType, bool pretty, Summary summary),
     Result r5HistoryAll(
         Uri base, String mimeType, bool pretty, Summary summary),
+    Result dstu2Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Dstu2Types type, Id id, String operation),
+    Result stu3Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Stu3Types type, Id id, String operation),
+    Result r4Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R4Types type, Id id, String operation),
+    Result r5Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R5Types type, Id id, String operation),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1805,6 +1937,10 @@ class _$_FHIRUriDstu2Read extends _FHIRUriDstu2Read {
     @required Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     @required Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     @required Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    @required Result dstu2Operation(_FHIRUriDstu2Operation value),
+    @required Result stu3Operation(_FHIRUriStu3Operation value),
+    @required Result r4Operation(_FHIRUriR4Operation value),
+    @required Result r5Operation(_FHIRUriR5Operation value),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -1858,6 +1994,10 @@ class _$_FHIRUriDstu2Read extends _FHIRUriDstu2Read {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return dstu2Read(this);
   }
 
@@ -1916,6 +2056,10 @@ class _$_FHIRUriDstu2Read extends _FHIRUriDstu2Read {
     Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    Result dstu2Operation(_FHIRUriDstu2Operation value),
+    Result stu3Operation(_FHIRUriStu3Operation value),
+    Result r4Operation(_FHIRUriR4Operation value),
+    Result r5Operation(_FHIRUriR5Operation value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -2222,6 +2366,18 @@ class _$_FHIRUriStu3Read extends _FHIRUriStu3Read {
     @required
         Result r5HistoryAll(
             Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result dstu2Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Dstu2Types type, Id id, String operation),
+    @required
+        Result stu3Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Stu3Types type, Id id, String operation),
+    @required
+        Result r4Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R4Types type, Id id, String operation),
+    @required
+        Result r5Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R5Types type, Id id, String operation),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -2275,6 +2431,10 @@ class _$_FHIRUriStu3Read extends _FHIRUriStu3Read {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return stu3Read(base, mimeType, pretty, summary, type, id);
   }
 
@@ -2383,6 +2543,14 @@ class _$_FHIRUriStu3Read extends _FHIRUriStu3Read {
         Uri base, String mimeType, bool pretty, Summary summary),
     Result r5HistoryAll(
         Uri base, String mimeType, bool pretty, Summary summary),
+    Result dstu2Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Dstu2Types type, Id id, String operation),
+    Result stu3Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Stu3Types type, Id id, String operation),
+    Result r4Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R4Types type, Id id, String operation),
+    Result r5Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R5Types type, Id id, String operation),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -2447,6 +2615,10 @@ class _$_FHIRUriStu3Read extends _FHIRUriStu3Read {
     @required Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     @required Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     @required Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    @required Result dstu2Operation(_FHIRUriDstu2Operation value),
+    @required Result stu3Operation(_FHIRUriStu3Operation value),
+    @required Result r4Operation(_FHIRUriR4Operation value),
+    @required Result r5Operation(_FHIRUriR5Operation value),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -2500,6 +2672,10 @@ class _$_FHIRUriStu3Read extends _FHIRUriStu3Read {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return stu3Read(this);
   }
 
@@ -2558,6 +2734,10 @@ class _$_FHIRUriStu3Read extends _FHIRUriStu3Read {
     Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    Result dstu2Operation(_FHIRUriDstu2Operation value),
+    Result stu3Operation(_FHIRUriStu3Operation value),
+    Result r4Operation(_FHIRUriR4Operation value),
+    Result r5Operation(_FHIRUriR5Operation value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -2863,6 +3043,18 @@ class _$_FHIRUriR4Read extends _FHIRUriR4Read {
     @required
         Result r5HistoryAll(
             Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result dstu2Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Dstu2Types type, Id id, String operation),
+    @required
+        Result stu3Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Stu3Types type, Id id, String operation),
+    @required
+        Result r4Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R4Types type, Id id, String operation),
+    @required
+        Result r5Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R5Types type, Id id, String operation),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -2916,6 +3108,10 @@ class _$_FHIRUriR4Read extends _FHIRUriR4Read {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return r4Read(base, mimeType, pretty, summary, type, id);
   }
 
@@ -3024,6 +3220,14 @@ class _$_FHIRUriR4Read extends _FHIRUriR4Read {
         Uri base, String mimeType, bool pretty, Summary summary),
     Result r5HistoryAll(
         Uri base, String mimeType, bool pretty, Summary summary),
+    Result dstu2Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Dstu2Types type, Id id, String operation),
+    Result stu3Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Stu3Types type, Id id, String operation),
+    Result r4Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R4Types type, Id id, String operation),
+    Result r5Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R5Types type, Id id, String operation),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -3088,6 +3292,10 @@ class _$_FHIRUriR4Read extends _FHIRUriR4Read {
     @required Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     @required Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     @required Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    @required Result dstu2Operation(_FHIRUriDstu2Operation value),
+    @required Result stu3Operation(_FHIRUriStu3Operation value),
+    @required Result r4Operation(_FHIRUriR4Operation value),
+    @required Result r5Operation(_FHIRUriR5Operation value),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -3141,6 +3349,10 @@ class _$_FHIRUriR4Read extends _FHIRUriR4Read {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return r4Read(this);
   }
 
@@ -3199,6 +3411,10 @@ class _$_FHIRUriR4Read extends _FHIRUriR4Read {
     Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    Result dstu2Operation(_FHIRUriDstu2Operation value),
+    Result stu3Operation(_FHIRUriStu3Operation value),
+    Result r4Operation(_FHIRUriR4Operation value),
+    Result r5Operation(_FHIRUriR5Operation value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -3504,6 +3720,18 @@ class _$_FHIRUriR5Read extends _FHIRUriR5Read {
     @required
         Result r5HistoryAll(
             Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result dstu2Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Dstu2Types type, Id id, String operation),
+    @required
+        Result stu3Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Stu3Types type, Id id, String operation),
+    @required
+        Result r4Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R4Types type, Id id, String operation),
+    @required
+        Result r5Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R5Types type, Id id, String operation),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -3557,6 +3785,10 @@ class _$_FHIRUriR5Read extends _FHIRUriR5Read {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return r5Read(base, mimeType, pretty, summary, type, id);
   }
 
@@ -3665,6 +3897,14 @@ class _$_FHIRUriR5Read extends _FHIRUriR5Read {
         Uri base, String mimeType, bool pretty, Summary summary),
     Result r5HistoryAll(
         Uri base, String mimeType, bool pretty, Summary summary),
+    Result dstu2Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Dstu2Types type, Id id, String operation),
+    Result stu3Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Stu3Types type, Id id, String operation),
+    Result r4Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R4Types type, Id id, String operation),
+    Result r5Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R5Types type, Id id, String operation),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -3729,6 +3969,10 @@ class _$_FHIRUriR5Read extends _FHIRUriR5Read {
     @required Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     @required Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     @required Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    @required Result dstu2Operation(_FHIRUriDstu2Operation value),
+    @required Result stu3Operation(_FHIRUriStu3Operation value),
+    @required Result r4Operation(_FHIRUriR4Operation value),
+    @required Result r5Operation(_FHIRUriR5Operation value),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -3782,6 +4026,10 @@ class _$_FHIRUriR5Read extends _FHIRUriR5Read {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return r5Read(this);
   }
 
@@ -3840,6 +4088,10 @@ class _$_FHIRUriR5Read extends _FHIRUriR5Read {
     Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    Result dstu2Operation(_FHIRUriDstu2Operation value),
+    Result stu3Operation(_FHIRUriStu3Operation value),
+    Result r4Operation(_FHIRUriR4Operation value),
+    Result r5Operation(_FHIRUriR5Operation value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -4156,6 +4408,18 @@ class _$_FHIRUriDstu2VRead extends _FHIRUriDstu2VRead {
     @required
         Result r5HistoryAll(
             Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result dstu2Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Dstu2Types type, Id id, String operation),
+    @required
+        Result stu3Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Stu3Types type, Id id, String operation),
+    @required
+        Result r4Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R4Types type, Id id, String operation),
+    @required
+        Result r5Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R5Types type, Id id, String operation),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -4209,6 +4473,10 @@ class _$_FHIRUriDstu2VRead extends _FHIRUriDstu2VRead {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return dstu2VRead(base, mimeType, pretty, summary, type, id, vid);
   }
 
@@ -4317,6 +4585,14 @@ class _$_FHIRUriDstu2VRead extends _FHIRUriDstu2VRead {
         Uri base, String mimeType, bool pretty, Summary summary),
     Result r5HistoryAll(
         Uri base, String mimeType, bool pretty, Summary summary),
+    Result dstu2Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Dstu2Types type, Id id, String operation),
+    Result stu3Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Stu3Types type, Id id, String operation),
+    Result r4Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R4Types type, Id id, String operation),
+    Result r5Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R5Types type, Id id, String operation),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -4381,6 +4657,10 @@ class _$_FHIRUriDstu2VRead extends _FHIRUriDstu2VRead {
     @required Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     @required Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     @required Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    @required Result dstu2Operation(_FHIRUriDstu2Operation value),
+    @required Result stu3Operation(_FHIRUriStu3Operation value),
+    @required Result r4Operation(_FHIRUriR4Operation value),
+    @required Result r5Operation(_FHIRUriR5Operation value),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -4434,6 +4714,10 @@ class _$_FHIRUriDstu2VRead extends _FHIRUriDstu2VRead {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return dstu2VRead(this);
   }
 
@@ -4492,6 +4776,10 @@ class _$_FHIRUriDstu2VRead extends _FHIRUriDstu2VRead {
     Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    Result dstu2Operation(_FHIRUriDstu2Operation value),
+    Result stu3Operation(_FHIRUriStu3Operation value),
+    Result r4Operation(_FHIRUriR4Operation value),
+    Result r5Operation(_FHIRUriR5Operation value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -4810,6 +5098,18 @@ class _$_FHIRUriStu3VRead extends _FHIRUriStu3VRead {
     @required
         Result r5HistoryAll(
             Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result dstu2Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Dstu2Types type, Id id, String operation),
+    @required
+        Result stu3Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Stu3Types type, Id id, String operation),
+    @required
+        Result r4Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R4Types type, Id id, String operation),
+    @required
+        Result r5Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R5Types type, Id id, String operation),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -4863,6 +5163,10 @@ class _$_FHIRUriStu3VRead extends _FHIRUriStu3VRead {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return stu3VRead(base, mimeType, pretty, summary, type, id, vid);
   }
 
@@ -4971,6 +5275,14 @@ class _$_FHIRUriStu3VRead extends _FHIRUriStu3VRead {
         Uri base, String mimeType, bool pretty, Summary summary),
     Result r5HistoryAll(
         Uri base, String mimeType, bool pretty, Summary summary),
+    Result dstu2Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Dstu2Types type, Id id, String operation),
+    Result stu3Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Stu3Types type, Id id, String operation),
+    Result r4Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R4Types type, Id id, String operation),
+    Result r5Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R5Types type, Id id, String operation),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -5035,6 +5347,10 @@ class _$_FHIRUriStu3VRead extends _FHIRUriStu3VRead {
     @required Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     @required Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     @required Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    @required Result dstu2Operation(_FHIRUriDstu2Operation value),
+    @required Result stu3Operation(_FHIRUriStu3Operation value),
+    @required Result r4Operation(_FHIRUriR4Operation value),
+    @required Result r5Operation(_FHIRUriR5Operation value),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -5088,6 +5404,10 @@ class _$_FHIRUriStu3VRead extends _FHIRUriStu3VRead {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return stu3VRead(this);
   }
 
@@ -5146,6 +5466,10 @@ class _$_FHIRUriStu3VRead extends _FHIRUriStu3VRead {
     Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    Result dstu2Operation(_FHIRUriDstu2Operation value),
+    Result stu3Operation(_FHIRUriStu3Operation value),
+    Result r4Operation(_FHIRUriR4Operation value),
+    Result r5Operation(_FHIRUriR5Operation value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -5464,6 +5788,18 @@ class _$_FHIRUriR4VRead extends _FHIRUriR4VRead {
     @required
         Result r5HistoryAll(
             Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result dstu2Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Dstu2Types type, Id id, String operation),
+    @required
+        Result stu3Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Stu3Types type, Id id, String operation),
+    @required
+        Result r4Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R4Types type, Id id, String operation),
+    @required
+        Result r5Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R5Types type, Id id, String operation),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -5517,6 +5853,10 @@ class _$_FHIRUriR4VRead extends _FHIRUriR4VRead {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return r4VRead(base, mimeType, pretty, summary, type, id, vid);
   }
 
@@ -5625,6 +5965,14 @@ class _$_FHIRUriR4VRead extends _FHIRUriR4VRead {
         Uri base, String mimeType, bool pretty, Summary summary),
     Result r5HistoryAll(
         Uri base, String mimeType, bool pretty, Summary summary),
+    Result dstu2Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Dstu2Types type, Id id, String operation),
+    Result stu3Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Stu3Types type, Id id, String operation),
+    Result r4Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R4Types type, Id id, String operation),
+    Result r5Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R5Types type, Id id, String operation),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -5689,6 +6037,10 @@ class _$_FHIRUriR4VRead extends _FHIRUriR4VRead {
     @required Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     @required Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     @required Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    @required Result dstu2Operation(_FHIRUriDstu2Operation value),
+    @required Result stu3Operation(_FHIRUriStu3Operation value),
+    @required Result r4Operation(_FHIRUriR4Operation value),
+    @required Result r5Operation(_FHIRUriR5Operation value),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -5742,6 +6094,10 @@ class _$_FHIRUriR4VRead extends _FHIRUriR4VRead {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return r4VRead(this);
   }
 
@@ -5800,6 +6156,10 @@ class _$_FHIRUriR4VRead extends _FHIRUriR4VRead {
     Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    Result dstu2Operation(_FHIRUriDstu2Operation value),
+    Result stu3Operation(_FHIRUriStu3Operation value),
+    Result r4Operation(_FHIRUriR4Operation value),
+    Result r5Operation(_FHIRUriR5Operation value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -6118,6 +6478,18 @@ class _$_FHIRUriR5VRead extends _FHIRUriR5VRead {
     @required
         Result r5HistoryAll(
             Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result dstu2Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Dstu2Types type, Id id, String operation),
+    @required
+        Result stu3Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Stu3Types type, Id id, String operation),
+    @required
+        Result r4Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R4Types type, Id id, String operation),
+    @required
+        Result r5Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R5Types type, Id id, String operation),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -6171,6 +6543,10 @@ class _$_FHIRUriR5VRead extends _FHIRUriR5VRead {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return r5VRead(base, mimeType, pretty, summary, type, id, vid);
   }
 
@@ -6279,6 +6655,14 @@ class _$_FHIRUriR5VRead extends _FHIRUriR5VRead {
         Uri base, String mimeType, bool pretty, Summary summary),
     Result r5HistoryAll(
         Uri base, String mimeType, bool pretty, Summary summary),
+    Result dstu2Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Dstu2Types type, Id id, String operation),
+    Result stu3Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Stu3Types type, Id id, String operation),
+    Result r4Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R4Types type, Id id, String operation),
+    Result r5Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R5Types type, Id id, String operation),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -6343,6 +6727,10 @@ class _$_FHIRUriR5VRead extends _FHIRUriR5VRead {
     @required Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     @required Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     @required Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    @required Result dstu2Operation(_FHIRUriDstu2Operation value),
+    @required Result stu3Operation(_FHIRUriStu3Operation value),
+    @required Result r4Operation(_FHIRUriR4Operation value),
+    @required Result r5Operation(_FHIRUriR5Operation value),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -6396,6 +6784,10 @@ class _$_FHIRUriR5VRead extends _FHIRUriR5VRead {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return r5VRead(this);
   }
 
@@ -6454,6 +6846,10 @@ class _$_FHIRUriR5VRead extends _FHIRUriR5VRead {
     Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    Result dstu2Operation(_FHIRUriDstu2Operation value),
+    Result stu3Operation(_FHIRUriStu3Operation value),
+    Result r4Operation(_FHIRUriR4Operation value),
+    Result r5Operation(_FHIRUriR5Operation value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -6763,6 +7159,18 @@ class _$_FHIRUriDstu2Update extends _FHIRUriDstu2Update {
     @required
         Result r5HistoryAll(
             Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result dstu2Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Dstu2Types type, Id id, String operation),
+    @required
+        Result stu3Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Stu3Types type, Id id, String operation),
+    @required
+        Result r4Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R4Types type, Id id, String operation),
+    @required
+        Result r5Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R5Types type, Id id, String operation),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -6816,6 +7224,10 @@ class _$_FHIRUriDstu2Update extends _FHIRUriDstu2Update {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return dstu2Update(base, mimeType, pretty, summary, type, id);
   }
 
@@ -6924,6 +7336,14 @@ class _$_FHIRUriDstu2Update extends _FHIRUriDstu2Update {
         Uri base, String mimeType, bool pretty, Summary summary),
     Result r5HistoryAll(
         Uri base, String mimeType, bool pretty, Summary summary),
+    Result dstu2Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Dstu2Types type, Id id, String operation),
+    Result stu3Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Stu3Types type, Id id, String operation),
+    Result r4Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R4Types type, Id id, String operation),
+    Result r5Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R5Types type, Id id, String operation),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -6988,6 +7408,10 @@ class _$_FHIRUriDstu2Update extends _FHIRUriDstu2Update {
     @required Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     @required Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     @required Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    @required Result dstu2Operation(_FHIRUriDstu2Operation value),
+    @required Result stu3Operation(_FHIRUriStu3Operation value),
+    @required Result r4Operation(_FHIRUriR4Operation value),
+    @required Result r5Operation(_FHIRUriR5Operation value),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -7041,6 +7465,10 @@ class _$_FHIRUriDstu2Update extends _FHIRUriDstu2Update {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return dstu2Update(this);
   }
 
@@ -7099,6 +7527,10 @@ class _$_FHIRUriDstu2Update extends _FHIRUriDstu2Update {
     Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    Result dstu2Operation(_FHIRUriDstu2Operation value),
+    Result stu3Operation(_FHIRUriStu3Operation value),
+    Result r4Operation(_FHIRUriR4Operation value),
+    Result r5Operation(_FHIRUriR5Operation value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -7405,6 +7837,18 @@ class _$_FHIRUriStu3Update extends _FHIRUriStu3Update {
     @required
         Result r5HistoryAll(
             Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result dstu2Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Dstu2Types type, Id id, String operation),
+    @required
+        Result stu3Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Stu3Types type, Id id, String operation),
+    @required
+        Result r4Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R4Types type, Id id, String operation),
+    @required
+        Result r5Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R5Types type, Id id, String operation),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -7458,6 +7902,10 @@ class _$_FHIRUriStu3Update extends _FHIRUriStu3Update {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return stu3Update(base, mimeType, pretty, summary, type, id);
   }
 
@@ -7566,6 +8014,14 @@ class _$_FHIRUriStu3Update extends _FHIRUriStu3Update {
         Uri base, String mimeType, bool pretty, Summary summary),
     Result r5HistoryAll(
         Uri base, String mimeType, bool pretty, Summary summary),
+    Result dstu2Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Dstu2Types type, Id id, String operation),
+    Result stu3Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Stu3Types type, Id id, String operation),
+    Result r4Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R4Types type, Id id, String operation),
+    Result r5Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R5Types type, Id id, String operation),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -7630,6 +8086,10 @@ class _$_FHIRUriStu3Update extends _FHIRUriStu3Update {
     @required Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     @required Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     @required Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    @required Result dstu2Operation(_FHIRUriDstu2Operation value),
+    @required Result stu3Operation(_FHIRUriStu3Operation value),
+    @required Result r4Operation(_FHIRUriR4Operation value),
+    @required Result r5Operation(_FHIRUriR5Operation value),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -7683,6 +8143,10 @@ class _$_FHIRUriStu3Update extends _FHIRUriStu3Update {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return stu3Update(this);
   }
 
@@ -7741,6 +8205,10 @@ class _$_FHIRUriStu3Update extends _FHIRUriStu3Update {
     Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    Result dstu2Operation(_FHIRUriDstu2Operation value),
+    Result stu3Operation(_FHIRUriStu3Operation value),
+    Result r4Operation(_FHIRUriR4Operation value),
+    Result r5Operation(_FHIRUriR5Operation value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -8047,6 +8515,18 @@ class _$_FHIRUriR4Update extends _FHIRUriR4Update {
     @required
         Result r5HistoryAll(
             Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result dstu2Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Dstu2Types type, Id id, String operation),
+    @required
+        Result stu3Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Stu3Types type, Id id, String operation),
+    @required
+        Result r4Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R4Types type, Id id, String operation),
+    @required
+        Result r5Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R5Types type, Id id, String operation),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -8100,6 +8580,10 @@ class _$_FHIRUriR4Update extends _FHIRUriR4Update {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return r4Update(base, mimeType, pretty, summary, type, id);
   }
 
@@ -8208,6 +8692,14 @@ class _$_FHIRUriR4Update extends _FHIRUriR4Update {
         Uri base, String mimeType, bool pretty, Summary summary),
     Result r5HistoryAll(
         Uri base, String mimeType, bool pretty, Summary summary),
+    Result dstu2Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Dstu2Types type, Id id, String operation),
+    Result stu3Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Stu3Types type, Id id, String operation),
+    Result r4Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R4Types type, Id id, String operation),
+    Result r5Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R5Types type, Id id, String operation),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -8272,6 +8764,10 @@ class _$_FHIRUriR4Update extends _FHIRUriR4Update {
     @required Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     @required Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     @required Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    @required Result dstu2Operation(_FHIRUriDstu2Operation value),
+    @required Result stu3Operation(_FHIRUriStu3Operation value),
+    @required Result r4Operation(_FHIRUriR4Operation value),
+    @required Result r5Operation(_FHIRUriR5Operation value),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -8325,6 +8821,10 @@ class _$_FHIRUriR4Update extends _FHIRUriR4Update {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return r4Update(this);
   }
 
@@ -8383,6 +8883,10 @@ class _$_FHIRUriR4Update extends _FHIRUriR4Update {
     Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    Result dstu2Operation(_FHIRUriDstu2Operation value),
+    Result stu3Operation(_FHIRUriStu3Operation value),
+    Result r4Operation(_FHIRUriR4Operation value),
+    Result r5Operation(_FHIRUriR5Operation value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -8689,6 +9193,18 @@ class _$_FHIRUriR5Update extends _FHIRUriR5Update {
     @required
         Result r5HistoryAll(
             Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result dstu2Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Dstu2Types type, Id id, String operation),
+    @required
+        Result stu3Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Stu3Types type, Id id, String operation),
+    @required
+        Result r4Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R4Types type, Id id, String operation),
+    @required
+        Result r5Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R5Types type, Id id, String operation),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -8742,6 +9258,10 @@ class _$_FHIRUriR5Update extends _FHIRUriR5Update {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return r5Update(base, mimeType, pretty, summary, type, id);
   }
 
@@ -8850,6 +9370,14 @@ class _$_FHIRUriR5Update extends _FHIRUriR5Update {
         Uri base, String mimeType, bool pretty, Summary summary),
     Result r5HistoryAll(
         Uri base, String mimeType, bool pretty, Summary summary),
+    Result dstu2Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Dstu2Types type, Id id, String operation),
+    Result stu3Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Stu3Types type, Id id, String operation),
+    Result r4Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R4Types type, Id id, String operation),
+    Result r5Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R5Types type, Id id, String operation),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -8914,6 +9442,10 @@ class _$_FHIRUriR5Update extends _FHIRUriR5Update {
     @required Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     @required Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     @required Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    @required Result dstu2Operation(_FHIRUriDstu2Operation value),
+    @required Result stu3Operation(_FHIRUriStu3Operation value),
+    @required Result r4Operation(_FHIRUriR4Operation value),
+    @required Result r5Operation(_FHIRUriR5Operation value),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -8967,6 +9499,10 @@ class _$_FHIRUriR5Update extends _FHIRUriR5Update {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return r5Update(this);
   }
 
@@ -9025,6 +9561,10 @@ class _$_FHIRUriR5Update extends _FHIRUriR5Update {
     Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    Result dstu2Operation(_FHIRUriDstu2Operation value),
+    Result stu3Operation(_FHIRUriStu3Operation value),
+    Result r4Operation(_FHIRUriR4Operation value),
+    Result r5Operation(_FHIRUriR5Operation value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -9331,6 +9871,18 @@ class _$_FHIRUriDstu2Patch extends _FHIRUriDstu2Patch {
     @required
         Result r5HistoryAll(
             Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result dstu2Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Dstu2Types type, Id id, String operation),
+    @required
+        Result stu3Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Stu3Types type, Id id, String operation),
+    @required
+        Result r4Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R4Types type, Id id, String operation),
+    @required
+        Result r5Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R5Types type, Id id, String operation),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -9384,6 +9936,10 @@ class _$_FHIRUriDstu2Patch extends _FHIRUriDstu2Patch {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return dstu2Patch(base, mimeType, pretty, summary, type, id);
   }
 
@@ -9492,6 +10048,14 @@ class _$_FHIRUriDstu2Patch extends _FHIRUriDstu2Patch {
         Uri base, String mimeType, bool pretty, Summary summary),
     Result r5HistoryAll(
         Uri base, String mimeType, bool pretty, Summary summary),
+    Result dstu2Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Dstu2Types type, Id id, String operation),
+    Result stu3Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Stu3Types type, Id id, String operation),
+    Result r4Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R4Types type, Id id, String operation),
+    Result r5Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R5Types type, Id id, String operation),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -9556,6 +10120,10 @@ class _$_FHIRUriDstu2Patch extends _FHIRUriDstu2Patch {
     @required Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     @required Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     @required Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    @required Result dstu2Operation(_FHIRUriDstu2Operation value),
+    @required Result stu3Operation(_FHIRUriStu3Operation value),
+    @required Result r4Operation(_FHIRUriR4Operation value),
+    @required Result r5Operation(_FHIRUriR5Operation value),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -9609,6 +10177,10 @@ class _$_FHIRUriDstu2Patch extends _FHIRUriDstu2Patch {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return dstu2Patch(this);
   }
 
@@ -9667,6 +10239,10 @@ class _$_FHIRUriDstu2Patch extends _FHIRUriDstu2Patch {
     Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    Result dstu2Operation(_FHIRUriDstu2Operation value),
+    Result stu3Operation(_FHIRUriStu3Operation value),
+    Result r4Operation(_FHIRUriR4Operation value),
+    Result r5Operation(_FHIRUriR5Operation value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -9973,6 +10549,18 @@ class _$_FHIRUriStu3Patch extends _FHIRUriStu3Patch {
     @required
         Result r5HistoryAll(
             Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result dstu2Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Dstu2Types type, Id id, String operation),
+    @required
+        Result stu3Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Stu3Types type, Id id, String operation),
+    @required
+        Result r4Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R4Types type, Id id, String operation),
+    @required
+        Result r5Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R5Types type, Id id, String operation),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -10026,6 +10614,10 @@ class _$_FHIRUriStu3Patch extends _FHIRUriStu3Patch {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return stu3Patch(base, mimeType, pretty, summary, type, id);
   }
 
@@ -10134,6 +10726,14 @@ class _$_FHIRUriStu3Patch extends _FHIRUriStu3Patch {
         Uri base, String mimeType, bool pretty, Summary summary),
     Result r5HistoryAll(
         Uri base, String mimeType, bool pretty, Summary summary),
+    Result dstu2Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Dstu2Types type, Id id, String operation),
+    Result stu3Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Stu3Types type, Id id, String operation),
+    Result r4Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R4Types type, Id id, String operation),
+    Result r5Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R5Types type, Id id, String operation),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -10198,6 +10798,10 @@ class _$_FHIRUriStu3Patch extends _FHIRUriStu3Patch {
     @required Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     @required Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     @required Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    @required Result dstu2Operation(_FHIRUriDstu2Operation value),
+    @required Result stu3Operation(_FHIRUriStu3Operation value),
+    @required Result r4Operation(_FHIRUriR4Operation value),
+    @required Result r5Operation(_FHIRUriR5Operation value),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -10251,6 +10855,10 @@ class _$_FHIRUriStu3Patch extends _FHIRUriStu3Patch {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return stu3Patch(this);
   }
 
@@ -10309,6 +10917,10 @@ class _$_FHIRUriStu3Patch extends _FHIRUriStu3Patch {
     Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    Result dstu2Operation(_FHIRUriDstu2Operation value),
+    Result stu3Operation(_FHIRUriStu3Operation value),
+    Result r4Operation(_FHIRUriR4Operation value),
+    Result r5Operation(_FHIRUriR5Operation value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -10615,6 +11227,18 @@ class _$_FHIRUriR4Patch extends _FHIRUriR4Patch {
     @required
         Result r5HistoryAll(
             Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result dstu2Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Dstu2Types type, Id id, String operation),
+    @required
+        Result stu3Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Stu3Types type, Id id, String operation),
+    @required
+        Result r4Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R4Types type, Id id, String operation),
+    @required
+        Result r5Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R5Types type, Id id, String operation),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -10668,6 +11292,10 @@ class _$_FHIRUriR4Patch extends _FHIRUriR4Patch {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return r4Patch(base, mimeType, pretty, summary, type, id);
   }
 
@@ -10776,6 +11404,14 @@ class _$_FHIRUriR4Patch extends _FHIRUriR4Patch {
         Uri base, String mimeType, bool pretty, Summary summary),
     Result r5HistoryAll(
         Uri base, String mimeType, bool pretty, Summary summary),
+    Result dstu2Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Dstu2Types type, Id id, String operation),
+    Result stu3Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Stu3Types type, Id id, String operation),
+    Result r4Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R4Types type, Id id, String operation),
+    Result r5Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R5Types type, Id id, String operation),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -10840,6 +11476,10 @@ class _$_FHIRUriR4Patch extends _FHIRUriR4Patch {
     @required Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     @required Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     @required Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    @required Result dstu2Operation(_FHIRUriDstu2Operation value),
+    @required Result stu3Operation(_FHIRUriStu3Operation value),
+    @required Result r4Operation(_FHIRUriR4Operation value),
+    @required Result r5Operation(_FHIRUriR5Operation value),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -10893,6 +11533,10 @@ class _$_FHIRUriR4Patch extends _FHIRUriR4Patch {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return r4Patch(this);
   }
 
@@ -10951,6 +11595,10 @@ class _$_FHIRUriR4Patch extends _FHIRUriR4Patch {
     Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    Result dstu2Operation(_FHIRUriDstu2Operation value),
+    Result stu3Operation(_FHIRUriStu3Operation value),
+    Result r4Operation(_FHIRUriR4Operation value),
+    Result r5Operation(_FHIRUriR5Operation value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -11257,6 +11905,18 @@ class _$_FHIRUriR5Patch extends _FHIRUriR5Patch {
     @required
         Result r5HistoryAll(
             Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result dstu2Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Dstu2Types type, Id id, String operation),
+    @required
+        Result stu3Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Stu3Types type, Id id, String operation),
+    @required
+        Result r4Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R4Types type, Id id, String operation),
+    @required
+        Result r5Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R5Types type, Id id, String operation),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -11310,6 +11970,10 @@ class _$_FHIRUriR5Patch extends _FHIRUriR5Patch {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return r5Patch(base, mimeType, pretty, summary, type, id);
   }
 
@@ -11418,6 +12082,14 @@ class _$_FHIRUriR5Patch extends _FHIRUriR5Patch {
         Uri base, String mimeType, bool pretty, Summary summary),
     Result r5HistoryAll(
         Uri base, String mimeType, bool pretty, Summary summary),
+    Result dstu2Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Dstu2Types type, Id id, String operation),
+    Result stu3Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Stu3Types type, Id id, String operation),
+    Result r4Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R4Types type, Id id, String operation),
+    Result r5Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R5Types type, Id id, String operation),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -11482,6 +12154,10 @@ class _$_FHIRUriR5Patch extends _FHIRUriR5Patch {
     @required Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     @required Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     @required Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    @required Result dstu2Operation(_FHIRUriDstu2Operation value),
+    @required Result stu3Operation(_FHIRUriStu3Operation value),
+    @required Result r4Operation(_FHIRUriR4Operation value),
+    @required Result r5Operation(_FHIRUriR5Operation value),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -11535,6 +12211,10 @@ class _$_FHIRUriR5Patch extends _FHIRUriR5Patch {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return r5Patch(this);
   }
 
@@ -11593,6 +12273,10 @@ class _$_FHIRUriR5Patch extends _FHIRUriR5Patch {
     Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    Result dstu2Operation(_FHIRUriDstu2Operation value),
+    Result stu3Operation(_FHIRUriStu3Operation value),
+    Result r4Operation(_FHIRUriR4Operation value),
+    Result r5Operation(_FHIRUriR5Operation value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -11900,6 +12584,18 @@ class _$_FHIRUriDstu2Delete extends _FHIRUriDstu2Delete {
     @required
         Result r5HistoryAll(
             Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result dstu2Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Dstu2Types type, Id id, String operation),
+    @required
+        Result stu3Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Stu3Types type, Id id, String operation),
+    @required
+        Result r4Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R4Types type, Id id, String operation),
+    @required
+        Result r5Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R5Types type, Id id, String operation),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -11953,6 +12649,10 @@ class _$_FHIRUriDstu2Delete extends _FHIRUriDstu2Delete {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return dstu2Delete(base, mimeType, pretty, summary, type, id);
   }
 
@@ -12061,6 +12761,14 @@ class _$_FHIRUriDstu2Delete extends _FHIRUriDstu2Delete {
         Uri base, String mimeType, bool pretty, Summary summary),
     Result r5HistoryAll(
         Uri base, String mimeType, bool pretty, Summary summary),
+    Result dstu2Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Dstu2Types type, Id id, String operation),
+    Result stu3Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Stu3Types type, Id id, String operation),
+    Result r4Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R4Types type, Id id, String operation),
+    Result r5Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R5Types type, Id id, String operation),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -12125,6 +12833,10 @@ class _$_FHIRUriDstu2Delete extends _FHIRUriDstu2Delete {
     @required Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     @required Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     @required Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    @required Result dstu2Operation(_FHIRUriDstu2Operation value),
+    @required Result stu3Operation(_FHIRUriStu3Operation value),
+    @required Result r4Operation(_FHIRUriR4Operation value),
+    @required Result r5Operation(_FHIRUriR5Operation value),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -12178,6 +12890,10 @@ class _$_FHIRUriDstu2Delete extends _FHIRUriDstu2Delete {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return dstu2Delete(this);
   }
 
@@ -12236,6 +12952,10 @@ class _$_FHIRUriDstu2Delete extends _FHIRUriDstu2Delete {
     Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    Result dstu2Operation(_FHIRUriDstu2Operation value),
+    Result stu3Operation(_FHIRUriStu3Operation value),
+    Result r4Operation(_FHIRUriR4Operation value),
+    Result r5Operation(_FHIRUriR5Operation value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -12542,6 +13262,18 @@ class _$_FHIRUriStu3Delete extends _FHIRUriStu3Delete {
     @required
         Result r5HistoryAll(
             Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result dstu2Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Dstu2Types type, Id id, String operation),
+    @required
+        Result stu3Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Stu3Types type, Id id, String operation),
+    @required
+        Result r4Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R4Types type, Id id, String operation),
+    @required
+        Result r5Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R5Types type, Id id, String operation),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -12595,6 +13327,10 @@ class _$_FHIRUriStu3Delete extends _FHIRUriStu3Delete {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return stu3Delete(base, mimeType, pretty, summary, type, id);
   }
 
@@ -12703,6 +13439,14 @@ class _$_FHIRUriStu3Delete extends _FHIRUriStu3Delete {
         Uri base, String mimeType, bool pretty, Summary summary),
     Result r5HistoryAll(
         Uri base, String mimeType, bool pretty, Summary summary),
+    Result dstu2Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Dstu2Types type, Id id, String operation),
+    Result stu3Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Stu3Types type, Id id, String operation),
+    Result r4Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R4Types type, Id id, String operation),
+    Result r5Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R5Types type, Id id, String operation),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -12767,6 +13511,10 @@ class _$_FHIRUriStu3Delete extends _FHIRUriStu3Delete {
     @required Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     @required Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     @required Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    @required Result dstu2Operation(_FHIRUriDstu2Operation value),
+    @required Result stu3Operation(_FHIRUriStu3Operation value),
+    @required Result r4Operation(_FHIRUriR4Operation value),
+    @required Result r5Operation(_FHIRUriR5Operation value),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -12820,6 +13568,10 @@ class _$_FHIRUriStu3Delete extends _FHIRUriStu3Delete {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return stu3Delete(this);
   }
 
@@ -12878,6 +13630,10 @@ class _$_FHIRUriStu3Delete extends _FHIRUriStu3Delete {
     Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    Result dstu2Operation(_FHIRUriDstu2Operation value),
+    Result stu3Operation(_FHIRUriStu3Operation value),
+    Result r4Operation(_FHIRUriR4Operation value),
+    Result r5Operation(_FHIRUriR5Operation value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -13184,6 +13940,18 @@ class _$_FHIRUriR4Delete extends _FHIRUriR4Delete {
     @required
         Result r5HistoryAll(
             Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result dstu2Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Dstu2Types type, Id id, String operation),
+    @required
+        Result stu3Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Stu3Types type, Id id, String operation),
+    @required
+        Result r4Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R4Types type, Id id, String operation),
+    @required
+        Result r5Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R5Types type, Id id, String operation),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -13237,6 +14005,10 @@ class _$_FHIRUriR4Delete extends _FHIRUriR4Delete {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return r4Delete(base, mimeType, pretty, summary, type, id);
   }
 
@@ -13345,6 +14117,14 @@ class _$_FHIRUriR4Delete extends _FHIRUriR4Delete {
         Uri base, String mimeType, bool pretty, Summary summary),
     Result r5HistoryAll(
         Uri base, String mimeType, bool pretty, Summary summary),
+    Result dstu2Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Dstu2Types type, Id id, String operation),
+    Result stu3Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Stu3Types type, Id id, String operation),
+    Result r4Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R4Types type, Id id, String operation),
+    Result r5Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R5Types type, Id id, String operation),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -13409,6 +14189,10 @@ class _$_FHIRUriR4Delete extends _FHIRUriR4Delete {
     @required Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     @required Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     @required Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    @required Result dstu2Operation(_FHIRUriDstu2Operation value),
+    @required Result stu3Operation(_FHIRUriStu3Operation value),
+    @required Result r4Operation(_FHIRUriR4Operation value),
+    @required Result r5Operation(_FHIRUriR5Operation value),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -13462,6 +14246,10 @@ class _$_FHIRUriR4Delete extends _FHIRUriR4Delete {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return r4Delete(this);
   }
 
@@ -13520,6 +14308,10 @@ class _$_FHIRUriR4Delete extends _FHIRUriR4Delete {
     Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    Result dstu2Operation(_FHIRUriDstu2Operation value),
+    Result stu3Operation(_FHIRUriStu3Operation value),
+    Result r4Operation(_FHIRUriR4Operation value),
+    Result r5Operation(_FHIRUriR5Operation value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -13826,6 +14618,18 @@ class _$_FHIRUriR5Delete extends _FHIRUriR5Delete {
     @required
         Result r5HistoryAll(
             Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result dstu2Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Dstu2Types type, Id id, String operation),
+    @required
+        Result stu3Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Stu3Types type, Id id, String operation),
+    @required
+        Result r4Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R4Types type, Id id, String operation),
+    @required
+        Result r5Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R5Types type, Id id, String operation),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -13879,6 +14683,10 @@ class _$_FHIRUriR5Delete extends _FHIRUriR5Delete {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return r5Delete(base, mimeType, pretty, summary, type, id);
   }
 
@@ -13987,6 +14795,14 @@ class _$_FHIRUriR5Delete extends _FHIRUriR5Delete {
         Uri base, String mimeType, bool pretty, Summary summary),
     Result r5HistoryAll(
         Uri base, String mimeType, bool pretty, Summary summary),
+    Result dstu2Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Dstu2Types type, Id id, String operation),
+    Result stu3Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Stu3Types type, Id id, String operation),
+    Result r4Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R4Types type, Id id, String operation),
+    Result r5Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R5Types type, Id id, String operation),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -14051,6 +14867,10 @@ class _$_FHIRUriR5Delete extends _FHIRUriR5Delete {
     @required Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     @required Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     @required Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    @required Result dstu2Operation(_FHIRUriDstu2Operation value),
+    @required Result stu3Operation(_FHIRUriStu3Operation value),
+    @required Result r4Operation(_FHIRUriR4Operation value),
+    @required Result r5Operation(_FHIRUriR5Operation value),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -14104,6 +14924,10 @@ class _$_FHIRUriR5Delete extends _FHIRUriR5Delete {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return r5Delete(this);
   }
 
@@ -14162,6 +14986,10 @@ class _$_FHIRUriR5Delete extends _FHIRUriR5Delete {
     Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    Result dstu2Operation(_FHIRUriDstu2Operation value),
+    Result stu3Operation(_FHIRUriStu3Operation value),
+    Result r4Operation(_FHIRUriR4Operation value),
+    Result r5Operation(_FHIRUriR5Operation value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -14459,6 +15287,18 @@ class _$_FHIRUriDstu2Create extends _FHIRUriDstu2Create {
     @required
         Result r5HistoryAll(
             Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result dstu2Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Dstu2Types type, Id id, String operation),
+    @required
+        Result stu3Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Stu3Types type, Id id, String operation),
+    @required
+        Result r4Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R4Types type, Id id, String operation),
+    @required
+        Result r5Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R5Types type, Id id, String operation),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -14512,6 +15352,10 @@ class _$_FHIRUriDstu2Create extends _FHIRUriDstu2Create {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return dstu2Create(base, mimeType, pretty, summary, type);
   }
 
@@ -14620,6 +15464,14 @@ class _$_FHIRUriDstu2Create extends _FHIRUriDstu2Create {
         Uri base, String mimeType, bool pretty, Summary summary),
     Result r5HistoryAll(
         Uri base, String mimeType, bool pretty, Summary summary),
+    Result dstu2Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Dstu2Types type, Id id, String operation),
+    Result stu3Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Stu3Types type, Id id, String operation),
+    Result r4Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R4Types type, Id id, String operation),
+    Result r5Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R5Types type, Id id, String operation),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -14684,6 +15536,10 @@ class _$_FHIRUriDstu2Create extends _FHIRUriDstu2Create {
     @required Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     @required Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     @required Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    @required Result dstu2Operation(_FHIRUriDstu2Operation value),
+    @required Result stu3Operation(_FHIRUriStu3Operation value),
+    @required Result r4Operation(_FHIRUriR4Operation value),
+    @required Result r5Operation(_FHIRUriR5Operation value),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -14737,6 +15593,10 @@ class _$_FHIRUriDstu2Create extends _FHIRUriDstu2Create {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return dstu2Create(this);
   }
 
@@ -14795,6 +15655,10 @@ class _$_FHIRUriDstu2Create extends _FHIRUriDstu2Create {
     Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    Result dstu2Operation(_FHIRUriDstu2Operation value),
+    Result stu3Operation(_FHIRUriStu3Operation value),
+    Result r4Operation(_FHIRUriR4Operation value),
+    Result r5Operation(_FHIRUriR5Operation value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -15089,6 +15953,18 @@ class _$_FHIRUriStu3Create extends _FHIRUriStu3Create {
     @required
         Result r5HistoryAll(
             Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result dstu2Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Dstu2Types type, Id id, String operation),
+    @required
+        Result stu3Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Stu3Types type, Id id, String operation),
+    @required
+        Result r4Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R4Types type, Id id, String operation),
+    @required
+        Result r5Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R5Types type, Id id, String operation),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -15142,6 +16018,10 @@ class _$_FHIRUriStu3Create extends _FHIRUriStu3Create {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return stu3Create(base, mimeType, pretty, summary, type);
   }
 
@@ -15250,6 +16130,14 @@ class _$_FHIRUriStu3Create extends _FHIRUriStu3Create {
         Uri base, String mimeType, bool pretty, Summary summary),
     Result r5HistoryAll(
         Uri base, String mimeType, bool pretty, Summary summary),
+    Result dstu2Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Dstu2Types type, Id id, String operation),
+    Result stu3Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Stu3Types type, Id id, String operation),
+    Result r4Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R4Types type, Id id, String operation),
+    Result r5Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R5Types type, Id id, String operation),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -15314,6 +16202,10 @@ class _$_FHIRUriStu3Create extends _FHIRUriStu3Create {
     @required Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     @required Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     @required Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    @required Result dstu2Operation(_FHIRUriDstu2Operation value),
+    @required Result stu3Operation(_FHIRUriStu3Operation value),
+    @required Result r4Operation(_FHIRUriR4Operation value),
+    @required Result r5Operation(_FHIRUriR5Operation value),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -15367,6 +16259,10 @@ class _$_FHIRUriStu3Create extends _FHIRUriStu3Create {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return stu3Create(this);
   }
 
@@ -15425,6 +16321,10 @@ class _$_FHIRUriStu3Create extends _FHIRUriStu3Create {
     Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    Result dstu2Operation(_FHIRUriDstu2Operation value),
+    Result stu3Operation(_FHIRUriStu3Operation value),
+    Result r4Operation(_FHIRUriR4Operation value),
+    Result r5Operation(_FHIRUriR5Operation value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -15715,6 +16615,18 @@ class _$_FHIRUriR4Create extends _FHIRUriR4Create {
     @required
         Result r5HistoryAll(
             Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result dstu2Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Dstu2Types type, Id id, String operation),
+    @required
+        Result stu3Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Stu3Types type, Id id, String operation),
+    @required
+        Result r4Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R4Types type, Id id, String operation),
+    @required
+        Result r5Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R5Types type, Id id, String operation),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -15768,6 +16680,10 @@ class _$_FHIRUriR4Create extends _FHIRUriR4Create {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return r4Create(base, mimeType, pretty, summary, type);
   }
 
@@ -15876,6 +16792,14 @@ class _$_FHIRUriR4Create extends _FHIRUriR4Create {
         Uri base, String mimeType, bool pretty, Summary summary),
     Result r5HistoryAll(
         Uri base, String mimeType, bool pretty, Summary summary),
+    Result dstu2Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Dstu2Types type, Id id, String operation),
+    Result stu3Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Stu3Types type, Id id, String operation),
+    Result r4Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R4Types type, Id id, String operation),
+    Result r5Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R5Types type, Id id, String operation),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -15940,6 +16864,10 @@ class _$_FHIRUriR4Create extends _FHIRUriR4Create {
     @required Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     @required Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     @required Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    @required Result dstu2Operation(_FHIRUriDstu2Operation value),
+    @required Result stu3Operation(_FHIRUriStu3Operation value),
+    @required Result r4Operation(_FHIRUriR4Operation value),
+    @required Result r5Operation(_FHIRUriR5Operation value),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -15993,6 +16921,10 @@ class _$_FHIRUriR4Create extends _FHIRUriR4Create {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return r4Create(this);
   }
 
@@ -16051,6 +16983,10 @@ class _$_FHIRUriR4Create extends _FHIRUriR4Create {
     Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    Result dstu2Operation(_FHIRUriDstu2Operation value),
+    Result stu3Operation(_FHIRUriStu3Operation value),
+    Result r4Operation(_FHIRUriR4Operation value),
+    Result r5Operation(_FHIRUriR5Operation value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -16341,6 +17277,18 @@ class _$_FHIRUriR5Create extends _FHIRUriR5Create {
     @required
         Result r5HistoryAll(
             Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result dstu2Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Dstu2Types type, Id id, String operation),
+    @required
+        Result stu3Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Stu3Types type, Id id, String operation),
+    @required
+        Result r4Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R4Types type, Id id, String operation),
+    @required
+        Result r5Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R5Types type, Id id, String operation),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -16394,6 +17342,10 @@ class _$_FHIRUriR5Create extends _FHIRUriR5Create {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return r5Create(base, mimeType, pretty, summary, type);
   }
 
@@ -16502,6 +17454,14 @@ class _$_FHIRUriR5Create extends _FHIRUriR5Create {
         Uri base, String mimeType, bool pretty, Summary summary),
     Result r5HistoryAll(
         Uri base, String mimeType, bool pretty, Summary summary),
+    Result dstu2Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Dstu2Types type, Id id, String operation),
+    Result stu3Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Stu3Types type, Id id, String operation),
+    Result r4Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R4Types type, Id id, String operation),
+    Result r5Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R5Types type, Id id, String operation),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -16566,6 +17526,10 @@ class _$_FHIRUriR5Create extends _FHIRUriR5Create {
     @required Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     @required Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     @required Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    @required Result dstu2Operation(_FHIRUriDstu2Operation value),
+    @required Result stu3Operation(_FHIRUriStu3Operation value),
+    @required Result r4Operation(_FHIRUriR4Operation value),
+    @required Result r5Operation(_FHIRUriR5Operation value),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -16619,6 +17583,10 @@ class _$_FHIRUriR5Create extends _FHIRUriR5Create {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return r5Create(this);
   }
 
@@ -16677,6 +17645,10 @@ class _$_FHIRUriR5Create extends _FHIRUriR5Create {
     Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    Result dstu2Operation(_FHIRUriDstu2Operation value),
+    Result stu3Operation(_FHIRUriStu3Operation value),
+    Result r4Operation(_FHIRUriR4Operation value),
+    Result r5Operation(_FHIRUriR5Operation value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -16986,6 +17958,18 @@ class _$_FHIRUriDstu2Search extends _FHIRUriDstu2Search {
     @required
         Result r5HistoryAll(
             Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result dstu2Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Dstu2Types type, Id id, String operation),
+    @required
+        Result stu3Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Stu3Types type, Id id, String operation),
+    @required
+        Result r4Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R4Types type, Id id, String operation),
+    @required
+        Result r5Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R5Types type, Id id, String operation),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -17039,6 +18023,10 @@ class _$_FHIRUriDstu2Search extends _FHIRUriDstu2Search {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return dstu2Search(base, mimeType, pretty, summary, type, restfulRequest);
   }
 
@@ -17147,6 +18135,14 @@ class _$_FHIRUriDstu2Search extends _FHIRUriDstu2Search {
         Uri base, String mimeType, bool pretty, Summary summary),
     Result r5HistoryAll(
         Uri base, String mimeType, bool pretty, Summary summary),
+    Result dstu2Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Dstu2Types type, Id id, String operation),
+    Result stu3Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Stu3Types type, Id id, String operation),
+    Result r4Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R4Types type, Id id, String operation),
+    Result r5Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R5Types type, Id id, String operation),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -17211,6 +18207,10 @@ class _$_FHIRUriDstu2Search extends _FHIRUriDstu2Search {
     @required Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     @required Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     @required Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    @required Result dstu2Operation(_FHIRUriDstu2Operation value),
+    @required Result stu3Operation(_FHIRUriStu3Operation value),
+    @required Result r4Operation(_FHIRUriR4Operation value),
+    @required Result r5Operation(_FHIRUriR5Operation value),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -17264,6 +18264,10 @@ class _$_FHIRUriDstu2Search extends _FHIRUriDstu2Search {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return dstu2Search(this);
   }
 
@@ -17322,6 +18326,10 @@ class _$_FHIRUriDstu2Search extends _FHIRUriDstu2Search {
     Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    Result dstu2Operation(_FHIRUriDstu2Operation value),
+    Result stu3Operation(_FHIRUriStu3Operation value),
+    Result r4Operation(_FHIRUriR4Operation value),
+    Result r5Operation(_FHIRUriR5Operation value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -17632,6 +18640,18 @@ class _$_FHIRUriStu3Search extends _FHIRUriStu3Search {
     @required
         Result r5HistoryAll(
             Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result dstu2Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Dstu2Types type, Id id, String operation),
+    @required
+        Result stu3Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Stu3Types type, Id id, String operation),
+    @required
+        Result r4Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R4Types type, Id id, String operation),
+    @required
+        Result r5Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R5Types type, Id id, String operation),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -17685,6 +18705,10 @@ class _$_FHIRUriStu3Search extends _FHIRUriStu3Search {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return stu3Search(base, mimeType, pretty, summary, type, restfulRequest);
   }
 
@@ -17793,6 +18817,14 @@ class _$_FHIRUriStu3Search extends _FHIRUriStu3Search {
         Uri base, String mimeType, bool pretty, Summary summary),
     Result r5HistoryAll(
         Uri base, String mimeType, bool pretty, Summary summary),
+    Result dstu2Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Dstu2Types type, Id id, String operation),
+    Result stu3Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Stu3Types type, Id id, String operation),
+    Result r4Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R4Types type, Id id, String operation),
+    Result r5Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R5Types type, Id id, String operation),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -17857,6 +18889,10 @@ class _$_FHIRUriStu3Search extends _FHIRUriStu3Search {
     @required Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     @required Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     @required Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    @required Result dstu2Operation(_FHIRUriDstu2Operation value),
+    @required Result stu3Operation(_FHIRUriStu3Operation value),
+    @required Result r4Operation(_FHIRUriR4Operation value),
+    @required Result r5Operation(_FHIRUriR5Operation value),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -17910,6 +18946,10 @@ class _$_FHIRUriStu3Search extends _FHIRUriStu3Search {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return stu3Search(this);
   }
 
@@ -17968,6 +19008,10 @@ class _$_FHIRUriStu3Search extends _FHIRUriStu3Search {
     Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    Result dstu2Operation(_FHIRUriDstu2Operation value),
+    Result stu3Operation(_FHIRUriStu3Operation value),
+    Result r4Operation(_FHIRUriR4Operation value),
+    Result r5Operation(_FHIRUriR5Operation value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -18278,6 +19322,18 @@ class _$_FHIRUriR4Search extends _FHIRUriR4Search {
     @required
         Result r5HistoryAll(
             Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result dstu2Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Dstu2Types type, Id id, String operation),
+    @required
+        Result stu3Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Stu3Types type, Id id, String operation),
+    @required
+        Result r4Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R4Types type, Id id, String operation),
+    @required
+        Result r5Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R5Types type, Id id, String operation),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -18331,6 +19387,10 @@ class _$_FHIRUriR4Search extends _FHIRUriR4Search {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return r4Search(base, mimeType, pretty, summary, type, restfulRequest);
   }
 
@@ -18439,6 +19499,14 @@ class _$_FHIRUriR4Search extends _FHIRUriR4Search {
         Uri base, String mimeType, bool pretty, Summary summary),
     Result r5HistoryAll(
         Uri base, String mimeType, bool pretty, Summary summary),
+    Result dstu2Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Dstu2Types type, Id id, String operation),
+    Result stu3Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Stu3Types type, Id id, String operation),
+    Result r4Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R4Types type, Id id, String operation),
+    Result r5Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R5Types type, Id id, String operation),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -18503,6 +19571,10 @@ class _$_FHIRUriR4Search extends _FHIRUriR4Search {
     @required Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     @required Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     @required Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    @required Result dstu2Operation(_FHIRUriDstu2Operation value),
+    @required Result stu3Operation(_FHIRUriStu3Operation value),
+    @required Result r4Operation(_FHIRUriR4Operation value),
+    @required Result r5Operation(_FHIRUriR5Operation value),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -18556,6 +19628,10 @@ class _$_FHIRUriR4Search extends _FHIRUriR4Search {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return r4Search(this);
   }
 
@@ -18614,6 +19690,10 @@ class _$_FHIRUriR4Search extends _FHIRUriR4Search {
     Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    Result dstu2Operation(_FHIRUriDstu2Operation value),
+    Result stu3Operation(_FHIRUriStu3Operation value),
+    Result r4Operation(_FHIRUriR4Operation value),
+    Result r5Operation(_FHIRUriR5Operation value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -18924,6 +20004,18 @@ class _$_FHIRUriR5Search extends _FHIRUriR5Search {
     @required
         Result r5HistoryAll(
             Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result dstu2Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Dstu2Types type, Id id, String operation),
+    @required
+        Result stu3Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Stu3Types type, Id id, String operation),
+    @required
+        Result r4Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R4Types type, Id id, String operation),
+    @required
+        Result r5Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R5Types type, Id id, String operation),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -18977,6 +20069,10 @@ class _$_FHIRUriR5Search extends _FHIRUriR5Search {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return r5Search(base, mimeType, pretty, summary, type, restfulRequest);
   }
 
@@ -19085,6 +20181,14 @@ class _$_FHIRUriR5Search extends _FHIRUriR5Search {
         Uri base, String mimeType, bool pretty, Summary summary),
     Result r5HistoryAll(
         Uri base, String mimeType, bool pretty, Summary summary),
+    Result dstu2Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Dstu2Types type, Id id, String operation),
+    Result stu3Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Stu3Types type, Id id, String operation),
+    Result r4Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R4Types type, Id id, String operation),
+    Result r5Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R5Types type, Id id, String operation),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -19149,6 +20253,10 @@ class _$_FHIRUriR5Search extends _FHIRUriR5Search {
     @required Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     @required Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     @required Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    @required Result dstu2Operation(_FHIRUriDstu2Operation value),
+    @required Result stu3Operation(_FHIRUriStu3Operation value),
+    @required Result r4Operation(_FHIRUriR4Operation value),
+    @required Result r5Operation(_FHIRUriR5Operation value),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -19202,6 +20310,10 @@ class _$_FHIRUriR5Search extends _FHIRUriR5Search {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return r5Search(this);
   }
 
@@ -19260,6 +20372,10 @@ class _$_FHIRUriR5Search extends _FHIRUriR5Search {
     Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    Result dstu2Operation(_FHIRUriDstu2Operation value),
+    Result stu3Operation(_FHIRUriStu3Operation value),
+    Result r4Operation(_FHIRUriR4Operation value),
+    Result r5Operation(_FHIRUriR5Operation value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -19543,6 +20659,18 @@ class _$_FHIRUriDstu2SearchAll extends _FHIRUriDstu2SearchAll {
     @required
         Result r5HistoryAll(
             Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result dstu2Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Dstu2Types type, Id id, String operation),
+    @required
+        Result stu3Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Stu3Types type, Id id, String operation),
+    @required
+        Result r4Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R4Types type, Id id, String operation),
+    @required
+        Result r5Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R5Types type, Id id, String operation),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -19596,6 +20724,10 @@ class _$_FHIRUriDstu2SearchAll extends _FHIRUriDstu2SearchAll {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return dstu2SearchAll(base, mimeType, pretty, summary);
   }
 
@@ -19704,6 +20836,14 @@ class _$_FHIRUriDstu2SearchAll extends _FHIRUriDstu2SearchAll {
         Uri base, String mimeType, bool pretty, Summary summary),
     Result r5HistoryAll(
         Uri base, String mimeType, bool pretty, Summary summary),
+    Result dstu2Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Dstu2Types type, Id id, String operation),
+    Result stu3Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Stu3Types type, Id id, String operation),
+    Result r4Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R4Types type, Id id, String operation),
+    Result r5Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R5Types type, Id id, String operation),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -19768,6 +20908,10 @@ class _$_FHIRUriDstu2SearchAll extends _FHIRUriDstu2SearchAll {
     @required Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     @required Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     @required Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    @required Result dstu2Operation(_FHIRUriDstu2Operation value),
+    @required Result stu3Operation(_FHIRUriStu3Operation value),
+    @required Result r4Operation(_FHIRUriR4Operation value),
+    @required Result r5Operation(_FHIRUriR5Operation value),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -19821,6 +20965,10 @@ class _$_FHIRUriDstu2SearchAll extends _FHIRUriDstu2SearchAll {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return dstu2SearchAll(this);
   }
 
@@ -19879,6 +21027,10 @@ class _$_FHIRUriDstu2SearchAll extends _FHIRUriDstu2SearchAll {
     Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    Result dstu2Operation(_FHIRUriDstu2Operation value),
+    Result stu3Operation(_FHIRUriStu3Operation value),
+    Result r4Operation(_FHIRUriR4Operation value),
+    Result r5Operation(_FHIRUriR5Operation value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -20158,6 +21310,18 @@ class _$_FHIRUriStu3SearchAll extends _FHIRUriStu3SearchAll {
     @required
         Result r5HistoryAll(
             Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result dstu2Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Dstu2Types type, Id id, String operation),
+    @required
+        Result stu3Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Stu3Types type, Id id, String operation),
+    @required
+        Result r4Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R4Types type, Id id, String operation),
+    @required
+        Result r5Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R5Types type, Id id, String operation),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -20211,6 +21375,10 @@ class _$_FHIRUriStu3SearchAll extends _FHIRUriStu3SearchAll {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return stu3SearchAll(base, mimeType, pretty, summary);
   }
 
@@ -20319,6 +21487,14 @@ class _$_FHIRUriStu3SearchAll extends _FHIRUriStu3SearchAll {
         Uri base, String mimeType, bool pretty, Summary summary),
     Result r5HistoryAll(
         Uri base, String mimeType, bool pretty, Summary summary),
+    Result dstu2Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Dstu2Types type, Id id, String operation),
+    Result stu3Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Stu3Types type, Id id, String operation),
+    Result r4Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R4Types type, Id id, String operation),
+    Result r5Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R5Types type, Id id, String operation),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -20383,6 +21559,10 @@ class _$_FHIRUriStu3SearchAll extends _FHIRUriStu3SearchAll {
     @required Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     @required Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     @required Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    @required Result dstu2Operation(_FHIRUriDstu2Operation value),
+    @required Result stu3Operation(_FHIRUriStu3Operation value),
+    @required Result r4Operation(_FHIRUriR4Operation value),
+    @required Result r5Operation(_FHIRUriR5Operation value),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -20436,6 +21616,10 @@ class _$_FHIRUriStu3SearchAll extends _FHIRUriStu3SearchAll {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return stu3SearchAll(this);
   }
 
@@ -20494,6 +21678,10 @@ class _$_FHIRUriStu3SearchAll extends _FHIRUriStu3SearchAll {
     Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    Result dstu2Operation(_FHIRUriDstu2Operation value),
+    Result stu3Operation(_FHIRUriStu3Operation value),
+    Result r4Operation(_FHIRUriR4Operation value),
+    Result r5Operation(_FHIRUriR5Operation value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -20772,6 +21960,18 @@ class _$_FHIRUriR4SearchAll extends _FHIRUriR4SearchAll {
     @required
         Result r5HistoryAll(
             Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result dstu2Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Dstu2Types type, Id id, String operation),
+    @required
+        Result stu3Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Stu3Types type, Id id, String operation),
+    @required
+        Result r4Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R4Types type, Id id, String operation),
+    @required
+        Result r5Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R5Types type, Id id, String operation),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -20825,6 +22025,10 @@ class _$_FHIRUriR4SearchAll extends _FHIRUriR4SearchAll {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return r4SearchAll(base, mimeType, pretty, summary);
   }
 
@@ -20933,6 +22137,14 @@ class _$_FHIRUriR4SearchAll extends _FHIRUriR4SearchAll {
         Uri base, String mimeType, bool pretty, Summary summary),
     Result r5HistoryAll(
         Uri base, String mimeType, bool pretty, Summary summary),
+    Result dstu2Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Dstu2Types type, Id id, String operation),
+    Result stu3Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Stu3Types type, Id id, String operation),
+    Result r4Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R4Types type, Id id, String operation),
+    Result r5Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R5Types type, Id id, String operation),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -20997,6 +22209,10 @@ class _$_FHIRUriR4SearchAll extends _FHIRUriR4SearchAll {
     @required Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     @required Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     @required Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    @required Result dstu2Operation(_FHIRUriDstu2Operation value),
+    @required Result stu3Operation(_FHIRUriStu3Operation value),
+    @required Result r4Operation(_FHIRUriR4Operation value),
+    @required Result r5Operation(_FHIRUriR5Operation value),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -21050,6 +22266,10 @@ class _$_FHIRUriR4SearchAll extends _FHIRUriR4SearchAll {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return r4SearchAll(this);
   }
 
@@ -21108,6 +22328,10 @@ class _$_FHIRUriR4SearchAll extends _FHIRUriR4SearchAll {
     Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    Result dstu2Operation(_FHIRUriDstu2Operation value),
+    Result stu3Operation(_FHIRUriStu3Operation value),
+    Result r4Operation(_FHIRUriR4Operation value),
+    Result r5Operation(_FHIRUriR5Operation value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -21386,6 +22610,18 @@ class _$_FHIRUriR5SearchAll extends _FHIRUriR5SearchAll {
     @required
         Result r5HistoryAll(
             Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result dstu2Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Dstu2Types type, Id id, String operation),
+    @required
+        Result stu3Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Stu3Types type, Id id, String operation),
+    @required
+        Result r4Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R4Types type, Id id, String operation),
+    @required
+        Result r5Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R5Types type, Id id, String operation),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -21439,6 +22675,10 @@ class _$_FHIRUriR5SearchAll extends _FHIRUriR5SearchAll {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return r5SearchAll(base, mimeType, pretty, summary);
   }
 
@@ -21547,6 +22787,14 @@ class _$_FHIRUriR5SearchAll extends _FHIRUriR5SearchAll {
         Uri base, String mimeType, bool pretty, Summary summary),
     Result r5HistoryAll(
         Uri base, String mimeType, bool pretty, Summary summary),
+    Result dstu2Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Dstu2Types type, Id id, String operation),
+    Result stu3Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Stu3Types type, Id id, String operation),
+    Result r4Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R4Types type, Id id, String operation),
+    Result r5Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R5Types type, Id id, String operation),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -21611,6 +22859,10 @@ class _$_FHIRUriR5SearchAll extends _FHIRUriR5SearchAll {
     @required Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     @required Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     @required Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    @required Result dstu2Operation(_FHIRUriDstu2Operation value),
+    @required Result stu3Operation(_FHIRUriStu3Operation value),
+    @required Result r4Operation(_FHIRUriR4Operation value),
+    @required Result r5Operation(_FHIRUriR5Operation value),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -21664,6 +22916,10 @@ class _$_FHIRUriR5SearchAll extends _FHIRUriR5SearchAll {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return r5SearchAll(this);
   }
 
@@ -21722,6 +22978,10 @@ class _$_FHIRUriR5SearchAll extends _FHIRUriR5SearchAll {
     Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    Result dstu2Operation(_FHIRUriDstu2Operation value),
+    Result stu3Operation(_FHIRUriStu3Operation value),
+    Result r4Operation(_FHIRUriR4Operation value),
+    Result r5Operation(_FHIRUriR5Operation value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -22014,6 +23274,18 @@ class _$_FHIRUriDstu2Capabilities extends _FHIRUriDstu2Capabilities {
     @required
         Result r5HistoryAll(
             Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result dstu2Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Dstu2Types type, Id id, String operation),
+    @required
+        Result stu3Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Stu3Types type, Id id, String operation),
+    @required
+        Result r4Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R4Types type, Id id, String operation),
+    @required
+        Result r5Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R5Types type, Id id, String operation),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -22067,6 +23339,10 @@ class _$_FHIRUriDstu2Capabilities extends _FHIRUriDstu2Capabilities {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return dstu2Capabilities(base, mimeType, pretty, summary, mode);
   }
 
@@ -22175,6 +23451,14 @@ class _$_FHIRUriDstu2Capabilities extends _FHIRUriDstu2Capabilities {
         Uri base, String mimeType, bool pretty, Summary summary),
     Result r5HistoryAll(
         Uri base, String mimeType, bool pretty, Summary summary),
+    Result dstu2Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Dstu2Types type, Id id, String operation),
+    Result stu3Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Stu3Types type, Id id, String operation),
+    Result r4Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R4Types type, Id id, String operation),
+    Result r5Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R5Types type, Id id, String operation),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -22239,6 +23523,10 @@ class _$_FHIRUriDstu2Capabilities extends _FHIRUriDstu2Capabilities {
     @required Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     @required Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     @required Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    @required Result dstu2Operation(_FHIRUriDstu2Operation value),
+    @required Result stu3Operation(_FHIRUriStu3Operation value),
+    @required Result r4Operation(_FHIRUriR4Operation value),
+    @required Result r5Operation(_FHIRUriR5Operation value),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -22292,6 +23580,10 @@ class _$_FHIRUriDstu2Capabilities extends _FHIRUriDstu2Capabilities {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return dstu2Capabilities(this);
   }
 
@@ -22350,6 +23642,10 @@ class _$_FHIRUriDstu2Capabilities extends _FHIRUriDstu2Capabilities {
     Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    Result dstu2Operation(_FHIRUriDstu2Operation value),
+    Result stu3Operation(_FHIRUriStu3Operation value),
+    Result r4Operation(_FHIRUriR4Operation value),
+    Result r5Operation(_FHIRUriR5Operation value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -22644,6 +23940,18 @@ class _$_FHIRUriStu3Capabilities extends _FHIRUriStu3Capabilities {
     @required
         Result r5HistoryAll(
             Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result dstu2Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Dstu2Types type, Id id, String operation),
+    @required
+        Result stu3Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Stu3Types type, Id id, String operation),
+    @required
+        Result r4Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R4Types type, Id id, String operation),
+    @required
+        Result r5Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R5Types type, Id id, String operation),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -22697,6 +24005,10 @@ class _$_FHIRUriStu3Capabilities extends _FHIRUriStu3Capabilities {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return stu3Capabilities(base, mimeType, pretty, summary, mode);
   }
 
@@ -22805,6 +24117,14 @@ class _$_FHIRUriStu3Capabilities extends _FHIRUriStu3Capabilities {
         Uri base, String mimeType, bool pretty, Summary summary),
     Result r5HistoryAll(
         Uri base, String mimeType, bool pretty, Summary summary),
+    Result dstu2Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Dstu2Types type, Id id, String operation),
+    Result stu3Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Stu3Types type, Id id, String operation),
+    Result r4Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R4Types type, Id id, String operation),
+    Result r5Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R5Types type, Id id, String operation),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -22869,6 +24189,10 @@ class _$_FHIRUriStu3Capabilities extends _FHIRUriStu3Capabilities {
     @required Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     @required Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     @required Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    @required Result dstu2Operation(_FHIRUriDstu2Operation value),
+    @required Result stu3Operation(_FHIRUriStu3Operation value),
+    @required Result r4Operation(_FHIRUriR4Operation value),
+    @required Result r5Operation(_FHIRUriR5Operation value),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -22922,6 +24246,10 @@ class _$_FHIRUriStu3Capabilities extends _FHIRUriStu3Capabilities {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return stu3Capabilities(this);
   }
 
@@ -22980,6 +24308,10 @@ class _$_FHIRUriStu3Capabilities extends _FHIRUriStu3Capabilities {
     Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    Result dstu2Operation(_FHIRUriDstu2Operation value),
+    Result stu3Operation(_FHIRUriStu3Operation value),
+    Result r4Operation(_FHIRUriR4Operation value),
+    Result r5Operation(_FHIRUriR5Operation value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -23273,6 +24605,18 @@ class _$_FHIRUriR4Capabilities extends _FHIRUriR4Capabilities {
     @required
         Result r5HistoryAll(
             Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result dstu2Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Dstu2Types type, Id id, String operation),
+    @required
+        Result stu3Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Stu3Types type, Id id, String operation),
+    @required
+        Result r4Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R4Types type, Id id, String operation),
+    @required
+        Result r5Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R5Types type, Id id, String operation),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -23326,6 +24670,10 @@ class _$_FHIRUriR4Capabilities extends _FHIRUriR4Capabilities {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return r4Capabilities(base, mimeType, pretty, summary, mode);
   }
 
@@ -23434,6 +24782,14 @@ class _$_FHIRUriR4Capabilities extends _FHIRUriR4Capabilities {
         Uri base, String mimeType, bool pretty, Summary summary),
     Result r5HistoryAll(
         Uri base, String mimeType, bool pretty, Summary summary),
+    Result dstu2Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Dstu2Types type, Id id, String operation),
+    Result stu3Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Stu3Types type, Id id, String operation),
+    Result r4Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R4Types type, Id id, String operation),
+    Result r5Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R5Types type, Id id, String operation),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -23498,6 +24854,10 @@ class _$_FHIRUriR4Capabilities extends _FHIRUriR4Capabilities {
     @required Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     @required Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     @required Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    @required Result dstu2Operation(_FHIRUriDstu2Operation value),
+    @required Result stu3Operation(_FHIRUriStu3Operation value),
+    @required Result r4Operation(_FHIRUriR4Operation value),
+    @required Result r5Operation(_FHIRUriR5Operation value),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -23551,6 +24911,10 @@ class _$_FHIRUriR4Capabilities extends _FHIRUriR4Capabilities {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return r4Capabilities(this);
   }
 
@@ -23609,6 +24973,10 @@ class _$_FHIRUriR4Capabilities extends _FHIRUriR4Capabilities {
     Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    Result dstu2Operation(_FHIRUriDstu2Operation value),
+    Result stu3Operation(_FHIRUriStu3Operation value),
+    Result r4Operation(_FHIRUriR4Operation value),
+    Result r5Operation(_FHIRUriR5Operation value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -23902,6 +25270,18 @@ class _$_FHIRUriR5Capabilities extends _FHIRUriR5Capabilities {
     @required
         Result r5HistoryAll(
             Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result dstu2Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Dstu2Types type, Id id, String operation),
+    @required
+        Result stu3Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Stu3Types type, Id id, String operation),
+    @required
+        Result r4Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R4Types type, Id id, String operation),
+    @required
+        Result r5Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R5Types type, Id id, String operation),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -23955,6 +25335,10 @@ class _$_FHIRUriR5Capabilities extends _FHIRUriR5Capabilities {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return r5Capabilities(base, mimeType, pretty, summary, mode);
   }
 
@@ -24063,6 +25447,14 @@ class _$_FHIRUriR5Capabilities extends _FHIRUriR5Capabilities {
         Uri base, String mimeType, bool pretty, Summary summary),
     Result r5HistoryAll(
         Uri base, String mimeType, bool pretty, Summary summary),
+    Result dstu2Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Dstu2Types type, Id id, String operation),
+    Result stu3Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Stu3Types type, Id id, String operation),
+    Result r4Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R4Types type, Id id, String operation),
+    Result r5Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R5Types type, Id id, String operation),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -24127,6 +25519,10 @@ class _$_FHIRUriR5Capabilities extends _FHIRUriR5Capabilities {
     @required Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     @required Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     @required Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    @required Result dstu2Operation(_FHIRUriDstu2Operation value),
+    @required Result stu3Operation(_FHIRUriStu3Operation value),
+    @required Result r4Operation(_FHIRUriR4Operation value),
+    @required Result r5Operation(_FHIRUriR5Operation value),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -24180,6 +25576,10 @@ class _$_FHIRUriR5Capabilities extends _FHIRUriR5Capabilities {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return r5Capabilities(this);
   }
 
@@ -24238,6 +25638,10 @@ class _$_FHIRUriR5Capabilities extends _FHIRUriR5Capabilities {
     Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    Result dstu2Operation(_FHIRUriDstu2Operation value),
+    Result stu3Operation(_FHIRUriStu3Operation value),
+    Result r4Operation(_FHIRUriR4Operation value),
+    Result r5Operation(_FHIRUriR5Operation value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -24520,6 +25924,18 @@ class _$_FHIRUriDstu2Transaction extends _FHIRUriDstu2Transaction {
     @required
         Result r5HistoryAll(
             Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result dstu2Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Dstu2Types type, Id id, String operation),
+    @required
+        Result stu3Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Stu3Types type, Id id, String operation),
+    @required
+        Result r4Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R4Types type, Id id, String operation),
+    @required
+        Result r5Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R5Types type, Id id, String operation),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -24573,6 +25989,10 @@ class _$_FHIRUriDstu2Transaction extends _FHIRUriDstu2Transaction {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return dstu2Transaction(base, mimeType, pretty, summary);
   }
 
@@ -24681,6 +26101,14 @@ class _$_FHIRUriDstu2Transaction extends _FHIRUriDstu2Transaction {
         Uri base, String mimeType, bool pretty, Summary summary),
     Result r5HistoryAll(
         Uri base, String mimeType, bool pretty, Summary summary),
+    Result dstu2Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Dstu2Types type, Id id, String operation),
+    Result stu3Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Stu3Types type, Id id, String operation),
+    Result r4Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R4Types type, Id id, String operation),
+    Result r5Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R5Types type, Id id, String operation),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -24745,6 +26173,10 @@ class _$_FHIRUriDstu2Transaction extends _FHIRUriDstu2Transaction {
     @required Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     @required Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     @required Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    @required Result dstu2Operation(_FHIRUriDstu2Operation value),
+    @required Result stu3Operation(_FHIRUriStu3Operation value),
+    @required Result r4Operation(_FHIRUriR4Operation value),
+    @required Result r5Operation(_FHIRUriR5Operation value),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -24798,6 +26230,10 @@ class _$_FHIRUriDstu2Transaction extends _FHIRUriDstu2Transaction {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return dstu2Transaction(this);
   }
 
@@ -24856,6 +26292,10 @@ class _$_FHIRUriDstu2Transaction extends _FHIRUriDstu2Transaction {
     Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    Result dstu2Operation(_FHIRUriDstu2Operation value),
+    Result stu3Operation(_FHIRUriStu3Operation value),
+    Result r4Operation(_FHIRUriR4Operation value),
+    Result r5Operation(_FHIRUriR5Operation value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -25135,6 +26575,18 @@ class _$_FHIRUriStu3Transaction extends _FHIRUriStu3Transaction {
     @required
         Result r5HistoryAll(
             Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result dstu2Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Dstu2Types type, Id id, String operation),
+    @required
+        Result stu3Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Stu3Types type, Id id, String operation),
+    @required
+        Result r4Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R4Types type, Id id, String operation),
+    @required
+        Result r5Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R5Types type, Id id, String operation),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -25188,6 +26640,10 @@ class _$_FHIRUriStu3Transaction extends _FHIRUriStu3Transaction {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return stu3Transaction(base, mimeType, pretty, summary);
   }
 
@@ -25296,6 +26752,14 @@ class _$_FHIRUriStu3Transaction extends _FHIRUriStu3Transaction {
         Uri base, String mimeType, bool pretty, Summary summary),
     Result r5HistoryAll(
         Uri base, String mimeType, bool pretty, Summary summary),
+    Result dstu2Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Dstu2Types type, Id id, String operation),
+    Result stu3Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Stu3Types type, Id id, String operation),
+    Result r4Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R4Types type, Id id, String operation),
+    Result r5Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R5Types type, Id id, String operation),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -25360,6 +26824,10 @@ class _$_FHIRUriStu3Transaction extends _FHIRUriStu3Transaction {
     @required Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     @required Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     @required Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    @required Result dstu2Operation(_FHIRUriDstu2Operation value),
+    @required Result stu3Operation(_FHIRUriStu3Operation value),
+    @required Result r4Operation(_FHIRUriR4Operation value),
+    @required Result r5Operation(_FHIRUriR5Operation value),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -25413,6 +26881,10 @@ class _$_FHIRUriStu3Transaction extends _FHIRUriStu3Transaction {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return stu3Transaction(this);
   }
 
@@ -25471,6 +26943,10 @@ class _$_FHIRUriStu3Transaction extends _FHIRUriStu3Transaction {
     Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    Result dstu2Operation(_FHIRUriDstu2Operation value),
+    Result stu3Operation(_FHIRUriStu3Operation value),
+    Result r4Operation(_FHIRUriR4Operation value),
+    Result r5Operation(_FHIRUriR5Operation value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -25750,6 +27226,18 @@ class _$_FHIRUriR4Transaction extends _FHIRUriR4Transaction {
     @required
         Result r5HistoryAll(
             Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result dstu2Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Dstu2Types type, Id id, String operation),
+    @required
+        Result stu3Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Stu3Types type, Id id, String operation),
+    @required
+        Result r4Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R4Types type, Id id, String operation),
+    @required
+        Result r5Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R5Types type, Id id, String operation),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -25803,6 +27291,10 @@ class _$_FHIRUriR4Transaction extends _FHIRUriR4Transaction {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return r4Transaction(base, mimeType, pretty, summary);
   }
 
@@ -25911,6 +27403,14 @@ class _$_FHIRUriR4Transaction extends _FHIRUriR4Transaction {
         Uri base, String mimeType, bool pretty, Summary summary),
     Result r5HistoryAll(
         Uri base, String mimeType, bool pretty, Summary summary),
+    Result dstu2Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Dstu2Types type, Id id, String operation),
+    Result stu3Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Stu3Types type, Id id, String operation),
+    Result r4Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R4Types type, Id id, String operation),
+    Result r5Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R5Types type, Id id, String operation),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -25975,6 +27475,10 @@ class _$_FHIRUriR4Transaction extends _FHIRUriR4Transaction {
     @required Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     @required Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     @required Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    @required Result dstu2Operation(_FHIRUriDstu2Operation value),
+    @required Result stu3Operation(_FHIRUriStu3Operation value),
+    @required Result r4Operation(_FHIRUriR4Operation value),
+    @required Result r5Operation(_FHIRUriR5Operation value),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -26028,6 +27532,10 @@ class _$_FHIRUriR4Transaction extends _FHIRUriR4Transaction {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return r4Transaction(this);
   }
 
@@ -26086,6 +27594,10 @@ class _$_FHIRUriR4Transaction extends _FHIRUriR4Transaction {
     Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    Result dstu2Operation(_FHIRUriDstu2Operation value),
+    Result stu3Operation(_FHIRUriStu3Operation value),
+    Result r4Operation(_FHIRUriR4Operation value),
+    Result r5Operation(_FHIRUriR5Operation value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -26365,6 +27877,18 @@ class _$_FHIRUriR5Transaction extends _FHIRUriR5Transaction {
     @required
         Result r5HistoryAll(
             Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result dstu2Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Dstu2Types type, Id id, String operation),
+    @required
+        Result stu3Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Stu3Types type, Id id, String operation),
+    @required
+        Result r4Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R4Types type, Id id, String operation),
+    @required
+        Result r5Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R5Types type, Id id, String operation),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -26418,6 +27942,10 @@ class _$_FHIRUriR5Transaction extends _FHIRUriR5Transaction {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return r5Transaction(base, mimeType, pretty, summary);
   }
 
@@ -26526,6 +28054,14 @@ class _$_FHIRUriR5Transaction extends _FHIRUriR5Transaction {
         Uri base, String mimeType, bool pretty, Summary summary),
     Result r5HistoryAll(
         Uri base, String mimeType, bool pretty, Summary summary),
+    Result dstu2Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Dstu2Types type, Id id, String operation),
+    Result stu3Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Stu3Types type, Id id, String operation),
+    Result r4Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R4Types type, Id id, String operation),
+    Result r5Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R5Types type, Id id, String operation),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -26590,6 +28126,10 @@ class _$_FHIRUriR5Transaction extends _FHIRUriR5Transaction {
     @required Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     @required Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     @required Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    @required Result dstu2Operation(_FHIRUriDstu2Operation value),
+    @required Result stu3Operation(_FHIRUriStu3Operation value),
+    @required Result r4Operation(_FHIRUriR4Operation value),
+    @required Result r5Operation(_FHIRUriR5Operation value),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -26643,6 +28183,10 @@ class _$_FHIRUriR5Transaction extends _FHIRUriR5Transaction {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return r5Transaction(this);
   }
 
@@ -26701,6 +28245,10 @@ class _$_FHIRUriR5Transaction extends _FHIRUriR5Transaction {
     Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    Result dstu2Operation(_FHIRUriDstu2Operation value),
+    Result stu3Operation(_FHIRUriStu3Operation value),
+    Result r4Operation(_FHIRUriR4Operation value),
+    Result r5Operation(_FHIRUriR5Operation value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -27005,6 +28553,18 @@ class _$_FHIRUriDstu2History extends _FHIRUriDstu2History {
     @required
         Result r5HistoryAll(
             Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result dstu2Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Dstu2Types type, Id id, String operation),
+    @required
+        Result stu3Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Stu3Types type, Id id, String operation),
+    @required
+        Result r4Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R4Types type, Id id, String operation),
+    @required
+        Result r5Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R5Types type, Id id, String operation),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -27058,6 +28618,10 @@ class _$_FHIRUriDstu2History extends _FHIRUriDstu2History {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return dstu2History(base, mimeType, pretty, summary, type, id);
   }
 
@@ -27166,6 +28730,14 @@ class _$_FHIRUriDstu2History extends _FHIRUriDstu2History {
         Uri base, String mimeType, bool pretty, Summary summary),
     Result r5HistoryAll(
         Uri base, String mimeType, bool pretty, Summary summary),
+    Result dstu2Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Dstu2Types type, Id id, String operation),
+    Result stu3Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Stu3Types type, Id id, String operation),
+    Result r4Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R4Types type, Id id, String operation),
+    Result r5Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R5Types type, Id id, String operation),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -27230,6 +28802,10 @@ class _$_FHIRUriDstu2History extends _FHIRUriDstu2History {
     @required Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     @required Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     @required Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    @required Result dstu2Operation(_FHIRUriDstu2Operation value),
+    @required Result stu3Operation(_FHIRUriStu3Operation value),
+    @required Result r4Operation(_FHIRUriR4Operation value),
+    @required Result r5Operation(_FHIRUriR5Operation value),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -27283,6 +28859,10 @@ class _$_FHIRUriDstu2History extends _FHIRUriDstu2History {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return dstu2History(this);
   }
 
@@ -27341,6 +28921,10 @@ class _$_FHIRUriDstu2History extends _FHIRUriDstu2History {
     Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    Result dstu2Operation(_FHIRUriDstu2Operation value),
+    Result stu3Operation(_FHIRUriStu3Operation value),
+    Result r4Operation(_FHIRUriR4Operation value),
+    Result r5Operation(_FHIRUriR5Operation value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -27648,6 +29232,18 @@ class _$_FHIRUriStu3History extends _FHIRUriStu3History {
     @required
         Result r5HistoryAll(
             Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result dstu2Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Dstu2Types type, Id id, String operation),
+    @required
+        Result stu3Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Stu3Types type, Id id, String operation),
+    @required
+        Result r4Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R4Types type, Id id, String operation),
+    @required
+        Result r5Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R5Types type, Id id, String operation),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -27701,6 +29297,10 @@ class _$_FHIRUriStu3History extends _FHIRUriStu3History {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return stu3History(base, mimeType, pretty, summary, type, id);
   }
 
@@ -27809,6 +29409,14 @@ class _$_FHIRUriStu3History extends _FHIRUriStu3History {
         Uri base, String mimeType, bool pretty, Summary summary),
     Result r5HistoryAll(
         Uri base, String mimeType, bool pretty, Summary summary),
+    Result dstu2Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Dstu2Types type, Id id, String operation),
+    Result stu3Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Stu3Types type, Id id, String operation),
+    Result r4Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R4Types type, Id id, String operation),
+    Result r5Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R5Types type, Id id, String operation),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -27873,6 +29481,10 @@ class _$_FHIRUriStu3History extends _FHIRUriStu3History {
     @required Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     @required Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     @required Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    @required Result dstu2Operation(_FHIRUriDstu2Operation value),
+    @required Result stu3Operation(_FHIRUriStu3Operation value),
+    @required Result r4Operation(_FHIRUriR4Operation value),
+    @required Result r5Operation(_FHIRUriR5Operation value),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -27926,6 +29538,10 @@ class _$_FHIRUriStu3History extends _FHIRUriStu3History {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return stu3History(this);
   }
 
@@ -27984,6 +29600,10 @@ class _$_FHIRUriStu3History extends _FHIRUriStu3History {
     Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    Result dstu2Operation(_FHIRUriDstu2Operation value),
+    Result stu3Operation(_FHIRUriStu3Operation value),
+    Result r4Operation(_FHIRUriR4Operation value),
+    Result r5Operation(_FHIRUriR5Operation value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -28290,6 +29910,18 @@ class _$_FHIRUriR4History extends _FHIRUriR4History {
     @required
         Result r5HistoryAll(
             Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result dstu2Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Dstu2Types type, Id id, String operation),
+    @required
+        Result stu3Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Stu3Types type, Id id, String operation),
+    @required
+        Result r4Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R4Types type, Id id, String operation),
+    @required
+        Result r5Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R5Types type, Id id, String operation),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -28343,6 +29975,10 @@ class _$_FHIRUriR4History extends _FHIRUriR4History {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return r4History(base, mimeType, pretty, summary, type, id);
   }
 
@@ -28451,6 +30087,14 @@ class _$_FHIRUriR4History extends _FHIRUriR4History {
         Uri base, String mimeType, bool pretty, Summary summary),
     Result r5HistoryAll(
         Uri base, String mimeType, bool pretty, Summary summary),
+    Result dstu2Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Dstu2Types type, Id id, String operation),
+    Result stu3Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Stu3Types type, Id id, String operation),
+    Result r4Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R4Types type, Id id, String operation),
+    Result r5Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R5Types type, Id id, String operation),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -28515,6 +30159,10 @@ class _$_FHIRUriR4History extends _FHIRUriR4History {
     @required Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     @required Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     @required Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    @required Result dstu2Operation(_FHIRUriDstu2Operation value),
+    @required Result stu3Operation(_FHIRUriStu3Operation value),
+    @required Result r4Operation(_FHIRUriR4Operation value),
+    @required Result r5Operation(_FHIRUriR5Operation value),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -28568,6 +30216,10 @@ class _$_FHIRUriR4History extends _FHIRUriR4History {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return r4History(this);
   }
 
@@ -28626,6 +30278,10 @@ class _$_FHIRUriR4History extends _FHIRUriR4History {
     Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    Result dstu2Operation(_FHIRUriDstu2Operation value),
+    Result stu3Operation(_FHIRUriStu3Operation value),
+    Result r4Operation(_FHIRUriR4Operation value),
+    Result r5Operation(_FHIRUriR5Operation value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -28932,6 +30588,18 @@ class _$_FHIRUriR5History extends _FHIRUriR5History {
     @required
         Result r5HistoryAll(
             Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result dstu2Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Dstu2Types type, Id id, String operation),
+    @required
+        Result stu3Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Stu3Types type, Id id, String operation),
+    @required
+        Result r4Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R4Types type, Id id, String operation),
+    @required
+        Result r5Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R5Types type, Id id, String operation),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -28985,6 +30653,10 @@ class _$_FHIRUriR5History extends _FHIRUriR5History {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return r5History(base, mimeType, pretty, summary, type, id);
   }
 
@@ -29093,6 +30765,14 @@ class _$_FHIRUriR5History extends _FHIRUriR5History {
         Uri base, String mimeType, bool pretty, Summary summary),
     Result r5HistoryAll(
         Uri base, String mimeType, bool pretty, Summary summary),
+    Result dstu2Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Dstu2Types type, Id id, String operation),
+    Result stu3Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Stu3Types type, Id id, String operation),
+    Result r4Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R4Types type, Id id, String operation),
+    Result r5Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R5Types type, Id id, String operation),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -29157,6 +30837,10 @@ class _$_FHIRUriR5History extends _FHIRUriR5History {
     @required Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     @required Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     @required Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    @required Result dstu2Operation(_FHIRUriDstu2Operation value),
+    @required Result stu3Operation(_FHIRUriStu3Operation value),
+    @required Result r4Operation(_FHIRUriR4Operation value),
+    @required Result r5Operation(_FHIRUriR5Operation value),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -29210,6 +30894,10 @@ class _$_FHIRUriR5History extends _FHIRUriR5History {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return r5History(this);
   }
 
@@ -29268,6 +30956,10 @@ class _$_FHIRUriR5History extends _FHIRUriR5History {
     Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    Result dstu2Operation(_FHIRUriDstu2Operation value),
+    Result stu3Operation(_FHIRUriStu3Operation value),
+    Result r4Operation(_FHIRUriR4Operation value),
+    Result r5Operation(_FHIRUriR5Operation value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -29567,6 +31259,18 @@ class _$_FHIRUriDstu2HistoryType extends _FHIRUriDstu2HistoryType {
     @required
         Result r5HistoryAll(
             Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result dstu2Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Dstu2Types type, Id id, String operation),
+    @required
+        Result stu3Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Stu3Types type, Id id, String operation),
+    @required
+        Result r4Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R4Types type, Id id, String operation),
+    @required
+        Result r5Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R5Types type, Id id, String operation),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -29620,6 +31324,10 @@ class _$_FHIRUriDstu2HistoryType extends _FHIRUriDstu2HistoryType {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return dstu2HistoryType(base, mimeType, pretty, summary, type);
   }
 
@@ -29728,6 +31436,14 @@ class _$_FHIRUriDstu2HistoryType extends _FHIRUriDstu2HistoryType {
         Uri base, String mimeType, bool pretty, Summary summary),
     Result r5HistoryAll(
         Uri base, String mimeType, bool pretty, Summary summary),
+    Result dstu2Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Dstu2Types type, Id id, String operation),
+    Result stu3Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Stu3Types type, Id id, String operation),
+    Result r4Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R4Types type, Id id, String operation),
+    Result r5Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R5Types type, Id id, String operation),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -29792,6 +31508,10 @@ class _$_FHIRUriDstu2HistoryType extends _FHIRUriDstu2HistoryType {
     @required Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     @required Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     @required Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    @required Result dstu2Operation(_FHIRUriDstu2Operation value),
+    @required Result stu3Operation(_FHIRUriStu3Operation value),
+    @required Result r4Operation(_FHIRUriR4Operation value),
+    @required Result r5Operation(_FHIRUriR5Operation value),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -29845,6 +31565,10 @@ class _$_FHIRUriDstu2HistoryType extends _FHIRUriDstu2HistoryType {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return dstu2HistoryType(this);
   }
 
@@ -29903,6 +31627,10 @@ class _$_FHIRUriDstu2HistoryType extends _FHIRUriDstu2HistoryType {
     Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    Result dstu2Operation(_FHIRUriDstu2Operation value),
+    Result stu3Operation(_FHIRUriStu3Operation value),
+    Result r4Operation(_FHIRUriR4Operation value),
+    Result r5Operation(_FHIRUriR5Operation value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -30199,6 +31927,18 @@ class _$_FHIRUriStu3HistoryType extends _FHIRUriStu3HistoryType {
     @required
         Result r5HistoryAll(
             Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result dstu2Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Dstu2Types type, Id id, String operation),
+    @required
+        Result stu3Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Stu3Types type, Id id, String operation),
+    @required
+        Result r4Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R4Types type, Id id, String operation),
+    @required
+        Result r5Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R5Types type, Id id, String operation),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -30252,6 +31992,10 @@ class _$_FHIRUriStu3HistoryType extends _FHIRUriStu3HistoryType {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return stu3HistoryType(base, mimeType, pretty, summary, type);
   }
 
@@ -30360,6 +32104,14 @@ class _$_FHIRUriStu3HistoryType extends _FHIRUriStu3HistoryType {
         Uri base, String mimeType, bool pretty, Summary summary),
     Result r5HistoryAll(
         Uri base, String mimeType, bool pretty, Summary summary),
+    Result dstu2Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Dstu2Types type, Id id, String operation),
+    Result stu3Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Stu3Types type, Id id, String operation),
+    Result r4Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R4Types type, Id id, String operation),
+    Result r5Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R5Types type, Id id, String operation),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -30424,6 +32176,10 @@ class _$_FHIRUriStu3HistoryType extends _FHIRUriStu3HistoryType {
     @required Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     @required Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     @required Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    @required Result dstu2Operation(_FHIRUriDstu2Operation value),
+    @required Result stu3Operation(_FHIRUriStu3Operation value),
+    @required Result r4Operation(_FHIRUriR4Operation value),
+    @required Result r5Operation(_FHIRUriR5Operation value),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -30477,6 +32233,10 @@ class _$_FHIRUriStu3HistoryType extends _FHIRUriStu3HistoryType {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return stu3HistoryType(this);
   }
 
@@ -30535,6 +32295,10 @@ class _$_FHIRUriStu3HistoryType extends _FHIRUriStu3HistoryType {
     Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    Result dstu2Operation(_FHIRUriDstu2Operation value),
+    Result stu3Operation(_FHIRUriStu3Operation value),
+    Result r4Operation(_FHIRUriR4Operation value),
+    Result r5Operation(_FHIRUriR5Operation value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -30827,6 +32591,18 @@ class _$_FHIRUriR4HistoryType extends _FHIRUriR4HistoryType {
     @required
         Result r5HistoryAll(
             Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result dstu2Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Dstu2Types type, Id id, String operation),
+    @required
+        Result stu3Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Stu3Types type, Id id, String operation),
+    @required
+        Result r4Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R4Types type, Id id, String operation),
+    @required
+        Result r5Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R5Types type, Id id, String operation),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -30880,6 +32656,10 @@ class _$_FHIRUriR4HistoryType extends _FHIRUriR4HistoryType {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return r4HistoryType(base, mimeType, pretty, summary, type);
   }
 
@@ -30988,6 +32768,14 @@ class _$_FHIRUriR4HistoryType extends _FHIRUriR4HistoryType {
         Uri base, String mimeType, bool pretty, Summary summary),
     Result r5HistoryAll(
         Uri base, String mimeType, bool pretty, Summary summary),
+    Result dstu2Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Dstu2Types type, Id id, String operation),
+    Result stu3Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Stu3Types type, Id id, String operation),
+    Result r4Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R4Types type, Id id, String operation),
+    Result r5Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R5Types type, Id id, String operation),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -31052,6 +32840,10 @@ class _$_FHIRUriR4HistoryType extends _FHIRUriR4HistoryType {
     @required Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     @required Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     @required Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    @required Result dstu2Operation(_FHIRUriDstu2Operation value),
+    @required Result stu3Operation(_FHIRUriStu3Operation value),
+    @required Result r4Operation(_FHIRUriR4Operation value),
+    @required Result r5Operation(_FHIRUriR5Operation value),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -31105,6 +32897,10 @@ class _$_FHIRUriR4HistoryType extends _FHIRUriR4HistoryType {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return r4HistoryType(this);
   }
 
@@ -31163,6 +32959,10 @@ class _$_FHIRUriR4HistoryType extends _FHIRUriR4HistoryType {
     Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    Result dstu2Operation(_FHIRUriDstu2Operation value),
+    Result stu3Operation(_FHIRUriStu3Operation value),
+    Result r4Operation(_FHIRUriR4Operation value),
+    Result r5Operation(_FHIRUriR5Operation value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -31455,6 +33255,18 @@ class _$_FHIRUriR5HistoryType extends _FHIRUriR5HistoryType {
     @required
         Result r5HistoryAll(
             Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result dstu2Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Dstu2Types type, Id id, String operation),
+    @required
+        Result stu3Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Stu3Types type, Id id, String operation),
+    @required
+        Result r4Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R4Types type, Id id, String operation),
+    @required
+        Result r5Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R5Types type, Id id, String operation),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -31508,6 +33320,10 @@ class _$_FHIRUriR5HistoryType extends _FHIRUriR5HistoryType {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return r5HistoryType(base, mimeType, pretty, summary, type);
   }
 
@@ -31616,6 +33432,14 @@ class _$_FHIRUriR5HistoryType extends _FHIRUriR5HistoryType {
         Uri base, String mimeType, bool pretty, Summary summary),
     Result r5HistoryAll(
         Uri base, String mimeType, bool pretty, Summary summary),
+    Result dstu2Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Dstu2Types type, Id id, String operation),
+    Result stu3Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Stu3Types type, Id id, String operation),
+    Result r4Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R4Types type, Id id, String operation),
+    Result r5Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R5Types type, Id id, String operation),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -31680,6 +33504,10 @@ class _$_FHIRUriR5HistoryType extends _FHIRUriR5HistoryType {
     @required Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     @required Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     @required Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    @required Result dstu2Operation(_FHIRUriDstu2Operation value),
+    @required Result stu3Operation(_FHIRUriStu3Operation value),
+    @required Result r4Operation(_FHIRUriR4Operation value),
+    @required Result r5Operation(_FHIRUriR5Operation value),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -31733,6 +33561,10 @@ class _$_FHIRUriR5HistoryType extends _FHIRUriR5HistoryType {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return r5HistoryType(this);
   }
 
@@ -31791,6 +33623,10 @@ class _$_FHIRUriR5HistoryType extends _FHIRUriR5HistoryType {
     Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    Result dstu2Operation(_FHIRUriDstu2Operation value),
+    Result stu3Operation(_FHIRUriStu3Operation value),
+    Result r4Operation(_FHIRUriR4Operation value),
+    Result r5Operation(_FHIRUriR5Operation value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -32072,6 +33908,18 @@ class _$_FHIRUriDstu2HistoryAll extends _FHIRUriDstu2HistoryAll {
     @required
         Result r5HistoryAll(
             Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result dstu2Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Dstu2Types type, Id id, String operation),
+    @required
+        Result stu3Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Stu3Types type, Id id, String operation),
+    @required
+        Result r4Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R4Types type, Id id, String operation),
+    @required
+        Result r5Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R5Types type, Id id, String operation),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -32125,6 +33973,10 @@ class _$_FHIRUriDstu2HistoryAll extends _FHIRUriDstu2HistoryAll {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return dstu2HistoryAll(base, mimeType, pretty, summary);
   }
 
@@ -32233,6 +34085,14 @@ class _$_FHIRUriDstu2HistoryAll extends _FHIRUriDstu2HistoryAll {
         Uri base, String mimeType, bool pretty, Summary summary),
     Result r5HistoryAll(
         Uri base, String mimeType, bool pretty, Summary summary),
+    Result dstu2Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Dstu2Types type, Id id, String operation),
+    Result stu3Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Stu3Types type, Id id, String operation),
+    Result r4Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R4Types type, Id id, String operation),
+    Result r5Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R5Types type, Id id, String operation),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -32297,6 +34157,10 @@ class _$_FHIRUriDstu2HistoryAll extends _FHIRUriDstu2HistoryAll {
     @required Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     @required Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     @required Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    @required Result dstu2Operation(_FHIRUriDstu2Operation value),
+    @required Result stu3Operation(_FHIRUriStu3Operation value),
+    @required Result r4Operation(_FHIRUriR4Operation value),
+    @required Result r5Operation(_FHIRUriR5Operation value),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -32350,6 +34214,10 @@ class _$_FHIRUriDstu2HistoryAll extends _FHIRUriDstu2HistoryAll {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return dstu2HistoryAll(this);
   }
 
@@ -32408,6 +34276,10 @@ class _$_FHIRUriDstu2HistoryAll extends _FHIRUriDstu2HistoryAll {
     Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    Result dstu2Operation(_FHIRUriDstu2Operation value),
+    Result stu3Operation(_FHIRUriStu3Operation value),
+    Result r4Operation(_FHIRUriR4Operation value),
+    Result r5Operation(_FHIRUriR5Operation value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -32687,6 +34559,18 @@ class _$_FHIRUriStu3HistoryAll extends _FHIRUriStu3HistoryAll {
     @required
         Result r5HistoryAll(
             Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result dstu2Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Dstu2Types type, Id id, String operation),
+    @required
+        Result stu3Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Stu3Types type, Id id, String operation),
+    @required
+        Result r4Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R4Types type, Id id, String operation),
+    @required
+        Result r5Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R5Types type, Id id, String operation),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -32740,6 +34624,10 @@ class _$_FHIRUriStu3HistoryAll extends _FHIRUriStu3HistoryAll {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return stu3HistoryAll(base, mimeType, pretty, summary);
   }
 
@@ -32848,6 +34736,14 @@ class _$_FHIRUriStu3HistoryAll extends _FHIRUriStu3HistoryAll {
         Uri base, String mimeType, bool pretty, Summary summary),
     Result r5HistoryAll(
         Uri base, String mimeType, bool pretty, Summary summary),
+    Result dstu2Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Dstu2Types type, Id id, String operation),
+    Result stu3Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Stu3Types type, Id id, String operation),
+    Result r4Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R4Types type, Id id, String operation),
+    Result r5Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R5Types type, Id id, String operation),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -32912,6 +34808,10 @@ class _$_FHIRUriStu3HistoryAll extends _FHIRUriStu3HistoryAll {
     @required Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     @required Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     @required Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    @required Result dstu2Operation(_FHIRUriDstu2Operation value),
+    @required Result stu3Operation(_FHIRUriStu3Operation value),
+    @required Result r4Operation(_FHIRUriR4Operation value),
+    @required Result r5Operation(_FHIRUriR5Operation value),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -32965,6 +34865,10 @@ class _$_FHIRUriStu3HistoryAll extends _FHIRUriStu3HistoryAll {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return stu3HistoryAll(this);
   }
 
@@ -33023,6 +34927,10 @@ class _$_FHIRUriStu3HistoryAll extends _FHIRUriStu3HistoryAll {
     Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    Result dstu2Operation(_FHIRUriDstu2Operation value),
+    Result stu3Operation(_FHIRUriStu3Operation value),
+    Result r4Operation(_FHIRUriR4Operation value),
+    Result r5Operation(_FHIRUriR5Operation value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -33302,6 +35210,18 @@ class _$_FHIRUriR4HistoryAll extends _FHIRUriR4HistoryAll {
     @required
         Result r5HistoryAll(
             Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result dstu2Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Dstu2Types type, Id id, String operation),
+    @required
+        Result stu3Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Stu3Types type, Id id, String operation),
+    @required
+        Result r4Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R4Types type, Id id, String operation),
+    @required
+        Result r5Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R5Types type, Id id, String operation),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -33355,6 +35275,10 @@ class _$_FHIRUriR4HistoryAll extends _FHIRUriR4HistoryAll {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return r4HistoryAll(base, mimeType, pretty, summary);
   }
 
@@ -33463,6 +35387,14 @@ class _$_FHIRUriR4HistoryAll extends _FHIRUriR4HistoryAll {
         Uri base, String mimeType, bool pretty, Summary summary),
     Result r5HistoryAll(
         Uri base, String mimeType, bool pretty, Summary summary),
+    Result dstu2Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Dstu2Types type, Id id, String operation),
+    Result stu3Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Stu3Types type, Id id, String operation),
+    Result r4Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R4Types type, Id id, String operation),
+    Result r5Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R5Types type, Id id, String operation),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -33527,6 +35459,10 @@ class _$_FHIRUriR4HistoryAll extends _FHIRUriR4HistoryAll {
     @required Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     @required Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     @required Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    @required Result dstu2Operation(_FHIRUriDstu2Operation value),
+    @required Result stu3Operation(_FHIRUriStu3Operation value),
+    @required Result r4Operation(_FHIRUriR4Operation value),
+    @required Result r5Operation(_FHIRUriR5Operation value),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -33580,6 +35516,10 @@ class _$_FHIRUriR4HistoryAll extends _FHIRUriR4HistoryAll {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return r4HistoryAll(this);
   }
 
@@ -33638,6 +35578,10 @@ class _$_FHIRUriR4HistoryAll extends _FHIRUriR4HistoryAll {
     Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    Result dstu2Operation(_FHIRUriDstu2Operation value),
+    Result stu3Operation(_FHIRUriStu3Operation value),
+    Result r4Operation(_FHIRUriR4Operation value),
+    Result r5Operation(_FHIRUriR5Operation value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -33917,6 +35861,18 @@ class _$_FHIRUriR5HistoryAll extends _FHIRUriR5HistoryAll {
     @required
         Result r5HistoryAll(
             Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result dstu2Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Dstu2Types type, Id id, String operation),
+    @required
+        Result stu3Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Stu3Types type, Id id, String operation),
+    @required
+        Result r4Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R4Types type, Id id, String operation),
+    @required
+        Result r5Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R5Types type, Id id, String operation),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -33970,6 +35926,10 @@ class _$_FHIRUriR5HistoryAll extends _FHIRUriR5HistoryAll {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return r5HistoryAll(base, mimeType, pretty, summary);
   }
 
@@ -34078,6 +36038,14 @@ class _$_FHIRUriR5HistoryAll extends _FHIRUriR5HistoryAll {
         Uri base, String mimeType, bool pretty, Summary summary),
     Result r5HistoryAll(
         Uri base, String mimeType, bool pretty, Summary summary),
+    Result dstu2Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Dstu2Types type, Id id, String operation),
+    Result stu3Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Stu3Types type, Id id, String operation),
+    Result r4Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R4Types type, Id id, String operation),
+    Result r5Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R5Types type, Id id, String operation),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -34142,6 +36110,10 @@ class _$_FHIRUriR5HistoryAll extends _FHIRUriR5HistoryAll {
     @required Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     @required Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     @required Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    @required Result dstu2Operation(_FHIRUriDstu2Operation value),
+    @required Result stu3Operation(_FHIRUriStu3Operation value),
+    @required Result r4Operation(_FHIRUriR4Operation value),
+    @required Result r5Operation(_FHIRUriR5Operation value),
   }) {
     assert(dstu2Read != null);
     assert(stu3Read != null);
@@ -34195,6 +36167,10 @@ class _$_FHIRUriR5HistoryAll extends _FHIRUriR5HistoryAll {
     assert(stu3HistoryAll != null);
     assert(r4HistoryAll != null);
     assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
     return r5HistoryAll(this);
   }
 
@@ -34253,6 +36229,10 @@ class _$_FHIRUriR5HistoryAll extends _FHIRUriR5HistoryAll {
     Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
     Result r4HistoryAll(_FHIRUriR4HistoryAll value),
     Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    Result dstu2Operation(_FHIRUriDstu2Operation value),
+    Result stu3Operation(_FHIRUriStu3Operation value),
+    Result r4Operation(_FHIRUriR4Operation value),
+    Result r5Operation(_FHIRUriR5Operation value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -34281,4 +36261,2768 @@ abstract class _FHIRUriR5HistoryAll extends FHIRUri {
   Summary get summary;
   @override
   _$FHIRUriR5HistoryAllCopyWith<_FHIRUriR5HistoryAll> get copyWith;
+}
+
+/// @nodoc
+abstract class _$FHIRUriDstu2OperationCopyWith<$Res>
+    implements $FHIRUriCopyWith<$Res> {
+  factory _$FHIRUriDstu2OperationCopyWith(_FHIRUriDstu2Operation value,
+          $Res Function(_FHIRUriDstu2Operation) then) =
+      __$FHIRUriDstu2OperationCopyWithImpl<$Res>;
+  @override
+  $Res call(
+      {Uri base,
+      String mimeType,
+      bool pretty,
+      Summary summary,
+      Dstu2Types type,
+      Id id,
+      String operation});
+}
+
+/// @nodoc
+class __$FHIRUriDstu2OperationCopyWithImpl<$Res>
+    extends _$FHIRUriCopyWithImpl<$Res>
+    implements _$FHIRUriDstu2OperationCopyWith<$Res> {
+  __$FHIRUriDstu2OperationCopyWithImpl(_FHIRUriDstu2Operation _value,
+      $Res Function(_FHIRUriDstu2Operation) _then)
+      : super(_value, (v) => _then(v as _FHIRUriDstu2Operation));
+
+  @override
+  _FHIRUriDstu2Operation get _value => super._value as _FHIRUriDstu2Operation;
+
+  @override
+  $Res call({
+    Object base = freezed,
+    Object mimeType = freezed,
+    Object pretty = freezed,
+    Object summary = freezed,
+    Object type = freezed,
+    Object id = freezed,
+    Object operation = freezed,
+  }) {
+    return _then(_FHIRUriDstu2Operation(
+      base: base == freezed ? _value.base : base as Uri,
+      mimeType: mimeType == freezed ? _value.mimeType : mimeType as String,
+      pretty: pretty == freezed ? _value.pretty : pretty as bool,
+      summary: summary == freezed ? _value.summary : summary as Summary,
+      type: type == freezed ? _value.type : type as Dstu2Types,
+      id: id == freezed ? _value.id : id as Id,
+      operation: operation == freezed ? _value.operation : operation as String,
+    ));
+  }
+}
+
+/// @nodoc
+class _$_FHIRUriDstu2Operation extends _FHIRUriDstu2Operation {
+  _$_FHIRUriDstu2Operation(
+      {@required this.base,
+      this.mimeType = 'application/json+fhir',
+      this.pretty = false,
+      this.summary = Summary.none,
+      this.type,
+      this.id,
+      @required this.operation})
+      : assert(base != null),
+        assert(mimeType != null),
+        assert(pretty != null),
+        assert(summary != null),
+        assert(operation != null),
+        super._();
+
+  @override
+  final Uri base;
+  @JsonKey(defaultValue: 'application/json+fhir')
+  @override
+  final String mimeType;
+  @JsonKey(defaultValue: false)
+  @override
+  final bool pretty;
+  @JsonKey(defaultValue: Summary.none)
+  @override
+  final Summary summary;
+  @override
+  final Dstu2Types type;
+  @override
+  final Id id;
+  @override
+  final String operation;
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _FHIRUriDstu2Operation &&
+            (identical(other.base, base) ||
+                const DeepCollectionEquality().equals(other.base, base)) &&
+            (identical(other.mimeType, mimeType) ||
+                const DeepCollectionEquality()
+                    .equals(other.mimeType, mimeType)) &&
+            (identical(other.pretty, pretty) ||
+                const DeepCollectionEquality().equals(other.pretty, pretty)) &&
+            (identical(other.summary, summary) ||
+                const DeepCollectionEquality()
+                    .equals(other.summary, summary)) &&
+            (identical(other.type, type) ||
+                const DeepCollectionEquality().equals(other.type, type)) &&
+            (identical(other.id, id) ||
+                const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.operation, operation) ||
+                const DeepCollectionEquality()
+                    .equals(other.operation, operation)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(base) ^
+      const DeepCollectionEquality().hash(mimeType) ^
+      const DeepCollectionEquality().hash(pretty) ^
+      const DeepCollectionEquality().hash(summary) ^
+      const DeepCollectionEquality().hash(type) ^
+      const DeepCollectionEquality().hash(id) ^
+      const DeepCollectionEquality().hash(operation);
+
+  @override
+  _$FHIRUriDstu2OperationCopyWith<_FHIRUriDstu2Operation> get copyWith =>
+      __$FHIRUriDstu2OperationCopyWithImpl<_FHIRUriDstu2Operation>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required
+        Result dstu2Read(Uri base, String mimeType, bool pretty,
+            Summary summary, Dstu2Types type, Id id),
+    @required
+        Result stu3Read(Uri base, String mimeType, bool pretty, Summary summary,
+            Stu3Types type, Id id),
+    @required
+        Result r4Read(Uri base, String mimeType, bool pretty, Summary summary,
+            R4Types type, Id id),
+    @required
+        Result r5Read(Uri base, String mimeType, bool pretty, Summary summary,
+            R5Types type, Id id),
+    @required
+        Result dstu2VRead(Uri base, String mimeType, bool pretty,
+            Summary summary, Dstu2Types type, Id id, Id vid),
+    @required
+        Result stu3VRead(Uri base, String mimeType, bool pretty,
+            Summary summary, Stu3Types type, Id id, Id vid),
+    @required
+        Result r4VRead(Uri base, String mimeType, bool pretty, Summary summary,
+            R4Types type, Id id, Id vid),
+    @required
+        Result r5VRead(Uri base, String mimeType, bool pretty, Summary summary,
+            R5Types type, Id id, Id vid),
+    @required
+        Result dstu2Update(Uri base, String mimeType, bool pretty,
+            Summary summary, Dstu2Types type, Id id),
+    @required
+        Result stu3Update(Uri base, String mimeType, bool pretty,
+            Summary summary, Stu3Types type, Id id),
+    @required
+        Result r4Update(Uri base, String mimeType, bool pretty, Summary summary,
+            R4Types type, Id id),
+    @required
+        Result r5Update(Uri base, String mimeType, bool pretty, Summary summary,
+            R5Types type, Id id),
+    @required
+        Result dstu2Patch(Uri base, String mimeType, bool pretty,
+            Summary summary, Dstu2Types type, Id id),
+    @required
+        Result stu3Patch(Uri base, String mimeType, bool pretty,
+            Summary summary, Stu3Types type, Id id),
+    @required
+        Result r4Patch(Uri base, String mimeType, bool pretty, Summary summary,
+            R4Types type, Id id),
+    @required
+        Result r5Patch(Uri base, String mimeType, bool pretty, Summary summary,
+            R5Types type, Id id),
+    @required
+        Result dstu2Delete(Uri base, String mimeType, bool pretty,
+            Summary summary, Dstu2Types type, Id id),
+    @required
+        Result stu3Delete(Uri base, String mimeType, bool pretty,
+            Summary summary, Stu3Types type, Id id),
+    @required
+        Result r4Delete(Uri base, String mimeType, bool pretty, Summary summary,
+            R4Types type, Id id),
+    @required
+        Result r5Delete(Uri base, String mimeType, bool pretty, Summary summary,
+            R5Types type, Id id),
+    @required
+        Result dstu2Create(Uri base, String mimeType, bool pretty,
+            Summary summary, Dstu2Types type),
+    @required
+        Result stu3Create(Uri base, String mimeType, bool pretty,
+            Summary summary, Stu3Types type),
+    @required
+        Result r4Create(Uri base, String mimeType, bool pretty, Summary summary,
+            R4Types type),
+    @required
+        Result r5Create(Uri base, String mimeType, bool pretty, Summary summary,
+            R5Types type),
+    @required
+        Result dstu2Search(Uri base, String mimeType, bool pretty,
+            Summary summary, Dstu2Types type, RestfulRequest restfulRequest),
+    @required
+        Result stu3Search(Uri base, String mimeType, bool pretty,
+            Summary summary, Stu3Types type, RestfulRequest restfulRequest),
+    @required
+        Result r4Search(Uri base, String mimeType, bool pretty, Summary summary,
+            R4Types type, RestfulRequest restfulRequest),
+    @required
+        Result r5Search(Uri base, String mimeType, bool pretty, Summary summary,
+            R5Types type, RestfulRequest restfulRequest),
+    @required
+        Result dstu2SearchAll(
+            Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result stu3SearchAll(
+            Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result r4SearchAll(
+            Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result r5SearchAll(
+            Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result dstu2Capabilities(
+            Uri base, String mimeType, bool pretty, Summary summary, Mode mode),
+    @required
+        Result stu3Capabilities(
+            Uri base, String mimeType, bool pretty, Summary summary, Mode mode),
+    @required
+        Result r4Capabilities(
+            Uri base, String mimeType, bool pretty, Summary summary, Mode mode),
+    @required
+        Result r5Capabilities(
+            Uri base, String mimeType, bool pretty, Summary summary, Mode mode),
+    @required
+        Result dstu2Transaction(
+            Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result stu3Transaction(
+            Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result r4Transaction(
+            Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result r5Transaction(
+            Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result dstu2History(Uri base, String mimeType, bool pretty,
+            Summary summary, Dstu2Types type, Id id),
+    @required
+        Result stu3History(Uri base, String mimeType, bool pretty,
+            Summary summary, Stu3Types type, Id id),
+    @required
+        Result r4History(Uri base, String mimeType, bool pretty,
+            Summary summary, R4Types type, Id id),
+    @required
+        Result r5History(Uri base, String mimeType, bool pretty,
+            Summary summary, R5Types type, Id id),
+    @required
+        Result dstu2HistoryType(Uri base, String mimeType, bool pretty,
+            Summary summary, Dstu2Types type),
+    @required
+        Result stu3HistoryType(Uri base, String mimeType, bool pretty,
+            Summary summary, Stu3Types type),
+    @required
+        Result r4HistoryType(Uri base, String mimeType, bool pretty,
+            Summary summary, R4Types type),
+    @required
+        Result r5HistoryType(Uri base, String mimeType, bool pretty,
+            Summary summary, R5Types type),
+    @required
+        Result dstu2HistoryAll(
+            Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result stu3HistoryAll(
+            Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result r4HistoryAll(
+            Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result r5HistoryAll(
+            Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result dstu2Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Dstu2Types type, Id id, String operation),
+    @required
+        Result stu3Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Stu3Types type, Id id, String operation),
+    @required
+        Result r4Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R4Types type, Id id, String operation),
+    @required
+        Result r5Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R5Types type, Id id, String operation),
+  }) {
+    assert(dstu2Read != null);
+    assert(stu3Read != null);
+    assert(r4Read != null);
+    assert(r5Read != null);
+    assert(dstu2VRead != null);
+    assert(stu3VRead != null);
+    assert(r4VRead != null);
+    assert(r5VRead != null);
+    assert(dstu2Update != null);
+    assert(stu3Update != null);
+    assert(r4Update != null);
+    assert(r5Update != null);
+    assert(dstu2Patch != null);
+    assert(stu3Patch != null);
+    assert(r4Patch != null);
+    assert(r5Patch != null);
+    assert(dstu2Delete != null);
+    assert(stu3Delete != null);
+    assert(r4Delete != null);
+    assert(r5Delete != null);
+    assert(dstu2Create != null);
+    assert(stu3Create != null);
+    assert(r4Create != null);
+    assert(r5Create != null);
+    assert(dstu2Search != null);
+    assert(stu3Search != null);
+    assert(r4Search != null);
+    assert(r5Search != null);
+    assert(dstu2SearchAll != null);
+    assert(stu3SearchAll != null);
+    assert(r4SearchAll != null);
+    assert(r5SearchAll != null);
+    assert(dstu2Capabilities != null);
+    assert(stu3Capabilities != null);
+    assert(r4Capabilities != null);
+    assert(r5Capabilities != null);
+    assert(dstu2Transaction != null);
+    assert(stu3Transaction != null);
+    assert(r4Transaction != null);
+    assert(r5Transaction != null);
+    assert(dstu2History != null);
+    assert(stu3History != null);
+    assert(r4History != null);
+    assert(r5History != null);
+    assert(dstu2HistoryType != null);
+    assert(stu3HistoryType != null);
+    assert(r4HistoryType != null);
+    assert(r5HistoryType != null);
+    assert(dstu2HistoryAll != null);
+    assert(stu3HistoryAll != null);
+    assert(r4HistoryAll != null);
+    assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
+    return dstu2Operation(base, mimeType, pretty, summary, type, id, operation);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result dstu2Read(Uri base, String mimeType, bool pretty, Summary summary,
+        Dstu2Types type, Id id),
+    Result stu3Read(Uri base, String mimeType, bool pretty, Summary summary,
+        Stu3Types type, Id id),
+    Result r4Read(Uri base, String mimeType, bool pretty, Summary summary,
+        R4Types type, Id id),
+    Result r5Read(Uri base, String mimeType, bool pretty, Summary summary,
+        R5Types type, Id id),
+    Result dstu2VRead(Uri base, String mimeType, bool pretty, Summary summary,
+        Dstu2Types type, Id id, Id vid),
+    Result stu3VRead(Uri base, String mimeType, bool pretty, Summary summary,
+        Stu3Types type, Id id, Id vid),
+    Result r4VRead(Uri base, String mimeType, bool pretty, Summary summary,
+        R4Types type, Id id, Id vid),
+    Result r5VRead(Uri base, String mimeType, bool pretty, Summary summary,
+        R5Types type, Id id, Id vid),
+    Result dstu2Update(Uri base, String mimeType, bool pretty, Summary summary,
+        Dstu2Types type, Id id),
+    Result stu3Update(Uri base, String mimeType, bool pretty, Summary summary,
+        Stu3Types type, Id id),
+    Result r4Update(Uri base, String mimeType, bool pretty, Summary summary,
+        R4Types type, Id id),
+    Result r5Update(Uri base, String mimeType, bool pretty, Summary summary,
+        R5Types type, Id id),
+    Result dstu2Patch(Uri base, String mimeType, bool pretty, Summary summary,
+        Dstu2Types type, Id id),
+    Result stu3Patch(Uri base, String mimeType, bool pretty, Summary summary,
+        Stu3Types type, Id id),
+    Result r4Patch(Uri base, String mimeType, bool pretty, Summary summary,
+        R4Types type, Id id),
+    Result r5Patch(Uri base, String mimeType, bool pretty, Summary summary,
+        R5Types type, Id id),
+    Result dstu2Delete(Uri base, String mimeType, bool pretty, Summary summary,
+        Dstu2Types type, Id id),
+    Result stu3Delete(Uri base, String mimeType, bool pretty, Summary summary,
+        Stu3Types type, Id id),
+    Result r4Delete(Uri base, String mimeType, bool pretty, Summary summary,
+        R4Types type, Id id),
+    Result r5Delete(Uri base, String mimeType, bool pretty, Summary summary,
+        R5Types type, Id id),
+    Result dstu2Create(Uri base, String mimeType, bool pretty, Summary summary,
+        Dstu2Types type),
+    Result stu3Create(Uri base, String mimeType, bool pretty, Summary summary,
+        Stu3Types type),
+    Result r4Create(
+        Uri base, String mimeType, bool pretty, Summary summary, R4Types type),
+    Result r5Create(
+        Uri base, String mimeType, bool pretty, Summary summary, R5Types type),
+    Result dstu2Search(Uri base, String mimeType, bool pretty, Summary summary,
+        Dstu2Types type, RestfulRequest restfulRequest),
+    Result stu3Search(Uri base, String mimeType, bool pretty, Summary summary,
+        Stu3Types type, RestfulRequest restfulRequest),
+    Result r4Search(Uri base, String mimeType, bool pretty, Summary summary,
+        R4Types type, RestfulRequest restfulRequest),
+    Result r5Search(Uri base, String mimeType, bool pretty, Summary summary,
+        R5Types type, RestfulRequest restfulRequest),
+    Result dstu2SearchAll(
+        Uri base, String mimeType, bool pretty, Summary summary),
+    Result stu3SearchAll(
+        Uri base, String mimeType, bool pretty, Summary summary),
+    Result r4SearchAll(Uri base, String mimeType, bool pretty, Summary summary),
+    Result r5SearchAll(Uri base, String mimeType, bool pretty, Summary summary),
+    Result dstu2Capabilities(
+        Uri base, String mimeType, bool pretty, Summary summary, Mode mode),
+    Result stu3Capabilities(
+        Uri base, String mimeType, bool pretty, Summary summary, Mode mode),
+    Result r4Capabilities(
+        Uri base, String mimeType, bool pretty, Summary summary, Mode mode),
+    Result r5Capabilities(
+        Uri base, String mimeType, bool pretty, Summary summary, Mode mode),
+    Result dstu2Transaction(
+        Uri base, String mimeType, bool pretty, Summary summary),
+    Result stu3Transaction(
+        Uri base, String mimeType, bool pretty, Summary summary),
+    Result r4Transaction(
+        Uri base, String mimeType, bool pretty, Summary summary),
+    Result r5Transaction(
+        Uri base, String mimeType, bool pretty, Summary summary),
+    Result dstu2History(Uri base, String mimeType, bool pretty, Summary summary,
+        Dstu2Types type, Id id),
+    Result stu3History(Uri base, String mimeType, bool pretty, Summary summary,
+        Stu3Types type, Id id),
+    Result r4History(Uri base, String mimeType, bool pretty, Summary summary,
+        R4Types type, Id id),
+    Result r5History(Uri base, String mimeType, bool pretty, Summary summary,
+        R5Types type, Id id),
+    Result dstu2HistoryType(Uri base, String mimeType, bool pretty,
+        Summary summary, Dstu2Types type),
+    Result stu3HistoryType(Uri base, String mimeType, bool pretty,
+        Summary summary, Stu3Types type),
+    Result r4HistoryType(
+        Uri base, String mimeType, bool pretty, Summary summary, R4Types type),
+    Result r5HistoryType(
+        Uri base, String mimeType, bool pretty, Summary summary, R5Types type),
+    Result dstu2HistoryAll(
+        Uri base, String mimeType, bool pretty, Summary summary),
+    Result stu3HistoryAll(
+        Uri base, String mimeType, bool pretty, Summary summary),
+    Result r4HistoryAll(
+        Uri base, String mimeType, bool pretty, Summary summary),
+    Result r5HistoryAll(
+        Uri base, String mimeType, bool pretty, Summary summary),
+    Result dstu2Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Dstu2Types type, Id id, String operation),
+    Result stu3Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Stu3Types type, Id id, String operation),
+    Result r4Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R4Types type, Id id, String operation),
+    Result r5Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R5Types type, Id id, String operation),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (dstu2Operation != null) {
+      return dstu2Operation(
+          base, mimeType, pretty, summary, type, id, operation);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result dstu2Read(_FHIRUriDstu2Read value),
+    @required Result stu3Read(_FHIRUriStu3Read value),
+    @required Result r4Read(_FHIRUriR4Read value),
+    @required Result r5Read(_FHIRUriR5Read value),
+    @required Result dstu2VRead(_FHIRUriDstu2VRead value),
+    @required Result stu3VRead(_FHIRUriStu3VRead value),
+    @required Result r4VRead(_FHIRUriR4VRead value),
+    @required Result r5VRead(_FHIRUriR5VRead value),
+    @required Result dstu2Update(_FHIRUriDstu2Update value),
+    @required Result stu3Update(_FHIRUriStu3Update value),
+    @required Result r4Update(_FHIRUriR4Update value),
+    @required Result r5Update(_FHIRUriR5Update value),
+    @required Result dstu2Patch(_FHIRUriDstu2Patch value),
+    @required Result stu3Patch(_FHIRUriStu3Patch value),
+    @required Result r4Patch(_FHIRUriR4Patch value),
+    @required Result r5Patch(_FHIRUriR5Patch value),
+    @required Result dstu2Delete(_FHIRUriDstu2Delete value),
+    @required Result stu3Delete(_FHIRUriStu3Delete value),
+    @required Result r4Delete(_FHIRUriR4Delete value),
+    @required Result r5Delete(_FHIRUriR5Delete value),
+    @required Result dstu2Create(_FHIRUriDstu2Create value),
+    @required Result stu3Create(_FHIRUriStu3Create value),
+    @required Result r4Create(_FHIRUriR4Create value),
+    @required Result r5Create(_FHIRUriR5Create value),
+    @required Result dstu2Search(_FHIRUriDstu2Search value),
+    @required Result stu3Search(_FHIRUriStu3Search value),
+    @required Result r4Search(_FHIRUriR4Search value),
+    @required Result r5Search(_FHIRUriR5Search value),
+    @required Result dstu2SearchAll(_FHIRUriDstu2SearchAll value),
+    @required Result stu3SearchAll(_FHIRUriStu3SearchAll value),
+    @required Result r4SearchAll(_FHIRUriR4SearchAll value),
+    @required Result r5SearchAll(_FHIRUriR5SearchAll value),
+    @required Result dstu2Capabilities(_FHIRUriDstu2Capabilities value),
+    @required Result stu3Capabilities(_FHIRUriStu3Capabilities value),
+    @required Result r4Capabilities(_FHIRUriR4Capabilities value),
+    @required Result r5Capabilities(_FHIRUriR5Capabilities value),
+    @required Result dstu2Transaction(_FHIRUriDstu2Transaction value),
+    @required Result stu3Transaction(_FHIRUriStu3Transaction value),
+    @required Result r4Transaction(_FHIRUriR4Transaction value),
+    @required Result r5Transaction(_FHIRUriR5Transaction value),
+    @required Result dstu2History(_FHIRUriDstu2History value),
+    @required Result stu3History(_FHIRUriStu3History value),
+    @required Result r4History(_FHIRUriR4History value),
+    @required Result r5History(_FHIRUriR5History value),
+    @required Result dstu2HistoryType(_FHIRUriDstu2HistoryType value),
+    @required Result stu3HistoryType(_FHIRUriStu3HistoryType value),
+    @required Result r4HistoryType(_FHIRUriR4HistoryType value),
+    @required Result r5HistoryType(_FHIRUriR5HistoryType value),
+    @required Result dstu2HistoryAll(_FHIRUriDstu2HistoryAll value),
+    @required Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
+    @required Result r4HistoryAll(_FHIRUriR4HistoryAll value),
+    @required Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    @required Result dstu2Operation(_FHIRUriDstu2Operation value),
+    @required Result stu3Operation(_FHIRUriStu3Operation value),
+    @required Result r4Operation(_FHIRUriR4Operation value),
+    @required Result r5Operation(_FHIRUriR5Operation value),
+  }) {
+    assert(dstu2Read != null);
+    assert(stu3Read != null);
+    assert(r4Read != null);
+    assert(r5Read != null);
+    assert(dstu2VRead != null);
+    assert(stu3VRead != null);
+    assert(r4VRead != null);
+    assert(r5VRead != null);
+    assert(dstu2Update != null);
+    assert(stu3Update != null);
+    assert(r4Update != null);
+    assert(r5Update != null);
+    assert(dstu2Patch != null);
+    assert(stu3Patch != null);
+    assert(r4Patch != null);
+    assert(r5Patch != null);
+    assert(dstu2Delete != null);
+    assert(stu3Delete != null);
+    assert(r4Delete != null);
+    assert(r5Delete != null);
+    assert(dstu2Create != null);
+    assert(stu3Create != null);
+    assert(r4Create != null);
+    assert(r5Create != null);
+    assert(dstu2Search != null);
+    assert(stu3Search != null);
+    assert(r4Search != null);
+    assert(r5Search != null);
+    assert(dstu2SearchAll != null);
+    assert(stu3SearchAll != null);
+    assert(r4SearchAll != null);
+    assert(r5SearchAll != null);
+    assert(dstu2Capabilities != null);
+    assert(stu3Capabilities != null);
+    assert(r4Capabilities != null);
+    assert(r5Capabilities != null);
+    assert(dstu2Transaction != null);
+    assert(stu3Transaction != null);
+    assert(r4Transaction != null);
+    assert(r5Transaction != null);
+    assert(dstu2History != null);
+    assert(stu3History != null);
+    assert(r4History != null);
+    assert(r5History != null);
+    assert(dstu2HistoryType != null);
+    assert(stu3HistoryType != null);
+    assert(r4HistoryType != null);
+    assert(r5HistoryType != null);
+    assert(dstu2HistoryAll != null);
+    assert(stu3HistoryAll != null);
+    assert(r4HistoryAll != null);
+    assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
+    return dstu2Operation(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result dstu2Read(_FHIRUriDstu2Read value),
+    Result stu3Read(_FHIRUriStu3Read value),
+    Result r4Read(_FHIRUriR4Read value),
+    Result r5Read(_FHIRUriR5Read value),
+    Result dstu2VRead(_FHIRUriDstu2VRead value),
+    Result stu3VRead(_FHIRUriStu3VRead value),
+    Result r4VRead(_FHIRUriR4VRead value),
+    Result r5VRead(_FHIRUriR5VRead value),
+    Result dstu2Update(_FHIRUriDstu2Update value),
+    Result stu3Update(_FHIRUriStu3Update value),
+    Result r4Update(_FHIRUriR4Update value),
+    Result r5Update(_FHIRUriR5Update value),
+    Result dstu2Patch(_FHIRUriDstu2Patch value),
+    Result stu3Patch(_FHIRUriStu3Patch value),
+    Result r4Patch(_FHIRUriR4Patch value),
+    Result r5Patch(_FHIRUriR5Patch value),
+    Result dstu2Delete(_FHIRUriDstu2Delete value),
+    Result stu3Delete(_FHIRUriStu3Delete value),
+    Result r4Delete(_FHIRUriR4Delete value),
+    Result r5Delete(_FHIRUriR5Delete value),
+    Result dstu2Create(_FHIRUriDstu2Create value),
+    Result stu3Create(_FHIRUriStu3Create value),
+    Result r4Create(_FHIRUriR4Create value),
+    Result r5Create(_FHIRUriR5Create value),
+    Result dstu2Search(_FHIRUriDstu2Search value),
+    Result stu3Search(_FHIRUriStu3Search value),
+    Result r4Search(_FHIRUriR4Search value),
+    Result r5Search(_FHIRUriR5Search value),
+    Result dstu2SearchAll(_FHIRUriDstu2SearchAll value),
+    Result stu3SearchAll(_FHIRUriStu3SearchAll value),
+    Result r4SearchAll(_FHIRUriR4SearchAll value),
+    Result r5SearchAll(_FHIRUriR5SearchAll value),
+    Result dstu2Capabilities(_FHIRUriDstu2Capabilities value),
+    Result stu3Capabilities(_FHIRUriStu3Capabilities value),
+    Result r4Capabilities(_FHIRUriR4Capabilities value),
+    Result r5Capabilities(_FHIRUriR5Capabilities value),
+    Result dstu2Transaction(_FHIRUriDstu2Transaction value),
+    Result stu3Transaction(_FHIRUriStu3Transaction value),
+    Result r4Transaction(_FHIRUriR4Transaction value),
+    Result r5Transaction(_FHIRUriR5Transaction value),
+    Result dstu2History(_FHIRUriDstu2History value),
+    Result stu3History(_FHIRUriStu3History value),
+    Result r4History(_FHIRUriR4History value),
+    Result r5History(_FHIRUriR5History value),
+    Result dstu2HistoryType(_FHIRUriDstu2HistoryType value),
+    Result stu3HistoryType(_FHIRUriStu3HistoryType value),
+    Result r4HistoryType(_FHIRUriR4HistoryType value),
+    Result r5HistoryType(_FHIRUriR5HistoryType value),
+    Result dstu2HistoryAll(_FHIRUriDstu2HistoryAll value),
+    Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
+    Result r4HistoryAll(_FHIRUriR4HistoryAll value),
+    Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    Result dstu2Operation(_FHIRUriDstu2Operation value),
+    Result stu3Operation(_FHIRUriStu3Operation value),
+    Result r4Operation(_FHIRUriR4Operation value),
+    Result r5Operation(_FHIRUriR5Operation value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (dstu2Operation != null) {
+      return dstu2Operation(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _FHIRUriDstu2Operation extends FHIRUri {
+  _FHIRUriDstu2Operation._() : super._();
+  factory _FHIRUriDstu2Operation(
+      {@required Uri base,
+      String mimeType,
+      bool pretty,
+      Summary summary,
+      Dstu2Types type,
+      Id id,
+      @required String operation}) = _$_FHIRUriDstu2Operation;
+
+  @override
+  Uri get base;
+  @override
+  String get mimeType;
+  @override
+  bool get pretty;
+  @override
+  Summary get summary;
+  Dstu2Types get type;
+  Id get id;
+  String get operation;
+  @override
+  _$FHIRUriDstu2OperationCopyWith<_FHIRUriDstu2Operation> get copyWith;
+}
+
+/// @nodoc
+abstract class _$FHIRUriStu3OperationCopyWith<$Res>
+    implements $FHIRUriCopyWith<$Res> {
+  factory _$FHIRUriStu3OperationCopyWith(_FHIRUriStu3Operation value,
+          $Res Function(_FHIRUriStu3Operation) then) =
+      __$FHIRUriStu3OperationCopyWithImpl<$Res>;
+  @override
+  $Res call(
+      {Uri base,
+      String mimeType,
+      bool pretty,
+      Summary summary,
+      Stu3Types type,
+      Id id,
+      String operation});
+}
+
+/// @nodoc
+class __$FHIRUriStu3OperationCopyWithImpl<$Res>
+    extends _$FHIRUriCopyWithImpl<$Res>
+    implements _$FHIRUriStu3OperationCopyWith<$Res> {
+  __$FHIRUriStu3OperationCopyWithImpl(
+      _FHIRUriStu3Operation _value, $Res Function(_FHIRUriStu3Operation) _then)
+      : super(_value, (v) => _then(v as _FHIRUriStu3Operation));
+
+  @override
+  _FHIRUriStu3Operation get _value => super._value as _FHIRUriStu3Operation;
+
+  @override
+  $Res call({
+    Object base = freezed,
+    Object mimeType = freezed,
+    Object pretty = freezed,
+    Object summary = freezed,
+    Object type = freezed,
+    Object id = freezed,
+    Object operation = freezed,
+  }) {
+    return _then(_FHIRUriStu3Operation(
+      base: base == freezed ? _value.base : base as Uri,
+      mimeType: mimeType == freezed ? _value.mimeType : mimeType as String,
+      pretty: pretty == freezed ? _value.pretty : pretty as bool,
+      summary: summary == freezed ? _value.summary : summary as Summary,
+      type: type == freezed ? _value.type : type as Stu3Types,
+      id: id == freezed ? _value.id : id as Id,
+      operation: operation == freezed ? _value.operation : operation as String,
+    ));
+  }
+}
+
+/// @nodoc
+class _$_FHIRUriStu3Operation extends _FHIRUriStu3Operation {
+  _$_FHIRUriStu3Operation(
+      {@required this.base,
+      this.mimeType = 'application/fhir+json',
+      this.pretty = false,
+      this.summary = Summary.none,
+      this.type,
+      this.id,
+      @required this.operation})
+      : assert(base != null),
+        assert(mimeType != null),
+        assert(pretty != null),
+        assert(summary != null),
+        assert(operation != null),
+        super._();
+
+  @override
+  final Uri base;
+  @JsonKey(defaultValue: 'application/fhir+json')
+  @override
+  final String mimeType;
+  @JsonKey(defaultValue: false)
+  @override
+  final bool pretty;
+  @JsonKey(defaultValue: Summary.none)
+  @override
+  final Summary summary;
+  @override
+  final Stu3Types type;
+  @override
+  final Id id;
+  @override
+  final String operation;
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _FHIRUriStu3Operation &&
+            (identical(other.base, base) ||
+                const DeepCollectionEquality().equals(other.base, base)) &&
+            (identical(other.mimeType, mimeType) ||
+                const DeepCollectionEquality()
+                    .equals(other.mimeType, mimeType)) &&
+            (identical(other.pretty, pretty) ||
+                const DeepCollectionEquality().equals(other.pretty, pretty)) &&
+            (identical(other.summary, summary) ||
+                const DeepCollectionEquality()
+                    .equals(other.summary, summary)) &&
+            (identical(other.type, type) ||
+                const DeepCollectionEquality().equals(other.type, type)) &&
+            (identical(other.id, id) ||
+                const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.operation, operation) ||
+                const DeepCollectionEquality()
+                    .equals(other.operation, operation)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(base) ^
+      const DeepCollectionEquality().hash(mimeType) ^
+      const DeepCollectionEquality().hash(pretty) ^
+      const DeepCollectionEquality().hash(summary) ^
+      const DeepCollectionEquality().hash(type) ^
+      const DeepCollectionEquality().hash(id) ^
+      const DeepCollectionEquality().hash(operation);
+
+  @override
+  _$FHIRUriStu3OperationCopyWith<_FHIRUriStu3Operation> get copyWith =>
+      __$FHIRUriStu3OperationCopyWithImpl<_FHIRUriStu3Operation>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required
+        Result dstu2Read(Uri base, String mimeType, bool pretty,
+            Summary summary, Dstu2Types type, Id id),
+    @required
+        Result stu3Read(Uri base, String mimeType, bool pretty, Summary summary,
+            Stu3Types type, Id id),
+    @required
+        Result r4Read(Uri base, String mimeType, bool pretty, Summary summary,
+            R4Types type, Id id),
+    @required
+        Result r5Read(Uri base, String mimeType, bool pretty, Summary summary,
+            R5Types type, Id id),
+    @required
+        Result dstu2VRead(Uri base, String mimeType, bool pretty,
+            Summary summary, Dstu2Types type, Id id, Id vid),
+    @required
+        Result stu3VRead(Uri base, String mimeType, bool pretty,
+            Summary summary, Stu3Types type, Id id, Id vid),
+    @required
+        Result r4VRead(Uri base, String mimeType, bool pretty, Summary summary,
+            R4Types type, Id id, Id vid),
+    @required
+        Result r5VRead(Uri base, String mimeType, bool pretty, Summary summary,
+            R5Types type, Id id, Id vid),
+    @required
+        Result dstu2Update(Uri base, String mimeType, bool pretty,
+            Summary summary, Dstu2Types type, Id id),
+    @required
+        Result stu3Update(Uri base, String mimeType, bool pretty,
+            Summary summary, Stu3Types type, Id id),
+    @required
+        Result r4Update(Uri base, String mimeType, bool pretty, Summary summary,
+            R4Types type, Id id),
+    @required
+        Result r5Update(Uri base, String mimeType, bool pretty, Summary summary,
+            R5Types type, Id id),
+    @required
+        Result dstu2Patch(Uri base, String mimeType, bool pretty,
+            Summary summary, Dstu2Types type, Id id),
+    @required
+        Result stu3Patch(Uri base, String mimeType, bool pretty,
+            Summary summary, Stu3Types type, Id id),
+    @required
+        Result r4Patch(Uri base, String mimeType, bool pretty, Summary summary,
+            R4Types type, Id id),
+    @required
+        Result r5Patch(Uri base, String mimeType, bool pretty, Summary summary,
+            R5Types type, Id id),
+    @required
+        Result dstu2Delete(Uri base, String mimeType, bool pretty,
+            Summary summary, Dstu2Types type, Id id),
+    @required
+        Result stu3Delete(Uri base, String mimeType, bool pretty,
+            Summary summary, Stu3Types type, Id id),
+    @required
+        Result r4Delete(Uri base, String mimeType, bool pretty, Summary summary,
+            R4Types type, Id id),
+    @required
+        Result r5Delete(Uri base, String mimeType, bool pretty, Summary summary,
+            R5Types type, Id id),
+    @required
+        Result dstu2Create(Uri base, String mimeType, bool pretty,
+            Summary summary, Dstu2Types type),
+    @required
+        Result stu3Create(Uri base, String mimeType, bool pretty,
+            Summary summary, Stu3Types type),
+    @required
+        Result r4Create(Uri base, String mimeType, bool pretty, Summary summary,
+            R4Types type),
+    @required
+        Result r5Create(Uri base, String mimeType, bool pretty, Summary summary,
+            R5Types type),
+    @required
+        Result dstu2Search(Uri base, String mimeType, bool pretty,
+            Summary summary, Dstu2Types type, RestfulRequest restfulRequest),
+    @required
+        Result stu3Search(Uri base, String mimeType, bool pretty,
+            Summary summary, Stu3Types type, RestfulRequest restfulRequest),
+    @required
+        Result r4Search(Uri base, String mimeType, bool pretty, Summary summary,
+            R4Types type, RestfulRequest restfulRequest),
+    @required
+        Result r5Search(Uri base, String mimeType, bool pretty, Summary summary,
+            R5Types type, RestfulRequest restfulRequest),
+    @required
+        Result dstu2SearchAll(
+            Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result stu3SearchAll(
+            Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result r4SearchAll(
+            Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result r5SearchAll(
+            Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result dstu2Capabilities(
+            Uri base, String mimeType, bool pretty, Summary summary, Mode mode),
+    @required
+        Result stu3Capabilities(
+            Uri base, String mimeType, bool pretty, Summary summary, Mode mode),
+    @required
+        Result r4Capabilities(
+            Uri base, String mimeType, bool pretty, Summary summary, Mode mode),
+    @required
+        Result r5Capabilities(
+            Uri base, String mimeType, bool pretty, Summary summary, Mode mode),
+    @required
+        Result dstu2Transaction(
+            Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result stu3Transaction(
+            Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result r4Transaction(
+            Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result r5Transaction(
+            Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result dstu2History(Uri base, String mimeType, bool pretty,
+            Summary summary, Dstu2Types type, Id id),
+    @required
+        Result stu3History(Uri base, String mimeType, bool pretty,
+            Summary summary, Stu3Types type, Id id),
+    @required
+        Result r4History(Uri base, String mimeType, bool pretty,
+            Summary summary, R4Types type, Id id),
+    @required
+        Result r5History(Uri base, String mimeType, bool pretty,
+            Summary summary, R5Types type, Id id),
+    @required
+        Result dstu2HistoryType(Uri base, String mimeType, bool pretty,
+            Summary summary, Dstu2Types type),
+    @required
+        Result stu3HistoryType(Uri base, String mimeType, bool pretty,
+            Summary summary, Stu3Types type),
+    @required
+        Result r4HistoryType(Uri base, String mimeType, bool pretty,
+            Summary summary, R4Types type),
+    @required
+        Result r5HistoryType(Uri base, String mimeType, bool pretty,
+            Summary summary, R5Types type),
+    @required
+        Result dstu2HistoryAll(
+            Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result stu3HistoryAll(
+            Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result r4HistoryAll(
+            Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result r5HistoryAll(
+            Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result dstu2Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Dstu2Types type, Id id, String operation),
+    @required
+        Result stu3Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Stu3Types type, Id id, String operation),
+    @required
+        Result r4Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R4Types type, Id id, String operation),
+    @required
+        Result r5Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R5Types type, Id id, String operation),
+  }) {
+    assert(dstu2Read != null);
+    assert(stu3Read != null);
+    assert(r4Read != null);
+    assert(r5Read != null);
+    assert(dstu2VRead != null);
+    assert(stu3VRead != null);
+    assert(r4VRead != null);
+    assert(r5VRead != null);
+    assert(dstu2Update != null);
+    assert(stu3Update != null);
+    assert(r4Update != null);
+    assert(r5Update != null);
+    assert(dstu2Patch != null);
+    assert(stu3Patch != null);
+    assert(r4Patch != null);
+    assert(r5Patch != null);
+    assert(dstu2Delete != null);
+    assert(stu3Delete != null);
+    assert(r4Delete != null);
+    assert(r5Delete != null);
+    assert(dstu2Create != null);
+    assert(stu3Create != null);
+    assert(r4Create != null);
+    assert(r5Create != null);
+    assert(dstu2Search != null);
+    assert(stu3Search != null);
+    assert(r4Search != null);
+    assert(r5Search != null);
+    assert(dstu2SearchAll != null);
+    assert(stu3SearchAll != null);
+    assert(r4SearchAll != null);
+    assert(r5SearchAll != null);
+    assert(dstu2Capabilities != null);
+    assert(stu3Capabilities != null);
+    assert(r4Capabilities != null);
+    assert(r5Capabilities != null);
+    assert(dstu2Transaction != null);
+    assert(stu3Transaction != null);
+    assert(r4Transaction != null);
+    assert(r5Transaction != null);
+    assert(dstu2History != null);
+    assert(stu3History != null);
+    assert(r4History != null);
+    assert(r5History != null);
+    assert(dstu2HistoryType != null);
+    assert(stu3HistoryType != null);
+    assert(r4HistoryType != null);
+    assert(r5HistoryType != null);
+    assert(dstu2HistoryAll != null);
+    assert(stu3HistoryAll != null);
+    assert(r4HistoryAll != null);
+    assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
+    return stu3Operation(base, mimeType, pretty, summary, type, id, operation);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result dstu2Read(Uri base, String mimeType, bool pretty, Summary summary,
+        Dstu2Types type, Id id),
+    Result stu3Read(Uri base, String mimeType, bool pretty, Summary summary,
+        Stu3Types type, Id id),
+    Result r4Read(Uri base, String mimeType, bool pretty, Summary summary,
+        R4Types type, Id id),
+    Result r5Read(Uri base, String mimeType, bool pretty, Summary summary,
+        R5Types type, Id id),
+    Result dstu2VRead(Uri base, String mimeType, bool pretty, Summary summary,
+        Dstu2Types type, Id id, Id vid),
+    Result stu3VRead(Uri base, String mimeType, bool pretty, Summary summary,
+        Stu3Types type, Id id, Id vid),
+    Result r4VRead(Uri base, String mimeType, bool pretty, Summary summary,
+        R4Types type, Id id, Id vid),
+    Result r5VRead(Uri base, String mimeType, bool pretty, Summary summary,
+        R5Types type, Id id, Id vid),
+    Result dstu2Update(Uri base, String mimeType, bool pretty, Summary summary,
+        Dstu2Types type, Id id),
+    Result stu3Update(Uri base, String mimeType, bool pretty, Summary summary,
+        Stu3Types type, Id id),
+    Result r4Update(Uri base, String mimeType, bool pretty, Summary summary,
+        R4Types type, Id id),
+    Result r5Update(Uri base, String mimeType, bool pretty, Summary summary,
+        R5Types type, Id id),
+    Result dstu2Patch(Uri base, String mimeType, bool pretty, Summary summary,
+        Dstu2Types type, Id id),
+    Result stu3Patch(Uri base, String mimeType, bool pretty, Summary summary,
+        Stu3Types type, Id id),
+    Result r4Patch(Uri base, String mimeType, bool pretty, Summary summary,
+        R4Types type, Id id),
+    Result r5Patch(Uri base, String mimeType, bool pretty, Summary summary,
+        R5Types type, Id id),
+    Result dstu2Delete(Uri base, String mimeType, bool pretty, Summary summary,
+        Dstu2Types type, Id id),
+    Result stu3Delete(Uri base, String mimeType, bool pretty, Summary summary,
+        Stu3Types type, Id id),
+    Result r4Delete(Uri base, String mimeType, bool pretty, Summary summary,
+        R4Types type, Id id),
+    Result r5Delete(Uri base, String mimeType, bool pretty, Summary summary,
+        R5Types type, Id id),
+    Result dstu2Create(Uri base, String mimeType, bool pretty, Summary summary,
+        Dstu2Types type),
+    Result stu3Create(Uri base, String mimeType, bool pretty, Summary summary,
+        Stu3Types type),
+    Result r4Create(
+        Uri base, String mimeType, bool pretty, Summary summary, R4Types type),
+    Result r5Create(
+        Uri base, String mimeType, bool pretty, Summary summary, R5Types type),
+    Result dstu2Search(Uri base, String mimeType, bool pretty, Summary summary,
+        Dstu2Types type, RestfulRequest restfulRequest),
+    Result stu3Search(Uri base, String mimeType, bool pretty, Summary summary,
+        Stu3Types type, RestfulRequest restfulRequest),
+    Result r4Search(Uri base, String mimeType, bool pretty, Summary summary,
+        R4Types type, RestfulRequest restfulRequest),
+    Result r5Search(Uri base, String mimeType, bool pretty, Summary summary,
+        R5Types type, RestfulRequest restfulRequest),
+    Result dstu2SearchAll(
+        Uri base, String mimeType, bool pretty, Summary summary),
+    Result stu3SearchAll(
+        Uri base, String mimeType, bool pretty, Summary summary),
+    Result r4SearchAll(Uri base, String mimeType, bool pretty, Summary summary),
+    Result r5SearchAll(Uri base, String mimeType, bool pretty, Summary summary),
+    Result dstu2Capabilities(
+        Uri base, String mimeType, bool pretty, Summary summary, Mode mode),
+    Result stu3Capabilities(
+        Uri base, String mimeType, bool pretty, Summary summary, Mode mode),
+    Result r4Capabilities(
+        Uri base, String mimeType, bool pretty, Summary summary, Mode mode),
+    Result r5Capabilities(
+        Uri base, String mimeType, bool pretty, Summary summary, Mode mode),
+    Result dstu2Transaction(
+        Uri base, String mimeType, bool pretty, Summary summary),
+    Result stu3Transaction(
+        Uri base, String mimeType, bool pretty, Summary summary),
+    Result r4Transaction(
+        Uri base, String mimeType, bool pretty, Summary summary),
+    Result r5Transaction(
+        Uri base, String mimeType, bool pretty, Summary summary),
+    Result dstu2History(Uri base, String mimeType, bool pretty, Summary summary,
+        Dstu2Types type, Id id),
+    Result stu3History(Uri base, String mimeType, bool pretty, Summary summary,
+        Stu3Types type, Id id),
+    Result r4History(Uri base, String mimeType, bool pretty, Summary summary,
+        R4Types type, Id id),
+    Result r5History(Uri base, String mimeType, bool pretty, Summary summary,
+        R5Types type, Id id),
+    Result dstu2HistoryType(Uri base, String mimeType, bool pretty,
+        Summary summary, Dstu2Types type),
+    Result stu3HistoryType(Uri base, String mimeType, bool pretty,
+        Summary summary, Stu3Types type),
+    Result r4HistoryType(
+        Uri base, String mimeType, bool pretty, Summary summary, R4Types type),
+    Result r5HistoryType(
+        Uri base, String mimeType, bool pretty, Summary summary, R5Types type),
+    Result dstu2HistoryAll(
+        Uri base, String mimeType, bool pretty, Summary summary),
+    Result stu3HistoryAll(
+        Uri base, String mimeType, bool pretty, Summary summary),
+    Result r4HistoryAll(
+        Uri base, String mimeType, bool pretty, Summary summary),
+    Result r5HistoryAll(
+        Uri base, String mimeType, bool pretty, Summary summary),
+    Result dstu2Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Dstu2Types type, Id id, String operation),
+    Result stu3Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Stu3Types type, Id id, String operation),
+    Result r4Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R4Types type, Id id, String operation),
+    Result r5Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R5Types type, Id id, String operation),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (stu3Operation != null) {
+      return stu3Operation(
+          base, mimeType, pretty, summary, type, id, operation);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result dstu2Read(_FHIRUriDstu2Read value),
+    @required Result stu3Read(_FHIRUriStu3Read value),
+    @required Result r4Read(_FHIRUriR4Read value),
+    @required Result r5Read(_FHIRUriR5Read value),
+    @required Result dstu2VRead(_FHIRUriDstu2VRead value),
+    @required Result stu3VRead(_FHIRUriStu3VRead value),
+    @required Result r4VRead(_FHIRUriR4VRead value),
+    @required Result r5VRead(_FHIRUriR5VRead value),
+    @required Result dstu2Update(_FHIRUriDstu2Update value),
+    @required Result stu3Update(_FHIRUriStu3Update value),
+    @required Result r4Update(_FHIRUriR4Update value),
+    @required Result r5Update(_FHIRUriR5Update value),
+    @required Result dstu2Patch(_FHIRUriDstu2Patch value),
+    @required Result stu3Patch(_FHIRUriStu3Patch value),
+    @required Result r4Patch(_FHIRUriR4Patch value),
+    @required Result r5Patch(_FHIRUriR5Patch value),
+    @required Result dstu2Delete(_FHIRUriDstu2Delete value),
+    @required Result stu3Delete(_FHIRUriStu3Delete value),
+    @required Result r4Delete(_FHIRUriR4Delete value),
+    @required Result r5Delete(_FHIRUriR5Delete value),
+    @required Result dstu2Create(_FHIRUriDstu2Create value),
+    @required Result stu3Create(_FHIRUriStu3Create value),
+    @required Result r4Create(_FHIRUriR4Create value),
+    @required Result r5Create(_FHIRUriR5Create value),
+    @required Result dstu2Search(_FHIRUriDstu2Search value),
+    @required Result stu3Search(_FHIRUriStu3Search value),
+    @required Result r4Search(_FHIRUriR4Search value),
+    @required Result r5Search(_FHIRUriR5Search value),
+    @required Result dstu2SearchAll(_FHIRUriDstu2SearchAll value),
+    @required Result stu3SearchAll(_FHIRUriStu3SearchAll value),
+    @required Result r4SearchAll(_FHIRUriR4SearchAll value),
+    @required Result r5SearchAll(_FHIRUriR5SearchAll value),
+    @required Result dstu2Capabilities(_FHIRUriDstu2Capabilities value),
+    @required Result stu3Capabilities(_FHIRUriStu3Capabilities value),
+    @required Result r4Capabilities(_FHIRUriR4Capabilities value),
+    @required Result r5Capabilities(_FHIRUriR5Capabilities value),
+    @required Result dstu2Transaction(_FHIRUriDstu2Transaction value),
+    @required Result stu3Transaction(_FHIRUriStu3Transaction value),
+    @required Result r4Transaction(_FHIRUriR4Transaction value),
+    @required Result r5Transaction(_FHIRUriR5Transaction value),
+    @required Result dstu2History(_FHIRUriDstu2History value),
+    @required Result stu3History(_FHIRUriStu3History value),
+    @required Result r4History(_FHIRUriR4History value),
+    @required Result r5History(_FHIRUriR5History value),
+    @required Result dstu2HistoryType(_FHIRUriDstu2HistoryType value),
+    @required Result stu3HistoryType(_FHIRUriStu3HistoryType value),
+    @required Result r4HistoryType(_FHIRUriR4HistoryType value),
+    @required Result r5HistoryType(_FHIRUriR5HistoryType value),
+    @required Result dstu2HistoryAll(_FHIRUriDstu2HistoryAll value),
+    @required Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
+    @required Result r4HistoryAll(_FHIRUriR4HistoryAll value),
+    @required Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    @required Result dstu2Operation(_FHIRUriDstu2Operation value),
+    @required Result stu3Operation(_FHIRUriStu3Operation value),
+    @required Result r4Operation(_FHIRUriR4Operation value),
+    @required Result r5Operation(_FHIRUriR5Operation value),
+  }) {
+    assert(dstu2Read != null);
+    assert(stu3Read != null);
+    assert(r4Read != null);
+    assert(r5Read != null);
+    assert(dstu2VRead != null);
+    assert(stu3VRead != null);
+    assert(r4VRead != null);
+    assert(r5VRead != null);
+    assert(dstu2Update != null);
+    assert(stu3Update != null);
+    assert(r4Update != null);
+    assert(r5Update != null);
+    assert(dstu2Patch != null);
+    assert(stu3Patch != null);
+    assert(r4Patch != null);
+    assert(r5Patch != null);
+    assert(dstu2Delete != null);
+    assert(stu3Delete != null);
+    assert(r4Delete != null);
+    assert(r5Delete != null);
+    assert(dstu2Create != null);
+    assert(stu3Create != null);
+    assert(r4Create != null);
+    assert(r5Create != null);
+    assert(dstu2Search != null);
+    assert(stu3Search != null);
+    assert(r4Search != null);
+    assert(r5Search != null);
+    assert(dstu2SearchAll != null);
+    assert(stu3SearchAll != null);
+    assert(r4SearchAll != null);
+    assert(r5SearchAll != null);
+    assert(dstu2Capabilities != null);
+    assert(stu3Capabilities != null);
+    assert(r4Capabilities != null);
+    assert(r5Capabilities != null);
+    assert(dstu2Transaction != null);
+    assert(stu3Transaction != null);
+    assert(r4Transaction != null);
+    assert(r5Transaction != null);
+    assert(dstu2History != null);
+    assert(stu3History != null);
+    assert(r4History != null);
+    assert(r5History != null);
+    assert(dstu2HistoryType != null);
+    assert(stu3HistoryType != null);
+    assert(r4HistoryType != null);
+    assert(r5HistoryType != null);
+    assert(dstu2HistoryAll != null);
+    assert(stu3HistoryAll != null);
+    assert(r4HistoryAll != null);
+    assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
+    return stu3Operation(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result dstu2Read(_FHIRUriDstu2Read value),
+    Result stu3Read(_FHIRUriStu3Read value),
+    Result r4Read(_FHIRUriR4Read value),
+    Result r5Read(_FHIRUriR5Read value),
+    Result dstu2VRead(_FHIRUriDstu2VRead value),
+    Result stu3VRead(_FHIRUriStu3VRead value),
+    Result r4VRead(_FHIRUriR4VRead value),
+    Result r5VRead(_FHIRUriR5VRead value),
+    Result dstu2Update(_FHIRUriDstu2Update value),
+    Result stu3Update(_FHIRUriStu3Update value),
+    Result r4Update(_FHIRUriR4Update value),
+    Result r5Update(_FHIRUriR5Update value),
+    Result dstu2Patch(_FHIRUriDstu2Patch value),
+    Result stu3Patch(_FHIRUriStu3Patch value),
+    Result r4Patch(_FHIRUriR4Patch value),
+    Result r5Patch(_FHIRUriR5Patch value),
+    Result dstu2Delete(_FHIRUriDstu2Delete value),
+    Result stu3Delete(_FHIRUriStu3Delete value),
+    Result r4Delete(_FHIRUriR4Delete value),
+    Result r5Delete(_FHIRUriR5Delete value),
+    Result dstu2Create(_FHIRUriDstu2Create value),
+    Result stu3Create(_FHIRUriStu3Create value),
+    Result r4Create(_FHIRUriR4Create value),
+    Result r5Create(_FHIRUriR5Create value),
+    Result dstu2Search(_FHIRUriDstu2Search value),
+    Result stu3Search(_FHIRUriStu3Search value),
+    Result r4Search(_FHIRUriR4Search value),
+    Result r5Search(_FHIRUriR5Search value),
+    Result dstu2SearchAll(_FHIRUriDstu2SearchAll value),
+    Result stu3SearchAll(_FHIRUriStu3SearchAll value),
+    Result r4SearchAll(_FHIRUriR4SearchAll value),
+    Result r5SearchAll(_FHIRUriR5SearchAll value),
+    Result dstu2Capabilities(_FHIRUriDstu2Capabilities value),
+    Result stu3Capabilities(_FHIRUriStu3Capabilities value),
+    Result r4Capabilities(_FHIRUriR4Capabilities value),
+    Result r5Capabilities(_FHIRUriR5Capabilities value),
+    Result dstu2Transaction(_FHIRUriDstu2Transaction value),
+    Result stu3Transaction(_FHIRUriStu3Transaction value),
+    Result r4Transaction(_FHIRUriR4Transaction value),
+    Result r5Transaction(_FHIRUriR5Transaction value),
+    Result dstu2History(_FHIRUriDstu2History value),
+    Result stu3History(_FHIRUriStu3History value),
+    Result r4History(_FHIRUriR4History value),
+    Result r5History(_FHIRUriR5History value),
+    Result dstu2HistoryType(_FHIRUriDstu2HistoryType value),
+    Result stu3HistoryType(_FHIRUriStu3HistoryType value),
+    Result r4HistoryType(_FHIRUriR4HistoryType value),
+    Result r5HistoryType(_FHIRUriR5HistoryType value),
+    Result dstu2HistoryAll(_FHIRUriDstu2HistoryAll value),
+    Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
+    Result r4HistoryAll(_FHIRUriR4HistoryAll value),
+    Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    Result dstu2Operation(_FHIRUriDstu2Operation value),
+    Result stu3Operation(_FHIRUriStu3Operation value),
+    Result r4Operation(_FHIRUriR4Operation value),
+    Result r5Operation(_FHIRUriR5Operation value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (stu3Operation != null) {
+      return stu3Operation(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _FHIRUriStu3Operation extends FHIRUri {
+  _FHIRUriStu3Operation._() : super._();
+  factory _FHIRUriStu3Operation(
+      {@required Uri base,
+      String mimeType,
+      bool pretty,
+      Summary summary,
+      Stu3Types type,
+      Id id,
+      @required String operation}) = _$_FHIRUriStu3Operation;
+
+  @override
+  Uri get base;
+  @override
+  String get mimeType;
+  @override
+  bool get pretty;
+  @override
+  Summary get summary;
+  Stu3Types get type;
+  Id get id;
+  String get operation;
+  @override
+  _$FHIRUriStu3OperationCopyWith<_FHIRUriStu3Operation> get copyWith;
+}
+
+/// @nodoc
+abstract class _$FHIRUriR4OperationCopyWith<$Res>
+    implements $FHIRUriCopyWith<$Res> {
+  factory _$FHIRUriR4OperationCopyWith(
+          _FHIRUriR4Operation value, $Res Function(_FHIRUriR4Operation) then) =
+      __$FHIRUriR4OperationCopyWithImpl<$Res>;
+  @override
+  $Res call(
+      {Uri base,
+      String mimeType,
+      bool pretty,
+      Summary summary,
+      R4Types type,
+      Id id,
+      String operation});
+}
+
+/// @nodoc
+class __$FHIRUriR4OperationCopyWithImpl<$Res>
+    extends _$FHIRUriCopyWithImpl<$Res>
+    implements _$FHIRUriR4OperationCopyWith<$Res> {
+  __$FHIRUriR4OperationCopyWithImpl(
+      _FHIRUriR4Operation _value, $Res Function(_FHIRUriR4Operation) _then)
+      : super(_value, (v) => _then(v as _FHIRUriR4Operation));
+
+  @override
+  _FHIRUriR4Operation get _value => super._value as _FHIRUriR4Operation;
+
+  @override
+  $Res call({
+    Object base = freezed,
+    Object mimeType = freezed,
+    Object pretty = freezed,
+    Object summary = freezed,
+    Object type = freezed,
+    Object id = freezed,
+    Object operation = freezed,
+  }) {
+    return _then(_FHIRUriR4Operation(
+      base: base == freezed ? _value.base : base as Uri,
+      mimeType: mimeType == freezed ? _value.mimeType : mimeType as String,
+      pretty: pretty == freezed ? _value.pretty : pretty as bool,
+      summary: summary == freezed ? _value.summary : summary as Summary,
+      type: type == freezed ? _value.type : type as R4Types,
+      id: id == freezed ? _value.id : id as Id,
+      operation: operation == freezed ? _value.operation : operation as String,
+    ));
+  }
+}
+
+/// @nodoc
+class _$_FHIRUriR4Operation extends _FHIRUriR4Operation {
+  _$_FHIRUriR4Operation(
+      {@required this.base,
+      this.mimeType = 'application/fhir+json',
+      this.pretty = false,
+      this.summary = Summary.none,
+      this.type,
+      this.id,
+      @required this.operation})
+      : assert(base != null),
+        assert(mimeType != null),
+        assert(pretty != null),
+        assert(summary != null),
+        assert(operation != null),
+        super._();
+
+  @override
+  final Uri base;
+  @JsonKey(defaultValue: 'application/fhir+json')
+  @override
+  final String mimeType;
+  @JsonKey(defaultValue: false)
+  @override
+  final bool pretty;
+  @JsonKey(defaultValue: Summary.none)
+  @override
+  final Summary summary;
+  @override
+  final R4Types type;
+  @override
+  final Id id;
+  @override
+  final String operation;
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _FHIRUriR4Operation &&
+            (identical(other.base, base) ||
+                const DeepCollectionEquality().equals(other.base, base)) &&
+            (identical(other.mimeType, mimeType) ||
+                const DeepCollectionEquality()
+                    .equals(other.mimeType, mimeType)) &&
+            (identical(other.pretty, pretty) ||
+                const DeepCollectionEquality().equals(other.pretty, pretty)) &&
+            (identical(other.summary, summary) ||
+                const DeepCollectionEquality()
+                    .equals(other.summary, summary)) &&
+            (identical(other.type, type) ||
+                const DeepCollectionEquality().equals(other.type, type)) &&
+            (identical(other.id, id) ||
+                const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.operation, operation) ||
+                const DeepCollectionEquality()
+                    .equals(other.operation, operation)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(base) ^
+      const DeepCollectionEquality().hash(mimeType) ^
+      const DeepCollectionEquality().hash(pretty) ^
+      const DeepCollectionEquality().hash(summary) ^
+      const DeepCollectionEquality().hash(type) ^
+      const DeepCollectionEquality().hash(id) ^
+      const DeepCollectionEquality().hash(operation);
+
+  @override
+  _$FHIRUriR4OperationCopyWith<_FHIRUriR4Operation> get copyWith =>
+      __$FHIRUriR4OperationCopyWithImpl<_FHIRUriR4Operation>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required
+        Result dstu2Read(Uri base, String mimeType, bool pretty,
+            Summary summary, Dstu2Types type, Id id),
+    @required
+        Result stu3Read(Uri base, String mimeType, bool pretty, Summary summary,
+            Stu3Types type, Id id),
+    @required
+        Result r4Read(Uri base, String mimeType, bool pretty, Summary summary,
+            R4Types type, Id id),
+    @required
+        Result r5Read(Uri base, String mimeType, bool pretty, Summary summary,
+            R5Types type, Id id),
+    @required
+        Result dstu2VRead(Uri base, String mimeType, bool pretty,
+            Summary summary, Dstu2Types type, Id id, Id vid),
+    @required
+        Result stu3VRead(Uri base, String mimeType, bool pretty,
+            Summary summary, Stu3Types type, Id id, Id vid),
+    @required
+        Result r4VRead(Uri base, String mimeType, bool pretty, Summary summary,
+            R4Types type, Id id, Id vid),
+    @required
+        Result r5VRead(Uri base, String mimeType, bool pretty, Summary summary,
+            R5Types type, Id id, Id vid),
+    @required
+        Result dstu2Update(Uri base, String mimeType, bool pretty,
+            Summary summary, Dstu2Types type, Id id),
+    @required
+        Result stu3Update(Uri base, String mimeType, bool pretty,
+            Summary summary, Stu3Types type, Id id),
+    @required
+        Result r4Update(Uri base, String mimeType, bool pretty, Summary summary,
+            R4Types type, Id id),
+    @required
+        Result r5Update(Uri base, String mimeType, bool pretty, Summary summary,
+            R5Types type, Id id),
+    @required
+        Result dstu2Patch(Uri base, String mimeType, bool pretty,
+            Summary summary, Dstu2Types type, Id id),
+    @required
+        Result stu3Patch(Uri base, String mimeType, bool pretty,
+            Summary summary, Stu3Types type, Id id),
+    @required
+        Result r4Patch(Uri base, String mimeType, bool pretty, Summary summary,
+            R4Types type, Id id),
+    @required
+        Result r5Patch(Uri base, String mimeType, bool pretty, Summary summary,
+            R5Types type, Id id),
+    @required
+        Result dstu2Delete(Uri base, String mimeType, bool pretty,
+            Summary summary, Dstu2Types type, Id id),
+    @required
+        Result stu3Delete(Uri base, String mimeType, bool pretty,
+            Summary summary, Stu3Types type, Id id),
+    @required
+        Result r4Delete(Uri base, String mimeType, bool pretty, Summary summary,
+            R4Types type, Id id),
+    @required
+        Result r5Delete(Uri base, String mimeType, bool pretty, Summary summary,
+            R5Types type, Id id),
+    @required
+        Result dstu2Create(Uri base, String mimeType, bool pretty,
+            Summary summary, Dstu2Types type),
+    @required
+        Result stu3Create(Uri base, String mimeType, bool pretty,
+            Summary summary, Stu3Types type),
+    @required
+        Result r4Create(Uri base, String mimeType, bool pretty, Summary summary,
+            R4Types type),
+    @required
+        Result r5Create(Uri base, String mimeType, bool pretty, Summary summary,
+            R5Types type),
+    @required
+        Result dstu2Search(Uri base, String mimeType, bool pretty,
+            Summary summary, Dstu2Types type, RestfulRequest restfulRequest),
+    @required
+        Result stu3Search(Uri base, String mimeType, bool pretty,
+            Summary summary, Stu3Types type, RestfulRequest restfulRequest),
+    @required
+        Result r4Search(Uri base, String mimeType, bool pretty, Summary summary,
+            R4Types type, RestfulRequest restfulRequest),
+    @required
+        Result r5Search(Uri base, String mimeType, bool pretty, Summary summary,
+            R5Types type, RestfulRequest restfulRequest),
+    @required
+        Result dstu2SearchAll(
+            Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result stu3SearchAll(
+            Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result r4SearchAll(
+            Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result r5SearchAll(
+            Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result dstu2Capabilities(
+            Uri base, String mimeType, bool pretty, Summary summary, Mode mode),
+    @required
+        Result stu3Capabilities(
+            Uri base, String mimeType, bool pretty, Summary summary, Mode mode),
+    @required
+        Result r4Capabilities(
+            Uri base, String mimeType, bool pretty, Summary summary, Mode mode),
+    @required
+        Result r5Capabilities(
+            Uri base, String mimeType, bool pretty, Summary summary, Mode mode),
+    @required
+        Result dstu2Transaction(
+            Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result stu3Transaction(
+            Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result r4Transaction(
+            Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result r5Transaction(
+            Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result dstu2History(Uri base, String mimeType, bool pretty,
+            Summary summary, Dstu2Types type, Id id),
+    @required
+        Result stu3History(Uri base, String mimeType, bool pretty,
+            Summary summary, Stu3Types type, Id id),
+    @required
+        Result r4History(Uri base, String mimeType, bool pretty,
+            Summary summary, R4Types type, Id id),
+    @required
+        Result r5History(Uri base, String mimeType, bool pretty,
+            Summary summary, R5Types type, Id id),
+    @required
+        Result dstu2HistoryType(Uri base, String mimeType, bool pretty,
+            Summary summary, Dstu2Types type),
+    @required
+        Result stu3HistoryType(Uri base, String mimeType, bool pretty,
+            Summary summary, Stu3Types type),
+    @required
+        Result r4HistoryType(Uri base, String mimeType, bool pretty,
+            Summary summary, R4Types type),
+    @required
+        Result r5HistoryType(Uri base, String mimeType, bool pretty,
+            Summary summary, R5Types type),
+    @required
+        Result dstu2HistoryAll(
+            Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result stu3HistoryAll(
+            Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result r4HistoryAll(
+            Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result r5HistoryAll(
+            Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result dstu2Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Dstu2Types type, Id id, String operation),
+    @required
+        Result stu3Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Stu3Types type, Id id, String operation),
+    @required
+        Result r4Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R4Types type, Id id, String operation),
+    @required
+        Result r5Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R5Types type, Id id, String operation),
+  }) {
+    assert(dstu2Read != null);
+    assert(stu3Read != null);
+    assert(r4Read != null);
+    assert(r5Read != null);
+    assert(dstu2VRead != null);
+    assert(stu3VRead != null);
+    assert(r4VRead != null);
+    assert(r5VRead != null);
+    assert(dstu2Update != null);
+    assert(stu3Update != null);
+    assert(r4Update != null);
+    assert(r5Update != null);
+    assert(dstu2Patch != null);
+    assert(stu3Patch != null);
+    assert(r4Patch != null);
+    assert(r5Patch != null);
+    assert(dstu2Delete != null);
+    assert(stu3Delete != null);
+    assert(r4Delete != null);
+    assert(r5Delete != null);
+    assert(dstu2Create != null);
+    assert(stu3Create != null);
+    assert(r4Create != null);
+    assert(r5Create != null);
+    assert(dstu2Search != null);
+    assert(stu3Search != null);
+    assert(r4Search != null);
+    assert(r5Search != null);
+    assert(dstu2SearchAll != null);
+    assert(stu3SearchAll != null);
+    assert(r4SearchAll != null);
+    assert(r5SearchAll != null);
+    assert(dstu2Capabilities != null);
+    assert(stu3Capabilities != null);
+    assert(r4Capabilities != null);
+    assert(r5Capabilities != null);
+    assert(dstu2Transaction != null);
+    assert(stu3Transaction != null);
+    assert(r4Transaction != null);
+    assert(r5Transaction != null);
+    assert(dstu2History != null);
+    assert(stu3History != null);
+    assert(r4History != null);
+    assert(r5History != null);
+    assert(dstu2HistoryType != null);
+    assert(stu3HistoryType != null);
+    assert(r4HistoryType != null);
+    assert(r5HistoryType != null);
+    assert(dstu2HistoryAll != null);
+    assert(stu3HistoryAll != null);
+    assert(r4HistoryAll != null);
+    assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
+    return r4Operation(base, mimeType, pretty, summary, type, id, operation);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result dstu2Read(Uri base, String mimeType, bool pretty, Summary summary,
+        Dstu2Types type, Id id),
+    Result stu3Read(Uri base, String mimeType, bool pretty, Summary summary,
+        Stu3Types type, Id id),
+    Result r4Read(Uri base, String mimeType, bool pretty, Summary summary,
+        R4Types type, Id id),
+    Result r5Read(Uri base, String mimeType, bool pretty, Summary summary,
+        R5Types type, Id id),
+    Result dstu2VRead(Uri base, String mimeType, bool pretty, Summary summary,
+        Dstu2Types type, Id id, Id vid),
+    Result stu3VRead(Uri base, String mimeType, bool pretty, Summary summary,
+        Stu3Types type, Id id, Id vid),
+    Result r4VRead(Uri base, String mimeType, bool pretty, Summary summary,
+        R4Types type, Id id, Id vid),
+    Result r5VRead(Uri base, String mimeType, bool pretty, Summary summary,
+        R5Types type, Id id, Id vid),
+    Result dstu2Update(Uri base, String mimeType, bool pretty, Summary summary,
+        Dstu2Types type, Id id),
+    Result stu3Update(Uri base, String mimeType, bool pretty, Summary summary,
+        Stu3Types type, Id id),
+    Result r4Update(Uri base, String mimeType, bool pretty, Summary summary,
+        R4Types type, Id id),
+    Result r5Update(Uri base, String mimeType, bool pretty, Summary summary,
+        R5Types type, Id id),
+    Result dstu2Patch(Uri base, String mimeType, bool pretty, Summary summary,
+        Dstu2Types type, Id id),
+    Result stu3Patch(Uri base, String mimeType, bool pretty, Summary summary,
+        Stu3Types type, Id id),
+    Result r4Patch(Uri base, String mimeType, bool pretty, Summary summary,
+        R4Types type, Id id),
+    Result r5Patch(Uri base, String mimeType, bool pretty, Summary summary,
+        R5Types type, Id id),
+    Result dstu2Delete(Uri base, String mimeType, bool pretty, Summary summary,
+        Dstu2Types type, Id id),
+    Result stu3Delete(Uri base, String mimeType, bool pretty, Summary summary,
+        Stu3Types type, Id id),
+    Result r4Delete(Uri base, String mimeType, bool pretty, Summary summary,
+        R4Types type, Id id),
+    Result r5Delete(Uri base, String mimeType, bool pretty, Summary summary,
+        R5Types type, Id id),
+    Result dstu2Create(Uri base, String mimeType, bool pretty, Summary summary,
+        Dstu2Types type),
+    Result stu3Create(Uri base, String mimeType, bool pretty, Summary summary,
+        Stu3Types type),
+    Result r4Create(
+        Uri base, String mimeType, bool pretty, Summary summary, R4Types type),
+    Result r5Create(
+        Uri base, String mimeType, bool pretty, Summary summary, R5Types type),
+    Result dstu2Search(Uri base, String mimeType, bool pretty, Summary summary,
+        Dstu2Types type, RestfulRequest restfulRequest),
+    Result stu3Search(Uri base, String mimeType, bool pretty, Summary summary,
+        Stu3Types type, RestfulRequest restfulRequest),
+    Result r4Search(Uri base, String mimeType, bool pretty, Summary summary,
+        R4Types type, RestfulRequest restfulRequest),
+    Result r5Search(Uri base, String mimeType, bool pretty, Summary summary,
+        R5Types type, RestfulRequest restfulRequest),
+    Result dstu2SearchAll(
+        Uri base, String mimeType, bool pretty, Summary summary),
+    Result stu3SearchAll(
+        Uri base, String mimeType, bool pretty, Summary summary),
+    Result r4SearchAll(Uri base, String mimeType, bool pretty, Summary summary),
+    Result r5SearchAll(Uri base, String mimeType, bool pretty, Summary summary),
+    Result dstu2Capabilities(
+        Uri base, String mimeType, bool pretty, Summary summary, Mode mode),
+    Result stu3Capabilities(
+        Uri base, String mimeType, bool pretty, Summary summary, Mode mode),
+    Result r4Capabilities(
+        Uri base, String mimeType, bool pretty, Summary summary, Mode mode),
+    Result r5Capabilities(
+        Uri base, String mimeType, bool pretty, Summary summary, Mode mode),
+    Result dstu2Transaction(
+        Uri base, String mimeType, bool pretty, Summary summary),
+    Result stu3Transaction(
+        Uri base, String mimeType, bool pretty, Summary summary),
+    Result r4Transaction(
+        Uri base, String mimeType, bool pretty, Summary summary),
+    Result r5Transaction(
+        Uri base, String mimeType, bool pretty, Summary summary),
+    Result dstu2History(Uri base, String mimeType, bool pretty, Summary summary,
+        Dstu2Types type, Id id),
+    Result stu3History(Uri base, String mimeType, bool pretty, Summary summary,
+        Stu3Types type, Id id),
+    Result r4History(Uri base, String mimeType, bool pretty, Summary summary,
+        R4Types type, Id id),
+    Result r5History(Uri base, String mimeType, bool pretty, Summary summary,
+        R5Types type, Id id),
+    Result dstu2HistoryType(Uri base, String mimeType, bool pretty,
+        Summary summary, Dstu2Types type),
+    Result stu3HistoryType(Uri base, String mimeType, bool pretty,
+        Summary summary, Stu3Types type),
+    Result r4HistoryType(
+        Uri base, String mimeType, bool pretty, Summary summary, R4Types type),
+    Result r5HistoryType(
+        Uri base, String mimeType, bool pretty, Summary summary, R5Types type),
+    Result dstu2HistoryAll(
+        Uri base, String mimeType, bool pretty, Summary summary),
+    Result stu3HistoryAll(
+        Uri base, String mimeType, bool pretty, Summary summary),
+    Result r4HistoryAll(
+        Uri base, String mimeType, bool pretty, Summary summary),
+    Result r5HistoryAll(
+        Uri base, String mimeType, bool pretty, Summary summary),
+    Result dstu2Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Dstu2Types type, Id id, String operation),
+    Result stu3Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Stu3Types type, Id id, String operation),
+    Result r4Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R4Types type, Id id, String operation),
+    Result r5Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R5Types type, Id id, String operation),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (r4Operation != null) {
+      return r4Operation(base, mimeType, pretty, summary, type, id, operation);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result dstu2Read(_FHIRUriDstu2Read value),
+    @required Result stu3Read(_FHIRUriStu3Read value),
+    @required Result r4Read(_FHIRUriR4Read value),
+    @required Result r5Read(_FHIRUriR5Read value),
+    @required Result dstu2VRead(_FHIRUriDstu2VRead value),
+    @required Result stu3VRead(_FHIRUriStu3VRead value),
+    @required Result r4VRead(_FHIRUriR4VRead value),
+    @required Result r5VRead(_FHIRUriR5VRead value),
+    @required Result dstu2Update(_FHIRUriDstu2Update value),
+    @required Result stu3Update(_FHIRUriStu3Update value),
+    @required Result r4Update(_FHIRUriR4Update value),
+    @required Result r5Update(_FHIRUriR5Update value),
+    @required Result dstu2Patch(_FHIRUriDstu2Patch value),
+    @required Result stu3Patch(_FHIRUriStu3Patch value),
+    @required Result r4Patch(_FHIRUriR4Patch value),
+    @required Result r5Patch(_FHIRUriR5Patch value),
+    @required Result dstu2Delete(_FHIRUriDstu2Delete value),
+    @required Result stu3Delete(_FHIRUriStu3Delete value),
+    @required Result r4Delete(_FHIRUriR4Delete value),
+    @required Result r5Delete(_FHIRUriR5Delete value),
+    @required Result dstu2Create(_FHIRUriDstu2Create value),
+    @required Result stu3Create(_FHIRUriStu3Create value),
+    @required Result r4Create(_FHIRUriR4Create value),
+    @required Result r5Create(_FHIRUriR5Create value),
+    @required Result dstu2Search(_FHIRUriDstu2Search value),
+    @required Result stu3Search(_FHIRUriStu3Search value),
+    @required Result r4Search(_FHIRUriR4Search value),
+    @required Result r5Search(_FHIRUriR5Search value),
+    @required Result dstu2SearchAll(_FHIRUriDstu2SearchAll value),
+    @required Result stu3SearchAll(_FHIRUriStu3SearchAll value),
+    @required Result r4SearchAll(_FHIRUriR4SearchAll value),
+    @required Result r5SearchAll(_FHIRUriR5SearchAll value),
+    @required Result dstu2Capabilities(_FHIRUriDstu2Capabilities value),
+    @required Result stu3Capabilities(_FHIRUriStu3Capabilities value),
+    @required Result r4Capabilities(_FHIRUriR4Capabilities value),
+    @required Result r5Capabilities(_FHIRUriR5Capabilities value),
+    @required Result dstu2Transaction(_FHIRUriDstu2Transaction value),
+    @required Result stu3Transaction(_FHIRUriStu3Transaction value),
+    @required Result r4Transaction(_FHIRUriR4Transaction value),
+    @required Result r5Transaction(_FHIRUriR5Transaction value),
+    @required Result dstu2History(_FHIRUriDstu2History value),
+    @required Result stu3History(_FHIRUriStu3History value),
+    @required Result r4History(_FHIRUriR4History value),
+    @required Result r5History(_FHIRUriR5History value),
+    @required Result dstu2HistoryType(_FHIRUriDstu2HistoryType value),
+    @required Result stu3HistoryType(_FHIRUriStu3HistoryType value),
+    @required Result r4HistoryType(_FHIRUriR4HistoryType value),
+    @required Result r5HistoryType(_FHIRUriR5HistoryType value),
+    @required Result dstu2HistoryAll(_FHIRUriDstu2HistoryAll value),
+    @required Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
+    @required Result r4HistoryAll(_FHIRUriR4HistoryAll value),
+    @required Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    @required Result dstu2Operation(_FHIRUriDstu2Operation value),
+    @required Result stu3Operation(_FHIRUriStu3Operation value),
+    @required Result r4Operation(_FHIRUriR4Operation value),
+    @required Result r5Operation(_FHIRUriR5Operation value),
+  }) {
+    assert(dstu2Read != null);
+    assert(stu3Read != null);
+    assert(r4Read != null);
+    assert(r5Read != null);
+    assert(dstu2VRead != null);
+    assert(stu3VRead != null);
+    assert(r4VRead != null);
+    assert(r5VRead != null);
+    assert(dstu2Update != null);
+    assert(stu3Update != null);
+    assert(r4Update != null);
+    assert(r5Update != null);
+    assert(dstu2Patch != null);
+    assert(stu3Patch != null);
+    assert(r4Patch != null);
+    assert(r5Patch != null);
+    assert(dstu2Delete != null);
+    assert(stu3Delete != null);
+    assert(r4Delete != null);
+    assert(r5Delete != null);
+    assert(dstu2Create != null);
+    assert(stu3Create != null);
+    assert(r4Create != null);
+    assert(r5Create != null);
+    assert(dstu2Search != null);
+    assert(stu3Search != null);
+    assert(r4Search != null);
+    assert(r5Search != null);
+    assert(dstu2SearchAll != null);
+    assert(stu3SearchAll != null);
+    assert(r4SearchAll != null);
+    assert(r5SearchAll != null);
+    assert(dstu2Capabilities != null);
+    assert(stu3Capabilities != null);
+    assert(r4Capabilities != null);
+    assert(r5Capabilities != null);
+    assert(dstu2Transaction != null);
+    assert(stu3Transaction != null);
+    assert(r4Transaction != null);
+    assert(r5Transaction != null);
+    assert(dstu2History != null);
+    assert(stu3History != null);
+    assert(r4History != null);
+    assert(r5History != null);
+    assert(dstu2HistoryType != null);
+    assert(stu3HistoryType != null);
+    assert(r4HistoryType != null);
+    assert(r5HistoryType != null);
+    assert(dstu2HistoryAll != null);
+    assert(stu3HistoryAll != null);
+    assert(r4HistoryAll != null);
+    assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
+    return r4Operation(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result dstu2Read(_FHIRUriDstu2Read value),
+    Result stu3Read(_FHIRUriStu3Read value),
+    Result r4Read(_FHIRUriR4Read value),
+    Result r5Read(_FHIRUriR5Read value),
+    Result dstu2VRead(_FHIRUriDstu2VRead value),
+    Result stu3VRead(_FHIRUriStu3VRead value),
+    Result r4VRead(_FHIRUriR4VRead value),
+    Result r5VRead(_FHIRUriR5VRead value),
+    Result dstu2Update(_FHIRUriDstu2Update value),
+    Result stu3Update(_FHIRUriStu3Update value),
+    Result r4Update(_FHIRUriR4Update value),
+    Result r5Update(_FHIRUriR5Update value),
+    Result dstu2Patch(_FHIRUriDstu2Patch value),
+    Result stu3Patch(_FHIRUriStu3Patch value),
+    Result r4Patch(_FHIRUriR4Patch value),
+    Result r5Patch(_FHIRUriR5Patch value),
+    Result dstu2Delete(_FHIRUriDstu2Delete value),
+    Result stu3Delete(_FHIRUriStu3Delete value),
+    Result r4Delete(_FHIRUriR4Delete value),
+    Result r5Delete(_FHIRUriR5Delete value),
+    Result dstu2Create(_FHIRUriDstu2Create value),
+    Result stu3Create(_FHIRUriStu3Create value),
+    Result r4Create(_FHIRUriR4Create value),
+    Result r5Create(_FHIRUriR5Create value),
+    Result dstu2Search(_FHIRUriDstu2Search value),
+    Result stu3Search(_FHIRUriStu3Search value),
+    Result r4Search(_FHIRUriR4Search value),
+    Result r5Search(_FHIRUriR5Search value),
+    Result dstu2SearchAll(_FHIRUriDstu2SearchAll value),
+    Result stu3SearchAll(_FHIRUriStu3SearchAll value),
+    Result r4SearchAll(_FHIRUriR4SearchAll value),
+    Result r5SearchAll(_FHIRUriR5SearchAll value),
+    Result dstu2Capabilities(_FHIRUriDstu2Capabilities value),
+    Result stu3Capabilities(_FHIRUriStu3Capabilities value),
+    Result r4Capabilities(_FHIRUriR4Capabilities value),
+    Result r5Capabilities(_FHIRUriR5Capabilities value),
+    Result dstu2Transaction(_FHIRUriDstu2Transaction value),
+    Result stu3Transaction(_FHIRUriStu3Transaction value),
+    Result r4Transaction(_FHIRUriR4Transaction value),
+    Result r5Transaction(_FHIRUriR5Transaction value),
+    Result dstu2History(_FHIRUriDstu2History value),
+    Result stu3History(_FHIRUriStu3History value),
+    Result r4History(_FHIRUriR4History value),
+    Result r5History(_FHIRUriR5History value),
+    Result dstu2HistoryType(_FHIRUriDstu2HistoryType value),
+    Result stu3HistoryType(_FHIRUriStu3HistoryType value),
+    Result r4HistoryType(_FHIRUriR4HistoryType value),
+    Result r5HistoryType(_FHIRUriR5HistoryType value),
+    Result dstu2HistoryAll(_FHIRUriDstu2HistoryAll value),
+    Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
+    Result r4HistoryAll(_FHIRUriR4HistoryAll value),
+    Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    Result dstu2Operation(_FHIRUriDstu2Operation value),
+    Result stu3Operation(_FHIRUriStu3Operation value),
+    Result r4Operation(_FHIRUriR4Operation value),
+    Result r5Operation(_FHIRUriR5Operation value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (r4Operation != null) {
+      return r4Operation(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _FHIRUriR4Operation extends FHIRUri {
+  _FHIRUriR4Operation._() : super._();
+  factory _FHIRUriR4Operation(
+      {@required Uri base,
+      String mimeType,
+      bool pretty,
+      Summary summary,
+      R4Types type,
+      Id id,
+      @required String operation}) = _$_FHIRUriR4Operation;
+
+  @override
+  Uri get base;
+  @override
+  String get mimeType;
+  @override
+  bool get pretty;
+  @override
+  Summary get summary;
+  R4Types get type;
+  Id get id;
+  String get operation;
+  @override
+  _$FHIRUriR4OperationCopyWith<_FHIRUriR4Operation> get copyWith;
+}
+
+/// @nodoc
+abstract class _$FHIRUriR5OperationCopyWith<$Res>
+    implements $FHIRUriCopyWith<$Res> {
+  factory _$FHIRUriR5OperationCopyWith(
+          _FHIRUriR5Operation value, $Res Function(_FHIRUriR5Operation) then) =
+      __$FHIRUriR5OperationCopyWithImpl<$Res>;
+  @override
+  $Res call(
+      {Uri base,
+      String mimeType,
+      bool pretty,
+      Summary summary,
+      R5Types type,
+      Id id,
+      String operation});
+}
+
+/// @nodoc
+class __$FHIRUriR5OperationCopyWithImpl<$Res>
+    extends _$FHIRUriCopyWithImpl<$Res>
+    implements _$FHIRUriR5OperationCopyWith<$Res> {
+  __$FHIRUriR5OperationCopyWithImpl(
+      _FHIRUriR5Operation _value, $Res Function(_FHIRUriR5Operation) _then)
+      : super(_value, (v) => _then(v as _FHIRUriR5Operation));
+
+  @override
+  _FHIRUriR5Operation get _value => super._value as _FHIRUriR5Operation;
+
+  @override
+  $Res call({
+    Object base = freezed,
+    Object mimeType = freezed,
+    Object pretty = freezed,
+    Object summary = freezed,
+    Object type = freezed,
+    Object id = freezed,
+    Object operation = freezed,
+  }) {
+    return _then(_FHIRUriR5Operation(
+      base: base == freezed ? _value.base : base as Uri,
+      mimeType: mimeType == freezed ? _value.mimeType : mimeType as String,
+      pretty: pretty == freezed ? _value.pretty : pretty as bool,
+      summary: summary == freezed ? _value.summary : summary as Summary,
+      type: type == freezed ? _value.type : type as R5Types,
+      id: id == freezed ? _value.id : id as Id,
+      operation: operation == freezed ? _value.operation : operation as String,
+    ));
+  }
+}
+
+/// @nodoc
+class _$_FHIRUriR5Operation extends _FHIRUriR5Operation {
+  _$_FHIRUriR5Operation(
+      {@required this.base,
+      this.mimeType = 'application/fhir+json',
+      this.pretty = false,
+      this.summary = Summary.none,
+      this.type,
+      this.id,
+      @required this.operation})
+      : assert(base != null),
+        assert(mimeType != null),
+        assert(pretty != null),
+        assert(summary != null),
+        assert(operation != null),
+        super._();
+
+  @override
+  final Uri base;
+  @JsonKey(defaultValue: 'application/fhir+json')
+  @override
+  final String mimeType;
+  @JsonKey(defaultValue: false)
+  @override
+  final bool pretty;
+  @JsonKey(defaultValue: Summary.none)
+  @override
+  final Summary summary;
+  @override
+  final R5Types type;
+  @override
+  final Id id;
+  @override
+  final String operation;
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _FHIRUriR5Operation &&
+            (identical(other.base, base) ||
+                const DeepCollectionEquality().equals(other.base, base)) &&
+            (identical(other.mimeType, mimeType) ||
+                const DeepCollectionEquality()
+                    .equals(other.mimeType, mimeType)) &&
+            (identical(other.pretty, pretty) ||
+                const DeepCollectionEquality().equals(other.pretty, pretty)) &&
+            (identical(other.summary, summary) ||
+                const DeepCollectionEquality()
+                    .equals(other.summary, summary)) &&
+            (identical(other.type, type) ||
+                const DeepCollectionEquality().equals(other.type, type)) &&
+            (identical(other.id, id) ||
+                const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.operation, operation) ||
+                const DeepCollectionEquality()
+                    .equals(other.operation, operation)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(base) ^
+      const DeepCollectionEquality().hash(mimeType) ^
+      const DeepCollectionEquality().hash(pretty) ^
+      const DeepCollectionEquality().hash(summary) ^
+      const DeepCollectionEquality().hash(type) ^
+      const DeepCollectionEquality().hash(id) ^
+      const DeepCollectionEquality().hash(operation);
+
+  @override
+  _$FHIRUriR5OperationCopyWith<_FHIRUriR5Operation> get copyWith =>
+      __$FHIRUriR5OperationCopyWithImpl<_FHIRUriR5Operation>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required
+        Result dstu2Read(Uri base, String mimeType, bool pretty,
+            Summary summary, Dstu2Types type, Id id),
+    @required
+        Result stu3Read(Uri base, String mimeType, bool pretty, Summary summary,
+            Stu3Types type, Id id),
+    @required
+        Result r4Read(Uri base, String mimeType, bool pretty, Summary summary,
+            R4Types type, Id id),
+    @required
+        Result r5Read(Uri base, String mimeType, bool pretty, Summary summary,
+            R5Types type, Id id),
+    @required
+        Result dstu2VRead(Uri base, String mimeType, bool pretty,
+            Summary summary, Dstu2Types type, Id id, Id vid),
+    @required
+        Result stu3VRead(Uri base, String mimeType, bool pretty,
+            Summary summary, Stu3Types type, Id id, Id vid),
+    @required
+        Result r4VRead(Uri base, String mimeType, bool pretty, Summary summary,
+            R4Types type, Id id, Id vid),
+    @required
+        Result r5VRead(Uri base, String mimeType, bool pretty, Summary summary,
+            R5Types type, Id id, Id vid),
+    @required
+        Result dstu2Update(Uri base, String mimeType, bool pretty,
+            Summary summary, Dstu2Types type, Id id),
+    @required
+        Result stu3Update(Uri base, String mimeType, bool pretty,
+            Summary summary, Stu3Types type, Id id),
+    @required
+        Result r4Update(Uri base, String mimeType, bool pretty, Summary summary,
+            R4Types type, Id id),
+    @required
+        Result r5Update(Uri base, String mimeType, bool pretty, Summary summary,
+            R5Types type, Id id),
+    @required
+        Result dstu2Patch(Uri base, String mimeType, bool pretty,
+            Summary summary, Dstu2Types type, Id id),
+    @required
+        Result stu3Patch(Uri base, String mimeType, bool pretty,
+            Summary summary, Stu3Types type, Id id),
+    @required
+        Result r4Patch(Uri base, String mimeType, bool pretty, Summary summary,
+            R4Types type, Id id),
+    @required
+        Result r5Patch(Uri base, String mimeType, bool pretty, Summary summary,
+            R5Types type, Id id),
+    @required
+        Result dstu2Delete(Uri base, String mimeType, bool pretty,
+            Summary summary, Dstu2Types type, Id id),
+    @required
+        Result stu3Delete(Uri base, String mimeType, bool pretty,
+            Summary summary, Stu3Types type, Id id),
+    @required
+        Result r4Delete(Uri base, String mimeType, bool pretty, Summary summary,
+            R4Types type, Id id),
+    @required
+        Result r5Delete(Uri base, String mimeType, bool pretty, Summary summary,
+            R5Types type, Id id),
+    @required
+        Result dstu2Create(Uri base, String mimeType, bool pretty,
+            Summary summary, Dstu2Types type),
+    @required
+        Result stu3Create(Uri base, String mimeType, bool pretty,
+            Summary summary, Stu3Types type),
+    @required
+        Result r4Create(Uri base, String mimeType, bool pretty, Summary summary,
+            R4Types type),
+    @required
+        Result r5Create(Uri base, String mimeType, bool pretty, Summary summary,
+            R5Types type),
+    @required
+        Result dstu2Search(Uri base, String mimeType, bool pretty,
+            Summary summary, Dstu2Types type, RestfulRequest restfulRequest),
+    @required
+        Result stu3Search(Uri base, String mimeType, bool pretty,
+            Summary summary, Stu3Types type, RestfulRequest restfulRequest),
+    @required
+        Result r4Search(Uri base, String mimeType, bool pretty, Summary summary,
+            R4Types type, RestfulRequest restfulRequest),
+    @required
+        Result r5Search(Uri base, String mimeType, bool pretty, Summary summary,
+            R5Types type, RestfulRequest restfulRequest),
+    @required
+        Result dstu2SearchAll(
+            Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result stu3SearchAll(
+            Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result r4SearchAll(
+            Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result r5SearchAll(
+            Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result dstu2Capabilities(
+            Uri base, String mimeType, bool pretty, Summary summary, Mode mode),
+    @required
+        Result stu3Capabilities(
+            Uri base, String mimeType, bool pretty, Summary summary, Mode mode),
+    @required
+        Result r4Capabilities(
+            Uri base, String mimeType, bool pretty, Summary summary, Mode mode),
+    @required
+        Result r5Capabilities(
+            Uri base, String mimeType, bool pretty, Summary summary, Mode mode),
+    @required
+        Result dstu2Transaction(
+            Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result stu3Transaction(
+            Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result r4Transaction(
+            Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result r5Transaction(
+            Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result dstu2History(Uri base, String mimeType, bool pretty,
+            Summary summary, Dstu2Types type, Id id),
+    @required
+        Result stu3History(Uri base, String mimeType, bool pretty,
+            Summary summary, Stu3Types type, Id id),
+    @required
+        Result r4History(Uri base, String mimeType, bool pretty,
+            Summary summary, R4Types type, Id id),
+    @required
+        Result r5History(Uri base, String mimeType, bool pretty,
+            Summary summary, R5Types type, Id id),
+    @required
+        Result dstu2HistoryType(Uri base, String mimeType, bool pretty,
+            Summary summary, Dstu2Types type),
+    @required
+        Result stu3HistoryType(Uri base, String mimeType, bool pretty,
+            Summary summary, Stu3Types type),
+    @required
+        Result r4HistoryType(Uri base, String mimeType, bool pretty,
+            Summary summary, R4Types type),
+    @required
+        Result r5HistoryType(Uri base, String mimeType, bool pretty,
+            Summary summary, R5Types type),
+    @required
+        Result dstu2HistoryAll(
+            Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result stu3HistoryAll(
+            Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result r4HistoryAll(
+            Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result r5HistoryAll(
+            Uri base, String mimeType, bool pretty, Summary summary),
+    @required
+        Result dstu2Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Dstu2Types type, Id id, String operation),
+    @required
+        Result stu3Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, Stu3Types type, Id id, String operation),
+    @required
+        Result r4Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R4Types type, Id id, String operation),
+    @required
+        Result r5Operation(Uri base, String mimeType, bool pretty,
+            Summary summary, R5Types type, Id id, String operation),
+  }) {
+    assert(dstu2Read != null);
+    assert(stu3Read != null);
+    assert(r4Read != null);
+    assert(r5Read != null);
+    assert(dstu2VRead != null);
+    assert(stu3VRead != null);
+    assert(r4VRead != null);
+    assert(r5VRead != null);
+    assert(dstu2Update != null);
+    assert(stu3Update != null);
+    assert(r4Update != null);
+    assert(r5Update != null);
+    assert(dstu2Patch != null);
+    assert(stu3Patch != null);
+    assert(r4Patch != null);
+    assert(r5Patch != null);
+    assert(dstu2Delete != null);
+    assert(stu3Delete != null);
+    assert(r4Delete != null);
+    assert(r5Delete != null);
+    assert(dstu2Create != null);
+    assert(stu3Create != null);
+    assert(r4Create != null);
+    assert(r5Create != null);
+    assert(dstu2Search != null);
+    assert(stu3Search != null);
+    assert(r4Search != null);
+    assert(r5Search != null);
+    assert(dstu2SearchAll != null);
+    assert(stu3SearchAll != null);
+    assert(r4SearchAll != null);
+    assert(r5SearchAll != null);
+    assert(dstu2Capabilities != null);
+    assert(stu3Capabilities != null);
+    assert(r4Capabilities != null);
+    assert(r5Capabilities != null);
+    assert(dstu2Transaction != null);
+    assert(stu3Transaction != null);
+    assert(r4Transaction != null);
+    assert(r5Transaction != null);
+    assert(dstu2History != null);
+    assert(stu3History != null);
+    assert(r4History != null);
+    assert(r5History != null);
+    assert(dstu2HistoryType != null);
+    assert(stu3HistoryType != null);
+    assert(r4HistoryType != null);
+    assert(r5HistoryType != null);
+    assert(dstu2HistoryAll != null);
+    assert(stu3HistoryAll != null);
+    assert(r4HistoryAll != null);
+    assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
+    return r5Operation(base, mimeType, pretty, summary, type, id, operation);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result dstu2Read(Uri base, String mimeType, bool pretty, Summary summary,
+        Dstu2Types type, Id id),
+    Result stu3Read(Uri base, String mimeType, bool pretty, Summary summary,
+        Stu3Types type, Id id),
+    Result r4Read(Uri base, String mimeType, bool pretty, Summary summary,
+        R4Types type, Id id),
+    Result r5Read(Uri base, String mimeType, bool pretty, Summary summary,
+        R5Types type, Id id),
+    Result dstu2VRead(Uri base, String mimeType, bool pretty, Summary summary,
+        Dstu2Types type, Id id, Id vid),
+    Result stu3VRead(Uri base, String mimeType, bool pretty, Summary summary,
+        Stu3Types type, Id id, Id vid),
+    Result r4VRead(Uri base, String mimeType, bool pretty, Summary summary,
+        R4Types type, Id id, Id vid),
+    Result r5VRead(Uri base, String mimeType, bool pretty, Summary summary,
+        R5Types type, Id id, Id vid),
+    Result dstu2Update(Uri base, String mimeType, bool pretty, Summary summary,
+        Dstu2Types type, Id id),
+    Result stu3Update(Uri base, String mimeType, bool pretty, Summary summary,
+        Stu3Types type, Id id),
+    Result r4Update(Uri base, String mimeType, bool pretty, Summary summary,
+        R4Types type, Id id),
+    Result r5Update(Uri base, String mimeType, bool pretty, Summary summary,
+        R5Types type, Id id),
+    Result dstu2Patch(Uri base, String mimeType, bool pretty, Summary summary,
+        Dstu2Types type, Id id),
+    Result stu3Patch(Uri base, String mimeType, bool pretty, Summary summary,
+        Stu3Types type, Id id),
+    Result r4Patch(Uri base, String mimeType, bool pretty, Summary summary,
+        R4Types type, Id id),
+    Result r5Patch(Uri base, String mimeType, bool pretty, Summary summary,
+        R5Types type, Id id),
+    Result dstu2Delete(Uri base, String mimeType, bool pretty, Summary summary,
+        Dstu2Types type, Id id),
+    Result stu3Delete(Uri base, String mimeType, bool pretty, Summary summary,
+        Stu3Types type, Id id),
+    Result r4Delete(Uri base, String mimeType, bool pretty, Summary summary,
+        R4Types type, Id id),
+    Result r5Delete(Uri base, String mimeType, bool pretty, Summary summary,
+        R5Types type, Id id),
+    Result dstu2Create(Uri base, String mimeType, bool pretty, Summary summary,
+        Dstu2Types type),
+    Result stu3Create(Uri base, String mimeType, bool pretty, Summary summary,
+        Stu3Types type),
+    Result r4Create(
+        Uri base, String mimeType, bool pretty, Summary summary, R4Types type),
+    Result r5Create(
+        Uri base, String mimeType, bool pretty, Summary summary, R5Types type),
+    Result dstu2Search(Uri base, String mimeType, bool pretty, Summary summary,
+        Dstu2Types type, RestfulRequest restfulRequest),
+    Result stu3Search(Uri base, String mimeType, bool pretty, Summary summary,
+        Stu3Types type, RestfulRequest restfulRequest),
+    Result r4Search(Uri base, String mimeType, bool pretty, Summary summary,
+        R4Types type, RestfulRequest restfulRequest),
+    Result r5Search(Uri base, String mimeType, bool pretty, Summary summary,
+        R5Types type, RestfulRequest restfulRequest),
+    Result dstu2SearchAll(
+        Uri base, String mimeType, bool pretty, Summary summary),
+    Result stu3SearchAll(
+        Uri base, String mimeType, bool pretty, Summary summary),
+    Result r4SearchAll(Uri base, String mimeType, bool pretty, Summary summary),
+    Result r5SearchAll(Uri base, String mimeType, bool pretty, Summary summary),
+    Result dstu2Capabilities(
+        Uri base, String mimeType, bool pretty, Summary summary, Mode mode),
+    Result stu3Capabilities(
+        Uri base, String mimeType, bool pretty, Summary summary, Mode mode),
+    Result r4Capabilities(
+        Uri base, String mimeType, bool pretty, Summary summary, Mode mode),
+    Result r5Capabilities(
+        Uri base, String mimeType, bool pretty, Summary summary, Mode mode),
+    Result dstu2Transaction(
+        Uri base, String mimeType, bool pretty, Summary summary),
+    Result stu3Transaction(
+        Uri base, String mimeType, bool pretty, Summary summary),
+    Result r4Transaction(
+        Uri base, String mimeType, bool pretty, Summary summary),
+    Result r5Transaction(
+        Uri base, String mimeType, bool pretty, Summary summary),
+    Result dstu2History(Uri base, String mimeType, bool pretty, Summary summary,
+        Dstu2Types type, Id id),
+    Result stu3History(Uri base, String mimeType, bool pretty, Summary summary,
+        Stu3Types type, Id id),
+    Result r4History(Uri base, String mimeType, bool pretty, Summary summary,
+        R4Types type, Id id),
+    Result r5History(Uri base, String mimeType, bool pretty, Summary summary,
+        R5Types type, Id id),
+    Result dstu2HistoryType(Uri base, String mimeType, bool pretty,
+        Summary summary, Dstu2Types type),
+    Result stu3HistoryType(Uri base, String mimeType, bool pretty,
+        Summary summary, Stu3Types type),
+    Result r4HistoryType(
+        Uri base, String mimeType, bool pretty, Summary summary, R4Types type),
+    Result r5HistoryType(
+        Uri base, String mimeType, bool pretty, Summary summary, R5Types type),
+    Result dstu2HistoryAll(
+        Uri base, String mimeType, bool pretty, Summary summary),
+    Result stu3HistoryAll(
+        Uri base, String mimeType, bool pretty, Summary summary),
+    Result r4HistoryAll(
+        Uri base, String mimeType, bool pretty, Summary summary),
+    Result r5HistoryAll(
+        Uri base, String mimeType, bool pretty, Summary summary),
+    Result dstu2Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Dstu2Types type, Id id, String operation),
+    Result stu3Operation(Uri base, String mimeType, bool pretty,
+        Summary summary, Stu3Types type, Id id, String operation),
+    Result r4Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R4Types type, Id id, String operation),
+    Result r5Operation(Uri base, String mimeType, bool pretty, Summary summary,
+        R5Types type, Id id, String operation),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (r5Operation != null) {
+      return r5Operation(base, mimeType, pretty, summary, type, id, operation);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result dstu2Read(_FHIRUriDstu2Read value),
+    @required Result stu3Read(_FHIRUriStu3Read value),
+    @required Result r4Read(_FHIRUriR4Read value),
+    @required Result r5Read(_FHIRUriR5Read value),
+    @required Result dstu2VRead(_FHIRUriDstu2VRead value),
+    @required Result stu3VRead(_FHIRUriStu3VRead value),
+    @required Result r4VRead(_FHIRUriR4VRead value),
+    @required Result r5VRead(_FHIRUriR5VRead value),
+    @required Result dstu2Update(_FHIRUriDstu2Update value),
+    @required Result stu3Update(_FHIRUriStu3Update value),
+    @required Result r4Update(_FHIRUriR4Update value),
+    @required Result r5Update(_FHIRUriR5Update value),
+    @required Result dstu2Patch(_FHIRUriDstu2Patch value),
+    @required Result stu3Patch(_FHIRUriStu3Patch value),
+    @required Result r4Patch(_FHIRUriR4Patch value),
+    @required Result r5Patch(_FHIRUriR5Patch value),
+    @required Result dstu2Delete(_FHIRUriDstu2Delete value),
+    @required Result stu3Delete(_FHIRUriStu3Delete value),
+    @required Result r4Delete(_FHIRUriR4Delete value),
+    @required Result r5Delete(_FHIRUriR5Delete value),
+    @required Result dstu2Create(_FHIRUriDstu2Create value),
+    @required Result stu3Create(_FHIRUriStu3Create value),
+    @required Result r4Create(_FHIRUriR4Create value),
+    @required Result r5Create(_FHIRUriR5Create value),
+    @required Result dstu2Search(_FHIRUriDstu2Search value),
+    @required Result stu3Search(_FHIRUriStu3Search value),
+    @required Result r4Search(_FHIRUriR4Search value),
+    @required Result r5Search(_FHIRUriR5Search value),
+    @required Result dstu2SearchAll(_FHIRUriDstu2SearchAll value),
+    @required Result stu3SearchAll(_FHIRUriStu3SearchAll value),
+    @required Result r4SearchAll(_FHIRUriR4SearchAll value),
+    @required Result r5SearchAll(_FHIRUriR5SearchAll value),
+    @required Result dstu2Capabilities(_FHIRUriDstu2Capabilities value),
+    @required Result stu3Capabilities(_FHIRUriStu3Capabilities value),
+    @required Result r4Capabilities(_FHIRUriR4Capabilities value),
+    @required Result r5Capabilities(_FHIRUriR5Capabilities value),
+    @required Result dstu2Transaction(_FHIRUriDstu2Transaction value),
+    @required Result stu3Transaction(_FHIRUriStu3Transaction value),
+    @required Result r4Transaction(_FHIRUriR4Transaction value),
+    @required Result r5Transaction(_FHIRUriR5Transaction value),
+    @required Result dstu2History(_FHIRUriDstu2History value),
+    @required Result stu3History(_FHIRUriStu3History value),
+    @required Result r4History(_FHIRUriR4History value),
+    @required Result r5History(_FHIRUriR5History value),
+    @required Result dstu2HistoryType(_FHIRUriDstu2HistoryType value),
+    @required Result stu3HistoryType(_FHIRUriStu3HistoryType value),
+    @required Result r4HistoryType(_FHIRUriR4HistoryType value),
+    @required Result r5HistoryType(_FHIRUriR5HistoryType value),
+    @required Result dstu2HistoryAll(_FHIRUriDstu2HistoryAll value),
+    @required Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
+    @required Result r4HistoryAll(_FHIRUriR4HistoryAll value),
+    @required Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    @required Result dstu2Operation(_FHIRUriDstu2Operation value),
+    @required Result stu3Operation(_FHIRUriStu3Operation value),
+    @required Result r4Operation(_FHIRUriR4Operation value),
+    @required Result r5Operation(_FHIRUriR5Operation value),
+  }) {
+    assert(dstu2Read != null);
+    assert(stu3Read != null);
+    assert(r4Read != null);
+    assert(r5Read != null);
+    assert(dstu2VRead != null);
+    assert(stu3VRead != null);
+    assert(r4VRead != null);
+    assert(r5VRead != null);
+    assert(dstu2Update != null);
+    assert(stu3Update != null);
+    assert(r4Update != null);
+    assert(r5Update != null);
+    assert(dstu2Patch != null);
+    assert(stu3Patch != null);
+    assert(r4Patch != null);
+    assert(r5Patch != null);
+    assert(dstu2Delete != null);
+    assert(stu3Delete != null);
+    assert(r4Delete != null);
+    assert(r5Delete != null);
+    assert(dstu2Create != null);
+    assert(stu3Create != null);
+    assert(r4Create != null);
+    assert(r5Create != null);
+    assert(dstu2Search != null);
+    assert(stu3Search != null);
+    assert(r4Search != null);
+    assert(r5Search != null);
+    assert(dstu2SearchAll != null);
+    assert(stu3SearchAll != null);
+    assert(r4SearchAll != null);
+    assert(r5SearchAll != null);
+    assert(dstu2Capabilities != null);
+    assert(stu3Capabilities != null);
+    assert(r4Capabilities != null);
+    assert(r5Capabilities != null);
+    assert(dstu2Transaction != null);
+    assert(stu3Transaction != null);
+    assert(r4Transaction != null);
+    assert(r5Transaction != null);
+    assert(dstu2History != null);
+    assert(stu3History != null);
+    assert(r4History != null);
+    assert(r5History != null);
+    assert(dstu2HistoryType != null);
+    assert(stu3HistoryType != null);
+    assert(r4HistoryType != null);
+    assert(r5HistoryType != null);
+    assert(dstu2HistoryAll != null);
+    assert(stu3HistoryAll != null);
+    assert(r4HistoryAll != null);
+    assert(r5HistoryAll != null);
+    assert(dstu2Operation != null);
+    assert(stu3Operation != null);
+    assert(r4Operation != null);
+    assert(r5Operation != null);
+    return r5Operation(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result dstu2Read(_FHIRUriDstu2Read value),
+    Result stu3Read(_FHIRUriStu3Read value),
+    Result r4Read(_FHIRUriR4Read value),
+    Result r5Read(_FHIRUriR5Read value),
+    Result dstu2VRead(_FHIRUriDstu2VRead value),
+    Result stu3VRead(_FHIRUriStu3VRead value),
+    Result r4VRead(_FHIRUriR4VRead value),
+    Result r5VRead(_FHIRUriR5VRead value),
+    Result dstu2Update(_FHIRUriDstu2Update value),
+    Result stu3Update(_FHIRUriStu3Update value),
+    Result r4Update(_FHIRUriR4Update value),
+    Result r5Update(_FHIRUriR5Update value),
+    Result dstu2Patch(_FHIRUriDstu2Patch value),
+    Result stu3Patch(_FHIRUriStu3Patch value),
+    Result r4Patch(_FHIRUriR4Patch value),
+    Result r5Patch(_FHIRUriR5Patch value),
+    Result dstu2Delete(_FHIRUriDstu2Delete value),
+    Result stu3Delete(_FHIRUriStu3Delete value),
+    Result r4Delete(_FHIRUriR4Delete value),
+    Result r5Delete(_FHIRUriR5Delete value),
+    Result dstu2Create(_FHIRUriDstu2Create value),
+    Result stu3Create(_FHIRUriStu3Create value),
+    Result r4Create(_FHIRUriR4Create value),
+    Result r5Create(_FHIRUriR5Create value),
+    Result dstu2Search(_FHIRUriDstu2Search value),
+    Result stu3Search(_FHIRUriStu3Search value),
+    Result r4Search(_FHIRUriR4Search value),
+    Result r5Search(_FHIRUriR5Search value),
+    Result dstu2SearchAll(_FHIRUriDstu2SearchAll value),
+    Result stu3SearchAll(_FHIRUriStu3SearchAll value),
+    Result r4SearchAll(_FHIRUriR4SearchAll value),
+    Result r5SearchAll(_FHIRUriR5SearchAll value),
+    Result dstu2Capabilities(_FHIRUriDstu2Capabilities value),
+    Result stu3Capabilities(_FHIRUriStu3Capabilities value),
+    Result r4Capabilities(_FHIRUriR4Capabilities value),
+    Result r5Capabilities(_FHIRUriR5Capabilities value),
+    Result dstu2Transaction(_FHIRUriDstu2Transaction value),
+    Result stu3Transaction(_FHIRUriStu3Transaction value),
+    Result r4Transaction(_FHIRUriR4Transaction value),
+    Result r5Transaction(_FHIRUriR5Transaction value),
+    Result dstu2History(_FHIRUriDstu2History value),
+    Result stu3History(_FHIRUriStu3History value),
+    Result r4History(_FHIRUriR4History value),
+    Result r5History(_FHIRUriR5History value),
+    Result dstu2HistoryType(_FHIRUriDstu2HistoryType value),
+    Result stu3HistoryType(_FHIRUriStu3HistoryType value),
+    Result r4HistoryType(_FHIRUriR4HistoryType value),
+    Result r5HistoryType(_FHIRUriR5HistoryType value),
+    Result dstu2HistoryAll(_FHIRUriDstu2HistoryAll value),
+    Result stu3HistoryAll(_FHIRUriStu3HistoryAll value),
+    Result r4HistoryAll(_FHIRUriR4HistoryAll value),
+    Result r5HistoryAll(_FHIRUriR5HistoryAll value),
+    Result dstu2Operation(_FHIRUriDstu2Operation value),
+    Result stu3Operation(_FHIRUriStu3Operation value),
+    Result r4Operation(_FHIRUriR4Operation value),
+    Result r5Operation(_FHIRUriR5Operation value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (r5Operation != null) {
+      return r5Operation(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _FHIRUriR5Operation extends FHIRUri {
+  _FHIRUriR5Operation._() : super._();
+  factory _FHIRUriR5Operation(
+      {@required Uri base,
+      String mimeType,
+      bool pretty,
+      Summary summary,
+      R5Types type,
+      Id id,
+      @required String operation}) = _$_FHIRUriR5Operation;
+
+  @override
+  Uri get base;
+  @override
+  String get mimeType;
+  @override
+  bool get pretty;
+  @override
+  Summary get summary;
+  R5Types get type;
+  Id get id;
+  String get operation;
+  @override
+  _$FHIRUriR5OperationCopyWith<_FHIRUriR5Operation> get copyWith;
 }

@@ -485,6 +485,49 @@ abstract class FHIRUri with _$FHIRUri {
     @Default(Summary.none) Summary summary,
   }) = _FHIRUriR5HistoryAll;
 
+  /*
+  OPERATION constructors
+  */
+  factory FHIRUri.dstu2Operation({
+    @required Uri base,
+    @Default('application/json+fhir') String mimeType,
+    @Default(false) bool pretty,
+    @Default(Summary.none) Summary summary,
+    Dstu2Types type,
+    Id id,
+    @required String operation,
+  }) = _FHIRUriDstu2Operation;
+
+  factory FHIRUri.stu3Operation({
+    @required Uri base,
+    @Default('application/fhir+json') String mimeType,
+    @Default(false) bool pretty,
+    @Default(Summary.none) Summary summary,
+    Stu3Types type,
+    Id id,
+    @required String operation,
+  }) = _FHIRUriStu3Operation;
+
+  factory FHIRUri.r4Operation({
+    @required Uri base,
+    @Default('application/fhir+json') String mimeType,
+    @Default(false) bool pretty,
+    @Default(Summary.none) Summary summary,
+    R4Types type,
+    Id id,
+    @required String operation,
+  }) = _FHIRUriR4Operation;
+
+  factory FHIRUri.r5Operation({
+    @required Uri base,
+    @Default('application/fhir+json') String mimeType,
+    @Default(false) bool pretty,
+    @Default(Summary.none) Summary summary,
+    R5Types type,
+    Id id,
+    @required String operation,
+  }) = _FHIRUriR5Operation;
+
   String _encodeParam(String key, String value, {bool join = true}) =>
       '${join ? '&' : ''}$key=${Uri.encodeQueryComponent(value)}';
 
@@ -603,6 +646,19 @@ abstract class FHIRUri with _$FHIRUri {
       stu3HistoryAll: (f) => '$base/_history',
       r4HistoryAll: (f) => '$base/_history',
       r5HistoryAll: (f) => '$base/_history',
+      // OPERATION
+      dstu2Operation: (f) => '$base/'
+          '${f.type != null ? "${enumToString(f.type)}/" : ''}'
+          '${f.type != null && f.id != null ? "${enumToString(f.id)}/" : ''}\$',
+      stu3Operation: (f) => '$base/'
+          '${f.type != null ? "${enumToString(f.type)}/" : ''}'
+          '${f.type != null && f.id != null ? "${enumToString(f.id)}/" : ''}\$',
+      r4Operation: (f) => '$base/'
+          '${f.type != null ? "${enumToString(f.type)}/" : ''}'
+          '${f.type != null && f.id != null ? "${enumToString(f.id)}/" : ''}\$',
+      r5Operation: (f) => '$base/'
+          '${f.type != null ? "${enumToString(f.type)}/" : ''}'
+          '${f.type != null && f.id != null ? "${enumToString(f.id)}/" : ''}\$',
     );
     uri += '?';
     uri += _mode();
