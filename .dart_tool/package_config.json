@@ -230,12 +230,6 @@
       "languageVersion": "2.7"
     },
     {
-      "name": "lint",
-      "rootUri": "file:///home/grey/.pub-cache/hosted/pub.dartlang.org/lint-1.3.0",
-      "packageUri": "lib/",
-      "languageVersion": "2.9"
-    },
-    {
       "name": "logging",
       "rootUri": "file:///home/grey/.pub-cache/hosted/pub.dartlang.org/logging-0.11.4",
       "packageUri": "lib/",
@@ -470,7 +464,7 @@
       "languageVersion": "2.1"
     }
   ],
-  "generated": "2020-10-18T01:50:05.844005Z",
+  "generated": "2020-10-28T19:01:20.275665Z",
   "generator": "pub",
   "generatorVersion": "2.10.2"
 }

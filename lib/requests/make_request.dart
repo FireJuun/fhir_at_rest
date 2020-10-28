@@ -34,7 +34,7 @@ Future<Either<RestfulFailure, Map<String, dynamic>>> makeRequest({
           result = await put(
             thisRequest,
             headers: headers,
-            body: resource,
+            body: jsonEncode(resource),
             encoding: encoding,
           );
           break;
@@ -52,7 +52,7 @@ Future<Either<RestfulFailure, Map<String, dynamic>>> makeRequest({
           result = await patch(
             thisRequest,
             headers: headers,
-            body: resource,
+            body: jsonEncode(resource),
             encoding: encoding,
           );
           break;
@@ -62,7 +62,7 @@ Future<Either<RestfulFailure, Map<String, dynamic>>> makeRequest({
           result = await post(
             thisRequest,
             headers: headers,
-            body: resource,
+            body: jsonEncode(resource),
             encoding: encoding,
           );
           break;
