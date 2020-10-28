@@ -649,16 +649,20 @@ abstract class FHIRUri with _$FHIRUri {
       // OPERATION
       dstu2Operation: (f) => '$base/'
           '${f.type != null ? "${enumToString(f.type)}/" : ''}'
-          '${f.type != null && f.id != null ? "${enumToString(f.id)}/" : ''}\$',
+          '${f.type != null && f.id != null ? "${enumToString(f.id)}/" : ''}'
+          '\$${f.operation}',
       stu3Operation: (f) => '$base/'
           '${f.type != null ? "${enumToString(f.type)}/" : ''}'
-          '${f.type != null && f.id != null ? "${enumToString(f.id)}/" : ''}\$',
+          '${f.type != null && f.id != null ? "${enumToString(f.id)}/" : ''}'
+          '\$${f.operation}',
       r4Operation: (f) => '$base/'
           '${f.type != null ? "${enumToString(f.type)}/" : ''}'
-          '${f.type != null && f.id != null ? "${enumToString(f.id)}/" : ''}\$',
+          '${f.type != null && f.id != null ? "${enumToString(f.id)}/" : ''}'
+          '\$${f.operation}',
       r5Operation: (f) => '$base/'
           '${f.type != null ? "${enumToString(f.type)}/" : ''}'
-          '${f.type != null && f.id != null ? "${enumToString(f.id)}/" : ''}\$',
+          '${f.type != null && f.id != null ? "${enumToString(f.id)}/" : ''}'
+          '\$${f.operation}',
     );
     uri += '?';
     uri += _mode();
