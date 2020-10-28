@@ -10,7 +10,7 @@ import '../failures/restful_failure.dart';
 Future<Either<RestfulFailure, Map<String, dynamic>>> makeRequest({
   @required RestfulRequest type,
   @required String thisRequest,
-  Map<String, dynamic> headers,
+  Map<String, String> headers,
   Map<String, dynamic> resource,
   Encoding encoding,
 }) async {
@@ -31,7 +31,7 @@ Future<Either<RestfulFailure, Map<String, dynamic>>> makeRequest({
         }
       case RestfulRequest.put_:
         {
-          headers ??= <String, dynamic>{};
+          headers ??= <String, String>{};
           headers['Content-Type'] = 'application%2Ffhir%2Bjson';
           result = await put(
             thisRequest,
@@ -51,7 +51,7 @@ Future<Either<RestfulFailure, Map<String, dynamic>>> makeRequest({
         }
       case RestfulRequest.patch_:
         {
-          headers ??= <String, dynamic>{};
+          headers ??= <String, String>{};
           headers['Content-Type'] = 'application%2Ffhir%2Bjson';
           result = await patch(
             thisRequest,
@@ -63,7 +63,7 @@ Future<Either<RestfulFailure, Map<String, dynamic>>> makeRequest({
         }
       case RestfulRequest.post_:
         {
-          headers ??= <String, dynamic>{};
+          headers ??= <String, String>{};
           headers['Content-Type'] = 'application%2Ffhir%2Bjson';
           result = await post(
             thisRequest,
