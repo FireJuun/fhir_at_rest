@@ -31,6 +31,8 @@ Future<Either<RestfulFailure, Map<String, dynamic>>> makeRequest({
         }
       case RestfulRequest.put_:
         {
+          headers ??= <String, dynamic>{};
+          headers['Content-Type'] = 'application%2Ffhir%2Bjson';
           result = await put(
             thisRequest,
             headers: headers,
@@ -49,6 +51,8 @@ Future<Either<RestfulFailure, Map<String, dynamic>>> makeRequest({
         }
       case RestfulRequest.patch_:
         {
+          headers ??= <String, dynamic>{};
+          headers['Content-Type'] = 'application%2Ffhir%2Bjson';
           result = await patch(
             thisRequest,
             headers: headers,
@@ -59,6 +63,8 @@ Future<Either<RestfulFailure, Map<String, dynamic>>> makeRequest({
         }
       case RestfulRequest.post_:
         {
+          headers ??= <String, dynamic>{};
+          headers['Content-Type'] = 'application%2Ffhir%2Bjson';
           result = await post(
             thisRequest,
             headers: headers,
