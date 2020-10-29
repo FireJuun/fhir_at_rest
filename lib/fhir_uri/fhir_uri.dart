@@ -434,19 +434,32 @@ abstract class FHIRUri with _$FHIRUri {
   }
 
   String _format({bool join = false}) => maybeMap(
-        dstu2Capabilities: (f) =>
-            _encodeParam('_format', generalParameters.format, join: true),
-        stu3Capabilities: (f) =>
-            _encodeParam('_format', generalParameters.format, join: true),
-        r4Capabilities: (f) =>
-            _encodeParam('_format', generalParameters.format, join: true),
-        r5Capabilities: (f) =>
-            _encodeParam('_format', generalParameters.format, join: true),
-        orElse: () =>
-            _encodeParam('_format', generalParameters.format, join: join),
+        dstu2Capabilities: (f) => _encodeParam(
+          '_format',
+          generalParameters?.format ?? 'application/json+fhir',
+          join: true,
+        ),
+        stu3Capabilities: (f) => _encodeParam(
+          '_format',
+          generalParameters?.format ?? 'application/fhir+json',
+          join: true,
+        ),
+        r4Capabilities: (f) => _encodeParam(
+          '_format',
+          generalParameters?.format ?? 'application/fhir+json',
+          join: true,
+        ),
+        r5Capabilities: (f) => _encodeParam(
+          '_format',
+          generalParameters?.format ?? 'application/fhir+json',
+          join: true,
+        ),
+        orElse: () => _encodeParam(
+            '_format', generalParameters?.format ?? 'application/fhir+json',
+            join: join),
       );
 
-  String _pretty({bool join = true}) => generalParameters.pretty
+  String _pretty({bool join = true}) => (generalParameters?.pretty) ?? false
       ? _encodeParam(
           '_pretty',
           generalParameters.pretty.toString(),
@@ -455,7 +468,7 @@ abstract class FHIRUri with _$FHIRUri {
       : '';
 
   String _summary({bool join = true}) =>
-      generalParameters.summary != Summary.none
+      (generalParameters?.summary ?? Summary.none) != Summary.none
           ? _encodeParam(
               '_summary',
               enumToString(generalParameters.summary),
@@ -463,13 +476,14 @@ abstract class FHIRUri with _$FHIRUri {
             )
           : '';
 
-  String _elements({bool join = true}) => generalParameters.elements.isNotEmpty
-      ? _encodeParam(
-          '_elements',
-          generalParameters.elements.join(','),
-          join: join,
-        )
-      : '';
+  String _elements({bool join = true}) =>
+      (generalParameters?.elements?.isNotEmpty) ?? false
+          ? _encodeParam(
+              '_elements',
+              generalParameters.elements.join(','),
+              join: join,
+            )
+          : '';
 
   // RestfulRequest get httpVerb => map();
 
@@ -593,23 +607,39 @@ class GeneralParameters {
     this.elements = const <String>[],
   });
 
-  factory GeneralParameters.dstu2(
-          {format = 'application/json+fhir', pretty, summary, elements}) =>
+  factory GeneralParameters.dstu2({
+    format = 'application/json+fhir',
+    pretty = false,
+    summary = Summary.none,
+    elements = const <String>[],
+  }) =>
       GeneralParameters(
           format: format, pretty: pretty, summary: summary, elements: elements);
 
-  factory GeneralParameters.stu3(
-          {format = 'application/fhir+json', pretty, summary, elements}) =>
+  factory GeneralParameters.stu3({
+    format = 'application/fhir+json',
+    pretty = false,
+    summary = Summary.none,
+    elements = const <String>[],
+  }) =>
       GeneralParameters(
           format: format, pretty: pretty, summary: summary, elements: elements);
 
-  factory GeneralParameters.r4(
-          {format = 'application/fhir+json', pretty, summary, elements}) =>
+  factory GeneralParameters.r4({
+    format = 'application/fhir+json',
+    pretty = false,
+    summary = Summary.none,
+    elements = const <String>[],
+  }) =>
       GeneralParameters(
           format: format, pretty: pretty, summary: summary, elements: elements);
 
-  factory GeneralParameters.r5(
-          {format = 'application/fhir+json', pretty, summary, elements}) =>
+  factory GeneralParameters.r5({
+    format = 'application/fhir+json',
+    pretty = false,
+    summary = Summary.none,
+    elements = const <String>[],
+  }) =>
       GeneralParameters(
           format: format, pretty: pretty, summary: summary, elements: elements);
 
