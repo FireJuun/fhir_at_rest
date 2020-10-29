@@ -53,22 +53,30 @@ abstract class CapabilitiesRequest with _$CapabilitiesRequest {
     final FHIRUri fhirUri = map(
       dstu2: (req) => FHIRUri.dstu2Capabilities(
         base: req.base,
-        pretty: req.pretty,
+        generalParameters: GeneralParameters.dstu2(
+          pretty: req.pretty,
+        ),
         mode: req.mode,
       ),
       stu3: (req) => FHIRUri.stu3Capabilities(
         base: req.base,
-        pretty: req.pretty,
+        generalParameters: GeneralParameters.stu3(
+          pretty: req.pretty,
+        ),
         mode: req.mode,
       ),
       r4: (req) => FHIRUri.r4Capabilities(
         base: req.base,
-        pretty: req.pretty,
+        generalParameters: GeneralParameters.r4(
+          pretty: req.pretty,
+        ),
         mode: req.mode,
       ),
       r5: (req) => FHIRUri.r5Capabilities(
         base: req.base,
-        pretty: req.pretty,
+        generalParameters: GeneralParameters.r5(
+          pretty: req.pretty,
+        ),
         mode: req.mode,
       ),
     );

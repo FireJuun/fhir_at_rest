@@ -15,40 +15,28 @@ abstract class FHIRUri with _$FHIRUri {
   */
   factory FHIRUri.dstu2Read({
     @required Uri base,
-    @Default('application/json+fhir') String mimeType,
-    @Default(false) bool pretty,
-    @Default(Summary.none) Summary summary,
-    @Default([]) List<String> elements,
+    GeneralParameters generalParameters,
     @required Dstu2Types type,
     @required Id id,
   }) = _FHIRUriDstu2Read;
 
   factory FHIRUri.stu3Read({
     @required Uri base,
-    @Default('application/fhir+json') String mimeType,
-    @Default(false) bool pretty,
-    @Default(Summary.none) Summary summary,
-    @Default([]) List<String> elements,
+    GeneralParameters generalParameters,
     @required Stu3Types type,
     @required Id id,
   }) = _FHIRUriStu3Read;
 
   factory FHIRUri.r4Read({
     @required Uri base,
-    @Default('application/fhir+json') String mimeType,
-    @Default(false) bool pretty,
-    @Default(Summary.none) Summary summary,
-    @Default([]) List<String> elements,
+    GeneralParameters generalParameters,
     @required R4Types type,
     @required Id id,
   }) = _FHIRUriR4Read;
 
   factory FHIRUri.r5Read({
     @required Uri base,
-    @Default('application/fhir+json') String mimeType,
-    @Default(false) bool pretty,
-    @Default(Summary.none) Summary summary,
-    @Default([]) List<String> elements,
+    GeneralParameters generalParameters,
     @required R5Types type,
     @required Id id,
   }) = _FHIRUriR5Read;
@@ -58,10 +46,7 @@ abstract class FHIRUri with _$FHIRUri {
   */
   factory FHIRUri.dstu2VRead({
     @required Uri base,
-    @Default('application/json+fhir') String mimeType,
-    @Default(false) bool pretty,
-    @Default(Summary.none) Summary summary,
-    @Default([]) List<String> elements,
+    GeneralParameters generalParameters,
     @required Dstu2Types type,
     @required Id id,
     @required Id vid,
@@ -69,10 +54,7 @@ abstract class FHIRUri with _$FHIRUri {
 
   factory FHIRUri.stu3VRead({
     @required Uri base,
-    @Default('application/fhir+json') String mimeType,
-    @Default(false) bool pretty,
-    @Default(Summary.none) Summary summary,
-    @Default([]) List<String> elements,
+    GeneralParameters generalParameters,
     @required Stu3Types type,
     @required Id id,
     @required Id vid,
@@ -80,10 +62,7 @@ abstract class FHIRUri with _$FHIRUri {
 
   factory FHIRUri.r4VRead({
     @required Uri base,
-    @Default('application/fhir+json') String mimeType,
-    @Default(false) bool pretty,
-    @Default(Summary.none) Summary summary,
-    @Default([]) List<String> elements,
+    GeneralParameters generalParameters,
     @required R4Types type,
     @required Id id,
     @required Id vid,
@@ -91,10 +70,7 @@ abstract class FHIRUri with _$FHIRUri {
 
   factory FHIRUri.r5VRead({
     @required Uri base,
-    @Default('application/fhir+json') String mimeType,
-    @Default(false) bool pretty,
-    @Default(Summary.none) Summary summary,
-    @Default([]) List<String> elements,
+    GeneralParameters generalParameters,
     @required R5Types type,
     @required Id id,
     @required Id vid,
@@ -105,40 +81,28 @@ abstract class FHIRUri with _$FHIRUri {
   */
   factory FHIRUri.dstu2Update({
     @required Uri base,
-    @Default('application/json+fhir') String mimeType,
-    @Default(false) bool pretty,
-    @Default(Summary.none) Summary summary,
-    @Default([]) List<String> elements,
+    GeneralParameters generalParameters,
     @required Dstu2Types type,
     @required Id id,
   }) = _FHIRUriDstu2Update;
 
   factory FHIRUri.stu3Update({
     @required Uri base,
-    @Default('application/fhir+json') String mimeType,
-    @Default(false) bool pretty,
-    @Default(Summary.none) Summary summary,
-    @Default([]) List<String> elements,
+    GeneralParameters generalParameters,
     @required Stu3Types type,
     @required Id id,
   }) = _FHIRUriStu3Update;
 
   factory FHIRUri.r4Update({
     @required Uri base,
-    @Default('application/fhir+json') String mimeType,
-    @Default(false) bool pretty,
-    @Default(Summary.none) Summary summary,
-    @Default([]) List<String> elements,
+    GeneralParameters generalParameters,
     @required R4Types type,
     @required Id id,
   }) = _FHIRUriR4Update;
 
   factory FHIRUri.r5Update({
     @required Uri base,
-    @Default('application/fhir+json') String mimeType,
-    @Default(false) bool pretty,
-    @Default(Summary.none) Summary summary,
-    @Default([]) List<String> elements,
+    GeneralParameters generalParameters,
     @required R5Types type,
     @required Id id,
   }) = _FHIRUriR5Update;
@@ -148,40 +112,28 @@ abstract class FHIRUri with _$FHIRUri {
   */
   factory FHIRUri.dstu2Patch({
     @required Uri base,
-    @Default('application/json+fhir') String mimeType,
-    @Default(false) bool pretty,
-    @Default(Summary.none) Summary summary,
-    @Default([]) List<String> elements,
+    GeneralParameters generalParameters,
     @required Dstu2Types type,
     @required Id id,
   }) = _FHIRUriDstu2Patch;
 
   factory FHIRUri.stu3Patch({
     @required Uri base,
-    @Default('application/fhir+json') String mimeType,
-    @Default(false) bool pretty,
-    @Default(Summary.none) Summary summary,
-    @Default([]) List<String> elements,
+    GeneralParameters generalParameters,
     @required Stu3Types type,
     @required Id id,
   }) = _FHIRUriStu3Patch;
 
   factory FHIRUri.r4Patch({
     @required Uri base,
-    @Default('application/fhir+json') String mimeType,
-    @Default(false) bool pretty,
-    @Default(Summary.none) Summary summary,
-    @Default([]) List<String> elements,
+    GeneralParameters generalParameters,
     @required R4Types type,
     @required Id id,
   }) = _FHIRUriR4Patch;
 
   factory FHIRUri.r5Patch({
     @required Uri base,
-    @Default('application/fhir+json') String mimeType,
-    @Default(false) bool pretty,
-    @Default(Summary.none) Summary summary,
-    @Default([]) List<String> elements,
+    GeneralParameters generalParameters,
     @required R5Types type,
     @required Id id,
   }) = _FHIRUriR5Patch;
@@ -191,40 +143,28 @@ abstract class FHIRUri with _$FHIRUri {
   */
   factory FHIRUri.dstu2Delete({
     @required Uri base,
-    @Default('application/json+fhir') String mimeType,
-    @Default(false) bool pretty,
-    @Default(Summary.none) Summary summary,
-    @Default([]) List<String> elements,
+    GeneralParameters generalParameters,
     @required Dstu2Types type,
     @required Id id,
   }) = _FHIRUriDstu2Delete;
 
   factory FHIRUri.stu3Delete({
     @required Uri base,
-    @Default('application/fhir+json') String mimeType,
-    @Default(false) bool pretty,
-    @Default(Summary.none) Summary summary,
-    @Default([]) List<String> elements,
+    GeneralParameters generalParameters,
     @required Stu3Types type,
     @required Id id,
   }) = _FHIRUriStu3Delete;
 
   factory FHIRUri.r4Delete({
     @required Uri base,
-    @Default('application/fhir+json') String mimeType,
-    @Default(false) bool pretty,
-    @Default(Summary.none) Summary summary,
-    @Default([]) List<String> elements,
+    GeneralParameters generalParameters,
     @required R4Types type,
     @required Id id,
   }) = _FHIRUriR4Delete;
 
   factory FHIRUri.r5Delete({
     @required Uri base,
-    @Default('application/fhir+json') String mimeType,
-    @Default(false) bool pretty,
-    @Default(Summary.none) Summary summary,
-    @Default([]) List<String> elements,
+    GeneralParameters generalParameters,
     @required R5Types type,
     @required Id id,
   }) = _FHIRUriR5Delete;
@@ -234,37 +174,25 @@ abstract class FHIRUri with _$FHIRUri {
   */
   factory FHIRUri.dstu2Create({
     @required Uri base,
-    @Default('application/json+fhir') String mimeType,
-    @Default(false) bool pretty,
-    @Default(Summary.none) Summary summary,
-    @Default([]) List<String> elements,
+    GeneralParameters generalParameters,
     @required Dstu2Types type,
   }) = _FHIRUriDstu2Create;
 
   factory FHIRUri.stu3Create({
     @required Uri base,
-    @Default('application/fhir+json') String mimeType,
-    @Default(false) bool pretty,
-    @Default(Summary.none) Summary summary,
-    @Default([]) List<String> elements,
+    GeneralParameters generalParameters,
     @required Stu3Types type,
   }) = _FHIRUriStu3Create;
 
   factory FHIRUri.r4Create({
     @required Uri base,
-    @Default('application/fhir+json') String mimeType,
-    @Default(false) bool pretty,
-    @Default(Summary.none) Summary summary,
-    @Default([]) List<String> elements,
+    GeneralParameters generalParameters,
     @required R4Types type,
   }) = _FHIRUriR4Create;
 
   factory FHIRUri.r5Create({
     @required Uri base,
-    @Default('application/fhir+json') String mimeType,
-    @Default(false) bool pretty,
-    @Default(Summary.none) Summary summary,
-    @Default([]) List<String> elements,
+    GeneralParameters generalParameters,
     @required R5Types type,
   }) = _FHIRUriR5Create;
 
@@ -273,40 +201,28 @@ abstract class FHIRUri with _$FHIRUri {
   */
   factory FHIRUri.dstu2Search({
     @required Uri base,
-    @Default('application/json+fhir') String mimeType,
-    @Default(false) bool pretty,
-    @Default(Summary.none) Summary summary,
-    @Default([]) List<String> elements,
+    GeneralParameters generalParameters,
     @required Dstu2Types type,
     @Default(RestfulRequest.get_) RestfulRequest restfulRequest,
   }) = _FHIRUriDstu2Search;
 
   factory FHIRUri.stu3Search({
     @required Uri base,
-    @Default('application/fhir+json') String mimeType,
-    @Default(false) bool pretty,
-    @Default(Summary.none) Summary summary,
-    @Default([]) List<String> elements,
+    GeneralParameters generalParameters,
     @required Stu3Types type,
     @Default(RestfulRequest.get_) RestfulRequest restfulRequest,
   }) = _FHIRUriStu3Search;
 
   factory FHIRUri.r4Search({
     @required Uri base,
-    @Default('application/fhir+json') String mimeType,
-    @Default(false) bool pretty,
-    @Default(Summary.none) Summary summary,
-    @Default([]) List<String> elements,
+    GeneralParameters generalParameters,
     @required R4Types type,
     @Default(RestfulRequest.get_) RestfulRequest restfulRequest,
   }) = _FHIRUriR4Search;
 
   factory FHIRUri.r5Search({
     @required Uri base,
-    @Default('application/fhir+json') String mimeType,
-    @Default(false) bool pretty,
-    @Default(Summary.none) Summary summary,
-    @Default([]) List<String> elements,
+    GeneralParameters generalParameters,
     @required R5Types type,
     @Default(RestfulRequest.get_) RestfulRequest restfulRequest,
   }) = _FHIRUriR5Search;
@@ -316,34 +232,22 @@ abstract class FHIRUri with _$FHIRUri {
   */
   factory FHIRUri.dstu2SearchAll({
     @required Uri base,
-    @Default('application/json+fhir') String mimeType,
-    @Default(false) bool pretty,
-    @Default(Summary.none) Summary summary,
-    @Default([]) List<String> elements,
+    GeneralParameters generalParameters,
   }) = _FHIRUriDstu2SearchAll;
 
   factory FHIRUri.stu3SearchAll({
     @required Uri base,
-    @Default('application/fhir+json') String mimeType,
-    @Default(false) bool pretty,
-    @Default(Summary.none) Summary summary,
-    @Default([]) List<String> elements,
+    GeneralParameters generalParameters,
   }) = _FHIRUriStu3SearchAll;
 
   factory FHIRUri.r4SearchAll({
     @required Uri base,
-    @Default('application/fhir+json') String mimeType,
-    @Default(false) bool pretty,
-    @Default(Summary.none) Summary summary,
-    @Default([]) List<String> elements,
+    GeneralParameters generalParameters,
   }) = _FHIRUriR4SearchAll;
 
   factory FHIRUri.r5SearchAll({
     @required Uri base,
-    @Default('application/fhir+json') String mimeType,
-    @Default(false) bool pretty,
-    @Default(Summary.none) Summary summary,
-    @Default([]) List<String> elements,
+    GeneralParameters generalParameters,
   }) = _FHIRUriR5SearchAll;
 
   /*
@@ -351,37 +255,25 @@ abstract class FHIRUri with _$FHIRUri {
   */
   factory FHIRUri.dstu2Capabilities({
     @required Uri base,
-    @Default('application/json+fhir') String mimeType,
-    @Default(false) bool pretty,
-    @Default(Summary.none) Summary summary,
-    @Default([]) List<String> elements,
+    GeneralParameters generalParameters,
     @Default(Mode.full) Mode mode,
   }) = _FHIRUriDstu2Capabilities;
 
   factory FHIRUri.stu3Capabilities({
     @required Uri base,
-    @Default('application/fhir+json') String mimeType,
-    @Default(false) bool pretty,
-    @Default(Summary.none) Summary summary,
-    @Default([]) List<String> elements,
+    GeneralParameters generalParameters,
     @Default(Mode.full) Mode mode,
   }) = _FHIRUriStu3Capabilities;
 
   factory FHIRUri.r4Capabilities({
     @required Uri base,
-    @Default('application/fhir+json') String mimeType,
-    @Default(false) bool pretty,
-    @Default(Summary.none) Summary summary,
-    @Default([]) List<String> elements,
+    GeneralParameters generalParameters,
     @Default(Mode.full) Mode mode,
   }) = _FHIRUriR4Capabilities;
 
   factory FHIRUri.r5Capabilities({
     @required Uri base,
-    @Default('application/fhir+json') String mimeType,
-    @Default(false) bool pretty,
-    @Default(Summary.none) Summary summary,
-    @Default([]) List<String> elements,
+    GeneralParameters generalParameters,
     @Default(Mode.full) Mode mode,
   }) = _FHIRUriR5Capabilities;
 
@@ -390,34 +282,22 @@ abstract class FHIRUri with _$FHIRUri {
   */
   factory FHIRUri.dstu2Transaction({
     @required Uri base,
-    @Default('application/json+fhir') String mimeType,
-    @Default(false) bool pretty,
-    @Default(Summary.none) Summary summary,
-    @Default([]) List<String> elements,
+    GeneralParameters generalParameters,
   }) = _FHIRUriDstu2Transaction;
 
   factory FHIRUri.stu3Transaction({
     @required Uri base,
-    @Default('application/fhir+json') String mimeType,
-    @Default(false) bool pretty,
-    @Default(Summary.none) Summary summary,
-    @Default([]) List<String> elements,
+    GeneralParameters generalParameters,
   }) = _FHIRUriStu3Transaction;
 
   factory FHIRUri.r4Transaction({
     @required Uri base,
-    @Default('application/fhir+json') String mimeType,
-    @Default(false) bool pretty,
-    @Default(Summary.none) Summary summary,
-    @Default([]) List<String> elements,
+    GeneralParameters generalParameters,
   }) = _FHIRUriR4Transaction;
 
   factory FHIRUri.r5Transaction({
     @required Uri base,
-    @Default('application/fhir+json') String mimeType,
-    @Default(false) bool pretty,
-    @Default(Summary.none) Summary summary,
-    @Default([]) List<String> elements,
+    GeneralParameters generalParameters,
   }) = _FHIRUriR5Transaction;
 
   /*
@@ -425,40 +305,28 @@ abstract class FHIRUri with _$FHIRUri {
   */
   factory FHIRUri.dstu2History({
     @required Uri base,
-    @Default('application/json+fhir') String mimeType,
-    @Default(false) bool pretty,
-    @Default(Summary.none) Summary summary,
-    @Default([]) List<String> elements,
+    GeneralParameters generalParameters,
     @required Dstu2Types type,
     @required Id id,
   }) = _FHIRUriDstu2History;
 
   factory FHIRUri.stu3History({
     @required Uri base,
-    @Default('application/fhir+json') String mimeType,
-    @Default(false) bool pretty,
-    @Default(Summary.none) Summary summary,
-    @Default([]) List<String> elements,
+    GeneralParameters generalParameters,
     @required Stu3Types type,
     @required Id id,
   }) = _FHIRUriStu3History;
 
   factory FHIRUri.r4History({
     @required Uri base,
-    @Default('application/fhir+json') String mimeType,
-    @Default(false) bool pretty,
-    @Default(Summary.none) Summary summary,
-    @Default([]) List<String> elements,
+    GeneralParameters generalParameters,
     @required R4Types type,
     @required Id id,
   }) = _FHIRUriR4History;
 
   factory FHIRUri.r5History({
     @required Uri base,
-    @Default('application/fhir+json') String mimeType,
-    @Default(false) bool pretty,
-    @Default(Summary.none) Summary summary,
-    @Default([]) List<String> elements,
+    GeneralParameters generalParameters,
     @required R5Types type,
     @required Id id,
   }) = _FHIRUriR5History;
@@ -468,37 +336,25 @@ abstract class FHIRUri with _$FHIRUri {
   */
   factory FHIRUri.dstu2HistoryType({
     @required Uri base,
-    @Default('application/json+fhir') String mimeType,
-    @Default(false) bool pretty,
-    @Default(Summary.none) Summary summary,
-    @Default([]) List<String> elements,
+    GeneralParameters generalParameters,
     @required Dstu2Types type,
   }) = _FHIRUriDstu2HistoryType;
 
   factory FHIRUri.stu3HistoryType({
     @required Uri base,
-    @Default('application/fhir+json') String mimeType,
-    @Default(false) bool pretty,
-    @Default(Summary.none) Summary summary,
-    @Default([]) List<String> elements,
+    GeneralParameters generalParameters,
     @required Stu3Types type,
   }) = _FHIRUriStu3HistoryType;
 
   factory FHIRUri.r4HistoryType({
     @required Uri base,
-    @Default('application/fhir+json') String mimeType,
-    @Default(false) bool pretty,
-    @Default(Summary.none) Summary summary,
-    @Default([]) List<String> elements,
+    GeneralParameters generalParameters,
     @required R4Types type,
   }) = _FHIRUriR4HistoryType;
 
   factory FHIRUri.r5HistoryType({
     @required Uri base,
-    @Default('application/fhir+json') String mimeType,
-    @Default(false) bool pretty,
-    @Default(Summary.none) Summary summary,
-    @Default([]) List<String> elements,
+    GeneralParameters generalParameters,
     @required R5Types type,
   }) = _FHIRUriR5HistoryType;
 
@@ -507,34 +363,22 @@ abstract class FHIRUri with _$FHIRUri {
   */
   factory FHIRUri.dstu2HistoryAll({
     @required Uri base,
-    @Default('application/json+fhir') String mimeType,
-    @Default(false) bool pretty,
-    @Default(Summary.none) Summary summary,
-    @Default([]) List<String> elements,
+    GeneralParameters generalParameters,
   }) = _FHIRUriDstu2HistoryAll;
 
   factory FHIRUri.stu3HistoryAll({
     @required Uri base,
-    @Default('application/fhir+json') String mimeType,
-    @Default(false) bool pretty,
-    @Default(Summary.none) Summary summary,
-    @Default([]) List<String> elements,
+    GeneralParameters generalParameters,
   }) = _FHIRUriStu3HistoryAll;
 
   factory FHIRUri.r4HistoryAll({
     @required Uri base,
-    @Default('application/fhir+json') String mimeType,
-    @Default(false) bool pretty,
-    @Default(Summary.none) Summary summary,
-    @Default([]) List<String> elements,
+    GeneralParameters generalParameters,
   }) = _FHIRUriR4HistoryAll;
 
   factory FHIRUri.r5HistoryAll({
     @required Uri base,
-    @Default('application/fhir+json') String mimeType,
-    @Default(false) bool pretty,
-    @Default(Summary.none) Summary summary,
-    @Default([]) List<String> elements,
+    GeneralParameters generalParameters,
   }) = _FHIRUriR5HistoryAll;
 
   /*
@@ -542,10 +386,7 @@ abstract class FHIRUri with _$FHIRUri {
   */
   factory FHIRUri.dstu2Operation({
     @required Uri base,
-    @Default('application/json+fhir') String mimeType,
-    @Default(false) bool pretty,
-    @Default(Summary.none) Summary summary,
-    @Default([]) List<String> elements,
+    GeneralParameters generalParameters,
     Dstu2Types type,
     Id id,
     @required String operation,
@@ -553,10 +394,7 @@ abstract class FHIRUri with _$FHIRUri {
 
   factory FHIRUri.stu3Operation({
     @required Uri base,
-    @Default('application/fhir+json') String mimeType,
-    @Default(false) bool pretty,
-    @Default(Summary.none) Summary summary,
-    @Default([]) List<String> elements,
+    GeneralParameters generalParameters,
     Stu3Types type,
     Id id,
     @required String operation,
@@ -564,10 +402,7 @@ abstract class FHIRUri with _$FHIRUri {
 
   factory FHIRUri.r4Operation({
     @required Uri base,
-    @Default('application/fhir+json') String mimeType,
-    @Default(false) bool pretty,
-    @Default(Summary.none) Summary summary,
-    @Default([]) List<String> elements,
+    GeneralParameters generalParameters,
     R4Types type,
     Id id,
     @required String operation,
@@ -575,10 +410,7 @@ abstract class FHIRUri with _$FHIRUri {
 
   factory FHIRUri.r5Operation({
     @required Uri base,
-    @Default('application/fhir+json') String mimeType,
-    @Default(false) bool pretty,
-    @Default(Summary.none) Summary summary,
-    @Default([]) List<String> elements,
+    GeneralParameters generalParameters,
     R5Types type,
     Id id,
     @required String operation,
@@ -602,22 +434,41 @@ abstract class FHIRUri with _$FHIRUri {
   }
 
   String _format({bool join = false}) => maybeMap(
-        dstu2Capabilities: (f) => _encodeParam('_format', mimeType, join: true),
-        stu3Capabilities: (f) => _encodeParam('_format', mimeType, join: true),
-        r4Capabilities: (f) => _encodeParam('_format', mimeType, join: true),
-        r5Capabilities: (f) => _encodeParam('_format', mimeType, join: true),
-        orElse: () => _encodeParam('_format', mimeType, join: join),
+        dstu2Capabilities: (f) =>
+            _encodeParam('_format', generalParameters.format, join: true),
+        stu3Capabilities: (f) =>
+            _encodeParam('_format', generalParameters.format, join: true),
+        r4Capabilities: (f) =>
+            _encodeParam('_format', generalParameters.format, join: true),
+        r5Capabilities: (f) =>
+            _encodeParam('_format', generalParameters.format, join: true),
+        orElse: () =>
+            _encodeParam('_format', generalParameters.format, join: join),
       );
 
-  String _pretty({bool join = true}) =>
-      pretty ? _encodeParam('_pretty', pretty.toString(), join: join) : '';
-
-  String _summary({bool join = true}) => summary != Summary.none
-      ? _encodeParam('_summary', enumToString(summary), join: join)
+  String _pretty({bool join = true}) => generalParameters.pretty
+      ? _encodeParam(
+          '_pretty',
+          generalParameters.pretty.toString(),
+          join: join,
+        )
       : '';
 
-  String _elements({bool join = true}) => elements.isNotEmpty
-      ? _encodeParam('_elements', elements.join(','), join: join)
+  String _summary({bool join = true}) =>
+      generalParameters.summary != Summary.none
+          ? _encodeParam(
+              '_summary',
+              enumToString(generalParameters.summary),
+              join: join,
+            )
+          : '';
+
+  String _elements({bool join = true}) => generalParameters.elements.isNotEmpty
+      ? _encodeParam(
+          '_elements',
+          generalParameters.elements.join(','),
+          join: join,
+        )
       : '';
 
   // RestfulRequest get httpVerb => map();
@@ -732,6 +583,40 @@ abstract class FHIRUri with _$FHIRUri {
   String toString() {
     return uri;
   }
+}
+
+class GeneralParameters {
+  GeneralParameters({
+    this.format = 'application/fhir+json',
+    this.pretty = false,
+    this.summary = Summary.none,
+    this.elements = const <String>[],
+  });
+
+  factory GeneralParameters.dstu2(
+          {format = 'application/json+fhir', pretty, summary, elements}) =>
+      GeneralParameters(
+          format: format, pretty: pretty, summary: summary, elements: elements);
+
+  factory GeneralParameters.stu3(
+          {format = 'application/fhir+json', pretty, summary, elements}) =>
+      GeneralParameters(
+          format: format, pretty: pretty, summary: summary, elements: elements);
+
+  factory GeneralParameters.r4(
+          {format = 'application/fhir+json', pretty, summary, elements}) =>
+      GeneralParameters(
+          format: format, pretty: pretty, summary: summary, elements: elements);
+
+  factory GeneralParameters.r5(
+          {format = 'application/fhir+json', pretty, summary, elements}) =>
+      GeneralParameters(
+          format: format, pretty: pretty, summary: summary, elements: elements);
+
+  final String format;
+  final bool pretty;
+  final Summary summary;
+  final List<String> elements;
 }
 
 final List<String> validMimeTypesDstu2 = [

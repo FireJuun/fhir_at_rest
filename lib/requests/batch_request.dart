@@ -76,23 +76,31 @@ abstract class BatchRequest with _$BatchRequest {
     final FHIRUri fhirUri = map(
       dstu2: (req) => FHIRUri.dstu2Transaction(
         base: req.base,
-        pretty: req.pretty,
-        summary: req.summary,
+        generalParameters: GeneralParameters.dstu2(
+          pretty: req.pretty,
+          summary: req.summary,
+        ),
       ),
       stu3: (req) => FHIRUri.stu3Transaction(
         base: req.base,
-        pretty: req.pretty,
-        summary: req.summary,
+        generalParameters: GeneralParameters.stu3(
+          pretty: req.pretty,
+          summary: req.summary,
+        ),
       ),
       r4: (req) => FHIRUri.r4Transaction(
         base: req.base,
-        pretty: req.pretty,
-        summary: req.summary,
+        generalParameters: GeneralParameters.r4(
+          pretty: req.pretty,
+          summary: req.summary,
+        ),
       ),
       r5: (req) => FHIRUri.r5Transaction(
         base: req.base,
-        pretty: req.pretty,
-        summary: req.summary,
+        generalParameters: GeneralParameters.r5(
+          pretty: req.pretty,
+          summary: req.summary,
+        ),
       ),
     );
 

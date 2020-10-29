@@ -62,29 +62,37 @@ abstract class DeleteRequest with _$DeleteRequest {
         base: req.base,
         type: req.type,
         id: req.id,
-        pretty: req.pretty,
-        summary: req.summary,
+        generalParameters: GeneralParameters.dstu2(
+          pretty: req.pretty,
+          summary: req.summary,
+        ),
       ),
       stu3: (req) => FHIRUri.stu3Delete(
         base: req.base,
         type: req.type,
         id: req.id,
-        pretty: req.pretty,
-        summary: req.summary,
+        generalParameters: GeneralParameters.stu3(
+          pretty: req.pretty,
+          summary: req.summary,
+        ),
       ),
       r4: (req) => FHIRUri.r4Delete(
         base: req.base,
         type: req.type,
         id: req.id,
-        pretty: req.pretty,
-        summary: req.summary,
+        generalParameters: GeneralParameters.r4(
+          pretty: req.pretty,
+          summary: req.summary,
+        ),
       ),
       r5: (req) => FHIRUri.r5Delete(
         base: req.base,
         type: req.type,
         id: req.id,
-        pretty: req.pretty,
-        summary: req.summary,
+        generalParameters: GeneralParameters.r5(
+          pretty: req.pretty,
+          summary: req.summary,
+        ),
       ),
     );
 

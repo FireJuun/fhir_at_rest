@@ -66,32 +66,40 @@ abstract class VreadRequest with _$VreadRequest {
         type: req.type,
         id: req.id,
         vid: req.versionId,
-        pretty: req.pretty,
-        summary: req.summary,
+        generalParameters: GeneralParameters.dstu2(
+          pretty: req.pretty,
+          summary: req.summary,
+        ),
       ),
       stu3: (req) => FHIRUri.stu3VRead(
         base: req.base,
         type: req.type,
         id: req.id,
         vid: req.versionId,
-        pretty: req.pretty,
-        summary: req.summary,
+        generalParameters: GeneralParameters.stu3(
+          pretty: req.pretty,
+          summary: req.summary,
+        ),
       ),
       r4: (req) => FHIRUri.r4VRead(
         base: req.base,
         type: req.type,
         id: req.id,
         vid: req.versionId,
-        pretty: req.pretty,
-        summary: req.summary,
+        generalParameters: GeneralParameters.r4(
+          pretty: req.pretty,
+          summary: req.summary,
+        ),
       ),
       r5: (req) => FHIRUri.r5VRead(
         base: req.base,
         type: req.type,
         id: req.id,
         vid: req.versionId,
-        pretty: req.pretty,
-        summary: req.summary,
+        generalParameters: GeneralParameters.r5(
+          pretty: req.pretty,
+          summary: req.summary,
+        ),
       ),
     );
 

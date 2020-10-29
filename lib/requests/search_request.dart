@@ -55,42 +55,58 @@ abstract class SearchRequest with _$SearchRequest {
       dstu2: (req) => req.type == null
           ? FHIRUri.dstu2SearchAll(
               base: req.base,
-              pretty: req.pretty,
+              generalParameters: GeneralParameters.dstu2(
+                pretty: req.pretty,
+              ),
             )
           : FHIRUri.dstu2Search(
               base: req.base,
               type: req.type,
-              pretty: req.pretty,
+              generalParameters: GeneralParameters.stu3(
+                pretty: req.pretty,
+              ),
             ),
       stu3: (req) => req.type == null
           ? FHIRUri.stu3SearchAll(
               base: req.base,
-              pretty: req.pretty,
+              generalParameters: GeneralParameters.r4(
+                pretty: req.pretty,
+              ),
             )
           : FHIRUri.stu3Search(
               base: req.base,
               type: req.type,
-              pretty: req.pretty,
+              generalParameters: GeneralParameters.r5(
+                pretty: req.pretty,
+              ),
             ),
       r4: (req) => req.type == null
           ? FHIRUri.r4SearchAll(
               base: req.base,
-              pretty: req.pretty,
+              generalParameters: GeneralParameters.dstu2(
+                pretty: req.pretty,
+              ),
             )
           : FHIRUri.r4Search(
               base: req.base,
               type: req.type,
-              pretty: req.pretty,
+              generalParameters: GeneralParameters.stu3(
+                pretty: req.pretty,
+              ),
             ),
       r5: (req) => req.type == null
           ? FHIRUri.r5SearchAll(
               base: req.base,
-              pretty: req.pretty,
+              generalParameters: GeneralParameters.r4(
+                pretty: req.pretty,
+              ),
             )
           : FHIRUri.r5Search(
               base: req.base,
               type: req.type,
-              pretty: req.pretty,
+              generalParameters: GeneralParameters.r5(
+                pretty: req.pretty,
+              ),
             ),
     );
 

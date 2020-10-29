@@ -57,26 +57,34 @@ abstract class CreateRequest with _$CreateRequest {
       dstu2: (req) => FHIRUri.dstu2Create(
         base: req.base,
         type: req.type,
-        pretty: req.pretty,
-        summary: req.summary,
+        generalParameters: GeneralParameters.dstu2(
+          pretty: req.pretty,
+          summary: req.summary,
+        ),
       ),
       stu3: (req) => FHIRUri.stu3Create(
         base: req.base,
         type: req.type,
-        pretty: req.pretty,
-        summary: req.summary,
+        generalParameters: GeneralParameters.stu3(
+          pretty: req.pretty,
+          summary: req.summary,
+        ),
       ),
       r4: (req) => FHIRUri.r4Create(
         base: req.base,
         type: req.type,
-        pretty: req.pretty,
-        summary: req.summary,
+        generalParameters: GeneralParameters.r4(
+          pretty: req.pretty,
+          summary: req.summary,
+        ),
       ),
       r5: (req) => FHIRUri.r5Create(
         base: req.base,
         type: req.type,
-        pretty: req.pretty,
-        summary: req.summary,
+        generalParameters: GeneralParameters.r5(
+          pretty: req.pretty,
+          summary: req.summary,
+        ),
       ),
     );
 

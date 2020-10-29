@@ -61,29 +61,37 @@ abstract class ReadRequest with _$ReadRequest {
         base: req.base,
         type: req.type,
         id: req.id,
-        pretty: req.pretty,
-        summary: req.summary,
+        generalParameters: GeneralParameters.dstu2(
+          pretty: req.pretty,
+          summary: req.summary,
+        ),
       ),
       stu3: (req) => FHIRUri.stu3Read(
         base: req.base,
         type: req.type,
         id: req.id,
-        pretty: req.pretty,
-        summary: req.summary,
+        generalParameters: GeneralParameters.stu3(
+          pretty: req.pretty,
+          summary: req.summary,
+        ),
       ),
       r4: (req) => FHIRUri.r4Read(
         base: req.base,
         type: req.type,
         id: req.id,
-        pretty: req.pretty,
-        summary: req.summary,
+        generalParameters: GeneralParameters.r4(
+          pretty: req.pretty,
+          summary: req.summary,
+        ),
       ),
       r5: (req) => FHIRUri.r5Read(
         base: req.base,
         type: req.type,
         id: req.id,
-        pretty: req.pretty,
-        summary: req.summary,
+        generalParameters: GeneralParameters.r5(
+          pretty: req.pretty,
+          summary: req.summary,
+        ),
       ),
     );
 
