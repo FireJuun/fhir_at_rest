@@ -7,6 +7,7 @@ import 'package:fhir/dstu2.dart' as dstu2;
 import 'package:fhir/stu3.dart' as stu3;
 import 'package:fhir/r4.dart' as r4;
 import 'package:fhir/r5.dart' as r5;
+import 'package:http/http.dart';
 
 import '../enums/enums.dart';
 import '../failures/restful_failure.dart';
@@ -25,6 +26,7 @@ abstract class VreadRequest with _$VreadRequest {
     @required Id versionId,
     @Default(false) bool pretty,
     @Default(Summary.none) Summary summary,
+    Client client,
   }) = _VreadRequestDstu2;
 
   factory VreadRequest.stu3({
@@ -34,6 +36,7 @@ abstract class VreadRequest with _$VreadRequest {
     @required Id versionId,
     @Default(false) bool pretty,
     @Default(Summary.none) Summary summary,
+    Client client,
   }) = _VreadRequestStu3;
 
   factory VreadRequest.r4({
@@ -43,6 +46,7 @@ abstract class VreadRequest with _$VreadRequest {
     @required Id versionId,
     @Default(false) bool pretty,
     @Default(Summary.none) Summary summary,
+    Client client,
   }) = _VreadRequestR4;
 
   factory VreadRequest.r5({
@@ -52,6 +56,7 @@ abstract class VreadRequest with _$VreadRequest {
     @required Id versionId,
     @Default(false) bool pretty,
     @Default(Summary.none) Summary summary,
+    Client client,
   }) = _VreadRequestR5;
 
   Future<Either<RestfulFailure, dynamic>> request() async {
@@ -93,6 +98,7 @@ abstract class VreadRequest with _$VreadRequest {
     final result = await makeRequest(
       type: RestfulRequest.get_,
       thisRequest: fhirUri.uri,
+      client: client,
     );
 
     return result.fold(

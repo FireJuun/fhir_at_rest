@@ -7,6 +7,7 @@ import 'package:fhir/dstu2.dart' as dstu2;
 import 'package:fhir/stu3.dart' as stu3;
 import 'package:fhir/r4.dart' as r4;
 import 'package:fhir/r5.dart' as r5;
+import 'package:http/http.dart';
 
 import '../enums/enums.dart';
 import '../failures/restful_failure.dart';
@@ -25,6 +26,7 @@ abstract class PatchRequest with _$PatchRequest {
     @required Id id,
     @Default(false) bool pretty,
     @Default(Summary.none) Summary summary,
+    Client client,
   }) = _PatchRequestDstu2;
 
   factory PatchRequest.stu3({
@@ -33,6 +35,7 @@ abstract class PatchRequest with _$PatchRequest {
     @required Id id,
     @Default(false) bool pretty,
     @Default(Summary.none) Summary summary,
+    Client client,
   }) = _PatchRequestStu3;
 
   factory PatchRequest.r4({
@@ -41,6 +44,7 @@ abstract class PatchRequest with _$PatchRequest {
     @required Id id,
     @Default(false) bool pretty,
     @Default(Summary.none) Summary summary,
+    Client client,
   }) = _PatchRequestR4;
 
   factory PatchRequest.r5({
@@ -49,6 +53,7 @@ abstract class PatchRequest with _$PatchRequest {
     @required Id id,
     @Default(false) bool pretty,
     @Default(Summary.none) Summary summary,
+    Client client,
   }) = _PatchRequestR5;
 
   Future<Either<RestfulFailure, dynamic>> request({
@@ -103,9 +108,11 @@ abstract class PatchRequest with _$PatchRequest {
     }
 
     final result = await makeRequest(
-        type: RestfulRequest.patch_,
-        thisRequest: fhirUri.uri + searchString,
-        resource: resource.toJson());
+      type: RestfulRequest.patch_,
+      thisRequest: fhirUri.uri + searchString,
+      resource: resource.toJson(),
+      client: client,
+    );
 
     return result.fold(
       (l) => left(l),

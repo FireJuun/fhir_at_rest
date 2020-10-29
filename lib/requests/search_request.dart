@@ -6,6 +6,7 @@ import 'package:fhir/dstu2.dart' as dstu2;
 import 'package:fhir/stu3.dart' as stu3;
 import 'package:fhir/r4.dart' as r4;
 import 'package:fhir/r5.dart' as r5;
+import 'package:http/http.dart';
 
 import '../failures/restful_failure.dart';
 import '../resource_types/resource_types.dart';
@@ -22,6 +23,7 @@ abstract class SearchRequest with _$SearchRequest {
     @required Dstu2Types type,
     @Default(false) bool pretty,
     Dstu2SearchParameters parameters,
+    Client client,
   }) = _SearchRequestDstu2;
 
   factory SearchRequest.stu3({
@@ -29,6 +31,7 @@ abstract class SearchRequest with _$SearchRequest {
     @required Stu3Types type,
     @Default(false) bool pretty,
     Stu3SearchParameters parameters,
+    Client client,
   }) = _SearchRequestStu3;
 
   factory SearchRequest.r4({
@@ -36,6 +39,7 @@ abstract class SearchRequest with _$SearchRequest {
     @required R4Types type,
     @Default(false) bool pretty,
     R4SearchParameters parameters,
+    Client client,
   }) = _SearchRequestR4;
 
   factory SearchRequest.r5({
@@ -43,6 +47,7 @@ abstract class SearchRequest with _$SearchRequest {
     R5Types type,
     @Default(false) bool pretty,
     R5SearchParameters parameters,
+    Client client,
   }) = _SearchRequestR5;
 
   Future<Either<RestfulFailure, dynamic>> request() async {
@@ -107,6 +112,7 @@ abstract class SearchRequest with _$SearchRequest {
     final result = await makeRequest(
       type: RestfulRequest.get_,
       thisRequest: fhirUri.uri + searchString,
+      client: client,
     );
 
     return result.fold(

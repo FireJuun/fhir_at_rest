@@ -7,6 +7,7 @@ import 'package:fhir/dstu2.dart' as dstu2;
 import 'package:fhir/stu3.dart' as stu3;
 import 'package:fhir/r4.dart' as r4;
 import 'package:fhir/r5.dart' as r5;
+import 'package:http/http.dart';
 
 import '../failures/restful_failure.dart';
 import '../resource_types/resource_types.dart';
@@ -26,6 +27,7 @@ abstract class HistoryRequest with _$HistoryRequest {
     Instant since,
     FhirDateTime at,
     SearchReference reference,
+    Client client,
   }) = _HistoryRequestDstu2;
 
   factory HistoryRequest.stu3({
@@ -36,6 +38,7 @@ abstract class HistoryRequest with _$HistoryRequest {
     Instant since,
     FhirDateTime at,
     SearchReference reference,
+    Client client,
   }) = _HistoryRequestStu3;
 
   factory HistoryRequest.r4({
@@ -46,6 +49,7 @@ abstract class HistoryRequest with _$HistoryRequest {
     Instant since,
     FhirDateTime at,
     SearchReference reference,
+    Client client,
   }) = _HistoryRequestR4;
 
   factory HistoryRequest.r5({
@@ -56,6 +60,7 @@ abstract class HistoryRequest with _$HistoryRequest {
     Instant since,
     FhirDateTime at,
     SearchReference reference,
+    Client client,
   }) = _HistoryRequestR5;
 
   Future<Either<RestfulFailure, dynamic>> request() async {
@@ -126,6 +131,7 @@ abstract class HistoryRequest with _$HistoryRequest {
     final result = await makeRequest(
       type: RestfulRequest.get_,
       thisRequest: fhirUri.uri + parameters,
+      client: client,
     );
 
     return result.fold(

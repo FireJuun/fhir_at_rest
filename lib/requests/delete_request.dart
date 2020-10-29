@@ -8,6 +8,7 @@ import 'package:fhir/dstu2.dart' as dstu2;
 import 'package:fhir/stu3.dart' as stu3;
 import 'package:fhir/r4.dart' as r4;
 import 'package:fhir/r5.dart' as r5;
+import 'package:http/http.dart';
 
 import '../enums/enums.dart';
 import '../failures/restful_failure.dart';
@@ -25,6 +26,7 @@ abstract class DeleteRequest with _$DeleteRequest {
     @required Id id,
     @Default(false) bool pretty,
     @Default(Summary.none) Summary summary,
+    Client client,
   }) = _DeleteRequestDstu2;
 
   factory DeleteRequest.stu3({
@@ -33,6 +35,7 @@ abstract class DeleteRequest with _$DeleteRequest {
     @required Id id,
     @Default(false) bool pretty,
     @Default(Summary.none) Summary summary,
+    Client client,
   }) = _DeleteRequestStu3;
 
   factory DeleteRequest.r4({
@@ -41,6 +44,7 @@ abstract class DeleteRequest with _$DeleteRequest {
     @required Id id,
     @Default(false) bool pretty,
     @Default(Summary.none) Summary summary,
+    Client client,
   }) = _DeleteRequestR4;
 
   factory DeleteRequest.r5({
@@ -49,6 +53,7 @@ abstract class DeleteRequest with _$DeleteRequest {
     @required Id id,
     @Default(false) bool pretty,
     @Default(Summary.none) Summary summary,
+    Client client,
   }) = _DeleteRequestR5;
 
   Future<Either<RestfulFailure, dynamic>> request({dynamic search}) async {
@@ -107,6 +112,7 @@ abstract class DeleteRequest with _$DeleteRequest {
     final result = await makeRequest(
       type: RestfulRequest.delete_,
       thisRequest: fhirUri.uri + searchString,
+      client: client,
     );
 
     return result.fold(

@@ -17,11 +17,13 @@ class _$BatchRequestTearOff {
   _BatchRequestDstu2 dstu2(
       {@required Uri base,
       bool pretty = false,
-      Summary summary = Summary.none}) {
+      Summary summary = Summary.none,
+      Client client}) {
     return _BatchRequestDstu2(
       base: base,
       pretty: pretty,
       summary: summary,
+      client: client,
     );
   }
 
@@ -29,11 +31,13 @@ class _$BatchRequestTearOff {
   _BatchRequestStu3 stu3(
       {@required Uri base,
       bool pretty = false,
-      Summary summary = Summary.none}) {
+      Summary summary = Summary.none,
+      Client client}) {
     return _BatchRequestStu3(
       base: base,
       pretty: pretty,
       summary: summary,
+      client: client,
     );
   }
 
@@ -41,11 +45,13 @@ class _$BatchRequestTearOff {
   _BatchRequestR4 r4(
       {@required Uri base,
       bool pretty = false,
-      Summary summary = Summary.none}) {
+      Summary summary = Summary.none,
+      Client client}) {
     return _BatchRequestR4(
       base: base,
       pretty: pretty,
       summary: summary,
+      client: client,
     );
   }
 
@@ -53,11 +59,13 @@ class _$BatchRequestTearOff {
   _BatchRequestR5 r5(
       {@required Uri base,
       bool pretty = false,
-      Summary summary = Summary.none}) {
+      Summary summary = Summary.none,
+      Client client}) {
     return _BatchRequestR5(
       base: base,
       pretty: pretty,
       summary: summary,
+      client: client,
     );
   }
 }
@@ -71,20 +79,23 @@ mixin _$BatchRequest {
   Uri get base;
   bool get pretty;
   Summary get summary;
+  Client get client;
 
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result dstu2(Uri base, bool pretty, Summary summary),
-    @required Result stu3(Uri base, bool pretty, Summary summary),
-    @required Result r4(Uri base, bool pretty, Summary summary),
-    @required Result r5(Uri base, bool pretty, Summary summary),
+    @required
+        Result dstu2(Uri base, bool pretty, Summary summary, Client client),
+    @required
+        Result stu3(Uri base, bool pretty, Summary summary, Client client),
+    @required Result r4(Uri base, bool pretty, Summary summary, Client client),
+    @required Result r5(Uri base, bool pretty, Summary summary, Client client),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result dstu2(Uri base, bool pretty, Summary summary),
-    Result stu3(Uri base, bool pretty, Summary summary),
-    Result r4(Uri base, bool pretty, Summary summary),
-    Result r5(Uri base, bool pretty, Summary summary),
+    Result dstu2(Uri base, bool pretty, Summary summary, Client client),
+    Result stu3(Uri base, bool pretty, Summary summary, Client client),
+    Result r4(Uri base, bool pretty, Summary summary, Client client),
+    Result r5(Uri base, bool pretty, Summary summary, Client client),
     @required Result orElse(),
   });
   @optionalTypeArgs
@@ -111,7 +122,7 @@ abstract class $BatchRequestCopyWith<$Res> {
   factory $BatchRequestCopyWith(
           BatchRequest value, $Res Function(BatchRequest) then) =
       _$BatchRequestCopyWithImpl<$Res>;
-  $Res call({Uri base, bool pretty, Summary summary});
+  $Res call({Uri base, bool pretty, Summary summary, Client client});
 }
 
 /// @nodoc
@@ -127,11 +138,13 @@ class _$BatchRequestCopyWithImpl<$Res> implements $BatchRequestCopyWith<$Res> {
     Object base = freezed,
     Object pretty = freezed,
     Object summary = freezed,
+    Object client = freezed,
   }) {
     return _then(_value.copyWith(
       base: base == freezed ? _value.base : base as Uri,
       pretty: pretty == freezed ? _value.pretty : pretty as bool,
       summary: summary == freezed ? _value.summary : summary as Summary,
+      client: client == freezed ? _value.client : client as Client,
     ));
   }
 }
@@ -143,7 +156,7 @@ abstract class _$BatchRequestDstu2CopyWith<$Res>
           _BatchRequestDstu2 value, $Res Function(_BatchRequestDstu2) then) =
       __$BatchRequestDstu2CopyWithImpl<$Res>;
   @override
-  $Res call({Uri base, bool pretty, Summary summary});
+  $Res call({Uri base, bool pretty, Summary summary, Client client});
 }
 
 /// @nodoc
@@ -162,11 +175,13 @@ class __$BatchRequestDstu2CopyWithImpl<$Res>
     Object base = freezed,
     Object pretty = freezed,
     Object summary = freezed,
+    Object client = freezed,
   }) {
     return _then(_BatchRequestDstu2(
       base: base == freezed ? _value.base : base as Uri,
       pretty: pretty == freezed ? _value.pretty : pretty as bool,
       summary: summary == freezed ? _value.summary : summary as Summary,
+      client: client == freezed ? _value.client : client as Client,
     ));
   }
 }
@@ -174,7 +189,10 @@ class __$BatchRequestDstu2CopyWithImpl<$Res>
 /// @nodoc
 class _$_BatchRequestDstu2 extends _BatchRequestDstu2 {
   _$_BatchRequestDstu2(
-      {@required this.base, this.pretty = false, this.summary = Summary.none})
+      {@required this.base,
+      this.pretty = false,
+      this.summary = Summary.none,
+      this.client})
       : assert(base != null),
         assert(pretty != null),
         assert(summary != null),
@@ -188,10 +206,12 @@ class _$_BatchRequestDstu2 extends _BatchRequestDstu2 {
   @JsonKey(defaultValue: Summary.none)
   @override
   final Summary summary;
+  @override
+  final Client client;
 
   @override
   String toString() {
-    return 'BatchRequest.dstu2(base: $base, pretty: $pretty, summary: $summary)';
+    return 'BatchRequest.dstu2(base: $base, pretty: $pretty, summary: $summary, client: $client)';
   }
 
   @override
@@ -203,7 +223,10 @@ class _$_BatchRequestDstu2 extends _BatchRequestDstu2 {
             (identical(other.pretty, pretty) ||
                 const DeepCollectionEquality().equals(other.pretty, pretty)) &&
             (identical(other.summary, summary) ||
-                const DeepCollectionEquality().equals(other.summary, summary)));
+                const DeepCollectionEquality()
+                    .equals(other.summary, summary)) &&
+            (identical(other.client, client) ||
+                const DeepCollectionEquality().equals(other.client, client)));
   }
 
   @override
@@ -211,7 +234,8 @@ class _$_BatchRequestDstu2 extends _BatchRequestDstu2 {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(base) ^
       const DeepCollectionEquality().hash(pretty) ^
-      const DeepCollectionEquality().hash(summary);
+      const DeepCollectionEquality().hash(summary) ^
+      const DeepCollectionEquality().hash(client);
 
   @override
   _$BatchRequestDstu2CopyWith<_BatchRequestDstu2> get copyWith =>
@@ -220,30 +244,32 @@ class _$_BatchRequestDstu2 extends _BatchRequestDstu2 {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result dstu2(Uri base, bool pretty, Summary summary),
-    @required Result stu3(Uri base, bool pretty, Summary summary),
-    @required Result r4(Uri base, bool pretty, Summary summary),
-    @required Result r5(Uri base, bool pretty, Summary summary),
+    @required
+        Result dstu2(Uri base, bool pretty, Summary summary, Client client),
+    @required
+        Result stu3(Uri base, bool pretty, Summary summary, Client client),
+    @required Result r4(Uri base, bool pretty, Summary summary, Client client),
+    @required Result r5(Uri base, bool pretty, Summary summary, Client client),
   }) {
     assert(dstu2 != null);
     assert(stu3 != null);
     assert(r4 != null);
     assert(r5 != null);
-    return dstu2(base, pretty, summary);
+    return dstu2(base, pretty, summary, client);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result dstu2(Uri base, bool pretty, Summary summary),
-    Result stu3(Uri base, bool pretty, Summary summary),
-    Result r4(Uri base, bool pretty, Summary summary),
-    Result r5(Uri base, bool pretty, Summary summary),
+    Result dstu2(Uri base, bool pretty, Summary summary, Client client),
+    Result stu3(Uri base, bool pretty, Summary summary, Client client),
+    Result r4(Uri base, bool pretty, Summary summary, Client client),
+    Result r5(Uri base, bool pretty, Summary summary, Client client),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (dstu2 != null) {
-      return dstu2(base, pretty, summary);
+      return dstu2(base, pretty, summary, client);
     }
     return orElse();
   }
@@ -285,7 +311,8 @@ abstract class _BatchRequestDstu2 extends BatchRequest {
   factory _BatchRequestDstu2(
       {@required Uri base,
       bool pretty,
-      Summary summary}) = _$_BatchRequestDstu2;
+      Summary summary,
+      Client client}) = _$_BatchRequestDstu2;
 
   @override
   Uri get base;
@@ -293,6 +320,8 @@ abstract class _BatchRequestDstu2 extends BatchRequest {
   bool get pretty;
   @override
   Summary get summary;
+  @override
+  Client get client;
   @override
   _$BatchRequestDstu2CopyWith<_BatchRequestDstu2> get copyWith;
 }
@@ -304,7 +333,7 @@ abstract class _$BatchRequestStu3CopyWith<$Res>
           _BatchRequestStu3 value, $Res Function(_BatchRequestStu3) then) =
       __$BatchRequestStu3CopyWithImpl<$Res>;
   @override
-  $Res call({Uri base, bool pretty, Summary summary});
+  $Res call({Uri base, bool pretty, Summary summary, Client client});
 }
 
 /// @nodoc
@@ -323,11 +352,13 @@ class __$BatchRequestStu3CopyWithImpl<$Res>
     Object base = freezed,
     Object pretty = freezed,
     Object summary = freezed,
+    Object client = freezed,
   }) {
     return _then(_BatchRequestStu3(
       base: base == freezed ? _value.base : base as Uri,
       pretty: pretty == freezed ? _value.pretty : pretty as bool,
       summary: summary == freezed ? _value.summary : summary as Summary,
+      client: client == freezed ? _value.client : client as Client,
     ));
   }
 }
@@ -335,7 +366,10 @@ class __$BatchRequestStu3CopyWithImpl<$Res>
 /// @nodoc
 class _$_BatchRequestStu3 extends _BatchRequestStu3 {
   _$_BatchRequestStu3(
-      {@required this.base, this.pretty = false, this.summary = Summary.none})
+      {@required this.base,
+      this.pretty = false,
+      this.summary = Summary.none,
+      this.client})
       : assert(base != null),
         assert(pretty != null),
         assert(summary != null),
@@ -349,10 +383,12 @@ class _$_BatchRequestStu3 extends _BatchRequestStu3 {
   @JsonKey(defaultValue: Summary.none)
   @override
   final Summary summary;
+  @override
+  final Client client;
 
   @override
   String toString() {
-    return 'BatchRequest.stu3(base: $base, pretty: $pretty, summary: $summary)';
+    return 'BatchRequest.stu3(base: $base, pretty: $pretty, summary: $summary, client: $client)';
   }
 
   @override
@@ -364,7 +400,10 @@ class _$_BatchRequestStu3 extends _BatchRequestStu3 {
             (identical(other.pretty, pretty) ||
                 const DeepCollectionEquality().equals(other.pretty, pretty)) &&
             (identical(other.summary, summary) ||
-                const DeepCollectionEquality().equals(other.summary, summary)));
+                const DeepCollectionEquality()
+                    .equals(other.summary, summary)) &&
+            (identical(other.client, client) ||
+                const DeepCollectionEquality().equals(other.client, client)));
   }
 
   @override
@@ -372,7 +411,8 @@ class _$_BatchRequestStu3 extends _BatchRequestStu3 {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(base) ^
       const DeepCollectionEquality().hash(pretty) ^
-      const DeepCollectionEquality().hash(summary);
+      const DeepCollectionEquality().hash(summary) ^
+      const DeepCollectionEquality().hash(client);
 
   @override
   _$BatchRequestStu3CopyWith<_BatchRequestStu3> get copyWith =>
@@ -381,30 +421,32 @@ class _$_BatchRequestStu3 extends _BatchRequestStu3 {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result dstu2(Uri base, bool pretty, Summary summary),
-    @required Result stu3(Uri base, bool pretty, Summary summary),
-    @required Result r4(Uri base, bool pretty, Summary summary),
-    @required Result r5(Uri base, bool pretty, Summary summary),
+    @required
+        Result dstu2(Uri base, bool pretty, Summary summary, Client client),
+    @required
+        Result stu3(Uri base, bool pretty, Summary summary, Client client),
+    @required Result r4(Uri base, bool pretty, Summary summary, Client client),
+    @required Result r5(Uri base, bool pretty, Summary summary, Client client),
   }) {
     assert(dstu2 != null);
     assert(stu3 != null);
     assert(r4 != null);
     assert(r5 != null);
-    return stu3(base, pretty, summary);
+    return stu3(base, pretty, summary, client);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result dstu2(Uri base, bool pretty, Summary summary),
-    Result stu3(Uri base, bool pretty, Summary summary),
-    Result r4(Uri base, bool pretty, Summary summary),
-    Result r5(Uri base, bool pretty, Summary summary),
+    Result dstu2(Uri base, bool pretty, Summary summary, Client client),
+    Result stu3(Uri base, bool pretty, Summary summary, Client client),
+    Result r4(Uri base, bool pretty, Summary summary, Client client),
+    Result r5(Uri base, bool pretty, Summary summary, Client client),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (stu3 != null) {
-      return stu3(base, pretty, summary);
+      return stu3(base, pretty, summary, client);
     }
     return orElse();
   }
@@ -444,7 +486,10 @@ class _$_BatchRequestStu3 extends _BatchRequestStu3 {
 abstract class _BatchRequestStu3 extends BatchRequest {
   _BatchRequestStu3._() : super._();
   factory _BatchRequestStu3(
-      {@required Uri base, bool pretty, Summary summary}) = _$_BatchRequestStu3;
+      {@required Uri base,
+      bool pretty,
+      Summary summary,
+      Client client}) = _$_BatchRequestStu3;
 
   @override
   Uri get base;
@@ -452,6 +497,8 @@ abstract class _BatchRequestStu3 extends BatchRequest {
   bool get pretty;
   @override
   Summary get summary;
+  @override
+  Client get client;
   @override
   _$BatchRequestStu3CopyWith<_BatchRequestStu3> get copyWith;
 }
@@ -463,7 +510,7 @@ abstract class _$BatchRequestR4CopyWith<$Res>
           _BatchRequestR4 value, $Res Function(_BatchRequestR4) then) =
       __$BatchRequestR4CopyWithImpl<$Res>;
   @override
-  $Res call({Uri base, bool pretty, Summary summary});
+  $Res call({Uri base, bool pretty, Summary summary, Client client});
 }
 
 /// @nodoc
@@ -482,11 +529,13 @@ class __$BatchRequestR4CopyWithImpl<$Res>
     Object base = freezed,
     Object pretty = freezed,
     Object summary = freezed,
+    Object client = freezed,
   }) {
     return _then(_BatchRequestR4(
       base: base == freezed ? _value.base : base as Uri,
       pretty: pretty == freezed ? _value.pretty : pretty as bool,
       summary: summary == freezed ? _value.summary : summary as Summary,
+      client: client == freezed ? _value.client : client as Client,
     ));
   }
 }
@@ -494,7 +543,10 @@ class __$BatchRequestR4CopyWithImpl<$Res>
 /// @nodoc
 class _$_BatchRequestR4 extends _BatchRequestR4 {
   _$_BatchRequestR4(
-      {@required this.base, this.pretty = false, this.summary = Summary.none})
+      {@required this.base,
+      this.pretty = false,
+      this.summary = Summary.none,
+      this.client})
       : assert(base != null),
         assert(pretty != null),
         assert(summary != null),
@@ -508,10 +560,12 @@ class _$_BatchRequestR4 extends _BatchRequestR4 {
   @JsonKey(defaultValue: Summary.none)
   @override
   final Summary summary;
+  @override
+  final Client client;
 
   @override
   String toString() {
-    return 'BatchRequest.r4(base: $base, pretty: $pretty, summary: $summary)';
+    return 'BatchRequest.r4(base: $base, pretty: $pretty, summary: $summary, client: $client)';
   }
 
   @override
@@ -523,7 +577,10 @@ class _$_BatchRequestR4 extends _BatchRequestR4 {
             (identical(other.pretty, pretty) ||
                 const DeepCollectionEquality().equals(other.pretty, pretty)) &&
             (identical(other.summary, summary) ||
-                const DeepCollectionEquality().equals(other.summary, summary)));
+                const DeepCollectionEquality()
+                    .equals(other.summary, summary)) &&
+            (identical(other.client, client) ||
+                const DeepCollectionEquality().equals(other.client, client)));
   }
 
   @override
@@ -531,7 +588,8 @@ class _$_BatchRequestR4 extends _BatchRequestR4 {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(base) ^
       const DeepCollectionEquality().hash(pretty) ^
-      const DeepCollectionEquality().hash(summary);
+      const DeepCollectionEquality().hash(summary) ^
+      const DeepCollectionEquality().hash(client);
 
   @override
   _$BatchRequestR4CopyWith<_BatchRequestR4> get copyWith =>
@@ -540,30 +598,32 @@ class _$_BatchRequestR4 extends _BatchRequestR4 {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result dstu2(Uri base, bool pretty, Summary summary),
-    @required Result stu3(Uri base, bool pretty, Summary summary),
-    @required Result r4(Uri base, bool pretty, Summary summary),
-    @required Result r5(Uri base, bool pretty, Summary summary),
+    @required
+        Result dstu2(Uri base, bool pretty, Summary summary, Client client),
+    @required
+        Result stu3(Uri base, bool pretty, Summary summary, Client client),
+    @required Result r4(Uri base, bool pretty, Summary summary, Client client),
+    @required Result r5(Uri base, bool pretty, Summary summary, Client client),
   }) {
     assert(dstu2 != null);
     assert(stu3 != null);
     assert(r4 != null);
     assert(r5 != null);
-    return r4(base, pretty, summary);
+    return r4(base, pretty, summary, client);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result dstu2(Uri base, bool pretty, Summary summary),
-    Result stu3(Uri base, bool pretty, Summary summary),
-    Result r4(Uri base, bool pretty, Summary summary),
-    Result r5(Uri base, bool pretty, Summary summary),
+    Result dstu2(Uri base, bool pretty, Summary summary, Client client),
+    Result stu3(Uri base, bool pretty, Summary summary, Client client),
+    Result r4(Uri base, bool pretty, Summary summary, Client client),
+    Result r5(Uri base, bool pretty, Summary summary, Client client),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (r4 != null) {
-      return r4(base, pretty, summary);
+      return r4(base, pretty, summary, client);
     }
     return orElse();
   }
@@ -602,8 +662,11 @@ class _$_BatchRequestR4 extends _BatchRequestR4 {
 
 abstract class _BatchRequestR4 extends BatchRequest {
   _BatchRequestR4._() : super._();
-  factory _BatchRequestR4({@required Uri base, bool pretty, Summary summary}) =
-      _$_BatchRequestR4;
+  factory _BatchRequestR4(
+      {@required Uri base,
+      bool pretty,
+      Summary summary,
+      Client client}) = _$_BatchRequestR4;
 
   @override
   Uri get base;
@@ -611,6 +674,8 @@ abstract class _BatchRequestR4 extends BatchRequest {
   bool get pretty;
   @override
   Summary get summary;
+  @override
+  Client get client;
   @override
   _$BatchRequestR4CopyWith<_BatchRequestR4> get copyWith;
 }
@@ -622,7 +687,7 @@ abstract class _$BatchRequestR5CopyWith<$Res>
           _BatchRequestR5 value, $Res Function(_BatchRequestR5) then) =
       __$BatchRequestR5CopyWithImpl<$Res>;
   @override
-  $Res call({Uri base, bool pretty, Summary summary});
+  $Res call({Uri base, bool pretty, Summary summary, Client client});
 }
 
 /// @nodoc
@@ -641,11 +706,13 @@ class __$BatchRequestR5CopyWithImpl<$Res>
     Object base = freezed,
     Object pretty = freezed,
     Object summary = freezed,
+    Object client = freezed,
   }) {
     return _then(_BatchRequestR5(
       base: base == freezed ? _value.base : base as Uri,
       pretty: pretty == freezed ? _value.pretty : pretty as bool,
       summary: summary == freezed ? _value.summary : summary as Summary,
+      client: client == freezed ? _value.client : client as Client,
     ));
   }
 }
@@ -653,7 +720,10 @@ class __$BatchRequestR5CopyWithImpl<$Res>
 /// @nodoc
 class _$_BatchRequestR5 extends _BatchRequestR5 {
   _$_BatchRequestR5(
-      {@required this.base, this.pretty = false, this.summary = Summary.none})
+      {@required this.base,
+      this.pretty = false,
+      this.summary = Summary.none,
+      this.client})
       : assert(base != null),
         assert(pretty != null),
         assert(summary != null),
@@ -667,10 +737,12 @@ class _$_BatchRequestR5 extends _BatchRequestR5 {
   @JsonKey(defaultValue: Summary.none)
   @override
   final Summary summary;
+  @override
+  final Client client;
 
   @override
   String toString() {
-    return 'BatchRequest.r5(base: $base, pretty: $pretty, summary: $summary)';
+    return 'BatchRequest.r5(base: $base, pretty: $pretty, summary: $summary, client: $client)';
   }
 
   @override
@@ -682,7 +754,10 @@ class _$_BatchRequestR5 extends _BatchRequestR5 {
             (identical(other.pretty, pretty) ||
                 const DeepCollectionEquality().equals(other.pretty, pretty)) &&
             (identical(other.summary, summary) ||
-                const DeepCollectionEquality().equals(other.summary, summary)));
+                const DeepCollectionEquality()
+                    .equals(other.summary, summary)) &&
+            (identical(other.client, client) ||
+                const DeepCollectionEquality().equals(other.client, client)));
   }
 
   @override
@@ -690,7 +765,8 @@ class _$_BatchRequestR5 extends _BatchRequestR5 {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(base) ^
       const DeepCollectionEquality().hash(pretty) ^
-      const DeepCollectionEquality().hash(summary);
+      const DeepCollectionEquality().hash(summary) ^
+      const DeepCollectionEquality().hash(client);
 
   @override
   _$BatchRequestR5CopyWith<_BatchRequestR5> get copyWith =>
@@ -699,30 +775,32 @@ class _$_BatchRequestR5 extends _BatchRequestR5 {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result dstu2(Uri base, bool pretty, Summary summary),
-    @required Result stu3(Uri base, bool pretty, Summary summary),
-    @required Result r4(Uri base, bool pretty, Summary summary),
-    @required Result r5(Uri base, bool pretty, Summary summary),
+    @required
+        Result dstu2(Uri base, bool pretty, Summary summary, Client client),
+    @required
+        Result stu3(Uri base, bool pretty, Summary summary, Client client),
+    @required Result r4(Uri base, bool pretty, Summary summary, Client client),
+    @required Result r5(Uri base, bool pretty, Summary summary, Client client),
   }) {
     assert(dstu2 != null);
     assert(stu3 != null);
     assert(r4 != null);
     assert(r5 != null);
-    return r5(base, pretty, summary);
+    return r5(base, pretty, summary, client);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result dstu2(Uri base, bool pretty, Summary summary),
-    Result stu3(Uri base, bool pretty, Summary summary),
-    Result r4(Uri base, bool pretty, Summary summary),
-    Result r5(Uri base, bool pretty, Summary summary),
+    Result dstu2(Uri base, bool pretty, Summary summary, Client client),
+    Result stu3(Uri base, bool pretty, Summary summary, Client client),
+    Result r4(Uri base, bool pretty, Summary summary, Client client),
+    Result r5(Uri base, bool pretty, Summary summary, Client client),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (r5 != null) {
-      return r5(base, pretty, summary);
+      return r5(base, pretty, summary, client);
     }
     return orElse();
   }
@@ -761,8 +839,11 @@ class _$_BatchRequestR5 extends _BatchRequestR5 {
 
 abstract class _BatchRequestR5 extends BatchRequest {
   _BatchRequestR5._() : super._();
-  factory _BatchRequestR5({@required Uri base, bool pretty, Summary summary}) =
-      _$_BatchRequestR5;
+  factory _BatchRequestR5(
+      {@required Uri base,
+      bool pretty,
+      Summary summary,
+      Client client}) = _$_BatchRequestR5;
 
   @override
   Uri get base;
@@ -770,6 +851,8 @@ abstract class _BatchRequestR5 extends BatchRequest {
   bool get pretty;
   @override
   Summary get summary;
+  @override
+  Client get client;
   @override
   _$BatchRequestR5CopyWith<_BatchRequestR5> get copyWith;
 }

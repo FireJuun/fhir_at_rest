@@ -6,6 +6,7 @@ import 'package:fhir/dstu2.dart' as dstu2;
 import 'package:fhir/stu3.dart' as stu3;
 import 'package:fhir/r4.dart' as r4;
 import 'package:fhir/r5.dart' as r5;
+import 'package:http/http.dart';
 
 import '../enums/enums.dart';
 import '../failures/restful_failure.dart';
@@ -20,24 +21,28 @@ abstract class TransactionRequest with _$TransactionRequest {
     @required Uri base,
     @Default(false) bool pretty,
     @Default(Summary.none) Summary summary,
+    Client client,
   }) = _TransactionRequestDstu2;
 
   factory TransactionRequest.stu3({
     @required Uri base,
     @Default(false) bool pretty,
     @Default(Summary.none) Summary summary,
+    Client client,
   }) = _TransactionRequestStu3;
 
   factory TransactionRequest.r4({
     @required Uri base,
     @Default(false) bool pretty,
     @Default(Summary.none) Summary summary,
+    Client client,
   }) = _TransactionRequestR4;
 
   factory TransactionRequest.r5({
     @required Uri base,
     @Default(false) bool pretty,
     @Default(Summary.none) Summary summary,
+    Client client,
   }) = _TransactionRequestR5;
 
   Future<Either<RestfulFailure, dynamic>> request(dynamic resource) async {
@@ -94,9 +99,11 @@ abstract class TransactionRequest with _$TransactionRequest {
     );
 
     final result = await makeRequest(
-        type: RestfulRequest.get_,
-        thisRequest: fhirUri.uri,
-        resource: resource.toJson());
+      type: RestfulRequest.get_,
+      thisRequest: fhirUri.uri,
+      resource: resource.toJson(),
+      client: client,
+    );
 
     return result.fold(
       (l) => left(l),

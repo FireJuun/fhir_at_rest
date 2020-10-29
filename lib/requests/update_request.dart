@@ -8,6 +8,7 @@ import 'package:fhir/dstu2.dart' as dstu2;
 import 'package:fhir/stu3.dart' as stu3;
 import 'package:fhir/r4.dart' as r4;
 import 'package:fhir/r5.dart' as r5;
+import 'package:http/http.dart';
 
 import '../enums/enums.dart';
 import '../failures/restful_failure.dart';
@@ -25,6 +26,7 @@ abstract class UpdateRequest with _$UpdateRequest {
     @required Id id,
     @Default(false) bool pretty,
     @Default(Summary.none) Summary summary,
+    Client client,
   }) = _UpdateRequestDstu2;
 
   factory UpdateRequest.stu3({
@@ -33,6 +35,7 @@ abstract class UpdateRequest with _$UpdateRequest {
     @required Id id,
     @Default(false) bool pretty,
     @Default(Summary.none) Summary summary,
+    Client client,
   }) = _UpdateRequestStu3;
 
   factory UpdateRequest.r4({
@@ -41,6 +44,7 @@ abstract class UpdateRequest with _$UpdateRequest {
     @required Id id,
     @Default(false) bool pretty,
     @Default(Summary.none) Summary summary,
+    Client client,
   }) = _UpdateRequestR4;
 
   factory UpdateRequest.r5({
@@ -49,6 +53,7 @@ abstract class UpdateRequest with _$UpdateRequest {
     @required Id id,
     @Default(false) bool pretty,
     @Default(Summary.none) Summary summary,
+    Client client,
   }) = _UpdateRequestR5;
 
   Future<Either<RestfulFailure, dynamic>> request({
@@ -104,9 +109,11 @@ abstract class UpdateRequest with _$UpdateRequest {
     }
 
     final result = await makeRequest(
-        type: RestfulRequest.put_,
-        thisRequest: fhirUri.uri + searchString,
-        resource: resource.toJson());
+      type: RestfulRequest.put_,
+      thisRequest: fhirUri.uri + searchString,
+      resource: resource.toJson(),
+      client: client,
+    );
 
     return result.fold(
       (l) => left(l),

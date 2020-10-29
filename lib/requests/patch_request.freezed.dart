@@ -19,13 +19,15 @@ class _$PatchRequestTearOff {
       @required Dstu2Types type,
       @required Id id,
       bool pretty = false,
-      Summary summary = Summary.none}) {
+      Summary summary = Summary.none,
+      Client client}) {
     return _PatchRequestDstu2(
       base: base,
       type: type,
       id: id,
       pretty: pretty,
       summary: summary,
+      client: client,
     );
   }
 
@@ -35,13 +37,15 @@ class _$PatchRequestTearOff {
       @required Stu3Types type,
       @required Id id,
       bool pretty = false,
-      Summary summary = Summary.none}) {
+      Summary summary = Summary.none,
+      Client client}) {
     return _PatchRequestStu3(
       base: base,
       type: type,
       id: id,
       pretty: pretty,
       summary: summary,
+      client: client,
     );
   }
 
@@ -51,13 +55,15 @@ class _$PatchRequestTearOff {
       @required R4Types type,
       @required Id id,
       bool pretty = false,
-      Summary summary = Summary.none}) {
+      Summary summary = Summary.none,
+      Client client}) {
     return _PatchRequestR4(
       base: base,
       type: type,
       id: id,
       pretty: pretty,
       summary: summary,
+      client: client,
     );
   }
 
@@ -67,13 +73,15 @@ class _$PatchRequestTearOff {
       @required R5Types type,
       @required Id id,
       bool pretty = false,
-      Summary summary = Summary.none}) {
+      Summary summary = Summary.none,
+      Client client}) {
     return _PatchRequestR5(
       base: base,
       type: type,
       id: id,
       pretty: pretty,
       summary: summary,
+      client: client,
     );
   }
 }
@@ -88,27 +96,33 @@ mixin _$PatchRequest {
   Id get id;
   bool get pretty;
   Summary get summary;
+  Client get client;
 
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required
-        Result dstu2(
-            Uri base, Dstu2Types type, Id id, bool pretty, Summary summary),
+        Result dstu2(Uri base, Dstu2Types type, Id id, bool pretty,
+            Summary summary, Client client),
     @required
-        Result stu3(
-            Uri base, Stu3Types type, Id id, bool pretty, Summary summary),
+        Result stu3(Uri base, Stu3Types type, Id id, bool pretty,
+            Summary summary, Client client),
     @required
-        Result r4(Uri base, R4Types type, Id id, bool pretty, Summary summary),
+        Result r4(Uri base, R4Types type, Id id, bool pretty, Summary summary,
+            Client client),
     @required
-        Result r5(Uri base, R5Types type, Id id, bool pretty, Summary summary),
+        Result r5(Uri base, R5Types type, Id id, bool pretty, Summary summary,
+            Client client),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result dstu2(
-        Uri base, Dstu2Types type, Id id, bool pretty, Summary summary),
-    Result stu3(Uri base, Stu3Types type, Id id, bool pretty, Summary summary),
-    Result r4(Uri base, R4Types type, Id id, bool pretty, Summary summary),
-    Result r5(Uri base, R5Types type, Id id, bool pretty, Summary summary),
+    Result dstu2(Uri base, Dstu2Types type, Id id, bool pretty, Summary summary,
+        Client client),
+    Result stu3(Uri base, Stu3Types type, Id id, bool pretty, Summary summary,
+        Client client),
+    Result r4(Uri base, R4Types type, Id id, bool pretty, Summary summary,
+        Client client),
+    Result r5(Uri base, R5Types type, Id id, bool pretty, Summary summary,
+        Client client),
     @required Result orElse(),
   });
   @optionalTypeArgs
@@ -135,7 +149,7 @@ abstract class $PatchRequestCopyWith<$Res> {
   factory $PatchRequestCopyWith(
           PatchRequest value, $Res Function(PatchRequest) then) =
       _$PatchRequestCopyWithImpl<$Res>;
-  $Res call({Uri base, Id id, bool pretty, Summary summary});
+  $Res call({Uri base, Id id, bool pretty, Summary summary, Client client});
 }
 
 /// @nodoc
@@ -152,12 +166,14 @@ class _$PatchRequestCopyWithImpl<$Res> implements $PatchRequestCopyWith<$Res> {
     Object id = freezed,
     Object pretty = freezed,
     Object summary = freezed,
+    Object client = freezed,
   }) {
     return _then(_value.copyWith(
       base: base == freezed ? _value.base : base as Uri,
       id: id == freezed ? _value.id : id as Id,
       pretty: pretty == freezed ? _value.pretty : pretty as bool,
       summary: summary == freezed ? _value.summary : summary as Summary,
+      client: client == freezed ? _value.client : client as Client,
     ));
   }
 }
@@ -169,7 +185,13 @@ abstract class _$PatchRequestDstu2CopyWith<$Res>
           _PatchRequestDstu2 value, $Res Function(_PatchRequestDstu2) then) =
       __$PatchRequestDstu2CopyWithImpl<$Res>;
   @override
-  $Res call({Uri base, Dstu2Types type, Id id, bool pretty, Summary summary});
+  $Res call(
+      {Uri base,
+      Dstu2Types type,
+      Id id,
+      bool pretty,
+      Summary summary,
+      Client client});
 }
 
 /// @nodoc
@@ -190,6 +212,7 @@ class __$PatchRequestDstu2CopyWithImpl<$Res>
     Object id = freezed,
     Object pretty = freezed,
     Object summary = freezed,
+    Object client = freezed,
   }) {
     return _then(_PatchRequestDstu2(
       base: base == freezed ? _value.base : base as Uri,
@@ -197,6 +220,7 @@ class __$PatchRequestDstu2CopyWithImpl<$Res>
       id: id == freezed ? _value.id : id as Id,
       pretty: pretty == freezed ? _value.pretty : pretty as bool,
       summary: summary == freezed ? _value.summary : summary as Summary,
+      client: client == freezed ? _value.client : client as Client,
     ));
   }
 }
@@ -208,7 +232,8 @@ class _$_PatchRequestDstu2 extends _PatchRequestDstu2 {
       @required this.type,
       @required this.id,
       this.pretty = false,
-      this.summary = Summary.none})
+      this.summary = Summary.none,
+      this.client})
       : assert(base != null),
         assert(type != null),
         assert(id != null),
@@ -228,10 +253,12 @@ class _$_PatchRequestDstu2 extends _PatchRequestDstu2 {
   @JsonKey(defaultValue: Summary.none)
   @override
   final Summary summary;
+  @override
+  final Client client;
 
   @override
   String toString() {
-    return 'PatchRequest.dstu2(base: $base, type: $type, id: $id, pretty: $pretty, summary: $summary)';
+    return 'PatchRequest.dstu2(base: $base, type: $type, id: $id, pretty: $pretty, summary: $summary, client: $client)';
   }
 
   @override
@@ -247,7 +274,10 @@ class _$_PatchRequestDstu2 extends _PatchRequestDstu2 {
             (identical(other.pretty, pretty) ||
                 const DeepCollectionEquality().equals(other.pretty, pretty)) &&
             (identical(other.summary, summary) ||
-                const DeepCollectionEquality().equals(other.summary, summary)));
+                const DeepCollectionEquality()
+                    .equals(other.summary, summary)) &&
+            (identical(other.client, client) ||
+                const DeepCollectionEquality().equals(other.client, client)));
   }
 
   @override
@@ -257,7 +287,8 @@ class _$_PatchRequestDstu2 extends _PatchRequestDstu2 {
       const DeepCollectionEquality().hash(type) ^
       const DeepCollectionEquality().hash(id) ^
       const DeepCollectionEquality().hash(pretty) ^
-      const DeepCollectionEquality().hash(summary);
+      const DeepCollectionEquality().hash(summary) ^
+      const DeepCollectionEquality().hash(client);
 
   @override
   _$PatchRequestDstu2CopyWith<_PatchRequestDstu2> get copyWith =>
@@ -267,36 +298,41 @@ class _$_PatchRequestDstu2 extends _PatchRequestDstu2 {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required
-        Result dstu2(
-            Uri base, Dstu2Types type, Id id, bool pretty, Summary summary),
+        Result dstu2(Uri base, Dstu2Types type, Id id, bool pretty,
+            Summary summary, Client client),
     @required
-        Result stu3(
-            Uri base, Stu3Types type, Id id, bool pretty, Summary summary),
+        Result stu3(Uri base, Stu3Types type, Id id, bool pretty,
+            Summary summary, Client client),
     @required
-        Result r4(Uri base, R4Types type, Id id, bool pretty, Summary summary),
+        Result r4(Uri base, R4Types type, Id id, bool pretty, Summary summary,
+            Client client),
     @required
-        Result r5(Uri base, R5Types type, Id id, bool pretty, Summary summary),
+        Result r5(Uri base, R5Types type, Id id, bool pretty, Summary summary,
+            Client client),
   }) {
     assert(dstu2 != null);
     assert(stu3 != null);
     assert(r4 != null);
     assert(r5 != null);
-    return dstu2(base, type, id, pretty, summary);
+    return dstu2(base, type, id, pretty, summary, client);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result dstu2(
-        Uri base, Dstu2Types type, Id id, bool pretty, Summary summary),
-    Result stu3(Uri base, Stu3Types type, Id id, bool pretty, Summary summary),
-    Result r4(Uri base, R4Types type, Id id, bool pretty, Summary summary),
-    Result r5(Uri base, R5Types type, Id id, bool pretty, Summary summary),
+    Result dstu2(Uri base, Dstu2Types type, Id id, bool pretty, Summary summary,
+        Client client),
+    Result stu3(Uri base, Stu3Types type, Id id, bool pretty, Summary summary,
+        Client client),
+    Result r4(Uri base, R4Types type, Id id, bool pretty, Summary summary,
+        Client client),
+    Result r5(Uri base, R5Types type, Id id, bool pretty, Summary summary,
+        Client client),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (dstu2 != null) {
-      return dstu2(base, type, id, pretty, summary);
+      return dstu2(base, type, id, pretty, summary, client);
     }
     return orElse();
   }
@@ -340,7 +376,8 @@ abstract class _PatchRequestDstu2 extends PatchRequest {
       @required Dstu2Types type,
       @required Id id,
       bool pretty,
-      Summary summary}) = _$_PatchRequestDstu2;
+      Summary summary,
+      Client client}) = _$_PatchRequestDstu2;
 
   @override
   Uri get base;
@@ -352,6 +389,8 @@ abstract class _PatchRequestDstu2 extends PatchRequest {
   @override
   Summary get summary;
   @override
+  Client get client;
+  @override
   _$PatchRequestDstu2CopyWith<_PatchRequestDstu2> get copyWith;
 }
 
@@ -362,7 +401,13 @@ abstract class _$PatchRequestStu3CopyWith<$Res>
           _PatchRequestStu3 value, $Res Function(_PatchRequestStu3) then) =
       __$PatchRequestStu3CopyWithImpl<$Res>;
   @override
-  $Res call({Uri base, Stu3Types type, Id id, bool pretty, Summary summary});
+  $Res call(
+      {Uri base,
+      Stu3Types type,
+      Id id,
+      bool pretty,
+      Summary summary,
+      Client client});
 }
 
 /// @nodoc
@@ -383,6 +428,7 @@ class __$PatchRequestStu3CopyWithImpl<$Res>
     Object id = freezed,
     Object pretty = freezed,
     Object summary = freezed,
+    Object client = freezed,
   }) {
     return _then(_PatchRequestStu3(
       base: base == freezed ? _value.base : base as Uri,
@@ -390,6 +436,7 @@ class __$PatchRequestStu3CopyWithImpl<$Res>
       id: id == freezed ? _value.id : id as Id,
       pretty: pretty == freezed ? _value.pretty : pretty as bool,
       summary: summary == freezed ? _value.summary : summary as Summary,
+      client: client == freezed ? _value.client : client as Client,
     ));
   }
 }
@@ -401,7 +448,8 @@ class _$_PatchRequestStu3 extends _PatchRequestStu3 {
       @required this.type,
       @required this.id,
       this.pretty = false,
-      this.summary = Summary.none})
+      this.summary = Summary.none,
+      this.client})
       : assert(base != null),
         assert(type != null),
         assert(id != null),
@@ -421,10 +469,12 @@ class _$_PatchRequestStu3 extends _PatchRequestStu3 {
   @JsonKey(defaultValue: Summary.none)
   @override
   final Summary summary;
+  @override
+  final Client client;
 
   @override
   String toString() {
-    return 'PatchRequest.stu3(base: $base, type: $type, id: $id, pretty: $pretty, summary: $summary)';
+    return 'PatchRequest.stu3(base: $base, type: $type, id: $id, pretty: $pretty, summary: $summary, client: $client)';
   }
 
   @override
@@ -440,7 +490,10 @@ class _$_PatchRequestStu3 extends _PatchRequestStu3 {
             (identical(other.pretty, pretty) ||
                 const DeepCollectionEquality().equals(other.pretty, pretty)) &&
             (identical(other.summary, summary) ||
-                const DeepCollectionEquality().equals(other.summary, summary)));
+                const DeepCollectionEquality()
+                    .equals(other.summary, summary)) &&
+            (identical(other.client, client) ||
+                const DeepCollectionEquality().equals(other.client, client)));
   }
 
   @override
@@ -450,7 +503,8 @@ class _$_PatchRequestStu3 extends _PatchRequestStu3 {
       const DeepCollectionEquality().hash(type) ^
       const DeepCollectionEquality().hash(id) ^
       const DeepCollectionEquality().hash(pretty) ^
-      const DeepCollectionEquality().hash(summary);
+      const DeepCollectionEquality().hash(summary) ^
+      const DeepCollectionEquality().hash(client);
 
   @override
   _$PatchRequestStu3CopyWith<_PatchRequestStu3> get copyWith =>
@@ -460,36 +514,41 @@ class _$_PatchRequestStu3 extends _PatchRequestStu3 {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required
-        Result dstu2(
-            Uri base, Dstu2Types type, Id id, bool pretty, Summary summary),
+        Result dstu2(Uri base, Dstu2Types type, Id id, bool pretty,
+            Summary summary, Client client),
     @required
-        Result stu3(
-            Uri base, Stu3Types type, Id id, bool pretty, Summary summary),
+        Result stu3(Uri base, Stu3Types type, Id id, bool pretty,
+            Summary summary, Client client),
     @required
-        Result r4(Uri base, R4Types type, Id id, bool pretty, Summary summary),
+        Result r4(Uri base, R4Types type, Id id, bool pretty, Summary summary,
+            Client client),
     @required
-        Result r5(Uri base, R5Types type, Id id, bool pretty, Summary summary),
+        Result r5(Uri base, R5Types type, Id id, bool pretty, Summary summary,
+            Client client),
   }) {
     assert(dstu2 != null);
     assert(stu3 != null);
     assert(r4 != null);
     assert(r5 != null);
-    return stu3(base, type, id, pretty, summary);
+    return stu3(base, type, id, pretty, summary, client);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result dstu2(
-        Uri base, Dstu2Types type, Id id, bool pretty, Summary summary),
-    Result stu3(Uri base, Stu3Types type, Id id, bool pretty, Summary summary),
-    Result r4(Uri base, R4Types type, Id id, bool pretty, Summary summary),
-    Result r5(Uri base, R5Types type, Id id, bool pretty, Summary summary),
+    Result dstu2(Uri base, Dstu2Types type, Id id, bool pretty, Summary summary,
+        Client client),
+    Result stu3(Uri base, Stu3Types type, Id id, bool pretty, Summary summary,
+        Client client),
+    Result r4(Uri base, R4Types type, Id id, bool pretty, Summary summary,
+        Client client),
+    Result r5(Uri base, R5Types type, Id id, bool pretty, Summary summary,
+        Client client),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (stu3 != null) {
-      return stu3(base, type, id, pretty, summary);
+      return stu3(base, type, id, pretty, summary, client);
     }
     return orElse();
   }
@@ -533,7 +592,8 @@ abstract class _PatchRequestStu3 extends PatchRequest {
       @required Stu3Types type,
       @required Id id,
       bool pretty,
-      Summary summary}) = _$_PatchRequestStu3;
+      Summary summary,
+      Client client}) = _$_PatchRequestStu3;
 
   @override
   Uri get base;
@@ -545,6 +605,8 @@ abstract class _PatchRequestStu3 extends PatchRequest {
   @override
   Summary get summary;
   @override
+  Client get client;
+  @override
   _$PatchRequestStu3CopyWith<_PatchRequestStu3> get copyWith;
 }
 
@@ -555,7 +617,13 @@ abstract class _$PatchRequestR4CopyWith<$Res>
           _PatchRequestR4 value, $Res Function(_PatchRequestR4) then) =
       __$PatchRequestR4CopyWithImpl<$Res>;
   @override
-  $Res call({Uri base, R4Types type, Id id, bool pretty, Summary summary});
+  $Res call(
+      {Uri base,
+      R4Types type,
+      Id id,
+      bool pretty,
+      Summary summary,
+      Client client});
 }
 
 /// @nodoc
@@ -576,6 +644,7 @@ class __$PatchRequestR4CopyWithImpl<$Res>
     Object id = freezed,
     Object pretty = freezed,
     Object summary = freezed,
+    Object client = freezed,
   }) {
     return _then(_PatchRequestR4(
       base: base == freezed ? _value.base : base as Uri,
@@ -583,6 +652,7 @@ class __$PatchRequestR4CopyWithImpl<$Res>
       id: id == freezed ? _value.id : id as Id,
       pretty: pretty == freezed ? _value.pretty : pretty as bool,
       summary: summary == freezed ? _value.summary : summary as Summary,
+      client: client == freezed ? _value.client : client as Client,
     ));
   }
 }
@@ -594,7 +664,8 @@ class _$_PatchRequestR4 extends _PatchRequestR4 {
       @required this.type,
       @required this.id,
       this.pretty = false,
-      this.summary = Summary.none})
+      this.summary = Summary.none,
+      this.client})
       : assert(base != null),
         assert(type != null),
         assert(id != null),
@@ -614,10 +685,12 @@ class _$_PatchRequestR4 extends _PatchRequestR4 {
   @JsonKey(defaultValue: Summary.none)
   @override
   final Summary summary;
+  @override
+  final Client client;
 
   @override
   String toString() {
-    return 'PatchRequest.r4(base: $base, type: $type, id: $id, pretty: $pretty, summary: $summary)';
+    return 'PatchRequest.r4(base: $base, type: $type, id: $id, pretty: $pretty, summary: $summary, client: $client)';
   }
 
   @override
@@ -633,7 +706,10 @@ class _$_PatchRequestR4 extends _PatchRequestR4 {
             (identical(other.pretty, pretty) ||
                 const DeepCollectionEquality().equals(other.pretty, pretty)) &&
             (identical(other.summary, summary) ||
-                const DeepCollectionEquality().equals(other.summary, summary)));
+                const DeepCollectionEquality()
+                    .equals(other.summary, summary)) &&
+            (identical(other.client, client) ||
+                const DeepCollectionEquality().equals(other.client, client)));
   }
 
   @override
@@ -643,7 +719,8 @@ class _$_PatchRequestR4 extends _PatchRequestR4 {
       const DeepCollectionEquality().hash(type) ^
       const DeepCollectionEquality().hash(id) ^
       const DeepCollectionEquality().hash(pretty) ^
-      const DeepCollectionEquality().hash(summary);
+      const DeepCollectionEquality().hash(summary) ^
+      const DeepCollectionEquality().hash(client);
 
   @override
   _$PatchRequestR4CopyWith<_PatchRequestR4> get copyWith =>
@@ -653,36 +730,41 @@ class _$_PatchRequestR4 extends _PatchRequestR4 {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required
-        Result dstu2(
-            Uri base, Dstu2Types type, Id id, bool pretty, Summary summary),
+        Result dstu2(Uri base, Dstu2Types type, Id id, bool pretty,
+            Summary summary, Client client),
     @required
-        Result stu3(
-            Uri base, Stu3Types type, Id id, bool pretty, Summary summary),
+        Result stu3(Uri base, Stu3Types type, Id id, bool pretty,
+            Summary summary, Client client),
     @required
-        Result r4(Uri base, R4Types type, Id id, bool pretty, Summary summary),
+        Result r4(Uri base, R4Types type, Id id, bool pretty, Summary summary,
+            Client client),
     @required
-        Result r5(Uri base, R5Types type, Id id, bool pretty, Summary summary),
+        Result r5(Uri base, R5Types type, Id id, bool pretty, Summary summary,
+            Client client),
   }) {
     assert(dstu2 != null);
     assert(stu3 != null);
     assert(r4 != null);
     assert(r5 != null);
-    return r4(base, type, id, pretty, summary);
+    return r4(base, type, id, pretty, summary, client);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result dstu2(
-        Uri base, Dstu2Types type, Id id, bool pretty, Summary summary),
-    Result stu3(Uri base, Stu3Types type, Id id, bool pretty, Summary summary),
-    Result r4(Uri base, R4Types type, Id id, bool pretty, Summary summary),
-    Result r5(Uri base, R5Types type, Id id, bool pretty, Summary summary),
+    Result dstu2(Uri base, Dstu2Types type, Id id, bool pretty, Summary summary,
+        Client client),
+    Result stu3(Uri base, Stu3Types type, Id id, bool pretty, Summary summary,
+        Client client),
+    Result r4(Uri base, R4Types type, Id id, bool pretty, Summary summary,
+        Client client),
+    Result r5(Uri base, R5Types type, Id id, bool pretty, Summary summary,
+        Client client),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (r4 != null) {
-      return r4(base, type, id, pretty, summary);
+      return r4(base, type, id, pretty, summary, client);
     }
     return orElse();
   }
@@ -726,7 +808,8 @@ abstract class _PatchRequestR4 extends PatchRequest {
       @required R4Types type,
       @required Id id,
       bool pretty,
-      Summary summary}) = _$_PatchRequestR4;
+      Summary summary,
+      Client client}) = _$_PatchRequestR4;
 
   @override
   Uri get base;
@@ -738,6 +821,8 @@ abstract class _PatchRequestR4 extends PatchRequest {
   @override
   Summary get summary;
   @override
+  Client get client;
+  @override
   _$PatchRequestR4CopyWith<_PatchRequestR4> get copyWith;
 }
 
@@ -748,7 +833,13 @@ abstract class _$PatchRequestR5CopyWith<$Res>
           _PatchRequestR5 value, $Res Function(_PatchRequestR5) then) =
       __$PatchRequestR5CopyWithImpl<$Res>;
   @override
-  $Res call({Uri base, R5Types type, Id id, bool pretty, Summary summary});
+  $Res call(
+      {Uri base,
+      R5Types type,
+      Id id,
+      bool pretty,
+      Summary summary,
+      Client client});
 }
 
 /// @nodoc
@@ -769,6 +860,7 @@ class __$PatchRequestR5CopyWithImpl<$Res>
     Object id = freezed,
     Object pretty = freezed,
     Object summary = freezed,
+    Object client = freezed,
   }) {
     return _then(_PatchRequestR5(
       base: base == freezed ? _value.base : base as Uri,
@@ -776,6 +868,7 @@ class __$PatchRequestR5CopyWithImpl<$Res>
       id: id == freezed ? _value.id : id as Id,
       pretty: pretty == freezed ? _value.pretty : pretty as bool,
       summary: summary == freezed ? _value.summary : summary as Summary,
+      client: client == freezed ? _value.client : client as Client,
     ));
   }
 }
@@ -787,7 +880,8 @@ class _$_PatchRequestR5 extends _PatchRequestR5 {
       @required this.type,
       @required this.id,
       this.pretty = false,
-      this.summary = Summary.none})
+      this.summary = Summary.none,
+      this.client})
       : assert(base != null),
         assert(type != null),
         assert(id != null),
@@ -807,10 +901,12 @@ class _$_PatchRequestR5 extends _PatchRequestR5 {
   @JsonKey(defaultValue: Summary.none)
   @override
   final Summary summary;
+  @override
+  final Client client;
 
   @override
   String toString() {
-    return 'PatchRequest.r5(base: $base, type: $type, id: $id, pretty: $pretty, summary: $summary)';
+    return 'PatchRequest.r5(base: $base, type: $type, id: $id, pretty: $pretty, summary: $summary, client: $client)';
   }
 
   @override
@@ -826,7 +922,10 @@ class _$_PatchRequestR5 extends _PatchRequestR5 {
             (identical(other.pretty, pretty) ||
                 const DeepCollectionEquality().equals(other.pretty, pretty)) &&
             (identical(other.summary, summary) ||
-                const DeepCollectionEquality().equals(other.summary, summary)));
+                const DeepCollectionEquality()
+                    .equals(other.summary, summary)) &&
+            (identical(other.client, client) ||
+                const DeepCollectionEquality().equals(other.client, client)));
   }
 
   @override
@@ -836,7 +935,8 @@ class _$_PatchRequestR5 extends _PatchRequestR5 {
       const DeepCollectionEquality().hash(type) ^
       const DeepCollectionEquality().hash(id) ^
       const DeepCollectionEquality().hash(pretty) ^
-      const DeepCollectionEquality().hash(summary);
+      const DeepCollectionEquality().hash(summary) ^
+      const DeepCollectionEquality().hash(client);
 
   @override
   _$PatchRequestR5CopyWith<_PatchRequestR5> get copyWith =>
@@ -846,36 +946,41 @@ class _$_PatchRequestR5 extends _PatchRequestR5 {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required
-        Result dstu2(
-            Uri base, Dstu2Types type, Id id, bool pretty, Summary summary),
+        Result dstu2(Uri base, Dstu2Types type, Id id, bool pretty,
+            Summary summary, Client client),
     @required
-        Result stu3(
-            Uri base, Stu3Types type, Id id, bool pretty, Summary summary),
+        Result stu3(Uri base, Stu3Types type, Id id, bool pretty,
+            Summary summary, Client client),
     @required
-        Result r4(Uri base, R4Types type, Id id, bool pretty, Summary summary),
+        Result r4(Uri base, R4Types type, Id id, bool pretty, Summary summary,
+            Client client),
     @required
-        Result r5(Uri base, R5Types type, Id id, bool pretty, Summary summary),
+        Result r5(Uri base, R5Types type, Id id, bool pretty, Summary summary,
+            Client client),
   }) {
     assert(dstu2 != null);
     assert(stu3 != null);
     assert(r4 != null);
     assert(r5 != null);
-    return r5(base, type, id, pretty, summary);
+    return r5(base, type, id, pretty, summary, client);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result dstu2(
-        Uri base, Dstu2Types type, Id id, bool pretty, Summary summary),
-    Result stu3(Uri base, Stu3Types type, Id id, bool pretty, Summary summary),
-    Result r4(Uri base, R4Types type, Id id, bool pretty, Summary summary),
-    Result r5(Uri base, R5Types type, Id id, bool pretty, Summary summary),
+    Result dstu2(Uri base, Dstu2Types type, Id id, bool pretty, Summary summary,
+        Client client),
+    Result stu3(Uri base, Stu3Types type, Id id, bool pretty, Summary summary,
+        Client client),
+    Result r4(Uri base, R4Types type, Id id, bool pretty, Summary summary,
+        Client client),
+    Result r5(Uri base, R5Types type, Id id, bool pretty, Summary summary,
+        Client client),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (r5 != null) {
-      return r5(base, type, id, pretty, summary);
+      return r5(base, type, id, pretty, summary, client);
     }
     return orElse();
   }
@@ -919,7 +1024,8 @@ abstract class _PatchRequestR5 extends PatchRequest {
       @required R5Types type,
       @required Id id,
       bool pretty,
-      Summary summary}) = _$_PatchRequestR5;
+      Summary summary,
+      Client client}) = _$_PatchRequestR5;
 
   @override
   Uri get base;
@@ -930,6 +1036,8 @@ abstract class _PatchRequestR5 extends PatchRequest {
   bool get pretty;
   @override
   Summary get summary;
+  @override
+  Client get client;
   @override
   _$PatchRequestR5CopyWith<_PatchRequestR5> get copyWith;
 }

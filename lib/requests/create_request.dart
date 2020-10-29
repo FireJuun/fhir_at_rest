@@ -7,6 +7,7 @@ import 'package:fhir/dstu2.dart' as dstu2;
 import 'package:fhir/stu3.dart' as stu3;
 import 'package:fhir/r4.dart' as r4;
 import 'package:fhir/r5.dart' as r5;
+import 'package:http/http.dart';
 
 import '../enums/enums.dart';
 import '../failures/restful_failure.dart';
@@ -23,6 +24,7 @@ abstract class CreateRequest with _$CreateRequest {
     @required Dstu2Types type,
     @Default(false) bool pretty,
     @Default(Summary.none) Summary summary,
+    Client client,
   }) = _CreateRequestDstu2;
 
   factory CreateRequest.stu3({
@@ -30,6 +32,7 @@ abstract class CreateRequest with _$CreateRequest {
     @required Stu3Types type,
     @Default(false) bool pretty,
     @Default(Summary.none) Summary summary,
+    Client client,
   }) = _CreateRequestStu3;
 
   factory CreateRequest.r4({
@@ -37,6 +40,7 @@ abstract class CreateRequest with _$CreateRequest {
     @required R4Types type,
     @Default(false) bool pretty,
     @Default(Summary.none) Summary summary,
+    Client client,
   }) = _CreateRequestR4;
 
   factory CreateRequest.r5({
@@ -44,6 +48,7 @@ abstract class CreateRequest with _$CreateRequest {
     @required R5Types type,
     @Default(false) bool pretty,
     @Default(Summary.none) Summary summary,
+    Client client,
   }) = _CreateRequestR5;
 
   Future<Either<RestfulFailure, dynamic>> request(
@@ -89,9 +94,11 @@ abstract class CreateRequest with _$CreateRequest {
     }
 
     final result = await makeRequest(
-        type: RestfulRequest.post_,
-        thisRequest: fhirUri.uri + searchString,
-        resource: resource.toJson());
+      type: RestfulRequest.post_,
+      thisRequest: fhirUri.uri + searchString,
+      resource: resource.toJson(),
+      client: client,
+    );
 
     return result.fold(
       (l) => left(l),

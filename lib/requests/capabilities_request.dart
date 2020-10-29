@@ -6,6 +6,7 @@ import 'package:fhir/dstu2.dart' as dstu2;
 import 'package:fhir/stu3.dart' as stu3;
 import 'package:fhir/r4.dart' as r4;
 import 'package:fhir/r5.dart' as r5;
+import 'package:http/http.dart';
 
 import '../enums/enums.dart';
 import '../failures/restful_failure.dart';
@@ -21,6 +22,7 @@ abstract class CapabilitiesRequest with _$CapabilitiesRequest {
     @Default(Mode.full) Mode mode,
     @Default(false) bool pretty,
     @Default(Summary.none) Summary summary,
+    Client client,
   }) = _CapabilitiesRequestDstu2;
 
   factory CapabilitiesRequest.stu3({
@@ -28,6 +30,7 @@ abstract class CapabilitiesRequest with _$CapabilitiesRequest {
     @Default(Mode.full) Mode mode,
     @Default(false) bool pretty,
     @Default(Summary.none) Summary summary,
+    Client client,
   }) = _CapabilitiesRequestStu3;
 
   factory CapabilitiesRequest.r4({
@@ -35,6 +38,7 @@ abstract class CapabilitiesRequest with _$CapabilitiesRequest {
     @Default(Mode.full) Mode mode,
     @Default(false) bool pretty,
     @Default(Summary.none) Summary summary,
+    Client client,
   }) = _CapabilitiesRequestR4;
 
   factory CapabilitiesRequest.r5({
@@ -42,6 +46,7 @@ abstract class CapabilitiesRequest with _$CapabilitiesRequest {
     @Default(Mode.full) Mode mode,
     @Default(false) bool pretty,
     @Default(Summary.none) Summary summary,
+    Client client,
   }) = _CapabilitiesRequestR5;
 
   Future<Either<RestfulFailure, dynamic>> request() async {
@@ -71,6 +76,7 @@ abstract class CapabilitiesRequest with _$CapabilitiesRequest {
     final result = await makeRequest(
       type: RestfulRequest.get_,
       thisRequest: fhirUri.uri,
+      client: client,
     );
 
     return result.fold(

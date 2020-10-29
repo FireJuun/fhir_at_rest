@@ -83,6 +83,7 @@ abstract class OperationRequest with _$OperationRequest {
       type: RestfulRequest.post_,
       thisRequest: fhirUri.uri,
       resource: resource,
+      client: client,
     );
 
     return result.fold(
