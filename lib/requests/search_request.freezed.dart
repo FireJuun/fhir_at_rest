@@ -58,7 +58,7 @@ class _$SearchRequestTearOff {
 // ignore: unused_element
   _SearchRequestR5 r5(
       {@required Uri base,
-      @required R5Types type,
+      R5Types type,
       bool pretty = false,
       R5SearchParameters parameters}) {
     return _SearchRequestR5(
@@ -761,12 +761,8 @@ class __$SearchRequestR5CopyWithImpl<$Res>
 /// @nodoc
 class _$_SearchRequestR5 extends _SearchRequestR5 {
   _$_SearchRequestR5(
-      {@required this.base,
-      @required this.type,
-      this.pretty = false,
-      this.parameters})
+      {@required this.base, this.type, this.pretty = false, this.parameters})
       : assert(base != null),
-        assert(type != null),
         assert(pretty != null),
         super._();
 
@@ -891,7 +887,7 @@ abstract class _SearchRequestR5 extends SearchRequest {
   _SearchRequestR5._() : super._();
   factory _SearchRequestR5(
       {@required Uri base,
-      @required R5Types type,
+      R5Types type,
       bool pretty,
       R5SearchParameters parameters}) = _$_SearchRequestR5;
 

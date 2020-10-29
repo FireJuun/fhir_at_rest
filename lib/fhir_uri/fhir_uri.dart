@@ -682,9 +682,11 @@ final List<String> validMimeTypesDstu2 = [
   'application/json+fhir',
   'application/json',
   'json',
+  'application/json-patch+json',
   'application/xml+fhir',
   'application/xml',
   'xml',
+  'application/json-patch+xml',
   'application/json+turtle',
 ];
 
@@ -692,8 +694,10 @@ final List<String> validMimeTypes = [
   'application/fhir+json',
   'application/json',
   'json',
+  'application/json-patch+json',
   'application/json+xml',
   'application/xml',
   'xml',
+  'application/json-patch+xml',
   'application/json+turtle',
 ];

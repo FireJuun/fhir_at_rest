@@ -40,33 +40,53 @@ abstract class SearchRequest with _$SearchRequest {
 
   factory SearchRequest.r5({
     @required Uri base,
-    @required R5Types type,
+    R5Types type,
     @Default(false) bool pretty,
     R5SearchParameters parameters,
   }) = _SearchRequestR5;
 
   Future<Either<RestfulFailure, dynamic>> request() async {
     final FHIRUri fhirUri = map(
-      dstu2: (req) => FHIRUri.dstu2Search(
-        base: req.base,
-        type: req.type,
-        pretty: req.pretty,
-      ),
-      stu3: (req) => FHIRUri.stu3Search(
-        base: req.base,
-        type: req.type,
-        pretty: req.pretty,
-      ),
-      r4: (req) => FHIRUri.r4Search(
-        base: req.base,
-        type: req.type,
-        pretty: req.pretty,
-      ),
-      r5: (req) => FHIRUri.r5Search(
-        base: req.base,
-        type: req.type,
-        pretty: req.pretty,
-      ),
+      dstu2: (req) => req.type == null
+          ? FHIRUri.dstu2SearchAll(
+              base: req.base,
+              pretty: req.pretty,
+            )
+          : FHIRUri.dstu2Search(
+              base: req.base,
+              type: req.type,
+              pretty: req.pretty,
+            ),
+      stu3: (req) => req.type == null
+          ? FHIRUri.stu3SearchAll(
+              base: req.base,
+              pretty: req.pretty,
+            )
+          : FHIRUri.stu3Search(
+              base: req.base,
+              type: req.type,
+              pretty: req.pretty,
+            ),
+      r4: (req) => req.type == null
+          ? FHIRUri.r4SearchAll(
+              base: req.base,
+              pretty: req.pretty,
+            )
+          : FHIRUri.r4Search(
+              base: req.base,
+              type: req.type,
+              pretty: req.pretty,
+            ),
+      r5: (req) => req.type == null
+          ? FHIRUri.r5SearchAll(
+              base: req.base,
+              pretty: req.pretty,
+            )
+          : FHIRUri.r5Search(
+              base: req.base,
+              type: req.type,
+              pretty: req.pretty,
+            ),
     );
 
     final parametersString = map(

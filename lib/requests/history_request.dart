@@ -121,6 +121,8 @@ abstract class HistoryRequest with _$HistoryRequest {
     final parameters = '${count == null ? "" : "&_count=$count"}'
         '${since == null ? "" : "&_since=${since.toString()}"}';
 
+    // TODO: move parameters to FHIRUri. See https://www.hl7.org/fhir/http.html#history
+
     final result = await makeRequest(
       type: RestfulRequest.get_,
       thisRequest: fhirUri.uri + parameters,
