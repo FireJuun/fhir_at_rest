@@ -110,6 +110,8 @@ abstract class SearchRequest with _$SearchRequest {
             ),
     );
 
+    // TODO: Convert to parameters map
+
     final parametersString = map(
       dstu2: (req) => req.parameters.searchString(),
       stu3: (req) => req.parameters.searchString(),

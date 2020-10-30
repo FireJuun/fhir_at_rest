@@ -1,6 +1,5 @@
 import 'package:dartz/dartz.dart';
 import 'package:fhir_at_rest/fhir_uri/fhir_uri.dart';
-import 'package:fhir_at_rest/search_parameters/search_parameters.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:fhir/primitive_types/id.dart';
 
@@ -58,7 +57,6 @@ abstract class UpdateRequest with _$UpdateRequest {
 
   Future<Either<RestfulFailure, dynamic>> request({
     @required dynamic resource,
-    dynamic search,
   }) async {
     if (resource.id != this.id) {
       return left(RestfulFailure.idDoesNotMatchResource(failedValue: resource));
@@ -103,22 +101,9 @@ abstract class UpdateRequest with _$UpdateRequest {
       ),
     );
 
-    var searchString = '';
-    if (search != null) {
-      if (search is Dstu2SearchParameters && this is! _UpdateRequestDstu2 ||
-          search is Stu3SearchParameters && this is! _UpdateRequestStu3 ||
-          search is R4SearchParameters && this is! _UpdateRequestR4 ||
-          search is R5SearchParameters && this is! _UpdateRequestR5) {
-        return left(RestfulFailure.parameterTypeNotResourceType(
-            resourceType: resource.resourceType, type: search.runtimeType));
-      } else {
-        searchString = search.searchString();
-      }
-    }
-
     final result = await makeRequest(
       type: RestfulRequest.put_,
-      thisRequest: fhirUri.uri + searchString,
+      thisRequest: fhirUri.uri,
       resource: resource.toJson(),
       client: client,
     );
