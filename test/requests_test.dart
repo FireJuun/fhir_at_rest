@@ -266,24 +266,29 @@ void main() {
         mode: Mode.normative,
       );
       final makeReq9 = await req9.request();
-      expect(makeReq9.fold((l) => l.errorMessage(), (r) => r),
-          'http://hapi.fhir.org/baseR4/metadata?mode=normative&_format=$mimeType');
+      expect(
+          makeReq9.fold((l) => l.errorMessage(), (r) => r),
+          'http://hapi.fhir.org/baseR4/metadata'
+          '?mode=normative&_format=$mimeType');
     });
   }, tags: ['http', 'capabilities']);
 
   group('Operation Requests', () {
     test('\$full operation', () async {
-      final req = OperationRequest.r4(
-        base: Uri.parse('http://hapi.fhir.org/baseR4'),
-        operation: 'everything',
-      );
       final parameters = {
         'start': '2020-01-01',
         'end': '2020-08-01',
       };
-      final makeReq10 = await req.request(parameters);
-      expect(makeReq10.fold((l) => l.errorMessage(), (r) => r),
-          'http://hapi.fhir.org/baseR4/\$everything?_format=$mimeType');
+      final req = OperationRequest.r4(
+        base: Uri.parse('http://hapi.fhir.org/baseR4'),
+        operation: 'everything',
+        parameters: parameters,
+      );
+      final makeReq10 = await req.request({});
+      expect(
+          makeReq10.fold((l) => l.errorMessage(), (r) => r),
+          'http://hapi.fhir.org/baseR4/\$everything'
+          '?_format=$mimeType&start=2020-01-01&end=2020-08-01');
     });
   }, tags: ['http', 'operation']);
 

@@ -264,7 +264,8 @@ void main() {
       );
       expect(
         fhirUri.uri,
-        'http://hapi.fhir.org/baseR4/metadata?mode=normative&_format=$mimeType',
+        'http://hapi.fhir.org/baseR4/metadata'
+        '?mode=normative&_format=$mimeType',
       );
     });
   }, tags: 'capabilities');
@@ -282,7 +283,8 @@ void main() {
       );
       expect(
         fhirUri.uri,
-        'http://hapi.fhir.org/baseR4/\$everything?_format=$mimeType',
+        'http://hapi.fhir.org/baseR4/\$everything'
+        '?_format=$mimeType&start=2020-01-01&end=2020-08-01',
       );
     });
   }, tags: 'operation');
