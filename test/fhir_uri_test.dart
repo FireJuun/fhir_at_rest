@@ -182,20 +182,23 @@ void main() {
 
     test('history resource by type and id, count of 10, after a specified date',
         () async {
+      final Map<String, String> parameters = {
+        '_count': '10',
+        '_since': Instant('2020-10-08T16:58:07.241117Z').toString(),
+      };
       final FHIRUri fhirUri = FHIRUri.r4History(
         base: Uri.parse('http://hapi.fhir.org/baseR4'),
         type: R4Types.observation,
         id: Id('12345'),
+        parameters: parameters,
       );
-      final parameters = {
-        'count': 10,
-        'since': Instant('2020-10-08T16:58:07.241117Z'),
-      };
+
       expect(
         fhirUri.uri,
-        'http://hapi.fhir.org/baseR4/Observation/12345/_history?_format=$mimeType&_count=10&_since=2020-10-08T16:58:07.241117Z',
+        'http://hapi.fhir.org/baseR4/Observation/12345/_history'
+        '?_format=$mimeType&_count=10&_since=2020-10-08T16%3A58%3A07.241117Z',
       );
-    }, skip: 'currently failing due to lack of parameter support');
+    });
   }, tags: 'history');
 
   group('UPDATE URI -', () {
@@ -268,14 +271,15 @@ void main() {
 
   group('OPERATION URI -', () {
     test('\$everything operation', () async {
-      final FHIRUri fhirUri = FHIRUri.r4Operation(
-        base: Uri.parse('http://hapi.fhir.org/baseR4'),
-        operation: 'everything',
-      );
-      final parameters = {
+      final Map<String, String> parameters = {
         'start': '2020-01-01',
         'end': '2020-08-01',
       };
+      final FHIRUri fhirUri = FHIRUri.r4Operation(
+        base: Uri.parse('http://hapi.fhir.org/baseR4'),
+        operation: 'everything',
+        parameters: parameters,
+      );
       expect(
         fhirUri.uri,
         'http://hapi.fhir.org/baseR4/\$everything?_format=$mimeType',

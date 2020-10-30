@@ -64,73 +64,96 @@ abstract class HistoryRequest with _$HistoryRequest {
   }) = _HistoryRequestR5;
 
   Future<Either<RestfulFailure, dynamic>> request() async {
+    final Map<String, String> parameters = {};
+
+    if (count != null) {
+      parameters['_count'] = count.toString();
+    }
+    if (since != null) {
+      parameters['_since'] = since.toString();
+    }
+    if (at != null) {
+      parameters['_at'] = at.toString();
+    }
+    if (reference != null) {
+      // TODO: update search reference to output Map<String, String>
+      // parameters['_list'] = reference.searchString();
+    }
+
     final FHIRUri fhirUri = map(
       dstu2: (req) => req.type == null
           ? FHIRUri.dstu2HistoryAll(
               base: req.base,
+              parameters: parameters,
             )
           : req.id == null
               ? FHIRUri.dstu2HistoryType(
                   base: req.base,
                   type: req.type,
+                  parameters: parameters,
                 )
               : FHIRUri.dstu2History(
                   base: req.base,
                   type: req.type,
                   id: req.id,
+                  parameters: parameters,
                 ),
       stu3: (req) => req.type == null
           ? FHIRUri.stu3HistoryAll(
               base: req.base,
+              parameters: parameters,
             )
           : req.id == null
               ? FHIRUri.stu3HistoryType(
                   base: req.base,
                   type: req.type,
+                  parameters: parameters,
                 )
               : FHIRUri.stu3History(
                   base: req.base,
                   type: req.type,
                   id: req.id,
+                  parameters: parameters,
                 ),
       r4: (req) => req.type == null
           ? FHIRUri.r4HistoryAll(
               base: req.base,
+              parameters: parameters,
             )
           : req.id == null
               ? FHIRUri.r4HistoryType(
                   base: req.base,
                   type: req.type,
+                  parameters: parameters,
                 )
               : FHIRUri.r4History(
                   base: req.base,
                   type: req.type,
                   id: req.id,
+                  parameters: parameters,
                 ),
       r5: (req) => req.type == null
           ? FHIRUri.r5HistoryAll(
               base: req.base,
+              parameters: parameters,
             )
           : req.id == null
               ? FHIRUri.r5HistoryType(
                   base: req.base,
                   type: req.type,
+                  parameters: parameters,
                 )
               : FHIRUri.r5History(
                   base: req.base,
                   type: req.type,
                   id: req.id,
+                  parameters: parameters,
                 ),
     );
 
-    final parameters = '${count == null ? "" : "&_count=$count"}'
-        '${since == null ? "" : "&_since=${since.toString()}"}';
-
-    // TODO: move parameters to FHIRUri. See https://www.hl7.org/fhir/http.html#history
-
     final result = await makeRequest(
       type: RestfulRequest.get_,
-      thisRequest: fhirUri.uri + parameters,
+      thisRequest: fhirUri.uri,
       client: client,
     );
 

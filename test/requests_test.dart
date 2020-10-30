@@ -201,7 +201,7 @@ void main() {
       );
       final makeReq14 = await req14.request();
       expect(makeReq14.fold((l) => l.errorMessage(), (r) => r),
-          'http://hapi.fhir.org/baseR4/Observation/12345/_history?_format=$mimeType&_count=10&_since=2020-10-08T16:58:07.241117Z');
+          'http://hapi.fhir.org/baseR4/Observation/12345/_history?_format=$mimeType&_count=10&_since=2020-10-08T16%3A58%3A07.241117Z');
     });
   }, tags: ['http', 'history']);
 
