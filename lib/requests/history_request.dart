@@ -76,6 +76,7 @@ abstract class HistoryRequest with _$HistoryRequest {
       parameters.add(FHIRUriParameter('_at', at));
     }
     if (reference != null) {
+      // TODO(drcdev): Convert to parameters map
       final searchString = reference.searchString();
       if (searchString.isLeft()) {
         return searchString;

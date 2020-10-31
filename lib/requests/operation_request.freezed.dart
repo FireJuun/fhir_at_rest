@@ -19,7 +19,7 @@ class _$OperationRequestTearOff {
       Dstu2Types type,
       Id id,
       String operation,
-      Map<String, String> parameters,
+      Map<String, dynamic> parameters,
       Client client}) {
     return _OperationRequestDstu2(
       base: base,
@@ -37,7 +37,7 @@ class _$OperationRequestTearOff {
       Stu3Types type,
       Id id,
       String operation,
-      Map<String, String> parameters,
+      Map<String, dynamic> parameters,
       Client client}) {
     return _OperationRequestStu3(
       base: base,
@@ -55,7 +55,7 @@ class _$OperationRequestTearOff {
       R4Types type,
       Id id,
       String operation,
-      Map<String, String> parameters,
+      Map<String, dynamic> parameters,
       Client client}) {
     return _OperationRequestR4(
       base: base,
@@ -73,7 +73,7 @@ class _$OperationRequestTearOff {
       R5Types type,
       Id id,
       String operation,
-      Map<String, String> parameters,
+      Map<String, dynamic> parameters,
       Client client}) {
     return _OperationRequestR5(
       base: base,
@@ -95,34 +95,34 @@ mixin _$OperationRequest {
   Uri get base;
   Id get id;
   String get operation;
-  Map<String, String> get parameters;
+  Map<String, dynamic> get parameters;
   Client get client;
 
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required
         Result dstu2(Uri base, Dstu2Types type, Id id, String operation,
-            Map<String, String> parameters, Client client),
+            Map<String, dynamic> parameters, Client client),
     @required
         Result stu3(Uri base, Stu3Types type, Id id, String operation,
-            Map<String, String> parameters, Client client),
+            Map<String, dynamic> parameters, Client client),
     @required
         Result r4(Uri base, R4Types type, Id id, String operation,
-            Map<String, String> parameters, Client client),
+            Map<String, dynamic> parameters, Client client),
     @required
         Result r5(Uri base, R5Types type, Id id, String operation,
-            Map<String, String> parameters, Client client),
+            Map<String, dynamic> parameters, Client client),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result dstu2(Uri base, Dstu2Types type, Id id, String operation,
-        Map<String, String> parameters, Client client),
+        Map<String, dynamic> parameters, Client client),
     Result stu3(Uri base, Stu3Types type, Id id, String operation,
-        Map<String, String> parameters, Client client),
+        Map<String, dynamic> parameters, Client client),
     Result r4(Uri base, R4Types type, Id id, String operation,
-        Map<String, String> parameters, Client client),
+        Map<String, dynamic> parameters, Client client),
     Result r5(Uri base, R5Types type, Id id, String operation,
-        Map<String, String> parameters, Client client),
+        Map<String, dynamic> parameters, Client client),
     @required Result orElse(),
   });
   @optionalTypeArgs
@@ -153,7 +153,7 @@ abstract class $OperationRequestCopyWith<$Res> {
       {Uri base,
       Id id,
       String operation,
-      Map<String, String> parameters,
+      Map<String, dynamic> parameters,
       Client client});
 }
 
@@ -180,7 +180,7 @@ class _$OperationRequestCopyWithImpl<$Res>
       operation: operation == freezed ? _value.operation : operation as String,
       parameters: parameters == freezed
           ? _value.parameters
-          : parameters as Map<String, String>,
+          : parameters as Map<String, dynamic>,
       client: client == freezed ? _value.client : client as Client,
     ));
   }
@@ -198,7 +198,7 @@ abstract class _$OperationRequestDstu2CopyWith<$Res>
       Dstu2Types type,
       Id id,
       String operation,
-      Map<String, String> parameters,
+      Map<String, dynamic> parameters,
       Client client});
 }
 
@@ -229,7 +229,7 @@ class __$OperationRequestDstu2CopyWithImpl<$Res>
       operation: operation == freezed ? _value.operation : operation as String,
       parameters: parameters == freezed
           ? _value.parameters
-          : parameters as Map<String, String>,
+          : parameters as Map<String, dynamic>,
       client: client == freezed ? _value.client : client as Client,
     ));
   }
@@ -256,7 +256,7 @@ class _$_OperationRequestDstu2 extends _OperationRequestDstu2 {
   @override
   final String operation;
   @override
-  final Map<String, String> parameters;
+  final Map<String, dynamic> parameters;
   @override
   final Client client;
 
@@ -305,16 +305,16 @@ class _$_OperationRequestDstu2 extends _OperationRequestDstu2 {
   Result when<Result extends Object>({
     @required
         Result dstu2(Uri base, Dstu2Types type, Id id, String operation,
-            Map<String, String> parameters, Client client),
+            Map<String, dynamic> parameters, Client client),
     @required
         Result stu3(Uri base, Stu3Types type, Id id, String operation,
-            Map<String, String> parameters, Client client),
+            Map<String, dynamic> parameters, Client client),
     @required
         Result r4(Uri base, R4Types type, Id id, String operation,
-            Map<String, String> parameters, Client client),
+            Map<String, dynamic> parameters, Client client),
     @required
         Result r5(Uri base, R5Types type, Id id, String operation,
-            Map<String, String> parameters, Client client),
+            Map<String, dynamic> parameters, Client client),
   }) {
     assert(dstu2 != null);
     assert(stu3 != null);
@@ -327,13 +327,13 @@ class _$_OperationRequestDstu2 extends _OperationRequestDstu2 {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result dstu2(Uri base, Dstu2Types type, Id id, String operation,
-        Map<String, String> parameters, Client client),
+        Map<String, dynamic> parameters, Client client),
     Result stu3(Uri base, Stu3Types type, Id id, String operation,
-        Map<String, String> parameters, Client client),
+        Map<String, dynamic> parameters, Client client),
     Result r4(Uri base, R4Types type, Id id, String operation,
-        Map<String, String> parameters, Client client),
+        Map<String, dynamic> parameters, Client client),
     Result r5(Uri base, R5Types type, Id id, String operation,
-        Map<String, String> parameters, Client client),
+        Map<String, dynamic> parameters, Client client),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -382,7 +382,7 @@ abstract class _OperationRequestDstu2 extends OperationRequest {
       Dstu2Types type,
       Id id,
       String operation,
-      Map<String, String> parameters,
+      Map<String, dynamic> parameters,
       Client client}) = _$_OperationRequestDstu2;
 
   @override
@@ -393,7 +393,7 @@ abstract class _OperationRequestDstu2 extends OperationRequest {
   @override
   String get operation;
   @override
-  Map<String, String> get parameters;
+  Map<String, dynamic> get parameters;
   @override
   Client get client;
   @override
@@ -412,7 +412,7 @@ abstract class _$OperationRequestStu3CopyWith<$Res>
       Stu3Types type,
       Id id,
       String operation,
-      Map<String, String> parameters,
+      Map<String, dynamic> parameters,
       Client client});
 }
 
@@ -443,7 +443,7 @@ class __$OperationRequestStu3CopyWithImpl<$Res>
       operation: operation == freezed ? _value.operation : operation as String,
       parameters: parameters == freezed
           ? _value.parameters
-          : parameters as Map<String, String>,
+          : parameters as Map<String, dynamic>,
       client: client == freezed ? _value.client : client as Client,
     ));
   }
@@ -470,7 +470,7 @@ class _$_OperationRequestStu3 extends _OperationRequestStu3 {
   @override
   final String operation;
   @override
-  final Map<String, String> parameters;
+  final Map<String, dynamic> parameters;
   @override
   final Client client;
 
@@ -519,16 +519,16 @@ class _$_OperationRequestStu3 extends _OperationRequestStu3 {
   Result when<Result extends Object>({
     @required
         Result dstu2(Uri base, Dstu2Types type, Id id, String operation,
-            Map<String, String> parameters, Client client),
+            Map<String, dynamic> parameters, Client client),
     @required
         Result stu3(Uri base, Stu3Types type, Id id, String operation,
-            Map<String, String> parameters, Client client),
+            Map<String, dynamic> parameters, Client client),
     @required
         Result r4(Uri base, R4Types type, Id id, String operation,
-            Map<String, String> parameters, Client client),
+            Map<String, dynamic> parameters, Client client),
     @required
         Result r5(Uri base, R5Types type, Id id, String operation,
-            Map<String, String> parameters, Client client),
+            Map<String, dynamic> parameters, Client client),
   }) {
     assert(dstu2 != null);
     assert(stu3 != null);
@@ -541,13 +541,13 @@ class _$_OperationRequestStu3 extends _OperationRequestStu3 {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result dstu2(Uri base, Dstu2Types type, Id id, String operation,
-        Map<String, String> parameters, Client client),
+        Map<String, dynamic> parameters, Client client),
     Result stu3(Uri base, Stu3Types type, Id id, String operation,
-        Map<String, String> parameters, Client client),
+        Map<String, dynamic> parameters, Client client),
     Result r4(Uri base, R4Types type, Id id, String operation,
-        Map<String, String> parameters, Client client),
+        Map<String, dynamic> parameters, Client client),
     Result r5(Uri base, R5Types type, Id id, String operation,
-        Map<String, String> parameters, Client client),
+        Map<String, dynamic> parameters, Client client),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -596,7 +596,7 @@ abstract class _OperationRequestStu3 extends OperationRequest {
       Stu3Types type,
       Id id,
       String operation,
-      Map<String, String> parameters,
+      Map<String, dynamic> parameters,
       Client client}) = _$_OperationRequestStu3;
 
   @override
@@ -607,7 +607,7 @@ abstract class _OperationRequestStu3 extends OperationRequest {
   @override
   String get operation;
   @override
-  Map<String, String> get parameters;
+  Map<String, dynamic> get parameters;
   @override
   Client get client;
   @override
@@ -626,7 +626,7 @@ abstract class _$OperationRequestR4CopyWith<$Res>
       R4Types type,
       Id id,
       String operation,
-      Map<String, String> parameters,
+      Map<String, dynamic> parameters,
       Client client});
 }
 
@@ -657,7 +657,7 @@ class __$OperationRequestR4CopyWithImpl<$Res>
       operation: operation == freezed ? _value.operation : operation as String,
       parameters: parameters == freezed
           ? _value.parameters
-          : parameters as Map<String, String>,
+          : parameters as Map<String, dynamic>,
       client: client == freezed ? _value.client : client as Client,
     ));
   }
@@ -684,7 +684,7 @@ class _$_OperationRequestR4 extends _OperationRequestR4 {
   @override
   final String operation;
   @override
-  final Map<String, String> parameters;
+  final Map<String, dynamic> parameters;
   @override
   final Client client;
 
@@ -732,16 +732,16 @@ class _$_OperationRequestR4 extends _OperationRequestR4 {
   Result when<Result extends Object>({
     @required
         Result dstu2(Uri base, Dstu2Types type, Id id, String operation,
-            Map<String, String> parameters, Client client),
+            Map<String, dynamic> parameters, Client client),
     @required
         Result stu3(Uri base, Stu3Types type, Id id, String operation,
-            Map<String, String> parameters, Client client),
+            Map<String, dynamic> parameters, Client client),
     @required
         Result r4(Uri base, R4Types type, Id id, String operation,
-            Map<String, String> parameters, Client client),
+            Map<String, dynamic> parameters, Client client),
     @required
         Result r5(Uri base, R5Types type, Id id, String operation,
-            Map<String, String> parameters, Client client),
+            Map<String, dynamic> parameters, Client client),
   }) {
     assert(dstu2 != null);
     assert(stu3 != null);
@@ -754,13 +754,13 @@ class _$_OperationRequestR4 extends _OperationRequestR4 {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result dstu2(Uri base, Dstu2Types type, Id id, String operation,
-        Map<String, String> parameters, Client client),
+        Map<String, dynamic> parameters, Client client),
     Result stu3(Uri base, Stu3Types type, Id id, String operation,
-        Map<String, String> parameters, Client client),
+        Map<String, dynamic> parameters, Client client),
     Result r4(Uri base, R4Types type, Id id, String operation,
-        Map<String, String> parameters, Client client),
+        Map<String, dynamic> parameters, Client client),
     Result r5(Uri base, R5Types type, Id id, String operation,
-        Map<String, String> parameters, Client client),
+        Map<String, dynamic> parameters, Client client),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -809,7 +809,7 @@ abstract class _OperationRequestR4 extends OperationRequest {
       R4Types type,
       Id id,
       String operation,
-      Map<String, String> parameters,
+      Map<String, dynamic> parameters,
       Client client}) = _$_OperationRequestR4;
 
   @override
@@ -820,7 +820,7 @@ abstract class _OperationRequestR4 extends OperationRequest {
   @override
   String get operation;
   @override
-  Map<String, String> get parameters;
+  Map<String, dynamic> get parameters;
   @override
   Client get client;
   @override
@@ -839,7 +839,7 @@ abstract class _$OperationRequestR5CopyWith<$Res>
       R5Types type,
       Id id,
       String operation,
-      Map<String, String> parameters,
+      Map<String, dynamic> parameters,
       Client client});
 }
 
@@ -870,7 +870,7 @@ class __$OperationRequestR5CopyWithImpl<$Res>
       operation: operation == freezed ? _value.operation : operation as String,
       parameters: parameters == freezed
           ? _value.parameters
-          : parameters as Map<String, String>,
+          : parameters as Map<String, dynamic>,
       client: client == freezed ? _value.client : client as Client,
     ));
   }
@@ -897,7 +897,7 @@ class _$_OperationRequestR5 extends _OperationRequestR5 {
   @override
   final String operation;
   @override
-  final Map<String, String> parameters;
+  final Map<String, dynamic> parameters;
   @override
   final Client client;
 
@@ -945,16 +945,16 @@ class _$_OperationRequestR5 extends _OperationRequestR5 {
   Result when<Result extends Object>({
     @required
         Result dstu2(Uri base, Dstu2Types type, Id id, String operation,
-            Map<String, String> parameters, Client client),
+            Map<String, dynamic> parameters, Client client),
     @required
         Result stu3(Uri base, Stu3Types type, Id id, String operation,
-            Map<String, String> parameters, Client client),
+            Map<String, dynamic> parameters, Client client),
     @required
         Result r4(Uri base, R4Types type, Id id, String operation,
-            Map<String, String> parameters, Client client),
+            Map<String, dynamic> parameters, Client client),
     @required
         Result r5(Uri base, R5Types type, Id id, String operation,
-            Map<String, String> parameters, Client client),
+            Map<String, dynamic> parameters, Client client),
   }) {
     assert(dstu2 != null);
     assert(stu3 != null);
@@ -967,13 +967,13 @@ class _$_OperationRequestR5 extends _OperationRequestR5 {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result dstu2(Uri base, Dstu2Types type, Id id, String operation,
-        Map<String, String> parameters, Client client),
+        Map<String, dynamic> parameters, Client client),
     Result stu3(Uri base, Stu3Types type, Id id, String operation,
-        Map<String, String> parameters, Client client),
+        Map<String, dynamic> parameters, Client client),
     Result r4(Uri base, R4Types type, Id id, String operation,
-        Map<String, String> parameters, Client client),
+        Map<String, dynamic> parameters, Client client),
     Result r5(Uri base, R5Types type, Id id, String operation,
-        Map<String, String> parameters, Client client),
+        Map<String, dynamic> parameters, Client client),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1022,7 +1022,7 @@ abstract class _OperationRequestR5 extends OperationRequest {
       R5Types type,
       Id id,
       String operation,
-      Map<String, String> parameters,
+      Map<String, dynamic> parameters,
       Client client}) = _$_OperationRequestR5;
 
   @override
@@ -1033,7 +1033,7 @@ abstract class _OperationRequestR5 extends OperationRequest {
   @override
   String get operation;
   @override
-  Map<String, String> get parameters;
+  Map<String, dynamic> get parameters;
   @override
   Client get client;
   @override

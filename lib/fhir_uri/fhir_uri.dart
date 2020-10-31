@@ -546,11 +546,9 @@ abstract class FHIRUri with _$FHIRUri {
       return '';
     } else {
       String parametersString = '';
-      parameters.forEach(
-        (p) {
-          parametersString += _encodeParam(p.key, p.value.toString());
-        },
-      );
+      for (FHIRUriParameter p in parameters) {
+        parametersString += _encodeParam(p.key, p.value.toString());
+      }
       return parametersString;
     }
   }
@@ -725,6 +723,19 @@ class FHIRUriParameter {
   );
   final String key;
   final dynamic value;
+
+  static List<FHIRUriParameter> fromMap(Map<String, dynamic> paramsMap) {
+    final List<FHIRUriParameter> paramsList = [];
+    for (String k in paramsMap.keys) {
+      paramsList.add(
+        FHIRUriParameter(
+          k,
+          paramsMap[k],
+        ),
+      );
+    }
+    return paramsList;
+  }
 }
 
 final List<String> validMimeTypesDstu2 = [

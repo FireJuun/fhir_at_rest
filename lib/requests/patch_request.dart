@@ -102,6 +102,8 @@ abstract class PatchRequest with _$PatchRequest {
       ),
     );
 
+    // TODO(drcdev): Convert to parameters map
+
     var searchString = '';
     if (search != null) {
       if (search is Dstu2SearchParameters && this is! _PatchRequestDstu2 ||

@@ -23,7 +23,7 @@ abstract class OperationRequest with _$OperationRequest {
     Dstu2Types type,
     Id id,
     String operation,
-    Map<String, String> parameters,
+    Map<String, dynamic> parameters,
     Client client,
   }) = _OperationRequestDstu2;
 
@@ -32,7 +32,7 @@ abstract class OperationRequest with _$OperationRequest {
     Stu3Types type,
     Id id,
     String operation,
-    Map<String, String> parameters,
+    Map<String, dynamic> parameters,
     Client client,
   }) = _OperationRequestStu3;
 
@@ -41,7 +41,7 @@ abstract class OperationRequest with _$OperationRequest {
     R4Types type,
     Id id,
     String operation,
-    Map<String, String> parameters,
+    Map<String, dynamic> parameters,
     Client client,
   }) = _OperationRequestR4;
 
@@ -50,69 +50,50 @@ abstract class OperationRequest with _$OperationRequest {
     R5Types type,
     Id id,
     String operation,
-    Map<String, String> parameters,
+    Map<String, dynamic> parameters,
     Client client,
   }) = _OperationRequestR5;
 
   Future<Either<RestfulFailure, dynamic>> request(
     Map<String, dynamic> resource,
   ) async {
+    // TODO(drcdev): Convert to parameters map
     final FHIRUri fhirUri = map(
       dstu2: (req) => FHIRUri.dstu2Operation(
         base: req.base,
         type: req.type,
         id: req.id,
         operation: req.operation,
-        parameters: req.parameters.entries
-            .map(
-              (p) => FHIRUriParameter(
-                p.key,
-                p.value,
-              ),
-            )
-            .toList(),
+        parameters: FHIRUriParameter.fromMap(
+          req.parameters,
+        ),
       ),
       stu3: (req) => FHIRUri.stu3Operation(
         base: req.base,
         type: req.type,
         id: req.id,
         operation: req.operation,
-        parameters: req.parameters.entries
-            .map(
-              (p) => FHIRUriParameter(
-                p.key,
-                p.value,
-              ),
-            )
-            .toList(),
+        parameters: FHIRUriParameter.fromMap(
+          req.parameters,
+        ),
       ),
       r4: (req) => FHIRUri.r4Operation(
         base: req.base,
         type: req.type,
         id: req.id,
         operation: req.operation,
-        parameters: req.parameters.entries
-            .map(
-              (p) => FHIRUriParameter(
-                p.key,
-                p.value,
-              ),
-            )
-            .toList(),
+        parameters: FHIRUriParameter.fromMap(
+          req.parameters,
+        ),
       ),
       r5: (req) => FHIRUri.r5Operation(
         base: req.base,
         type: req.type,
         id: req.id,
         operation: req.operation,
-        parameters: req.parameters.entries
-            .map(
-              (p) => FHIRUriParameter(
-                p.key,
-                p.value,
-              ),
-            )
-            .toList(),
+        parameters: FHIRUriParameter.fromMap(
+          req.parameters,
+        ),
       ),
     );
 

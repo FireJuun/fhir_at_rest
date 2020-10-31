@@ -51,8 +51,10 @@ abstract class CreateRequest with _$CreateRequest {
     Client client,
   }) = _CreateRequestR5;
 
-  Future<Either<RestfulFailure, dynamic>> request(
-      {@required dynamic resource, dynamic search}) async {
+  Future<Either<RestfulFailure, dynamic>> request({
+    @required dynamic resource,
+    dynamic search,
+  }) async {
     final FHIRUri fhirUri = map(
       dstu2: (req) => FHIRUri.dstu2Create(
         base: req.base,
@@ -88,6 +90,7 @@ abstract class CreateRequest with _$CreateRequest {
       ),
     );
 
+    // TODO(drcdev): Convert to parameters map
     var searchString = '';
     if (search != null) {
       if (search is Dstu2SearchParameters && this is! _CreateRequestDstu2 ||

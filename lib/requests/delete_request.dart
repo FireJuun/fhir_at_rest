@@ -56,7 +56,9 @@ abstract class DeleteRequest with _$DeleteRequest {
     Client client,
   }) = _DeleteRequestR5;
 
-  Future<Either<RestfulFailure, dynamic>> request({dynamic search}) async {
+  Future<Either<RestfulFailure, dynamic>> request({
+    dynamic search,
+  }) async {
     final FHIRUri fhirUri = map(
       dstu2: (req) => FHIRUri.dstu2Delete(
         base: req.base,
@@ -96,6 +98,7 @@ abstract class DeleteRequest with _$DeleteRequest {
       ),
     );
 
+// TODO(drcdev): Convert to parameters map
     var searchString = '';
     if (search != null) {
       if (search is Dstu2SearchParameters && this is! _DeleteRequestDstu2 ||
