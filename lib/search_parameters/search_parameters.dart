@@ -277,7 +277,7 @@ Either<RestfulFailure, List<FHIRUriParameter>> _parametersToList(
           (l) => '',
           (r) => parameterList.add(
             FHIRUriParameter(
-              '_tags' + r.toString().split('=')[0],
+              '_tag' + r.toString().split('=')[0],
               r.toString().split('=').sublist(1).join('='),
             ),
           ),
