@@ -51,33 +51,22 @@ abstract class SearchRequest with _$SearchRequest {
   }) = _SearchRequestR5;
 
   Future<Either<RestfulFailure, dynamic>> request() async {
-    // TODO(drcdev): Convert to parameters map
-
-    final parametersString = map(
-      dstu2: (req) => req.parameters.searchString(),
-      stu3: (req) => req.parameters.searchString(),
-      r4: (req) => req.parameters.searchString(),
-      r5: (req) => req.parameters.searchString(),
+    final searchParametersList = map(
+      dstu2: (req) => req.parameters.searchParameterList(),
+      stu3: (req) => req.parameters.searchParameterList(),
+      r4: (req) => req.parameters.searchParameterList(),
+      r5: (req) => req.parameters.searchParameterList(),
     );
 
-    var searchString = '';
-    if (parametersString.isRight()) {
-      searchString = parametersString.getOrElse(() => '');
+    List<FHIRUriParameter> parameterList;
+    if (searchParametersList.isRight()) {
+      parameterList = searchParametersList.getOrElse(() => []);
     } else {
-      return left(parametersString.fold((l) => l,
-          (r) => RestfulFailure.unknownFailure(failedValue: parametersString)));
+      return left(searchParametersList.fold(
+          (l) => l,
+          (r) => RestfulFailure.unknownFailure(
+              failedValue: searchParametersList)));
     }
-
-    final List<FHIRUriParameter> parameterList = [];
-    searchString.split('&').forEach((e) {
-      if (e != '') {
-        final mapEntry = e.split('=');
-        parameterList.add(
-          FHIRUriParameter(mapEntry[0],
-              mapEntry.getRange(1, mapEntry.length).join('=') as dynamic),
-        );
-      }
-    });
 
     final FHIRUri fhirUri = map(
       dstu2: (req) => req.type == null

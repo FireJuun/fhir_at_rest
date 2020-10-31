@@ -64,6 +64,19 @@ abstract class UpdateRequest with _$UpdateRequest {
       return left(RestfulFailure.idDoesNotMatchResource(failedValue: resource));
     }
 
+    List<FHIRUriParameter> parameterList;
+    if (search != null) {
+      if (search is Dstu2SearchParameters && this is! _UpdateRequestDstu2 ||
+          search is Stu3SearchParameters && this is! _UpdateRequestStu3 ||
+          search is R4SearchParameters && this is! _UpdateRequestR4 ||
+          search is R5SearchParameters && this is! _UpdateRequestR5) {
+        return left(RestfulFailure.parameterTypeNotResourceType(
+            resourceType: resource.resourceType, type: search.runtimeType));
+      } else {
+        parameterList = search.searchParameterList();
+      }
+    }
+
     final FHIRUri fhirUri = map(
       dstu2: (req) => FHIRUri.dstu2Update(
         base: req.base,
@@ -73,6 +86,7 @@ abstract class UpdateRequest with _$UpdateRequest {
           pretty: req.pretty,
           summary: req.summary,
         ),
+        parameters: parameterList,
       ),
       stu3: (req) => FHIRUri.stu3Update(
         base: req.base,
@@ -82,6 +96,7 @@ abstract class UpdateRequest with _$UpdateRequest {
           pretty: req.pretty,
           summary: req.summary,
         ),
+        parameters: parameterList,
       ),
       r4: (req) => FHIRUri.r4Update(
         base: req.base,
@@ -91,6 +106,7 @@ abstract class UpdateRequest with _$UpdateRequest {
           pretty: req.pretty,
           summary: req.summary,
         ),
+        parameters: parameterList,
       ),
       r5: (req) => FHIRUri.r5Update(
         base: req.base,
@@ -100,27 +116,13 @@ abstract class UpdateRequest with _$UpdateRequest {
           pretty: req.pretty,
           summary: req.summary,
         ),
+        parameters: parameterList,
       ),
     );
 
-    // TODO(drcdev): Convert to parameters map
-
-    var searchString = '';
-    if (search != null) {
-      if (search is Dstu2SearchParameters && this is! _UpdateRequestDstu2 ||
-          search is Stu3SearchParameters && this is! _UpdateRequestStu3 ||
-          search is R4SearchParameters && this is! _UpdateRequestR4 ||
-          search is R5SearchParameters && this is! _UpdateRequestR5) {
-        return left(RestfulFailure.parameterTypeNotResourceType(
-            resourceType: resource.resourceType, type: search.runtimeType));
-      } else {
-        searchString = search.searchString();
-      }
-    }
-
     final result = await makeRequest(
       type: RestfulRequest.put_,
-      thisRequest: fhirUri.uri + searchString,
+      thisRequest: fhirUri.uri,
       resource: resource.toJson(),
       client: client,
     );

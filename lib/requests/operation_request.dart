@@ -57,7 +57,6 @@ abstract class OperationRequest with _$OperationRequest {
   Future<Either<RestfulFailure, dynamic>> request(
     Map<String, dynamic> resource,
   ) async {
-    // TODO(drcdev): Convert to parameters map
     final FHIRUri fhirUri = map(
       dstu2: (req) => FHIRUri.dstu2Operation(
         base: req.base,

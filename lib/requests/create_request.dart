@@ -55,43 +55,7 @@ abstract class CreateRequest with _$CreateRequest {
     @required dynamic resource,
     dynamic search,
   }) async {
-    final FHIRUri fhirUri = map(
-      dstu2: (req) => FHIRUri.dstu2Create(
-        base: req.base,
-        type: req.type,
-        generalParameters: GeneralParameters.dstu2(
-          pretty: req.pretty,
-          summary: req.summary,
-        ),
-      ),
-      stu3: (req) => FHIRUri.stu3Create(
-        base: req.base,
-        type: req.type,
-        generalParameters: GeneralParameters.stu3(
-          pretty: req.pretty,
-          summary: req.summary,
-        ),
-      ),
-      r4: (req) => FHIRUri.r4Create(
-        base: req.base,
-        type: req.type,
-        generalParameters: GeneralParameters.r4(
-          pretty: req.pretty,
-          summary: req.summary,
-        ),
-      ),
-      r5: (req) => FHIRUri.r5Create(
-        base: req.base,
-        type: req.type,
-        generalParameters: GeneralParameters.r5(
-          pretty: req.pretty,
-          summary: req.summary,
-        ),
-      ),
-    );
-
-    // TODO(drcdev): Convert to parameters map
-    var searchString = '';
+    List<FHIRUriParameter> parameterList;
     if (search != null) {
       if (search is Dstu2SearchParameters && this is! _CreateRequestDstu2 ||
           search is Stu3SearchParameters && this is! _CreateRequestStu3 ||
@@ -100,13 +64,52 @@ abstract class CreateRequest with _$CreateRequest {
         return left(RestfulFailure.parameterTypeNotResourceType(
             resourceType: resource.resourceType, type: search.runtimeType));
       } else {
-        searchString = search.searchString();
+        parameterList = search.searchParameterList();
       }
     }
 
+    final FHIRUri fhirUri = map(
+      dstu2: (req) => FHIRUri.dstu2Create(
+        base: req.base,
+        type: req.type,
+        generalParameters: GeneralParameters.dstu2(
+          pretty: req.pretty,
+          summary: req.summary,
+        ),
+        parameters: parameterList,
+      ),
+      stu3: (req) => FHIRUri.stu3Create(
+        base: req.base,
+        type: req.type,
+        generalParameters: GeneralParameters.stu3(
+          pretty: req.pretty,
+          summary: req.summary,
+        ),
+        parameters: parameterList,
+      ),
+      r4: (req) => FHIRUri.r4Create(
+        base: req.base,
+        type: req.type,
+        generalParameters: GeneralParameters.r4(
+          pretty: req.pretty,
+          summary: req.summary,
+        ),
+        parameters: parameterList,
+      ),
+      r5: (req) => FHIRUri.r5Create(
+        base: req.base,
+        type: req.type,
+        generalParameters: GeneralParameters.r5(
+          pretty: req.pretty,
+          summary: req.summary,
+        ),
+        parameters: parameterList,
+      ),
+    );
+
     final result = await makeRequest(
       type: RestfulRequest.post_,
-      thisRequest: fhirUri.uri + searchString,
+      thisRequest: fhirUri.uri,
       resource: resource.toJson(),
       client: client,
     );

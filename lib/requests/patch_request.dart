@@ -63,6 +63,20 @@ abstract class PatchRequest with _$PatchRequest {
     if (resource.id != this.id) {
       return left(RestfulFailure.idDoesNotMatchResource(failedValue: resource));
     }
+
+    List<FHIRUriParameter> parameterList;
+    if (search != null) {
+      if (search is Dstu2SearchParameters && this is! _PatchRequestDstu2 ||
+          search is Stu3SearchParameters && this is! _PatchRequestStu3 ||
+          search is R4SearchParameters && this is! _PatchRequestR4 ||
+          search is R5SearchParameters && this is! _PatchRequestR5) {
+        return left(RestfulFailure.parameterTypeNotResourceType(
+            resourceType: resource.resourceType, type: search.runtimeType));
+      } else {
+        parameterList = search.searchParameterList();
+      }
+    }
+
     final FHIRUri fhirUri = map(
       dstu2: (req) => FHIRUri.dstu2Patch(
         base: req.base,
@@ -72,6 +86,7 @@ abstract class PatchRequest with _$PatchRequest {
           pretty: req.pretty,
           summary: req.summary,
         ),
+        parameters: parameterList,
       ),
       stu3: (req) => FHIRUri.stu3Patch(
         base: req.base,
@@ -81,6 +96,7 @@ abstract class PatchRequest with _$PatchRequest {
           pretty: req.pretty,
           summary: req.summary,
         ),
+        parameters: parameterList,
       ),
       r4: (req) => FHIRUri.r4Patch(
         base: req.base,
@@ -90,6 +106,7 @@ abstract class PatchRequest with _$PatchRequest {
           pretty: req.pretty,
           summary: req.summary,
         ),
+        parameters: parameterList,
       ),
       r5: (req) => FHIRUri.r5Patch(
         base: req.base,
@@ -99,27 +116,13 @@ abstract class PatchRequest with _$PatchRequest {
           pretty: req.pretty,
           summary: req.summary,
         ),
+        parameters: parameterList,
       ),
     );
 
-    // TODO(drcdev): Convert to parameters map
-
-    var searchString = '';
-    if (search != null) {
-      if (search is Dstu2SearchParameters && this is! _PatchRequestDstu2 ||
-          search is Stu3SearchParameters && this is! _PatchRequestStu3 ||
-          search is R4SearchParameters && this is! _PatchRequestR4 ||
-          search is R5SearchParameters && this is! _PatchRequestR5) {
-        return left(RestfulFailure.parameterTypeNotResourceType(
-            resourceType: resource.resourceType, type: search.runtimeType));
-      } else {
-        searchString = search.searchString();
-      }
-    }
-
     final result = await makeRequest(
       type: RestfulRequest.patch_,
-      thisRequest: fhirUri.uri + searchString,
+      thisRequest: fhirUri.uri,
       resource: resource.toJson(),
       client: client,
     );
