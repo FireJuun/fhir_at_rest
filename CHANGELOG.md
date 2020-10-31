@@ -3,6 +3,7 @@
 * Add parameter encoding for all parameters including general, interaction specific, search, and custom parameters
 * Add http client override to support testing and allow direct management of the client
 * Add full support for trial use conditional interaction modes
+* Update to `fhir: 0.0.11`
 
 ## [0.0.5]
 * Big thanks to [drcdev](https://github.com/drcdev) for most of the changes in this version
