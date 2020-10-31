@@ -64,20 +64,30 @@ abstract class HistoryRequest with _$HistoryRequest {
   }) = _HistoryRequestR5;
 
   Future<Either<RestfulFailure, dynamic>> request() async {
-    final Map<String, String> parameters = {};
+    final List<FHIRUriParameter> parameters = [];
 
     if (count != null) {
-      parameters['_count'] = count.toString();
+      parameters.add(FHIRUriParameter('_count', count));
     }
     if (since != null) {
-      parameters['_since'] = since.toString();
+      parameters.add(FHIRUriParameter('_since', since));
     }
     if (at != null) {
-      parameters['_at'] = at.toString();
+      parameters.add(FHIRUriParameter('_at', at));
     }
     if (reference != null) {
-      // TODO: update search reference to output Map<String, String>
-      // parameters['_list'] = reference.searchString();
+      final searchString = reference.searchString();
+      if (searchString.isLeft()) {
+        return searchString;
+      } else {
+        final searchParameters = searchString.getOrElse(() => '').split('=');
+        if (searchParameters.isNotEmpty) {
+          parameters.add(
+            FHIRUriParameter(
+                '_list' + searchParameters[0], searchParameters[1]),
+          );
+        }
+      }
     }
 
     final FHIRUri fhirUri = map(

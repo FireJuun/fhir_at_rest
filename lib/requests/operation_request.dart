@@ -63,28 +63,56 @@ abstract class OperationRequest with _$OperationRequest {
         type: req.type,
         id: req.id,
         operation: req.operation,
-        parameters: req.parameters,
+        parameters: req.parameters.entries
+            .map(
+              (p) => FHIRUriParameter(
+                p.key,
+                p.value,
+              ),
+            )
+            .toList(),
       ),
       stu3: (req) => FHIRUri.stu3Operation(
         base: req.base,
         type: req.type,
         id: req.id,
         operation: req.operation,
-        parameters: req.parameters,
+        parameters: req.parameters.entries
+            .map(
+              (p) => FHIRUriParameter(
+                p.key,
+                p.value,
+              ),
+            )
+            .toList(),
       ),
       r4: (req) => FHIRUri.r4Operation(
         base: req.base,
         type: req.type,
         id: req.id,
         operation: req.operation,
-        parameters: req.parameters,
+        parameters: req.parameters.entries
+            .map(
+              (p) => FHIRUriParameter(
+                p.key,
+                p.value,
+              ),
+            )
+            .toList(),
       ),
       r5: (req) => FHIRUri.r5Operation(
         base: req.base,
         type: req.type,
         id: req.id,
         operation: req.operation,
-        parameters: req.parameters,
+        parameters: req.parameters.entries
+            .map(
+              (p) => FHIRUriParameter(
+                p.key,
+                p.value,
+              ),
+            )
+            .toList(),
       ),
     );
 

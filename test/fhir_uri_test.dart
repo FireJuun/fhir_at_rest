@@ -1,16 +1,14 @@
 import 'package:fhir/r4.dart';
 import 'package:fhir_at_rest/enums/enums.dart';
 import 'package:fhir_at_rest/fhir_at_rest.dart';
-import 'package:fhir_at_rest/requests/request_types.dart';
 import 'package:fhir_at_rest/resource_types/resource_types.dart';
-import 'package:fhir_at_rest/search_parameters/r4/parameters.dart';
 import 'package:fhir_at_rest/search_parameters/search_parameter_types/search_parameter_types.dart';
 import 'package:test/test.dart';
 
 void main() {
   final String mimeType = Uri.encodeQueryComponent('application/fhir+json');
 
-  group('READ URI -', () {
+  group('FHIR URI - READ:', () {
     test('get patient', () async {
       final FHIRUri fhirUri = FHIRUri.r4Read(
         base: Uri.parse('http://hapi.fhir.org/baseR4'),
@@ -68,9 +66,9 @@ void main() {
         'http://hapi.fhir.org/baseR4/Patient/12345?_format=$mimeType&_summary=count',
       );
     });
-  }, tags: 'read');
+  }, tags: ['uri', 'read']);
 
-  group('VREAD URI -', () {
+  group('FHIR URI - VREAD:', () {
     test('get patient version', () async {
       final FHIRUri fhirUri = FHIRUri.r4VRead(
         base: Uri.parse('http://hapi.fhir.org/baseR4'),
@@ -132,9 +130,9 @@ void main() {
         'http://hapi.fhir.org/baseR4/Patient/12345/_history/6789?_format=$mimeType&_summary=count',
       );
     });
-  }, tags: 'vread');
+  }, tags: ['uri', 'vread']);
 
-  group('TRANSACTION URI -', () {
+  group('FHIR URI - TRANSACTION:', () {
     test('transaction/batch', () async {
       final FHIRUri fhirUri = FHIRUri.r4Transaction(
         base: Uri.parse('http://hapi.fhir.org/baseR4'),
@@ -144,9 +142,9 @@ void main() {
         'http://hapi.fhir.org/baseR4?_format=$mimeType',
       );
     });
-  }, tags: 'transaction');
+  }, tags: ['uri', 'transaction']);
 
-  group('HISTORY URI -', () {
+  group('FHIR URI - HISTORY:', () {
     test('observation history by type and id', () async {
       final FHIRUri fhirUri = FHIRUri.r4History(
         base: Uri.parse('http://hapi.fhir.org/baseR4'),
@@ -182,10 +180,13 @@ void main() {
 
     test('history resource by type and id, count of 10, after a specified date',
         () async {
-      final Map<String, String> parameters = {
-        '_count': '10',
-        '_since': Instant('2020-10-08T16:58:07.241117Z').toString(),
-      };
+      final List<FHIRUriParameter> parameters = [
+        FHIRUriParameter('_count', '10'),
+        FHIRUriParameter(
+          '_since',
+          Instant('2020-10-08T16:58:07.241117Z'),
+        ),
+      ];
       final FHIRUri fhirUri = FHIRUri.r4History(
         base: Uri.parse('http://hapi.fhir.org/baseR4'),
         type: R4Types.observation,
@@ -199,9 +200,9 @@ void main() {
         '?_format=$mimeType&_count=10&_since=2020-10-08T16%3A58%3A07.241117Z',
       );
     });
-  }, tags: 'history');
+  }, tags: ['uri', 'history']);
 
-  group('UPDATE URI -', () {
+  group('FHIR URI - UPDATE:', () {
     test('update patient by id', () async {
       final FHIRUri fhirUri = FHIRUri.r4Update(
         base: Uri.parse('http://hapi.fhir.org/baseR4'),
@@ -213,9 +214,9 @@ void main() {
         'http://hapi.fhir.org/baseR4/Patient/12345?_format=$mimeType',
       );
     });
-  }, tags: 'update');
+  }, tags: ['uri', 'update']);
 
-  group('PATCH URI -', () {
+  group('FHIR URI - PATCH:', () {
     test('patch patient by id', () async {
       final FHIRUri fhirUri = FHIRUri.r4Patch(
         base: Uri.parse('http://hapi.fhir.org/baseR4'),
@@ -227,9 +228,9 @@ void main() {
         'http://hapi.fhir.org/baseR4/Patient/12345?_format=$mimeType',
       );
     });
-  }, tags: 'patch');
+  }, tags: ['uri', 'patch']);
 
-  group('DELETE URI -', () {
+  group('FHIR URI - DELETE:', () {
     test('delete patient', () async {
       final FHIRUri fhirUri = FHIRUri.r4Delete(
         base: Uri.parse('http://hapi.fhir.org/baseR4'),
@@ -241,9 +242,9 @@ void main() {
         'http://hapi.fhir.org/baseR4/Patient/12345?_format=$mimeType',
       );
     });
-  }, tags: 'delete');
+  }, tags: ['uri', 'delete']);
 
-  group('CREATE URI -', () {
+  group('FHIR URI - CREATE:', () {
     test('create patient', () async {
       final FHIRUri fhirUri = FHIRUri.r4Create(
         base: Uri.parse('http://hapi.fhir.org/baseR4'),
@@ -254,9 +255,9 @@ void main() {
         'http://hapi.fhir.org/baseR4/Patient?_format=$mimeType',
       );
     });
-  }, tags: 'create');
+  }, tags: ['uri', 'create']);
 
-  group('CAPABILITIES URI -', () {
+  group('FHIR URI - CAPABILITIES:', () {
     test('capabilities with mode normative', () async {
       final FHIRUri fhirUri = FHIRUri.r4Capabilities(
         base: Uri.parse('http://hapi.fhir.org/baseR4'),
@@ -268,14 +269,14 @@ void main() {
         '?mode=normative&_format=$mimeType',
       );
     });
-  }, tags: 'capabilities');
+  }, tags: ['uri', 'capabilities']);
 
-  group('OPERATION URI -', () {
+  group('FHIR URI - OPERATION:', () {
     test('\$everything operation', () async {
-      final Map<String, String> parameters = {
-        'start': '2020-01-01',
-        'end': '2020-08-01',
-      };
+      final List<FHIRUriParameter> parameters = [
+        FHIRUriParameter('start', '2020-01-01'),
+        FHIRUriParameter('end', '2020-08-01'),
+      ];
       final FHIRUri fhirUri = FHIRUri.r4Operation(
         base: Uri.parse('http://hapi.fhir.org/baseR4'),
         operation: 'everything',
@@ -287,353 +288,354 @@ void main() {
         '?_format=$mimeType&start=2020-01-01&end=2020-08-01',
       );
     });
-  }, tags: 'operation');
+  }, tags: ['uri', 'operation']);
 
-  group('SEARCH URI -', () {
-    test('Patient ID Search', () async {
-      final request = SearchRequest.r4(
+  group('FHIR URI - SEARCH:', () {
+    test('patient id search', () async {
+      final FHIRUri fhirUri = FHIRUri.r4Search(
         base: Uri.parse('http://hapi.fhir.org/baseR4'),
         type: R4Types.patient,
-        parameters: PatientSearch(searchId: [Id('12345')]),
+        parameters: [FHIRUriParameter('_id', '12345')],
       );
-      final response = await request.request();
       expect(
-        response.fold((l) => l.errorMessage(), (r) => r),
+        fhirUri.uri,
         'http://hapi.fhir.org/baseR4/Patient?_format=$mimeType&_id=12345',
       );
     });
 
-    test('Observation Time Search', () async {
-      final request = SearchRequest.r4(
+    test('observation time search', () async {
+      final FHIRUri fhirUri = FHIRUri.r4Search(
         base: Uri.parse('http://hapi.fhir.org/baseR4'),
         type: R4Types.observation,
-        parameters: ObservationSearch(searchLastUpdated: [
-          SearchDate(date: FhirDateTime('2010-10-01'), prefix: DatePrefix.gt)
-        ]),
+        parameters: [
+          FHIRUriParameter(
+            '_lastUpdated',
+            simpleEnumToString(DatePrefix.gt) +
+                FhirDateTime('2010-10-01').toString(),
+          ),
+        ],
       );
-      final response = await request.request();
       expect(
-        response.fold((l) => l.errorMessage(), (r) => r),
-        'http://hapi.fhir.org/baseR4/Observation?_format=$mimeType&_lastUpdated=gt2010-10-01',
+        fhirUri.uri,
+        'http://hapi.fhir.org/baseR4/Observation'
+        '?_format=$mimeType&_lastUpdated=gt2010-10-01',
       );
     });
 
-    test('Condition search, code parameter (_tag)', () async {
-      final request = SearchRequest.r4(
+    test('condition search, code parameter (_tag)', () async {
+      final FHIRUri fhirUri = FHIRUri.r4Search(
         base: Uri.parse('http://hapi.fhir.org/baseR4'),
         type: R4Types.condition,
-        parameters: ConditionSearch(
-          searchTag: [
-            SearchToken(
-                system: FhirUri('http://acme.org/codes'),
-                code: Code('needs-review'))
-          ],
-        ),
+        parameters: [
+          FHIRUriParameter('_tag', 'http://acme.org/codes|needs-review'),
+        ],
       );
-      final response = await request.request();
       expect(
-        response.fold((l) => l.errorMessage(), (r) => r),
-        'http://hapi.fhir.org/baseR4/Condition?_format=$mimeType&_tag=http://acme.org/codes|needs-review',
+        fhirUri.uri,
+        'http://hapi.fhir.org/baseR4/Condition'
+        '?_format=$mimeType&_tag=http%3A%2F%2Facme.org%2Fcodes%7Cneeds-review',
       );
     });
 
-    test('Diagnostic Report Search, Uri parameter (_profile)', () async {
-      final request = SearchRequest.r4(
+    test('diagnostic report rearch, uri parameter (_profile)', () async {
+      final FHIRUri fhirUri = FHIRUri.r4Search(
         base: Uri.parse('http://hapi.fhir.org/baseR4'),
         type: R4Types.diagnosticreport,
-        parameters: DiagnosticReportSearch(
-          searchProfile: [SearchUri(uri: FhirUri('http://acme.org/codes'))],
-        ),
+        parameters: [
+          FHIRUriParameter(
+            '_profile',
+            'http://acme.org/codes',
+          ),
+        ],
       );
-      final response = await request.request();
       expect(
-        response.fold((l) => l.errorMessage(), (r) => r),
-        'http://hapi.fhir.org/baseR4/DiagnosticReport?_format=$mimeType&_profile=http://acme.org/codes',
+        fhirUri.uri,
+        'http://hapi.fhir.org/baseR4/DiagnosticReport'
+        '?_format=$mimeType&_profile=http%3A%2F%2Facme.org%2Fcodes',
       );
     });
 
-    test('Patient Search if gender present', () async {
-      final request = SearchRequest.r4(
+    test('patient search if gender present', () async {
+      final FHIRUri fhirUri = FHIRUri.r4Search(
         base: Uri.parse('http://hapi.fhir.org/baseR4'),
         type: R4Types.patient,
-        parameters: PatientSearch(gender: [SearchToken(missing: true)]),
+        parameters: [
+          FHIRUriParameter(
+            'gender:missing',
+            'true',
+          ),
+        ],
       );
-      final response = await request.request();
       expect(
-        response.fold((l) => l.errorMessage(), (r) => r),
-        'http://hapi.fhir.org/baseR4/Patient?_format=$mimeType&gender:missing=true',
+        fhirUri.uri,
+        'http://hapi.fhir.org/baseR4/Patient'
+        '?_format=$mimeType&gender:missing=true',
       );
     });
 
-    test('Patient Search if gender present', () async {
-      final request = SearchRequest.r4(
+    test('patient search if gender present', () async {
+      final FHIRUri fhirUri = FHIRUri.r4Search(
         base: Uri.parse('http://hapi.fhir.org/baseR4'),
         type: R4Types.patient,
-        parameters: PatientSearch(gender: [SearchToken(missing: false)]),
+        parameters: [
+          FHIRUriParameter(
+            'gender:missing',
+            'false',
+          ),
+        ],
       );
-      final response = await request.request();
       expect(
-        response.fold((l) => l.errorMessage(), (r) => r),
-        'http://hapi.fhir.org/baseR4/Patient?_format=$mimeType&gender:missing=false',
+        fhirUri.uri,
+        'http://hapi.fhir.org/baseR4/Patient'
+        '?_format=$mimeType&gender:missing=false',
       );
     });
 
-    test('Patient Search for exact text match', () async {
-      final request = SearchRequest.r4(
+    test('patient search for exact text match', () async {
+      final FHIRUri fhirUri = FHIRUri.r4Search(
         base: Uri.parse('http://hapi.fhir.org/baseR4'),
         type: R4Types.patient,
-        parameters: PatientSearch(searchText: [
-          SearchString(string: 'Stark', modifier: StringModifier.exact)
-        ]),
+        parameters: [
+          FHIRUriParameter(
+            '_text:exact',
+            'Stark',
+          ),
+        ],
       );
-      final response = await request.request();
       expect(
-        response.fold((l) => l.errorMessage(), (r) => r),
-        'http://hapi.fhir.org/baseR4/Patient?_format=$mimeType&_text:exact=Stark',
+        fhirUri.uri,
+        'http://hapi.fhir.org/baseR4/Patient'
+        '?_format=$mimeType&_text:exact=Stark',
       );
     });
 
-    test('Observation Search "le"', () async {
-      final request = SearchRequest.r4(
+    test('observation search "le"', () async {
+      final FHIRUri fhirUri = FHIRUri.r4Search(
         base: Uri.parse('http://hapi.fhir.org/baseR4'),
         type: R4Types.observation,
-        parameters: ObservationSearch(searchLastUpdated: [
-          SearchDate(date: FhirDateTime('2010-10-01'), prefix: DatePrefix.le)
-        ]),
+        parameters: [
+          FHIRUriParameter(
+            '_lastUpdated',
+            simpleEnumToString(DatePrefix.le) +
+                FhirDateTime('2010-10-01').toString(),
+          ),
+        ],
       );
-      final response = await request.request();
       expect(
-        response.fold((l) => l.errorMessage(), (r) => r),
+        fhirUri.uri,
         'http://hapi.fhir.org/baseR4/Observation?_format=$mimeType&_lastUpdated=le2010-10-01',
       );
     });
 
-    test('Risk Assessment Search, probability > 0.8', () async {
-      final request = SearchRequest.r4(
+    test('risk assessment search, probability > 0.8', () async {
+      final FHIRUri fhirUri = FHIRUri.r4Search(
         base: Uri.parse('http://hapi.fhir.org/baseR4'),
         type: R4Types.riskassessment,
-        parameters: RiskAssessmentSearch(
-            probability: [SearchNumber(number: 0.8, prefix: NumberPrefix.gt)]),
+        parameters: [
+          FHIRUriParameter(
+            'probability',
+            'gt0.8',
+          ),
+        ],
       );
-      final response = await request.request();
       expect(
-        response.fold((l) => l.errorMessage(), (r) => r),
+        fhirUri.uri,
         'http://hapi.fhir.org/baseR4/RiskAssessment?_format=$mimeType&probability=gt0.8',
       );
     });
 
-    test('Patient Search for birthday between two dates', () async {
-      final request = SearchRequest.r4(
+    test('patient search for birthday between two dates', () async {
+      final FHIRUri fhirUri = FHIRUri.r4Search(
         base: Uri.parse('http://hapi.fhir.org/baseR4'),
         type: R4Types.patient,
-        parameters: PatientSearch(birthdate: [
-          SearchDate(date: FhirDateTime('2010-01-01'), prefix: DatePrefix.ge),
-          SearchDate(date: FhirDateTime('2011-12-31'), prefix: DatePrefix.le)
-        ]),
+        parameters: [
+          FHIRUriParameter(
+            'birthdate',
+            simpleEnumToString(DatePrefix.ge) +
+                FhirDateTime('2010-01-01').toString(),
+          ),
+          FHIRUriParameter(
+            'birthdate',
+            simpleEnumToString(DatePrefix.le) +
+                FhirDateTime('2011-12-31').toString(),
+          ),
+        ],
       );
-      final response = await request.request();
       expect(
-        response.fold((l) => l.errorMessage(), (r) => r),
-        'http://hapi.fhir.org/baseR4/Patient?_format=$mimeType&birthdate=ge2010-01-01&birthdate=le2011-12-31',
+        fhirUri.uri,
+        'http://hapi.fhir.org/baseR4/Patient'
+        '?_format=$mimeType&birthdate=ge2010-01-01&birthdate=le2011-12-31',
       );
     });
 
-    test('Patient Search given name with parameters', () async {
-      final request = SearchRequest.r4(
-          base: Uri.parse('http://hapi.fhir.org/baseR4'),
-          type: R4Types.patient,
-          parameters: PatientSearch(
-            given: [
-              SearchString(string: 'eve'),
-              SearchString(string: 'eve', modifier: StringModifier.contains),
-              SearchString(string: 'eve', modifier: StringModifier.exact)
-            ],
-          ));
-      final response = await request.request();
+    test('patient search given name with parameters', () async {
+      final FHIRUri fhirUri = FHIRUri.r4Search(
+        base: Uri.parse('http://hapi.fhir.org/baseR4'),
+        type: R4Types.patient,
+        parameters: [
+          FHIRUriParameter(
+            'given',
+            'eve',
+          ),
+          FHIRUriParameter(
+            'given:contains',
+            'eve',
+          ),
+          FHIRUriParameter(
+            'given:exact',
+            'eve',
+          ),
+        ],
+      );
       expect(
-        response.fold((l) => l.errorMessage(), (r) => r),
-        'http://hapi.fhir.org/baseR4/Patient?_format=$mimeType&given=eve&given:contains=eve&given:exact=eve',
+        fhirUri.uri,
+        'http://hapi.fhir.org/baseR4/Patient'
+        '?_format=$mimeType&given=eve&given:contains=eve&given:exact=eve',
       );
     });
 
-    test('Patient Search with identifier', () async {
-      final request = SearchRequest.r4(
-          base: Uri.parse('http://hapi.fhir.org/baseR4'),
-          type: R4Types.patient,
-          parameters: PatientSearch(
-            identifier: [
-              SearchToken(
-                  system: FhirUri('http://acme.org/patient'),
-                  code: Code('2345'))
-            ],
-          ));
-      final response = await request.request();
+    test('patient search with identifier', () async {
+      final FHIRUri fhirUri = FHIRUri.r4Search(
+        base: Uri.parse('http://hapi.fhir.org/baseR4'),
+        type: R4Types.patient,
+        parameters: [
+          FHIRUriParameter(
+            'identifier',
+            'http://acme.org/patient|2345',
+          ),
+        ],
+      );
       expect(
-        response.fold((l) => l.errorMessage(), (r) => r),
-        'http://hapi.fhir.org/baseR4/Patient?_format=$mimeType&identifier=http://acme.org/patient|2345',
+        fhirUri.uri,
+        'http://hapi.fhir.org/baseR4/Patient'
+        '?_format=$mimeType&identifier=http%3A%2F%2Facme.org%2Fpatient%7C2345',
       );
     });
 
-    test('Composition Search Section Code', () async {
-      final request = SearchRequest.r4(
-          base: Uri.parse('http://hapi.fhir.org/baseR4'),
-          type: R4Types.composition,
-          parameters: CompositionSearch(
-            section: [
-              SearchToken(code: Code('48765-2'), modifier: TokenModifier.not)
-            ],
-          ));
-      final response = await request.request();
+    test('composition search section code', () async {
+      final FHIRUri fhirUri = FHIRUri.r4Search(
+        base: Uri.parse('http://hapi.fhir.org/baseR4'),
+        type: R4Types.composition,
+        parameters: [
+          FHIRUriParameter(
+            'section:not',
+            '48765-2',
+          ),
+        ],
+      );
       expect(
-        response.fold((l) => l.errorMessage(), (r) => r),
-        'http://hapi.fhir.org/baseR4/Composition?_format=$mimeType&section:not=48765-2',
+        fhirUri.uri,
+        'http://hapi.fhir.org/baseR4/Composition'
+        '?_format=$mimeType&section:not=48765-2',
       );
     });
 
-    test('Condition search via snomed code', () async {
-      final request = SearchRequest.r4(
-          base: Uri.parse('http://hapi.fhir.org/baseR4'),
-          type: R4Types.condition,
-          parameters: ConditionSearch(
-            code: [
-              SearchToken(
-                  system: FhirUri(
-                      'http%3A%2F%2Fsnomed.info%2Fsct%3Ffhir_vs%3Disa%2F126851005'),
-                  modifier: TokenModifier.in_)
-            ],
-          ));
-      final response = await request.request();
+    test('condition search via snomed code', () async {
+      final FHIRUri fhirUri = FHIRUri.r4Search(
+        base: Uri.parse('http://hapi.fhir.org/baseR4'),
+        type: R4Types.condition,
+        parameters: [
+          FHIRUriParameter(
+            'code:in',
+            'http://snomed.info/sct?fhir_vs=isa/126851005',
+          ),
+        ],
+      );
       expect(
-        response.fold((l) => l.errorMessage(), (r) => r),
-        'http://hapi.fhir.org/baseR4/Condition?_format=$mimeType&code:in=http%3A%2F%2Fsnomed.info%2Fsct%3Ffhir_vs%3Disa%2F126851005',
+        fhirUri.uri,
+        'http://hapi.fhir.org/baseR4/Condition'
+        '?_format=$mimeType&code:in=http%3A%2F%2Fsnomed.info%2Fsct%3Ffhir_vs%3Disa%2F126851005',
       );
     });
 
-    test('Patient search by mr code', () async {
-      final request = SearchRequest.r4(
-          base: Uri.parse('http://hapi.fhir.org/baseR4'),
-          type: R4Types.patient,
-          parameters: PatientSearch(
-            identifier: [
-              SearchToken(
-                system:
-                    FhirUri('http://terminology.hl7.org/CodeSystem/v2-0203'),
-                code: Code('MR'),
-                value: '446053',
-                modifier: TokenModifier.of_type,
-              ),
-            ],
-          ));
-      final response = await request.request();
+    test('patient search by mr code', () async {
+      final FHIRUri fhirUri = FHIRUri.r4Search(
+        base: Uri.parse('http://hapi.fhir.org/baseR4'),
+        type: R4Types.patient,
+        parameters: [
+          FHIRUriParameter(
+            'identifier:of-type',
+            'http://terminology.hl7.org/CodeSystem/v2-0203|MR|446053',
+          ),
+        ],
+      );
       expect(
-        response.fold((l) => l.errorMessage(), (r) => r),
-        'http://hapi.fhir.org/baseR4/Patient?_format=$mimeType&identifier:of-type=http://terminology.hl7.org/CodeSystem/v2-0203|MR|446053',
+        fhirUri.uri,
+        'http://hapi.fhir.org/baseR4/Patient'
+        '?_format=$mimeType&identifier:of-type=http%3A%2F%2Fterminology.hl7.org%2FCodeSystem%2Fv2-0203%7CMR%7C446053',
       );
     });
 
-    test('Observation search by quantity, with prefix', () async {
-      final request = SearchRequest.r4(
+    test('observation search by quantity, with prefix', () async {
+      final FHIRUri fhirUri = FHIRUri.r4Search(
         base: Uri.parse('http://hapi.fhir.org/baseR4'),
         type: R4Types.observation,
-        parameters: ObservationSearch(
-          valueQuantity: [
-            SearchQuantity(
-              number: 5.4,
-              system: FhirUri('http://unitsofmeasure.org'),
-              code: Code('mg'),
-              prefix: QuantityPrefix.ap,
-            ),
-          ],
-        ),
+        parameters: [
+          FHIRUriParameter(
+            'value-quantity',
+            'ap5.4|http://unitsofmeasure.org|mg',
+          ),
+        ],
       );
-      final response = await request.request();
       expect(
-        response.fold((l) => l.errorMessage(), (r) => r),
-        'http://hapi.fhir.org/baseR4/Observation?_format=$mimeType&value-quantity=ap5.4|http://unitsofmeasure.org|mg',
+        fhirUri.uri,
+        'http://hapi.fhir.org/baseR4/Observation'
+        '?_format=$mimeType&value-quantity=ap5.4%7Chttp%3A%2F%2Funitsofmeasure.org%7Cmg',
       );
     });
 
-    test('Observation search by quantity, without prefix', () async {
-      final request = SearchRequest.r4(
+    test('observation search by quantity, without prefix', () async {
+      final FHIRUri fhirUri = FHIRUri.r4Search(
         base: Uri.parse('http://hapi.fhir.org/baseR4'),
         type: R4Types.observation,
-        parameters: ObservationSearch(
-          valueQuantity: [
-            SearchQuantity(
-              number: 5.4,
-              system: FhirUri('http://unitsofmeasure.org'),
-              code: Code('mg'),
-            ),
-          ],
-        ),
+        parameters: [
+          FHIRUriParameter(
+            'value-quantity',
+            '5.4|http://unitsofmeasure.org|mg',
+          ),
+        ],
       );
-      final response = await request.request();
       expect(
-        response.fold((l) => l.errorMessage(), (r) => r),
-        'http://hapi.fhir.org/baseR4/Observation?_format=$mimeType&value-quantity=5.4|http://unitsofmeasure.org|mg',
+        fhirUri.uri,
+        'http://hapi.fhir.org/baseR4/Observation'
+        '?_format=$mimeType&value-quantity=5.4%7Chttp%3A%2F%2Funitsofmeasure.org%7Cmg',
       );
     });
 
-    test('Observation search by quantity, testing number parsing', () async {
-      final request = SearchRequest.r4(
+    test('observation search by quantity, testing number parsing', () async {
+      final FHIRUri fhirUri = FHIRUri.r4Search(
         base: Uri.parse('http://hapi.fhir.org/baseR4'),
         type: R4Types.observation,
-        parameters: ObservationSearch(
-          valueQuantity: [
-            SearchQuantity(
-              number: '5.4e-3',
-              system: FhirUri('http://unitsofmeasure.org'),
-              code: Code('g'),
-            ),
-          ],
-        ),
+        parameters: [
+          FHIRUriParameter(
+            'value-quantity',
+            '0.0054|http://unitsofmeasure.org|g',
+          ),
+        ],
       );
-      final response = await request.request();
       expect(
-        response.fold((l) => l.errorMessage(), (r) => r),
-        'http://hapi.fhir.org/baseR4/Observation?_format=$mimeType&value-quantity=0.0054|http://unitsofmeasure.org|g',
+        fhirUri.uri,
+        'http://hapi.fhir.org/baseR4/Observation'
+        '?_format=$mimeType&value-quantity=0.0054%7Chttp%3A%2F%2Funitsofmeasure.org%7Cg',
       );
     });
 
-    test('Observation search by reference, using url', () async {
-      final request = SearchRequest.r4(
+    test('observation search by reference, using url', () async {
+      final FHIRUri fhirUri = FHIRUri.r4Search(
         base: Uri.parse('http://hapi.fhir.org/baseR4'),
         type: R4Types.observation,
-        parameters: ObservationSearch(
-          subject: [
-            SearchReference(
-              url: FhirUri('Patient/123'),
-            ),
-          ],
-        ),
+        parameters: [
+          FHIRUriParameter(
+            'subject',
+            'Patient/123',
+          ),
+        ],
       );
-      final response = await request.request();
       expect(
-        response.fold((l) => l.errorMessage(), (r) => r),
-        'http://hapi.fhir.org/baseR4/Observation?_format=$mimeType&subject=Patient/123',
+        fhirUri.uri,
+        'http://hapi.fhir.org/baseR4/Observation'
+        '?_format=$mimeType&subject=Patient%2F123',
       );
     });
-
-    test('Observation search by reference, using type and ID', () async {
-      final request = SearchRequest.r4(
-        base: Uri.parse('http://hapi.fhir.org/baseR4'),
-        type: R4Types.observation,
-        parameters: ObservationSearch(
-          subject: [
-            SearchReference(
-              type: R4Types.patient,
-              id: Id('123'),
-            ),
-          ],
-        ),
-      );
-      final response = await request.request();
-      expect(
-        response.fold((l) => l.errorMessage(), (r) => r),
-        'http://hapi.fhir.org/baseR4/Observation?_format=$mimeType&subject=Patient/123',
-      );
-    });
-  },
-      tags: 'search',
-      skip: 'currently failing due to lack of parameter support');
+  }, tags: ['uri', 'search']);
 }

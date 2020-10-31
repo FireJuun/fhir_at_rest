@@ -16,7 +16,7 @@ abstract class FHIRUri with _$FHIRUri {
   factory FHIRUri.dstu2Read({
     @required Uri base,
     GeneralParameters generalParameters,
-    Map<String, String> parameters,
+    List<FHIRUriParameter> parameters,
     @required Dstu2Types type,
     @required Id id,
   }) = _FHIRUriDstu2Read;
@@ -24,7 +24,7 @@ abstract class FHIRUri with _$FHIRUri {
   factory FHIRUri.stu3Read({
     @required Uri base,
     GeneralParameters generalParameters,
-    Map<String, String> parameters,
+    List<FHIRUriParameter> parameters,
     @required Stu3Types type,
     @required Id id,
   }) = _FHIRUriStu3Read;
@@ -32,7 +32,7 @@ abstract class FHIRUri with _$FHIRUri {
   factory FHIRUri.r4Read({
     @required Uri base,
     GeneralParameters generalParameters,
-    Map<String, String> parameters,
+    List<FHIRUriParameter> parameters,
     @required R4Types type,
     @required Id id,
   }) = _FHIRUriR4Read;
@@ -40,7 +40,7 @@ abstract class FHIRUri with _$FHIRUri {
   factory FHIRUri.r5Read({
     @required Uri base,
     GeneralParameters generalParameters,
-    Map<String, String> parameters,
+    List<FHIRUriParameter> parameters,
     @required R5Types type,
     @required Id id,
   }) = _FHIRUriR5Read;
@@ -51,7 +51,7 @@ abstract class FHIRUri with _$FHIRUri {
   factory FHIRUri.dstu2VRead({
     @required Uri base,
     GeneralParameters generalParameters,
-    Map<String, String> parameters,
+    List<FHIRUriParameter> parameters,
     @required Dstu2Types type,
     @required Id id,
     @required Id vid,
@@ -60,7 +60,7 @@ abstract class FHIRUri with _$FHIRUri {
   factory FHIRUri.stu3VRead({
     @required Uri base,
     GeneralParameters generalParameters,
-    Map<String, String> parameters,
+    List<FHIRUriParameter> parameters,
     @required Stu3Types type,
     @required Id id,
     @required Id vid,
@@ -69,7 +69,7 @@ abstract class FHIRUri with _$FHIRUri {
   factory FHIRUri.r4VRead({
     @required Uri base,
     GeneralParameters generalParameters,
-    Map<String, String> parameters,
+    List<FHIRUriParameter> parameters,
     @required R4Types type,
     @required Id id,
     @required Id vid,
@@ -78,7 +78,7 @@ abstract class FHIRUri with _$FHIRUri {
   factory FHIRUri.r5VRead({
     @required Uri base,
     GeneralParameters generalParameters,
-    Map<String, String> parameters,
+    List<FHIRUriParameter> parameters,
     @required R5Types type,
     @required Id id,
     @required Id vid,
@@ -90,7 +90,7 @@ abstract class FHIRUri with _$FHIRUri {
   factory FHIRUri.dstu2Update({
     @required Uri base,
     GeneralParameters generalParameters,
-    Map<String, String> parameters,
+    List<FHIRUriParameter> parameters,
     @required Dstu2Types type,
     @required Id id,
   }) = _FHIRUriDstu2Update;
@@ -98,7 +98,7 @@ abstract class FHIRUri with _$FHIRUri {
   factory FHIRUri.stu3Update({
     @required Uri base,
     GeneralParameters generalParameters,
-    Map<String, String> parameters,
+    List<FHIRUriParameter> parameters,
     @required Stu3Types type,
     @required Id id,
   }) = _FHIRUriStu3Update;
@@ -106,7 +106,7 @@ abstract class FHIRUri with _$FHIRUri {
   factory FHIRUri.r4Update({
     @required Uri base,
     GeneralParameters generalParameters,
-    Map<String, String> parameters,
+    List<FHIRUriParameter> parameters,
     @required R4Types type,
     @required Id id,
   }) = _FHIRUriR4Update;
@@ -114,7 +114,7 @@ abstract class FHIRUri with _$FHIRUri {
   factory FHIRUri.r5Update({
     @required Uri base,
     GeneralParameters generalParameters,
-    Map<String, String> parameters,
+    List<FHIRUriParameter> parameters,
     @required R5Types type,
     @required Id id,
   }) = _FHIRUriR5Update;
@@ -125,7 +125,7 @@ abstract class FHIRUri with _$FHIRUri {
   factory FHIRUri.dstu2Patch({
     @required Uri base,
     GeneralParameters generalParameters,
-    Map<String, String> parameters,
+    List<FHIRUriParameter> parameters,
     @required Dstu2Types type,
     @required Id id,
   }) = _FHIRUriDstu2Patch;
@@ -133,7 +133,7 @@ abstract class FHIRUri with _$FHIRUri {
   factory FHIRUri.stu3Patch({
     @required Uri base,
     GeneralParameters generalParameters,
-    Map<String, String> parameters,
+    List<FHIRUriParameter> parameters,
     @required Stu3Types type,
     @required Id id,
   }) = _FHIRUriStu3Patch;
@@ -141,7 +141,7 @@ abstract class FHIRUri with _$FHIRUri {
   factory FHIRUri.r4Patch({
     @required Uri base,
     GeneralParameters generalParameters,
-    Map<String, String> parameters,
+    List<FHIRUriParameter> parameters,
     @required R4Types type,
     @required Id id,
   }) = _FHIRUriR4Patch;
@@ -149,7 +149,7 @@ abstract class FHIRUri with _$FHIRUri {
   factory FHIRUri.r5Patch({
     @required Uri base,
     GeneralParameters generalParameters,
-    Map<String, String> parameters,
+    List<FHIRUriParameter> parameters,
     @required R5Types type,
     @required Id id,
   }) = _FHIRUriR5Patch;
@@ -160,7 +160,7 @@ abstract class FHIRUri with _$FHIRUri {
   factory FHIRUri.dstu2Delete({
     @required Uri base,
     GeneralParameters generalParameters,
-    Map<String, String> parameters,
+    List<FHIRUriParameter> parameters,
     @required Dstu2Types type,
     @required Id id,
   }) = _FHIRUriDstu2Delete;
@@ -168,7 +168,7 @@ abstract class FHIRUri with _$FHIRUri {
   factory FHIRUri.stu3Delete({
     @required Uri base,
     GeneralParameters generalParameters,
-    Map<String, String> parameters,
+    List<FHIRUriParameter> parameters,
     @required Stu3Types type,
     @required Id id,
   }) = _FHIRUriStu3Delete;
@@ -176,7 +176,7 @@ abstract class FHIRUri with _$FHIRUri {
   factory FHIRUri.r4Delete({
     @required Uri base,
     GeneralParameters generalParameters,
-    Map<String, String> parameters,
+    List<FHIRUriParameter> parameters,
     @required R4Types type,
     @required Id id,
   }) = _FHIRUriR4Delete;
@@ -184,7 +184,7 @@ abstract class FHIRUri with _$FHIRUri {
   factory FHIRUri.r5Delete({
     @required Uri base,
     GeneralParameters generalParameters,
-    Map<String, String> parameters,
+    List<FHIRUriParameter> parameters,
     @required R5Types type,
     @required Id id,
   }) = _FHIRUriR5Delete;
@@ -195,28 +195,28 @@ abstract class FHIRUri with _$FHIRUri {
   factory FHIRUri.dstu2Create({
     @required Uri base,
     GeneralParameters generalParameters,
-    Map<String, String> parameters,
+    List<FHIRUriParameter> parameters,
     @required Dstu2Types type,
   }) = _FHIRUriDstu2Create;
 
   factory FHIRUri.stu3Create({
     @required Uri base,
     GeneralParameters generalParameters,
-    Map<String, String> parameters,
+    List<FHIRUriParameter> parameters,
     @required Stu3Types type,
   }) = _FHIRUriStu3Create;
 
   factory FHIRUri.r4Create({
     @required Uri base,
     GeneralParameters generalParameters,
-    Map<String, String> parameters,
+    List<FHIRUriParameter> parameters,
     @required R4Types type,
   }) = _FHIRUriR4Create;
 
   factory FHIRUri.r5Create({
     @required Uri base,
     GeneralParameters generalParameters,
-    Map<String, String> parameters,
+    List<FHIRUriParameter> parameters,
     @required R5Types type,
   }) = _FHIRUriR5Create;
 
@@ -226,7 +226,7 @@ abstract class FHIRUri with _$FHIRUri {
   factory FHIRUri.dstu2Search({
     @required Uri base,
     GeneralParameters generalParameters,
-    Map<String, String> parameters,
+    List<FHIRUriParameter> parameters,
     @required Dstu2Types type,
     @Default(RestfulRequest.get_) RestfulRequest restfulRequest,
   }) = _FHIRUriDstu2Search;
@@ -234,7 +234,7 @@ abstract class FHIRUri with _$FHIRUri {
   factory FHIRUri.stu3Search({
     @required Uri base,
     GeneralParameters generalParameters,
-    Map<String, String> parameters,
+    List<FHIRUriParameter> parameters,
     @required Stu3Types type,
     @Default(RestfulRequest.get_) RestfulRequest restfulRequest,
   }) = _FHIRUriStu3Search;
@@ -242,7 +242,7 @@ abstract class FHIRUri with _$FHIRUri {
   factory FHIRUri.r4Search({
     @required Uri base,
     GeneralParameters generalParameters,
-    Map<String, String> parameters,
+    List<FHIRUriParameter> parameters,
     @required R4Types type,
     @Default(RestfulRequest.get_) RestfulRequest restfulRequest,
   }) = _FHIRUriR4Search;
@@ -250,7 +250,7 @@ abstract class FHIRUri with _$FHIRUri {
   factory FHIRUri.r5Search({
     @required Uri base,
     GeneralParameters generalParameters,
-    Map<String, String> parameters,
+    List<FHIRUriParameter> parameters,
     @required R5Types type,
     @Default(RestfulRequest.get_) RestfulRequest restfulRequest,
   }) = _FHIRUriR5Search;
@@ -261,25 +261,25 @@ abstract class FHIRUri with _$FHIRUri {
   factory FHIRUri.dstu2SearchAll({
     @required Uri base,
     GeneralParameters generalParameters,
-    Map<String, String> parameters,
+    List<FHIRUriParameter> parameters,
   }) = _FHIRUriDstu2SearchAll;
 
   factory FHIRUri.stu3SearchAll({
     @required Uri base,
     GeneralParameters generalParameters,
-    Map<String, String> parameters,
+    List<FHIRUriParameter> parameters,
   }) = _FHIRUriStu3SearchAll;
 
   factory FHIRUri.r4SearchAll({
     @required Uri base,
     GeneralParameters generalParameters,
-    Map<String, String> parameters,
+    List<FHIRUriParameter> parameters,
   }) = _FHIRUriR4SearchAll;
 
   factory FHIRUri.r5SearchAll({
     @required Uri base,
     GeneralParameters generalParameters,
-    Map<String, String> parameters,
+    List<FHIRUriParameter> parameters,
   }) = _FHIRUriR5SearchAll;
 
   /*
@@ -288,28 +288,28 @@ abstract class FHIRUri with _$FHIRUri {
   factory FHIRUri.dstu2Capabilities({
     @required Uri base,
     GeneralParameters generalParameters,
-    Map<String, String> parameters,
+    List<FHIRUriParameter> parameters,
     @Default(Mode.full) Mode mode,
   }) = _FHIRUriDstu2Capabilities;
 
   factory FHIRUri.stu3Capabilities({
     @required Uri base,
     GeneralParameters generalParameters,
-    Map<String, String> parameters,
+    List<FHIRUriParameter> parameters,
     @Default(Mode.full) Mode mode,
   }) = _FHIRUriStu3Capabilities;
 
   factory FHIRUri.r4Capabilities({
     @required Uri base,
     GeneralParameters generalParameters,
-    Map<String, String> parameters,
+    List<FHIRUriParameter> parameters,
     @Default(Mode.full) Mode mode,
   }) = _FHIRUriR4Capabilities;
 
   factory FHIRUri.r5Capabilities({
     @required Uri base,
     GeneralParameters generalParameters,
-    Map<String, String> parameters,
+    List<FHIRUriParameter> parameters,
     @Default(Mode.full) Mode mode,
   }) = _FHIRUriR5Capabilities;
 
@@ -319,25 +319,25 @@ abstract class FHIRUri with _$FHIRUri {
   factory FHIRUri.dstu2Transaction({
     @required Uri base,
     GeneralParameters generalParameters,
-    Map<String, String> parameters,
+    List<FHIRUriParameter> parameters,
   }) = _FHIRUriDstu2Transaction;
 
   factory FHIRUri.stu3Transaction({
     @required Uri base,
     GeneralParameters generalParameters,
-    Map<String, String> parameters,
+    List<FHIRUriParameter> parameters,
   }) = _FHIRUriStu3Transaction;
 
   factory FHIRUri.r4Transaction({
     @required Uri base,
     GeneralParameters generalParameters,
-    Map<String, String> parameters,
+    List<FHIRUriParameter> parameters,
   }) = _FHIRUriR4Transaction;
 
   factory FHIRUri.r5Transaction({
     @required Uri base,
     GeneralParameters generalParameters,
-    Map<String, String> parameters,
+    List<FHIRUriParameter> parameters,
   }) = _FHIRUriR5Transaction;
 
   /*
@@ -346,7 +346,7 @@ abstract class FHIRUri with _$FHIRUri {
   factory FHIRUri.dstu2History({
     @required Uri base,
     GeneralParameters generalParameters,
-    Map<String, String> parameters,
+    List<FHIRUriParameter> parameters,
     @required Dstu2Types type,
     @required Id id,
   }) = _FHIRUriDstu2History;
@@ -354,7 +354,7 @@ abstract class FHIRUri with _$FHIRUri {
   factory FHIRUri.stu3History({
     @required Uri base,
     GeneralParameters generalParameters,
-    Map<String, String> parameters,
+    List<FHIRUriParameter> parameters,
     @required Stu3Types type,
     @required Id id,
   }) = _FHIRUriStu3History;
@@ -362,7 +362,7 @@ abstract class FHIRUri with _$FHIRUri {
   factory FHIRUri.r4History({
     @required Uri base,
     GeneralParameters generalParameters,
-    Map<String, String> parameters,
+    List<FHIRUriParameter> parameters,
     @required R4Types type,
     @required Id id,
   }) = _FHIRUriR4History;
@@ -370,7 +370,7 @@ abstract class FHIRUri with _$FHIRUri {
   factory FHIRUri.r5History({
     @required Uri base,
     GeneralParameters generalParameters,
-    Map<String, String> parameters,
+    List<FHIRUriParameter> parameters,
     @required R5Types type,
     @required Id id,
   }) = _FHIRUriR5History;
@@ -381,28 +381,28 @@ abstract class FHIRUri with _$FHIRUri {
   factory FHIRUri.dstu2HistoryType({
     @required Uri base,
     GeneralParameters generalParameters,
-    Map<String, String> parameters,
+    List<FHIRUriParameter> parameters,
     @required Dstu2Types type,
   }) = _FHIRUriDstu2HistoryType;
 
   factory FHIRUri.stu3HistoryType({
     @required Uri base,
     GeneralParameters generalParameters,
-    Map<String, String> parameters,
+    List<FHIRUriParameter> parameters,
     @required Stu3Types type,
   }) = _FHIRUriStu3HistoryType;
 
   factory FHIRUri.r4HistoryType({
     @required Uri base,
     GeneralParameters generalParameters,
-    Map<String, String> parameters,
+    List<FHIRUriParameter> parameters,
     @required R4Types type,
   }) = _FHIRUriR4HistoryType;
 
   factory FHIRUri.r5HistoryType({
     @required Uri base,
     GeneralParameters generalParameters,
-    Map<String, String> parameters,
+    List<FHIRUriParameter> parameters,
     @required R5Types type,
   }) = _FHIRUriR5HistoryType;
 
@@ -412,25 +412,25 @@ abstract class FHIRUri with _$FHIRUri {
   factory FHIRUri.dstu2HistoryAll({
     @required Uri base,
     GeneralParameters generalParameters,
-    Map<String, String> parameters,
+    List<FHIRUriParameter> parameters,
   }) = _FHIRUriDstu2HistoryAll;
 
   factory FHIRUri.stu3HistoryAll({
     @required Uri base,
     GeneralParameters generalParameters,
-    Map<String, String> parameters,
+    List<FHIRUriParameter> parameters,
   }) = _FHIRUriStu3HistoryAll;
 
   factory FHIRUri.r4HistoryAll({
     @required Uri base,
     GeneralParameters generalParameters,
-    Map<String, String> parameters,
+    List<FHIRUriParameter> parameters,
   }) = _FHIRUriR4HistoryAll;
 
   factory FHIRUri.r5HistoryAll({
     @required Uri base,
     GeneralParameters generalParameters,
-    Map<String, String> parameters,
+    List<FHIRUriParameter> parameters,
   }) = _FHIRUriR5HistoryAll;
 
   /*
@@ -439,7 +439,7 @@ abstract class FHIRUri with _$FHIRUri {
   factory FHIRUri.dstu2Operation({
     @required Uri base,
     GeneralParameters generalParameters,
-    Map<String, String> parameters,
+    List<FHIRUriParameter> parameters,
     Dstu2Types type,
     Id id,
     @required String operation,
@@ -448,7 +448,7 @@ abstract class FHIRUri with _$FHIRUri {
   factory FHIRUri.stu3Operation({
     @required Uri base,
     GeneralParameters generalParameters,
-    Map<String, String> parameters,
+    List<FHIRUriParameter> parameters,
     Stu3Types type,
     Id id,
     @required String operation,
@@ -457,7 +457,7 @@ abstract class FHIRUri with _$FHIRUri {
   factory FHIRUri.r4Operation({
     @required Uri base,
     GeneralParameters generalParameters,
-    Map<String, String> parameters,
+    List<FHIRUriParameter> parameters,
     R4Types type,
     Id id,
     @required String operation,
@@ -466,7 +466,7 @@ abstract class FHIRUri with _$FHIRUri {
   factory FHIRUri.r5Operation({
     @required Uri base,
     GeneralParameters generalParameters,
-    Map<String, String> parameters,
+    List<FHIRUriParameter> parameters,
     R5Types type,
     Id id,
     @required String operation,
@@ -547,8 +547,8 @@ abstract class FHIRUri with _$FHIRUri {
     } else {
       String parametersString = '';
       parameters.forEach(
-        (key, value) {
-          parametersString += _encodeParam(key, value);
+        (p) {
+          parametersString += _encodeParam(p.key, p.value.toString());
         },
       );
       return parametersString;
@@ -716,6 +716,15 @@ class GeneralParameters {
   final bool pretty;
   final Summary summary;
   final List<String> elements;
+}
+
+class FHIRUriParameter {
+  FHIRUriParameter(
+    this.key,
+    this.value,
+  );
+  final String key;
+  final dynamic value;
 }
 
 final List<String> validMimeTypesDstu2 = [
