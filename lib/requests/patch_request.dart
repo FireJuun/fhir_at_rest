@@ -7,6 +7,7 @@ import 'package:fhir/dstu2.dart' as dstu2;
 import 'package:fhir/stu3.dart' as stu3;
 import 'package:fhir/r4.dart' as r4;
 import 'package:fhir/r5.dart' as r5;
+import 'package:http/http.dart';
 
 import '../enums/enums.dart';
 import '../failures/restful_failure.dart';
@@ -25,6 +26,7 @@ abstract class PatchRequest with _$PatchRequest {
     @required Id id,
     @Default(false) bool pretty,
     @Default(Summary.none) Summary summary,
+    Client client,
   }) = _PatchRequestDstu2;
 
   factory PatchRequest.stu3({
@@ -33,6 +35,7 @@ abstract class PatchRequest with _$PatchRequest {
     @required Id id,
     @Default(false) bool pretty,
     @Default(Summary.none) Summary summary,
+    Client client,
   }) = _PatchRequestStu3;
 
   factory PatchRequest.r4({
@@ -41,6 +44,7 @@ abstract class PatchRequest with _$PatchRequest {
     @required Id id,
     @Default(false) bool pretty,
     @Default(Summary.none) Summary summary,
+    Client client,
   }) = _PatchRequestR4;
 
   factory PatchRequest.r5({
@@ -49,6 +53,7 @@ abstract class PatchRequest with _$PatchRequest {
     @required Id id,
     @Default(false) bool pretty,
     @Default(Summary.none) Summary summary,
+    Client client,
   }) = _PatchRequestR5;
 
   Future<Either<RestfulFailure, dynamic>> request({
@@ -58,38 +63,8 @@ abstract class PatchRequest with _$PatchRequest {
     if (resource.id != this.id) {
       return left(RestfulFailure.idDoesNotMatchResource(failedValue: resource));
     }
-    final FHIRUri fhirUri = map(
-      dstu2: (req) => FHIRUri.dstu2Patch(
-        base: req.base,
-        type: req.type,
-        id: req.id,
-        pretty: req.pretty,
-        summary: req.summary,
-      ),
-      stu3: (req) => FHIRUri.stu3Patch(
-        base: req.base,
-        type: req.type,
-        id: req.id,
-        pretty: req.pretty,
-        summary: req.summary,
-      ),
-      r4: (req) => FHIRUri.r4Patch(
-        base: req.base,
-        type: req.type,
-        id: req.id,
-        pretty: req.pretty,
-        summary: req.summary,
-      ),
-      r5: (req) => FHIRUri.r5Patch(
-        base: req.base,
-        type: req.type,
-        id: req.id,
-        pretty: req.pretty,
-        summary: req.summary,
-      ),
-    );
 
-    var searchString = '';
+    List<FHIRUriParameter> parameterList;
     if (search != null) {
       if (search is Dstu2SearchParameters && this is! _PatchRequestDstu2 ||
           search is Stu3SearchParameters && this is! _PatchRequestStu3 ||
@@ -98,14 +73,59 @@ abstract class PatchRequest with _$PatchRequest {
         return left(RestfulFailure.parameterTypeNotResourceType(
             resourceType: resource.resourceType, type: search.runtimeType));
       } else {
-        searchString = search.searchString();
+        parameterList = search.searchParameterList();
       }
     }
 
+    final FHIRUri fhirUri = map(
+      dstu2: (req) => FHIRUri.dstu2Patch(
+        base: req.base,
+        type: req.type,
+        id: req.id,
+        generalParameters: GeneralParameters.dstu2(
+          pretty: req.pretty,
+          summary: req.summary,
+        ),
+        parameters: parameterList,
+      ),
+      stu3: (req) => FHIRUri.stu3Patch(
+        base: req.base,
+        type: req.type,
+        id: req.id,
+        generalParameters: GeneralParameters.stu3(
+          pretty: req.pretty,
+          summary: req.summary,
+        ),
+        parameters: parameterList,
+      ),
+      r4: (req) => FHIRUri.r4Patch(
+        base: req.base,
+        type: req.type,
+        id: req.id,
+        generalParameters: GeneralParameters.r4(
+          pretty: req.pretty,
+          summary: req.summary,
+        ),
+        parameters: parameterList,
+      ),
+      r5: (req) => FHIRUri.r5Patch(
+        base: req.base,
+        type: req.type,
+        id: req.id,
+        generalParameters: GeneralParameters.r5(
+          pretty: req.pretty,
+          summary: req.summary,
+        ),
+        parameters: parameterList,
+      ),
+    );
+
     final result = await makeRequest(
-        type: RestfulRequest.patch_,
-        thisRequest: fhirUri.uri + searchString,
-        resource: resource.toJson());
+      type: RestfulRequest.patch_,
+      thisRequest: fhirUri.uri,
+      resource: resource.toJson(),
+      client: client,
+    );
 
     return result.fold(
       (l) => left(l),

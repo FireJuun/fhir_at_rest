@@ -15,45 +15,73 @@ class _$OperationRequestTearOff {
 
 // ignore: unused_element
   _OperationRequestDstu2 dstu2(
-      {@required Uri base, Dstu2Types type, Id id, String operation}) {
+      {@required Uri base,
+      Dstu2Types type,
+      Id id,
+      String operation,
+      Map<String, dynamic> parameters,
+      Client client}) {
     return _OperationRequestDstu2(
       base: base,
       type: type,
       id: id,
       operation: operation,
+      parameters: parameters,
+      client: client,
     );
   }
 
 // ignore: unused_element
   _OperationRequestStu3 stu3(
-      {@required Uri base, Stu3Types type, Id id, String operation}) {
+      {@required Uri base,
+      Stu3Types type,
+      Id id,
+      String operation,
+      Map<String, dynamic> parameters,
+      Client client}) {
     return _OperationRequestStu3(
       base: base,
       type: type,
       id: id,
       operation: operation,
+      parameters: parameters,
+      client: client,
     );
   }
 
 // ignore: unused_element
   _OperationRequestR4 r4(
-      {@required Uri base, R4Types type, Id id, String operation}) {
+      {@required Uri base,
+      R4Types type,
+      Id id,
+      String operation,
+      Map<String, dynamic> parameters,
+      Client client}) {
     return _OperationRequestR4(
       base: base,
       type: type,
       id: id,
       operation: operation,
+      parameters: parameters,
+      client: client,
     );
   }
 
 // ignore: unused_element
   _OperationRequestR5 r5(
-      {@required Uri base, R5Types type, Id id, String operation}) {
+      {@required Uri base,
+      R5Types type,
+      Id id,
+      String operation,
+      Map<String, dynamic> parameters,
+      Client client}) {
     return _OperationRequestR5(
       base: base,
       type: type,
       id: id,
       operation: operation,
+      parameters: parameters,
+      client: client,
     );
   }
 }
@@ -67,20 +95,34 @@ mixin _$OperationRequest {
   Uri get base;
   Id get id;
   String get operation;
+  Map<String, dynamic> get parameters;
+  Client get client;
 
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result dstu2(Uri base, Dstu2Types type, Id id, String operation),
-    @required Result stu3(Uri base, Stu3Types type, Id id, String operation),
-    @required Result r4(Uri base, R4Types type, Id id, String operation),
-    @required Result r5(Uri base, R5Types type, Id id, String operation),
+    @required
+        Result dstu2(Uri base, Dstu2Types type, Id id, String operation,
+            Map<String, dynamic> parameters, Client client),
+    @required
+        Result stu3(Uri base, Stu3Types type, Id id, String operation,
+            Map<String, dynamic> parameters, Client client),
+    @required
+        Result r4(Uri base, R4Types type, Id id, String operation,
+            Map<String, dynamic> parameters, Client client),
+    @required
+        Result r5(Uri base, R5Types type, Id id, String operation,
+            Map<String, dynamic> parameters, Client client),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result dstu2(Uri base, Dstu2Types type, Id id, String operation),
-    Result stu3(Uri base, Stu3Types type, Id id, String operation),
-    Result r4(Uri base, R4Types type, Id id, String operation),
-    Result r5(Uri base, R5Types type, Id id, String operation),
+    Result dstu2(Uri base, Dstu2Types type, Id id, String operation,
+        Map<String, dynamic> parameters, Client client),
+    Result stu3(Uri base, Stu3Types type, Id id, String operation,
+        Map<String, dynamic> parameters, Client client),
+    Result r4(Uri base, R4Types type, Id id, String operation,
+        Map<String, dynamic> parameters, Client client),
+    Result r5(Uri base, R5Types type, Id id, String operation,
+        Map<String, dynamic> parameters, Client client),
     @required Result orElse(),
   });
   @optionalTypeArgs
@@ -107,7 +149,12 @@ abstract class $OperationRequestCopyWith<$Res> {
   factory $OperationRequestCopyWith(
           OperationRequest value, $Res Function(OperationRequest) then) =
       _$OperationRequestCopyWithImpl<$Res>;
-  $Res call({Uri base, Id id, String operation});
+  $Res call(
+      {Uri base,
+      Id id,
+      String operation,
+      Map<String, dynamic> parameters,
+      Client client});
 }
 
 /// @nodoc
@@ -124,11 +171,17 @@ class _$OperationRequestCopyWithImpl<$Res>
     Object base = freezed,
     Object id = freezed,
     Object operation = freezed,
+    Object parameters = freezed,
+    Object client = freezed,
   }) {
     return _then(_value.copyWith(
       base: base == freezed ? _value.base : base as Uri,
       id: id == freezed ? _value.id : id as Id,
       operation: operation == freezed ? _value.operation : operation as String,
+      parameters: parameters == freezed
+          ? _value.parameters
+          : parameters as Map<String, dynamic>,
+      client: client == freezed ? _value.client : client as Client,
     ));
   }
 }
@@ -140,7 +193,13 @@ abstract class _$OperationRequestDstu2CopyWith<$Res>
           $Res Function(_OperationRequestDstu2) then) =
       __$OperationRequestDstu2CopyWithImpl<$Res>;
   @override
-  $Res call({Uri base, Dstu2Types type, Id id, String operation});
+  $Res call(
+      {Uri base,
+      Dstu2Types type,
+      Id id,
+      String operation,
+      Map<String, dynamic> parameters,
+      Client client});
 }
 
 /// @nodoc
@@ -160,12 +219,18 @@ class __$OperationRequestDstu2CopyWithImpl<$Res>
     Object type = freezed,
     Object id = freezed,
     Object operation = freezed,
+    Object parameters = freezed,
+    Object client = freezed,
   }) {
     return _then(_OperationRequestDstu2(
       base: base == freezed ? _value.base : base as Uri,
       type: type == freezed ? _value.type : type as Dstu2Types,
       id: id == freezed ? _value.id : id as Id,
       operation: operation == freezed ? _value.operation : operation as String,
+      parameters: parameters == freezed
+          ? _value.parameters
+          : parameters as Map<String, dynamic>,
+      client: client == freezed ? _value.client : client as Client,
     ));
   }
 }
@@ -173,7 +238,12 @@ class __$OperationRequestDstu2CopyWithImpl<$Res>
 /// @nodoc
 class _$_OperationRequestDstu2 extends _OperationRequestDstu2 {
   _$_OperationRequestDstu2(
-      {@required this.base, this.type, this.id, this.operation})
+      {@required this.base,
+      this.type,
+      this.id,
+      this.operation,
+      this.parameters,
+      this.client})
       : assert(base != null),
         super._();
 
@@ -185,10 +255,14 @@ class _$_OperationRequestDstu2 extends _OperationRequestDstu2 {
   final Id id;
   @override
   final String operation;
+  @override
+  final Map<String, dynamic> parameters;
+  @override
+  final Client client;
 
   @override
   String toString() {
-    return 'OperationRequest.dstu2(base: $base, type: $type, id: $id, operation: $operation)';
+    return 'OperationRequest.dstu2(base: $base, type: $type, id: $id, operation: $operation, parameters: $parameters, client: $client)';
   }
 
   @override
@@ -203,7 +277,12 @@ class _$_OperationRequestDstu2 extends _OperationRequestDstu2 {
                 const DeepCollectionEquality().equals(other.id, id)) &&
             (identical(other.operation, operation) ||
                 const DeepCollectionEquality()
-                    .equals(other.operation, operation)));
+                    .equals(other.operation, operation)) &&
+            (identical(other.parameters, parameters) ||
+                const DeepCollectionEquality()
+                    .equals(other.parameters, parameters)) &&
+            (identical(other.client, client) ||
+                const DeepCollectionEquality().equals(other.client, client)));
   }
 
   @override
@@ -212,7 +291,9 @@ class _$_OperationRequestDstu2 extends _OperationRequestDstu2 {
       const DeepCollectionEquality().hash(base) ^
       const DeepCollectionEquality().hash(type) ^
       const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(operation);
+      const DeepCollectionEquality().hash(operation) ^
+      const DeepCollectionEquality().hash(parameters) ^
+      const DeepCollectionEquality().hash(client);
 
   @override
   _$OperationRequestDstu2CopyWith<_OperationRequestDstu2> get copyWith =>
@@ -222,30 +303,42 @@ class _$_OperationRequestDstu2 extends _OperationRequestDstu2 {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result dstu2(Uri base, Dstu2Types type, Id id, String operation),
-    @required Result stu3(Uri base, Stu3Types type, Id id, String operation),
-    @required Result r4(Uri base, R4Types type, Id id, String operation),
-    @required Result r5(Uri base, R5Types type, Id id, String operation),
+    @required
+        Result dstu2(Uri base, Dstu2Types type, Id id, String operation,
+            Map<String, dynamic> parameters, Client client),
+    @required
+        Result stu3(Uri base, Stu3Types type, Id id, String operation,
+            Map<String, dynamic> parameters, Client client),
+    @required
+        Result r4(Uri base, R4Types type, Id id, String operation,
+            Map<String, dynamic> parameters, Client client),
+    @required
+        Result r5(Uri base, R5Types type, Id id, String operation,
+            Map<String, dynamic> parameters, Client client),
   }) {
     assert(dstu2 != null);
     assert(stu3 != null);
     assert(r4 != null);
     assert(r5 != null);
-    return dstu2(base, type, id, operation);
+    return dstu2(base, type, id, operation, parameters, client);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result dstu2(Uri base, Dstu2Types type, Id id, String operation),
-    Result stu3(Uri base, Stu3Types type, Id id, String operation),
-    Result r4(Uri base, R4Types type, Id id, String operation),
-    Result r5(Uri base, R5Types type, Id id, String operation),
+    Result dstu2(Uri base, Dstu2Types type, Id id, String operation,
+        Map<String, dynamic> parameters, Client client),
+    Result stu3(Uri base, Stu3Types type, Id id, String operation,
+        Map<String, dynamic> parameters, Client client),
+    Result r4(Uri base, R4Types type, Id id, String operation,
+        Map<String, dynamic> parameters, Client client),
+    Result r5(Uri base, R5Types type, Id id, String operation,
+        Map<String, dynamic> parameters, Client client),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (dstu2 != null) {
-      return dstu2(base, type, id, operation);
+      return dstu2(base, type, id, operation, parameters, client);
     }
     return orElse();
   }
@@ -288,7 +381,9 @@ abstract class _OperationRequestDstu2 extends OperationRequest {
       {@required Uri base,
       Dstu2Types type,
       Id id,
-      String operation}) = _$_OperationRequestDstu2;
+      String operation,
+      Map<String, dynamic> parameters,
+      Client client}) = _$_OperationRequestDstu2;
 
   @override
   Uri get base;
@@ -297,6 +392,10 @@ abstract class _OperationRequestDstu2 extends OperationRequest {
   Id get id;
   @override
   String get operation;
+  @override
+  Map<String, dynamic> get parameters;
+  @override
+  Client get client;
   @override
   _$OperationRequestDstu2CopyWith<_OperationRequestDstu2> get copyWith;
 }
@@ -308,7 +407,13 @@ abstract class _$OperationRequestStu3CopyWith<$Res>
           $Res Function(_OperationRequestStu3) then) =
       __$OperationRequestStu3CopyWithImpl<$Res>;
   @override
-  $Res call({Uri base, Stu3Types type, Id id, String operation});
+  $Res call(
+      {Uri base,
+      Stu3Types type,
+      Id id,
+      String operation,
+      Map<String, dynamic> parameters,
+      Client client});
 }
 
 /// @nodoc
@@ -328,12 +433,18 @@ class __$OperationRequestStu3CopyWithImpl<$Res>
     Object type = freezed,
     Object id = freezed,
     Object operation = freezed,
+    Object parameters = freezed,
+    Object client = freezed,
   }) {
     return _then(_OperationRequestStu3(
       base: base == freezed ? _value.base : base as Uri,
       type: type == freezed ? _value.type : type as Stu3Types,
       id: id == freezed ? _value.id : id as Id,
       operation: operation == freezed ? _value.operation : operation as String,
+      parameters: parameters == freezed
+          ? _value.parameters
+          : parameters as Map<String, dynamic>,
+      client: client == freezed ? _value.client : client as Client,
     ));
   }
 }
@@ -341,7 +452,12 @@ class __$OperationRequestStu3CopyWithImpl<$Res>
 /// @nodoc
 class _$_OperationRequestStu3 extends _OperationRequestStu3 {
   _$_OperationRequestStu3(
-      {@required this.base, this.type, this.id, this.operation})
+      {@required this.base,
+      this.type,
+      this.id,
+      this.operation,
+      this.parameters,
+      this.client})
       : assert(base != null),
         super._();
 
@@ -353,10 +469,14 @@ class _$_OperationRequestStu3 extends _OperationRequestStu3 {
   final Id id;
   @override
   final String operation;
+  @override
+  final Map<String, dynamic> parameters;
+  @override
+  final Client client;
 
   @override
   String toString() {
-    return 'OperationRequest.stu3(base: $base, type: $type, id: $id, operation: $operation)';
+    return 'OperationRequest.stu3(base: $base, type: $type, id: $id, operation: $operation, parameters: $parameters, client: $client)';
   }
 
   @override
@@ -371,7 +491,12 @@ class _$_OperationRequestStu3 extends _OperationRequestStu3 {
                 const DeepCollectionEquality().equals(other.id, id)) &&
             (identical(other.operation, operation) ||
                 const DeepCollectionEquality()
-                    .equals(other.operation, operation)));
+                    .equals(other.operation, operation)) &&
+            (identical(other.parameters, parameters) ||
+                const DeepCollectionEquality()
+                    .equals(other.parameters, parameters)) &&
+            (identical(other.client, client) ||
+                const DeepCollectionEquality().equals(other.client, client)));
   }
 
   @override
@@ -380,7 +505,9 @@ class _$_OperationRequestStu3 extends _OperationRequestStu3 {
       const DeepCollectionEquality().hash(base) ^
       const DeepCollectionEquality().hash(type) ^
       const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(operation);
+      const DeepCollectionEquality().hash(operation) ^
+      const DeepCollectionEquality().hash(parameters) ^
+      const DeepCollectionEquality().hash(client);
 
   @override
   _$OperationRequestStu3CopyWith<_OperationRequestStu3> get copyWith =>
@@ -390,30 +517,42 @@ class _$_OperationRequestStu3 extends _OperationRequestStu3 {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result dstu2(Uri base, Dstu2Types type, Id id, String operation),
-    @required Result stu3(Uri base, Stu3Types type, Id id, String operation),
-    @required Result r4(Uri base, R4Types type, Id id, String operation),
-    @required Result r5(Uri base, R5Types type, Id id, String operation),
+    @required
+        Result dstu2(Uri base, Dstu2Types type, Id id, String operation,
+            Map<String, dynamic> parameters, Client client),
+    @required
+        Result stu3(Uri base, Stu3Types type, Id id, String operation,
+            Map<String, dynamic> parameters, Client client),
+    @required
+        Result r4(Uri base, R4Types type, Id id, String operation,
+            Map<String, dynamic> parameters, Client client),
+    @required
+        Result r5(Uri base, R5Types type, Id id, String operation,
+            Map<String, dynamic> parameters, Client client),
   }) {
     assert(dstu2 != null);
     assert(stu3 != null);
     assert(r4 != null);
     assert(r5 != null);
-    return stu3(base, type, id, operation);
+    return stu3(base, type, id, operation, parameters, client);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result dstu2(Uri base, Dstu2Types type, Id id, String operation),
-    Result stu3(Uri base, Stu3Types type, Id id, String operation),
-    Result r4(Uri base, R4Types type, Id id, String operation),
-    Result r5(Uri base, R5Types type, Id id, String operation),
+    Result dstu2(Uri base, Dstu2Types type, Id id, String operation,
+        Map<String, dynamic> parameters, Client client),
+    Result stu3(Uri base, Stu3Types type, Id id, String operation,
+        Map<String, dynamic> parameters, Client client),
+    Result r4(Uri base, R4Types type, Id id, String operation,
+        Map<String, dynamic> parameters, Client client),
+    Result r5(Uri base, R5Types type, Id id, String operation,
+        Map<String, dynamic> parameters, Client client),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (stu3 != null) {
-      return stu3(base, type, id, operation);
+      return stu3(base, type, id, operation, parameters, client);
     }
     return orElse();
   }
@@ -456,7 +595,9 @@ abstract class _OperationRequestStu3 extends OperationRequest {
       {@required Uri base,
       Stu3Types type,
       Id id,
-      String operation}) = _$_OperationRequestStu3;
+      String operation,
+      Map<String, dynamic> parameters,
+      Client client}) = _$_OperationRequestStu3;
 
   @override
   Uri get base;
@@ -465,6 +606,10 @@ abstract class _OperationRequestStu3 extends OperationRequest {
   Id get id;
   @override
   String get operation;
+  @override
+  Map<String, dynamic> get parameters;
+  @override
+  Client get client;
   @override
   _$OperationRequestStu3CopyWith<_OperationRequestStu3> get copyWith;
 }
@@ -476,7 +621,13 @@ abstract class _$OperationRequestR4CopyWith<$Res>
           _OperationRequestR4 value, $Res Function(_OperationRequestR4) then) =
       __$OperationRequestR4CopyWithImpl<$Res>;
   @override
-  $Res call({Uri base, R4Types type, Id id, String operation});
+  $Res call(
+      {Uri base,
+      R4Types type,
+      Id id,
+      String operation,
+      Map<String, dynamic> parameters,
+      Client client});
 }
 
 /// @nodoc
@@ -496,12 +647,18 @@ class __$OperationRequestR4CopyWithImpl<$Res>
     Object type = freezed,
     Object id = freezed,
     Object operation = freezed,
+    Object parameters = freezed,
+    Object client = freezed,
   }) {
     return _then(_OperationRequestR4(
       base: base == freezed ? _value.base : base as Uri,
       type: type == freezed ? _value.type : type as R4Types,
       id: id == freezed ? _value.id : id as Id,
       operation: operation == freezed ? _value.operation : operation as String,
+      parameters: parameters == freezed
+          ? _value.parameters
+          : parameters as Map<String, dynamic>,
+      client: client == freezed ? _value.client : client as Client,
     ));
   }
 }
@@ -509,7 +666,12 @@ class __$OperationRequestR4CopyWithImpl<$Res>
 /// @nodoc
 class _$_OperationRequestR4 extends _OperationRequestR4 {
   _$_OperationRequestR4(
-      {@required this.base, this.type, this.id, this.operation})
+      {@required this.base,
+      this.type,
+      this.id,
+      this.operation,
+      this.parameters,
+      this.client})
       : assert(base != null),
         super._();
 
@@ -521,10 +683,14 @@ class _$_OperationRequestR4 extends _OperationRequestR4 {
   final Id id;
   @override
   final String operation;
+  @override
+  final Map<String, dynamic> parameters;
+  @override
+  final Client client;
 
   @override
   String toString() {
-    return 'OperationRequest.r4(base: $base, type: $type, id: $id, operation: $operation)';
+    return 'OperationRequest.r4(base: $base, type: $type, id: $id, operation: $operation, parameters: $parameters, client: $client)';
   }
 
   @override
@@ -539,7 +705,12 @@ class _$_OperationRequestR4 extends _OperationRequestR4 {
                 const DeepCollectionEquality().equals(other.id, id)) &&
             (identical(other.operation, operation) ||
                 const DeepCollectionEquality()
-                    .equals(other.operation, operation)));
+                    .equals(other.operation, operation)) &&
+            (identical(other.parameters, parameters) ||
+                const DeepCollectionEquality()
+                    .equals(other.parameters, parameters)) &&
+            (identical(other.client, client) ||
+                const DeepCollectionEquality().equals(other.client, client)));
   }
 
   @override
@@ -548,7 +719,9 @@ class _$_OperationRequestR4 extends _OperationRequestR4 {
       const DeepCollectionEquality().hash(base) ^
       const DeepCollectionEquality().hash(type) ^
       const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(operation);
+      const DeepCollectionEquality().hash(operation) ^
+      const DeepCollectionEquality().hash(parameters) ^
+      const DeepCollectionEquality().hash(client);
 
   @override
   _$OperationRequestR4CopyWith<_OperationRequestR4> get copyWith =>
@@ -557,30 +730,42 @@ class _$_OperationRequestR4 extends _OperationRequestR4 {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result dstu2(Uri base, Dstu2Types type, Id id, String operation),
-    @required Result stu3(Uri base, Stu3Types type, Id id, String operation),
-    @required Result r4(Uri base, R4Types type, Id id, String operation),
-    @required Result r5(Uri base, R5Types type, Id id, String operation),
+    @required
+        Result dstu2(Uri base, Dstu2Types type, Id id, String operation,
+            Map<String, dynamic> parameters, Client client),
+    @required
+        Result stu3(Uri base, Stu3Types type, Id id, String operation,
+            Map<String, dynamic> parameters, Client client),
+    @required
+        Result r4(Uri base, R4Types type, Id id, String operation,
+            Map<String, dynamic> parameters, Client client),
+    @required
+        Result r5(Uri base, R5Types type, Id id, String operation,
+            Map<String, dynamic> parameters, Client client),
   }) {
     assert(dstu2 != null);
     assert(stu3 != null);
     assert(r4 != null);
     assert(r5 != null);
-    return r4(base, type, id, operation);
+    return r4(base, type, id, operation, parameters, client);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result dstu2(Uri base, Dstu2Types type, Id id, String operation),
-    Result stu3(Uri base, Stu3Types type, Id id, String operation),
-    Result r4(Uri base, R4Types type, Id id, String operation),
-    Result r5(Uri base, R5Types type, Id id, String operation),
+    Result dstu2(Uri base, Dstu2Types type, Id id, String operation,
+        Map<String, dynamic> parameters, Client client),
+    Result stu3(Uri base, Stu3Types type, Id id, String operation,
+        Map<String, dynamic> parameters, Client client),
+    Result r4(Uri base, R4Types type, Id id, String operation,
+        Map<String, dynamic> parameters, Client client),
+    Result r5(Uri base, R5Types type, Id id, String operation,
+        Map<String, dynamic> parameters, Client client),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (r4 != null) {
-      return r4(base, type, id, operation);
+      return r4(base, type, id, operation, parameters, client);
     }
     return orElse();
   }
@@ -623,7 +808,9 @@ abstract class _OperationRequestR4 extends OperationRequest {
       {@required Uri base,
       R4Types type,
       Id id,
-      String operation}) = _$_OperationRequestR4;
+      String operation,
+      Map<String, dynamic> parameters,
+      Client client}) = _$_OperationRequestR4;
 
   @override
   Uri get base;
@@ -632,6 +819,10 @@ abstract class _OperationRequestR4 extends OperationRequest {
   Id get id;
   @override
   String get operation;
+  @override
+  Map<String, dynamic> get parameters;
+  @override
+  Client get client;
   @override
   _$OperationRequestR4CopyWith<_OperationRequestR4> get copyWith;
 }
@@ -643,7 +834,13 @@ abstract class _$OperationRequestR5CopyWith<$Res>
           _OperationRequestR5 value, $Res Function(_OperationRequestR5) then) =
       __$OperationRequestR5CopyWithImpl<$Res>;
   @override
-  $Res call({Uri base, R5Types type, Id id, String operation});
+  $Res call(
+      {Uri base,
+      R5Types type,
+      Id id,
+      String operation,
+      Map<String, dynamic> parameters,
+      Client client});
 }
 
 /// @nodoc
@@ -663,12 +860,18 @@ class __$OperationRequestR5CopyWithImpl<$Res>
     Object type = freezed,
     Object id = freezed,
     Object operation = freezed,
+    Object parameters = freezed,
+    Object client = freezed,
   }) {
     return _then(_OperationRequestR5(
       base: base == freezed ? _value.base : base as Uri,
       type: type == freezed ? _value.type : type as R5Types,
       id: id == freezed ? _value.id : id as Id,
       operation: operation == freezed ? _value.operation : operation as String,
+      parameters: parameters == freezed
+          ? _value.parameters
+          : parameters as Map<String, dynamic>,
+      client: client == freezed ? _value.client : client as Client,
     ));
   }
 }
@@ -676,7 +879,12 @@ class __$OperationRequestR5CopyWithImpl<$Res>
 /// @nodoc
 class _$_OperationRequestR5 extends _OperationRequestR5 {
   _$_OperationRequestR5(
-      {@required this.base, this.type, this.id, this.operation})
+      {@required this.base,
+      this.type,
+      this.id,
+      this.operation,
+      this.parameters,
+      this.client})
       : assert(base != null),
         super._();
 
@@ -688,10 +896,14 @@ class _$_OperationRequestR5 extends _OperationRequestR5 {
   final Id id;
   @override
   final String operation;
+  @override
+  final Map<String, dynamic> parameters;
+  @override
+  final Client client;
 
   @override
   String toString() {
-    return 'OperationRequest.r5(base: $base, type: $type, id: $id, operation: $operation)';
+    return 'OperationRequest.r5(base: $base, type: $type, id: $id, operation: $operation, parameters: $parameters, client: $client)';
   }
 
   @override
@@ -706,7 +918,12 @@ class _$_OperationRequestR5 extends _OperationRequestR5 {
                 const DeepCollectionEquality().equals(other.id, id)) &&
             (identical(other.operation, operation) ||
                 const DeepCollectionEquality()
-                    .equals(other.operation, operation)));
+                    .equals(other.operation, operation)) &&
+            (identical(other.parameters, parameters) ||
+                const DeepCollectionEquality()
+                    .equals(other.parameters, parameters)) &&
+            (identical(other.client, client) ||
+                const DeepCollectionEquality().equals(other.client, client)));
   }
 
   @override
@@ -715,7 +932,9 @@ class _$_OperationRequestR5 extends _OperationRequestR5 {
       const DeepCollectionEquality().hash(base) ^
       const DeepCollectionEquality().hash(type) ^
       const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(operation);
+      const DeepCollectionEquality().hash(operation) ^
+      const DeepCollectionEquality().hash(parameters) ^
+      const DeepCollectionEquality().hash(client);
 
   @override
   _$OperationRequestR5CopyWith<_OperationRequestR5> get copyWith =>
@@ -724,30 +943,42 @@ class _$_OperationRequestR5 extends _OperationRequestR5 {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result dstu2(Uri base, Dstu2Types type, Id id, String operation),
-    @required Result stu3(Uri base, Stu3Types type, Id id, String operation),
-    @required Result r4(Uri base, R4Types type, Id id, String operation),
-    @required Result r5(Uri base, R5Types type, Id id, String operation),
+    @required
+        Result dstu2(Uri base, Dstu2Types type, Id id, String operation,
+            Map<String, dynamic> parameters, Client client),
+    @required
+        Result stu3(Uri base, Stu3Types type, Id id, String operation,
+            Map<String, dynamic> parameters, Client client),
+    @required
+        Result r4(Uri base, R4Types type, Id id, String operation,
+            Map<String, dynamic> parameters, Client client),
+    @required
+        Result r5(Uri base, R5Types type, Id id, String operation,
+            Map<String, dynamic> parameters, Client client),
   }) {
     assert(dstu2 != null);
     assert(stu3 != null);
     assert(r4 != null);
     assert(r5 != null);
-    return r5(base, type, id, operation);
+    return r5(base, type, id, operation, parameters, client);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result dstu2(Uri base, Dstu2Types type, Id id, String operation),
-    Result stu3(Uri base, Stu3Types type, Id id, String operation),
-    Result r4(Uri base, R4Types type, Id id, String operation),
-    Result r5(Uri base, R5Types type, Id id, String operation),
+    Result dstu2(Uri base, Dstu2Types type, Id id, String operation,
+        Map<String, dynamic> parameters, Client client),
+    Result stu3(Uri base, Stu3Types type, Id id, String operation,
+        Map<String, dynamic> parameters, Client client),
+    Result r4(Uri base, R4Types type, Id id, String operation,
+        Map<String, dynamic> parameters, Client client),
+    Result r5(Uri base, R5Types type, Id id, String operation,
+        Map<String, dynamic> parameters, Client client),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (r5 != null) {
-      return r5(base, type, id, operation);
+      return r5(base, type, id, operation, parameters, client);
     }
     return orElse();
   }
@@ -790,7 +1021,9 @@ abstract class _OperationRequestR5 extends OperationRequest {
       {@required Uri base,
       R5Types type,
       Id id,
-      String operation}) = _$_OperationRequestR5;
+      String operation,
+      Map<String, dynamic> parameters,
+      Client client}) = _$_OperationRequestR5;
 
   @override
   Uri get base;
@@ -799,6 +1032,10 @@ abstract class _OperationRequestR5 extends OperationRequest {
   Id get id;
   @override
   String get operation;
+  @override
+  Map<String, dynamic> get parameters;
+  @override
+  Client get client;
   @override
   _$OperationRequestR5CopyWith<_OperationRequestR5> get copyWith;
 }

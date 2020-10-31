@@ -18,12 +18,14 @@ class _$CreateRequestTearOff {
       {@required Uri base,
       @required Dstu2Types type,
       bool pretty = false,
-      Summary summary = Summary.none}) {
+      Summary summary = Summary.none,
+      Client client}) {
     return _CreateRequestDstu2(
       base: base,
       type: type,
       pretty: pretty,
       summary: summary,
+      client: client,
     );
   }
 
@@ -32,12 +34,14 @@ class _$CreateRequestTearOff {
       {@required Uri base,
       @required Stu3Types type,
       bool pretty = false,
-      Summary summary = Summary.none}) {
+      Summary summary = Summary.none,
+      Client client}) {
     return _CreateRequestStu3(
       base: base,
       type: type,
       pretty: pretty,
       summary: summary,
+      client: client,
     );
   }
 
@@ -46,12 +50,14 @@ class _$CreateRequestTearOff {
       {@required Uri base,
       @required R4Types type,
       bool pretty = false,
-      Summary summary = Summary.none}) {
+      Summary summary = Summary.none,
+      Client client}) {
     return _CreateRequestR4(
       base: base,
       type: type,
       pretty: pretty,
       summary: summary,
+      client: client,
     );
   }
 
@@ -60,12 +66,14 @@ class _$CreateRequestTearOff {
       {@required Uri base,
       @required R5Types type,
       bool pretty = false,
-      Summary summary = Summary.none}) {
+      Summary summary = Summary.none,
+      Client client}) {
     return _CreateRequestR5(
       base: base,
       type: type,
       pretty: pretty,
       summary: summary,
+      client: client,
     );
   }
 }
@@ -79,22 +87,33 @@ mixin _$CreateRequest {
   Uri get base;
   bool get pretty;
   Summary get summary;
+  Client get client;
 
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required
-        Result dstu2(Uri base, Dstu2Types type, bool pretty, Summary summary),
+        Result dstu2(Uri base, Dstu2Types type, bool pretty, Summary summary,
+            Client client),
     @required
-        Result stu3(Uri base, Stu3Types type, bool pretty, Summary summary),
-    @required Result r4(Uri base, R4Types type, bool pretty, Summary summary),
-    @required Result r5(Uri base, R5Types type, bool pretty, Summary summary),
+        Result stu3(Uri base, Stu3Types type, bool pretty, Summary summary,
+            Client client),
+    @required
+        Result r4(Uri base, R4Types type, bool pretty, Summary summary,
+            Client client),
+    @required
+        Result r5(Uri base, R5Types type, bool pretty, Summary summary,
+            Client client),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result dstu2(Uri base, Dstu2Types type, bool pretty, Summary summary),
-    Result stu3(Uri base, Stu3Types type, bool pretty, Summary summary),
-    Result r4(Uri base, R4Types type, bool pretty, Summary summary),
-    Result r5(Uri base, R5Types type, bool pretty, Summary summary),
+    Result dstu2(
+        Uri base, Dstu2Types type, bool pretty, Summary summary, Client client),
+    Result stu3(
+        Uri base, Stu3Types type, bool pretty, Summary summary, Client client),
+    Result r4(
+        Uri base, R4Types type, bool pretty, Summary summary, Client client),
+    Result r5(
+        Uri base, R5Types type, bool pretty, Summary summary, Client client),
     @required Result orElse(),
   });
   @optionalTypeArgs
@@ -121,7 +140,7 @@ abstract class $CreateRequestCopyWith<$Res> {
   factory $CreateRequestCopyWith(
           CreateRequest value, $Res Function(CreateRequest) then) =
       _$CreateRequestCopyWithImpl<$Res>;
-  $Res call({Uri base, bool pretty, Summary summary});
+  $Res call({Uri base, bool pretty, Summary summary, Client client});
 }
 
 /// @nodoc
@@ -138,11 +157,13 @@ class _$CreateRequestCopyWithImpl<$Res>
     Object base = freezed,
     Object pretty = freezed,
     Object summary = freezed,
+    Object client = freezed,
   }) {
     return _then(_value.copyWith(
       base: base == freezed ? _value.base : base as Uri,
       pretty: pretty == freezed ? _value.pretty : pretty as bool,
       summary: summary == freezed ? _value.summary : summary as Summary,
+      client: client == freezed ? _value.client : client as Client,
     ));
   }
 }
@@ -154,7 +175,8 @@ abstract class _$CreateRequestDstu2CopyWith<$Res>
           _CreateRequestDstu2 value, $Res Function(_CreateRequestDstu2) then) =
       __$CreateRequestDstu2CopyWithImpl<$Res>;
   @override
-  $Res call({Uri base, Dstu2Types type, bool pretty, Summary summary});
+  $Res call(
+      {Uri base, Dstu2Types type, bool pretty, Summary summary, Client client});
 }
 
 /// @nodoc
@@ -174,12 +196,14 @@ class __$CreateRequestDstu2CopyWithImpl<$Res>
     Object type = freezed,
     Object pretty = freezed,
     Object summary = freezed,
+    Object client = freezed,
   }) {
     return _then(_CreateRequestDstu2(
       base: base == freezed ? _value.base : base as Uri,
       type: type == freezed ? _value.type : type as Dstu2Types,
       pretty: pretty == freezed ? _value.pretty : pretty as bool,
       summary: summary == freezed ? _value.summary : summary as Summary,
+      client: client == freezed ? _value.client : client as Client,
     ));
   }
 }
@@ -190,7 +214,8 @@ class _$_CreateRequestDstu2 extends _CreateRequestDstu2 {
       {@required this.base,
       @required this.type,
       this.pretty = false,
-      this.summary = Summary.none})
+      this.summary = Summary.none,
+      this.client})
       : assert(base != null),
         assert(type != null),
         assert(pretty != null),
@@ -207,10 +232,12 @@ class _$_CreateRequestDstu2 extends _CreateRequestDstu2 {
   @JsonKey(defaultValue: Summary.none)
   @override
   final Summary summary;
+  @override
+  final Client client;
 
   @override
   String toString() {
-    return 'CreateRequest.dstu2(base: $base, type: $type, pretty: $pretty, summary: $summary)';
+    return 'CreateRequest.dstu2(base: $base, type: $type, pretty: $pretty, summary: $summary, client: $client)';
   }
 
   @override
@@ -224,7 +251,10 @@ class _$_CreateRequestDstu2 extends _CreateRequestDstu2 {
             (identical(other.pretty, pretty) ||
                 const DeepCollectionEquality().equals(other.pretty, pretty)) &&
             (identical(other.summary, summary) ||
-                const DeepCollectionEquality().equals(other.summary, summary)));
+                const DeepCollectionEquality()
+                    .equals(other.summary, summary)) &&
+            (identical(other.client, client) ||
+                const DeepCollectionEquality().equals(other.client, client)));
   }
 
   @override
@@ -233,7 +263,8 @@ class _$_CreateRequestDstu2 extends _CreateRequestDstu2 {
       const DeepCollectionEquality().hash(base) ^
       const DeepCollectionEquality().hash(type) ^
       const DeepCollectionEquality().hash(pretty) ^
-      const DeepCollectionEquality().hash(summary);
+      const DeepCollectionEquality().hash(summary) ^
+      const DeepCollectionEquality().hash(client);
 
   @override
   _$CreateRequestDstu2CopyWith<_CreateRequestDstu2> get copyWith =>
@@ -243,31 +274,41 @@ class _$_CreateRequestDstu2 extends _CreateRequestDstu2 {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required
-        Result dstu2(Uri base, Dstu2Types type, bool pretty, Summary summary),
+        Result dstu2(Uri base, Dstu2Types type, bool pretty, Summary summary,
+            Client client),
     @required
-        Result stu3(Uri base, Stu3Types type, bool pretty, Summary summary),
-    @required Result r4(Uri base, R4Types type, bool pretty, Summary summary),
-    @required Result r5(Uri base, R5Types type, bool pretty, Summary summary),
+        Result stu3(Uri base, Stu3Types type, bool pretty, Summary summary,
+            Client client),
+    @required
+        Result r4(Uri base, R4Types type, bool pretty, Summary summary,
+            Client client),
+    @required
+        Result r5(Uri base, R5Types type, bool pretty, Summary summary,
+            Client client),
   }) {
     assert(dstu2 != null);
     assert(stu3 != null);
     assert(r4 != null);
     assert(r5 != null);
-    return dstu2(base, type, pretty, summary);
+    return dstu2(base, type, pretty, summary, client);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result dstu2(Uri base, Dstu2Types type, bool pretty, Summary summary),
-    Result stu3(Uri base, Stu3Types type, bool pretty, Summary summary),
-    Result r4(Uri base, R4Types type, bool pretty, Summary summary),
-    Result r5(Uri base, R5Types type, bool pretty, Summary summary),
+    Result dstu2(
+        Uri base, Dstu2Types type, bool pretty, Summary summary, Client client),
+    Result stu3(
+        Uri base, Stu3Types type, bool pretty, Summary summary, Client client),
+    Result r4(
+        Uri base, R4Types type, bool pretty, Summary summary, Client client),
+    Result r5(
+        Uri base, R5Types type, bool pretty, Summary summary, Client client),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (dstu2 != null) {
-      return dstu2(base, type, pretty, summary);
+      return dstu2(base, type, pretty, summary, client);
     }
     return orElse();
   }
@@ -310,7 +351,8 @@ abstract class _CreateRequestDstu2 extends CreateRequest {
       {@required Uri base,
       @required Dstu2Types type,
       bool pretty,
-      Summary summary}) = _$_CreateRequestDstu2;
+      Summary summary,
+      Client client}) = _$_CreateRequestDstu2;
 
   @override
   Uri get base;
@@ -319,6 +361,8 @@ abstract class _CreateRequestDstu2 extends CreateRequest {
   bool get pretty;
   @override
   Summary get summary;
+  @override
+  Client get client;
   @override
   _$CreateRequestDstu2CopyWith<_CreateRequestDstu2> get copyWith;
 }
@@ -330,7 +374,8 @@ abstract class _$CreateRequestStu3CopyWith<$Res>
           _CreateRequestStu3 value, $Res Function(_CreateRequestStu3) then) =
       __$CreateRequestStu3CopyWithImpl<$Res>;
   @override
-  $Res call({Uri base, Stu3Types type, bool pretty, Summary summary});
+  $Res call(
+      {Uri base, Stu3Types type, bool pretty, Summary summary, Client client});
 }
 
 /// @nodoc
@@ -350,12 +395,14 @@ class __$CreateRequestStu3CopyWithImpl<$Res>
     Object type = freezed,
     Object pretty = freezed,
     Object summary = freezed,
+    Object client = freezed,
   }) {
     return _then(_CreateRequestStu3(
       base: base == freezed ? _value.base : base as Uri,
       type: type == freezed ? _value.type : type as Stu3Types,
       pretty: pretty == freezed ? _value.pretty : pretty as bool,
       summary: summary == freezed ? _value.summary : summary as Summary,
+      client: client == freezed ? _value.client : client as Client,
     ));
   }
 }
@@ -366,7 +413,8 @@ class _$_CreateRequestStu3 extends _CreateRequestStu3 {
       {@required this.base,
       @required this.type,
       this.pretty = false,
-      this.summary = Summary.none})
+      this.summary = Summary.none,
+      this.client})
       : assert(base != null),
         assert(type != null),
         assert(pretty != null),
@@ -383,10 +431,12 @@ class _$_CreateRequestStu3 extends _CreateRequestStu3 {
   @JsonKey(defaultValue: Summary.none)
   @override
   final Summary summary;
+  @override
+  final Client client;
 
   @override
   String toString() {
-    return 'CreateRequest.stu3(base: $base, type: $type, pretty: $pretty, summary: $summary)';
+    return 'CreateRequest.stu3(base: $base, type: $type, pretty: $pretty, summary: $summary, client: $client)';
   }
 
   @override
@@ -400,7 +450,10 @@ class _$_CreateRequestStu3 extends _CreateRequestStu3 {
             (identical(other.pretty, pretty) ||
                 const DeepCollectionEquality().equals(other.pretty, pretty)) &&
             (identical(other.summary, summary) ||
-                const DeepCollectionEquality().equals(other.summary, summary)));
+                const DeepCollectionEquality()
+                    .equals(other.summary, summary)) &&
+            (identical(other.client, client) ||
+                const DeepCollectionEquality().equals(other.client, client)));
   }
 
   @override
@@ -409,7 +462,8 @@ class _$_CreateRequestStu3 extends _CreateRequestStu3 {
       const DeepCollectionEquality().hash(base) ^
       const DeepCollectionEquality().hash(type) ^
       const DeepCollectionEquality().hash(pretty) ^
-      const DeepCollectionEquality().hash(summary);
+      const DeepCollectionEquality().hash(summary) ^
+      const DeepCollectionEquality().hash(client);
 
   @override
   _$CreateRequestStu3CopyWith<_CreateRequestStu3> get copyWith =>
@@ -419,31 +473,41 @@ class _$_CreateRequestStu3 extends _CreateRequestStu3 {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required
-        Result dstu2(Uri base, Dstu2Types type, bool pretty, Summary summary),
+        Result dstu2(Uri base, Dstu2Types type, bool pretty, Summary summary,
+            Client client),
     @required
-        Result stu3(Uri base, Stu3Types type, bool pretty, Summary summary),
-    @required Result r4(Uri base, R4Types type, bool pretty, Summary summary),
-    @required Result r5(Uri base, R5Types type, bool pretty, Summary summary),
+        Result stu3(Uri base, Stu3Types type, bool pretty, Summary summary,
+            Client client),
+    @required
+        Result r4(Uri base, R4Types type, bool pretty, Summary summary,
+            Client client),
+    @required
+        Result r5(Uri base, R5Types type, bool pretty, Summary summary,
+            Client client),
   }) {
     assert(dstu2 != null);
     assert(stu3 != null);
     assert(r4 != null);
     assert(r5 != null);
-    return stu3(base, type, pretty, summary);
+    return stu3(base, type, pretty, summary, client);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result dstu2(Uri base, Dstu2Types type, bool pretty, Summary summary),
-    Result stu3(Uri base, Stu3Types type, bool pretty, Summary summary),
-    Result r4(Uri base, R4Types type, bool pretty, Summary summary),
-    Result r5(Uri base, R5Types type, bool pretty, Summary summary),
+    Result dstu2(
+        Uri base, Dstu2Types type, bool pretty, Summary summary, Client client),
+    Result stu3(
+        Uri base, Stu3Types type, bool pretty, Summary summary, Client client),
+    Result r4(
+        Uri base, R4Types type, bool pretty, Summary summary, Client client),
+    Result r5(
+        Uri base, R5Types type, bool pretty, Summary summary, Client client),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (stu3 != null) {
-      return stu3(base, type, pretty, summary);
+      return stu3(base, type, pretty, summary, client);
     }
     return orElse();
   }
@@ -486,7 +550,8 @@ abstract class _CreateRequestStu3 extends CreateRequest {
       {@required Uri base,
       @required Stu3Types type,
       bool pretty,
-      Summary summary}) = _$_CreateRequestStu3;
+      Summary summary,
+      Client client}) = _$_CreateRequestStu3;
 
   @override
   Uri get base;
@@ -495,6 +560,8 @@ abstract class _CreateRequestStu3 extends CreateRequest {
   bool get pretty;
   @override
   Summary get summary;
+  @override
+  Client get client;
   @override
   _$CreateRequestStu3CopyWith<_CreateRequestStu3> get copyWith;
 }
@@ -506,7 +573,8 @@ abstract class _$CreateRequestR4CopyWith<$Res>
           _CreateRequestR4 value, $Res Function(_CreateRequestR4) then) =
       __$CreateRequestR4CopyWithImpl<$Res>;
   @override
-  $Res call({Uri base, R4Types type, bool pretty, Summary summary});
+  $Res call(
+      {Uri base, R4Types type, bool pretty, Summary summary, Client client});
 }
 
 /// @nodoc
@@ -526,12 +594,14 @@ class __$CreateRequestR4CopyWithImpl<$Res>
     Object type = freezed,
     Object pretty = freezed,
     Object summary = freezed,
+    Object client = freezed,
   }) {
     return _then(_CreateRequestR4(
       base: base == freezed ? _value.base : base as Uri,
       type: type == freezed ? _value.type : type as R4Types,
       pretty: pretty == freezed ? _value.pretty : pretty as bool,
       summary: summary == freezed ? _value.summary : summary as Summary,
+      client: client == freezed ? _value.client : client as Client,
     ));
   }
 }
@@ -542,7 +612,8 @@ class _$_CreateRequestR4 extends _CreateRequestR4 {
       {@required this.base,
       @required this.type,
       this.pretty = false,
-      this.summary = Summary.none})
+      this.summary = Summary.none,
+      this.client})
       : assert(base != null),
         assert(type != null),
         assert(pretty != null),
@@ -559,10 +630,12 @@ class _$_CreateRequestR4 extends _CreateRequestR4 {
   @JsonKey(defaultValue: Summary.none)
   @override
   final Summary summary;
+  @override
+  final Client client;
 
   @override
   String toString() {
-    return 'CreateRequest.r4(base: $base, type: $type, pretty: $pretty, summary: $summary)';
+    return 'CreateRequest.r4(base: $base, type: $type, pretty: $pretty, summary: $summary, client: $client)';
   }
 
   @override
@@ -576,7 +649,10 @@ class _$_CreateRequestR4 extends _CreateRequestR4 {
             (identical(other.pretty, pretty) ||
                 const DeepCollectionEquality().equals(other.pretty, pretty)) &&
             (identical(other.summary, summary) ||
-                const DeepCollectionEquality().equals(other.summary, summary)));
+                const DeepCollectionEquality()
+                    .equals(other.summary, summary)) &&
+            (identical(other.client, client) ||
+                const DeepCollectionEquality().equals(other.client, client)));
   }
 
   @override
@@ -585,7 +661,8 @@ class _$_CreateRequestR4 extends _CreateRequestR4 {
       const DeepCollectionEquality().hash(base) ^
       const DeepCollectionEquality().hash(type) ^
       const DeepCollectionEquality().hash(pretty) ^
-      const DeepCollectionEquality().hash(summary);
+      const DeepCollectionEquality().hash(summary) ^
+      const DeepCollectionEquality().hash(client);
 
   @override
   _$CreateRequestR4CopyWith<_CreateRequestR4> get copyWith =>
@@ -595,31 +672,41 @@ class _$_CreateRequestR4 extends _CreateRequestR4 {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required
-        Result dstu2(Uri base, Dstu2Types type, bool pretty, Summary summary),
+        Result dstu2(Uri base, Dstu2Types type, bool pretty, Summary summary,
+            Client client),
     @required
-        Result stu3(Uri base, Stu3Types type, bool pretty, Summary summary),
-    @required Result r4(Uri base, R4Types type, bool pretty, Summary summary),
-    @required Result r5(Uri base, R5Types type, bool pretty, Summary summary),
+        Result stu3(Uri base, Stu3Types type, bool pretty, Summary summary,
+            Client client),
+    @required
+        Result r4(Uri base, R4Types type, bool pretty, Summary summary,
+            Client client),
+    @required
+        Result r5(Uri base, R5Types type, bool pretty, Summary summary,
+            Client client),
   }) {
     assert(dstu2 != null);
     assert(stu3 != null);
     assert(r4 != null);
     assert(r5 != null);
-    return r4(base, type, pretty, summary);
+    return r4(base, type, pretty, summary, client);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result dstu2(Uri base, Dstu2Types type, bool pretty, Summary summary),
-    Result stu3(Uri base, Stu3Types type, bool pretty, Summary summary),
-    Result r4(Uri base, R4Types type, bool pretty, Summary summary),
-    Result r5(Uri base, R5Types type, bool pretty, Summary summary),
+    Result dstu2(
+        Uri base, Dstu2Types type, bool pretty, Summary summary, Client client),
+    Result stu3(
+        Uri base, Stu3Types type, bool pretty, Summary summary, Client client),
+    Result r4(
+        Uri base, R4Types type, bool pretty, Summary summary, Client client),
+    Result r5(
+        Uri base, R5Types type, bool pretty, Summary summary, Client client),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (r4 != null) {
-      return r4(base, type, pretty, summary);
+      return r4(base, type, pretty, summary, client);
     }
     return orElse();
   }
@@ -662,7 +749,8 @@ abstract class _CreateRequestR4 extends CreateRequest {
       {@required Uri base,
       @required R4Types type,
       bool pretty,
-      Summary summary}) = _$_CreateRequestR4;
+      Summary summary,
+      Client client}) = _$_CreateRequestR4;
 
   @override
   Uri get base;
@@ -671,6 +759,8 @@ abstract class _CreateRequestR4 extends CreateRequest {
   bool get pretty;
   @override
   Summary get summary;
+  @override
+  Client get client;
   @override
   _$CreateRequestR4CopyWith<_CreateRequestR4> get copyWith;
 }
@@ -682,7 +772,8 @@ abstract class _$CreateRequestR5CopyWith<$Res>
           _CreateRequestR5 value, $Res Function(_CreateRequestR5) then) =
       __$CreateRequestR5CopyWithImpl<$Res>;
   @override
-  $Res call({Uri base, R5Types type, bool pretty, Summary summary});
+  $Res call(
+      {Uri base, R5Types type, bool pretty, Summary summary, Client client});
 }
 
 /// @nodoc
@@ -702,12 +793,14 @@ class __$CreateRequestR5CopyWithImpl<$Res>
     Object type = freezed,
     Object pretty = freezed,
     Object summary = freezed,
+    Object client = freezed,
   }) {
     return _then(_CreateRequestR5(
       base: base == freezed ? _value.base : base as Uri,
       type: type == freezed ? _value.type : type as R5Types,
       pretty: pretty == freezed ? _value.pretty : pretty as bool,
       summary: summary == freezed ? _value.summary : summary as Summary,
+      client: client == freezed ? _value.client : client as Client,
     ));
   }
 }
@@ -718,7 +811,8 @@ class _$_CreateRequestR5 extends _CreateRequestR5 {
       {@required this.base,
       @required this.type,
       this.pretty = false,
-      this.summary = Summary.none})
+      this.summary = Summary.none,
+      this.client})
       : assert(base != null),
         assert(type != null),
         assert(pretty != null),
@@ -735,10 +829,12 @@ class _$_CreateRequestR5 extends _CreateRequestR5 {
   @JsonKey(defaultValue: Summary.none)
   @override
   final Summary summary;
+  @override
+  final Client client;
 
   @override
   String toString() {
-    return 'CreateRequest.r5(base: $base, type: $type, pretty: $pretty, summary: $summary)';
+    return 'CreateRequest.r5(base: $base, type: $type, pretty: $pretty, summary: $summary, client: $client)';
   }
 
   @override
@@ -752,7 +848,10 @@ class _$_CreateRequestR5 extends _CreateRequestR5 {
             (identical(other.pretty, pretty) ||
                 const DeepCollectionEquality().equals(other.pretty, pretty)) &&
             (identical(other.summary, summary) ||
-                const DeepCollectionEquality().equals(other.summary, summary)));
+                const DeepCollectionEquality()
+                    .equals(other.summary, summary)) &&
+            (identical(other.client, client) ||
+                const DeepCollectionEquality().equals(other.client, client)));
   }
 
   @override
@@ -761,7 +860,8 @@ class _$_CreateRequestR5 extends _CreateRequestR5 {
       const DeepCollectionEquality().hash(base) ^
       const DeepCollectionEquality().hash(type) ^
       const DeepCollectionEquality().hash(pretty) ^
-      const DeepCollectionEquality().hash(summary);
+      const DeepCollectionEquality().hash(summary) ^
+      const DeepCollectionEquality().hash(client);
 
   @override
   _$CreateRequestR5CopyWith<_CreateRequestR5> get copyWith =>
@@ -771,31 +871,41 @@ class _$_CreateRequestR5 extends _CreateRequestR5 {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required
-        Result dstu2(Uri base, Dstu2Types type, bool pretty, Summary summary),
+        Result dstu2(Uri base, Dstu2Types type, bool pretty, Summary summary,
+            Client client),
     @required
-        Result stu3(Uri base, Stu3Types type, bool pretty, Summary summary),
-    @required Result r4(Uri base, R4Types type, bool pretty, Summary summary),
-    @required Result r5(Uri base, R5Types type, bool pretty, Summary summary),
+        Result stu3(Uri base, Stu3Types type, bool pretty, Summary summary,
+            Client client),
+    @required
+        Result r4(Uri base, R4Types type, bool pretty, Summary summary,
+            Client client),
+    @required
+        Result r5(Uri base, R5Types type, bool pretty, Summary summary,
+            Client client),
   }) {
     assert(dstu2 != null);
     assert(stu3 != null);
     assert(r4 != null);
     assert(r5 != null);
-    return r5(base, type, pretty, summary);
+    return r5(base, type, pretty, summary, client);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result dstu2(Uri base, Dstu2Types type, bool pretty, Summary summary),
-    Result stu3(Uri base, Stu3Types type, bool pretty, Summary summary),
-    Result r4(Uri base, R4Types type, bool pretty, Summary summary),
-    Result r5(Uri base, R5Types type, bool pretty, Summary summary),
+    Result dstu2(
+        Uri base, Dstu2Types type, bool pretty, Summary summary, Client client),
+    Result stu3(
+        Uri base, Stu3Types type, bool pretty, Summary summary, Client client),
+    Result r4(
+        Uri base, R4Types type, bool pretty, Summary summary, Client client),
+    Result r5(
+        Uri base, R5Types type, bool pretty, Summary summary, Client client),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (r5 != null) {
-      return r5(base, type, pretty, summary);
+      return r5(base, type, pretty, summary, client);
     }
     return orElse();
   }
@@ -838,7 +948,8 @@ abstract class _CreateRequestR5 extends CreateRequest {
       {@required Uri base,
       @required R5Types type,
       bool pretty,
-      Summary summary}) = _$_CreateRequestR5;
+      Summary summary,
+      Client client}) = _$_CreateRequestR5;
 
   @override
   Uri get base;
@@ -847,6 +958,8 @@ abstract class _CreateRequestR5 extends CreateRequest {
   bool get pretty;
   @override
   Summary get summary;
+  @override
+  Client get client;
   @override
   _$CreateRequestR5CopyWith<_CreateRequestR5> get copyWith;
 }

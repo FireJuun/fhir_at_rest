@@ -6,6 +6,7 @@ import 'package:fhir/dstu2.dart' as dstu2;
 import 'package:fhir/stu3.dart' as stu3;
 import 'package:fhir/r4.dart' as r4;
 import 'package:fhir/r5.dart' as r5;
+import 'package:http/http.dart';
 
 import '../enums/enums.dart';
 import '../failures/restful_failure.dart';
@@ -20,24 +21,28 @@ abstract class BatchRequest with _$BatchRequest {
     @required Uri base,
     @Default(false) bool pretty,
     @Default(Summary.none) Summary summary,
+    Client client,
   }) = _BatchRequestDstu2;
 
   factory BatchRequest.stu3({
     @required Uri base,
     @Default(false) bool pretty,
     @Default(Summary.none) Summary summary,
+    Client client,
   }) = _BatchRequestStu3;
 
   factory BatchRequest.r4({
     @required Uri base,
     @Default(false) bool pretty,
     @Default(Summary.none) Summary summary,
+    Client client,
   }) = _BatchRequestR4;
 
   factory BatchRequest.r5({
     @required Uri base,
     @Default(false) bool pretty,
     @Default(Summary.none) Summary summary,
+    Client client,
   }) = _BatchRequestR5;
 
   Future<Either<RestfulFailure, dynamic>> request(dynamic resource) async {
@@ -71,30 +76,40 @@ abstract class BatchRequest with _$BatchRequest {
     final FHIRUri fhirUri = map(
       dstu2: (req) => FHIRUri.dstu2Transaction(
         base: req.base,
-        pretty: req.pretty,
-        summary: req.summary,
+        generalParameters: GeneralParameters.dstu2(
+          pretty: req.pretty,
+          summary: req.summary,
+        ),
       ),
       stu3: (req) => FHIRUri.stu3Transaction(
         base: req.base,
-        pretty: req.pretty,
-        summary: req.summary,
+        generalParameters: GeneralParameters.stu3(
+          pretty: req.pretty,
+          summary: req.summary,
+        ),
       ),
       r4: (req) => FHIRUri.r4Transaction(
         base: req.base,
-        pretty: req.pretty,
-        summary: req.summary,
+        generalParameters: GeneralParameters.r4(
+          pretty: req.pretty,
+          summary: req.summary,
+        ),
       ),
       r5: (req) => FHIRUri.r5Transaction(
         base: req.base,
-        pretty: req.pretty,
-        summary: req.summary,
+        generalParameters: GeneralParameters.r5(
+          pretty: req.pretty,
+          summary: req.summary,
+        ),
       ),
     );
 
     final result = await makeRequest(
-        type: RestfulRequest.post_,
-        thisRequest: fhirUri.uri,
-        resource: resource.toJson());
+      type: RestfulRequest.post_,
+      thisRequest: fhirUri.uri,
+      resource: resource.toJson(),
+      client: client,
+    );
 
     return result.fold(
       (l) => left(l),

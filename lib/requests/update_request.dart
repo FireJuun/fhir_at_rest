@@ -8,6 +8,7 @@ import 'package:fhir/dstu2.dart' as dstu2;
 import 'package:fhir/stu3.dart' as stu3;
 import 'package:fhir/r4.dart' as r4;
 import 'package:fhir/r5.dart' as r5;
+import 'package:http/http.dart';
 
 import '../enums/enums.dart';
 import '../failures/restful_failure.dart';
@@ -25,6 +26,7 @@ abstract class UpdateRequest with _$UpdateRequest {
     @required Id id,
     @Default(false) bool pretty,
     @Default(Summary.none) Summary summary,
+    Client client,
   }) = _UpdateRequestDstu2;
 
   factory UpdateRequest.stu3({
@@ -33,6 +35,7 @@ abstract class UpdateRequest with _$UpdateRequest {
     @required Id id,
     @Default(false) bool pretty,
     @Default(Summary.none) Summary summary,
+    Client client,
   }) = _UpdateRequestStu3;
 
   factory UpdateRequest.r4({
@@ -41,6 +44,7 @@ abstract class UpdateRequest with _$UpdateRequest {
     @required Id id,
     @Default(false) bool pretty,
     @Default(Summary.none) Summary summary,
+    Client client,
   }) = _UpdateRequestR4;
 
   factory UpdateRequest.r5({
@@ -49,6 +53,7 @@ abstract class UpdateRequest with _$UpdateRequest {
     @required Id id,
     @Default(false) bool pretty,
     @Default(Summary.none) Summary summary,
+    Client client,
   }) = _UpdateRequestR5;
 
   Future<Either<RestfulFailure, dynamic>> request({
@@ -59,38 +64,7 @@ abstract class UpdateRequest with _$UpdateRequest {
       return left(RestfulFailure.idDoesNotMatchResource(failedValue: resource));
     }
 
-    final FHIRUri fhirUri = map(
-      dstu2: (req) => FHIRUri.dstu2Update(
-        base: req.base,
-        type: req.type,
-        id: req.id,
-        pretty: req.pretty,
-        summary: req.summary,
-      ),
-      stu3: (req) => FHIRUri.stu3Update(
-        base: req.base,
-        type: req.type,
-        id: req.id,
-        pretty: req.pretty,
-        summary: req.summary,
-      ),
-      r4: (req) => FHIRUri.r4Update(
-        base: req.base,
-        type: req.type,
-        id: req.id,
-        pretty: req.pretty,
-        summary: req.summary,
-      ),
-      r5: (req) => FHIRUri.r5Update(
-        base: req.base,
-        type: req.type,
-        id: req.id,
-        pretty: req.pretty,
-        summary: req.summary,
-      ),
-    );
-
-    var searchString = '';
+    List<FHIRUriParameter> parameterList;
     if (search != null) {
       if (search is Dstu2SearchParameters && this is! _UpdateRequestDstu2 ||
           search is Stu3SearchParameters && this is! _UpdateRequestStu3 ||
@@ -99,14 +73,59 @@ abstract class UpdateRequest with _$UpdateRequest {
         return left(RestfulFailure.parameterTypeNotResourceType(
             resourceType: resource.resourceType, type: search.runtimeType));
       } else {
-        searchString = search.searchString();
+        parameterList = search.searchParameterList();
       }
     }
 
+    final FHIRUri fhirUri = map(
+      dstu2: (req) => FHIRUri.dstu2Update(
+        base: req.base,
+        type: req.type,
+        id: req.id,
+        generalParameters: GeneralParameters.dstu2(
+          pretty: req.pretty,
+          summary: req.summary,
+        ),
+        parameters: parameterList,
+      ),
+      stu3: (req) => FHIRUri.stu3Update(
+        base: req.base,
+        type: req.type,
+        id: req.id,
+        generalParameters: GeneralParameters.stu3(
+          pretty: req.pretty,
+          summary: req.summary,
+        ),
+        parameters: parameterList,
+      ),
+      r4: (req) => FHIRUri.r4Update(
+        base: req.base,
+        type: req.type,
+        id: req.id,
+        generalParameters: GeneralParameters.r4(
+          pretty: req.pretty,
+          summary: req.summary,
+        ),
+        parameters: parameterList,
+      ),
+      r5: (req) => FHIRUri.r5Update(
+        base: req.base,
+        type: req.type,
+        id: req.id,
+        generalParameters: GeneralParameters.r5(
+          pretty: req.pretty,
+          summary: req.summary,
+        ),
+        parameters: parameterList,
+      ),
+    );
+
     final result = await makeRequest(
-        type: RestfulRequest.put_,
-        thisRequest: fhirUri.uri + searchString,
-        resource: resource.toJson());
+      type: RestfulRequest.put_,
+      thisRequest: fhirUri.uri,
+      resource: resource.toJson(),
+      client: client,
+    );
 
     return result.fold(
       (l) => left(l),

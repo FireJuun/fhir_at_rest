@@ -19,13 +19,15 @@ class _$ReadRequestTearOff {
       @required Dstu2Types type,
       @required Id id,
       bool pretty = false,
-      Summary summary = Summary.none}) {
+      Summary summary = Summary.none,
+      Client client}) {
     return _ReadRequestDstu2(
       base: base,
       type: type,
       id: id,
       pretty: pretty,
       summary: summary,
+      client: client,
     );
   }
 
@@ -35,13 +37,15 @@ class _$ReadRequestTearOff {
       @required Stu3Types type,
       @required Id id,
       bool pretty = false,
-      Summary summary = Summary.none}) {
+      Summary summary = Summary.none,
+      Client client}) {
     return _ReadRequestStu3(
       base: base,
       type: type,
       id: id,
       pretty: pretty,
       summary: summary,
+      client: client,
     );
   }
 
@@ -51,13 +55,15 @@ class _$ReadRequestTearOff {
       @required R4Types type,
       @required Id id,
       bool pretty = false,
-      Summary summary = Summary.none}) {
+      Summary summary = Summary.none,
+      Client client}) {
     return _ReadRequestR4(
       base: base,
       type: type,
       id: id,
       pretty: pretty,
       summary: summary,
+      client: client,
     );
   }
 
@@ -67,13 +73,15 @@ class _$ReadRequestTearOff {
       @required R5Types type,
       @required Id id,
       bool pretty = false,
-      Summary summary = Summary.none}) {
+      Summary summary = Summary.none,
+      Client client}) {
     return _ReadRequestR5(
       base: base,
       type: type,
       id: id,
       pretty: pretty,
       summary: summary,
+      client: client,
     );
   }
 }
@@ -88,27 +96,33 @@ mixin _$ReadRequest {
   Id get id;
   bool get pretty;
   Summary get summary;
+  Client get client;
 
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required
-        Result dstu2(
-            Uri base, Dstu2Types type, Id id, bool pretty, Summary summary),
+        Result dstu2(Uri base, Dstu2Types type, Id id, bool pretty,
+            Summary summary, Client client),
     @required
-        Result stu3(
-            Uri base, Stu3Types type, Id id, bool pretty, Summary summary),
+        Result stu3(Uri base, Stu3Types type, Id id, bool pretty,
+            Summary summary, Client client),
     @required
-        Result r4(Uri base, R4Types type, Id id, bool pretty, Summary summary),
+        Result r4(Uri base, R4Types type, Id id, bool pretty, Summary summary,
+            Client client),
     @required
-        Result r5(Uri base, R5Types type, Id id, bool pretty, Summary summary),
+        Result r5(Uri base, R5Types type, Id id, bool pretty, Summary summary,
+            Client client),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result dstu2(
-        Uri base, Dstu2Types type, Id id, bool pretty, Summary summary),
-    Result stu3(Uri base, Stu3Types type, Id id, bool pretty, Summary summary),
-    Result r4(Uri base, R4Types type, Id id, bool pretty, Summary summary),
-    Result r5(Uri base, R5Types type, Id id, bool pretty, Summary summary),
+    Result dstu2(Uri base, Dstu2Types type, Id id, bool pretty, Summary summary,
+        Client client),
+    Result stu3(Uri base, Stu3Types type, Id id, bool pretty, Summary summary,
+        Client client),
+    Result r4(Uri base, R4Types type, Id id, bool pretty, Summary summary,
+        Client client),
+    Result r5(Uri base, R5Types type, Id id, bool pretty, Summary summary,
+        Client client),
     @required Result orElse(),
   });
   @optionalTypeArgs
@@ -135,7 +149,7 @@ abstract class $ReadRequestCopyWith<$Res> {
   factory $ReadRequestCopyWith(
           ReadRequest value, $Res Function(ReadRequest) then) =
       _$ReadRequestCopyWithImpl<$Res>;
-  $Res call({Uri base, Id id, bool pretty, Summary summary});
+  $Res call({Uri base, Id id, bool pretty, Summary summary, Client client});
 }
 
 /// @nodoc
@@ -152,12 +166,14 @@ class _$ReadRequestCopyWithImpl<$Res> implements $ReadRequestCopyWith<$Res> {
     Object id = freezed,
     Object pretty = freezed,
     Object summary = freezed,
+    Object client = freezed,
   }) {
     return _then(_value.copyWith(
       base: base == freezed ? _value.base : base as Uri,
       id: id == freezed ? _value.id : id as Id,
       pretty: pretty == freezed ? _value.pretty : pretty as bool,
       summary: summary == freezed ? _value.summary : summary as Summary,
+      client: client == freezed ? _value.client : client as Client,
     ));
   }
 }
@@ -169,7 +185,13 @@ abstract class _$ReadRequestDstu2CopyWith<$Res>
           _ReadRequestDstu2 value, $Res Function(_ReadRequestDstu2) then) =
       __$ReadRequestDstu2CopyWithImpl<$Res>;
   @override
-  $Res call({Uri base, Dstu2Types type, Id id, bool pretty, Summary summary});
+  $Res call(
+      {Uri base,
+      Dstu2Types type,
+      Id id,
+      bool pretty,
+      Summary summary,
+      Client client});
 }
 
 /// @nodoc
@@ -190,6 +212,7 @@ class __$ReadRequestDstu2CopyWithImpl<$Res>
     Object id = freezed,
     Object pretty = freezed,
     Object summary = freezed,
+    Object client = freezed,
   }) {
     return _then(_ReadRequestDstu2(
       base: base == freezed ? _value.base : base as Uri,
@@ -197,6 +220,7 @@ class __$ReadRequestDstu2CopyWithImpl<$Res>
       id: id == freezed ? _value.id : id as Id,
       pretty: pretty == freezed ? _value.pretty : pretty as bool,
       summary: summary == freezed ? _value.summary : summary as Summary,
+      client: client == freezed ? _value.client : client as Client,
     ));
   }
 }
@@ -208,7 +232,8 @@ class _$_ReadRequestDstu2 extends _ReadRequestDstu2 {
       @required this.type,
       @required this.id,
       this.pretty = false,
-      this.summary = Summary.none})
+      this.summary = Summary.none,
+      this.client})
       : assert(base != null),
         assert(type != null),
         assert(id != null),
@@ -228,10 +253,12 @@ class _$_ReadRequestDstu2 extends _ReadRequestDstu2 {
   @JsonKey(defaultValue: Summary.none)
   @override
   final Summary summary;
+  @override
+  final Client client;
 
   @override
   String toString() {
-    return 'ReadRequest.dstu2(base: $base, type: $type, id: $id, pretty: $pretty, summary: $summary)';
+    return 'ReadRequest.dstu2(base: $base, type: $type, id: $id, pretty: $pretty, summary: $summary, client: $client)';
   }
 
   @override
@@ -247,7 +274,10 @@ class _$_ReadRequestDstu2 extends _ReadRequestDstu2 {
             (identical(other.pretty, pretty) ||
                 const DeepCollectionEquality().equals(other.pretty, pretty)) &&
             (identical(other.summary, summary) ||
-                const DeepCollectionEquality().equals(other.summary, summary)));
+                const DeepCollectionEquality()
+                    .equals(other.summary, summary)) &&
+            (identical(other.client, client) ||
+                const DeepCollectionEquality().equals(other.client, client)));
   }
 
   @override
@@ -257,7 +287,8 @@ class _$_ReadRequestDstu2 extends _ReadRequestDstu2 {
       const DeepCollectionEquality().hash(type) ^
       const DeepCollectionEquality().hash(id) ^
       const DeepCollectionEquality().hash(pretty) ^
-      const DeepCollectionEquality().hash(summary);
+      const DeepCollectionEquality().hash(summary) ^
+      const DeepCollectionEquality().hash(client);
 
   @override
   _$ReadRequestDstu2CopyWith<_ReadRequestDstu2> get copyWith =>
@@ -267,36 +298,41 @@ class _$_ReadRequestDstu2 extends _ReadRequestDstu2 {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required
-        Result dstu2(
-            Uri base, Dstu2Types type, Id id, bool pretty, Summary summary),
+        Result dstu2(Uri base, Dstu2Types type, Id id, bool pretty,
+            Summary summary, Client client),
     @required
-        Result stu3(
-            Uri base, Stu3Types type, Id id, bool pretty, Summary summary),
+        Result stu3(Uri base, Stu3Types type, Id id, bool pretty,
+            Summary summary, Client client),
     @required
-        Result r4(Uri base, R4Types type, Id id, bool pretty, Summary summary),
+        Result r4(Uri base, R4Types type, Id id, bool pretty, Summary summary,
+            Client client),
     @required
-        Result r5(Uri base, R5Types type, Id id, bool pretty, Summary summary),
+        Result r5(Uri base, R5Types type, Id id, bool pretty, Summary summary,
+            Client client),
   }) {
     assert(dstu2 != null);
     assert(stu3 != null);
     assert(r4 != null);
     assert(r5 != null);
-    return dstu2(base, type, id, pretty, summary);
+    return dstu2(base, type, id, pretty, summary, client);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result dstu2(
-        Uri base, Dstu2Types type, Id id, bool pretty, Summary summary),
-    Result stu3(Uri base, Stu3Types type, Id id, bool pretty, Summary summary),
-    Result r4(Uri base, R4Types type, Id id, bool pretty, Summary summary),
-    Result r5(Uri base, R5Types type, Id id, bool pretty, Summary summary),
+    Result dstu2(Uri base, Dstu2Types type, Id id, bool pretty, Summary summary,
+        Client client),
+    Result stu3(Uri base, Stu3Types type, Id id, bool pretty, Summary summary,
+        Client client),
+    Result r4(Uri base, R4Types type, Id id, bool pretty, Summary summary,
+        Client client),
+    Result r5(Uri base, R5Types type, Id id, bool pretty, Summary summary,
+        Client client),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (dstu2 != null) {
-      return dstu2(base, type, id, pretty, summary);
+      return dstu2(base, type, id, pretty, summary, client);
     }
     return orElse();
   }
@@ -340,7 +376,8 @@ abstract class _ReadRequestDstu2 extends ReadRequest {
       @required Dstu2Types type,
       @required Id id,
       bool pretty,
-      Summary summary}) = _$_ReadRequestDstu2;
+      Summary summary,
+      Client client}) = _$_ReadRequestDstu2;
 
   @override
   Uri get base;
@@ -352,6 +389,8 @@ abstract class _ReadRequestDstu2 extends ReadRequest {
   @override
   Summary get summary;
   @override
+  Client get client;
+  @override
   _$ReadRequestDstu2CopyWith<_ReadRequestDstu2> get copyWith;
 }
 
@@ -362,7 +401,13 @@ abstract class _$ReadRequestStu3CopyWith<$Res>
           _ReadRequestStu3 value, $Res Function(_ReadRequestStu3) then) =
       __$ReadRequestStu3CopyWithImpl<$Res>;
   @override
-  $Res call({Uri base, Stu3Types type, Id id, bool pretty, Summary summary});
+  $Res call(
+      {Uri base,
+      Stu3Types type,
+      Id id,
+      bool pretty,
+      Summary summary,
+      Client client});
 }
 
 /// @nodoc
@@ -383,6 +428,7 @@ class __$ReadRequestStu3CopyWithImpl<$Res>
     Object id = freezed,
     Object pretty = freezed,
     Object summary = freezed,
+    Object client = freezed,
   }) {
     return _then(_ReadRequestStu3(
       base: base == freezed ? _value.base : base as Uri,
@@ -390,6 +436,7 @@ class __$ReadRequestStu3CopyWithImpl<$Res>
       id: id == freezed ? _value.id : id as Id,
       pretty: pretty == freezed ? _value.pretty : pretty as bool,
       summary: summary == freezed ? _value.summary : summary as Summary,
+      client: client == freezed ? _value.client : client as Client,
     ));
   }
 }
@@ -401,7 +448,8 @@ class _$_ReadRequestStu3 extends _ReadRequestStu3 {
       @required this.type,
       @required this.id,
       this.pretty = false,
-      this.summary = Summary.none})
+      this.summary = Summary.none,
+      this.client})
       : assert(base != null),
         assert(type != null),
         assert(id != null),
@@ -421,10 +469,12 @@ class _$_ReadRequestStu3 extends _ReadRequestStu3 {
   @JsonKey(defaultValue: Summary.none)
   @override
   final Summary summary;
+  @override
+  final Client client;
 
   @override
   String toString() {
-    return 'ReadRequest.stu3(base: $base, type: $type, id: $id, pretty: $pretty, summary: $summary)';
+    return 'ReadRequest.stu3(base: $base, type: $type, id: $id, pretty: $pretty, summary: $summary, client: $client)';
   }
 
   @override
@@ -440,7 +490,10 @@ class _$_ReadRequestStu3 extends _ReadRequestStu3 {
             (identical(other.pretty, pretty) ||
                 const DeepCollectionEquality().equals(other.pretty, pretty)) &&
             (identical(other.summary, summary) ||
-                const DeepCollectionEquality().equals(other.summary, summary)));
+                const DeepCollectionEquality()
+                    .equals(other.summary, summary)) &&
+            (identical(other.client, client) ||
+                const DeepCollectionEquality().equals(other.client, client)));
   }
 
   @override
@@ -450,7 +503,8 @@ class _$_ReadRequestStu3 extends _ReadRequestStu3 {
       const DeepCollectionEquality().hash(type) ^
       const DeepCollectionEquality().hash(id) ^
       const DeepCollectionEquality().hash(pretty) ^
-      const DeepCollectionEquality().hash(summary);
+      const DeepCollectionEquality().hash(summary) ^
+      const DeepCollectionEquality().hash(client);
 
   @override
   _$ReadRequestStu3CopyWith<_ReadRequestStu3> get copyWith =>
@@ -460,36 +514,41 @@ class _$_ReadRequestStu3 extends _ReadRequestStu3 {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required
-        Result dstu2(
-            Uri base, Dstu2Types type, Id id, bool pretty, Summary summary),
+        Result dstu2(Uri base, Dstu2Types type, Id id, bool pretty,
+            Summary summary, Client client),
     @required
-        Result stu3(
-            Uri base, Stu3Types type, Id id, bool pretty, Summary summary),
+        Result stu3(Uri base, Stu3Types type, Id id, bool pretty,
+            Summary summary, Client client),
     @required
-        Result r4(Uri base, R4Types type, Id id, bool pretty, Summary summary),
+        Result r4(Uri base, R4Types type, Id id, bool pretty, Summary summary,
+            Client client),
     @required
-        Result r5(Uri base, R5Types type, Id id, bool pretty, Summary summary),
+        Result r5(Uri base, R5Types type, Id id, bool pretty, Summary summary,
+            Client client),
   }) {
     assert(dstu2 != null);
     assert(stu3 != null);
     assert(r4 != null);
     assert(r5 != null);
-    return stu3(base, type, id, pretty, summary);
+    return stu3(base, type, id, pretty, summary, client);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result dstu2(
-        Uri base, Dstu2Types type, Id id, bool pretty, Summary summary),
-    Result stu3(Uri base, Stu3Types type, Id id, bool pretty, Summary summary),
-    Result r4(Uri base, R4Types type, Id id, bool pretty, Summary summary),
-    Result r5(Uri base, R5Types type, Id id, bool pretty, Summary summary),
+    Result dstu2(Uri base, Dstu2Types type, Id id, bool pretty, Summary summary,
+        Client client),
+    Result stu3(Uri base, Stu3Types type, Id id, bool pretty, Summary summary,
+        Client client),
+    Result r4(Uri base, R4Types type, Id id, bool pretty, Summary summary,
+        Client client),
+    Result r5(Uri base, R5Types type, Id id, bool pretty, Summary summary,
+        Client client),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (stu3 != null) {
-      return stu3(base, type, id, pretty, summary);
+      return stu3(base, type, id, pretty, summary, client);
     }
     return orElse();
   }
@@ -533,7 +592,8 @@ abstract class _ReadRequestStu3 extends ReadRequest {
       @required Stu3Types type,
       @required Id id,
       bool pretty,
-      Summary summary}) = _$_ReadRequestStu3;
+      Summary summary,
+      Client client}) = _$_ReadRequestStu3;
 
   @override
   Uri get base;
@@ -545,6 +605,8 @@ abstract class _ReadRequestStu3 extends ReadRequest {
   @override
   Summary get summary;
   @override
+  Client get client;
+  @override
   _$ReadRequestStu3CopyWith<_ReadRequestStu3> get copyWith;
 }
 
@@ -555,7 +617,13 @@ abstract class _$ReadRequestR4CopyWith<$Res>
           _ReadRequestR4 value, $Res Function(_ReadRequestR4) then) =
       __$ReadRequestR4CopyWithImpl<$Res>;
   @override
-  $Res call({Uri base, R4Types type, Id id, bool pretty, Summary summary});
+  $Res call(
+      {Uri base,
+      R4Types type,
+      Id id,
+      bool pretty,
+      Summary summary,
+      Client client});
 }
 
 /// @nodoc
@@ -575,6 +643,7 @@ class __$ReadRequestR4CopyWithImpl<$Res> extends _$ReadRequestCopyWithImpl<$Res>
     Object id = freezed,
     Object pretty = freezed,
     Object summary = freezed,
+    Object client = freezed,
   }) {
     return _then(_ReadRequestR4(
       base: base == freezed ? _value.base : base as Uri,
@@ -582,6 +651,7 @@ class __$ReadRequestR4CopyWithImpl<$Res> extends _$ReadRequestCopyWithImpl<$Res>
       id: id == freezed ? _value.id : id as Id,
       pretty: pretty == freezed ? _value.pretty : pretty as bool,
       summary: summary == freezed ? _value.summary : summary as Summary,
+      client: client == freezed ? _value.client : client as Client,
     ));
   }
 }
@@ -593,7 +663,8 @@ class _$_ReadRequestR4 extends _ReadRequestR4 {
       @required this.type,
       @required this.id,
       this.pretty = false,
-      this.summary = Summary.none})
+      this.summary = Summary.none,
+      this.client})
       : assert(base != null),
         assert(type != null),
         assert(id != null),
@@ -613,10 +684,12 @@ class _$_ReadRequestR4 extends _ReadRequestR4 {
   @JsonKey(defaultValue: Summary.none)
   @override
   final Summary summary;
+  @override
+  final Client client;
 
   @override
   String toString() {
-    return 'ReadRequest.r4(base: $base, type: $type, id: $id, pretty: $pretty, summary: $summary)';
+    return 'ReadRequest.r4(base: $base, type: $type, id: $id, pretty: $pretty, summary: $summary, client: $client)';
   }
 
   @override
@@ -632,7 +705,10 @@ class _$_ReadRequestR4 extends _ReadRequestR4 {
             (identical(other.pretty, pretty) ||
                 const DeepCollectionEquality().equals(other.pretty, pretty)) &&
             (identical(other.summary, summary) ||
-                const DeepCollectionEquality().equals(other.summary, summary)));
+                const DeepCollectionEquality()
+                    .equals(other.summary, summary)) &&
+            (identical(other.client, client) ||
+                const DeepCollectionEquality().equals(other.client, client)));
   }
 
   @override
@@ -642,7 +718,8 @@ class _$_ReadRequestR4 extends _ReadRequestR4 {
       const DeepCollectionEquality().hash(type) ^
       const DeepCollectionEquality().hash(id) ^
       const DeepCollectionEquality().hash(pretty) ^
-      const DeepCollectionEquality().hash(summary);
+      const DeepCollectionEquality().hash(summary) ^
+      const DeepCollectionEquality().hash(client);
 
   @override
   _$ReadRequestR4CopyWith<_ReadRequestR4> get copyWith =>
@@ -652,36 +729,41 @@ class _$_ReadRequestR4 extends _ReadRequestR4 {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required
-        Result dstu2(
-            Uri base, Dstu2Types type, Id id, bool pretty, Summary summary),
+        Result dstu2(Uri base, Dstu2Types type, Id id, bool pretty,
+            Summary summary, Client client),
     @required
-        Result stu3(
-            Uri base, Stu3Types type, Id id, bool pretty, Summary summary),
+        Result stu3(Uri base, Stu3Types type, Id id, bool pretty,
+            Summary summary, Client client),
     @required
-        Result r4(Uri base, R4Types type, Id id, bool pretty, Summary summary),
+        Result r4(Uri base, R4Types type, Id id, bool pretty, Summary summary,
+            Client client),
     @required
-        Result r5(Uri base, R5Types type, Id id, bool pretty, Summary summary),
+        Result r5(Uri base, R5Types type, Id id, bool pretty, Summary summary,
+            Client client),
   }) {
     assert(dstu2 != null);
     assert(stu3 != null);
     assert(r4 != null);
     assert(r5 != null);
-    return r4(base, type, id, pretty, summary);
+    return r4(base, type, id, pretty, summary, client);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result dstu2(
-        Uri base, Dstu2Types type, Id id, bool pretty, Summary summary),
-    Result stu3(Uri base, Stu3Types type, Id id, bool pretty, Summary summary),
-    Result r4(Uri base, R4Types type, Id id, bool pretty, Summary summary),
-    Result r5(Uri base, R5Types type, Id id, bool pretty, Summary summary),
+    Result dstu2(Uri base, Dstu2Types type, Id id, bool pretty, Summary summary,
+        Client client),
+    Result stu3(Uri base, Stu3Types type, Id id, bool pretty, Summary summary,
+        Client client),
+    Result r4(Uri base, R4Types type, Id id, bool pretty, Summary summary,
+        Client client),
+    Result r5(Uri base, R5Types type, Id id, bool pretty, Summary summary,
+        Client client),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (r4 != null) {
-      return r4(base, type, id, pretty, summary);
+      return r4(base, type, id, pretty, summary, client);
     }
     return orElse();
   }
@@ -725,7 +807,8 @@ abstract class _ReadRequestR4 extends ReadRequest {
       @required R4Types type,
       @required Id id,
       bool pretty,
-      Summary summary}) = _$_ReadRequestR4;
+      Summary summary,
+      Client client}) = _$_ReadRequestR4;
 
   @override
   Uri get base;
@@ -737,6 +820,8 @@ abstract class _ReadRequestR4 extends ReadRequest {
   @override
   Summary get summary;
   @override
+  Client get client;
+  @override
   _$ReadRequestR4CopyWith<_ReadRequestR4> get copyWith;
 }
 
@@ -747,7 +832,13 @@ abstract class _$ReadRequestR5CopyWith<$Res>
           _ReadRequestR5 value, $Res Function(_ReadRequestR5) then) =
       __$ReadRequestR5CopyWithImpl<$Res>;
   @override
-  $Res call({Uri base, R5Types type, Id id, bool pretty, Summary summary});
+  $Res call(
+      {Uri base,
+      R5Types type,
+      Id id,
+      bool pretty,
+      Summary summary,
+      Client client});
 }
 
 /// @nodoc
@@ -767,6 +858,7 @@ class __$ReadRequestR5CopyWithImpl<$Res> extends _$ReadRequestCopyWithImpl<$Res>
     Object id = freezed,
     Object pretty = freezed,
     Object summary = freezed,
+    Object client = freezed,
   }) {
     return _then(_ReadRequestR5(
       base: base == freezed ? _value.base : base as Uri,
@@ -774,6 +866,7 @@ class __$ReadRequestR5CopyWithImpl<$Res> extends _$ReadRequestCopyWithImpl<$Res>
       id: id == freezed ? _value.id : id as Id,
       pretty: pretty == freezed ? _value.pretty : pretty as bool,
       summary: summary == freezed ? _value.summary : summary as Summary,
+      client: client == freezed ? _value.client : client as Client,
     ));
   }
 }
@@ -785,7 +878,8 @@ class _$_ReadRequestR5 extends _ReadRequestR5 {
       @required this.type,
       @required this.id,
       this.pretty = false,
-      this.summary = Summary.none})
+      this.summary = Summary.none,
+      this.client})
       : assert(base != null),
         assert(type != null),
         assert(id != null),
@@ -805,10 +899,12 @@ class _$_ReadRequestR5 extends _ReadRequestR5 {
   @JsonKey(defaultValue: Summary.none)
   @override
   final Summary summary;
+  @override
+  final Client client;
 
   @override
   String toString() {
-    return 'ReadRequest.r5(base: $base, type: $type, id: $id, pretty: $pretty, summary: $summary)';
+    return 'ReadRequest.r5(base: $base, type: $type, id: $id, pretty: $pretty, summary: $summary, client: $client)';
   }
 
   @override
@@ -824,7 +920,10 @@ class _$_ReadRequestR5 extends _ReadRequestR5 {
             (identical(other.pretty, pretty) ||
                 const DeepCollectionEquality().equals(other.pretty, pretty)) &&
             (identical(other.summary, summary) ||
-                const DeepCollectionEquality().equals(other.summary, summary)));
+                const DeepCollectionEquality()
+                    .equals(other.summary, summary)) &&
+            (identical(other.client, client) ||
+                const DeepCollectionEquality().equals(other.client, client)));
   }
 
   @override
@@ -834,7 +933,8 @@ class _$_ReadRequestR5 extends _ReadRequestR5 {
       const DeepCollectionEquality().hash(type) ^
       const DeepCollectionEquality().hash(id) ^
       const DeepCollectionEquality().hash(pretty) ^
-      const DeepCollectionEquality().hash(summary);
+      const DeepCollectionEquality().hash(summary) ^
+      const DeepCollectionEquality().hash(client);
 
   @override
   _$ReadRequestR5CopyWith<_ReadRequestR5> get copyWith =>
@@ -844,36 +944,41 @@ class _$_ReadRequestR5 extends _ReadRequestR5 {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required
-        Result dstu2(
-            Uri base, Dstu2Types type, Id id, bool pretty, Summary summary),
+        Result dstu2(Uri base, Dstu2Types type, Id id, bool pretty,
+            Summary summary, Client client),
     @required
-        Result stu3(
-            Uri base, Stu3Types type, Id id, bool pretty, Summary summary),
+        Result stu3(Uri base, Stu3Types type, Id id, bool pretty,
+            Summary summary, Client client),
     @required
-        Result r4(Uri base, R4Types type, Id id, bool pretty, Summary summary),
+        Result r4(Uri base, R4Types type, Id id, bool pretty, Summary summary,
+            Client client),
     @required
-        Result r5(Uri base, R5Types type, Id id, bool pretty, Summary summary),
+        Result r5(Uri base, R5Types type, Id id, bool pretty, Summary summary,
+            Client client),
   }) {
     assert(dstu2 != null);
     assert(stu3 != null);
     assert(r4 != null);
     assert(r5 != null);
-    return r5(base, type, id, pretty, summary);
+    return r5(base, type, id, pretty, summary, client);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result dstu2(
-        Uri base, Dstu2Types type, Id id, bool pretty, Summary summary),
-    Result stu3(Uri base, Stu3Types type, Id id, bool pretty, Summary summary),
-    Result r4(Uri base, R4Types type, Id id, bool pretty, Summary summary),
-    Result r5(Uri base, R5Types type, Id id, bool pretty, Summary summary),
+    Result dstu2(Uri base, Dstu2Types type, Id id, bool pretty, Summary summary,
+        Client client),
+    Result stu3(Uri base, Stu3Types type, Id id, bool pretty, Summary summary,
+        Client client),
+    Result r4(Uri base, R4Types type, Id id, bool pretty, Summary summary,
+        Client client),
+    Result r5(Uri base, R5Types type, Id id, bool pretty, Summary summary,
+        Client client),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (r5 != null) {
-      return r5(base, type, id, pretty, summary);
+      return r5(base, type, id, pretty, summary, client);
     }
     return orElse();
   }
@@ -917,7 +1022,8 @@ abstract class _ReadRequestR5 extends ReadRequest {
       @required R5Types type,
       @required Id id,
       bool pretty,
-      Summary summary}) = _$_ReadRequestR5;
+      Summary summary,
+      Client client}) = _$_ReadRequestR5;
 
   @override
   Uri get base;
@@ -928,6 +1034,8 @@ abstract class _ReadRequestR5 extends ReadRequest {
   bool get pretty;
   @override
   Summary get summary;
+  @override
+  Client get client;
   @override
   _$ReadRequestR5CopyWith<_ReadRequestR5> get copyWith;
 }

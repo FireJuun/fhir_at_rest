@@ -13,8 +13,10 @@ Future<Either<RestfulFailure, Map<String, dynamic>>> makeRequest({
   Map<String, String> headers,
   Map<String, dynamic> resource,
   Encoding encoding,
+  Client client,
 }) async {
   Response result;
+  client ??= Client();
 
   if (globals.kTestMode)
     return left(RestfulFailure.searchStringTest(searchString: thisRequest));
@@ -23,7 +25,7 @@ Future<Either<RestfulFailure, Map<String, dynamic>>> makeRequest({
     switch (type) {
       case RestfulRequest.get_:
         {
-          result = await get(
+          result = await client.get(
             thisRequest,
             headers: headers,
           );
@@ -33,7 +35,7 @@ Future<Either<RestfulFailure, Map<String, dynamic>>> makeRequest({
         {
           headers ??= <String, String>{};
           headers['Content-Type'] = 'application/fhir+json';
-          result = await put(
+          result = await client.put(
             thisRequest,
             headers: headers,
             body: jsonEncode(resource),
@@ -43,7 +45,7 @@ Future<Either<RestfulFailure, Map<String, dynamic>>> makeRequest({
         }
       case RestfulRequest.delete_:
         {
-          result = await delete(
+          result = await client.delete(
             thisRequest,
             headers: headers,
           );
@@ -53,7 +55,7 @@ Future<Either<RestfulFailure, Map<String, dynamic>>> makeRequest({
         {
           headers ??= <String, String>{};
           headers['Content-Type'] = 'application/fhir+json';
-          result = await patch(
+          result = await client.patch(
             thisRequest,
             headers: headers,
             body: jsonEncode(resource),
@@ -65,7 +67,7 @@ Future<Either<RestfulFailure, Map<String, dynamic>>> makeRequest({
         {
           headers ??= <String, String>{};
           headers['Content-Type'] = 'application/fhir+json';
-          result = await post(
+          result = await client.post(
             thisRequest,
             headers: headers,
             body: jsonEncode(resource),
@@ -88,7 +90,7 @@ Future<Either<RestfulFailure, Map<String, dynamic>>> makeRequest({
         switch (type) {
           case RestfulRequest.get_:
             {
-              result = await get(
+              result = await client.get(
                 thisRequest,
                 headers: headers,
               );
@@ -96,7 +98,7 @@ Future<Either<RestfulFailure, Map<String, dynamic>>> makeRequest({
             }
           case RestfulRequest.put_:
             {
-              result = await put(
+              result = await client.put(
                 thisRequest,
                 headers: headers,
                 body: resource,
@@ -106,7 +108,7 @@ Future<Either<RestfulFailure, Map<String, dynamic>>> makeRequest({
             }
           case RestfulRequest.delete_:
             {
-              result = await delete(
+              result = await client.delete(
                 thisRequest,
                 headers: headers,
               );
@@ -114,7 +116,7 @@ Future<Either<RestfulFailure, Map<String, dynamic>>> makeRequest({
             }
           case RestfulRequest.patch_:
             {
-              result = await patch(
+              result = await client.patch(
                 thisRequest,
                 headers: headers,
                 body: resource,
@@ -124,7 +126,7 @@ Future<Either<RestfulFailure, Map<String, dynamic>>> makeRequest({
             }
           case RestfulRequest.post_:
             {
-              result = await post(
+              result = await client.post(
                 thisRequest,
                 headers: headers,
                 body: resource,

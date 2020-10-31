@@ -20,7 +20,8 @@ class _$VreadRequestTearOff {
       @required Id id,
       @required Id versionId,
       bool pretty = false,
-      Summary summary = Summary.none}) {
+      Summary summary = Summary.none,
+      Client client}) {
     return _VreadRequestDstu2(
       base: base,
       type: type,
@@ -28,6 +29,7 @@ class _$VreadRequestTearOff {
       versionId: versionId,
       pretty: pretty,
       summary: summary,
+      client: client,
     );
   }
 
@@ -38,7 +40,8 @@ class _$VreadRequestTearOff {
       @required Id id,
       @required Id versionId,
       bool pretty = false,
-      Summary summary = Summary.none}) {
+      Summary summary = Summary.none,
+      Client client}) {
     return _VreadRequestStu3(
       base: base,
       type: type,
@@ -46,6 +49,7 @@ class _$VreadRequestTearOff {
       versionId: versionId,
       pretty: pretty,
       summary: summary,
+      client: client,
     );
   }
 
@@ -56,7 +60,8 @@ class _$VreadRequestTearOff {
       @required Id id,
       @required Id versionId,
       bool pretty = false,
-      Summary summary = Summary.none}) {
+      Summary summary = Summary.none,
+      Client client}) {
     return _VreadRequestR4(
       base: base,
       type: type,
@@ -64,6 +69,7 @@ class _$VreadRequestTearOff {
       versionId: versionId,
       pretty: pretty,
       summary: summary,
+      client: client,
     );
   }
 
@@ -74,7 +80,8 @@ class _$VreadRequestTearOff {
       @required Id id,
       @required Id versionId,
       bool pretty = false,
-      Summary summary = Summary.none}) {
+      Summary summary = Summary.none,
+      Client client}) {
     return _VreadRequestR5(
       base: base,
       type: type,
@@ -82,6 +89,7 @@ class _$VreadRequestTearOff {
       versionId: versionId,
       pretty: pretty,
       summary: summary,
+      client: client,
     );
   }
 }
@@ -97,32 +105,33 @@ mixin _$VreadRequest {
   Id get versionId;
   bool get pretty;
   Summary get summary;
+  Client get client;
 
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required
         Result dstu2(Uri base, Dstu2Types type, Id id, Id versionId,
-            bool pretty, Summary summary),
+            bool pretty, Summary summary, Client client),
     @required
         Result stu3(Uri base, Stu3Types type, Id id, Id versionId, bool pretty,
-            Summary summary),
+            Summary summary, Client client),
     @required
         Result r4(Uri base, R4Types type, Id id, Id versionId, bool pretty,
-            Summary summary),
+            Summary summary, Client client),
     @required
         Result r5(Uri base, R5Types type, Id id, Id versionId, bool pretty,
-            Summary summary),
+            Summary summary, Client client),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result dstu2(Uri base, Dstu2Types type, Id id, Id versionId, bool pretty,
-        Summary summary),
+        Summary summary, Client client),
     Result stu3(Uri base, Stu3Types type, Id id, Id versionId, bool pretty,
-        Summary summary),
+        Summary summary, Client client),
     Result r4(Uri base, R4Types type, Id id, Id versionId, bool pretty,
-        Summary summary),
+        Summary summary, Client client),
     Result r5(Uri base, R5Types type, Id id, Id versionId, bool pretty,
-        Summary summary),
+        Summary summary, Client client),
     @required Result orElse(),
   });
   @optionalTypeArgs
@@ -149,7 +158,13 @@ abstract class $VreadRequestCopyWith<$Res> {
   factory $VreadRequestCopyWith(
           VreadRequest value, $Res Function(VreadRequest) then) =
       _$VreadRequestCopyWithImpl<$Res>;
-  $Res call({Uri base, Id id, Id versionId, bool pretty, Summary summary});
+  $Res call(
+      {Uri base,
+      Id id,
+      Id versionId,
+      bool pretty,
+      Summary summary,
+      Client client});
 }
 
 /// @nodoc
@@ -167,6 +182,7 @@ class _$VreadRequestCopyWithImpl<$Res> implements $VreadRequestCopyWith<$Res> {
     Object versionId = freezed,
     Object pretty = freezed,
     Object summary = freezed,
+    Object client = freezed,
   }) {
     return _then(_value.copyWith(
       base: base == freezed ? _value.base : base as Uri,
@@ -174,6 +190,7 @@ class _$VreadRequestCopyWithImpl<$Res> implements $VreadRequestCopyWith<$Res> {
       versionId: versionId == freezed ? _value.versionId : versionId as Id,
       pretty: pretty == freezed ? _value.pretty : pretty as bool,
       summary: summary == freezed ? _value.summary : summary as Summary,
+      client: client == freezed ? _value.client : client as Client,
     ));
   }
 }
@@ -191,7 +208,8 @@ abstract class _$VreadRequestDstu2CopyWith<$Res>
       Id id,
       Id versionId,
       bool pretty,
-      Summary summary});
+      Summary summary,
+      Client client});
 }
 
 /// @nodoc
@@ -213,6 +231,7 @@ class __$VreadRequestDstu2CopyWithImpl<$Res>
     Object versionId = freezed,
     Object pretty = freezed,
     Object summary = freezed,
+    Object client = freezed,
   }) {
     return _then(_VreadRequestDstu2(
       base: base == freezed ? _value.base : base as Uri,
@@ -221,6 +240,7 @@ class __$VreadRequestDstu2CopyWithImpl<$Res>
       versionId: versionId == freezed ? _value.versionId : versionId as Id,
       pretty: pretty == freezed ? _value.pretty : pretty as bool,
       summary: summary == freezed ? _value.summary : summary as Summary,
+      client: client == freezed ? _value.client : client as Client,
     ));
   }
 }
@@ -233,7 +253,8 @@ class _$_VreadRequestDstu2 extends _VreadRequestDstu2 {
       @required this.id,
       @required this.versionId,
       this.pretty = false,
-      this.summary = Summary.none})
+      this.summary = Summary.none,
+      this.client})
       : assert(base != null),
         assert(type != null),
         assert(id != null),
@@ -256,10 +277,12 @@ class _$_VreadRequestDstu2 extends _VreadRequestDstu2 {
   @JsonKey(defaultValue: Summary.none)
   @override
   final Summary summary;
+  @override
+  final Client client;
 
   @override
   String toString() {
-    return 'VreadRequest.dstu2(base: $base, type: $type, id: $id, versionId: $versionId, pretty: $pretty, summary: $summary)';
+    return 'VreadRequest.dstu2(base: $base, type: $type, id: $id, versionId: $versionId, pretty: $pretty, summary: $summary, client: $client)';
   }
 
   @override
@@ -278,7 +301,10 @@ class _$_VreadRequestDstu2 extends _VreadRequestDstu2 {
             (identical(other.pretty, pretty) ||
                 const DeepCollectionEquality().equals(other.pretty, pretty)) &&
             (identical(other.summary, summary) ||
-                const DeepCollectionEquality().equals(other.summary, summary)));
+                const DeepCollectionEquality()
+                    .equals(other.summary, summary)) &&
+            (identical(other.client, client) ||
+                const DeepCollectionEquality().equals(other.client, client)));
   }
 
   @override
@@ -289,7 +315,8 @@ class _$_VreadRequestDstu2 extends _VreadRequestDstu2 {
       const DeepCollectionEquality().hash(id) ^
       const DeepCollectionEquality().hash(versionId) ^
       const DeepCollectionEquality().hash(pretty) ^
-      const DeepCollectionEquality().hash(summary);
+      const DeepCollectionEquality().hash(summary) ^
+      const DeepCollectionEquality().hash(client);
 
   @override
   _$VreadRequestDstu2CopyWith<_VreadRequestDstu2> get copyWith =>
@@ -300,40 +327,40 @@ class _$_VreadRequestDstu2 extends _VreadRequestDstu2 {
   Result when<Result extends Object>({
     @required
         Result dstu2(Uri base, Dstu2Types type, Id id, Id versionId,
-            bool pretty, Summary summary),
+            bool pretty, Summary summary, Client client),
     @required
         Result stu3(Uri base, Stu3Types type, Id id, Id versionId, bool pretty,
-            Summary summary),
+            Summary summary, Client client),
     @required
         Result r4(Uri base, R4Types type, Id id, Id versionId, bool pretty,
-            Summary summary),
+            Summary summary, Client client),
     @required
         Result r5(Uri base, R5Types type, Id id, Id versionId, bool pretty,
-            Summary summary),
+            Summary summary, Client client),
   }) {
     assert(dstu2 != null);
     assert(stu3 != null);
     assert(r4 != null);
     assert(r5 != null);
-    return dstu2(base, type, id, versionId, pretty, summary);
+    return dstu2(base, type, id, versionId, pretty, summary, client);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result dstu2(Uri base, Dstu2Types type, Id id, Id versionId, bool pretty,
-        Summary summary),
+        Summary summary, Client client),
     Result stu3(Uri base, Stu3Types type, Id id, Id versionId, bool pretty,
-        Summary summary),
+        Summary summary, Client client),
     Result r4(Uri base, R4Types type, Id id, Id versionId, bool pretty,
-        Summary summary),
+        Summary summary, Client client),
     Result r5(Uri base, R5Types type, Id id, Id versionId, bool pretty,
-        Summary summary),
+        Summary summary, Client client),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (dstu2 != null) {
-      return dstu2(base, type, id, versionId, pretty, summary);
+      return dstu2(base, type, id, versionId, pretty, summary, client);
     }
     return orElse();
   }
@@ -378,7 +405,8 @@ abstract class _VreadRequestDstu2 extends VreadRequest {
       @required Id id,
       @required Id versionId,
       bool pretty,
-      Summary summary}) = _$_VreadRequestDstu2;
+      Summary summary,
+      Client client}) = _$_VreadRequestDstu2;
 
   @override
   Uri get base;
@@ -391,6 +419,8 @@ abstract class _VreadRequestDstu2 extends VreadRequest {
   bool get pretty;
   @override
   Summary get summary;
+  @override
+  Client get client;
   @override
   _$VreadRequestDstu2CopyWith<_VreadRequestDstu2> get copyWith;
 }
@@ -408,7 +438,8 @@ abstract class _$VreadRequestStu3CopyWith<$Res>
       Id id,
       Id versionId,
       bool pretty,
-      Summary summary});
+      Summary summary,
+      Client client});
 }
 
 /// @nodoc
@@ -430,6 +461,7 @@ class __$VreadRequestStu3CopyWithImpl<$Res>
     Object versionId = freezed,
     Object pretty = freezed,
     Object summary = freezed,
+    Object client = freezed,
   }) {
     return _then(_VreadRequestStu3(
       base: base == freezed ? _value.base : base as Uri,
@@ -438,6 +470,7 @@ class __$VreadRequestStu3CopyWithImpl<$Res>
       versionId: versionId == freezed ? _value.versionId : versionId as Id,
       pretty: pretty == freezed ? _value.pretty : pretty as bool,
       summary: summary == freezed ? _value.summary : summary as Summary,
+      client: client == freezed ? _value.client : client as Client,
     ));
   }
 }
@@ -450,7 +483,8 @@ class _$_VreadRequestStu3 extends _VreadRequestStu3 {
       @required this.id,
       @required this.versionId,
       this.pretty = false,
-      this.summary = Summary.none})
+      this.summary = Summary.none,
+      this.client})
       : assert(base != null),
         assert(type != null),
         assert(id != null),
@@ -473,10 +507,12 @@ class _$_VreadRequestStu3 extends _VreadRequestStu3 {
   @JsonKey(defaultValue: Summary.none)
   @override
   final Summary summary;
+  @override
+  final Client client;
 
   @override
   String toString() {
-    return 'VreadRequest.stu3(base: $base, type: $type, id: $id, versionId: $versionId, pretty: $pretty, summary: $summary)';
+    return 'VreadRequest.stu3(base: $base, type: $type, id: $id, versionId: $versionId, pretty: $pretty, summary: $summary, client: $client)';
   }
 
   @override
@@ -495,7 +531,10 @@ class _$_VreadRequestStu3 extends _VreadRequestStu3 {
             (identical(other.pretty, pretty) ||
                 const DeepCollectionEquality().equals(other.pretty, pretty)) &&
             (identical(other.summary, summary) ||
-                const DeepCollectionEquality().equals(other.summary, summary)));
+                const DeepCollectionEquality()
+                    .equals(other.summary, summary)) &&
+            (identical(other.client, client) ||
+                const DeepCollectionEquality().equals(other.client, client)));
   }
 
   @override
@@ -506,7 +545,8 @@ class _$_VreadRequestStu3 extends _VreadRequestStu3 {
       const DeepCollectionEquality().hash(id) ^
       const DeepCollectionEquality().hash(versionId) ^
       const DeepCollectionEquality().hash(pretty) ^
-      const DeepCollectionEquality().hash(summary);
+      const DeepCollectionEquality().hash(summary) ^
+      const DeepCollectionEquality().hash(client);
 
   @override
   _$VreadRequestStu3CopyWith<_VreadRequestStu3> get copyWith =>
@@ -517,40 +557,40 @@ class _$_VreadRequestStu3 extends _VreadRequestStu3 {
   Result when<Result extends Object>({
     @required
         Result dstu2(Uri base, Dstu2Types type, Id id, Id versionId,
-            bool pretty, Summary summary),
+            bool pretty, Summary summary, Client client),
     @required
         Result stu3(Uri base, Stu3Types type, Id id, Id versionId, bool pretty,
-            Summary summary),
+            Summary summary, Client client),
     @required
         Result r4(Uri base, R4Types type, Id id, Id versionId, bool pretty,
-            Summary summary),
+            Summary summary, Client client),
     @required
         Result r5(Uri base, R5Types type, Id id, Id versionId, bool pretty,
-            Summary summary),
+            Summary summary, Client client),
   }) {
     assert(dstu2 != null);
     assert(stu3 != null);
     assert(r4 != null);
     assert(r5 != null);
-    return stu3(base, type, id, versionId, pretty, summary);
+    return stu3(base, type, id, versionId, pretty, summary, client);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result dstu2(Uri base, Dstu2Types type, Id id, Id versionId, bool pretty,
-        Summary summary),
+        Summary summary, Client client),
     Result stu3(Uri base, Stu3Types type, Id id, Id versionId, bool pretty,
-        Summary summary),
+        Summary summary, Client client),
     Result r4(Uri base, R4Types type, Id id, Id versionId, bool pretty,
-        Summary summary),
+        Summary summary, Client client),
     Result r5(Uri base, R5Types type, Id id, Id versionId, bool pretty,
-        Summary summary),
+        Summary summary, Client client),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (stu3 != null) {
-      return stu3(base, type, id, versionId, pretty, summary);
+      return stu3(base, type, id, versionId, pretty, summary, client);
     }
     return orElse();
   }
@@ -595,7 +635,8 @@ abstract class _VreadRequestStu3 extends VreadRequest {
       @required Id id,
       @required Id versionId,
       bool pretty,
-      Summary summary}) = _$_VreadRequestStu3;
+      Summary summary,
+      Client client}) = _$_VreadRequestStu3;
 
   @override
   Uri get base;
@@ -608,6 +649,8 @@ abstract class _VreadRequestStu3 extends VreadRequest {
   bool get pretty;
   @override
   Summary get summary;
+  @override
+  Client get client;
   @override
   _$VreadRequestStu3CopyWith<_VreadRequestStu3> get copyWith;
 }
@@ -625,7 +668,8 @@ abstract class _$VreadRequestR4CopyWith<$Res>
       Id id,
       Id versionId,
       bool pretty,
-      Summary summary});
+      Summary summary,
+      Client client});
 }
 
 /// @nodoc
@@ -647,6 +691,7 @@ class __$VreadRequestR4CopyWithImpl<$Res>
     Object versionId = freezed,
     Object pretty = freezed,
     Object summary = freezed,
+    Object client = freezed,
   }) {
     return _then(_VreadRequestR4(
       base: base == freezed ? _value.base : base as Uri,
@@ -655,6 +700,7 @@ class __$VreadRequestR4CopyWithImpl<$Res>
       versionId: versionId == freezed ? _value.versionId : versionId as Id,
       pretty: pretty == freezed ? _value.pretty : pretty as bool,
       summary: summary == freezed ? _value.summary : summary as Summary,
+      client: client == freezed ? _value.client : client as Client,
     ));
   }
 }
@@ -667,7 +713,8 @@ class _$_VreadRequestR4 extends _VreadRequestR4 {
       @required this.id,
       @required this.versionId,
       this.pretty = false,
-      this.summary = Summary.none})
+      this.summary = Summary.none,
+      this.client})
       : assert(base != null),
         assert(type != null),
         assert(id != null),
@@ -690,10 +737,12 @@ class _$_VreadRequestR4 extends _VreadRequestR4 {
   @JsonKey(defaultValue: Summary.none)
   @override
   final Summary summary;
+  @override
+  final Client client;
 
   @override
   String toString() {
-    return 'VreadRequest.r4(base: $base, type: $type, id: $id, versionId: $versionId, pretty: $pretty, summary: $summary)';
+    return 'VreadRequest.r4(base: $base, type: $type, id: $id, versionId: $versionId, pretty: $pretty, summary: $summary, client: $client)';
   }
 
   @override
@@ -712,7 +761,10 @@ class _$_VreadRequestR4 extends _VreadRequestR4 {
             (identical(other.pretty, pretty) ||
                 const DeepCollectionEquality().equals(other.pretty, pretty)) &&
             (identical(other.summary, summary) ||
-                const DeepCollectionEquality().equals(other.summary, summary)));
+                const DeepCollectionEquality()
+                    .equals(other.summary, summary)) &&
+            (identical(other.client, client) ||
+                const DeepCollectionEquality().equals(other.client, client)));
   }
 
   @override
@@ -723,7 +775,8 @@ class _$_VreadRequestR4 extends _VreadRequestR4 {
       const DeepCollectionEquality().hash(id) ^
       const DeepCollectionEquality().hash(versionId) ^
       const DeepCollectionEquality().hash(pretty) ^
-      const DeepCollectionEquality().hash(summary);
+      const DeepCollectionEquality().hash(summary) ^
+      const DeepCollectionEquality().hash(client);
 
   @override
   _$VreadRequestR4CopyWith<_VreadRequestR4> get copyWith =>
@@ -734,40 +787,40 @@ class _$_VreadRequestR4 extends _VreadRequestR4 {
   Result when<Result extends Object>({
     @required
         Result dstu2(Uri base, Dstu2Types type, Id id, Id versionId,
-            bool pretty, Summary summary),
+            bool pretty, Summary summary, Client client),
     @required
         Result stu3(Uri base, Stu3Types type, Id id, Id versionId, bool pretty,
-            Summary summary),
+            Summary summary, Client client),
     @required
         Result r4(Uri base, R4Types type, Id id, Id versionId, bool pretty,
-            Summary summary),
+            Summary summary, Client client),
     @required
         Result r5(Uri base, R5Types type, Id id, Id versionId, bool pretty,
-            Summary summary),
+            Summary summary, Client client),
   }) {
     assert(dstu2 != null);
     assert(stu3 != null);
     assert(r4 != null);
     assert(r5 != null);
-    return r4(base, type, id, versionId, pretty, summary);
+    return r4(base, type, id, versionId, pretty, summary, client);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result dstu2(Uri base, Dstu2Types type, Id id, Id versionId, bool pretty,
-        Summary summary),
+        Summary summary, Client client),
     Result stu3(Uri base, Stu3Types type, Id id, Id versionId, bool pretty,
-        Summary summary),
+        Summary summary, Client client),
     Result r4(Uri base, R4Types type, Id id, Id versionId, bool pretty,
-        Summary summary),
+        Summary summary, Client client),
     Result r5(Uri base, R5Types type, Id id, Id versionId, bool pretty,
-        Summary summary),
+        Summary summary, Client client),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (r4 != null) {
-      return r4(base, type, id, versionId, pretty, summary);
+      return r4(base, type, id, versionId, pretty, summary, client);
     }
     return orElse();
   }
@@ -812,7 +865,8 @@ abstract class _VreadRequestR4 extends VreadRequest {
       @required Id id,
       @required Id versionId,
       bool pretty,
-      Summary summary}) = _$_VreadRequestR4;
+      Summary summary,
+      Client client}) = _$_VreadRequestR4;
 
   @override
   Uri get base;
@@ -825,6 +879,8 @@ abstract class _VreadRequestR4 extends VreadRequest {
   bool get pretty;
   @override
   Summary get summary;
+  @override
+  Client get client;
   @override
   _$VreadRequestR4CopyWith<_VreadRequestR4> get copyWith;
 }
@@ -842,7 +898,8 @@ abstract class _$VreadRequestR5CopyWith<$Res>
       Id id,
       Id versionId,
       bool pretty,
-      Summary summary});
+      Summary summary,
+      Client client});
 }
 
 /// @nodoc
@@ -864,6 +921,7 @@ class __$VreadRequestR5CopyWithImpl<$Res>
     Object versionId = freezed,
     Object pretty = freezed,
     Object summary = freezed,
+    Object client = freezed,
   }) {
     return _then(_VreadRequestR5(
       base: base == freezed ? _value.base : base as Uri,
@@ -872,6 +930,7 @@ class __$VreadRequestR5CopyWithImpl<$Res>
       versionId: versionId == freezed ? _value.versionId : versionId as Id,
       pretty: pretty == freezed ? _value.pretty : pretty as bool,
       summary: summary == freezed ? _value.summary : summary as Summary,
+      client: client == freezed ? _value.client : client as Client,
     ));
   }
 }
@@ -884,7 +943,8 @@ class _$_VreadRequestR5 extends _VreadRequestR5 {
       @required this.id,
       @required this.versionId,
       this.pretty = false,
-      this.summary = Summary.none})
+      this.summary = Summary.none,
+      this.client})
       : assert(base != null),
         assert(type != null),
         assert(id != null),
@@ -907,10 +967,12 @@ class _$_VreadRequestR5 extends _VreadRequestR5 {
   @JsonKey(defaultValue: Summary.none)
   @override
   final Summary summary;
+  @override
+  final Client client;
 
   @override
   String toString() {
-    return 'VreadRequest.r5(base: $base, type: $type, id: $id, versionId: $versionId, pretty: $pretty, summary: $summary)';
+    return 'VreadRequest.r5(base: $base, type: $type, id: $id, versionId: $versionId, pretty: $pretty, summary: $summary, client: $client)';
   }
 
   @override
@@ -929,7 +991,10 @@ class _$_VreadRequestR5 extends _VreadRequestR5 {
             (identical(other.pretty, pretty) ||
                 const DeepCollectionEquality().equals(other.pretty, pretty)) &&
             (identical(other.summary, summary) ||
-                const DeepCollectionEquality().equals(other.summary, summary)));
+                const DeepCollectionEquality()
+                    .equals(other.summary, summary)) &&
+            (identical(other.client, client) ||
+                const DeepCollectionEquality().equals(other.client, client)));
   }
 
   @override
@@ -940,7 +1005,8 @@ class _$_VreadRequestR5 extends _VreadRequestR5 {
       const DeepCollectionEquality().hash(id) ^
       const DeepCollectionEquality().hash(versionId) ^
       const DeepCollectionEquality().hash(pretty) ^
-      const DeepCollectionEquality().hash(summary);
+      const DeepCollectionEquality().hash(summary) ^
+      const DeepCollectionEquality().hash(client);
 
   @override
   _$VreadRequestR5CopyWith<_VreadRequestR5> get copyWith =>
@@ -951,40 +1017,40 @@ class _$_VreadRequestR5 extends _VreadRequestR5 {
   Result when<Result extends Object>({
     @required
         Result dstu2(Uri base, Dstu2Types type, Id id, Id versionId,
-            bool pretty, Summary summary),
+            bool pretty, Summary summary, Client client),
     @required
         Result stu3(Uri base, Stu3Types type, Id id, Id versionId, bool pretty,
-            Summary summary),
+            Summary summary, Client client),
     @required
         Result r4(Uri base, R4Types type, Id id, Id versionId, bool pretty,
-            Summary summary),
+            Summary summary, Client client),
     @required
         Result r5(Uri base, R5Types type, Id id, Id versionId, bool pretty,
-            Summary summary),
+            Summary summary, Client client),
   }) {
     assert(dstu2 != null);
     assert(stu3 != null);
     assert(r4 != null);
     assert(r5 != null);
-    return r5(base, type, id, versionId, pretty, summary);
+    return r5(base, type, id, versionId, pretty, summary, client);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result dstu2(Uri base, Dstu2Types type, Id id, Id versionId, bool pretty,
-        Summary summary),
+        Summary summary, Client client),
     Result stu3(Uri base, Stu3Types type, Id id, Id versionId, bool pretty,
-        Summary summary),
+        Summary summary, Client client),
     Result r4(Uri base, R4Types type, Id id, Id versionId, bool pretty,
-        Summary summary),
+        Summary summary, Client client),
     Result r5(Uri base, R5Types type, Id id, Id versionId, bool pretty,
-        Summary summary),
+        Summary summary, Client client),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (r5 != null) {
-      return r5(base, type, id, versionId, pretty, summary);
+      return r5(base, type, id, versionId, pretty, summary, client);
     }
     return orElse();
   }
@@ -1029,7 +1095,8 @@ abstract class _VreadRequestR5 extends VreadRequest {
       @required Id id,
       @required Id versionId,
       bool pretty,
-      Summary summary}) = _$_VreadRequestR5;
+      Summary summary,
+      Client client}) = _$_VreadRequestR5;
 
   @override
   Uri get base;
@@ -1042,6 +1109,8 @@ abstract class _VreadRequestR5 extends VreadRequest {
   bool get pretty;
   @override
   Summary get summary;
+  @override
+  Client get client;
   @override
   _$VreadRequestR5CopyWith<_VreadRequestR5> get copyWith;
 }

@@ -175,7 +175,7 @@ packages:
       name: fhir
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.0.8"
+    version: "0.0.11"
   fixnum:
     dependency: transitive
     description:
@@ -189,7 +189,7 @@ packages:
       name: freezed
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.12.1"
+    version: "0.12.2"
   freezed_annotation:
     dependency: "direct main"
     description:

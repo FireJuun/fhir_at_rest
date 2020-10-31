@@ -6,6 +6,7 @@ import 'package:fhir/dstu2.dart' as dstu2;
 import 'package:fhir/stu3.dart' as stu3;
 import 'package:fhir/r4.dart' as r4;
 import 'package:fhir/r5.dart' as r5;
+import 'package:http/http.dart';
 
 import '../failures/restful_failure.dart';
 import '../resource_types/resource_types.dart';
@@ -22,6 +23,7 @@ abstract class SearchRequest with _$SearchRequest {
     @required Dstu2Types type,
     @Default(false) bool pretty,
     Dstu2SearchParameters parameters,
+    Client client,
   }) = _SearchRequestDstu2;
 
   factory SearchRequest.stu3({
@@ -29,6 +31,7 @@ abstract class SearchRequest with _$SearchRequest {
     @required Stu3Types type,
     @Default(false) bool pretty,
     Stu3SearchParameters parameters,
+    Client client,
   }) = _SearchRequestStu3;
 
   factory SearchRequest.r4({
@@ -36,57 +39,106 @@ abstract class SearchRequest with _$SearchRequest {
     @required R4Types type,
     @Default(false) bool pretty,
     R4SearchParameters parameters,
+    Client client,
   }) = _SearchRequestR4;
 
   factory SearchRequest.r5({
     @required Uri base,
-    @required R5Types type,
+    R5Types type,
     @Default(false) bool pretty,
     R5SearchParameters parameters,
+    Client client,
   }) = _SearchRequestR5;
 
   Future<Either<RestfulFailure, dynamic>> request() async {
-    final FHIRUri fhirUri = map(
-      dstu2: (req) => FHIRUri.dstu2Search(
-        base: req.base,
-        type: req.type,
-        pretty: req.pretty,
-      ),
-      stu3: (req) => FHIRUri.stu3Search(
-        base: req.base,
-        type: req.type,
-        pretty: req.pretty,
-      ),
-      r4: (req) => FHIRUri.r4Search(
-        base: req.base,
-        type: req.type,
-        pretty: req.pretty,
-      ),
-      r5: (req) => FHIRUri.r5Search(
-        base: req.base,
-        type: req.type,
-        pretty: req.pretty,
-      ),
+    final searchParametersList = map(
+      dstu2: (req) => req.parameters.searchParameterList(),
+      stu3: (req) => req.parameters.searchParameterList(),
+      r4: (req) => req.parameters.searchParameterList(),
+      r5: (req) => req.parameters.searchParameterList(),
     );
 
-    final parametersString = map(
-      dstu2: (req) => req.parameters.searchString(),
-      stu3: (req) => req.parameters.searchString(),
-      r4: (req) => req.parameters.searchString(),
-      r5: (req) => req.parameters.searchString(),
-    );
-
-    var searchString = '';
-    if (parametersString.isRight()) {
-      searchString = parametersString.getOrElse(() => '');
+    List<FHIRUriParameter> parameterList;
+    if (searchParametersList.isRight()) {
+      parameterList = searchParametersList.getOrElse(() => []);
     } else {
-      return left(parametersString.fold((l) => l,
-          (r) => RestfulFailure.unknownFailure(failedValue: parametersString)));
+      return left(searchParametersList.fold(
+          (l) => l,
+          (r) => RestfulFailure.unknownFailure(
+              failedValue: searchParametersList)));
     }
+
+    final FHIRUri fhirUri = map(
+      dstu2: (req) => req.type == null
+          ? FHIRUri.dstu2SearchAll(
+              base: req.base,
+              generalParameters: GeneralParameters.dstu2(
+                pretty: req.pretty,
+              ),
+              parameters: parameterList,
+            )
+          : FHIRUri.dstu2Search(
+              base: req.base,
+              type: req.type,
+              generalParameters: GeneralParameters.stu3(
+                pretty: req.pretty,
+              ),
+              parameters: parameterList,
+            ),
+      stu3: (req) => req.type == null
+          ? FHIRUri.stu3SearchAll(
+              base: req.base,
+              generalParameters: GeneralParameters.r4(
+                pretty: req.pretty,
+              ),
+              parameters: parameterList,
+            )
+          : FHIRUri.stu3Search(
+              base: req.base,
+              type: req.type,
+              generalParameters: GeneralParameters.r5(
+                pretty: req.pretty,
+              ),
+              parameters: parameterList,
+            ),
+      r4: (req) => req.type == null
+          ? FHIRUri.r4SearchAll(
+              base: req.base,
+              generalParameters: GeneralParameters.dstu2(
+                pretty: req.pretty,
+              ),
+              parameters: parameterList,
+            )
+          : FHIRUri.r4Search(
+              base: req.base,
+              type: req.type,
+              generalParameters: GeneralParameters.stu3(
+                pretty: req.pretty,
+              ),
+              parameters: parameterList,
+            ),
+      r5: (req) => req.type == null
+          ? FHIRUri.r5SearchAll(
+              base: req.base,
+              generalParameters: GeneralParameters.r4(
+                pretty: req.pretty,
+              ),
+              parameters: parameterList,
+            )
+          : FHIRUri.r5Search(
+              base: req.base,
+              type: req.type,
+              generalParameters: GeneralParameters.r5(
+                pretty: req.pretty,
+              ),
+              parameters: parameterList,
+            ),
+    );
 
     final result = await makeRequest(
       type: RestfulRequest.get_,
-      thisRequest: fhirUri.uri + searchString,
+      thisRequest: fhirUri.uri,
+      client: client,
     );
 
     return result.fold(

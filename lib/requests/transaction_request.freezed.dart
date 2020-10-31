@@ -17,11 +17,13 @@ class _$TransactionRequestTearOff {
   _TransactionRequestDstu2 dstu2(
       {@required Uri base,
       bool pretty = false,
-      Summary summary = Summary.none}) {
+      Summary summary = Summary.none,
+      Client client}) {
     return _TransactionRequestDstu2(
       base: base,
       pretty: pretty,
       summary: summary,
+      client: client,
     );
   }
 
@@ -29,11 +31,13 @@ class _$TransactionRequestTearOff {
   _TransactionRequestStu3 stu3(
       {@required Uri base,
       bool pretty = false,
-      Summary summary = Summary.none}) {
+      Summary summary = Summary.none,
+      Client client}) {
     return _TransactionRequestStu3(
       base: base,
       pretty: pretty,
       summary: summary,
+      client: client,
     );
   }
 
@@ -41,11 +45,13 @@ class _$TransactionRequestTearOff {
   _TransactionRequestR4 r4(
       {@required Uri base,
       bool pretty = false,
-      Summary summary = Summary.none}) {
+      Summary summary = Summary.none,
+      Client client}) {
     return _TransactionRequestR4(
       base: base,
       pretty: pretty,
       summary: summary,
+      client: client,
     );
   }
 
@@ -53,11 +59,13 @@ class _$TransactionRequestTearOff {
   _TransactionRequestR5 r5(
       {@required Uri base,
       bool pretty = false,
-      Summary summary = Summary.none}) {
+      Summary summary = Summary.none,
+      Client client}) {
     return _TransactionRequestR5(
       base: base,
       pretty: pretty,
       summary: summary,
+      client: client,
     );
   }
 }
@@ -71,20 +79,23 @@ mixin _$TransactionRequest {
   Uri get base;
   bool get pretty;
   Summary get summary;
+  Client get client;
 
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result dstu2(Uri base, bool pretty, Summary summary),
-    @required Result stu3(Uri base, bool pretty, Summary summary),
-    @required Result r4(Uri base, bool pretty, Summary summary),
-    @required Result r5(Uri base, bool pretty, Summary summary),
+    @required
+        Result dstu2(Uri base, bool pretty, Summary summary, Client client),
+    @required
+        Result stu3(Uri base, bool pretty, Summary summary, Client client),
+    @required Result r4(Uri base, bool pretty, Summary summary, Client client),
+    @required Result r5(Uri base, bool pretty, Summary summary, Client client),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result dstu2(Uri base, bool pretty, Summary summary),
-    Result stu3(Uri base, bool pretty, Summary summary),
-    Result r4(Uri base, bool pretty, Summary summary),
-    Result r5(Uri base, bool pretty, Summary summary),
+    Result dstu2(Uri base, bool pretty, Summary summary, Client client),
+    Result stu3(Uri base, bool pretty, Summary summary, Client client),
+    Result r4(Uri base, bool pretty, Summary summary, Client client),
+    Result r5(Uri base, bool pretty, Summary summary, Client client),
     @required Result orElse(),
   });
   @optionalTypeArgs
@@ -111,7 +122,7 @@ abstract class $TransactionRequestCopyWith<$Res> {
   factory $TransactionRequestCopyWith(
           TransactionRequest value, $Res Function(TransactionRequest) then) =
       _$TransactionRequestCopyWithImpl<$Res>;
-  $Res call({Uri base, bool pretty, Summary summary});
+  $Res call({Uri base, bool pretty, Summary summary, Client client});
 }
 
 /// @nodoc
@@ -128,11 +139,13 @@ class _$TransactionRequestCopyWithImpl<$Res>
     Object base = freezed,
     Object pretty = freezed,
     Object summary = freezed,
+    Object client = freezed,
   }) {
     return _then(_value.copyWith(
       base: base == freezed ? _value.base : base as Uri,
       pretty: pretty == freezed ? _value.pretty : pretty as bool,
       summary: summary == freezed ? _value.summary : summary as Summary,
+      client: client == freezed ? _value.client : client as Client,
     ));
   }
 }
@@ -144,7 +157,7 @@ abstract class _$TransactionRequestDstu2CopyWith<$Res>
           $Res Function(_TransactionRequestDstu2) then) =
       __$TransactionRequestDstu2CopyWithImpl<$Res>;
   @override
-  $Res call({Uri base, bool pretty, Summary summary});
+  $Res call({Uri base, bool pretty, Summary summary, Client client});
 }
 
 /// @nodoc
@@ -164,11 +177,13 @@ class __$TransactionRequestDstu2CopyWithImpl<$Res>
     Object base = freezed,
     Object pretty = freezed,
     Object summary = freezed,
+    Object client = freezed,
   }) {
     return _then(_TransactionRequestDstu2(
       base: base == freezed ? _value.base : base as Uri,
       pretty: pretty == freezed ? _value.pretty : pretty as bool,
       summary: summary == freezed ? _value.summary : summary as Summary,
+      client: client == freezed ? _value.client : client as Client,
     ));
   }
 }
@@ -176,7 +191,10 @@ class __$TransactionRequestDstu2CopyWithImpl<$Res>
 /// @nodoc
 class _$_TransactionRequestDstu2 extends _TransactionRequestDstu2 {
   _$_TransactionRequestDstu2(
-      {@required this.base, this.pretty = false, this.summary = Summary.none})
+      {@required this.base,
+      this.pretty = false,
+      this.summary = Summary.none,
+      this.client})
       : assert(base != null),
         assert(pretty != null),
         assert(summary != null),
@@ -190,10 +208,12 @@ class _$_TransactionRequestDstu2 extends _TransactionRequestDstu2 {
   @JsonKey(defaultValue: Summary.none)
   @override
   final Summary summary;
+  @override
+  final Client client;
 
   @override
   String toString() {
-    return 'TransactionRequest.dstu2(base: $base, pretty: $pretty, summary: $summary)';
+    return 'TransactionRequest.dstu2(base: $base, pretty: $pretty, summary: $summary, client: $client)';
   }
 
   @override
@@ -205,7 +225,10 @@ class _$_TransactionRequestDstu2 extends _TransactionRequestDstu2 {
             (identical(other.pretty, pretty) ||
                 const DeepCollectionEquality().equals(other.pretty, pretty)) &&
             (identical(other.summary, summary) ||
-                const DeepCollectionEquality().equals(other.summary, summary)));
+                const DeepCollectionEquality()
+                    .equals(other.summary, summary)) &&
+            (identical(other.client, client) ||
+                const DeepCollectionEquality().equals(other.client, client)));
   }
 
   @override
@@ -213,7 +236,8 @@ class _$_TransactionRequestDstu2 extends _TransactionRequestDstu2 {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(base) ^
       const DeepCollectionEquality().hash(pretty) ^
-      const DeepCollectionEquality().hash(summary);
+      const DeepCollectionEquality().hash(summary) ^
+      const DeepCollectionEquality().hash(client);
 
   @override
   _$TransactionRequestDstu2CopyWith<_TransactionRequestDstu2> get copyWith =>
@@ -223,30 +247,32 @@ class _$_TransactionRequestDstu2 extends _TransactionRequestDstu2 {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result dstu2(Uri base, bool pretty, Summary summary),
-    @required Result stu3(Uri base, bool pretty, Summary summary),
-    @required Result r4(Uri base, bool pretty, Summary summary),
-    @required Result r5(Uri base, bool pretty, Summary summary),
+    @required
+        Result dstu2(Uri base, bool pretty, Summary summary, Client client),
+    @required
+        Result stu3(Uri base, bool pretty, Summary summary, Client client),
+    @required Result r4(Uri base, bool pretty, Summary summary, Client client),
+    @required Result r5(Uri base, bool pretty, Summary summary, Client client),
   }) {
     assert(dstu2 != null);
     assert(stu3 != null);
     assert(r4 != null);
     assert(r5 != null);
-    return dstu2(base, pretty, summary);
+    return dstu2(base, pretty, summary, client);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result dstu2(Uri base, bool pretty, Summary summary),
-    Result stu3(Uri base, bool pretty, Summary summary),
-    Result r4(Uri base, bool pretty, Summary summary),
-    Result r5(Uri base, bool pretty, Summary summary),
+    Result dstu2(Uri base, bool pretty, Summary summary, Client client),
+    Result stu3(Uri base, bool pretty, Summary summary, Client client),
+    Result r4(Uri base, bool pretty, Summary summary, Client client),
+    Result r5(Uri base, bool pretty, Summary summary, Client client),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (dstu2 != null) {
-      return dstu2(base, pretty, summary);
+      return dstu2(base, pretty, summary, client);
     }
     return orElse();
   }
@@ -288,7 +314,8 @@ abstract class _TransactionRequestDstu2 extends TransactionRequest {
   factory _TransactionRequestDstu2(
       {@required Uri base,
       bool pretty,
-      Summary summary}) = _$_TransactionRequestDstu2;
+      Summary summary,
+      Client client}) = _$_TransactionRequestDstu2;
 
   @override
   Uri get base;
@@ -296,6 +323,8 @@ abstract class _TransactionRequestDstu2 extends TransactionRequest {
   bool get pretty;
   @override
   Summary get summary;
+  @override
+  Client get client;
   @override
   _$TransactionRequestDstu2CopyWith<_TransactionRequestDstu2> get copyWith;
 }
@@ -307,7 +336,7 @@ abstract class _$TransactionRequestStu3CopyWith<$Res>
           $Res Function(_TransactionRequestStu3) then) =
       __$TransactionRequestStu3CopyWithImpl<$Res>;
   @override
-  $Res call({Uri base, bool pretty, Summary summary});
+  $Res call({Uri base, bool pretty, Summary summary, Client client});
 }
 
 /// @nodoc
@@ -326,11 +355,13 @@ class __$TransactionRequestStu3CopyWithImpl<$Res>
     Object base = freezed,
     Object pretty = freezed,
     Object summary = freezed,
+    Object client = freezed,
   }) {
     return _then(_TransactionRequestStu3(
       base: base == freezed ? _value.base : base as Uri,
       pretty: pretty == freezed ? _value.pretty : pretty as bool,
       summary: summary == freezed ? _value.summary : summary as Summary,
+      client: client == freezed ? _value.client : client as Client,
     ));
   }
 }
@@ -338,7 +369,10 @@ class __$TransactionRequestStu3CopyWithImpl<$Res>
 /// @nodoc
 class _$_TransactionRequestStu3 extends _TransactionRequestStu3 {
   _$_TransactionRequestStu3(
-      {@required this.base, this.pretty = false, this.summary = Summary.none})
+      {@required this.base,
+      this.pretty = false,
+      this.summary = Summary.none,
+      this.client})
       : assert(base != null),
         assert(pretty != null),
         assert(summary != null),
@@ -352,10 +386,12 @@ class _$_TransactionRequestStu3 extends _TransactionRequestStu3 {
   @JsonKey(defaultValue: Summary.none)
   @override
   final Summary summary;
+  @override
+  final Client client;
 
   @override
   String toString() {
-    return 'TransactionRequest.stu3(base: $base, pretty: $pretty, summary: $summary)';
+    return 'TransactionRequest.stu3(base: $base, pretty: $pretty, summary: $summary, client: $client)';
   }
 
   @override
@@ -367,7 +403,10 @@ class _$_TransactionRequestStu3 extends _TransactionRequestStu3 {
             (identical(other.pretty, pretty) ||
                 const DeepCollectionEquality().equals(other.pretty, pretty)) &&
             (identical(other.summary, summary) ||
-                const DeepCollectionEquality().equals(other.summary, summary)));
+                const DeepCollectionEquality()
+                    .equals(other.summary, summary)) &&
+            (identical(other.client, client) ||
+                const DeepCollectionEquality().equals(other.client, client)));
   }
 
   @override
@@ -375,7 +414,8 @@ class _$_TransactionRequestStu3 extends _TransactionRequestStu3 {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(base) ^
       const DeepCollectionEquality().hash(pretty) ^
-      const DeepCollectionEquality().hash(summary);
+      const DeepCollectionEquality().hash(summary) ^
+      const DeepCollectionEquality().hash(client);
 
   @override
   _$TransactionRequestStu3CopyWith<_TransactionRequestStu3> get copyWith =>
@@ -385,30 +425,32 @@ class _$_TransactionRequestStu3 extends _TransactionRequestStu3 {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result dstu2(Uri base, bool pretty, Summary summary),
-    @required Result stu3(Uri base, bool pretty, Summary summary),
-    @required Result r4(Uri base, bool pretty, Summary summary),
-    @required Result r5(Uri base, bool pretty, Summary summary),
+    @required
+        Result dstu2(Uri base, bool pretty, Summary summary, Client client),
+    @required
+        Result stu3(Uri base, bool pretty, Summary summary, Client client),
+    @required Result r4(Uri base, bool pretty, Summary summary, Client client),
+    @required Result r5(Uri base, bool pretty, Summary summary, Client client),
   }) {
     assert(dstu2 != null);
     assert(stu3 != null);
     assert(r4 != null);
     assert(r5 != null);
-    return stu3(base, pretty, summary);
+    return stu3(base, pretty, summary, client);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result dstu2(Uri base, bool pretty, Summary summary),
-    Result stu3(Uri base, bool pretty, Summary summary),
-    Result r4(Uri base, bool pretty, Summary summary),
-    Result r5(Uri base, bool pretty, Summary summary),
+    Result dstu2(Uri base, bool pretty, Summary summary, Client client),
+    Result stu3(Uri base, bool pretty, Summary summary, Client client),
+    Result r4(Uri base, bool pretty, Summary summary, Client client),
+    Result r5(Uri base, bool pretty, Summary summary, Client client),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (stu3 != null) {
-      return stu3(base, pretty, summary);
+      return stu3(base, pretty, summary, client);
     }
     return orElse();
   }
@@ -450,7 +492,8 @@ abstract class _TransactionRequestStu3 extends TransactionRequest {
   factory _TransactionRequestStu3(
       {@required Uri base,
       bool pretty,
-      Summary summary}) = _$_TransactionRequestStu3;
+      Summary summary,
+      Client client}) = _$_TransactionRequestStu3;
 
   @override
   Uri get base;
@@ -458,6 +501,8 @@ abstract class _TransactionRequestStu3 extends TransactionRequest {
   bool get pretty;
   @override
   Summary get summary;
+  @override
+  Client get client;
   @override
   _$TransactionRequestStu3CopyWith<_TransactionRequestStu3> get copyWith;
 }
@@ -469,7 +514,7 @@ abstract class _$TransactionRequestR4CopyWith<$Res>
           $Res Function(_TransactionRequestR4) then) =
       __$TransactionRequestR4CopyWithImpl<$Res>;
   @override
-  $Res call({Uri base, bool pretty, Summary summary});
+  $Res call({Uri base, bool pretty, Summary summary, Client client});
 }
 
 /// @nodoc
@@ -488,11 +533,13 @@ class __$TransactionRequestR4CopyWithImpl<$Res>
     Object base = freezed,
     Object pretty = freezed,
     Object summary = freezed,
+    Object client = freezed,
   }) {
     return _then(_TransactionRequestR4(
       base: base == freezed ? _value.base : base as Uri,
       pretty: pretty == freezed ? _value.pretty : pretty as bool,
       summary: summary == freezed ? _value.summary : summary as Summary,
+      client: client == freezed ? _value.client : client as Client,
     ));
   }
 }
@@ -500,7 +547,10 @@ class __$TransactionRequestR4CopyWithImpl<$Res>
 /// @nodoc
 class _$_TransactionRequestR4 extends _TransactionRequestR4 {
   _$_TransactionRequestR4(
-      {@required this.base, this.pretty = false, this.summary = Summary.none})
+      {@required this.base,
+      this.pretty = false,
+      this.summary = Summary.none,
+      this.client})
       : assert(base != null),
         assert(pretty != null),
         assert(summary != null),
@@ -514,10 +564,12 @@ class _$_TransactionRequestR4 extends _TransactionRequestR4 {
   @JsonKey(defaultValue: Summary.none)
   @override
   final Summary summary;
+  @override
+  final Client client;
 
   @override
   String toString() {
-    return 'TransactionRequest.r4(base: $base, pretty: $pretty, summary: $summary)';
+    return 'TransactionRequest.r4(base: $base, pretty: $pretty, summary: $summary, client: $client)';
   }
 
   @override
@@ -529,7 +581,10 @@ class _$_TransactionRequestR4 extends _TransactionRequestR4 {
             (identical(other.pretty, pretty) ||
                 const DeepCollectionEquality().equals(other.pretty, pretty)) &&
             (identical(other.summary, summary) ||
-                const DeepCollectionEquality().equals(other.summary, summary)));
+                const DeepCollectionEquality()
+                    .equals(other.summary, summary)) &&
+            (identical(other.client, client) ||
+                const DeepCollectionEquality().equals(other.client, client)));
   }
 
   @override
@@ -537,7 +592,8 @@ class _$_TransactionRequestR4 extends _TransactionRequestR4 {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(base) ^
       const DeepCollectionEquality().hash(pretty) ^
-      const DeepCollectionEquality().hash(summary);
+      const DeepCollectionEquality().hash(summary) ^
+      const DeepCollectionEquality().hash(client);
 
   @override
   _$TransactionRequestR4CopyWith<_TransactionRequestR4> get copyWith =>
@@ -547,30 +603,32 @@ class _$_TransactionRequestR4 extends _TransactionRequestR4 {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result dstu2(Uri base, bool pretty, Summary summary),
-    @required Result stu3(Uri base, bool pretty, Summary summary),
-    @required Result r4(Uri base, bool pretty, Summary summary),
-    @required Result r5(Uri base, bool pretty, Summary summary),
+    @required
+        Result dstu2(Uri base, bool pretty, Summary summary, Client client),
+    @required
+        Result stu3(Uri base, bool pretty, Summary summary, Client client),
+    @required Result r4(Uri base, bool pretty, Summary summary, Client client),
+    @required Result r5(Uri base, bool pretty, Summary summary, Client client),
   }) {
     assert(dstu2 != null);
     assert(stu3 != null);
     assert(r4 != null);
     assert(r5 != null);
-    return r4(base, pretty, summary);
+    return r4(base, pretty, summary, client);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result dstu2(Uri base, bool pretty, Summary summary),
-    Result stu3(Uri base, bool pretty, Summary summary),
-    Result r4(Uri base, bool pretty, Summary summary),
-    Result r5(Uri base, bool pretty, Summary summary),
+    Result dstu2(Uri base, bool pretty, Summary summary, Client client),
+    Result stu3(Uri base, bool pretty, Summary summary, Client client),
+    Result r4(Uri base, bool pretty, Summary summary, Client client),
+    Result r5(Uri base, bool pretty, Summary summary, Client client),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (r4 != null) {
-      return r4(base, pretty, summary);
+      return r4(base, pretty, summary, client);
     }
     return orElse();
   }
@@ -612,7 +670,8 @@ abstract class _TransactionRequestR4 extends TransactionRequest {
   factory _TransactionRequestR4(
       {@required Uri base,
       bool pretty,
-      Summary summary}) = _$_TransactionRequestR4;
+      Summary summary,
+      Client client}) = _$_TransactionRequestR4;
 
   @override
   Uri get base;
@@ -620,6 +679,8 @@ abstract class _TransactionRequestR4 extends TransactionRequest {
   bool get pretty;
   @override
   Summary get summary;
+  @override
+  Client get client;
   @override
   _$TransactionRequestR4CopyWith<_TransactionRequestR4> get copyWith;
 }
@@ -631,7 +692,7 @@ abstract class _$TransactionRequestR5CopyWith<$Res>
           $Res Function(_TransactionRequestR5) then) =
       __$TransactionRequestR5CopyWithImpl<$Res>;
   @override
-  $Res call({Uri base, bool pretty, Summary summary});
+  $Res call({Uri base, bool pretty, Summary summary, Client client});
 }
 
 /// @nodoc
@@ -650,11 +711,13 @@ class __$TransactionRequestR5CopyWithImpl<$Res>
     Object base = freezed,
     Object pretty = freezed,
     Object summary = freezed,
+    Object client = freezed,
   }) {
     return _then(_TransactionRequestR5(
       base: base == freezed ? _value.base : base as Uri,
       pretty: pretty == freezed ? _value.pretty : pretty as bool,
       summary: summary == freezed ? _value.summary : summary as Summary,
+      client: client == freezed ? _value.client : client as Client,
     ));
   }
 }
@@ -662,7 +725,10 @@ class __$TransactionRequestR5CopyWithImpl<$Res>
 /// @nodoc
 class _$_TransactionRequestR5 extends _TransactionRequestR5 {
   _$_TransactionRequestR5(
-      {@required this.base, this.pretty = false, this.summary = Summary.none})
+      {@required this.base,
+      this.pretty = false,
+      this.summary = Summary.none,
+      this.client})
       : assert(base != null),
         assert(pretty != null),
         assert(summary != null),
@@ -676,10 +742,12 @@ class _$_TransactionRequestR5 extends _TransactionRequestR5 {
   @JsonKey(defaultValue: Summary.none)
   @override
   final Summary summary;
+  @override
+  final Client client;
 
   @override
   String toString() {
-    return 'TransactionRequest.r5(base: $base, pretty: $pretty, summary: $summary)';
+    return 'TransactionRequest.r5(base: $base, pretty: $pretty, summary: $summary, client: $client)';
   }
 
   @override
@@ -691,7 +759,10 @@ class _$_TransactionRequestR5 extends _TransactionRequestR5 {
             (identical(other.pretty, pretty) ||
                 const DeepCollectionEquality().equals(other.pretty, pretty)) &&
             (identical(other.summary, summary) ||
-                const DeepCollectionEquality().equals(other.summary, summary)));
+                const DeepCollectionEquality()
+                    .equals(other.summary, summary)) &&
+            (identical(other.client, client) ||
+                const DeepCollectionEquality().equals(other.client, client)));
   }
 
   @override
@@ -699,7 +770,8 @@ class _$_TransactionRequestR5 extends _TransactionRequestR5 {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(base) ^
       const DeepCollectionEquality().hash(pretty) ^
-      const DeepCollectionEquality().hash(summary);
+      const DeepCollectionEquality().hash(summary) ^
+      const DeepCollectionEquality().hash(client);
 
   @override
   _$TransactionRequestR5CopyWith<_TransactionRequestR5> get copyWith =>
@@ -709,30 +781,32 @@ class _$_TransactionRequestR5 extends _TransactionRequestR5 {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result dstu2(Uri base, bool pretty, Summary summary),
-    @required Result stu3(Uri base, bool pretty, Summary summary),
-    @required Result r4(Uri base, bool pretty, Summary summary),
-    @required Result r5(Uri base, bool pretty, Summary summary),
+    @required
+        Result dstu2(Uri base, bool pretty, Summary summary, Client client),
+    @required
+        Result stu3(Uri base, bool pretty, Summary summary, Client client),
+    @required Result r4(Uri base, bool pretty, Summary summary, Client client),
+    @required Result r5(Uri base, bool pretty, Summary summary, Client client),
   }) {
     assert(dstu2 != null);
     assert(stu3 != null);
     assert(r4 != null);
     assert(r5 != null);
-    return r5(base, pretty, summary);
+    return r5(base, pretty, summary, client);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result dstu2(Uri base, bool pretty, Summary summary),
-    Result stu3(Uri base, bool pretty, Summary summary),
-    Result r4(Uri base, bool pretty, Summary summary),
-    Result r5(Uri base, bool pretty, Summary summary),
+    Result dstu2(Uri base, bool pretty, Summary summary, Client client),
+    Result stu3(Uri base, bool pretty, Summary summary, Client client),
+    Result r4(Uri base, bool pretty, Summary summary, Client client),
+    Result r5(Uri base, bool pretty, Summary summary, Client client),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (r5 != null) {
-      return r5(base, pretty, summary);
+      return r5(base, pretty, summary, client);
     }
     return orElse();
   }
@@ -774,7 +848,8 @@ abstract class _TransactionRequestR5 extends TransactionRequest {
   factory _TransactionRequestR5(
       {@required Uri base,
       bool pretty,
-      Summary summary}) = _$_TransactionRequestR5;
+      Summary summary,
+      Client client}) = _$_TransactionRequestR5;
 
   @override
   Uri get base;
@@ -782,6 +857,8 @@ abstract class _TransactionRequestR5 extends TransactionRequest {
   bool get pretty;
   @override
   Summary get summary;
+  @override
+  Client get client;
   @override
   _$TransactionRequestR5CopyWith<_TransactionRequestR5> get copyWith;
 }

@@ -7,6 +7,7 @@ import 'package:fhir/dstu2.dart' as dstu2;
 import 'package:fhir/stu3.dart' as stu3;
 import 'package:fhir/r4.dart' as r4;
 import 'package:fhir/r5.dart' as r5;
+import 'package:http/http.dart';
 
 import '../failures/restful_failure.dart';
 import '../resource_types/resource_types.dart';
@@ -22,6 +23,8 @@ abstract class OperationRequest with _$OperationRequest {
     Dstu2Types type,
     Id id,
     String operation,
+    Map<String, dynamic> parameters,
+    Client client,
   }) = _OperationRequestDstu2;
 
   factory OperationRequest.stu3({
@@ -29,6 +32,8 @@ abstract class OperationRequest with _$OperationRequest {
     Stu3Types type,
     Id id,
     String operation,
+    Map<String, dynamic> parameters,
+    Client client,
   }) = _OperationRequestStu3;
 
   factory OperationRequest.r4({
@@ -36,6 +41,8 @@ abstract class OperationRequest with _$OperationRequest {
     R4Types type,
     Id id,
     String operation,
+    Map<String, dynamic> parameters,
+    Client client,
   }) = _OperationRequestR4;
 
   factory OperationRequest.r5({
@@ -43,39 +50,57 @@ abstract class OperationRequest with _$OperationRequest {
     R5Types type,
     Id id,
     String operation,
+    Map<String, dynamic> parameters,
+    Client client,
   }) = _OperationRequestR5;
 
-  Future<Either<RestfulFailure, dynamic>> request() async {
+  Future<Either<RestfulFailure, dynamic>> request(
+    Map<String, dynamic> resource,
+  ) async {
     final FHIRUri fhirUri = map(
       dstu2: (req) => FHIRUri.dstu2Operation(
         base: req.base,
         type: req.type,
         id: req.id,
         operation: req.operation,
+        parameters: FHIRUriParameter.fromMap(
+          req.parameters,
+        ),
       ),
       stu3: (req) => FHIRUri.stu3Operation(
         base: req.base,
         type: req.type,
         id: req.id,
         operation: req.operation,
+        parameters: FHIRUriParameter.fromMap(
+          req.parameters,
+        ),
       ),
       r4: (req) => FHIRUri.r4Operation(
         base: req.base,
         type: req.type,
         id: req.id,
         operation: req.operation,
+        parameters: FHIRUriParameter.fromMap(
+          req.parameters,
+        ),
       ),
       r5: (req) => FHIRUri.r5Operation(
         base: req.base,
         type: req.type,
         id: req.id,
         operation: req.operation,
+        parameters: FHIRUriParameter.fromMap(
+          req.parameters,
+        ),
       ),
     );
 
     final result = await makeRequest(
-      type: RestfulRequest.get_,
+      type: RestfulRequest.post_,
       thisRequest: fhirUri.uri,
+      resource: resource,
+      client: client,
     );
 
     return result.fold(
