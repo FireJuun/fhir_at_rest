@@ -296,11 +296,49 @@ void main() {
         operation: 'everything',
         parameters: parameters,
       );
-      final makeReq10 = await req.request({});
+      final makeReq10 = await req.request();
       expect(
-          makeReq10.fold((l) => l.errorMessage(), (r) => r),
-          'http://hapi.fhir.org/baseR4/\$everything'
-          '?_format=$mimeType&start=2020-01-01&end=2020-08-01');
+        makeReq10.fold((l) => l.errorMessage(), (r) => r),
+        'http://hapi.fhir.org/baseR4/\$everything'
+        '?_format=$mimeType&start=2020-01-01&end=2020-08-01',
+      );
+    });
+
+    test('\$everything operation', () async {
+      final parameters = {
+        'start': '2020-01-01',
+        'end': '2020-08-01',
+      };
+      final req = OperationRequest.r4(
+        base: Uri.parse('http://hapi.fhir.org/baseR4'),
+        operation: 'everything',
+        parameters: parameters,
+        usePost: true,
+      );
+      final makeReq10 = await req.request();
+      expect(
+        makeReq10.fold((l) => l.errorMessage(), (r) => r),
+        'http://hapi.fhir.org/baseR4/\$everything?_format=$mimeType',
+      );
+    });
+
+    test('\$everything operation', () async {
+      final parameters = {
+        'start': '2020-01-01',
+        'end': '2020-08-01',
+      };
+      final req = OperationRequest.r4(
+        base: Uri.parse('http://hapi.fhir.org/baseR4'),
+        operation: 'everything',
+        parameters: parameters,
+        usePost: true,
+        useFormData: true,
+      );
+      final makeReq10 = await req.request();
+      expect(
+        makeReq10.fold((l) => l.errorMessage(), (r) => r),
+        'http://hapi.fhir.org/baseR4/\$everything?_format=$mimeType',
+      );
     });
   }, tags: ['http', 'operation']);
 
@@ -450,6 +488,23 @@ void main() {
       expect(
         response.fold((l) => l.errorMessage(), (r) => r),
         'http://hapi.fhir.org/baseR4/Patient?_format=$mimeType&birthdate=ge2010-01-01&birthdate=le2011-12-31',
+      );
+    });
+
+    test('patient search for birthday between two dates', () async {
+      final request = SearchRequest.r4(
+        base: Uri.parse('http://hapi.fhir.org/baseR4'),
+        type: R4Types.patient,
+        parameters: PatientSearch(birthdate: [
+          SearchDate(date: FhirDateTime('2010-01-01'), prefix: DatePrefix.ge),
+          SearchDate(date: FhirDateTime('2011-12-31'), prefix: DatePrefix.le)
+        ]),
+        usePost: true,
+      );
+      final response = await request.request();
+      expect(
+        response.fold((l) => l.errorMessage(), (r) => r),
+        'http://hapi.fhir.org/baseR4/Patient/_search?_format=$mimeType',
       );
     });
 

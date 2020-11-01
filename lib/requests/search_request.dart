@@ -23,6 +23,7 @@ abstract class SearchRequest with _$SearchRequest {
     @required Dstu2Types type,
     @Default(false) bool pretty,
     Dstu2SearchParameters parameters,
+    @Default(false) bool usePost,
     Client client,
   }) = _SearchRequestDstu2;
 
@@ -31,6 +32,7 @@ abstract class SearchRequest with _$SearchRequest {
     @required Stu3Types type,
     @Default(false) bool pretty,
     Stu3SearchParameters parameters,
+    @Default(false) bool usePost,
     Client client,
   }) = _SearchRequestStu3;
 
@@ -39,6 +41,7 @@ abstract class SearchRequest with _$SearchRequest {
     @required R4Types type,
     @Default(false) bool pretty,
     R4SearchParameters parameters,
+    @Default(false) bool usePost,
     Client client,
   }) = _SearchRequestR4;
 
@@ -47,6 +50,7 @@ abstract class SearchRequest with _$SearchRequest {
     R5Types type,
     @Default(false) bool pretty,
     R5SearchParameters parameters,
+    @Default(false) bool usePost,
     Client client,
   }) = _SearchRequestR5;
 
@@ -80,15 +84,17 @@ abstract class SearchRequest with _$SearchRequest {
           : FHIRUri.dstu2Search(
               base: req.base,
               type: req.type,
-              generalParameters: GeneralParameters.stu3(
+              generalParameters: GeneralParameters.dstu2(
                 pretty: req.pretty,
               ),
               parameters: parameterList,
+              restfulRequest:
+                  usePost ? RestfulRequest.post_ : RestfulRequest.get_,
             ),
       stu3: (req) => req.type == null
           ? FHIRUri.stu3SearchAll(
               base: req.base,
-              generalParameters: GeneralParameters.r4(
+              generalParameters: GeneralParameters.stu3(
                 pretty: req.pretty,
               ),
               parameters: parameterList,
@@ -96,15 +102,17 @@ abstract class SearchRequest with _$SearchRequest {
           : FHIRUri.stu3Search(
               base: req.base,
               type: req.type,
-              generalParameters: GeneralParameters.r5(
+              generalParameters: GeneralParameters.stu3(
                 pretty: req.pretty,
               ),
               parameters: parameterList,
+              restfulRequest:
+                  usePost ? RestfulRequest.post_ : RestfulRequest.get_,
             ),
       r4: (req) => req.type == null
           ? FHIRUri.r4SearchAll(
               base: req.base,
-              generalParameters: GeneralParameters.dstu2(
+              generalParameters: GeneralParameters.r4(
                 pretty: req.pretty,
               ),
               parameters: parameterList,
@@ -112,15 +120,17 @@ abstract class SearchRequest with _$SearchRequest {
           : FHIRUri.r4Search(
               base: req.base,
               type: req.type,
-              generalParameters: GeneralParameters.stu3(
+              generalParameters: GeneralParameters.r4(
                 pretty: req.pretty,
               ),
               parameters: parameterList,
+              restfulRequest:
+                  usePost ? RestfulRequest.post_ : RestfulRequest.get_,
             ),
       r5: (req) => req.type == null
           ? FHIRUri.r5SearchAll(
               base: req.base,
-              generalParameters: GeneralParameters.r4(
+              generalParameters: GeneralParameters.r5(
                 pretty: req.pretty,
               ),
               parameters: parameterList,
@@ -132,12 +142,15 @@ abstract class SearchRequest with _$SearchRequest {
                 pretty: req.pretty,
               ),
               parameters: parameterList,
+              restfulRequest:
+                  usePost ? RestfulRequest.post_ : RestfulRequest.get_,
             ),
     );
 
     final result = await makeRequest(
-      type: RestfulRequest.get_,
-      thisRequest: fhirUri.uri,
+      type: usePost ? RestfulRequest.post_ : RestfulRequest.get_,
+      thisRequest: usePost ? fhirUri.url : fhirUri.uri,
+      formData: usePost ? fhirUri.formData : null,
       client: client,
     );
 

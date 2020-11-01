@@ -12,6 +12,7 @@ Future<Either<RestfulFailure, Map<String, dynamic>>> makeRequest({
   @required String thisRequest,
   Map<String, String> headers,
   Map<String, dynamic> resource,
+  String formData,
   Encoding encoding,
   Client client,
 }) async {
@@ -66,11 +67,13 @@ Future<Either<RestfulFailure, Map<String, dynamic>>> makeRequest({
       case RestfulRequest.post_:
         {
           headers ??= <String, String>{};
-          headers['Content-Type'] = 'application/fhir+json';
+          headers['Content-Type'] = formData != null
+              ? 'application/x-www-form-urlencoded'
+              : 'application/fhir+json';
           result = await client.post(
             thisRequest,
             headers: headers,
-            body: jsonEncode(resource),
+            body: formData ?? jsonEncode(resource),
             encoding: encoding,
           );
           break;
@@ -129,7 +132,7 @@ Future<Either<RestfulFailure, Map<String, dynamic>>> makeRequest({
               result = await client.post(
                 thisRequest,
                 headers: headers,
-                body: resource,
+                body: formData ?? resource,
                 encoding: encoding,
               );
               break;
