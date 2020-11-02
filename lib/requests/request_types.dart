@@ -1,3 +1,4 @@
+export 'batch_request.dart';
 export 'capabilities_request.dart';
 export 'create_request.dart';
 export 'delete_request.dart';

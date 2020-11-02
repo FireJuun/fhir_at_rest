@@ -2,7 +2,6 @@
 
 * Complete alignment to [FHIR HTTP spec](https://www.hl7.org/fhir/http.html) for allowed FHIR interactions and http verb options.
 * Add support for POST and formData on SearchRequest and OperationRequest classes with the `usePost` and `useFormData` flags.
-* BatchRequest no longer supported in favor of TransactionRequest to support alignment to FHIR HTTP specification.
 * Update to `fhir: 0.0.11`
 * Add parameter encoding for all parameters including general, interaction specific, search, and custom parameters
 * Add http client override to support testing and allow direct management of the client

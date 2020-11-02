@@ -12,38 +12,38 @@ import '../enums/enums.dart';
 import '../failures/restful_failure.dart';
 import 'make_request.dart';
 
-part 'transaction_request.freezed.dart';
+part 'batch_request.freezed.dart';
 
 @freezed
-abstract class TransactionRequest with _$TransactionRequest {
-  TransactionRequest._();
-  factory TransactionRequest.dstu2({
+abstract class BatchRequest with _$BatchRequest {
+  BatchRequest._();
+  factory BatchRequest.dstu2({
     @required Uri base,
     @Default(false) bool pretty,
     @Default(Summary.none) Summary summary,
     Client client,
-  }) = _TransactionRequestDstu2;
+  }) = _BatchRequestDstu2;
 
-  factory TransactionRequest.stu3({
+  factory BatchRequest.stu3({
     @required Uri base,
     @Default(false) bool pretty,
     @Default(Summary.none) Summary summary,
     Client client,
-  }) = _TransactionRequestStu3;
+  }) = _BatchRequestStu3;
 
-  factory TransactionRequest.r4({
+  factory BatchRequest.r4({
     @required Uri base,
     @Default(false) bool pretty,
     @Default(Summary.none) Summary summary,
     Client client,
-  }) = _TransactionRequestR4;
+  }) = _BatchRequestR4;
 
-  factory TransactionRequest.r5({
+  factory BatchRequest.r5({
     @required Uri base,
     @Default(false) bool pretty,
     @Default(Summary.none) Summary summary,
     Client client,
-  }) = _TransactionRequestR5;
+  }) = _BatchRequestR5;
 
   Future<Either<RestfulFailure, dynamic>> request(dynamic resource) async {
     if (map(
@@ -53,18 +53,16 @@ abstract class TransactionRequest with _$TransactionRequest {
       r5: (req) => resource is! r5.Bundle,
     )) {
       return left(RestfulFailure.noBundle(
-        failedValue: resource,
-        batchOrTransaction: 'Transaction',
-      ));
+          failedValue: resource, batchOrTransaction: 'Batch'));
     }
 
     if (map(
-      dstu2: (req) => resource.type != dstu2.BundleType.transaction,
-      stu3: (req) => resource.type != stu3.BundleType.transaction,
-      r4: (req) => resource.type != r4.BundleType.transaction,
-      r5: (req) => resource.type != r5.BundleType.transaction,
+      dstu2: (req) => resource.type != dstu2.BundleType.batch,
+      stu3: (req) => resource.type != stu3.BundleType.batch,
+      r4: (req) => resource.type != r4.BundleType.batch,
+      r5: (req) => resource.type != r5.BundleType.batch,
     )) {
-      return left(RestfulFailure.notATransactionBundle(failedValue: resource));
+      return left(RestfulFailure.notABatchBundle(failedValue: resource));
     }
 
     if (resource.entry != null) {
@@ -109,7 +107,7 @@ abstract class TransactionRequest with _$TransactionRequest {
     );
 
     final result = await makeRequest(
-      type: RestfulRequest.get_,
+      type: RestfulRequest.post_,
       thisRequest: fhirUri.uri,
       resource: resource.toJson(),
       client: client,

@@ -117,7 +117,7 @@ void main() {
 
   group('REQUEST - TRANSACTION:', () {
     test('batch', () async {
-      final request = TransactionRequest.r4(
+      final request = BatchRequest.r4(
         base: Uri.parse('http://hapi.fhir.org/baseR4'),
       );
       final newBundle = Bundle(
@@ -128,7 +128,7 @@ void main() {
     });
 
     test('batch with error in bundle', () async {
-      final request = TransactionRequest.r4(
+      final request = BatchRequest.r4(
         base: Uri.parse('http://hapi.fhir.org/baseR4'),
       );
       final newBundle = Bundle(
