@@ -58,10 +58,18 @@ abstract class TransactionRequest with _$TransactionRequest {
     }
 
     if (map(
-        dstu2: (req) => resource.type != dstu2.BundleType.transaction,
-        stu3: (req) => resource.type != stu3.BundleType.transaction,
-        r4: (req) => resource.type != r4.BundleType.transaction,
-        r5: (req) => resource.type != r5.BundleType.transaction)) {
+        dstu2: (req) =>
+            resource.type != dstu2.BundleType.transaction &&
+            resource.type != dstu2.BundleType.batch,
+        stu3: (req) =>
+            resource.type != stu3.BundleType.transaction &&
+            resource.type != stu3.BundleType.batch,
+        r4: (req) =>
+            resource.type != r4.BundleType.transaction &&
+            resource.type != r4.BundleType.batch,
+        r5: (req) =>
+            resource.type != r5.BundleType.transaction &&
+            resource.type != r5.BundleType.batch)) {
       return left(RestfulFailure.notATransactionBundle(failedValue: resource));
     }
 

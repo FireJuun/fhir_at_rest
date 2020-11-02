@@ -114,7 +114,7 @@ void main() {
 
   group('Batch/Transaction Requests', () {
     test('Batch Request', () async {
-      final req10 = BatchRequest.r4(
+      final req10 = TransactionRequest.r4(
         base: Uri.parse('http://hapi.fhir.org/baseR4'),
       );
       final newBundle = Bundle(
@@ -125,7 +125,7 @@ void main() {
     });
 
     test('Batch Request with error', () async {
-      final req21 = BatchRequest.r4(
+      final req21 = TransactionRequest.r4(
         base: Uri.parse('http://hapi.fhir.org/baseR4'),
       );
       final newBundle = Bundle(
@@ -169,7 +169,7 @@ void main() {
     });
 
     test('History of all Observations', () async {
-      final req12 = HistoryRequest.r4(
+      final req12 = HistoryTypeRequest.r4(
         base: Uri.parse('http://hapi.fhir.org/baseR4'),
         type: R4Types.observation,
       );
@@ -179,7 +179,7 @@ void main() {
     });
 
     test('History of everything', () async {
-      final req13 = HistoryRequest.r4(
+      final req13 = HistoryAllRequest.r4(
         base: Uri.parse('http://hapi.fhir.org/baseR4'),
       );
       final makeReq13 = await req13.request();

@@ -9,50 +9,41 @@ import 'package:fhir/r5.dart' as r5;
 import 'package:http/http.dart';
 
 import '../failures/restful_failure.dart';
-import '../resource_types/resource_types.dart';
 import '../search_parameters/search_parameters.dart';
 import 'make_request.dart';
 
-part 'search_request.freezed.dart';
+part 'search_all_request.freezed.dart';
 
 @freezed
-abstract class SearchRequest with _$SearchRequest {
-  SearchRequest._();
-  factory SearchRequest.dstu2({
+abstract class SearchAllRequest with _$SearchAllRequest {
+  SearchAllRequest._();
+  factory SearchAllRequest.dstu2({
     @required Uri base,
-    @required Dstu2Types type,
     @Default(false) bool pretty,
     Dstu2SearchParameters parameters,
-    @Default(false) bool usePost,
     Client client,
-  }) = _SearchRequestDstu2;
+  }) = _SearchAllRequestDstu2;
 
-  factory SearchRequest.stu3({
+  factory SearchAllRequest.stu3({
     @required Uri base,
-    @required Stu3Types type,
     @Default(false) bool pretty,
     Stu3SearchParameters parameters,
-    @Default(false) bool usePost,
     Client client,
-  }) = _SearchRequestStu3;
+  }) = _SearchAllRequestStu3;
 
-  factory SearchRequest.r4({
+  factory SearchAllRequest.r4({
     @required Uri base,
-    @required R4Types type,
     @Default(false) bool pretty,
     R4SearchParameters parameters,
-    @Default(false) bool usePost,
     Client client,
-  }) = _SearchRequestR4;
+  }) = _SearchAllRequestR4;
 
-  factory SearchRequest.r5({
+  factory SearchAllRequest.r5({
     @required Uri base,
-    @required R5Types type,
     @Default(false) bool pretty,
     R5SearchParameters parameters,
-    @Default(false) bool usePost,
     Client client,
-  }) = _SearchRequestR5;
+  }) = _SearchAllRequestR5;
 
   Future<Either<RestfulFailure, dynamic>> request() async {
     final searchParametersList = map(
@@ -73,48 +64,39 @@ abstract class SearchRequest with _$SearchRequest {
     }
 
     final FHIRUri fhirUri = map(
-      dstu2: (req) => FHIRUri.dstu2Search(
+      dstu2: (req) => FHIRUri.dstu2SearchAll(
         base: req.base,
-        type: req.type,
         generalParameters: GeneralParameters.dstu2(
           pretty: req.pretty,
         ),
         parameters: parameterList,
-        restfulRequest: usePost ? RestfulRequest.post_ : RestfulRequest.get_,
       ),
-      stu3: (req) => FHIRUri.stu3Search(
+      stu3: (req) => FHIRUri.stu3SearchAll(
         base: req.base,
-        type: req.type,
         generalParameters: GeneralParameters.stu3(
           pretty: req.pretty,
         ),
         parameters: parameterList,
-        restfulRequest: usePost ? RestfulRequest.post_ : RestfulRequest.get_,
       ),
-      r4: (req) => FHIRUri.r4Search(
+      r4: (req) => FHIRUri.r4SearchAll(
         base: req.base,
-        type: req.type,
         generalParameters: GeneralParameters.r4(
           pretty: req.pretty,
         ),
         parameters: parameterList,
-        restfulRequest: usePost ? RestfulRequest.post_ : RestfulRequest.get_,
       ),
-      r5: (req) => FHIRUri.r5Search(
+      r5: (req) => FHIRUri.r5SearchAll(
         base: req.base,
-        type: req.type,
         generalParameters: GeneralParameters.r5(
           pretty: req.pretty,
         ),
         parameters: parameterList,
-        restfulRequest: usePost ? RestfulRequest.post_ : RestfulRequest.get_,
       ),
     );
 
     final result = await makeRequest(
-      type: usePost ? RestfulRequest.post_ : RestfulRequest.get_,
-      thisRequest: usePost ? fhirUri.url : fhirUri.uri,
-      formData: usePost ? fhirUri.formData : null,
+      type: RestfulRequest.get_,
+      thisRequest: fhirUri.uri,
       client: client,
     );
 
