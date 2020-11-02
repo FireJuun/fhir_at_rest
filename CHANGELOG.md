@@ -1,5 +1,6 @@
 ## [0.0.7]
 * Complete alignment to [FHIR HTTP spec](https://www.hl7.org/fhir/http.html) for allowed FHIR interactions and http verb options.
+* Add support for POST and formData on SearchRequest and OperationRequest classes with the `usePost` and `useFormData` flags.
 * BatchRequest no longer supported in favor of TransactionRequest to support alignment to FHIR HTTP specification.
 
 ## [0.0.6]
