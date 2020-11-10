@@ -20,6 +20,8 @@ class _$OperationRequestTearOff {
       Id id,
       String operation,
       Map<String, dynamic> parameters,
+      bool usePost = false,
+      bool useFormData = false,
       Client client}) {
     return _OperationRequestDstu2(
       base: base,
@@ -27,6 +29,8 @@ class _$OperationRequestTearOff {
       id: id,
       operation: operation,
       parameters: parameters,
+      usePost: usePost,
+      useFormData: useFormData,
       client: client,
     );
   }
@@ -38,6 +42,8 @@ class _$OperationRequestTearOff {
       Id id,
       String operation,
       Map<String, dynamic> parameters,
+      bool usePost = false,
+      bool useFormData = false,
       Client client}) {
     return _OperationRequestStu3(
       base: base,
@@ -45,6 +51,8 @@ class _$OperationRequestTearOff {
       id: id,
       operation: operation,
       parameters: parameters,
+      usePost: usePost,
+      useFormData: useFormData,
       client: client,
     );
   }
@@ -56,6 +64,8 @@ class _$OperationRequestTearOff {
       Id id,
       String operation,
       Map<String, dynamic> parameters,
+      bool usePost = false,
+      bool useFormData = false,
       Client client}) {
     return _OperationRequestR4(
       base: base,
@@ -63,6 +73,8 @@ class _$OperationRequestTearOff {
       id: id,
       operation: operation,
       parameters: parameters,
+      usePost: usePost,
+      useFormData: useFormData,
       client: client,
     );
   }
@@ -74,6 +86,8 @@ class _$OperationRequestTearOff {
       Id id,
       String operation,
       Map<String, dynamic> parameters,
+      bool usePost = false,
+      bool useFormData = false,
       Client client}) {
     return _OperationRequestR5(
       base: base,
@@ -81,6 +95,8 @@ class _$OperationRequestTearOff {
       id: id,
       operation: operation,
       parameters: parameters,
+      usePost: usePost,
+      useFormData: useFormData,
       client: client,
     );
   }
@@ -96,33 +112,91 @@ mixin _$OperationRequest {
   Id get id;
   String get operation;
   Map<String, dynamic> get parameters;
+  bool get usePost;
+  bool get useFormData;
   Client get client;
 
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required
-        Result dstu2(Uri base, Dstu2Types type, Id id, String operation,
-            Map<String, dynamic> parameters, Client client),
+        Result dstu2(
+            Uri base,
+            Dstu2Types type,
+            Id id,
+            String operation,
+            Map<String, dynamic> parameters,
+            bool usePost,
+            bool useFormData,
+            Client client),
     @required
-        Result stu3(Uri base, Stu3Types type, Id id, String operation,
-            Map<String, dynamic> parameters, Client client),
+        Result stu3(
+            Uri base,
+            Stu3Types type,
+            Id id,
+            String operation,
+            Map<String, dynamic> parameters,
+            bool usePost,
+            bool useFormData,
+            Client client),
     @required
-        Result r4(Uri base, R4Types type, Id id, String operation,
-            Map<String, dynamic> parameters, Client client),
+        Result r4(
+            Uri base,
+            R4Types type,
+            Id id,
+            String operation,
+            Map<String, dynamic> parameters,
+            bool usePost,
+            bool useFormData,
+            Client client),
     @required
-        Result r5(Uri base, R5Types type, Id id, String operation,
-            Map<String, dynamic> parameters, Client client),
+        Result r5(
+            Uri base,
+            R5Types type,
+            Id id,
+            String operation,
+            Map<String, dynamic> parameters,
+            bool usePost,
+            bool useFormData,
+            Client client),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result dstu2(Uri base, Dstu2Types type, Id id, String operation,
-        Map<String, dynamic> parameters, Client client),
-    Result stu3(Uri base, Stu3Types type, Id id, String operation,
-        Map<String, dynamic> parameters, Client client),
-    Result r4(Uri base, R4Types type, Id id, String operation,
-        Map<String, dynamic> parameters, Client client),
-    Result r5(Uri base, R5Types type, Id id, String operation,
-        Map<String, dynamic> parameters, Client client),
+    Result dstu2(
+        Uri base,
+        Dstu2Types type,
+        Id id,
+        String operation,
+        Map<String, dynamic> parameters,
+        bool usePost,
+        bool useFormData,
+        Client client),
+    Result stu3(
+        Uri base,
+        Stu3Types type,
+        Id id,
+        String operation,
+        Map<String, dynamic> parameters,
+        bool usePost,
+        bool useFormData,
+        Client client),
+    Result r4(
+        Uri base,
+        R4Types type,
+        Id id,
+        String operation,
+        Map<String, dynamic> parameters,
+        bool usePost,
+        bool useFormData,
+        Client client),
+    Result r5(
+        Uri base,
+        R5Types type,
+        Id id,
+        String operation,
+        Map<String, dynamic> parameters,
+        bool usePost,
+        bool useFormData,
+        Client client),
     @required Result orElse(),
   });
   @optionalTypeArgs
@@ -154,6 +228,8 @@ abstract class $OperationRequestCopyWith<$Res> {
       Id id,
       String operation,
       Map<String, dynamic> parameters,
+      bool usePost,
+      bool useFormData,
       Client client});
 }
 
@@ -172,6 +248,8 @@ class _$OperationRequestCopyWithImpl<$Res>
     Object id = freezed,
     Object operation = freezed,
     Object parameters = freezed,
+    Object usePost = freezed,
+    Object useFormData = freezed,
     Object client = freezed,
   }) {
     return _then(_value.copyWith(
@@ -181,6 +259,9 @@ class _$OperationRequestCopyWithImpl<$Res>
       parameters: parameters == freezed
           ? _value.parameters
           : parameters as Map<String, dynamic>,
+      usePost: usePost == freezed ? _value.usePost : usePost as bool,
+      useFormData:
+          useFormData == freezed ? _value.useFormData : useFormData as bool,
       client: client == freezed ? _value.client : client as Client,
     ));
   }
@@ -199,6 +280,8 @@ abstract class _$OperationRequestDstu2CopyWith<$Res>
       Id id,
       String operation,
       Map<String, dynamic> parameters,
+      bool usePost,
+      bool useFormData,
       Client client});
 }
 
@@ -220,6 +303,8 @@ class __$OperationRequestDstu2CopyWithImpl<$Res>
     Object id = freezed,
     Object operation = freezed,
     Object parameters = freezed,
+    Object usePost = freezed,
+    Object useFormData = freezed,
     Object client = freezed,
   }) {
     return _then(_OperationRequestDstu2(
@@ -230,6 +315,9 @@ class __$OperationRequestDstu2CopyWithImpl<$Res>
       parameters: parameters == freezed
           ? _value.parameters
           : parameters as Map<String, dynamic>,
+      usePost: usePost == freezed ? _value.usePost : usePost as bool,
+      useFormData:
+          useFormData == freezed ? _value.useFormData : useFormData as bool,
       client: client == freezed ? _value.client : client as Client,
     ));
   }
@@ -243,8 +331,12 @@ class _$_OperationRequestDstu2 extends _OperationRequestDstu2 {
       this.id,
       this.operation,
       this.parameters,
+      this.usePost = false,
+      this.useFormData = false,
       this.client})
       : assert(base != null),
+        assert(usePost != null),
+        assert(useFormData != null),
         super._();
 
   @override
@@ -257,12 +349,18 @@ class _$_OperationRequestDstu2 extends _OperationRequestDstu2 {
   final String operation;
   @override
   final Map<String, dynamic> parameters;
+  @JsonKey(defaultValue: false)
+  @override
+  final bool usePost;
+  @JsonKey(defaultValue: false)
+  @override
+  final bool useFormData;
   @override
   final Client client;
 
   @override
   String toString() {
-    return 'OperationRequest.dstu2(base: $base, type: $type, id: $id, operation: $operation, parameters: $parameters, client: $client)';
+    return 'OperationRequest.dstu2(base: $base, type: $type, id: $id, operation: $operation, parameters: $parameters, usePost: $usePost, useFormData: $useFormData, client: $client)';
   }
 
   @override
@@ -281,6 +379,12 @@ class _$_OperationRequestDstu2 extends _OperationRequestDstu2 {
             (identical(other.parameters, parameters) ||
                 const DeepCollectionEquality()
                     .equals(other.parameters, parameters)) &&
+            (identical(other.usePost, usePost) ||
+                const DeepCollectionEquality()
+                    .equals(other.usePost, usePost)) &&
+            (identical(other.useFormData, useFormData) ||
+                const DeepCollectionEquality()
+                    .equals(other.useFormData, useFormData)) &&
             (identical(other.client, client) ||
                 const DeepCollectionEquality().equals(other.client, client)));
   }
@@ -293,6 +397,8 @@ class _$_OperationRequestDstu2 extends _OperationRequestDstu2 {
       const DeepCollectionEquality().hash(id) ^
       const DeepCollectionEquality().hash(operation) ^
       const DeepCollectionEquality().hash(parameters) ^
+      const DeepCollectionEquality().hash(usePost) ^
+      const DeepCollectionEquality().hash(useFormData) ^
       const DeepCollectionEquality().hash(client);
 
   @override
@@ -304,41 +410,99 @@ class _$_OperationRequestDstu2 extends _OperationRequestDstu2 {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required
-        Result dstu2(Uri base, Dstu2Types type, Id id, String operation,
-            Map<String, dynamic> parameters, Client client),
+        Result dstu2(
+            Uri base,
+            Dstu2Types type,
+            Id id,
+            String operation,
+            Map<String, dynamic> parameters,
+            bool usePost,
+            bool useFormData,
+            Client client),
     @required
-        Result stu3(Uri base, Stu3Types type, Id id, String operation,
-            Map<String, dynamic> parameters, Client client),
+        Result stu3(
+            Uri base,
+            Stu3Types type,
+            Id id,
+            String operation,
+            Map<String, dynamic> parameters,
+            bool usePost,
+            bool useFormData,
+            Client client),
     @required
-        Result r4(Uri base, R4Types type, Id id, String operation,
-            Map<String, dynamic> parameters, Client client),
+        Result r4(
+            Uri base,
+            R4Types type,
+            Id id,
+            String operation,
+            Map<String, dynamic> parameters,
+            bool usePost,
+            bool useFormData,
+            Client client),
     @required
-        Result r5(Uri base, R5Types type, Id id, String operation,
-            Map<String, dynamic> parameters, Client client),
+        Result r5(
+            Uri base,
+            R5Types type,
+            Id id,
+            String operation,
+            Map<String, dynamic> parameters,
+            bool usePost,
+            bool useFormData,
+            Client client),
   }) {
     assert(dstu2 != null);
     assert(stu3 != null);
     assert(r4 != null);
     assert(r5 != null);
-    return dstu2(base, type, id, operation, parameters, client);
+    return dstu2(
+        base, type, id, operation, parameters, usePost, useFormData, client);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result dstu2(Uri base, Dstu2Types type, Id id, String operation,
-        Map<String, dynamic> parameters, Client client),
-    Result stu3(Uri base, Stu3Types type, Id id, String operation,
-        Map<String, dynamic> parameters, Client client),
-    Result r4(Uri base, R4Types type, Id id, String operation,
-        Map<String, dynamic> parameters, Client client),
-    Result r5(Uri base, R5Types type, Id id, String operation,
-        Map<String, dynamic> parameters, Client client),
+    Result dstu2(
+        Uri base,
+        Dstu2Types type,
+        Id id,
+        String operation,
+        Map<String, dynamic> parameters,
+        bool usePost,
+        bool useFormData,
+        Client client),
+    Result stu3(
+        Uri base,
+        Stu3Types type,
+        Id id,
+        String operation,
+        Map<String, dynamic> parameters,
+        bool usePost,
+        bool useFormData,
+        Client client),
+    Result r4(
+        Uri base,
+        R4Types type,
+        Id id,
+        String operation,
+        Map<String, dynamic> parameters,
+        bool usePost,
+        bool useFormData,
+        Client client),
+    Result r5(
+        Uri base,
+        R5Types type,
+        Id id,
+        String operation,
+        Map<String, dynamic> parameters,
+        bool usePost,
+        bool useFormData,
+        Client client),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (dstu2 != null) {
-      return dstu2(base, type, id, operation, parameters, client);
+      return dstu2(
+          base, type, id, operation, parameters, usePost, useFormData, client);
     }
     return orElse();
   }
@@ -383,6 +547,8 @@ abstract class _OperationRequestDstu2 extends OperationRequest {
       Id id,
       String operation,
       Map<String, dynamic> parameters,
+      bool usePost,
+      bool useFormData,
       Client client}) = _$_OperationRequestDstu2;
 
   @override
@@ -394,6 +560,10 @@ abstract class _OperationRequestDstu2 extends OperationRequest {
   String get operation;
   @override
   Map<String, dynamic> get parameters;
+  @override
+  bool get usePost;
+  @override
+  bool get useFormData;
   @override
   Client get client;
   @override
@@ -413,6 +583,8 @@ abstract class _$OperationRequestStu3CopyWith<$Res>
       Id id,
       String operation,
       Map<String, dynamic> parameters,
+      bool usePost,
+      bool useFormData,
       Client client});
 }
 
@@ -434,6 +606,8 @@ class __$OperationRequestStu3CopyWithImpl<$Res>
     Object id = freezed,
     Object operation = freezed,
     Object parameters = freezed,
+    Object usePost = freezed,
+    Object useFormData = freezed,
     Object client = freezed,
   }) {
     return _then(_OperationRequestStu3(
@@ -444,6 +618,9 @@ class __$OperationRequestStu3CopyWithImpl<$Res>
       parameters: parameters == freezed
           ? _value.parameters
           : parameters as Map<String, dynamic>,
+      usePost: usePost == freezed ? _value.usePost : usePost as bool,
+      useFormData:
+          useFormData == freezed ? _value.useFormData : useFormData as bool,
       client: client == freezed ? _value.client : client as Client,
     ));
   }
@@ -457,8 +634,12 @@ class _$_OperationRequestStu3 extends _OperationRequestStu3 {
       this.id,
       this.operation,
       this.parameters,
+      this.usePost = false,
+      this.useFormData = false,
       this.client})
       : assert(base != null),
+        assert(usePost != null),
+        assert(useFormData != null),
         super._();
 
   @override
@@ -471,12 +652,18 @@ class _$_OperationRequestStu3 extends _OperationRequestStu3 {
   final String operation;
   @override
   final Map<String, dynamic> parameters;
+  @JsonKey(defaultValue: false)
+  @override
+  final bool usePost;
+  @JsonKey(defaultValue: false)
+  @override
+  final bool useFormData;
   @override
   final Client client;
 
   @override
   String toString() {
-    return 'OperationRequest.stu3(base: $base, type: $type, id: $id, operation: $operation, parameters: $parameters, client: $client)';
+    return 'OperationRequest.stu3(base: $base, type: $type, id: $id, operation: $operation, parameters: $parameters, usePost: $usePost, useFormData: $useFormData, client: $client)';
   }
 
   @override
@@ -495,6 +682,12 @@ class _$_OperationRequestStu3 extends _OperationRequestStu3 {
             (identical(other.parameters, parameters) ||
                 const DeepCollectionEquality()
                     .equals(other.parameters, parameters)) &&
+            (identical(other.usePost, usePost) ||
+                const DeepCollectionEquality()
+                    .equals(other.usePost, usePost)) &&
+            (identical(other.useFormData, useFormData) ||
+                const DeepCollectionEquality()
+                    .equals(other.useFormData, useFormData)) &&
             (identical(other.client, client) ||
                 const DeepCollectionEquality().equals(other.client, client)));
   }
@@ -507,6 +700,8 @@ class _$_OperationRequestStu3 extends _OperationRequestStu3 {
       const DeepCollectionEquality().hash(id) ^
       const DeepCollectionEquality().hash(operation) ^
       const DeepCollectionEquality().hash(parameters) ^
+      const DeepCollectionEquality().hash(usePost) ^
+      const DeepCollectionEquality().hash(useFormData) ^
       const DeepCollectionEquality().hash(client);
 
   @override
@@ -518,41 +713,99 @@ class _$_OperationRequestStu3 extends _OperationRequestStu3 {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required
-        Result dstu2(Uri base, Dstu2Types type, Id id, String operation,
-            Map<String, dynamic> parameters, Client client),
+        Result dstu2(
+            Uri base,
+            Dstu2Types type,
+            Id id,
+            String operation,
+            Map<String, dynamic> parameters,
+            bool usePost,
+            bool useFormData,
+            Client client),
     @required
-        Result stu3(Uri base, Stu3Types type, Id id, String operation,
-            Map<String, dynamic> parameters, Client client),
+        Result stu3(
+            Uri base,
+            Stu3Types type,
+            Id id,
+            String operation,
+            Map<String, dynamic> parameters,
+            bool usePost,
+            bool useFormData,
+            Client client),
     @required
-        Result r4(Uri base, R4Types type, Id id, String operation,
-            Map<String, dynamic> parameters, Client client),
+        Result r4(
+            Uri base,
+            R4Types type,
+            Id id,
+            String operation,
+            Map<String, dynamic> parameters,
+            bool usePost,
+            bool useFormData,
+            Client client),
     @required
-        Result r5(Uri base, R5Types type, Id id, String operation,
-            Map<String, dynamic> parameters, Client client),
+        Result r5(
+            Uri base,
+            R5Types type,
+            Id id,
+            String operation,
+            Map<String, dynamic> parameters,
+            bool usePost,
+            bool useFormData,
+            Client client),
   }) {
     assert(dstu2 != null);
     assert(stu3 != null);
     assert(r4 != null);
     assert(r5 != null);
-    return stu3(base, type, id, operation, parameters, client);
+    return stu3(
+        base, type, id, operation, parameters, usePost, useFormData, client);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result dstu2(Uri base, Dstu2Types type, Id id, String operation,
-        Map<String, dynamic> parameters, Client client),
-    Result stu3(Uri base, Stu3Types type, Id id, String operation,
-        Map<String, dynamic> parameters, Client client),
-    Result r4(Uri base, R4Types type, Id id, String operation,
-        Map<String, dynamic> parameters, Client client),
-    Result r5(Uri base, R5Types type, Id id, String operation,
-        Map<String, dynamic> parameters, Client client),
+    Result dstu2(
+        Uri base,
+        Dstu2Types type,
+        Id id,
+        String operation,
+        Map<String, dynamic> parameters,
+        bool usePost,
+        bool useFormData,
+        Client client),
+    Result stu3(
+        Uri base,
+        Stu3Types type,
+        Id id,
+        String operation,
+        Map<String, dynamic> parameters,
+        bool usePost,
+        bool useFormData,
+        Client client),
+    Result r4(
+        Uri base,
+        R4Types type,
+        Id id,
+        String operation,
+        Map<String, dynamic> parameters,
+        bool usePost,
+        bool useFormData,
+        Client client),
+    Result r5(
+        Uri base,
+        R5Types type,
+        Id id,
+        String operation,
+        Map<String, dynamic> parameters,
+        bool usePost,
+        bool useFormData,
+        Client client),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (stu3 != null) {
-      return stu3(base, type, id, operation, parameters, client);
+      return stu3(
+          base, type, id, operation, parameters, usePost, useFormData, client);
     }
     return orElse();
   }
@@ -597,6 +850,8 @@ abstract class _OperationRequestStu3 extends OperationRequest {
       Id id,
       String operation,
       Map<String, dynamic> parameters,
+      bool usePost,
+      bool useFormData,
       Client client}) = _$_OperationRequestStu3;
 
   @override
@@ -608,6 +863,10 @@ abstract class _OperationRequestStu3 extends OperationRequest {
   String get operation;
   @override
   Map<String, dynamic> get parameters;
+  @override
+  bool get usePost;
+  @override
+  bool get useFormData;
   @override
   Client get client;
   @override
@@ -627,6 +886,8 @@ abstract class _$OperationRequestR4CopyWith<$Res>
       Id id,
       String operation,
       Map<String, dynamic> parameters,
+      bool usePost,
+      bool useFormData,
       Client client});
 }
 
@@ -648,6 +909,8 @@ class __$OperationRequestR4CopyWithImpl<$Res>
     Object id = freezed,
     Object operation = freezed,
     Object parameters = freezed,
+    Object usePost = freezed,
+    Object useFormData = freezed,
     Object client = freezed,
   }) {
     return _then(_OperationRequestR4(
@@ -658,6 +921,9 @@ class __$OperationRequestR4CopyWithImpl<$Res>
       parameters: parameters == freezed
           ? _value.parameters
           : parameters as Map<String, dynamic>,
+      usePost: usePost == freezed ? _value.usePost : usePost as bool,
+      useFormData:
+          useFormData == freezed ? _value.useFormData : useFormData as bool,
       client: client == freezed ? _value.client : client as Client,
     ));
   }
@@ -671,8 +937,12 @@ class _$_OperationRequestR4 extends _OperationRequestR4 {
       this.id,
       this.operation,
       this.parameters,
+      this.usePost = false,
+      this.useFormData = false,
       this.client})
       : assert(base != null),
+        assert(usePost != null),
+        assert(useFormData != null),
         super._();
 
   @override
@@ -685,12 +955,18 @@ class _$_OperationRequestR4 extends _OperationRequestR4 {
   final String operation;
   @override
   final Map<String, dynamic> parameters;
+  @JsonKey(defaultValue: false)
+  @override
+  final bool usePost;
+  @JsonKey(defaultValue: false)
+  @override
+  final bool useFormData;
   @override
   final Client client;
 
   @override
   String toString() {
-    return 'OperationRequest.r4(base: $base, type: $type, id: $id, operation: $operation, parameters: $parameters, client: $client)';
+    return 'OperationRequest.r4(base: $base, type: $type, id: $id, operation: $operation, parameters: $parameters, usePost: $usePost, useFormData: $useFormData, client: $client)';
   }
 
   @override
@@ -709,6 +985,12 @@ class _$_OperationRequestR4 extends _OperationRequestR4 {
             (identical(other.parameters, parameters) ||
                 const DeepCollectionEquality()
                     .equals(other.parameters, parameters)) &&
+            (identical(other.usePost, usePost) ||
+                const DeepCollectionEquality()
+                    .equals(other.usePost, usePost)) &&
+            (identical(other.useFormData, useFormData) ||
+                const DeepCollectionEquality()
+                    .equals(other.useFormData, useFormData)) &&
             (identical(other.client, client) ||
                 const DeepCollectionEquality().equals(other.client, client)));
   }
@@ -721,6 +1003,8 @@ class _$_OperationRequestR4 extends _OperationRequestR4 {
       const DeepCollectionEquality().hash(id) ^
       const DeepCollectionEquality().hash(operation) ^
       const DeepCollectionEquality().hash(parameters) ^
+      const DeepCollectionEquality().hash(usePost) ^
+      const DeepCollectionEquality().hash(useFormData) ^
       const DeepCollectionEquality().hash(client);
 
   @override
@@ -731,41 +1015,99 @@ class _$_OperationRequestR4 extends _OperationRequestR4 {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required
-        Result dstu2(Uri base, Dstu2Types type, Id id, String operation,
-            Map<String, dynamic> parameters, Client client),
+        Result dstu2(
+            Uri base,
+            Dstu2Types type,
+            Id id,
+            String operation,
+            Map<String, dynamic> parameters,
+            bool usePost,
+            bool useFormData,
+            Client client),
     @required
-        Result stu3(Uri base, Stu3Types type, Id id, String operation,
-            Map<String, dynamic> parameters, Client client),
+        Result stu3(
+            Uri base,
+            Stu3Types type,
+            Id id,
+            String operation,
+            Map<String, dynamic> parameters,
+            bool usePost,
+            bool useFormData,
+            Client client),
     @required
-        Result r4(Uri base, R4Types type, Id id, String operation,
-            Map<String, dynamic> parameters, Client client),
+        Result r4(
+            Uri base,
+            R4Types type,
+            Id id,
+            String operation,
+            Map<String, dynamic> parameters,
+            bool usePost,
+            bool useFormData,
+            Client client),
     @required
-        Result r5(Uri base, R5Types type, Id id, String operation,
-            Map<String, dynamic> parameters, Client client),
+        Result r5(
+            Uri base,
+            R5Types type,
+            Id id,
+            String operation,
+            Map<String, dynamic> parameters,
+            bool usePost,
+            bool useFormData,
+            Client client),
   }) {
     assert(dstu2 != null);
     assert(stu3 != null);
     assert(r4 != null);
     assert(r5 != null);
-    return r4(base, type, id, operation, parameters, client);
+    return r4(
+        base, type, id, operation, parameters, usePost, useFormData, client);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result dstu2(Uri base, Dstu2Types type, Id id, String operation,
-        Map<String, dynamic> parameters, Client client),
-    Result stu3(Uri base, Stu3Types type, Id id, String operation,
-        Map<String, dynamic> parameters, Client client),
-    Result r4(Uri base, R4Types type, Id id, String operation,
-        Map<String, dynamic> parameters, Client client),
-    Result r5(Uri base, R5Types type, Id id, String operation,
-        Map<String, dynamic> parameters, Client client),
+    Result dstu2(
+        Uri base,
+        Dstu2Types type,
+        Id id,
+        String operation,
+        Map<String, dynamic> parameters,
+        bool usePost,
+        bool useFormData,
+        Client client),
+    Result stu3(
+        Uri base,
+        Stu3Types type,
+        Id id,
+        String operation,
+        Map<String, dynamic> parameters,
+        bool usePost,
+        bool useFormData,
+        Client client),
+    Result r4(
+        Uri base,
+        R4Types type,
+        Id id,
+        String operation,
+        Map<String, dynamic> parameters,
+        bool usePost,
+        bool useFormData,
+        Client client),
+    Result r5(
+        Uri base,
+        R5Types type,
+        Id id,
+        String operation,
+        Map<String, dynamic> parameters,
+        bool usePost,
+        bool useFormData,
+        Client client),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (r4 != null) {
-      return r4(base, type, id, operation, parameters, client);
+      return r4(
+          base, type, id, operation, parameters, usePost, useFormData, client);
     }
     return orElse();
   }
@@ -810,6 +1152,8 @@ abstract class _OperationRequestR4 extends OperationRequest {
       Id id,
       String operation,
       Map<String, dynamic> parameters,
+      bool usePost,
+      bool useFormData,
       Client client}) = _$_OperationRequestR4;
 
   @override
@@ -821,6 +1165,10 @@ abstract class _OperationRequestR4 extends OperationRequest {
   String get operation;
   @override
   Map<String, dynamic> get parameters;
+  @override
+  bool get usePost;
+  @override
+  bool get useFormData;
   @override
   Client get client;
   @override
@@ -840,6 +1188,8 @@ abstract class _$OperationRequestR5CopyWith<$Res>
       Id id,
       String operation,
       Map<String, dynamic> parameters,
+      bool usePost,
+      bool useFormData,
       Client client});
 }
 
@@ -861,6 +1211,8 @@ class __$OperationRequestR5CopyWithImpl<$Res>
     Object id = freezed,
     Object operation = freezed,
     Object parameters = freezed,
+    Object usePost = freezed,
+    Object useFormData = freezed,
     Object client = freezed,
   }) {
     return _then(_OperationRequestR5(
@@ -871,6 +1223,9 @@ class __$OperationRequestR5CopyWithImpl<$Res>
       parameters: parameters == freezed
           ? _value.parameters
           : parameters as Map<String, dynamic>,
+      usePost: usePost == freezed ? _value.usePost : usePost as bool,
+      useFormData:
+          useFormData == freezed ? _value.useFormData : useFormData as bool,
       client: client == freezed ? _value.client : client as Client,
     ));
   }
@@ -884,8 +1239,12 @@ class _$_OperationRequestR5 extends _OperationRequestR5 {
       this.id,
       this.operation,
       this.parameters,
+      this.usePost = false,
+      this.useFormData = false,
       this.client})
       : assert(base != null),
+        assert(usePost != null),
+        assert(useFormData != null),
         super._();
 
   @override
@@ -898,12 +1257,18 @@ class _$_OperationRequestR5 extends _OperationRequestR5 {
   final String operation;
   @override
   final Map<String, dynamic> parameters;
+  @JsonKey(defaultValue: false)
+  @override
+  final bool usePost;
+  @JsonKey(defaultValue: false)
+  @override
+  final bool useFormData;
   @override
   final Client client;
 
   @override
   String toString() {
-    return 'OperationRequest.r5(base: $base, type: $type, id: $id, operation: $operation, parameters: $parameters, client: $client)';
+    return 'OperationRequest.r5(base: $base, type: $type, id: $id, operation: $operation, parameters: $parameters, usePost: $usePost, useFormData: $useFormData, client: $client)';
   }
 
   @override
@@ -922,6 +1287,12 @@ class _$_OperationRequestR5 extends _OperationRequestR5 {
             (identical(other.parameters, parameters) ||
                 const DeepCollectionEquality()
                     .equals(other.parameters, parameters)) &&
+            (identical(other.usePost, usePost) ||
+                const DeepCollectionEquality()
+                    .equals(other.usePost, usePost)) &&
+            (identical(other.useFormData, useFormData) ||
+                const DeepCollectionEquality()
+                    .equals(other.useFormData, useFormData)) &&
             (identical(other.client, client) ||
                 const DeepCollectionEquality().equals(other.client, client)));
   }
@@ -934,6 +1305,8 @@ class _$_OperationRequestR5 extends _OperationRequestR5 {
       const DeepCollectionEquality().hash(id) ^
       const DeepCollectionEquality().hash(operation) ^
       const DeepCollectionEquality().hash(parameters) ^
+      const DeepCollectionEquality().hash(usePost) ^
+      const DeepCollectionEquality().hash(useFormData) ^
       const DeepCollectionEquality().hash(client);
 
   @override
@@ -944,41 +1317,99 @@ class _$_OperationRequestR5 extends _OperationRequestR5 {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required
-        Result dstu2(Uri base, Dstu2Types type, Id id, String operation,
-            Map<String, dynamic> parameters, Client client),
+        Result dstu2(
+            Uri base,
+            Dstu2Types type,
+            Id id,
+            String operation,
+            Map<String, dynamic> parameters,
+            bool usePost,
+            bool useFormData,
+            Client client),
     @required
-        Result stu3(Uri base, Stu3Types type, Id id, String operation,
-            Map<String, dynamic> parameters, Client client),
+        Result stu3(
+            Uri base,
+            Stu3Types type,
+            Id id,
+            String operation,
+            Map<String, dynamic> parameters,
+            bool usePost,
+            bool useFormData,
+            Client client),
     @required
-        Result r4(Uri base, R4Types type, Id id, String operation,
-            Map<String, dynamic> parameters, Client client),
+        Result r4(
+            Uri base,
+            R4Types type,
+            Id id,
+            String operation,
+            Map<String, dynamic> parameters,
+            bool usePost,
+            bool useFormData,
+            Client client),
     @required
-        Result r5(Uri base, R5Types type, Id id, String operation,
-            Map<String, dynamic> parameters, Client client),
+        Result r5(
+            Uri base,
+            R5Types type,
+            Id id,
+            String operation,
+            Map<String, dynamic> parameters,
+            bool usePost,
+            bool useFormData,
+            Client client),
   }) {
     assert(dstu2 != null);
     assert(stu3 != null);
     assert(r4 != null);
     assert(r5 != null);
-    return r5(base, type, id, operation, parameters, client);
+    return r5(
+        base, type, id, operation, parameters, usePost, useFormData, client);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result dstu2(Uri base, Dstu2Types type, Id id, String operation,
-        Map<String, dynamic> parameters, Client client),
-    Result stu3(Uri base, Stu3Types type, Id id, String operation,
-        Map<String, dynamic> parameters, Client client),
-    Result r4(Uri base, R4Types type, Id id, String operation,
-        Map<String, dynamic> parameters, Client client),
-    Result r5(Uri base, R5Types type, Id id, String operation,
-        Map<String, dynamic> parameters, Client client),
+    Result dstu2(
+        Uri base,
+        Dstu2Types type,
+        Id id,
+        String operation,
+        Map<String, dynamic> parameters,
+        bool usePost,
+        bool useFormData,
+        Client client),
+    Result stu3(
+        Uri base,
+        Stu3Types type,
+        Id id,
+        String operation,
+        Map<String, dynamic> parameters,
+        bool usePost,
+        bool useFormData,
+        Client client),
+    Result r4(
+        Uri base,
+        R4Types type,
+        Id id,
+        String operation,
+        Map<String, dynamic> parameters,
+        bool usePost,
+        bool useFormData,
+        Client client),
+    Result r5(
+        Uri base,
+        R5Types type,
+        Id id,
+        String operation,
+        Map<String, dynamic> parameters,
+        bool usePost,
+        bool useFormData,
+        Client client),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (r5 != null) {
-      return r5(base, type, id, operation, parameters, client);
+      return r5(
+          base, type, id, operation, parameters, usePost, useFormData, client);
     }
     return orElse();
   }
@@ -1023,6 +1454,8 @@ abstract class _OperationRequestR5 extends OperationRequest {
       Id id,
       String operation,
       Map<String, dynamic> parameters,
+      bool usePost,
+      bool useFormData,
       Client client}) = _$_OperationRequestR5;
 
   @override
@@ -1034,6 +1467,10 @@ abstract class _OperationRequestR5 extends OperationRequest {
   String get operation;
   @override
   Map<String, dynamic> get parameters;
+  @override
+  bool get usePost;
+  @override
+  bool get useFormData;
   @override
   Client get client;
   @override

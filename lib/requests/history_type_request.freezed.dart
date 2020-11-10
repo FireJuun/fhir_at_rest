@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
-part of 'history_request.dart';
+part of 'history_type_request.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -10,23 +10,21 @@ part of 'history_request.dart';
 T _$identity<T>(T value) => value;
 
 /// @nodoc
-class _$HistoryRequestTearOff {
-  const _$HistoryRequestTearOff();
+class _$HistoryTypeRequestTearOff {
+  const _$HistoryTypeRequestTearOff();
 
 // ignore: unused_element
-  _HistoryRequestDstu2 dstu2(
+  _HistoryTypeRequestDstu2 dstu2(
       {@required Uri base,
       @required Dstu2Types type,
-      @required Id id,
       int count,
       Instant since,
       FhirDateTime at,
       SearchReference reference,
       Client client}) {
-    return _HistoryRequestDstu2(
+    return _HistoryTypeRequestDstu2(
       base: base,
       type: type,
-      id: id,
       count: count,
       since: since,
       at: at,
@@ -36,19 +34,17 @@ class _$HistoryRequestTearOff {
   }
 
 // ignore: unused_element
-  _HistoryRequestStu3 stu3(
+  _HistoryTypeRequestStu3 stu3(
       {@required Uri base,
       @required Stu3Types type,
-      @required Id id,
       int count,
       Instant since,
       FhirDateTime at,
       SearchReference reference,
       Client client}) {
-    return _HistoryRequestStu3(
+    return _HistoryTypeRequestStu3(
       base: base,
       type: type,
-      id: id,
       count: count,
       since: since,
       at: at,
@@ -58,19 +54,17 @@ class _$HistoryRequestTearOff {
   }
 
 // ignore: unused_element
-  _HistoryRequestR4 r4(
+  _HistoryTypeRequestR4 r4(
       {@required Uri base,
       @required R4Types type,
-      @required Id id,
       int count,
       Instant since,
       FhirDateTime at,
       SearchReference reference,
       Client client}) {
-    return _HistoryRequestR4(
+    return _HistoryTypeRequestR4(
       base: base,
       type: type,
-      id: id,
       count: count,
       since: since,
       at: at,
@@ -80,19 +74,17 @@ class _$HistoryRequestTearOff {
   }
 
 // ignore: unused_element
-  _HistoryRequestR5 r5(
+  _HistoryTypeRequestR5 r5(
       {@required Uri base,
       @required R5Types type,
-      @required Id id,
       int count,
       Instant since,
       FhirDateTime at,
       SearchReference reference,
       Client client}) {
-    return _HistoryRequestR5(
+    return _HistoryTypeRequestR5(
       base: base,
       type: type,
-      id: id,
       count: count,
       since: since,
       at: at,
@@ -104,12 +96,11 @@ class _$HistoryRequestTearOff {
 
 /// @nodoc
 // ignore: unused_element
-const $HistoryRequest = _$HistoryRequestTearOff();
+const $HistoryTypeRequest = _$HistoryTypeRequestTearOff();
 
 /// @nodoc
-mixin _$HistoryRequest {
+mixin _$HistoryTypeRequest {
   Uri get base;
-  Id get id;
   int get count;
   Instant get since;
   FhirDateTime get at;
@@ -119,57 +110,56 @@ mixin _$HistoryRequest {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required
-        Result dstu2(Uri base, Dstu2Types type, Id id, int count, Instant since,
+        Result dstu2(Uri base, Dstu2Types type, int count, Instant since,
             FhirDateTime at, SearchReference reference, Client client),
     @required
-        Result stu3(Uri base, Stu3Types type, Id id, int count, Instant since,
+        Result stu3(Uri base, Stu3Types type, int count, Instant since,
             FhirDateTime at, SearchReference reference, Client client),
     @required
-        Result r4(Uri base, R4Types type, Id id, int count, Instant since,
+        Result r4(Uri base, R4Types type, int count, Instant since,
             FhirDateTime at, SearchReference reference, Client client),
     @required
-        Result r5(Uri base, R5Types type, Id id, int count, Instant since,
+        Result r5(Uri base, R5Types type, int count, Instant since,
             FhirDateTime at, SearchReference reference, Client client),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result dstu2(Uri base, Dstu2Types type, Id id, int count, Instant since,
+    Result dstu2(Uri base, Dstu2Types type, int count, Instant since,
         FhirDateTime at, SearchReference reference, Client client),
-    Result stu3(Uri base, Stu3Types type, Id id, int count, Instant since,
+    Result stu3(Uri base, Stu3Types type, int count, Instant since,
         FhirDateTime at, SearchReference reference, Client client),
-    Result r4(Uri base, R4Types type, Id id, int count, Instant since,
-        FhirDateTime at, SearchReference reference, Client client),
-    Result r5(Uri base, R5Types type, Id id, int count, Instant since,
-        FhirDateTime at, SearchReference reference, Client client),
+    Result r4(Uri base, R4Types type, int count, Instant since, FhirDateTime at,
+        SearchReference reference, Client client),
+    Result r5(Uri base, R5Types type, int count, Instant since, FhirDateTime at,
+        SearchReference reference, Client client),
     @required Result orElse(),
   });
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result dstu2(_HistoryRequestDstu2 value),
-    @required Result stu3(_HistoryRequestStu3 value),
-    @required Result r4(_HistoryRequestR4 value),
-    @required Result r5(_HistoryRequestR5 value),
+    @required Result dstu2(_HistoryTypeRequestDstu2 value),
+    @required Result stu3(_HistoryTypeRequestStu3 value),
+    @required Result r4(_HistoryTypeRequestR4 value),
+    @required Result r5(_HistoryTypeRequestR5 value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result dstu2(_HistoryRequestDstu2 value),
-    Result stu3(_HistoryRequestStu3 value),
-    Result r4(_HistoryRequestR4 value),
-    Result r5(_HistoryRequestR5 value),
+    Result dstu2(_HistoryTypeRequestDstu2 value),
+    Result stu3(_HistoryTypeRequestStu3 value),
+    Result r4(_HistoryTypeRequestR4 value),
+    Result r5(_HistoryTypeRequestR5 value),
     @required Result orElse(),
   });
 
-  $HistoryRequestCopyWith<HistoryRequest> get copyWith;
+  $HistoryTypeRequestCopyWith<HistoryTypeRequest> get copyWith;
 }
 
 /// @nodoc
-abstract class $HistoryRequestCopyWith<$Res> {
-  factory $HistoryRequestCopyWith(
-          HistoryRequest value, $Res Function(HistoryRequest) then) =
-      _$HistoryRequestCopyWithImpl<$Res>;
+abstract class $HistoryTypeRequestCopyWith<$Res> {
+  factory $HistoryTypeRequestCopyWith(
+          HistoryTypeRequest value, $Res Function(HistoryTypeRequest) then) =
+      _$HistoryTypeRequestCopyWithImpl<$Res>;
   $Res call(
       {Uri base,
-      Id id,
       int count,
       Instant since,
       FhirDateTime at,
@@ -178,18 +168,17 @@ abstract class $HistoryRequestCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$HistoryRequestCopyWithImpl<$Res>
-    implements $HistoryRequestCopyWith<$Res> {
-  _$HistoryRequestCopyWithImpl(this._value, this._then);
+class _$HistoryTypeRequestCopyWithImpl<$Res>
+    implements $HistoryTypeRequestCopyWith<$Res> {
+  _$HistoryTypeRequestCopyWithImpl(this._value, this._then);
 
-  final HistoryRequest _value;
+  final HistoryTypeRequest _value;
   // ignore: unused_field
-  final $Res Function(HistoryRequest) _then;
+  final $Res Function(HistoryTypeRequest) _then;
 
   @override
   $Res call({
     Object base = freezed,
-    Object id = freezed,
     Object count = freezed,
     Object since = freezed,
     Object at = freezed,
@@ -198,7 +187,6 @@ class _$HistoryRequestCopyWithImpl<$Res>
   }) {
     return _then(_value.copyWith(
       base: base == freezed ? _value.base : base as Uri,
-      id: id == freezed ? _value.id : id as Id,
       count: count == freezed ? _value.count : count as int,
       since: since == freezed ? _value.since : since as Instant,
       at: at == freezed ? _value.at : at as FhirDateTime,
@@ -211,16 +199,15 @@ class _$HistoryRequestCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$HistoryRequestDstu2CopyWith<$Res>
-    implements $HistoryRequestCopyWith<$Res> {
-  factory _$HistoryRequestDstu2CopyWith(_HistoryRequestDstu2 value,
-          $Res Function(_HistoryRequestDstu2) then) =
-      __$HistoryRequestDstu2CopyWithImpl<$Res>;
+abstract class _$HistoryTypeRequestDstu2CopyWith<$Res>
+    implements $HistoryTypeRequestCopyWith<$Res> {
+  factory _$HistoryTypeRequestDstu2CopyWith(_HistoryTypeRequestDstu2 value,
+          $Res Function(_HistoryTypeRequestDstu2) then) =
+      __$HistoryTypeRequestDstu2CopyWithImpl<$Res>;
   @override
   $Res call(
       {Uri base,
       Dstu2Types type,
-      Id id,
       int count,
       Instant since,
       FhirDateTime at,
@@ -229,31 +216,30 @@ abstract class _$HistoryRequestDstu2CopyWith<$Res>
 }
 
 /// @nodoc
-class __$HistoryRequestDstu2CopyWithImpl<$Res>
-    extends _$HistoryRequestCopyWithImpl<$Res>
-    implements _$HistoryRequestDstu2CopyWith<$Res> {
-  __$HistoryRequestDstu2CopyWithImpl(
-      _HistoryRequestDstu2 _value, $Res Function(_HistoryRequestDstu2) _then)
-      : super(_value, (v) => _then(v as _HistoryRequestDstu2));
+class __$HistoryTypeRequestDstu2CopyWithImpl<$Res>
+    extends _$HistoryTypeRequestCopyWithImpl<$Res>
+    implements _$HistoryTypeRequestDstu2CopyWith<$Res> {
+  __$HistoryTypeRequestDstu2CopyWithImpl(_HistoryTypeRequestDstu2 _value,
+      $Res Function(_HistoryTypeRequestDstu2) _then)
+      : super(_value, (v) => _then(v as _HistoryTypeRequestDstu2));
 
   @override
-  _HistoryRequestDstu2 get _value => super._value as _HistoryRequestDstu2;
+  _HistoryTypeRequestDstu2 get _value =>
+      super._value as _HistoryTypeRequestDstu2;
 
   @override
   $Res call({
     Object base = freezed,
     Object type = freezed,
-    Object id = freezed,
     Object count = freezed,
     Object since = freezed,
     Object at = freezed,
     Object reference = freezed,
     Object client = freezed,
   }) {
-    return _then(_HistoryRequestDstu2(
+    return _then(_HistoryTypeRequestDstu2(
       base: base == freezed ? _value.base : base as Uri,
       type: type == freezed ? _value.type : type as Dstu2Types,
-      id: id == freezed ? _value.id : id as Id,
       count: count == freezed ? _value.count : count as int,
       since: since == freezed ? _value.since : since as Instant,
       at: at == freezed ? _value.at : at as FhirDateTime,
@@ -266,11 +252,10 @@ class __$HistoryRequestDstu2CopyWithImpl<$Res>
 }
 
 /// @nodoc
-class _$_HistoryRequestDstu2 extends _HistoryRequestDstu2 {
-  _$_HistoryRequestDstu2(
+class _$_HistoryTypeRequestDstu2 extends _HistoryTypeRequestDstu2 {
+  _$_HistoryTypeRequestDstu2(
       {@required this.base,
       @required this.type,
-      @required this.id,
       this.count,
       this.since,
       this.at,
@@ -278,15 +263,12 @@ class _$_HistoryRequestDstu2 extends _HistoryRequestDstu2 {
       this.client})
       : assert(base != null),
         assert(type != null),
-        assert(id != null),
         super._();
 
   @override
   final Uri base;
   @override
   final Dstu2Types type;
-  @override
-  final Id id;
   @override
   final int count;
   @override
@@ -300,19 +282,17 @@ class _$_HistoryRequestDstu2 extends _HistoryRequestDstu2 {
 
   @override
   String toString() {
-    return 'HistoryRequest.dstu2(base: $base, type: $type, id: $id, count: $count, since: $since, at: $at, reference: $reference, client: $client)';
+    return 'HistoryTypeRequest.dstu2(base: $base, type: $type, count: $count, since: $since, at: $at, reference: $reference, client: $client)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _HistoryRequestDstu2 &&
+        (other is _HistoryTypeRequestDstu2 &&
             (identical(other.base, base) ||
                 const DeepCollectionEquality().equals(other.base, base)) &&
             (identical(other.type, type) ||
                 const DeepCollectionEquality().equals(other.type, type)) &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
             (identical(other.count, count) ||
                 const DeepCollectionEquality().equals(other.count, count)) &&
             (identical(other.since, since) ||
@@ -331,7 +311,6 @@ class _$_HistoryRequestDstu2 extends _HistoryRequestDstu2 {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(base) ^
       const DeepCollectionEquality().hash(type) ^
-      const DeepCollectionEquality().hash(id) ^
       const DeepCollectionEquality().hash(count) ^
       const DeepCollectionEquality().hash(since) ^
       const DeepCollectionEquality().hash(at) ^
@@ -339,49 +318,49 @@ class _$_HistoryRequestDstu2 extends _HistoryRequestDstu2 {
       const DeepCollectionEquality().hash(client);
 
   @override
-  _$HistoryRequestDstu2CopyWith<_HistoryRequestDstu2> get copyWith =>
-      __$HistoryRequestDstu2CopyWithImpl<_HistoryRequestDstu2>(
+  _$HistoryTypeRequestDstu2CopyWith<_HistoryTypeRequestDstu2> get copyWith =>
+      __$HistoryTypeRequestDstu2CopyWithImpl<_HistoryTypeRequestDstu2>(
           this, _$identity);
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required
-        Result dstu2(Uri base, Dstu2Types type, Id id, int count, Instant since,
+        Result dstu2(Uri base, Dstu2Types type, int count, Instant since,
             FhirDateTime at, SearchReference reference, Client client),
     @required
-        Result stu3(Uri base, Stu3Types type, Id id, int count, Instant since,
+        Result stu3(Uri base, Stu3Types type, int count, Instant since,
             FhirDateTime at, SearchReference reference, Client client),
     @required
-        Result r4(Uri base, R4Types type, Id id, int count, Instant since,
+        Result r4(Uri base, R4Types type, int count, Instant since,
             FhirDateTime at, SearchReference reference, Client client),
     @required
-        Result r5(Uri base, R5Types type, Id id, int count, Instant since,
+        Result r5(Uri base, R5Types type, int count, Instant since,
             FhirDateTime at, SearchReference reference, Client client),
   }) {
     assert(dstu2 != null);
     assert(stu3 != null);
     assert(r4 != null);
     assert(r5 != null);
-    return dstu2(base, type, id, count, since, at, reference, client);
+    return dstu2(base, type, count, since, at, reference, client);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result dstu2(Uri base, Dstu2Types type, Id id, int count, Instant since,
+    Result dstu2(Uri base, Dstu2Types type, int count, Instant since,
         FhirDateTime at, SearchReference reference, Client client),
-    Result stu3(Uri base, Stu3Types type, Id id, int count, Instant since,
+    Result stu3(Uri base, Stu3Types type, int count, Instant since,
         FhirDateTime at, SearchReference reference, Client client),
-    Result r4(Uri base, R4Types type, Id id, int count, Instant since,
-        FhirDateTime at, SearchReference reference, Client client),
-    Result r5(Uri base, R5Types type, Id id, int count, Instant since,
-        FhirDateTime at, SearchReference reference, Client client),
+    Result r4(Uri base, R4Types type, int count, Instant since, FhirDateTime at,
+        SearchReference reference, Client client),
+    Result r5(Uri base, R5Types type, int count, Instant since, FhirDateTime at,
+        SearchReference reference, Client client),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (dstu2 != null) {
-      return dstu2(base, type, id, count, since, at, reference, client);
+      return dstu2(base, type, count, since, at, reference, client);
     }
     return orElse();
   }
@@ -389,10 +368,10 @@ class _$_HistoryRequestDstu2 extends _HistoryRequestDstu2 {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result dstu2(_HistoryRequestDstu2 value),
-    @required Result stu3(_HistoryRequestStu3 value),
-    @required Result r4(_HistoryRequestR4 value),
-    @required Result r5(_HistoryRequestR5 value),
+    @required Result dstu2(_HistoryTypeRequestDstu2 value),
+    @required Result stu3(_HistoryTypeRequestStu3 value),
+    @required Result r4(_HistoryTypeRequestR4 value),
+    @required Result r5(_HistoryTypeRequestR5 value),
   }) {
     assert(dstu2 != null);
     assert(stu3 != null);
@@ -404,10 +383,10 @@ class _$_HistoryRequestDstu2 extends _HistoryRequestDstu2 {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result dstu2(_HistoryRequestDstu2 value),
-    Result stu3(_HistoryRequestStu3 value),
-    Result r4(_HistoryRequestR4 value),
-    Result r5(_HistoryRequestR5 value),
+    Result dstu2(_HistoryTypeRequestDstu2 value),
+    Result stu3(_HistoryTypeRequestStu3 value),
+    Result r4(_HistoryTypeRequestR4 value),
+    Result r5(_HistoryTypeRequestR5 value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -418,23 +397,20 @@ class _$_HistoryRequestDstu2 extends _HistoryRequestDstu2 {
   }
 }
 
-abstract class _HistoryRequestDstu2 extends HistoryRequest {
-  _HistoryRequestDstu2._() : super._();
-  factory _HistoryRequestDstu2(
+abstract class _HistoryTypeRequestDstu2 extends HistoryTypeRequest {
+  _HistoryTypeRequestDstu2._() : super._();
+  factory _HistoryTypeRequestDstu2(
       {@required Uri base,
       @required Dstu2Types type,
-      @required Id id,
       int count,
       Instant since,
       FhirDateTime at,
       SearchReference reference,
-      Client client}) = _$_HistoryRequestDstu2;
+      Client client}) = _$_HistoryTypeRequestDstu2;
 
   @override
   Uri get base;
   Dstu2Types get type;
-  @override
-  Id get id;
   @override
   int get count;
   @override
@@ -446,20 +422,19 @@ abstract class _HistoryRequestDstu2 extends HistoryRequest {
   @override
   Client get client;
   @override
-  _$HistoryRequestDstu2CopyWith<_HistoryRequestDstu2> get copyWith;
+  _$HistoryTypeRequestDstu2CopyWith<_HistoryTypeRequestDstu2> get copyWith;
 }
 
 /// @nodoc
-abstract class _$HistoryRequestStu3CopyWith<$Res>
-    implements $HistoryRequestCopyWith<$Res> {
-  factory _$HistoryRequestStu3CopyWith(
-          _HistoryRequestStu3 value, $Res Function(_HistoryRequestStu3) then) =
-      __$HistoryRequestStu3CopyWithImpl<$Res>;
+abstract class _$HistoryTypeRequestStu3CopyWith<$Res>
+    implements $HistoryTypeRequestCopyWith<$Res> {
+  factory _$HistoryTypeRequestStu3CopyWith(_HistoryTypeRequestStu3 value,
+          $Res Function(_HistoryTypeRequestStu3) then) =
+      __$HistoryTypeRequestStu3CopyWithImpl<$Res>;
   @override
   $Res call(
       {Uri base,
       Stu3Types type,
-      Id id,
       int count,
       Instant since,
       FhirDateTime at,
@@ -468,31 +443,29 @@ abstract class _$HistoryRequestStu3CopyWith<$Res>
 }
 
 /// @nodoc
-class __$HistoryRequestStu3CopyWithImpl<$Res>
-    extends _$HistoryRequestCopyWithImpl<$Res>
-    implements _$HistoryRequestStu3CopyWith<$Res> {
-  __$HistoryRequestStu3CopyWithImpl(
-      _HistoryRequestStu3 _value, $Res Function(_HistoryRequestStu3) _then)
-      : super(_value, (v) => _then(v as _HistoryRequestStu3));
+class __$HistoryTypeRequestStu3CopyWithImpl<$Res>
+    extends _$HistoryTypeRequestCopyWithImpl<$Res>
+    implements _$HistoryTypeRequestStu3CopyWith<$Res> {
+  __$HistoryTypeRequestStu3CopyWithImpl(_HistoryTypeRequestStu3 _value,
+      $Res Function(_HistoryTypeRequestStu3) _then)
+      : super(_value, (v) => _then(v as _HistoryTypeRequestStu3));
 
   @override
-  _HistoryRequestStu3 get _value => super._value as _HistoryRequestStu3;
+  _HistoryTypeRequestStu3 get _value => super._value as _HistoryTypeRequestStu3;
 
   @override
   $Res call({
     Object base = freezed,
     Object type = freezed,
-    Object id = freezed,
     Object count = freezed,
     Object since = freezed,
     Object at = freezed,
     Object reference = freezed,
     Object client = freezed,
   }) {
-    return _then(_HistoryRequestStu3(
+    return _then(_HistoryTypeRequestStu3(
       base: base == freezed ? _value.base : base as Uri,
       type: type == freezed ? _value.type : type as Stu3Types,
-      id: id == freezed ? _value.id : id as Id,
       count: count == freezed ? _value.count : count as int,
       since: since == freezed ? _value.since : since as Instant,
       at: at == freezed ? _value.at : at as FhirDateTime,
@@ -505,11 +478,10 @@ class __$HistoryRequestStu3CopyWithImpl<$Res>
 }
 
 /// @nodoc
-class _$_HistoryRequestStu3 extends _HistoryRequestStu3 {
-  _$_HistoryRequestStu3(
+class _$_HistoryTypeRequestStu3 extends _HistoryTypeRequestStu3 {
+  _$_HistoryTypeRequestStu3(
       {@required this.base,
       @required this.type,
-      @required this.id,
       this.count,
       this.since,
       this.at,
@@ -517,15 +489,12 @@ class _$_HistoryRequestStu3 extends _HistoryRequestStu3 {
       this.client})
       : assert(base != null),
         assert(type != null),
-        assert(id != null),
         super._();
 
   @override
   final Uri base;
   @override
   final Stu3Types type;
-  @override
-  final Id id;
   @override
   final int count;
   @override
@@ -539,19 +508,17 @@ class _$_HistoryRequestStu3 extends _HistoryRequestStu3 {
 
   @override
   String toString() {
-    return 'HistoryRequest.stu3(base: $base, type: $type, id: $id, count: $count, since: $since, at: $at, reference: $reference, client: $client)';
+    return 'HistoryTypeRequest.stu3(base: $base, type: $type, count: $count, since: $since, at: $at, reference: $reference, client: $client)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _HistoryRequestStu3 &&
+        (other is _HistoryTypeRequestStu3 &&
             (identical(other.base, base) ||
                 const DeepCollectionEquality().equals(other.base, base)) &&
             (identical(other.type, type) ||
                 const DeepCollectionEquality().equals(other.type, type)) &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
             (identical(other.count, count) ||
                 const DeepCollectionEquality().equals(other.count, count)) &&
             (identical(other.since, since) ||
@@ -570,7 +537,6 @@ class _$_HistoryRequestStu3 extends _HistoryRequestStu3 {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(base) ^
       const DeepCollectionEquality().hash(type) ^
-      const DeepCollectionEquality().hash(id) ^
       const DeepCollectionEquality().hash(count) ^
       const DeepCollectionEquality().hash(since) ^
       const DeepCollectionEquality().hash(at) ^
@@ -578,48 +544,49 @@ class _$_HistoryRequestStu3 extends _HistoryRequestStu3 {
       const DeepCollectionEquality().hash(client);
 
   @override
-  _$HistoryRequestStu3CopyWith<_HistoryRequestStu3> get copyWith =>
-      __$HistoryRequestStu3CopyWithImpl<_HistoryRequestStu3>(this, _$identity);
+  _$HistoryTypeRequestStu3CopyWith<_HistoryTypeRequestStu3> get copyWith =>
+      __$HistoryTypeRequestStu3CopyWithImpl<_HistoryTypeRequestStu3>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required
-        Result dstu2(Uri base, Dstu2Types type, Id id, int count, Instant since,
+        Result dstu2(Uri base, Dstu2Types type, int count, Instant since,
             FhirDateTime at, SearchReference reference, Client client),
     @required
-        Result stu3(Uri base, Stu3Types type, Id id, int count, Instant since,
+        Result stu3(Uri base, Stu3Types type, int count, Instant since,
             FhirDateTime at, SearchReference reference, Client client),
     @required
-        Result r4(Uri base, R4Types type, Id id, int count, Instant since,
+        Result r4(Uri base, R4Types type, int count, Instant since,
             FhirDateTime at, SearchReference reference, Client client),
     @required
-        Result r5(Uri base, R5Types type, Id id, int count, Instant since,
+        Result r5(Uri base, R5Types type, int count, Instant since,
             FhirDateTime at, SearchReference reference, Client client),
   }) {
     assert(dstu2 != null);
     assert(stu3 != null);
     assert(r4 != null);
     assert(r5 != null);
-    return stu3(base, type, id, count, since, at, reference, client);
+    return stu3(base, type, count, since, at, reference, client);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result dstu2(Uri base, Dstu2Types type, Id id, int count, Instant since,
+    Result dstu2(Uri base, Dstu2Types type, int count, Instant since,
         FhirDateTime at, SearchReference reference, Client client),
-    Result stu3(Uri base, Stu3Types type, Id id, int count, Instant since,
+    Result stu3(Uri base, Stu3Types type, int count, Instant since,
         FhirDateTime at, SearchReference reference, Client client),
-    Result r4(Uri base, R4Types type, Id id, int count, Instant since,
-        FhirDateTime at, SearchReference reference, Client client),
-    Result r5(Uri base, R5Types type, Id id, int count, Instant since,
-        FhirDateTime at, SearchReference reference, Client client),
+    Result r4(Uri base, R4Types type, int count, Instant since, FhirDateTime at,
+        SearchReference reference, Client client),
+    Result r5(Uri base, R5Types type, int count, Instant since, FhirDateTime at,
+        SearchReference reference, Client client),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (stu3 != null) {
-      return stu3(base, type, id, count, since, at, reference, client);
+      return stu3(base, type, count, since, at, reference, client);
     }
     return orElse();
   }
@@ -627,10 +594,10 @@ class _$_HistoryRequestStu3 extends _HistoryRequestStu3 {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result dstu2(_HistoryRequestDstu2 value),
-    @required Result stu3(_HistoryRequestStu3 value),
-    @required Result r4(_HistoryRequestR4 value),
-    @required Result r5(_HistoryRequestR5 value),
+    @required Result dstu2(_HistoryTypeRequestDstu2 value),
+    @required Result stu3(_HistoryTypeRequestStu3 value),
+    @required Result r4(_HistoryTypeRequestR4 value),
+    @required Result r5(_HistoryTypeRequestR5 value),
   }) {
     assert(dstu2 != null);
     assert(stu3 != null);
@@ -642,10 +609,10 @@ class _$_HistoryRequestStu3 extends _HistoryRequestStu3 {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result dstu2(_HistoryRequestDstu2 value),
-    Result stu3(_HistoryRequestStu3 value),
-    Result r4(_HistoryRequestR4 value),
-    Result r5(_HistoryRequestR5 value),
+    Result dstu2(_HistoryTypeRequestDstu2 value),
+    Result stu3(_HistoryTypeRequestStu3 value),
+    Result r4(_HistoryTypeRequestR4 value),
+    Result r5(_HistoryTypeRequestR5 value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -656,23 +623,20 @@ class _$_HistoryRequestStu3 extends _HistoryRequestStu3 {
   }
 }
 
-abstract class _HistoryRequestStu3 extends HistoryRequest {
-  _HistoryRequestStu3._() : super._();
-  factory _HistoryRequestStu3(
+abstract class _HistoryTypeRequestStu3 extends HistoryTypeRequest {
+  _HistoryTypeRequestStu3._() : super._();
+  factory _HistoryTypeRequestStu3(
       {@required Uri base,
       @required Stu3Types type,
-      @required Id id,
       int count,
       Instant since,
       FhirDateTime at,
       SearchReference reference,
-      Client client}) = _$_HistoryRequestStu3;
+      Client client}) = _$_HistoryTypeRequestStu3;
 
   @override
   Uri get base;
   Stu3Types get type;
-  @override
-  Id get id;
   @override
   int get count;
   @override
@@ -684,20 +648,19 @@ abstract class _HistoryRequestStu3 extends HistoryRequest {
   @override
   Client get client;
   @override
-  _$HistoryRequestStu3CopyWith<_HistoryRequestStu3> get copyWith;
+  _$HistoryTypeRequestStu3CopyWith<_HistoryTypeRequestStu3> get copyWith;
 }
 
 /// @nodoc
-abstract class _$HistoryRequestR4CopyWith<$Res>
-    implements $HistoryRequestCopyWith<$Res> {
-  factory _$HistoryRequestR4CopyWith(
-          _HistoryRequestR4 value, $Res Function(_HistoryRequestR4) then) =
-      __$HistoryRequestR4CopyWithImpl<$Res>;
+abstract class _$HistoryTypeRequestR4CopyWith<$Res>
+    implements $HistoryTypeRequestCopyWith<$Res> {
+  factory _$HistoryTypeRequestR4CopyWith(_HistoryTypeRequestR4 value,
+          $Res Function(_HistoryTypeRequestR4) then) =
+      __$HistoryTypeRequestR4CopyWithImpl<$Res>;
   @override
   $Res call(
       {Uri base,
       R4Types type,
-      Id id,
       int count,
       Instant since,
       FhirDateTime at,
@@ -706,31 +669,29 @@ abstract class _$HistoryRequestR4CopyWith<$Res>
 }
 
 /// @nodoc
-class __$HistoryRequestR4CopyWithImpl<$Res>
-    extends _$HistoryRequestCopyWithImpl<$Res>
-    implements _$HistoryRequestR4CopyWith<$Res> {
-  __$HistoryRequestR4CopyWithImpl(
-      _HistoryRequestR4 _value, $Res Function(_HistoryRequestR4) _then)
-      : super(_value, (v) => _then(v as _HistoryRequestR4));
+class __$HistoryTypeRequestR4CopyWithImpl<$Res>
+    extends _$HistoryTypeRequestCopyWithImpl<$Res>
+    implements _$HistoryTypeRequestR4CopyWith<$Res> {
+  __$HistoryTypeRequestR4CopyWithImpl(
+      _HistoryTypeRequestR4 _value, $Res Function(_HistoryTypeRequestR4) _then)
+      : super(_value, (v) => _then(v as _HistoryTypeRequestR4));
 
   @override
-  _HistoryRequestR4 get _value => super._value as _HistoryRequestR4;
+  _HistoryTypeRequestR4 get _value => super._value as _HistoryTypeRequestR4;
 
   @override
   $Res call({
     Object base = freezed,
     Object type = freezed,
-    Object id = freezed,
     Object count = freezed,
     Object since = freezed,
     Object at = freezed,
     Object reference = freezed,
     Object client = freezed,
   }) {
-    return _then(_HistoryRequestR4(
+    return _then(_HistoryTypeRequestR4(
       base: base == freezed ? _value.base : base as Uri,
       type: type == freezed ? _value.type : type as R4Types,
-      id: id == freezed ? _value.id : id as Id,
       count: count == freezed ? _value.count : count as int,
       since: since == freezed ? _value.since : since as Instant,
       at: at == freezed ? _value.at : at as FhirDateTime,
@@ -743,11 +704,10 @@ class __$HistoryRequestR4CopyWithImpl<$Res>
 }
 
 /// @nodoc
-class _$_HistoryRequestR4 extends _HistoryRequestR4 {
-  _$_HistoryRequestR4(
+class _$_HistoryTypeRequestR4 extends _HistoryTypeRequestR4 {
+  _$_HistoryTypeRequestR4(
       {@required this.base,
       @required this.type,
-      @required this.id,
       this.count,
       this.since,
       this.at,
@@ -755,15 +715,12 @@ class _$_HistoryRequestR4 extends _HistoryRequestR4 {
       this.client})
       : assert(base != null),
         assert(type != null),
-        assert(id != null),
         super._();
 
   @override
   final Uri base;
   @override
   final R4Types type;
-  @override
-  final Id id;
   @override
   final int count;
   @override
@@ -777,19 +734,17 @@ class _$_HistoryRequestR4 extends _HistoryRequestR4 {
 
   @override
   String toString() {
-    return 'HistoryRequest.r4(base: $base, type: $type, id: $id, count: $count, since: $since, at: $at, reference: $reference, client: $client)';
+    return 'HistoryTypeRequest.r4(base: $base, type: $type, count: $count, since: $since, at: $at, reference: $reference, client: $client)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _HistoryRequestR4 &&
+        (other is _HistoryTypeRequestR4 &&
             (identical(other.base, base) ||
                 const DeepCollectionEquality().equals(other.base, base)) &&
             (identical(other.type, type) ||
                 const DeepCollectionEquality().equals(other.type, type)) &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
             (identical(other.count, count) ||
                 const DeepCollectionEquality().equals(other.count, count)) &&
             (identical(other.since, since) ||
@@ -808,7 +763,6 @@ class _$_HistoryRequestR4 extends _HistoryRequestR4 {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(base) ^
       const DeepCollectionEquality().hash(type) ^
-      const DeepCollectionEquality().hash(id) ^
       const DeepCollectionEquality().hash(count) ^
       const DeepCollectionEquality().hash(since) ^
       const DeepCollectionEquality().hash(at) ^
@@ -816,48 +770,49 @@ class _$_HistoryRequestR4 extends _HistoryRequestR4 {
       const DeepCollectionEquality().hash(client);
 
   @override
-  _$HistoryRequestR4CopyWith<_HistoryRequestR4> get copyWith =>
-      __$HistoryRequestR4CopyWithImpl<_HistoryRequestR4>(this, _$identity);
+  _$HistoryTypeRequestR4CopyWith<_HistoryTypeRequestR4> get copyWith =>
+      __$HistoryTypeRequestR4CopyWithImpl<_HistoryTypeRequestR4>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required
-        Result dstu2(Uri base, Dstu2Types type, Id id, int count, Instant since,
+        Result dstu2(Uri base, Dstu2Types type, int count, Instant since,
             FhirDateTime at, SearchReference reference, Client client),
     @required
-        Result stu3(Uri base, Stu3Types type, Id id, int count, Instant since,
+        Result stu3(Uri base, Stu3Types type, int count, Instant since,
             FhirDateTime at, SearchReference reference, Client client),
     @required
-        Result r4(Uri base, R4Types type, Id id, int count, Instant since,
+        Result r4(Uri base, R4Types type, int count, Instant since,
             FhirDateTime at, SearchReference reference, Client client),
     @required
-        Result r5(Uri base, R5Types type, Id id, int count, Instant since,
+        Result r5(Uri base, R5Types type, int count, Instant since,
             FhirDateTime at, SearchReference reference, Client client),
   }) {
     assert(dstu2 != null);
     assert(stu3 != null);
     assert(r4 != null);
     assert(r5 != null);
-    return r4(base, type, id, count, since, at, reference, client);
+    return r4(base, type, count, since, at, reference, client);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result dstu2(Uri base, Dstu2Types type, Id id, int count, Instant since,
+    Result dstu2(Uri base, Dstu2Types type, int count, Instant since,
         FhirDateTime at, SearchReference reference, Client client),
-    Result stu3(Uri base, Stu3Types type, Id id, int count, Instant since,
+    Result stu3(Uri base, Stu3Types type, int count, Instant since,
         FhirDateTime at, SearchReference reference, Client client),
-    Result r4(Uri base, R4Types type, Id id, int count, Instant since,
-        FhirDateTime at, SearchReference reference, Client client),
-    Result r5(Uri base, R5Types type, Id id, int count, Instant since,
-        FhirDateTime at, SearchReference reference, Client client),
+    Result r4(Uri base, R4Types type, int count, Instant since, FhirDateTime at,
+        SearchReference reference, Client client),
+    Result r5(Uri base, R5Types type, int count, Instant since, FhirDateTime at,
+        SearchReference reference, Client client),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (r4 != null) {
-      return r4(base, type, id, count, since, at, reference, client);
+      return r4(base, type, count, since, at, reference, client);
     }
     return orElse();
   }
@@ -865,10 +820,10 @@ class _$_HistoryRequestR4 extends _HistoryRequestR4 {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result dstu2(_HistoryRequestDstu2 value),
-    @required Result stu3(_HistoryRequestStu3 value),
-    @required Result r4(_HistoryRequestR4 value),
-    @required Result r5(_HistoryRequestR5 value),
+    @required Result dstu2(_HistoryTypeRequestDstu2 value),
+    @required Result stu3(_HistoryTypeRequestStu3 value),
+    @required Result r4(_HistoryTypeRequestR4 value),
+    @required Result r5(_HistoryTypeRequestR5 value),
   }) {
     assert(dstu2 != null);
     assert(stu3 != null);
@@ -880,10 +835,10 @@ class _$_HistoryRequestR4 extends _HistoryRequestR4 {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result dstu2(_HistoryRequestDstu2 value),
-    Result stu3(_HistoryRequestStu3 value),
-    Result r4(_HistoryRequestR4 value),
-    Result r5(_HistoryRequestR5 value),
+    Result dstu2(_HistoryTypeRequestDstu2 value),
+    Result stu3(_HistoryTypeRequestStu3 value),
+    Result r4(_HistoryTypeRequestR4 value),
+    Result r5(_HistoryTypeRequestR5 value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -894,23 +849,20 @@ class _$_HistoryRequestR4 extends _HistoryRequestR4 {
   }
 }
 
-abstract class _HistoryRequestR4 extends HistoryRequest {
-  _HistoryRequestR4._() : super._();
-  factory _HistoryRequestR4(
+abstract class _HistoryTypeRequestR4 extends HistoryTypeRequest {
+  _HistoryTypeRequestR4._() : super._();
+  factory _HistoryTypeRequestR4(
       {@required Uri base,
       @required R4Types type,
-      @required Id id,
       int count,
       Instant since,
       FhirDateTime at,
       SearchReference reference,
-      Client client}) = _$_HistoryRequestR4;
+      Client client}) = _$_HistoryTypeRequestR4;
 
   @override
   Uri get base;
   R4Types get type;
-  @override
-  Id get id;
   @override
   int get count;
   @override
@@ -922,20 +874,19 @@ abstract class _HistoryRequestR4 extends HistoryRequest {
   @override
   Client get client;
   @override
-  _$HistoryRequestR4CopyWith<_HistoryRequestR4> get copyWith;
+  _$HistoryTypeRequestR4CopyWith<_HistoryTypeRequestR4> get copyWith;
 }
 
 /// @nodoc
-abstract class _$HistoryRequestR5CopyWith<$Res>
-    implements $HistoryRequestCopyWith<$Res> {
-  factory _$HistoryRequestR5CopyWith(
-          _HistoryRequestR5 value, $Res Function(_HistoryRequestR5) then) =
-      __$HistoryRequestR5CopyWithImpl<$Res>;
+abstract class _$HistoryTypeRequestR5CopyWith<$Res>
+    implements $HistoryTypeRequestCopyWith<$Res> {
+  factory _$HistoryTypeRequestR5CopyWith(_HistoryTypeRequestR5 value,
+          $Res Function(_HistoryTypeRequestR5) then) =
+      __$HistoryTypeRequestR5CopyWithImpl<$Res>;
   @override
   $Res call(
       {Uri base,
       R5Types type,
-      Id id,
       int count,
       Instant since,
       FhirDateTime at,
@@ -944,31 +895,29 @@ abstract class _$HistoryRequestR5CopyWith<$Res>
 }
 
 /// @nodoc
-class __$HistoryRequestR5CopyWithImpl<$Res>
-    extends _$HistoryRequestCopyWithImpl<$Res>
-    implements _$HistoryRequestR5CopyWith<$Res> {
-  __$HistoryRequestR5CopyWithImpl(
-      _HistoryRequestR5 _value, $Res Function(_HistoryRequestR5) _then)
-      : super(_value, (v) => _then(v as _HistoryRequestR5));
+class __$HistoryTypeRequestR5CopyWithImpl<$Res>
+    extends _$HistoryTypeRequestCopyWithImpl<$Res>
+    implements _$HistoryTypeRequestR5CopyWith<$Res> {
+  __$HistoryTypeRequestR5CopyWithImpl(
+      _HistoryTypeRequestR5 _value, $Res Function(_HistoryTypeRequestR5) _then)
+      : super(_value, (v) => _then(v as _HistoryTypeRequestR5));
 
   @override
-  _HistoryRequestR5 get _value => super._value as _HistoryRequestR5;
+  _HistoryTypeRequestR5 get _value => super._value as _HistoryTypeRequestR5;
 
   @override
   $Res call({
     Object base = freezed,
     Object type = freezed,
-    Object id = freezed,
     Object count = freezed,
     Object since = freezed,
     Object at = freezed,
     Object reference = freezed,
     Object client = freezed,
   }) {
-    return _then(_HistoryRequestR5(
+    return _then(_HistoryTypeRequestR5(
       base: base == freezed ? _value.base : base as Uri,
       type: type == freezed ? _value.type : type as R5Types,
-      id: id == freezed ? _value.id : id as Id,
       count: count == freezed ? _value.count : count as int,
       since: since == freezed ? _value.since : since as Instant,
       at: at == freezed ? _value.at : at as FhirDateTime,
@@ -981,11 +930,10 @@ class __$HistoryRequestR5CopyWithImpl<$Res>
 }
 
 /// @nodoc
-class _$_HistoryRequestR5 extends _HistoryRequestR5 {
-  _$_HistoryRequestR5(
+class _$_HistoryTypeRequestR5 extends _HistoryTypeRequestR5 {
+  _$_HistoryTypeRequestR5(
       {@required this.base,
       @required this.type,
-      @required this.id,
       this.count,
       this.since,
       this.at,
@@ -993,15 +941,12 @@ class _$_HistoryRequestR5 extends _HistoryRequestR5 {
       this.client})
       : assert(base != null),
         assert(type != null),
-        assert(id != null),
         super._();
 
   @override
   final Uri base;
   @override
   final R5Types type;
-  @override
-  final Id id;
   @override
   final int count;
   @override
@@ -1015,19 +960,17 @@ class _$_HistoryRequestR5 extends _HistoryRequestR5 {
 
   @override
   String toString() {
-    return 'HistoryRequest.r5(base: $base, type: $type, id: $id, count: $count, since: $since, at: $at, reference: $reference, client: $client)';
+    return 'HistoryTypeRequest.r5(base: $base, type: $type, count: $count, since: $since, at: $at, reference: $reference, client: $client)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _HistoryRequestR5 &&
+        (other is _HistoryTypeRequestR5 &&
             (identical(other.base, base) ||
                 const DeepCollectionEquality().equals(other.base, base)) &&
             (identical(other.type, type) ||
                 const DeepCollectionEquality().equals(other.type, type)) &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
             (identical(other.count, count) ||
                 const DeepCollectionEquality().equals(other.count, count)) &&
             (identical(other.since, since) ||
@@ -1046,7 +989,6 @@ class _$_HistoryRequestR5 extends _HistoryRequestR5 {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(base) ^
       const DeepCollectionEquality().hash(type) ^
-      const DeepCollectionEquality().hash(id) ^
       const DeepCollectionEquality().hash(count) ^
       const DeepCollectionEquality().hash(since) ^
       const DeepCollectionEquality().hash(at) ^
@@ -1054,48 +996,49 @@ class _$_HistoryRequestR5 extends _HistoryRequestR5 {
       const DeepCollectionEquality().hash(client);
 
   @override
-  _$HistoryRequestR5CopyWith<_HistoryRequestR5> get copyWith =>
-      __$HistoryRequestR5CopyWithImpl<_HistoryRequestR5>(this, _$identity);
+  _$HistoryTypeRequestR5CopyWith<_HistoryTypeRequestR5> get copyWith =>
+      __$HistoryTypeRequestR5CopyWithImpl<_HistoryTypeRequestR5>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required
-        Result dstu2(Uri base, Dstu2Types type, Id id, int count, Instant since,
+        Result dstu2(Uri base, Dstu2Types type, int count, Instant since,
             FhirDateTime at, SearchReference reference, Client client),
     @required
-        Result stu3(Uri base, Stu3Types type, Id id, int count, Instant since,
+        Result stu3(Uri base, Stu3Types type, int count, Instant since,
             FhirDateTime at, SearchReference reference, Client client),
     @required
-        Result r4(Uri base, R4Types type, Id id, int count, Instant since,
+        Result r4(Uri base, R4Types type, int count, Instant since,
             FhirDateTime at, SearchReference reference, Client client),
     @required
-        Result r5(Uri base, R5Types type, Id id, int count, Instant since,
+        Result r5(Uri base, R5Types type, int count, Instant since,
             FhirDateTime at, SearchReference reference, Client client),
   }) {
     assert(dstu2 != null);
     assert(stu3 != null);
     assert(r4 != null);
     assert(r5 != null);
-    return r5(base, type, id, count, since, at, reference, client);
+    return r5(base, type, count, since, at, reference, client);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result dstu2(Uri base, Dstu2Types type, Id id, int count, Instant since,
+    Result dstu2(Uri base, Dstu2Types type, int count, Instant since,
         FhirDateTime at, SearchReference reference, Client client),
-    Result stu3(Uri base, Stu3Types type, Id id, int count, Instant since,
+    Result stu3(Uri base, Stu3Types type, int count, Instant since,
         FhirDateTime at, SearchReference reference, Client client),
-    Result r4(Uri base, R4Types type, Id id, int count, Instant since,
-        FhirDateTime at, SearchReference reference, Client client),
-    Result r5(Uri base, R5Types type, Id id, int count, Instant since,
-        FhirDateTime at, SearchReference reference, Client client),
+    Result r4(Uri base, R4Types type, int count, Instant since, FhirDateTime at,
+        SearchReference reference, Client client),
+    Result r5(Uri base, R5Types type, int count, Instant since, FhirDateTime at,
+        SearchReference reference, Client client),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (r5 != null) {
-      return r5(base, type, id, count, since, at, reference, client);
+      return r5(base, type, count, since, at, reference, client);
     }
     return orElse();
   }
@@ -1103,10 +1046,10 @@ class _$_HistoryRequestR5 extends _HistoryRequestR5 {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result dstu2(_HistoryRequestDstu2 value),
-    @required Result stu3(_HistoryRequestStu3 value),
-    @required Result r4(_HistoryRequestR4 value),
-    @required Result r5(_HistoryRequestR5 value),
+    @required Result dstu2(_HistoryTypeRequestDstu2 value),
+    @required Result stu3(_HistoryTypeRequestStu3 value),
+    @required Result r4(_HistoryTypeRequestR4 value),
+    @required Result r5(_HistoryTypeRequestR5 value),
   }) {
     assert(dstu2 != null);
     assert(stu3 != null);
@@ -1118,10 +1061,10 @@ class _$_HistoryRequestR5 extends _HistoryRequestR5 {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result dstu2(_HistoryRequestDstu2 value),
-    Result stu3(_HistoryRequestStu3 value),
-    Result r4(_HistoryRequestR4 value),
-    Result r5(_HistoryRequestR5 value),
+    Result dstu2(_HistoryTypeRequestDstu2 value),
+    Result stu3(_HistoryTypeRequestStu3 value),
+    Result r4(_HistoryTypeRequestR4 value),
+    Result r5(_HistoryTypeRequestR5 value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1132,23 +1075,20 @@ class _$_HistoryRequestR5 extends _HistoryRequestR5 {
   }
 }
 
-abstract class _HistoryRequestR5 extends HistoryRequest {
-  _HistoryRequestR5._() : super._();
-  factory _HistoryRequestR5(
+abstract class _HistoryTypeRequestR5 extends HistoryTypeRequest {
+  _HistoryTypeRequestR5._() : super._();
+  factory _HistoryTypeRequestR5(
       {@required Uri base,
       @required R5Types type,
-      @required Id id,
       int count,
       Instant since,
       FhirDateTime at,
       SearchReference reference,
-      Client client}) = _$_HistoryRequestR5;
+      Client client}) = _$_HistoryTypeRequestR5;
 
   @override
   Uri get base;
   R5Types get type;
-  @override
-  Id get id;
   @override
   int get count;
   @override
@@ -1160,5 +1100,5 @@ abstract class _HistoryRequestR5 extends HistoryRequest {
   @override
   Client get client;
   @override
-  _$HistoryRequestR5CopyWith<_HistoryRequestR5> get copyWith;
+  _$HistoryTypeRequestR5CopyWith<_HistoryTypeRequestR5> get copyWith;
 }

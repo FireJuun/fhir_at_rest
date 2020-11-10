@@ -541,20 +541,24 @@ abstract class FHIRUri with _$FHIRUri {
             )
           : '';
 
-  String _parameters() {
+  String _parameters({bool join = true}) {
     if (parameters?.isEmpty ?? true) {
       return '';
     } else {
       String parametersString = '';
-      for (FHIRUriParameter p in parameters) {
-        parametersString += _encodeParam(p.key, p.value.toString());
+      for (int i = 0; i < parameters.length; i++) {
+        parametersString += _encodeParam(
+          parameters[i].key,
+          parameters[i].value.toString(),
+          join: i != 0 || join,
+        );
       }
       return parametersString;
     }
   }
 
-  String get uri {
-    String uri = map(
+  String get _url {
+    return map(
       // READ
       dstu2Read: (f) => '$base/${enumToString(f.type)}/${f.id.toString()}',
       stu3Read: (f) => '$base/${enumToString(f.type)}/${f.id.toString()}',
@@ -650,6 +654,10 @@ abstract class FHIRUri with _$FHIRUri {
           '${f.type != null && f.id != null ? "${enumToString(f.id)}/" : ''}'
           '\$${f.operation}',
     );
+  }
+
+  String get uri {
+    String uri = _url;
     uri += '?';
     uri += _mode();
     uri += _format();
@@ -658,6 +666,21 @@ abstract class FHIRUri with _$FHIRUri {
     uri += _elements();
     uri += _parameters();
     return uri;
+  }
+
+  String get url {
+    String uri = _url;
+    uri += '?';
+    uri += _mode();
+    uri += _format();
+    uri += _pretty();
+    uri += _summary();
+    uri += _elements();
+    return uri;
+  }
+
+  String get formData {
+    return _parameters(join: false);
   }
 
   @override

@@ -24,6 +24,8 @@ abstract class OperationRequest with _$OperationRequest {
     Id id,
     String operation,
     Map<String, dynamic> parameters,
+    @Default(false) bool usePost,
+    @Default(false) bool useFormData,
     Client client,
   }) = _OperationRequestDstu2;
 
@@ -33,6 +35,8 @@ abstract class OperationRequest with _$OperationRequest {
     Id id,
     String operation,
     Map<String, dynamic> parameters,
+    @Default(false) bool usePost,
+    @Default(false) bool useFormData,
     Client client,
   }) = _OperationRequestStu3;
 
@@ -42,6 +46,8 @@ abstract class OperationRequest with _$OperationRequest {
     Id id,
     String operation,
     Map<String, dynamic> parameters,
+    @Default(false) bool usePost,
+    @Default(false) bool useFormData,
     Client client,
   }) = _OperationRequestR4;
 
@@ -51,12 +57,12 @@ abstract class OperationRequest with _$OperationRequest {
     Id id,
     String operation,
     Map<String, dynamic> parameters,
+    @Default(false) bool usePost,
+    @Default(false) bool useFormData,
     Client client,
   }) = _OperationRequestR5;
 
-  Future<Either<RestfulFailure, dynamic>> request(
-    Map<String, dynamic> resource,
-  ) async {
+  Future<Either<RestfulFailure, dynamic>> request() async {
     final FHIRUri fhirUri = map(
       dstu2: (req) => FHIRUri.dstu2Operation(
         base: req.base,
@@ -97,9 +103,10 @@ abstract class OperationRequest with _$OperationRequest {
     );
 
     final result = await makeRequest(
-      type: RestfulRequest.post_,
-      thisRequest: fhirUri.uri,
-      resource: resource,
+      type: usePost ? RestfulRequest.post_ : RestfulRequest.get_,
+      thisRequest: usePost ? fhirUri.url : fhirUri.uri,
+      resource: usePost && useFormData ? null : parameters,
+      formData: usePost && useFormData ? fhirUri.formData : null,
       client: client,
     );
 

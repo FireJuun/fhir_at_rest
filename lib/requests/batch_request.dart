@@ -47,19 +47,21 @@ abstract class BatchRequest with _$BatchRequest {
 
   Future<Either<RestfulFailure, dynamic>> request(dynamic resource) async {
     if (map(
-        dstu2: (req) => resource is! dstu2.Bundle,
-        stu3: (req) => resource is! stu3.Bundle,
-        r4: (req) => resource is! r4.Bundle,
-        r5: (req) => resource is! r5.Bundle)) {
+      dstu2: (req) => resource is! dstu2.Bundle,
+      stu3: (req) => resource is! stu3.Bundle,
+      r4: (req) => resource is! r4.Bundle,
+      r5: (req) => resource is! r5.Bundle,
+    )) {
       return left(RestfulFailure.noBundle(
           failedValue: resource, batchOrTransaction: 'Batch'));
     }
 
     if (map(
-        dstu2: (req) => resource.type != dstu2.BundleType.batch,
-        stu3: (req) => resource.type != stu3.BundleType.batch,
-        r4: (req) => resource.type != r4.BundleType.batch,
-        r5: (req) => resource.type != r5.BundleType.batch)) {
+      dstu2: (req) => resource.type != dstu2.BundleType.batch,
+      stu3: (req) => resource.type != stu3.BundleType.batch,
+      r4: (req) => resource.type != r4.BundleType.batch,
+      r5: (req) => resource.type != r5.BundleType.batch,
+    )) {
       return left(RestfulFailure.notABatchBundle(failedValue: resource));
     }
 

@@ -19,12 +19,14 @@ class _$SearchRequestTearOff {
       @required Dstu2Types type,
       bool pretty = false,
       Dstu2SearchParameters parameters,
+      bool usePost = false,
       Client client}) {
     return _SearchRequestDstu2(
       base: base,
       type: type,
       pretty: pretty,
       parameters: parameters,
+      usePost: usePost,
       client: client,
     );
   }
@@ -35,12 +37,14 @@ class _$SearchRequestTearOff {
       @required Stu3Types type,
       bool pretty = false,
       Stu3SearchParameters parameters,
+      bool usePost = false,
       Client client}) {
     return _SearchRequestStu3(
       base: base,
       type: type,
       pretty: pretty,
       parameters: parameters,
+      usePost: usePost,
       client: client,
     );
   }
@@ -51,12 +55,14 @@ class _$SearchRequestTearOff {
       @required R4Types type,
       bool pretty = false,
       R4SearchParameters parameters,
+      bool usePost = false,
       Client client}) {
     return _SearchRequestR4(
       base: base,
       type: type,
       pretty: pretty,
       parameters: parameters,
+      usePost: usePost,
       client: client,
     );
   }
@@ -64,15 +70,17 @@ class _$SearchRequestTearOff {
 // ignore: unused_element
   _SearchRequestR5 r5(
       {@required Uri base,
-      R5Types type,
+      @required R5Types type,
       bool pretty = false,
       R5SearchParameters parameters,
+      bool usePost = false,
       Client client}) {
     return _SearchRequestR5(
       base: base,
       type: type,
       pretty: pretty,
       parameters: parameters,
+      usePost: usePost,
       client: client,
     );
   }
@@ -86,33 +94,34 @@ const $SearchRequest = _$SearchRequestTearOff();
 mixin _$SearchRequest {
   Uri get base;
   bool get pretty;
+  bool get usePost;
   Client get client;
 
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required
         Result dstu2(Uri base, Dstu2Types type, bool pretty,
-            Dstu2SearchParameters parameters, Client client),
+            Dstu2SearchParameters parameters, bool usePost, Client client),
     @required
         Result stu3(Uri base, Stu3Types type, bool pretty,
-            Stu3SearchParameters parameters, Client client),
+            Stu3SearchParameters parameters, bool usePost, Client client),
     @required
         Result r4(Uri base, R4Types type, bool pretty,
-            R4SearchParameters parameters, Client client),
+            R4SearchParameters parameters, bool usePost, Client client),
     @required
         Result r5(Uri base, R5Types type, bool pretty,
-            R5SearchParameters parameters, Client client),
+            R5SearchParameters parameters, bool usePost, Client client),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result dstu2(Uri base, Dstu2Types type, bool pretty,
-        Dstu2SearchParameters parameters, Client client),
+        Dstu2SearchParameters parameters, bool usePost, Client client),
     Result stu3(Uri base, Stu3Types type, bool pretty,
-        Stu3SearchParameters parameters, Client client),
+        Stu3SearchParameters parameters, bool usePost, Client client),
     Result r4(Uri base, R4Types type, bool pretty,
-        R4SearchParameters parameters, Client client),
+        R4SearchParameters parameters, bool usePost, Client client),
     Result r5(Uri base, R5Types type, bool pretty,
-        R5SearchParameters parameters, Client client),
+        R5SearchParameters parameters, bool usePost, Client client),
     @required Result orElse(),
   });
   @optionalTypeArgs
@@ -139,7 +148,7 @@ abstract class $SearchRequestCopyWith<$Res> {
   factory $SearchRequestCopyWith(
           SearchRequest value, $Res Function(SearchRequest) then) =
       _$SearchRequestCopyWithImpl<$Res>;
-  $Res call({Uri base, bool pretty, Client client});
+  $Res call({Uri base, bool pretty, bool usePost, Client client});
 }
 
 /// @nodoc
@@ -155,11 +164,13 @@ class _$SearchRequestCopyWithImpl<$Res>
   $Res call({
     Object base = freezed,
     Object pretty = freezed,
+    Object usePost = freezed,
     Object client = freezed,
   }) {
     return _then(_value.copyWith(
       base: base == freezed ? _value.base : base as Uri,
       pretty: pretty == freezed ? _value.pretty : pretty as bool,
+      usePost: usePost == freezed ? _value.usePost : usePost as bool,
       client: client == freezed ? _value.client : client as Client,
     ));
   }
@@ -177,6 +188,7 @@ abstract class _$SearchRequestDstu2CopyWith<$Res>
       Dstu2Types type,
       bool pretty,
       Dstu2SearchParameters parameters,
+      bool usePost,
       Client client});
 }
 
@@ -197,6 +209,7 @@ class __$SearchRequestDstu2CopyWithImpl<$Res>
     Object type = freezed,
     Object pretty = freezed,
     Object parameters = freezed,
+    Object usePost = freezed,
     Object client = freezed,
   }) {
     return _then(_SearchRequestDstu2(
@@ -206,6 +219,7 @@ class __$SearchRequestDstu2CopyWithImpl<$Res>
       parameters: parameters == freezed
           ? _value.parameters
           : parameters as Dstu2SearchParameters,
+      usePost: usePost == freezed ? _value.usePost : usePost as bool,
       client: client == freezed ? _value.client : client as Client,
     ));
   }
@@ -218,10 +232,12 @@ class _$_SearchRequestDstu2 extends _SearchRequestDstu2 {
       @required this.type,
       this.pretty = false,
       this.parameters,
+      this.usePost = false,
       this.client})
       : assert(base != null),
         assert(type != null),
         assert(pretty != null),
+        assert(usePost != null),
         super._();
 
   @override
@@ -233,12 +249,15 @@ class _$_SearchRequestDstu2 extends _SearchRequestDstu2 {
   final bool pretty;
   @override
   final Dstu2SearchParameters parameters;
+  @JsonKey(defaultValue: false)
+  @override
+  final bool usePost;
   @override
   final Client client;
 
   @override
   String toString() {
-    return 'SearchRequest.dstu2(base: $base, type: $type, pretty: $pretty, parameters: $parameters, client: $client)';
+    return 'SearchRequest.dstu2(base: $base, type: $type, pretty: $pretty, parameters: $parameters, usePost: $usePost, client: $client)';
   }
 
   @override
@@ -254,6 +273,9 @@ class _$_SearchRequestDstu2 extends _SearchRequestDstu2 {
             (identical(other.parameters, parameters) ||
                 const DeepCollectionEquality()
                     .equals(other.parameters, parameters)) &&
+            (identical(other.usePost, usePost) ||
+                const DeepCollectionEquality()
+                    .equals(other.usePost, usePost)) &&
             (identical(other.client, client) ||
                 const DeepCollectionEquality().equals(other.client, client)));
   }
@@ -265,6 +287,7 @@ class _$_SearchRequestDstu2 extends _SearchRequestDstu2 {
       const DeepCollectionEquality().hash(type) ^
       const DeepCollectionEquality().hash(pretty) ^
       const DeepCollectionEquality().hash(parameters) ^
+      const DeepCollectionEquality().hash(usePost) ^
       const DeepCollectionEquality().hash(client);
 
   @override
@@ -276,40 +299,40 @@ class _$_SearchRequestDstu2 extends _SearchRequestDstu2 {
   Result when<Result extends Object>({
     @required
         Result dstu2(Uri base, Dstu2Types type, bool pretty,
-            Dstu2SearchParameters parameters, Client client),
+            Dstu2SearchParameters parameters, bool usePost, Client client),
     @required
         Result stu3(Uri base, Stu3Types type, bool pretty,
-            Stu3SearchParameters parameters, Client client),
+            Stu3SearchParameters parameters, bool usePost, Client client),
     @required
         Result r4(Uri base, R4Types type, bool pretty,
-            R4SearchParameters parameters, Client client),
+            R4SearchParameters parameters, bool usePost, Client client),
     @required
         Result r5(Uri base, R5Types type, bool pretty,
-            R5SearchParameters parameters, Client client),
+            R5SearchParameters parameters, bool usePost, Client client),
   }) {
     assert(dstu2 != null);
     assert(stu3 != null);
     assert(r4 != null);
     assert(r5 != null);
-    return dstu2(base, type, pretty, parameters, client);
+    return dstu2(base, type, pretty, parameters, usePost, client);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result dstu2(Uri base, Dstu2Types type, bool pretty,
-        Dstu2SearchParameters parameters, Client client),
+        Dstu2SearchParameters parameters, bool usePost, Client client),
     Result stu3(Uri base, Stu3Types type, bool pretty,
-        Stu3SearchParameters parameters, Client client),
+        Stu3SearchParameters parameters, bool usePost, Client client),
     Result r4(Uri base, R4Types type, bool pretty,
-        R4SearchParameters parameters, Client client),
+        R4SearchParameters parameters, bool usePost, Client client),
     Result r5(Uri base, R5Types type, bool pretty,
-        R5SearchParameters parameters, Client client),
+        R5SearchParameters parameters, bool usePost, Client client),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (dstu2 != null) {
-      return dstu2(base, type, pretty, parameters, client);
+      return dstu2(base, type, pretty, parameters, usePost, client);
     }
     return orElse();
   }
@@ -353,6 +376,7 @@ abstract class _SearchRequestDstu2 extends SearchRequest {
       @required Dstu2Types type,
       bool pretty,
       Dstu2SearchParameters parameters,
+      bool usePost,
       Client client}) = _$_SearchRequestDstu2;
 
   @override
@@ -361,6 +385,8 @@ abstract class _SearchRequestDstu2 extends SearchRequest {
   @override
   bool get pretty;
   Dstu2SearchParameters get parameters;
+  @override
+  bool get usePost;
   @override
   Client get client;
   @override
@@ -379,6 +405,7 @@ abstract class _$SearchRequestStu3CopyWith<$Res>
       Stu3Types type,
       bool pretty,
       Stu3SearchParameters parameters,
+      bool usePost,
       Client client});
 }
 
@@ -399,6 +426,7 @@ class __$SearchRequestStu3CopyWithImpl<$Res>
     Object type = freezed,
     Object pretty = freezed,
     Object parameters = freezed,
+    Object usePost = freezed,
     Object client = freezed,
   }) {
     return _then(_SearchRequestStu3(
@@ -408,6 +436,7 @@ class __$SearchRequestStu3CopyWithImpl<$Res>
       parameters: parameters == freezed
           ? _value.parameters
           : parameters as Stu3SearchParameters,
+      usePost: usePost == freezed ? _value.usePost : usePost as bool,
       client: client == freezed ? _value.client : client as Client,
     ));
   }
@@ -420,10 +449,12 @@ class _$_SearchRequestStu3 extends _SearchRequestStu3 {
       @required this.type,
       this.pretty = false,
       this.parameters,
+      this.usePost = false,
       this.client})
       : assert(base != null),
         assert(type != null),
         assert(pretty != null),
+        assert(usePost != null),
         super._();
 
   @override
@@ -435,12 +466,15 @@ class _$_SearchRequestStu3 extends _SearchRequestStu3 {
   final bool pretty;
   @override
   final Stu3SearchParameters parameters;
+  @JsonKey(defaultValue: false)
+  @override
+  final bool usePost;
   @override
   final Client client;
 
   @override
   String toString() {
-    return 'SearchRequest.stu3(base: $base, type: $type, pretty: $pretty, parameters: $parameters, client: $client)';
+    return 'SearchRequest.stu3(base: $base, type: $type, pretty: $pretty, parameters: $parameters, usePost: $usePost, client: $client)';
   }
 
   @override
@@ -456,6 +490,9 @@ class _$_SearchRequestStu3 extends _SearchRequestStu3 {
             (identical(other.parameters, parameters) ||
                 const DeepCollectionEquality()
                     .equals(other.parameters, parameters)) &&
+            (identical(other.usePost, usePost) ||
+                const DeepCollectionEquality()
+                    .equals(other.usePost, usePost)) &&
             (identical(other.client, client) ||
                 const DeepCollectionEquality().equals(other.client, client)));
   }
@@ -467,6 +504,7 @@ class _$_SearchRequestStu3 extends _SearchRequestStu3 {
       const DeepCollectionEquality().hash(type) ^
       const DeepCollectionEquality().hash(pretty) ^
       const DeepCollectionEquality().hash(parameters) ^
+      const DeepCollectionEquality().hash(usePost) ^
       const DeepCollectionEquality().hash(client);
 
   @override
@@ -478,40 +516,40 @@ class _$_SearchRequestStu3 extends _SearchRequestStu3 {
   Result when<Result extends Object>({
     @required
         Result dstu2(Uri base, Dstu2Types type, bool pretty,
-            Dstu2SearchParameters parameters, Client client),
+            Dstu2SearchParameters parameters, bool usePost, Client client),
     @required
         Result stu3(Uri base, Stu3Types type, bool pretty,
-            Stu3SearchParameters parameters, Client client),
+            Stu3SearchParameters parameters, bool usePost, Client client),
     @required
         Result r4(Uri base, R4Types type, bool pretty,
-            R4SearchParameters parameters, Client client),
+            R4SearchParameters parameters, bool usePost, Client client),
     @required
         Result r5(Uri base, R5Types type, bool pretty,
-            R5SearchParameters parameters, Client client),
+            R5SearchParameters parameters, bool usePost, Client client),
   }) {
     assert(dstu2 != null);
     assert(stu3 != null);
     assert(r4 != null);
     assert(r5 != null);
-    return stu3(base, type, pretty, parameters, client);
+    return stu3(base, type, pretty, parameters, usePost, client);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result dstu2(Uri base, Dstu2Types type, bool pretty,
-        Dstu2SearchParameters parameters, Client client),
+        Dstu2SearchParameters parameters, bool usePost, Client client),
     Result stu3(Uri base, Stu3Types type, bool pretty,
-        Stu3SearchParameters parameters, Client client),
+        Stu3SearchParameters parameters, bool usePost, Client client),
     Result r4(Uri base, R4Types type, bool pretty,
-        R4SearchParameters parameters, Client client),
+        R4SearchParameters parameters, bool usePost, Client client),
     Result r5(Uri base, R5Types type, bool pretty,
-        R5SearchParameters parameters, Client client),
+        R5SearchParameters parameters, bool usePost, Client client),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (stu3 != null) {
-      return stu3(base, type, pretty, parameters, client);
+      return stu3(base, type, pretty, parameters, usePost, client);
     }
     return orElse();
   }
@@ -555,6 +593,7 @@ abstract class _SearchRequestStu3 extends SearchRequest {
       @required Stu3Types type,
       bool pretty,
       Stu3SearchParameters parameters,
+      bool usePost,
       Client client}) = _$_SearchRequestStu3;
 
   @override
@@ -563,6 +602,8 @@ abstract class _SearchRequestStu3 extends SearchRequest {
   @override
   bool get pretty;
   Stu3SearchParameters get parameters;
+  @override
+  bool get usePost;
   @override
   Client get client;
   @override
@@ -581,6 +622,7 @@ abstract class _$SearchRequestR4CopyWith<$Res>
       R4Types type,
       bool pretty,
       R4SearchParameters parameters,
+      bool usePost,
       Client client});
 }
 
@@ -601,6 +643,7 @@ class __$SearchRequestR4CopyWithImpl<$Res>
     Object type = freezed,
     Object pretty = freezed,
     Object parameters = freezed,
+    Object usePost = freezed,
     Object client = freezed,
   }) {
     return _then(_SearchRequestR4(
@@ -610,6 +653,7 @@ class __$SearchRequestR4CopyWithImpl<$Res>
       parameters: parameters == freezed
           ? _value.parameters
           : parameters as R4SearchParameters,
+      usePost: usePost == freezed ? _value.usePost : usePost as bool,
       client: client == freezed ? _value.client : client as Client,
     ));
   }
@@ -622,10 +666,12 @@ class _$_SearchRequestR4 extends _SearchRequestR4 {
       @required this.type,
       this.pretty = false,
       this.parameters,
+      this.usePost = false,
       this.client})
       : assert(base != null),
         assert(type != null),
         assert(pretty != null),
+        assert(usePost != null),
         super._();
 
   @override
@@ -637,12 +683,15 @@ class _$_SearchRequestR4 extends _SearchRequestR4 {
   final bool pretty;
   @override
   final R4SearchParameters parameters;
+  @JsonKey(defaultValue: false)
+  @override
+  final bool usePost;
   @override
   final Client client;
 
   @override
   String toString() {
-    return 'SearchRequest.r4(base: $base, type: $type, pretty: $pretty, parameters: $parameters, client: $client)';
+    return 'SearchRequest.r4(base: $base, type: $type, pretty: $pretty, parameters: $parameters, usePost: $usePost, client: $client)';
   }
 
   @override
@@ -658,6 +707,9 @@ class _$_SearchRequestR4 extends _SearchRequestR4 {
             (identical(other.parameters, parameters) ||
                 const DeepCollectionEquality()
                     .equals(other.parameters, parameters)) &&
+            (identical(other.usePost, usePost) ||
+                const DeepCollectionEquality()
+                    .equals(other.usePost, usePost)) &&
             (identical(other.client, client) ||
                 const DeepCollectionEquality().equals(other.client, client)));
   }
@@ -669,6 +721,7 @@ class _$_SearchRequestR4 extends _SearchRequestR4 {
       const DeepCollectionEquality().hash(type) ^
       const DeepCollectionEquality().hash(pretty) ^
       const DeepCollectionEquality().hash(parameters) ^
+      const DeepCollectionEquality().hash(usePost) ^
       const DeepCollectionEquality().hash(client);
 
   @override
@@ -680,40 +733,40 @@ class _$_SearchRequestR4 extends _SearchRequestR4 {
   Result when<Result extends Object>({
     @required
         Result dstu2(Uri base, Dstu2Types type, bool pretty,
-            Dstu2SearchParameters parameters, Client client),
+            Dstu2SearchParameters parameters, bool usePost, Client client),
     @required
         Result stu3(Uri base, Stu3Types type, bool pretty,
-            Stu3SearchParameters parameters, Client client),
+            Stu3SearchParameters parameters, bool usePost, Client client),
     @required
         Result r4(Uri base, R4Types type, bool pretty,
-            R4SearchParameters parameters, Client client),
+            R4SearchParameters parameters, bool usePost, Client client),
     @required
         Result r5(Uri base, R5Types type, bool pretty,
-            R5SearchParameters parameters, Client client),
+            R5SearchParameters parameters, bool usePost, Client client),
   }) {
     assert(dstu2 != null);
     assert(stu3 != null);
     assert(r4 != null);
     assert(r5 != null);
-    return r4(base, type, pretty, parameters, client);
+    return r4(base, type, pretty, parameters, usePost, client);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result dstu2(Uri base, Dstu2Types type, bool pretty,
-        Dstu2SearchParameters parameters, Client client),
+        Dstu2SearchParameters parameters, bool usePost, Client client),
     Result stu3(Uri base, Stu3Types type, bool pretty,
-        Stu3SearchParameters parameters, Client client),
+        Stu3SearchParameters parameters, bool usePost, Client client),
     Result r4(Uri base, R4Types type, bool pretty,
-        R4SearchParameters parameters, Client client),
+        R4SearchParameters parameters, bool usePost, Client client),
     Result r5(Uri base, R5Types type, bool pretty,
-        R5SearchParameters parameters, Client client),
+        R5SearchParameters parameters, bool usePost, Client client),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (r4 != null) {
-      return r4(base, type, pretty, parameters, client);
+      return r4(base, type, pretty, parameters, usePost, client);
     }
     return orElse();
   }
@@ -757,6 +810,7 @@ abstract class _SearchRequestR4 extends SearchRequest {
       @required R4Types type,
       bool pretty,
       R4SearchParameters parameters,
+      bool usePost,
       Client client}) = _$_SearchRequestR4;
 
   @override
@@ -765,6 +819,8 @@ abstract class _SearchRequestR4 extends SearchRequest {
   @override
   bool get pretty;
   R4SearchParameters get parameters;
+  @override
+  bool get usePost;
   @override
   Client get client;
   @override
@@ -783,6 +839,7 @@ abstract class _$SearchRequestR5CopyWith<$Res>
       R5Types type,
       bool pretty,
       R5SearchParameters parameters,
+      bool usePost,
       Client client});
 }
 
@@ -803,6 +860,7 @@ class __$SearchRequestR5CopyWithImpl<$Res>
     Object type = freezed,
     Object pretty = freezed,
     Object parameters = freezed,
+    Object usePost = freezed,
     Object client = freezed,
   }) {
     return _then(_SearchRequestR5(
@@ -812,6 +870,7 @@ class __$SearchRequestR5CopyWithImpl<$Res>
       parameters: parameters == freezed
           ? _value.parameters
           : parameters as R5SearchParameters,
+      usePost: usePost == freezed ? _value.usePost : usePost as bool,
       client: client == freezed ? _value.client : client as Client,
     ));
   }
@@ -821,12 +880,15 @@ class __$SearchRequestR5CopyWithImpl<$Res>
 class _$_SearchRequestR5 extends _SearchRequestR5 {
   _$_SearchRequestR5(
       {@required this.base,
-      this.type,
+      @required this.type,
       this.pretty = false,
       this.parameters,
+      this.usePost = false,
       this.client})
       : assert(base != null),
+        assert(type != null),
         assert(pretty != null),
+        assert(usePost != null),
         super._();
 
   @override
@@ -838,12 +900,15 @@ class _$_SearchRequestR5 extends _SearchRequestR5 {
   final bool pretty;
   @override
   final R5SearchParameters parameters;
+  @JsonKey(defaultValue: false)
+  @override
+  final bool usePost;
   @override
   final Client client;
 
   @override
   String toString() {
-    return 'SearchRequest.r5(base: $base, type: $type, pretty: $pretty, parameters: $parameters, client: $client)';
+    return 'SearchRequest.r5(base: $base, type: $type, pretty: $pretty, parameters: $parameters, usePost: $usePost, client: $client)';
   }
 
   @override
@@ -859,6 +924,9 @@ class _$_SearchRequestR5 extends _SearchRequestR5 {
             (identical(other.parameters, parameters) ||
                 const DeepCollectionEquality()
                     .equals(other.parameters, parameters)) &&
+            (identical(other.usePost, usePost) ||
+                const DeepCollectionEquality()
+                    .equals(other.usePost, usePost)) &&
             (identical(other.client, client) ||
                 const DeepCollectionEquality().equals(other.client, client)));
   }
@@ -870,6 +938,7 @@ class _$_SearchRequestR5 extends _SearchRequestR5 {
       const DeepCollectionEquality().hash(type) ^
       const DeepCollectionEquality().hash(pretty) ^
       const DeepCollectionEquality().hash(parameters) ^
+      const DeepCollectionEquality().hash(usePost) ^
       const DeepCollectionEquality().hash(client);
 
   @override
@@ -881,40 +950,40 @@ class _$_SearchRequestR5 extends _SearchRequestR5 {
   Result when<Result extends Object>({
     @required
         Result dstu2(Uri base, Dstu2Types type, bool pretty,
-            Dstu2SearchParameters parameters, Client client),
+            Dstu2SearchParameters parameters, bool usePost, Client client),
     @required
         Result stu3(Uri base, Stu3Types type, bool pretty,
-            Stu3SearchParameters parameters, Client client),
+            Stu3SearchParameters parameters, bool usePost, Client client),
     @required
         Result r4(Uri base, R4Types type, bool pretty,
-            R4SearchParameters parameters, Client client),
+            R4SearchParameters parameters, bool usePost, Client client),
     @required
         Result r5(Uri base, R5Types type, bool pretty,
-            R5SearchParameters parameters, Client client),
+            R5SearchParameters parameters, bool usePost, Client client),
   }) {
     assert(dstu2 != null);
     assert(stu3 != null);
     assert(r4 != null);
     assert(r5 != null);
-    return r5(base, type, pretty, parameters, client);
+    return r5(base, type, pretty, parameters, usePost, client);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result dstu2(Uri base, Dstu2Types type, bool pretty,
-        Dstu2SearchParameters parameters, Client client),
+        Dstu2SearchParameters parameters, bool usePost, Client client),
     Result stu3(Uri base, Stu3Types type, bool pretty,
-        Stu3SearchParameters parameters, Client client),
+        Stu3SearchParameters parameters, bool usePost, Client client),
     Result r4(Uri base, R4Types type, bool pretty,
-        R4SearchParameters parameters, Client client),
+        R4SearchParameters parameters, bool usePost, Client client),
     Result r5(Uri base, R5Types type, bool pretty,
-        R5SearchParameters parameters, Client client),
+        R5SearchParameters parameters, bool usePost, Client client),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (r5 != null) {
-      return r5(base, type, pretty, parameters, client);
+      return r5(base, type, pretty, parameters, usePost, client);
     }
     return orElse();
   }
@@ -955,9 +1024,10 @@ abstract class _SearchRequestR5 extends SearchRequest {
   _SearchRequestR5._() : super._();
   factory _SearchRequestR5(
       {@required Uri base,
-      R5Types type,
+      @required R5Types type,
       bool pretty,
       R5SearchParameters parameters,
+      bool usePost,
       Client client}) = _$_SearchRequestR5;
 
   @override
@@ -966,6 +1036,8 @@ abstract class _SearchRequestR5 extends SearchRequest {
   @override
   bool get pretty;
   R5SearchParameters get parameters;
+  @override
+  bool get usePost;
   @override
   Client get client;
   @override

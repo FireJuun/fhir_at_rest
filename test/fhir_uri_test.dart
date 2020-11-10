@@ -1,6 +1,7 @@
 import 'package:fhir/r4.dart';
 import 'package:fhir_at_rest/enums/enums.dart';
 import 'package:fhir_at_rest/fhir_at_rest.dart';
+import 'package:fhir_at_rest/requests/make_request.dart';
 import 'package:fhir_at_rest/resource_types/resource_types.dart';
 import 'package:fhir_at_rest/search_parameters/search_parameter_types/search_parameter_types.dart';
 import 'package:test/test.dart';
@@ -303,6 +304,18 @@ void main() {
       );
     });
 
+    test('patient id search using post', () async {
+      final FHIRUri fhirUri = FHIRUri.r4Search(
+        base: Uri.parse('http://hapi.fhir.org/baseR4'),
+        type: R4Types.patient,
+        restfulRequest: RestfulRequest.post_,
+      );
+      expect(
+        fhirUri.uri,
+        'http://hapi.fhir.org/baseR4/Patient/_search?_format=$mimeType',
+      );
+    });
+
     test('observation time search', () async {
       final FHIRUri fhirUri = FHIRUri.r4Search(
         base: Uri.parse('http://hapi.fhir.org/baseR4'),
@@ -491,6 +504,35 @@ void main() {
         fhirUri.uri,
         'http://hapi.fhir.org/baseR4/Patient'
         '?_format=$mimeType&given=eve&given:contains=eve&given:exact=eve',
+      );
+    });
+
+    test('patient search given name with parameters', () async {
+      final FHIRUri fhirUri = FHIRUri.r4SearchAll(
+        base: Uri.parse('http://hapi.fhir.org/baseR4'),
+        parameters: [
+          FHIRUriParameter(
+            '_type',
+            'Patient',
+          ),
+          FHIRUriParameter(
+            'given',
+            'eve',
+          ),
+          FHIRUriParameter(
+            'given:contains',
+            'eve',
+          ),
+          FHIRUriParameter(
+            'given:exact',
+            'eve',
+          ),
+        ],
+      );
+      expect(
+        fhirUri.uri,
+        'http://hapi.fhir.org/baseR4'
+        '?_format=$mimeType&_type=Patient&given=eve&given:contains=eve&given:exact=eve',
       );
     });
 

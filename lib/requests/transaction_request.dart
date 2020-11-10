@@ -47,10 +47,11 @@ abstract class TransactionRequest with _$TransactionRequest {
 
   Future<Either<RestfulFailure, dynamic>> request(dynamic resource) async {
     if (map(
-        dstu2: (req) => resource is! dstu2.Bundle,
-        stu3: (req) => resource is! stu3.Bundle,
-        r4: (req) => resource is! r4.Bundle,
-        r5: (req) => resource is! r5.Bundle)) {
+      dstu2: (req) => resource is! dstu2.Bundle,
+      stu3: (req) => resource is! stu3.Bundle,
+      r4: (req) => resource is! r4.Bundle,
+      r5: (req) => resource is! r5.Bundle,
+    )) {
       return left(RestfulFailure.noBundle(
         failedValue: resource,
         batchOrTransaction: 'Transaction',
@@ -58,10 +59,11 @@ abstract class TransactionRequest with _$TransactionRequest {
     }
 
     if (map(
-        dstu2: (req) => resource.type != dstu2.BundleType.transaction,
-        stu3: (req) => resource.type != stu3.BundleType.transaction,
-        r4: (req) => resource.type != r4.BundleType.transaction,
-        r5: (req) => resource.type != r5.BundleType.transaction)) {
+      dstu2: (req) => resource.type != dstu2.BundleType.transaction,
+      stu3: (req) => resource.type != stu3.BundleType.transaction,
+      r4: (req) => resource.type != r4.BundleType.transaction,
+      r5: (req) => resource.type != r5.BundleType.transaction,
+    )) {
       return left(RestfulFailure.notATransactionBundle(failedValue: resource));
     }
 

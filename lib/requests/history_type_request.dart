@@ -14,54 +14,50 @@ import '../resource_types/resource_types.dart';
 import '../search_parameters/search_parameter_types/search_parameter_types.dart';
 import 'make_request.dart';
 
-part 'history_request.freezed.dart';
+part 'history_type_request.freezed.dart';
 
 @freezed
-abstract class HistoryRequest with _$HistoryRequest {
-  HistoryRequest._();
-  factory HistoryRequest.dstu2({
+abstract class HistoryTypeRequest with _$HistoryTypeRequest {
+  HistoryTypeRequest._();
+  factory HistoryTypeRequest.dstu2({
     @required Uri base,
     @required Dstu2Types type,
-    @required Id id,
     int count,
     Instant since,
     FhirDateTime at,
     SearchReference reference,
     Client client,
-  }) = _HistoryRequestDstu2;
+  }) = _HistoryTypeRequestDstu2;
 
-  factory HistoryRequest.stu3({
+  factory HistoryTypeRequest.stu3({
     @required Uri base,
     @required Stu3Types type,
-    @required Id id,
     int count,
     Instant since,
     FhirDateTime at,
     SearchReference reference,
     Client client,
-  }) = _HistoryRequestStu3;
+  }) = _HistoryTypeRequestStu3;
 
-  factory HistoryRequest.r4({
+  factory HistoryTypeRequest.r4({
     @required Uri base,
     @required R4Types type,
-    @required Id id,
     int count,
     Instant since,
     FhirDateTime at,
     SearchReference reference,
     Client client,
-  }) = _HistoryRequestR4;
+  }) = _HistoryTypeRequestR4;
 
-  factory HistoryRequest.r5({
+  factory HistoryTypeRequest.r5({
     @required Uri base,
     @required R5Types type,
-    @required Id id,
     int count,
     Instant since,
     FhirDateTime at,
     SearchReference reference,
     Client client,
-  }) = _HistoryRequestR5;
+  }) = _HistoryTypeRequestR5;
 
   Future<Either<RestfulFailure, dynamic>> request() async {
     final List<FHIRUriParameter> parameters = [];
@@ -91,28 +87,24 @@ abstract class HistoryRequest with _$HistoryRequest {
     }
 
     final FHIRUri fhirUri = map(
-      dstu2: (req) => FHIRUri.dstu2History(
+      dstu2: (req) => FHIRUri.dstu2HistoryType(
         base: req.base,
         type: req.type,
-        id: req.id,
         parameters: parameters,
       ),
-      stu3: (req) => FHIRUri.stu3History(
+      stu3: (req) => FHIRUri.stu3HistoryType(
         base: req.base,
         type: req.type,
-        id: req.id,
         parameters: parameters,
       ),
-      r4: (req) => FHIRUri.r4History(
+      r4: (req) => FHIRUri.r4HistoryType(
         base: req.base,
         type: req.type,
-        id: req.id,
         parameters: parameters,
       ),
-      r5: (req) => FHIRUri.r5History(
+      r5: (req) => FHIRUri.r5HistoryType(
         base: req.base,
         type: req.type,
-        id: req.id,
         parameters: parameters,
       ),
     );
