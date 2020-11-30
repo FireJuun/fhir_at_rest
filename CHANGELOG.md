@@ -1,3 +1,7 @@
+## [0.0.7]
+
+* Added ability to pass headers with requests (necessary for most authentication)
+
 ## [0.0.6]
 
 * Complete alignment to [FHIR HTTP spec](https://www.hl7.org/fhir/http.html) for allowed FHIR interactions and http verb options.
