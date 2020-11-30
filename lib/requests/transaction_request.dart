@@ -112,7 +112,7 @@ abstract class TransactionRequest with _$TransactionRequest {
     );
 
     final result = await makeRequest(
-      type: RestfulRequest.get_,
+      type: RestfulRequest.post_,
       thisRequest: fhirUri.uri,
       resource: resource.toJson(),
       client: client,
