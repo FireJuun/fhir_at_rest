@@ -1,7 +1,10 @@
+## [0.0.8]
+
+* Changed transaction from ```GET``` request to ```POST``` request
+
 ## [0.0.7]
 
 * Added ability to pass headers with requests (necessary for most authentication)
-* Changed transaction from ```GET``` request to ```POST``` request
 
 ## [0.0.6]
 
