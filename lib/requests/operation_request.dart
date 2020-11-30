@@ -62,7 +62,9 @@ abstract class OperationRequest with _$OperationRequest {
     Client client,
   }) = _OperationRequestR5;
 
-  Future<Either<RestfulFailure, dynamic>> request() async {
+  Future<Either<RestfulFailure, dynamic>> request({
+    Map<String, String> headers,
+  }) async {
     final FHIRUri fhirUri = map(
       dstu2: (req) => FHIRUri.dstu2Operation(
         base: req.base,
@@ -108,6 +110,7 @@ abstract class OperationRequest with _$OperationRequest {
       resource: usePost && useFormData ? null : parameters,
       formData: usePost && useFormData ? fhirUri.formData : null,
       client: client,
+      headers: headers,
     );
 
     return result.fold(

@@ -54,7 +54,9 @@ abstract class SearchRequest with _$SearchRequest {
     Client client,
   }) = _SearchRequestR5;
 
-  Future<Either<RestfulFailure, dynamic>> request() async {
+  Future<Either<RestfulFailure, dynamic>> request({
+    Map<String, String> headers,
+  }) async {
     final searchParametersList = map(
       dstu2: (req) => req.parameters.searchParameterList(),
       stu3: (req) => req.parameters.searchParameterList(),
@@ -116,6 +118,7 @@ abstract class SearchRequest with _$SearchRequest {
       thisRequest: usePost ? fhirUri.url : fhirUri.uri,
       formData: usePost ? fhirUri.formData : null,
       client: client,
+      headers: headers,
     );
 
     return result.fold(

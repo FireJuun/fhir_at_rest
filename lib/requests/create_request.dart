@@ -54,6 +54,7 @@ abstract class CreateRequest with _$CreateRequest {
   Future<Either<RestfulFailure, dynamic>> request({
     @required dynamic resource,
     dynamic search,
+    Map<String, String> headers,
   }) async {
     List<FHIRUriParameter> parameterList;
     if (search != null) {
@@ -112,6 +113,7 @@ abstract class CreateRequest with _$CreateRequest {
       thisRequest: fhirUri.uri,
       resource: resource.toJson(),
       client: client,
+      headers: headers,
     );
 
     return result.fold(

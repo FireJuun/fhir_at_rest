@@ -58,6 +58,7 @@ abstract class DeleteRequest with _$DeleteRequest {
 
   Future<Either<RestfulFailure, dynamic>> request({
     dynamic search,
+    Map<String, String> headers,
   }) async {
     List<FHIRUriParameter> parameterList;
     if (search != null) {
@@ -127,6 +128,7 @@ abstract class DeleteRequest with _$DeleteRequest {
       type: RestfulRequest.delete_,
       thisRequest: fhirUri.uri,
       client: client,
+      headers: headers,
     );
 
     return result.fold(

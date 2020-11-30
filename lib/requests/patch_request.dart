@@ -59,6 +59,7 @@ abstract class PatchRequest with _$PatchRequest {
   Future<Either<RestfulFailure, dynamic>> request({
     @required dynamic resource,
     dynamic search,
+    Map<String, String> headers,
   }) async {
     if (resource.id != this.id) {
       return left(RestfulFailure.idDoesNotMatchResource(failedValue: resource));
@@ -125,6 +126,7 @@ abstract class PatchRequest with _$PatchRequest {
       thisRequest: fhirUri.uri,
       resource: resource.toJson(),
       client: client,
+      headers: headers,
     );
 
     return result.fold(

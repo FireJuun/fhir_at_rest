@@ -45,7 +45,10 @@ abstract class TransactionRequest with _$TransactionRequest {
     Client client,
   }) = _TransactionRequestR5;
 
-  Future<Either<RestfulFailure, dynamic>> request(dynamic resource) async {
+  Future<Either<RestfulFailure, dynamic>> request(
+    dynamic resource, {
+    Map<String, String> headers,
+  }) async {
     if (map(
       dstu2: (req) => resource is! dstu2.Bundle,
       stu3: (req) => resource is! stu3.Bundle,
@@ -113,6 +116,7 @@ abstract class TransactionRequest with _$TransactionRequest {
       thisRequest: fhirUri.uri,
       resource: resource.toJson(),
       client: client,
+      headers: headers,
     );
 
     return result.fold(

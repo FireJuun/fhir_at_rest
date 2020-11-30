@@ -55,7 +55,9 @@ abstract class ReadRequest with _$ReadRequest {
     Client client,
   }) = _ReadRequestR5;
 
-  Future<Either<RestfulFailure, dynamic>> request() async {
+  Future<Either<RestfulFailure, dynamic>> request({
+    Map<String, String> headers,
+  }) async {
     final FHIRUri fhirUri = map(
       dstu2: (req) => FHIRUri.dstu2Read(
         base: req.base,
@@ -99,6 +101,7 @@ abstract class ReadRequest with _$ReadRequest {
       type: RestfulRequest.get_,
       thisRequest: fhirUri.uri,
       client: client,
+      headers: headers,
     );
 
     return result.fold(

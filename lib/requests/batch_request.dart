@@ -45,7 +45,10 @@ abstract class BatchRequest with _$BatchRequest {
     Client client,
   }) = _BatchRequestR5;
 
-  Future<Either<RestfulFailure, dynamic>> request(dynamic resource) async {
+  Future<Either<RestfulFailure, dynamic>> request(
+    dynamic resource, {
+    Map<String, String> headers,
+  }) async {
     if (map(
       dstu2: (req) => resource is! dstu2.Bundle,
       stu3: (req) => resource is! stu3.Bundle,
@@ -111,6 +114,7 @@ abstract class BatchRequest with _$BatchRequest {
       thisRequest: fhirUri.uri,
       resource: resource.toJson(),
       client: client,
+      headers: headers,
     );
 
     return result.fold(

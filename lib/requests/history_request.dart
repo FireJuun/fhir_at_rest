@@ -63,7 +63,9 @@ abstract class HistoryRequest with _$HistoryRequest {
     Client client,
   }) = _HistoryRequestR5;
 
-  Future<Either<RestfulFailure, dynamic>> request() async {
+  Future<Either<RestfulFailure, dynamic>> request({
+    Map<String, String> headers,
+  }) async {
     final List<FHIRUriParameter> parameters = [];
 
     if (count != null) {
@@ -121,6 +123,7 @@ abstract class HistoryRequest with _$HistoryRequest {
       type: RestfulRequest.get_,
       thisRequest: fhirUri.uri,
       client: client,
+      headers: headers,
     );
 
     return result.fold(

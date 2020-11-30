@@ -49,7 +49,9 @@ abstract class CapabilitiesRequest with _$CapabilitiesRequest {
     Client client,
   }) = _CapabilitiesRequestR5;
 
-  Future<Either<RestfulFailure, dynamic>> request() async {
+  Future<Either<RestfulFailure, dynamic>> request({
+    Map<String, String> headers,
+  }) async {
     final FHIRUri fhirUri = map(
       dstu2: (req) => FHIRUri.dstu2Capabilities(
         base: req.base,
@@ -85,6 +87,7 @@ abstract class CapabilitiesRequest with _$CapabilitiesRequest {
       type: RestfulRequest.get_,
       thisRequest: fhirUri.uri,
       client: client,
+      headers: headers,
     );
 
     return result.fold(
